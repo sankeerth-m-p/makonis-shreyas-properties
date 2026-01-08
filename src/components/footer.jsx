@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
 
           {/* Column 3 - Hidden on mobile, shown on desktop */}
-          <div className="hidden md:block md:text-right flex flex-col md:items-end">
+          <div className=" md:block md:text-right flex flex-col md:items-end">
             <div className="flex md:justify-end items-center gap-2 mb-3">
               <div className="w-8 h-8 bg-white/90 rounded-sm" />
               <span className="text-white text-2xl font-semibold tracking-wide">
