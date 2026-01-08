@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
-
+import OurStory from "./pages/Ourstory.jsx";
 import Home from "./pages/Home";
 import PromisePage from "./pages/Promise.jsx";
 const pageVariants = {
@@ -58,7 +58,7 @@ function App() {
                 exit="exit"
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                <Ourstory />
+                <OurStory/>
               </motion.div>
             }
           />

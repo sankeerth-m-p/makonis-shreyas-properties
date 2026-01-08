@@ -398,135 +398,138 @@ const Home = () => {
   </div>
 </section>
 {/* ================= WHAT MAKES US DIFFERENT ================= */}
-<section className="bg-white pt-28 pb-24">
-  <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+{/* ================= WHAT MAKES US DIFFERENT (EXACT MATCH) ================= */}
+<section className="bg-white py-28">
+  <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
-    {/* IMAGE – FLAT BOTTOM */}
+    {/* LEFT IMAGE */}
     <div>
       <img
         src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
         alt="Team discussion"
-        className="w-full h-[460px] object-cover"
+        className="w-full h-[520px] object-cover"
       />
     </div>
 
-    {/* CONTENT */}
+    {/* RIGHT CONTENT */}
     <div>
-      <h2 className="text-[32px] font-semibold text-[#1A1A1A] leading-tight mb-4">
+
+      {/* HEADING */}
+      <h2 className="text-[34px] font-semibold text-[#1A1A1A] leading-tight mb-4">
         What makes us different <br />
         lies in how we blend vision <br />
         with execution.
       </h2>
 
-      <p className="text-[14px] text-gray-600 mb-10 max-w-md">
+      {/* SUBTEXT */}
+      <p className="text-[14px] text-gray-600 mb-12 max-w-md">
         What makes every project distinctly ours,
         from vision and design to lasting value.
       </p>
 
       {/* ITEM 1 */}
-      <div className="flex gap-4 pb-6 mb-6 border-b border-gray-200">
-        <div className="w-10 h-10 bg-[#FF6A13] flex items-center justify-center text-white text-sm">
-          ⬢
+      <div className="flex gap-5 pb-6 mb-6 border-b border-gray-300">
+        <div className="w-10 h-10 bg-[#FF6A13] flex items-center justify-center">
+          <span className="text-white text-sm">◆</span>
         </div>
         <div>
-          <h4 className="text-[14px] font-semibold text-[#1A1A1A]">
+          <h4 className="text-[15px] font-semibold text-[#1A1A1A] mb-1">
             Values Driven Development
           </h4>
-          <p className="text-[13px] text-gray-600">
-            Every project is planned with long-term value in mind focusing on
-            quality, sustainability, and future appreciation.
+          <p className="text-[13px] text-gray-600 leading-relaxed">
+            Every project is planned with long-term value in mind
+            focusing on quality, sustainability, and future appreciation.
           </p>
         </div>
       </div>
 
       {/* ITEM 2 */}
-      <div className="flex gap-4 pb-6 mb-6 border-b border-gray-200">
-        <div className="w-10 h-10 bg-[#FF6A13] flex items-center justify-center text-white text-sm">
-          ⬢
+      <div className="flex gap-5 pb-6 mb-6 border-b border-gray-300">
+        <div className="w-10 h-10 bg-[#FF6A13] flex items-center justify-center">
+          <span className="text-white text-sm">◆</span>
         </div>
         <div>
-          <h4 className="text-[14px] font-semibold text-[#1A1A1A]">
+          <h4 className="text-[15px] font-semibold text-[#1A1A1A] mb-1">
             Thoughtfully Planned Spaces
           </h4>
-          <p className="text-[13px] text-gray-600">
-            From layouts to amenities, each development is designed to enhance
-            lifestyle, comfort, and functionality.
+          <p className="text-[13px] text-gray-600 leading-relaxed">
+            From layouts to amenities, each development is designed
+            to enhance lifestyle, comfort, and functionality.
           </p>
         </div>
       </div>
 
       {/* ITEM 3 */}
-      <div className="flex gap-4">
-        <div className="w-10 h-10 bg-[#FF6A13] flex items-center justify-center text-white text-sm">
-          ⬢
+      <div className="flex gap-5">
+        <div className="w-10 h-10 bg-[#FF6A13] flex items-center justify-center">
+          <span className="text-white text-sm">◆</span>
         </div>
         <div>
-          <h4 className="text-[14px] font-semibold text-[#1A1A1A]">
+          <h4 className="text-[15px] font-semibold text-[#1A1A1A] mb-1">
             End to End Customer Care
           </h4>
-          <p className="text-[13px] text-gray-600">
-            Support that goes beyond possession assisting clients from site visits
-            to handover and after-sales service.
+          <p className="text-[13px] text-gray-600 leading-relaxed">
+            Support that goes beyond possession assisting clients
+            from site visits to handover and after-sales service.
           </p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 
 
-{/* ================= EXACT WAVE DIVIDER ================= */}
-<div className="relative bg-[#F4EFE5] -mt-[1px]">
+{/* ================= WHAT PEOPLE SAYS (EXACT MATCH) ================= */}
+<section className="relative bg-[#F4EFE5] overflow-hidden">
+
+  {/* TOP WAVE */}
   <svg
-    viewBox="0 0 1440 180"
-    className="w-full h-[180px]"
+    viewBox="0 0 1440 160"
     preserveAspectRatio="none"
+    className="w-full h-[160px] absolute top-0 left-0"
   >
     <path
       d="
         M0,0
         H1440
-        V90
-        C1080,180 360,180 0,90
+        V80
+        C1080,160 360,160 0,80
         Z
       "
       fill="#ffffff"
     />
   </svg>
 
-  {/* CENTER TEXT */}
-  <div className="absolute inset-x-0 top-[48%] text-center">
+  {/* CENTER HEADING */}
+  <div className="relative z-10 pt-20 text-center">
     <p className="text-[16px] text-[#1A1A1A] leading-tight">
       What <br /> people <br /> says
     </p>
   </div>
-</div>
 
+  {/* DECORATIVE CIRCLES */}
+  <div className="absolute -left-40 top-48 w-[320px] h-[320px] rounded-full bg-white/40"></div>
+  <div className="absolute -right-40 bottom-24 w-[320px] h-[320px] rounded-full bg-white/40"></div>
 
-{/* ================= TESTIMONIAL SECTION ================= */}
-<section className="bg-[#F4EFE5] pt-32 pb-44 relative overflow-hidden">
-
-  {/* LARGE SOFT CIRCLES */}
-  <div className="absolute -left-[260px] top-[140px] w-[520px] h-[520px] rounded-full bg-white/60"></div>
-  <div className="absolute -right-[260px] bottom-[100px] w-[520px] h-[520px] rounded-full bg-white/60"></div>
-
-  <div className="relative max-w-4xl mx-auto px-6 text-center">
+  {/* TESTIMONIAL CONTENT */}
+  <div className="relative z-10 max-w-4xl mx-auto px-6 pt-28 pb-36 text-center">
 
     {/* QUOTE */}
-    <div className="text-[22px] text-[#1A1A1A] leading-relaxed mb-14">
-      <span className="text-[48px]">“</span>
+    <p className="text-[22px] text-[#1A1A1A] leading-relaxed mb-14">
+      <span className="text-[48px] align-top">“</span>
       From the very first meeting to project handover,
       the experience was smooth and transparent.
-      <span className="text-[48px]">”</span>
-    </div>
+      <span className="text-[48px] align-bottom">”</span>
+    </p>
 
     {/* AUTHOR */}
     <div className="flex flex-col items-center gap-3">
       <img
         src="https://randomuser.me/api/portraits/women/44.jpg"
+        alt="Neetu sargam"
         className="w-12 h-12 rounded-full object-cover"
-        alt="Neetu Sargam"
       />
       <p className="text-[14px] font-semibold text-[#1A1A1A]">
         Neetu sargam
@@ -535,9 +538,9 @@ const Home = () => {
         Founder, KPCC International
       </p>
     </div>
+
   </div>
 </section>
-
 
 {/* ================= NATURE'S SIGN SECTION (FINAL EXACT) ================= */}
 <section className="relative w-full h-screen overflow-hidden bg-[#0B1F1A]">
@@ -635,15 +638,6 @@ const Home = () => {
 
   </div>
 </section>
-
-
-
-
-
-
-
-
-
 
 
     </>
