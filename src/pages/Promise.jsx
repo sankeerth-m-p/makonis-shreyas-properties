@@ -1,7 +1,7 @@
-import hero from "../assets/promise_hero.png";
-import artistry from "../assets/promise_artistry.png";
-import nature from "../assets/promise_nature.png";
-import aesthetic from "../assets/promise_aesthetic_desgin.png";
+import hero from "../assets/images/promise_hero.png";
+import artistry from "../assets/images/promise_artistry.png";
+import nature from "../assets/images/promise_nature.png";
+import aesthetic from "../assets/images/promise_aesthetic_desgin.png";
 function Showcase({
   title,
   para1,
