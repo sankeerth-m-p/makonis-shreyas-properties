@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-
+import LogoImg from "../assets/images/Shreyasinfra_logo.png"; 
 const navItems = [
   { label: "OUR STORY", path: "/our-story" },
   { label: "OUR PROMISE", path: "/our-promise" },
@@ -19,7 +19,8 @@ const NavContent = () => {
       {/* LOGO */}
       <h1 className="text-2xl font-semibold tracking-wide text-gray-900">
         <Link to="/" className="hover:opacity-80 transition">
-          Shreyas <span className="text-ORANGE">Infra</span>
+          <img src={LogoImg} alt="Shreyas Infra" className=" h-10 object-contain" />
+        
         </Link>
       </h1>
 
@@ -35,7 +36,7 @@ const NavContent = () => {
               className={`
                 transition
                 ${isActive
-                  ? "text-ORANGE border-b-2 border-ORANGE"
+                  ? "text-ORANGE border-b-2 border-transparent"
                   : "hover:text-ORANGE hover:border-b-2 hover:border-ORANGE"}
               `}
             >
@@ -51,27 +52,48 @@ const NavContent = () => {
 const Navbar = () => {
   const [showSticky, setShowSticky] = useState(false);
   const lastScrollY = useRef(0);
+const triggered = useRef(false);useEffect(() => {
+  const onScroll = () => {
+    const current = window.scrollY;
 
-  useEffect(() => {
-    const onScroll = () => {
-      const current = window.scrollY;
+    // reset when back at top
+    if (current === 0) {
+      triggered.current = false;
+      setShowSticky(false);
+      return;
+    }
 
-      // scroll down → switch to sticky navbar
-      if (current > lastScrollY.current && current > 80) {
-        setShowSticky(true);
-      }
+    // trigger animation once after leaving top
+    if (!triggered.current && current > 80) {
+      setShowSticky(true);
+      triggered.current = true;
+    }
+  };
 
-      // scroll up → bring back default navbar
-      if (current < lastScrollY.current) {
-        setShowSticky(false);
-      }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  return () => window.removeEventListener("scroll", onScroll);
+}, []);
 
-      lastScrollY.current = current;
-    };
+  // useEffect(() => {
+  //   const onScroll = () => {
+  //     const current = window.scrollY;
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  //     // scroll down → switch to sticky navbar
+  //     if (current > lastScrollY.current && current > 80) {
+  //       setShowSticky(true);
+  //     }
+
+  //     // scroll up → bring back default navbar
+  //     if (current < lastScrollY.current) {
+  //       setShowSticky(false);
+  //     }
+
+  //     lastScrollY.current = current;
+  //   };
+
+  //   window.addEventListener("scroll", onScroll, { passive: true });
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, []);
 
   return (
     <>

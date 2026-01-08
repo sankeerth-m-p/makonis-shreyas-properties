@@ -10,44 +10,43 @@ function Showcase({
   reverse = false,
 }) {
   return (
-    <section className="w-full   min-h-[75vh] grid grid-cols-1 md:grid-cols-2">
+    <section className="w-full min-h-[50vh] md:min-h-[75vh] grid grid-cols-1 md:grid-cols-2">
       
       {/* IMAGE BLOCK */}
-<div
-  className={`relative bg-gray-300 ${reverse ? "md:order-2" : ""}`}
->
-  
-  <img
-    src={image}
-    alt={title}
-    className="w-full h-full object-cover"
-  />
- 
-
-  {/* TITLE OVERLAY */}
-  <div className={`absolute bottom-6 px-7 py-3 bg-red-400 min-w-60  ${
-    !reverse ? "right-6 text-right" : "left-6 text-left"
-  }`}>
-    <h3 className="text-2xl font-semibold text-white">
-      {title}
-    </h3>
-  </div>
-</div>
-
+      <div
+        className={`relative bg-gray-300 min-h-[40vh] md:min-h-full ${reverse ? "md:order-2" : ""}`}
+      >
+        
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
+       
+        {/* TITLE OVERLAY - Mobile optimized */}
+        <div className={`absolute bottom-4 px-5 py-3 bg-ORANGE/80 backdrop-blur-sm w-4/5 md:min-w-60 md:w-auto ${
+          !reverse ? "right-4 md:right-6 text-right md:text-right" : "left-4 md:left-6 text-left md:text-left"
+        }`}>
+          <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">
+            {title}
+          </h3>
+        </div>
+      </div>
 
       {/* TEXT BLOCK */}
       <div
-        className={`flex flex-col justify-center  px-8 md:px-20 lg:px-12 ${
-          reverse ? "md:order-1 items-end" : ""
+        className={`flex flex-col justify-center px-6 sm:px-8 md:px-20 lg:px-12 py-8 md:py-0 ${
+          reverse ? "md:order-1 md:items-end" : ""
         }`}
       >
         
+        
 
-        <p className="text-gray-700  leading-relaxed mb-4 max-w-md">
+        <p className="text-gray-700 leading-relaxed mb-4 text-sm md:text-base max-w-full md:max-w-md">
           {para1}
         </p>
 
-        <p className="text-gray-600 leading-relaxed max-w-md">
+        <p className="text-gray-600 leading-relaxed text-sm md:text-base max-w-full md:max-w-md">
           {para2}
         </p>
       </div>
@@ -62,34 +61,36 @@ export default function PromisePage() {
     <div className="flex flex-col items-center justify-center w-full">
 
       {/* ========= HERO ========= */}
-      <section className="relative w-full h-screen pt-28 overflow-hidden bg-white">
-      
-      {/* Decorative background shapes */}
-      <div className="absolute -left-56 top-36 w-[500px] h-[460px] rounded-full bg-[#F1F4F3]" />
-      <div className="absolute -left-24 top-60 w-[300px] h-[300px] rounded-full bg-[#ffffff]" />
+<section className="relative w-full min-h-screen md:h-screen pt-20 md:pt-28 overflow-hidden bg-white">
+  
+  {/* Decorative background shapes */}
+  <div className="absolute -left-56 top-36 w-[500px] h-[460px] rounded-full bg-[#F1F4F3] hidden md:block" />
+  <div className="absolute -left-24 top-60 w-[300px] h-[300px] rounded-full bg-[#ffffff] hidden md:block" />
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto max-w-5xl  text-center px-4">
-        
-        <h1 className="text-3xl font-semibold text-gray-900">
-          We Deliver What We Promise
-        </h1>
+  {/* Content */}
+  <div className="relative z-10 mx-auto max-w-5xl text-center px-4 md:px-6 lg:px-8 pt-6 md:pt-0">
+    
+    <h1 className="text-2xl sm:text-3xl md:text-3xl font-semibold text-gray-900 px-2">
+      We Deliver What We Promise
+    </h1>
 
-        <p className="mt-4 text-gray-600 leading-relaxed">
-          At every stage of our journey, we stand by our word. From project
-          planning to final handover, we ensure transparency, timely delivery,
-          and uncompromising quality, so what we promise is exactly what you
-          receive.
-        </p>
+    <p className="mt-4 text-sm sm:text-base md:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
+      At every stage of our journey, we stand by our word. From project
+      planning to final handover, we ensure transparency, timely delivery,
+      and uncompromising quality, so what we promise is exactly what you
+      receive.
+    </p>
 
-       
-          <img
-    src={hero}
-    className=" object-cover mt-8 h-[400px] w-full rounded-2xl bg-gray-300"
-  />
-      </div>
+   
+     <img
+      src={hero}
+      className="object-cover mt-6 md:mt-8  h-[40vh] sm:h-[50vh] md:h-[60vh] w-full rounded-xl md:rounded-2xl bg-gray-300"
+      alt="Hero showcase"
+    />
 
-    </section>
+  </div>
+
+</section>
 
       {/* ========= ORANGE STRIP ========= */}
       <section className="bg-ORANGE p-10 items-center flex text-white h-screen md:h-auto w-full py-16">

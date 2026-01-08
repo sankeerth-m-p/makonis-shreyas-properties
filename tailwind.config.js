@@ -8,10 +8,10 @@ module.exports = {
     extend: {
       colors: {
         ORANGE: "#ff6316",
-        secondary: "#9333EA",
-        accent: "#22C55E",
-        dark: "#0F172A",
-        light: "#F8FAFC",
+        
+      },fontFamily: {
+        aeonik: ["Aeonik", "sans-serif"],
+        mont: ["Mont", "sans-serif"],
       },
     },
   },
