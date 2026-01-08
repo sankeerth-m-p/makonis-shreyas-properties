@@ -2,6 +2,41 @@ import hero from "../assets/images/promise_hero.png";
 import artistry from "../assets/images/promise_artistry.png";
 import nature from "../assets/images/promise_nature.png";
 import aesthetic from "../assets/images/promise_aesthetic_desgin.png";
+import RevealImageAnimation from "../components/RevealImageAnimation";
+import { useEffect, useState } from "react";
+
+function ExpandingFrameReveal() {
+  const [reveal, setReveal] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setReveal(true);
+    }, 500);
+  }, []);
+
+  return (
+  
+      <div className="text-center">
+        <div className="relative w-[600px] h-[400px] mx-auto mb-8 overflow-hidden rounded-[20px]">
+          <div 
+            className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white overflow-hidden rounded-[20px] transition-all duration-[2000ms] ease-out ${
+              reveal ? 'w-full h-full' : 'w-0 h-0'
+            }`}
+          >
+            <div 
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-cover bg-center transition-all duration-[2500ms] ${
+                reveal ? 'blur-0 scale-100' : 'blur-lg scale-110'
+              }`}
+              style={{
+                backgroundImage: `url('${hero}')`,
+                transitionTimingFunction: reveal ? 'cubic-bezier(0.34, 1.56, 0.64, 1)' : 'ease-out'
+              }}
+            />
+          </div>
+        </div>
+      </div>
+  );
+}
 function Showcase({
   title,
   para1,
@@ -82,14 +117,12 @@ export default function PromisePage() {
     </p>
 
    
-     <img
-      src={hero}
-      className="object-cover mt-6 md:mt-8  h-[40vh] sm:h-[50vh] md:h-[60vh] w-full rounded-xl md:rounded-2xl bg-gray-300"
-      alt="Hero showcase"
-    />
+    <RevealImageAnimation
+  image={hero}
+  className="mt-6 md:mt-8 h-[40vh] sm:h-[50vh] md:h-[60vh] w-full rounded-xl md:rounded-2xl "
+/>
 
   </div>
-
 </section>
 
       {/* ========= ORANGE STRIP ========= */}

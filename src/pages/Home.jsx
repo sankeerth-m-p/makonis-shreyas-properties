@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import RevealImageAnimation from "../components/RevealImageAnimation";
 const heroImages = [
   "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
   "https://images.unsplash.com/photo-1501183638710-841dd1904471",
@@ -141,11 +141,15 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
             <div className="flex justify-end pr-2">
-              <img
+              {/* <img
                 src="https://images.unsplash.com/photo-1524758631624-e2822e304c36"
                 alt="Thoughtful Spaces"
                 className="w-[420px] h-[520px] object-cover"
-              />
+              /> */}
+              <RevealImageAnimation
+  image="https://images.unsplash.com/photo-1524758631624-e2822e304c36"
+  className="w-[420px] h-[520px] object-cover "
+/>
             </div>
 
             <div className="flex flex-col justify-between h-[520px]">
