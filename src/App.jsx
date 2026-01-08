@@ -47,6 +47,21 @@ function App() {
               </motion.div>
             }
           />
+
+            <Route
+            path="/our-story"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
+                <Ourstory />
+              </motion.div>
+            }
+          />
         </Routes>
       </AnimatePresence>
 
