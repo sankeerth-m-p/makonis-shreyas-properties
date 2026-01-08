@@ -6,7 +6,7 @@ function RevealImageAnimation({ image, className = "" }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setReveal(true);
-    }, 500);
+    }, 50);
 
     return () => clearTimeout(timer);
   }, []);
