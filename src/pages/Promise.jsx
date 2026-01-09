@@ -134,10 +134,10 @@ export default function PromisePage() {
       {/* ========= ORANGE STRIP ========= */}
       <section className="bg-ORANGE p-10 items-center flex text-white h-screen md:h-auto w-full py-16">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-4xl font-semibold leading-relaxed">
+          <AnimatedHeading className="text-4xl font-semibold leading-relaxed">
             Shaping the urban lifestyle through thoughtful design and purposeful planning.
 
-          </h2>
+          </AnimatedHeading>
         </div>
       </section>
 

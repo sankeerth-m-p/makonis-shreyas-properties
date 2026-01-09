@@ -43,7 +43,7 @@ deliver more than just properties
             {/* LEFT – VERTICAL IMAGE */}
             <div className="rounded-2xl overflow-hidden shadow-xl h-[520px]">
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+                src="src\assets\images\story_3.jpg"
                 alt="Design discussion"
                 className="w-full h-full object-cover"
               />
@@ -53,7 +53,7 @@ deliver more than just properties
             <div className="pt-20">
               <div className="rounded-2xl overflow-hidden shadow-xl h-[240px] mb-8">
                 <img
-                  src="https://images.unsplash.com/photo-1521791055366-0d553872125f"
+                  src="src\assets\images\story_1.jpg"
                   alt="Client meeting"
                   className="w-full h-full object-cover"
                 />
@@ -209,57 +209,49 @@ deliver more than just properties
 {/* ================= PEOPLE FIRST PHILOSOPHY SECTION ================= */}
 {/* ================= PEOPLE FIRST PHILOSOPHY SECTION ================= */}
 <section className="relative w-full overflow-hidden">
-
   {/* IMAGE AREA */}
-  <div className="relative w-full h-[520px]">
+  <div className="relative w-full h-full">
     <img
-      src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+      src="src/assets/images/story_2.jpg"
       alt="Team meeting"
       className="w-full h-full object-cover"
     />
 
-    {/* ORANGE SVG WAVE */}
-    <svg
-      viewBox="0 0 1440 220"
-      className="absolute bottom-0 left-0 w-full"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M0,120 
-           C240,200 480,200 720,170 
-           C960,140 1200,80 1440,120 
-           L1440,220 L0,220 Z"
-        fill="#ff6a1a"
-      />
-    </svg>
-  </div>
-
-  {/* ORANGE CONTENT AREA */}
-  <div className="bg-[#ff6a1a]">
-    <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-20 text-white">
-
+    {/* SVG DIVIDER */}
+    <img
+      src="src/assets/images/story_orsngebg.svg"
+      alt=""
+      className="absolute bottom-0 left-0 w-full h-auto pointer-events-none"
+    />{/* ORANGE CONTENT AREA */}
+  <div className="bg-ORANGE  absolute bottom-28 left-0 w-full h-auto ">
+    <div className="max-w-6xl mx-auto  grid md:grid-cols-2 gap-20 text-white">
+      
       {/* LEFT HEADING */}
-       <AnimatedHeading 
-  as="h1"
-  delay={0}
-  staggerDelay={0.15} className="text-2xl md:text-3xl font-semibold leading-snug max-w-md">
-        A Philosophy that <br />
+      <AnimatedHeading
+        as="h1"
+        delay={0}
+        staggerDelay={0.15}
+        className="text-2xl md:text-3xl font-semibold leading-snug max-w-md"
+      >
+        A Philosophy that 
         puts people first.
       </AnimatedHeading>
 
-            {/* RIGHT DESCRIPTION */}
-            <FloatUpText>
-
-      <p className="text-sm md:text-base opacity-90 max-w-md">
-        Our approach is guided by thoughtful planning, ethical practices,
-        and an uncompromising commitment to quality.
-      </p>
-            </FloatUpText>
+      {/* RIGHT DESCRIPTION */}
+      <FloatUpText>
+        <p className="text-sm md:text-base opacity-90 max-w-md">
+          Our approach is guided by thoughtful planning, ethical practices,
+          and an uncompromising commitment to quality.
+        </p>
+      </FloatUpText>
 
     </div>
   </div>
+  </div>
 
+  
 </section>
+
 
 {/* ================= IMAGE + TEXT SECTION ================= */}
 <section className="w-full bg-white py-24">
@@ -313,35 +305,43 @@ deliver more than just properties
 <section className="w-full bg-[#f4efe4] py-32">
   <div className="max-w-4xl mx-auto px-6 text-center">
 
-          {/* QUOTE TEXT WITH EXACT INLINE QUOTES */}
-         
+    {/* QUOTE BLOCK */}
+    <div className="relative inline-block px-10 py-6">
 
-    <p className="text-xl md:text-2xl text-gray-800 leading-relaxed mb-10">
-          
-            <span className="text-3xl align-top  ">“</span>
-            <AnimatedHeading >
+      {/* OPENING QUOTE */}
 
-      From the very first meeting to project handover,
-      {'\n'}
-      the experience was smooth and transparent.
-            </AnimatedHeading>
-      <span className="text-3xl align-bottom">”</span>
-    </p>
+      <span className="absolute -top-6 -left-4 text-9xl text-gray-700 leading-none">
+        “
+      </span>
+      {/* QUOTE TEXT */}
+      <AnimatedHeading className="text-xl md:text-2xl text-gray-800 leading-relaxed">
+          From the very first meeting to project handover,
+          {'\n'}
+          the experience was smooth and transparent.
+        
+      </AnimatedHeading>
 
-          {/* AUTHOR */}<FloatUpText>
-            
-    <p className="text-sm font-medium text-gray-900">
-      Krishna samanth Lella
-    </p>
+      {/* CLOSING QUOTE */}
+      <span className="absolute -bottom-6 -right-4 text-7xl text-gray-700 leading-none">
+        ”
+      </span>
 
-    {/* DESIGNATION */}
-    <p className="text-xs text-gray-500 mt-1">
-      Founder, Shreyas Infra
-    </p>
+    </div>
+
+    {/* AUTHOR */}
+    <FloatUpText>
+      <p className="mt-10 text-md font-medium text-gray-900">
+        Krishna Samanth Lella
+      </p>
+
+      <p className="text-sm text-gray-500 mt-1">
+        Founder, Shreyas Infra
+      </p>
     </FloatUpText>
 
   </div>
 </section>
+
 
 
 
