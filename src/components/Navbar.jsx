@@ -35,10 +35,11 @@ const NavContent = () => {
               to={path}
               className={`
                 transition
-                ${isActive
-                  ? "text-ORANGE border-b-2 border-transparent"
-                  : "hover:text-ORANGE hover:border-b-2 hover:border-ORANGE"}
-              `}
+                border-b-2
+  ${isActive
+    ? "text-ORANGE border-ORANGE"
+    : "text-gray-800 border-transparent hover:text-ORANGE hover:border-ORANGE"}
+`}
             >
               {label}
             </Link>
