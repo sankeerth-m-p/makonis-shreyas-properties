@@ -1,7 +1,7 @@
-import hero from "../assets/images/promise_hero.png";
-import artistry from "../assets/images/promise_artistry.png";
-import nature from "../assets/images/promise_nature.png";
-import aesthetic from "../assets/images/promise_aesthetic_desgin.png";
+import hero from "../assets/images/promise_hero.jpg";
+import artistry from "../assets/images/promise_artistry.jpg";
+import nature from "../assets/images/promise_nature.jpg";
+import aesthetic from "../assets/images/promise_aesthetic_desgin.jpg";
 import RevealImageAnimation from "../components/RevealImageAnimation";
 import { useEffect, useState ,useRef} from "react";
 import FloatUpText from "../components/floatUpText";
