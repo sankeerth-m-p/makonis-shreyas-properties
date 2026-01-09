@@ -2,10 +2,11 @@ import "./index.css";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "./components/Navbar.jsx";
-import Footer from "./components/Footer.jsx";
-import OurStory from "./pages/Ourstory.jsx";
+import Footer from "./components/footer.jsx";
+import OurStory from "./pages/OurStory.jsx";
 import Home from "./pages/Home";
 import PromisePage from "./pages/Promise.jsx";
+import ReactLenis from "lenis/react";
 const pageVariants = {
   initial: { opacity: 0, y: 10 },
   animate: { opacity: 1, y: 0 },
@@ -16,8 +17,23 @@ function App() {
     <>
        <Navbar />
 
+          <ReactLenis
+            root
+            options={{
+              lerp: 0.1,
+              duration: 1.2,
+              orientation: 'vertical',
+              gestureOrientation: 'vertical',
+              smoothWheel: true,
+              wheelMultiplier: 1,
+              smoothTouch: false,
+              touchMultiplier: 2,
+            }}
+          >
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
+
+         
           <Route
             path="/"
             element={
@@ -61,11 +77,12 @@ function App() {
                 <OurStory/>
               </motion.div>
             }
-          />
-        </Routes>
+            />
+        </Routes> 
       </AnimatePresence>
 
       <Footer />
+          </ReactLenis>
     </>
   );
 }
