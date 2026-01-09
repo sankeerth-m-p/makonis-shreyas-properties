@@ -125,7 +125,7 @@ export default function PromisePage() {
    
     <RevealImageAnimation
   image={hero}
-  className="mt-6 md:mt-6 h-[40vh] sm:h-[0vh] md:h-[50vh] w-full rounded-xl md:rounded-2xl "
+  className="mt-6 md:mt-6 h-[40vh] sm:h-[0vh] md:h-[60vh] w-full rounded-xl md:rounded-2xl "
 />
 
   </div>
