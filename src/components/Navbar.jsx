@@ -34,11 +34,22 @@ const NavContent = () => {
               key={label}
               to={path}
               className={`
-                transition
-                border-b-2
+  relative
+  transition-colors duration-300
+  after:content-['']
+  after:absolute
+  after:bottom-0
+  after:left-0
+  after:right-0
+  after:h-[2px]
+  after:bg-ORANGE
+  after:origin-center
+  after:transition-transform
+  after:duration-300
+  after:ease-out
   ${isActive
-    ? "text-ORANGE border-ORANGE"
-    : "text-gray-800 border-transparent hover:text-ORANGE hover:border-ORANGE"}
+  ? "text-ORANGE after:scale-x-0"
+  : "text-gray-800 after:scale-x-0 hover:text-ORANGE hover:after:scale-x-100"}
 `}
             >
               {label}
