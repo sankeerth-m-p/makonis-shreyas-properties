@@ -6,28 +6,52 @@ import Footer from "./components/footer.jsx";
 import OurStory from "./pages/OurStory.jsx";
 import Home from "./pages/Home";
 import PromisePage from "./pages/Promise.jsx";
-const pageVariants = {
-  initial: { opacity: 0, y: 10 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -10 },
-};
-function App() {
+import ReactLenis from "lenis/react";
+import ScrollToTop from "./components/scrollToTop.jsx";
+import { pageVariants, pageTransition } from "./components/pageTransitions.js";
+import { useLocation } from "react-router-dom";
+import { useRef } from "react";
+
+function App() {const location = useLocation();
+const prevPath = useRef(location.pathname);
+
+const direction =
+  location.pathname.length > prevPath.current.length ? 1 : -1;
+
+prevPath.current = location.pathname;
+
   return (
     <>
        <Navbar />
 
+          <ReactLenis
+            root
+            options={{
+              lerp: 0.1,
+              duration: 1.2,
+              orientation: 'vertical',
+              gestureOrientation: 'vertical',
+              smoothWheel: true,
+              wheelMultiplier: 1,
+              smoothTouch: false,
+              touchMultiplier: 2,
+            }}
+          ><ScrollToTop/>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
+
+         
           <Route
             path="/"
             element={
               <motion.div
-                variants={pageVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
+  custom={direction}
+  variants={pageVariants}
+  initial="initial"
+  animate="animate"
+  exit="exit"
+  transition={pageTransition}
+>
                 <Home />
               </motion.div>
             }
@@ -37,12 +61,13 @@ function App() {
             path="/our-promise"
             element={
               <motion.div
-                variants={pageVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
+  custom={direction}
+  variants={pageVariants}
+  initial="initial"
+  animate="animate"
+  exit="exit"
+  transition={pageTransition}
+>
                 <PromisePage />
               </motion.div>
             }
@@ -52,20 +77,22 @@ function App() {
             path="/our-story"
             element={
               <motion.div
-                variants={pageVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
+  custom={direction}
+  variants={pageVariants}
+  initial="initial"
+  animate="animate"
+  exit="exit"
+  transition={pageTransition}
+>
                 <OurStory/>
               </motion.div>
             }
-          />
-        </Routes>
+            />
+        </Routes> 
       </AnimatePresence>
 
       <Footer />
+          </ReactLenis>
     </>
   );
 }

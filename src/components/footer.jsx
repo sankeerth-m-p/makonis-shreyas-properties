@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b font-medium uppercase from-neutral-900 to-black text-neutral-400 min-h-[66vh] md:h-1/2 lg:max-h-2/3 flex justify-center items-center">
+    <footer className="bg-gradient-to-b font-medium uppercase from-neutral-900 to-black text-neutral-400 h-[66vh] md:max-h-2/3   flex justify-center items-center ">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:m-36 lg:mx-64 py-8 md:py-0">
         {/* Logo Section - Moves to top on mobile */}
         <div className="md:hidden flex flex-col items-center mb-8">
@@ -104,10 +104,8 @@ const Footer = () => {
           {/* Column 3 - Hidden on mobile, shown on desktop */}
           <div className=" md:block md:text-right flex flex-col md:items-end">
             <div className="flex md:justify-end items-center gap-2 mb-3">
-              <div className="w-8 h-8 bg-white/90 rounded-sm" />
-              <span className="text-white text-2xl font-semibold tracking-wide">
-                Shreyas | LOGO
-              </span>
+              
+              <img width="300" src="src\assets\images\shreyas_logo_footer.png"/>
             </div>
 
             <div className="text-sm mt-20 space-y-3">

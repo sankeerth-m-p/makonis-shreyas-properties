@@ -1,21 +1,36 @@
 import React from "react";
+import AnimatedHeading from "../components/animatedHeading";
+import FloatUpText from "../components/floatUpText";import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
-const OurStory = () => {
+const OurStory = () => {const sectionRef = useRef(null);
+const { scrollYProgress } = useScroll({
+  target: sectionRef,
+  offset: ["start end", "end start"],
+});
+const leftCircleX = useTransform(scrollYProgress, [0, 1], [-200, 10]);
+const rightCircleX = useTransform(scrollYProgress, [0, 1], [20, -100]);
+
   return (
-    <div className="w-full relative overflow-hidden">
+    <div className="w-full pt-20 relative overflow-hidden">
 
       {/* ================= ORANGE SECTION ================= */}
-      <section className="bg-[#ff6a1a] pt-20 pb-60 relative">
-        <div className="max-w-6xl mx-auto px-6 text-center text-white">
-          <h1 className="text-3xl md:text-4xl font-semibold leading-snug">
-            Our journey is defined by a commitment to <br />
-            deliver more than just properties
-          </h1>
-
+      <section className="bg-ORANGE pt-20 pb-72 relative">
+        <div className="max-w-6xl mx-auto  flex flex-col justify-center px-6 text-center text-white">
+          <AnimatedHeading 
+  as="h1"
+  delay={0}
+  staggerDelay={0.15} className="text-3xl md:text-4xl  font-semibold leading-normal">
+            Our journey is defined by a commitment to {'\n'}
+deliver more than just properties
+          </AnimatedHeading>
+          <FloatUpText>
+            
           <p className="mt-6 max-w-3xl mx-auto text-sm md:text-base opacity-90">
             we create thoughtfully designed spaces that inspire belonging,
             enhance lifestyles, and stand as lasting symbols of quality and trust.
           </p>
+</FloatUpText>
         </div>
 
         {/* WHITE CURVE */}
@@ -23,53 +38,68 @@ const OurStory = () => {
       </section>
 
       {/* ================= WHITE SECTION ================= */}
-      <section className="bg-white relative -mt-48 pt-10">
+      <section ref={sectionRef} className=" bg-white   relative -mt-48 pt-10">
 
         {/* GREY BACKGROUND SHAPES */}
-        <div className="absolute top-24 left-[-160px] w-[420px] h-[420px] bg-gray-100 rounded-full z-0" />
-        <div className="absolute top-60 right-[-200px] w-[380px] h-[380px] bg-gray-100 rounded-full z-0" />
+       {/* LEFT CIRCLE */}
+  <motion.div
+    style={{ x: leftCircleX }}
+    className="absolute top-24 left-[-160px] w-[420px] h-[420px] bg-gray-100 rounded-full z-0"
+  />
 
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
+  {/* RIGHT CIRCLE */}
+  <motion.div
+    style={{ x: rightCircleX }}
+    className="absolute top-60 right-[-200px] w-[380px] h-[380px] bg-gray-100 rounded-full z-0"
+  />
+        <div className="max-w-6xl -top-24  mx-auto px-6 relative z-10">
 
           {/* ================= IMAGES ================= */}
-          <div className="grid md:grid-cols-2 gap-14 items-start">
+          <div className="grid md:grid-cols-2 gap-14  items-start">
 
             {/* LEFT – VERTICAL IMAGE */}
-            <div className="rounded-2xl overflow-hidden shadow-xl h-[520px]">
+            <div className="rounded-2xl overflow-hidden shadow-xl "> 
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+                src="src\assets\images\story_3.jpg"
                 alt="Design discussion"
-                className="w-full h-full object-cover"
+                className="w-full h-full  object-cover"
               />
             </div>
 
             {/* RIGHT – IMAGE + TEXT */}
             <div className="pt-20">
-              <div className="rounded-2xl overflow-hidden shadow-xl h-[240px] mb-8">
+              <div className="rounded-2xl overflow-hidden shadow-xl  mb-8">
                 <img
-                  src="https://images.unsplash.com/photo-1521791055366-0d553872125f"
+                  src="src\assets\images\story_1.jpg"
                   alt="Client meeting"
                   className="w-full h-full object-cover"
                 />
                 
 
               </div>
-
-              <h2 className="text-xl font-semibold text-gray-900 mb-4 leading-snug">
+<AnimatedHeading 
+  as="h1"
+  delay={0}
+                staggerDelay={0.15} className="text-xl font-semibold text-gray-900 mb-4 leading-snug">
+                
+              {/* <h2 className="text-xl font-semibold text-gray-900 mb-4 leading-snug"> */}
                 We are a forward thinking real estate company driven by the belief
                 that well designed spaces shape better lives.
-              </h2>
-
+              {/* </h2> */}
+  </AnimatedHeading>
+              <FloatUpText>
+                
               <p className="text-sm text-gray-600">
                 With a strong focus on quality, transparency, and long-term value,
                 we create developments that blend thoughtful planning with
                 enduring craftsmanship.
               </p>
+</FloatUpText>
             </div>
           </div>
 
           {/* ================= TEXT BELOW ================= */}
-          <div className="mt-20 text-sm text-gray-600 space-y-6 max-w-5xl">
+          <FloatUpText className="mt-20  text-sm text-gray-600 space-y-6 max-w-5xl">
             <p>
               We believe real estate is not just about constructing buildings,
               but about creating environments that enhance the way people live,
@@ -87,7 +117,7 @@ const OurStory = () => {
               We strive to balance modern design with sustainability, ensuring our
               developments respect nature while embracing progress.
             </p>
-          </div>
+          </FloatUpText>
 
         </div>
       </section>
@@ -145,34 +175,50 @@ const OurStory = () => {
 
     {/* OUR VISION */}
     <div>
-      <p className="text-sm text-gray-500 mb-3">Our vision</p>
+       <AnimatedHeading 
+  as="h1"
+  delay={0}
+  staggerDelay={0.15} className="text-sm text-gray-500 mb-3">Our vision</AnimatedHeading>
       <div className="w-24 h-[1px] bg-gray-400 mb-8" />
 
-      <h3 className="text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md">
+      <AnimatedHeading 
+  as="h1"
+  delay={0}
+  staggerDelay={0.15} className="text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md">
         To create thoughtfully planned spaces that elevate everyday living.
-      </h3>
-
+      </AnimatedHeading>
+            <FloatUpText>
+              
       <p className="text-sm text-gray-600 leading-relaxed max-w-md">
         To create thoughtfully planned spaces that elevate everyday living,
         blending design, functionality, and sustainability to shape enduring
         communities for the future.
       </p>
+</FloatUpText>
     </div>
 
     {/* OUR MISSION */}
     <div>
-      <p className="text-sm text-gray-500 mb-3">Our mission</p>
+      <AnimatedHeading 
+  as="h1"
+  delay={0}
+  staggerDelay={0.15} className="text-sm text-gray-500 mb-3">Our mission</AnimatedHeading>
       <div className="w-24 h-[1px] bg-gray-400 mb-8" />
 
-      <h3 className="text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md">
+      <AnimatedHeading 
+  as="h1"
+  delay={0}
+  staggerDelay={0.15} className="text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md">
         To develop responsibly by integrating sustainable practices.
-      </h3>
-
+      </AnimatedHeading>
+            <FloatUpText>
+              
       <p className="text-sm text-gray-600 leading-relaxed max-w-md">
         To develop responsibly by integrating sustainable practices,
         respecting the environment, and creating communities that support
         healthier, balanced lifestyles.
       </p>
+</FloatUpText>
     </div>
 
   </div>
@@ -180,51 +226,49 @@ const OurStory = () => {
 {/* ================= PEOPLE FIRST PHILOSOPHY SECTION ================= */}
 {/* ================= PEOPLE FIRST PHILOSOPHY SECTION ================= */}
 <section className="relative w-full overflow-hidden">
-
   {/* IMAGE AREA */}
-  <div className="relative w-full h-[520px]">
+  <div className="relative w-full h-full">
     <img
-      src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+      src="src/assets/images/story_2.jpg"
       alt="Team meeting"
       className="w-full h-full object-cover"
     />
 
-    {/* ORANGE SVG WAVE */}
-    <svg
-      viewBox="0 0 1440 220"
-      className="absolute bottom-0 left-0 w-full"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M0,120 
-           C240,200 480,200 720,170 
-           C960,140 1200,80 1440,120 
-           L1440,220 L0,220 Z"
-        fill="#ff6a1a"
-      />
-    </svg>
-  </div>
-
-  {/* ORANGE CONTENT AREA */}
-  <div className="bg-[#ff6a1a]">
-    <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-20 text-white">
-
+    {/* SVG DIVIDER */}
+    <img
+      src="src/assets/images/story_orsngebg.svg"
+      alt=""
+      className="absolute bottom-0 left-0 w-full h-auto pointer-events-none"
+    />{/* ORANGE CONTENT AREA */}
+  <div className="bg-ORANGE  absolute bottom-28 left-0 w-full h-auto ">
+    <div className="max-w-6xl mx-auto  grid md:grid-cols-2 gap-20 text-white">
+      
       {/* LEFT HEADING */}
-      <h3 className="text-2xl md:text-3xl font-semibold leading-snug max-w-md">
-        A Philosophy that <br />
+      <AnimatedHeading
+        as="h1"
+        delay={0}
+        staggerDelay={0.15}
+        className="text-2xl md:text-3xl font-semibold leading-snug max-w-md"
+      >
+        A Philosophy that 
         puts people first.
-      </h3>
+      </AnimatedHeading>
 
       {/* RIGHT DESCRIPTION */}
-      <p className="text-sm md:text-base opacity-90 max-w-md">
-        Our approach is guided by thoughtful planning, ethical practices,
-        and an uncompromising commitment to quality.
-      </p>
+      <FloatUpText>
+        <p className="text-sm md:text-base opacity-90 max-w-md">
+          Our approach is guided by thoughtful planning, ethical practices,
+          and an uncompromising commitment to quality.
+        </p>
+      </FloatUpText>
 
     </div>
   </div>
+  </div>
 
+  
 </section>
+
 
 {/* ================= IMAGE + TEXT SECTION ================= */}
 <section className="w-full bg-white py-24">
@@ -242,7 +286,7 @@ const OurStory = () => {
     </div>
 
     {/* RIGHT TEXT */}
-    <div className="md:col-span-8 text-gray-600 text-sm leading-relaxed space-y-6">
+    <FloatUpText className="md:col-span-8 text-gray-600 text-sm leading-relaxed space-y-6">
       <p>
         We believe real estate is not just about constructing buildings, but about
         creating environments that enhance the way people live, grow, and connect.
@@ -270,7 +314,7 @@ const OurStory = () => {
         Every project we undertake is guided by thoughtful planning, responsible
         development, and a deep understanding of our customers’ aspirations.
       </p>
-    </div>
+    </FloatUpText>
 
   </div>
 </section>
@@ -278,27 +322,43 @@ const OurStory = () => {
 <section className="w-full bg-[#f4efe4] py-32">
   <div className="max-w-4xl mx-auto px-6 text-center">
 
-    {/* QUOTE TEXT WITH EXACT INLINE QUOTES */}
-    <p className="text-xl md:text-2xl text-gray-800 leading-relaxed mb-10">
-      <span className="text-3xl align-top">“</span>
-      From the very first meeting to project handover,
-      <br />
-      the experience was smooth and transparent.
-      <span className="text-3xl align-bottom">”</span>
-    </p>
+    {/* QUOTE BLOCK */}
+    <div className="relative inline-block px-10 py-6">
+
+      {/* OPENING QUOTE */}
+
+      <span className="absolute -top-6 -left-4 text-9xl text-gray-700 leading-none">
+        “
+      </span>
+      {/* QUOTE TEXT */}
+      <AnimatedHeading className="text-xl md:text-2xl text-gray-800 leading-relaxed">
+          From the very first meeting to project handover,
+          {'\n'}
+          the experience was smooth and transparent.
+        
+      </AnimatedHeading>
+
+      {/* CLOSING QUOTE */}
+      <span className="absolute -bottom-6 -right-4 text-7xl text-gray-700 leading-none">
+        ”
+      </span>
+
+    </div>
 
     {/* AUTHOR */}
-    <p className="text-sm font-medium text-gray-900">
-      Krishna samanth Lella
-    </p>
+    <FloatUpText>
+      <p className="mt-10 text-md font-medium text-gray-900">
+        Krishna Samanth Lella
+      </p>
 
-    {/* DESIGNATION */}
-    <p className="text-xs text-gray-500 mt-1">
-      Founder, Shreyas Infra
-    </p>
+      <p className="text-sm text-gray-500 mt-1">
+        Founder, Shreyas Infra
+      </p>
+    </FloatUpText>
 
   </div>
 </section>
+
 
 
 

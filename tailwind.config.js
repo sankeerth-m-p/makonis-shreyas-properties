@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ORANGE: "#ff6316",
+        ORANGE: "#ff6417",
+        ORANGE2: "#ff7f15",
         
       },fontFamily: {
         aeonik: ["Aeonik", "sans-serif"],
