@@ -1,15 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import RevealImageAnimation from "../components/RevealImageAnimation";
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
 import expertImg from "../assets/Home/expert.jpg";
 import promiseImg from "../assets/home/promisesection.jpg";
+import aboutUsImg from "../assets/home/aboutus.jpg";
+import aboutUsImg1 from "../assets/home/aboutus1.jpg";
+import nature1 from "../assets/home/naturesign1.jpg";
+import nature2 from "../assets/home/naturesign2.png";
+import nhIcon from "../assets/home/NH-4.svg";
+import airportIcon from "../assets/home/Airport.svg";
+import hillIcon from "../assets/home/Hill.svg";
+
 const heroImages = [
   "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
   "https://images.unsplash.com/photo-1501183638710-841dd1904471",
   "https://images.unsplash.com/photo-1523217582562-09d0def993a6",
   "https://images.unsplash.com/photo-1505691723518-36a5ac3b2d93",
 ];
+
+const images = [
+  "https://images.unsplash.com/photo-1501183638710-841dd1904471",
+  "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+  "https://images.unsplash.com/photo-1523217582562-09d0def993a6",
+  "https://images.unsplash.com/photo-1494526585095-c41746248156",
+];
+
+
 
 // duplicate first image for seamless looping
 const slides = [...heroImages, heroImages[0]];
@@ -63,6 +80,9 @@ function BespokeImageHover() {
 const Home = () => {
   const [index, setIndex] = useState(0);
   const [enableTransition, setEnableTransition] = useState(true);
+  const whatPeopleRef = useRef(null);
+const [showWave, setShowWave] = useState(false);
+
 
   // auto slide
   useEffect(() => {
@@ -90,6 +110,23 @@ const Home = () => {
       });
     }
   }, [enableTransition]);
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setShowWave(true);
+      }
+    },
+    { threshold: 0.3 }
+  );
+
+  if (whatPeopleRef.current) {
+    observer.observe(whatPeopleRef.current);
+  }
+
+  return () => observer.disconnect();
+}, []);
+
 
   return (
     <>
@@ -99,8 +136,8 @@ const Home = () => {
         {/* HERO SLIDER */}
         <div
           className={`absolute inset-0 flex ${enableTransition
-              ? "transition-transform duration-[1200ms] ease-in-out"
-              : ""
+            ? "transition-transform duration-[1200ms] ease-in-out"
+            : ""
             }`}
           style={{ transform: `translateX(-${index * 100}vw)` }}
           onTransitionEnd={handleTransitionEnd}
@@ -155,7 +192,7 @@ const Home = () => {
                 className="w-[420px] h-[520px] object-cover"
               /> */}
               <RevealImageAnimation
-                image="https://images.unsplash.com/photo-1524758631624-e2822e304c36"
+                image={aboutUsImg}
                 className="w-[420px] h-[520px] object-cover "
               />
             </div>
@@ -164,11 +201,11 @@ const Home = () => {
               <div>
 
                 <AnimatedHeading
-                as="h2"
-                delay={0}
-                staggerDelay={0.15} className="text-[38px] font-semibold text-gray-900 leading-[1.25] mb-6">
-                  Thoughtfully developing 
-                  spaces that reflect city’s 
+                  as="h2"
+                  delay={0}
+                  staggerDelay={0.15} className="text-[38px] font-semibold text-gray-900 leading-[1.25] mb-6">
+                  Thoughtfully developing
+                  spaces that reflect city’s
                   progress and promise
                 </AnimatedHeading>
 
@@ -234,9 +271,9 @@ const Home = () => {
                 delay={0}
                 staggerDelay={0.15} className="text-[28px] font-semibold text-gray-900 leading-snug mb-6">
                 Bespoke
-                services for 
+                services for
                 elevated living
-             </AnimatedHeading>
+              </AnimatedHeading>
               <span className="text-[11px] tracking-widest text-gray-700">
                 VIEW PROJECTS
               </span>
@@ -288,13 +325,13 @@ const Home = () => {
               <div className="w-1/2 bg-[#FF6A13] text-white px-24 py-24 flex flex-col justify-between">
 
                 <AnimatedHeading
-                as="h2"
-                delay={0}
-                staggerDelay={0.15}className="text-[34px] font-medium leading-tight max-w-sm">
-                  Signature spaces 
-                  crafted for 
+                  as="h2"
+                  delay={0}
+                  staggerDelay={0.15} className="text-[34px] font-medium leading-tight max-w-sm">
+                  Signature spaces
+                  crafted for
                   modern living.
-                 </AnimatedHeading>
+                </AnimatedHeading>
 
                 <div>
                   <div
@@ -339,13 +376,13 @@ const Home = () => {
 
           {/* LEFT TEXT */}
           <div className="max-w-sm">
-             <AnimatedHeading
-                as="h1"
-                delay={0}
-                staggerDelay={0.15} className="text-[34px] font-semibold text-[#111] leading-tight">
-              The Story 
+            <AnimatedHeading
+              as="h1"
+              delay={0}
+              staggerDelay={0.15} className="text-[34px] font-semibold text-[#111] leading-tight">
+              The Story
               Behind the Brand
-             </AnimatedHeading>
+            </AnimatedHeading>
           </div>
 
           {/* IMAGE FRAMES */}
@@ -419,7 +456,7 @@ const Home = () => {
           {/* LEFT IMAGE */}
           <div>
             <img
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+              src={aboutUsImg1}
               alt="Team discussion"
               className="w-full h-[520px] object-cover"
             />
@@ -429,14 +466,14 @@ const Home = () => {
           <div>
 
             {/* HEADING */}
-             <AnimatedHeading
-                as="h2"
-                delay={0}
-                staggerDelay={0.15}className="text-[34px] font-semibold text-[#1A1A1A] leading-tight mb-4">
-              What makes us different 
-              lies in how we blend vision 
+            <AnimatedHeading
+              as="h2"
+              delay={0}
+              staggerDelay={0.15} className="text-[34px] font-semibold text-[#1A1A1A] leading-tight mb-4">
+              What makes us different
+              lies in how we blend vision
               with execution.
-             </AnimatedHeading>
+            </AnimatedHeading>
 
             {/* SUBTEXT */}
             <FloatUpText delay={0}>
@@ -506,241 +543,313 @@ const Home = () => {
 
 
 
-      {/* ================= WHAT PEOPLE SAYS (EXACT MATCH) ================= */}
-      <section className="relative bg-[#F4EFE5] overflow-hidden">
+{/* ================= WHAT PEOPLE SAYS (SCROLL-ONLY WAVE) ================= */}
+<section
+  ref={whatPeopleRef}
+  className="relative bg-[#F4EFE5] overflow-hidden"
+>
 
-        {/* TOP WAVE */}
-        <svg
-          viewBox="0 0 1440 160"
-          preserveAspectRatio="none"
-          className="w-full h-[160px] absolute top-0 left-0"
-        >
-          <path
-            d="
-        M0,0
-        H1440
-        V80
-        C1080,160 360,160 0,80
-        Z
-      "
-            fill="#ffffff"
-          />
-        </svg>
+  {/* WAVE — ONLY WHEN SCROLLED */}
+  {showWave && (
+    <svg
+      viewBox="0 0 1440 260"
+      preserveAspectRatio="none"
+      className="absolute top-0 left-0 w-full h-[260px] z-0"
+    >
+      <path
+        d="
+          M0 140
+          C240 40, 480 40, 720 120
+          C960 200, 1200 200, 1440 120
+          L1440 0
+          L0 0
+          Z
+        "
+        fill="#ffffff"
+      />
+    </svg>
+  )}
 
-        {/* CENTER HEADING */}
-        <div className="relative z-10 pt-20 text-center">
-          <p className="text-[16px] text-[#1A1A1A] leading-tight">
-            What <br /> people <br /> says
-          </p>
-        </div>
+  {/* HEADING */}
+  <div className="relative z-10 pt-24 text-center">
+    <p className="text-[16px] text-[#1A1A1A] leading-tight">
+      What <br />
+      people <br />
+      says
+    </p>
+  </div>
 
-        {/* DECORATIVE CIRCLES */}
-        <div className="absolute -left-40 top-48 w-[320px] h-[320px] rounded-full bg-white/40"></div>
-        <div className="absolute -right-40 bottom-24 w-[320px] h-[320px] rounded-full bg-white/40"></div>
+  {/* CONTENT */}
+  <div className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-36">
 
-        {/* TESTIMONIAL CONTENT */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-28 pb-36 text-center">
+    {/* QUOTE */}
+    <div className="relative max-w-4xl mx-auto text-center">
+      <span className="absolute -left-12 top-0 text-[48px]">“</span>
 
-          {/* QUOTE */}
-          <p className="text-[22px] text-[#1A1A1A] leading-relaxed mb-14">
-            <span className="text-[48px] align-top">“</span>
-            From the very first meeting to project handover,
-            the experience was smooth and transparent.
-            <span className="text-[48px] align-bottom">”</span>
-          </p>
+      <p className="text-[22px] leading-relaxed">
+        From the very first meeting to project handover,
+        the experience was smooth and transparent.
+      </p>
 
-          {/* AUTHOR */}
-          <div className="flex flex-col items-center gap-3">
-            <img
-              src="https://randomuser.me/api/portraits/women/44.jpg"
-              alt="Neetu sargam"
-              className="w-12 h-12 rounded-full object-cover"
-            />
-            <p className="text-[14px] font-semibold text-[#1A1A1A]">
-              Neetu sargam
-            </p>
-            <p className="text-[12px] text-gray-600">
-              Founder, KPCC International
-            </p>
-          </div>
+      <span className="absolute -right-12 bottom-0 text-[48px]">”</span>
+    </div>
 
-        </div>
-      </section>
-
-      {/* ================= NATURE'S SIGN SECTION (FINAL EXACT) ================= */}
-      <section className="relative w-full h-screen overflow-hidden bg-[#0B1F1A]">
-
-        {/* BACKGROUND IMAGE */}
-        <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-          alt="Nature Community"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-
-        {/* DARK OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F1A]/95 via-[#0B1F1A]/80 to-[#0B1F1A]/40"></div>
-
-        {/* CONTENT */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-end pb-14 text-white">
-
-          {/* INFO ROW */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-12 text-center text-[12px] tracking-wide">
-
-            {/* ITEM 1 */}
-            <div className="flex flex-col items-center gap-3 opacity-90">
-              <span className="w-[1px] h-[28px] bg-white/30"></span>
-              <span className="text-xl">📍</span>
-              <p>
-                Located on <br />
-                NH-44 <br />
-                North Bengaluru
-              </p>
-            </div>
-
-            {/* ITEM 2 */}
-            <div className="flex flex-col items-center gap-3 opacity-90">
-              <span className="w-[1px] h-[28px] bg-white/30"></span>
-              <span className="text-xl">✈️</span>
-              <p>
-                Just <br />
-                20 minutes <br />
-                from Airport
-              </p>
-            </div>
-
-            {/* ITEM 3 */}
-            <div className="flex flex-col items-center gap-3 opacity-90">
-              <span className="w-[1px] h-[28px] bg-white/30"></span>
-              <span className="text-xl">⛰️</span>
-              <p>
-                Very close <br />
-                proximity from <br />
-                Nandi Hills
-              </p>
-            </div>
-
-          </div>
-
-          {/* BOTTOM ROW */}
-          <div className="flex justify-between items-end gap-10">
-
-            {/* LEFT BRAND */}
-            <div className="max-w-md">
-              <p className="text-[14px] text-green-400 mb-2 lowercase">
-                nature’s sign
-              </p>
-              <p className="text-[10px] tracking-widest uppercase mb-3">
-                by shreyas
-              </p>
-
-              <h3 className="text-[20px] leading-snug font-medium">
-                Nature’s sign, <br />
-                Where luxury and nature flow <br />
-                in perfect harmony.
-              </h3>
-            </div>
-
-            {/* RIGHT THUMBNAILS */}
-            <div className="flex gap-4">
-              <img
-                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
-                className="w-[90px] h-[60px] object-cover"
-                alt="thumb1"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1501183638710-841dd1904471"
-                className="w-[90px] h-[60px] object-cover"
-                alt="thumb2"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1523217582562-09d0def993a6"
-                className="w-[90px] h-[60px] object-cover"
-                alt="thumb3"
-              />
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-{/* ================= SPEAK WITH OUR EXPERTS ================= */}
-<section className="w-full bg-white py-20">
-  <div className="max-w-7xl mx-auto px-6">
-
-    <div className="flex items-center justify-center gap-12">
-
-      {/* LEFT CONTENT */}
-      <div className="flex flex-col gap-3 w-[260px]">
-        <span className="text-2xl">🎧</span>
-
-        <p className="text-[14px] text-gray-600">
-          Have any questions?
+    {/* AUTHOR */}
+    <div className="mt-16 flex items-center justify-center gap-3">
+      <img
+        src="https://randomuser.me/api/portraits/women/44.jpg"
+        className="w-10 h-10 rounded-full object-cover"
+        alt="Neetu sargam"
+      />
+      <div className="text-left">
+        <p className="text-[14px] font-semibold">Neetu sargam</p>
+        <p className="text-[12px] text-gray-600">
+          Founder, KPCC International
         </p>
-
-        <h3 className="text-[24px] font-semibold text-[#1A1A1A] leading-snug">
-          Speak with <br />
-          our experts
-        </h3>
       </div>
-
-      {/* CENTER IMAGE */}
-      <div className="w-[240px] h-[320px] rounded-2xl overflow-hidden shadow-md">
-        <img
-          src={expertImg}
-          alt="Expert support"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* RIGHT CONTENT */}
-      <div className="flex flex-col gap-4 w-[260px]">
-        <p className="text-[14px] text-gray-600 leading-relaxed">
-          Request a callback for personalized assistance and project details.
-        </p>
-
-        <button className="bg-[#FF6A13] text-white px-7 py-2.5 rounded-full text-[11px] tracking-widest uppercase hover:bg-[#e85c0f] transition w-fit">
-          Request Callback
-        </button>
-      </div>
-
     </div>
 
   </div>
 </section>
-{/* ================= OUR PROMISE SECTION ================= */}
-<section className="relative w-full h-screen overflow-hidden">
 
-  {/* BACKGROUND IMAGE */}
+
+
+{/* ================= NATURE'S SIGN – POSITION FIXED ================= */}
+<section className="relative w-full h-screen overflow-hidden bg-[#0B1F1A]">
+
+  {/* BACKGROUND IMAGE (UNCHANGED) */}
   <img
-    src={promiseImg}
-    alt="Our Promise"
+    src={nature1} // assets/home image ONLY
+    alt="Nature’s Sign"
     className="absolute inset-0 w-full h-full object-cover"
   />
 
-  {/* DARK OVERLAY */}
-  <div className="absolute inset-0 bg-black/60"></div>
+  {/* OVERLAY */}
+  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1E2A]/95 via-[#0A1E2A]/80 to-transparent z-10" />
+
 
   {/* CONTENT */}
-  <div className="relative z-10 max-w-4xl mx-auto px-6 h-full flex flex-col items-center justify-center text-center text-white">
+  <div className="relative z-20 h-full flex flex-col justify-end">
 
-    <h2 className="text-[28px] md:text-[34px] font-medium leading-snug mb-6">
-      Our promise is to turn urban spaces into <br />
-      meaningful lives.
-    </h2>
+{/* ───────── INFO STRIP (NO OVERLAP, CENTERED ACCENTS) ───────── */}
+<div className="absolute bottom-[190px] w-full">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="flex items-center justify-center text-[#D7E2E8] text-sm">
 
-    <p className="text-[13px] md:text-[14px] text-white/80 max-w-2xl mx-auto mb-10">
-      We design spaces that nurture life itself where <br />
-      craftsmanship and dedicated service come together
-      to elevate living.
-    </p>
+      {/* ITEM 1 */}
+      <div className="flex items-center gap-6">
+        <div className="text-right leading-relaxed">
+          <p>Located on</p>
+          <p>NH-44</p>
+          <p>North Bengaluru</p>
+        </div>
 
-    <button className="bg-[#FF6A13] text-white px-10 py-3 rounded-full text-[11px] tracking-widest uppercase hover:bg-[#e85c0f] transition">
-      Know More
-    </button>
+        <img
+          src={nhIcon}
+          alt="NH-44"
+          className="w-12 h-12 opacity-80"
+        />
+      </div>
 
+      {/* ACCENT LINE (CENTERED) */}
+      <div className="mx-12 flex items-center">
+        <span className="w-[1px] h-[46px] bg-[#6F8C9B]/45" />
+      </div>
+
+      {/* ITEM 2 */}
+      <div className="flex items-center gap-6">
+        <div className="leading-relaxed">
+          <p>Just</p>
+          <p>20 minutes</p>
+          <p>from Airport</p>
+        </div>
+
+        <img
+          src={airportIcon}
+          alt="Airport"
+          className="w-12 h-12 opacity-80"
+        />
+      </div>
+
+      {/* ACCENT LINE (CENTERED) */}
+      <div className="mx-12 flex items-center">
+        <span className="w-[1px] h-[46px] bg-[#6F8C9B]/45" />
+      </div>
+
+      {/* ITEM 3 */}
+      <div className="flex items-center gap-6">
+        <div className="leading-relaxed">
+          <p>Very close</p>
+          <p>proximity from</p>
+          <p>Nandi Hills</p>
+        </div>
+
+        <img
+          src={hillIcon}
+          alt="Hills"
+          className="w-12 h-12 opacity-80"
+        />
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+    {/* ───────── BOTTOM DARK BAND (EXACT ALIGNMENT) ───────── */}
+    <div className="bg-[#15272f] py-6">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-10 text-[#D7E2E8]">
+
+        {/* LEFT – LOGO */}
+       {/* LEFT – LOGO IMAGE */}
+<div className="min-w-[180px] flex items-center">
+  <img
+    src={nature2}
+    alt="Nature's Sign Logo"
+    className="w-[160px] object-contain"
+  />
+</div>
+
+
+        {/* CENTER – TEXT */}
+        <div className="flex-1 max-w-md">
+          <h3 className="text-[18px] leading-snug font-medium">
+            Nature’s sign, <br />
+            Where luxury and nature flow <br />
+            in perfect harmony.
+          </h3>
+        </div>
+{/* RIGHT – IMAGE SLIDER (VISIBLE FIXED) */}
+<div className="relative z-20 w-[360px] flex items-center">
+
+  {/* LEFT ARROW */}
+  <button
+    onClick={() => setIndex(prev => Math.max(prev - 1, 0))}
+    className="absolute -left-8 z-30 bg-[#0A1E2A]/90 text-[#D7E2E8] w-9 h-9 rounded-full flex items-center justify-center"
+  >
+    ‹
+  </button>
+
+  {/* VIEWPORT */}
+  <div className="w-[320px] overflow-hidden mx-auto">
+    <div
+      className="flex gap-3 transition-transform duration-500 ease-out"
+      style={{ transform: `translateX(-${index * 110}px)` }}
+    >
+      {images.map((img, i) => (
+        <img
+          key={i}
+          src={img}
+          className="w-[100px] h-[70px] object-cover shrink-0"
+          alt={`slide-${i}`}
+        />
+      ))}
+    </div>
   </div>
 
+  {/* RIGHT ARROW */}
+  <button
+    onClick={() => setIndex(prev => Math.min(prev + 1, images.length - 3))}
+    className="absolute -right-8 z-30 bg-[#0A1E2A]/90 text-[#D7E2E8] w-9 h-9 rounded-full flex items-center justify-center"
+  >
+    ›
+  </button>
+
+</div>
+
+
+
+
+
+      </div>
+    </div>
+
+  </div>
 </section>
+
+      {/* ================= SPEAK WITH OUR EXPERTS ================= */}
+      <section className="w-full bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="flex items-center justify-center gap-12">
+
+            {/* LEFT CONTENT */}
+            <div className="flex flex-col gap-3 w-[260px]">
+              <span className="text-2xl">🎧</span>
+
+              <p className="text-[14px] text-gray-600">
+                Have any questions?
+              </p>
+
+              <h3 className="text-[24px] font-semibold text-[#1A1A1A] leading-snug">
+                Speak with <br />
+                our experts
+              </h3>
+            </div>
+
+            {/* CENTER IMAGE */}
+            <div className="w-[240px] h-[320px] rounded-2xl overflow-hidden shadow-md">
+              <img
+                src={expertImg}
+                alt="Expert support"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* RIGHT CONTENT */}
+            <div className="flex flex-col gap-4 w-[260px]">
+              <p className="text-[14px] text-gray-600 leading-relaxed">
+                Request a callback for personalized assistance and project details.
+              </p>
+
+              <button className="bg-[#FF6A13] text-white px-7 py-2.5 rounded-full text-[11px] tracking-widest uppercase hover:bg-[#e85c0f] transition w-fit">
+                Request Callback
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+      {/* ================= OUR PROMISE SECTION ================= */}
+      <section className="relative w-full h-screen overflow-hidden">
+
+        {/* BACKGROUND IMAGE */}
+        <img
+          src={promiseImg}
+          alt="Our Promise"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        {/* DARK OVERLAY */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        {/* CONTENT */}
+        <div className="relative z-10 max-w-4xl mx-auto px-6 h-full flex flex-col items-center justify-center text-center text-white">
+
+          <AnimatedHeading
+            as="h2"
+            delay={0}
+            staggerDelay={0.15} className="text-[28px] md:text-[34px] font-medium leading-snug mb-6">
+            Our promise is to turn urban spaces into 
+            meaningful lives.
+          </AnimatedHeading>
+           
+           <FloatUpText delay={0}>
+          <p className="text-[13px] md:text-[14px] text-white/80 max-w-2xl mx-auto mb-10">
+            We design spaces that nurture life itself where <br />
+            craftsmanship and dedicated service come together
+            to elevate living.
+          </p>
+           </FloatUpText>
+          <button className="bg-[#FF6A13] text-white px-10 py-3 rounded-full text-[11px] tracking-widest uppercase hover:bg-[#e85c0f] transition">
+            Know More
+          </button>
+
+        </div>
+
+      </section>
 
 
 
