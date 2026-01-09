@@ -3,8 +3,8 @@ import artistry from "../assets/images/promise_artistry.png";
 import nature from "../assets/images/promise_nature.png";
 import aesthetic from "../assets/images/promise_aesthetic_desgin.png";
 import RevealImageAnimation from "../components/RevealImageAnimation";
-import { useEffect, useState } from "react";
-
+import { useEffect, useState ,useRef} from "react";
+import FloatUpText from "../components/floatUpText";
 function ExpandingFrameReveal() {
   const [reveal, setReveal] = useState(false);
 
@@ -37,6 +37,8 @@ function ExpandingFrameReveal() {
       </div>
   );
 }
+
+
 function Showcase({
   title,
   para1,
@@ -68,12 +70,10 @@ function Showcase({
         </div>
       </div>
 
-      {/* TEXT BLOCK */}
-      <div
-        className={`flex flex-col justify-center px-6 sm:px-8 md:px-20 lg:px-12 py-8 md:py-0 ${
+      {/* TEXT BLOCK */}<FloatUpText className={`flex   flex-col justify-center px-6 sm:px-8 md:px-20 lg:px-12 py-8 md:py-0 ${
           reverse ? "md:order-1 md:items-end" : ""
-        }`}
-      >
+        }`} delay={0}>
+      
         
         
 
@@ -84,7 +84,8 @@ function Showcase({
         <p className="text-gray-600 leading-relaxed text-sm md:text-base max-w-full md:max-w-md">
           {para2}
         </p>
-      </div>
+     
+      </FloatUpText>
     </section>
   );
 }
@@ -136,6 +137,8 @@ export default function PromisePage() {
       </section>
 
       {/* ========= SHOWCASE ========= */}
+      <section>
+
       <Showcase
         title="Aesthetic Design"
         para1="At Shreyas Infra, our design process is driven by purpose, precision, and people. We begin by understanding the land, its surroundings, and the lifestyle aspirations of future residents. Every plan is thoughtfully crafted to balance aesthetics, functionality, and sustainability.
@@ -150,15 +153,16 @@ export default function PromisePage() {
         para2="Our commitment to craftsmanship ensures that each development is not only visually refined but also durable, functional, and built to stand the test of time."
         image={artistry}
         reverse
-      />
+        />
 
       <Showcase
         title="Nature Oriented"
         para1="Our nature-oriented projects are designed to live in harmony with the environment. By preserving natural landscapes, integrating green spaces, and prioritizing open, breathable layouts, we create developments that offer a healthier and more balanced way of living."
         para2="From tree-lined avenues and landscaped gardens to eco-sensitive planning and sustainable practices, every project reflects our commitment to nature, well-being, and long-term environmental responsibility."
         image={nature}
-      />
+        />
 
+        </section>
     </div>
   );
 }
