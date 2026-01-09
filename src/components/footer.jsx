@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b font-medium uppercase from-neutral-900 to-black text-neutral-400 min-h-[66vh] md:h-1/2 lg:max-h-2/3 flex justify-center items-center">
+    <footer className="bg-gradient-to-b font-medium uppercase from-neutral-900 to-black text-neutral-400 max-h-[66vh] md:h-1/2 lg:max-h-2/3 h-1/2 flex justify-center items-center">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:m-36 lg:mx-64 py-8 md:py-0">
         {/* Logo Section - Moves to top on mobile */}
         <div className="md:hidden flex flex-col items-center mb-8">
