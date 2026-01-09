@@ -5,38 +5,7 @@ import aesthetic from "../assets/images/promise_aesthetic_desgin.png";
 import RevealImageAnimation from "../components/RevealImageAnimation";
 import { useEffect, useState ,useRef} from "react";
 import FloatUpText from "../components/floatUpText";
-function ExpandingFrameReveal() {
-  const [reveal, setReveal] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setReveal(true);
-    }, 500);
-  }, []);
-
-  return (
-  
-      <div className="text-center">
-        <div className="relative w-[600px] h-[400px] mx-auto mb-8 overflow-hidden rounded-[20px]">
-          <div 
-            className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white overflow-hidden rounded-[20px] transition-all duration-[2000ms] ease-out ${
-              reveal ? 'w-full h-full' : 'w-0 h-0'
-            }`}
-          >
-            <div 
-              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-cover bg-center transition-all duration-[2500ms] ${
-                reveal ? 'blur-0 scale-100' : 'blur-lg scale-110'
-              }`}
-              style={{
-                backgroundImage: `url('${hero}')`,
-                transitionTimingFunction: reveal ? 'cubic-bezier(0.34, 1.56, 0.64, 1)' : 'ease-out'
-              }}
-            />
-          </div>
-        </div>
-      </div>
-  );
-}
 
 
 function Showcase({
@@ -46,12 +15,42 @@ function Showcase({
   image,
   reverse = false,
 }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
     <section className="w-full min-h-[50vh] md:min-h-[75vh] grid grid-cols-1 md:grid-cols-2">
       
       {/* IMAGE BLOCK */}
       <div
+        ref={ref}
         className={`relative bg-gray-300 min-h-[40vh] md:min-h-full ${reverse ? "md:order-2" : ""}`}
+        style={{
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'translateX(0)' : `translateX(${reverse ? '100px' : '-100px'})`,
+          transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
+        }}
       >
         
         <img
@@ -70,13 +69,11 @@ function Showcase({
         </div>
       </div>
 
-      {/* TEXT BLOCK */}<FloatUpText className={`flex   flex-col justify-center px-6 sm:px-8 md:px-20 lg:px-12 py-8 md:py-0 ${
+      {/* TEXT BLOCK */}
+      <FloatUpText className={`flex flex-col justify-center px-6 sm:px-8 md:px-20 lg:px-12 py-8 md:py-0 ${
           reverse ? "md:order-1 md:items-end" : ""
         }`} delay={0}>
-      
         
-        
-
         <p className="text-gray-700 leading-relaxed mb-4 text-sm md:text-base max-w-full md:max-w-md">
           {para1}
         </p>
@@ -109,13 +106,15 @@ export default function PromisePage() {
     <h1 className="text-2xl sm:text-3xl md:text-3xl font-semibold text-gray-900 px-2">
       We Deliver What We Promise
     </h1>
-
+          <FloatUpText delay={0}>
+            
     <p className="mt-4 text-sm sm:text-base md:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
       At every stage of our journey, we stand by our word. From project
       planning to final handover, we ensure transparency, timely delivery,
       and uncompromising quality, so what we promise is exactly what you
       receive.
     </p>
+</FloatUpText>
 
    
     <RevealImageAnimation
