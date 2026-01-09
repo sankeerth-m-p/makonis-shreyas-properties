@@ -3,14 +3,14 @@ import RevealImageAnimation from "../components/RevealImageAnimation";
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
 import expertImg from "../assets/Home/expert.jpg";
-import promiseImg from "../assets/home/promisesection.jpg";
-import aboutUsImg from "../assets/home/aboutus.jpg";
-import aboutUsImg1 from "../assets/home/aboutus1.jpg";
-import nature1 from "../assets/home/naturesign1.jpg";
-import nature2 from "../assets/home/naturesign2.png";
-import nhIcon from "../assets/home/NH-4.svg";
-import airportIcon from "../assets/home/Airport.svg";
-import hillIcon from "../assets/home/Hill.svg";
+import promiseImg from "../assets/Home/promisesection.jpg";
+import aboutUsImg from "../assets/Home/aboutus.jpg";
+import aboutUsImg1 from "../assets/Home/aboutus1.jpg";
+import nature1 from "../assets/Home/naturesign1.jpg";
+import nature2 from "../assets/Home/naturesign2.png";
+import nhIcon from "../assets/Home/NH-4.svg";
+import airportIcon from "../assets/Home/Airport.svg";
+import hillIcon from "../assets/Home/Hill.svg";
 
 const heroImages = [
   "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
