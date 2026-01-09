@@ -334,83 +334,81 @@ const Home = () => {
       </section>
 
       {/* ================= STORY BEHIND THE BRAND (EXACT FRAME) ================= */}
-      <section className="w-full bg-[#F4EFE5] py-32">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+   <section className="w-full bg-[#F4EFE5] h-screen pt-32">
+  <div className="max-w-7xl mx-auto px-6 flex justify-center">
 
-          {/* LEFT TEXT */}
-          <div className="max-w-sm">
-             <AnimatedHeading
-                as="h1"
-                delay={0}
-                staggerDelay={0.15} className="text-[34px] font-semibold text-[#111] leading-tight">
-              The Story 
-              Behind the Brand
-             </AnimatedHeading>
-          </div>
+    {/* CENTER GROUP */}
+    <div className="relative w-[min(70vw,520px)] aspect-[520/420]">
 
-          {/* IMAGE FRAMES */}
-          <div className="relative w-[520px] h-[420px] flex items-center justify-center gap-10">
+      {/* TOP-LEFT TEXT */}
+      <div
+        className=" 
+          absolute 
+          top-0 left-0 
+          -translate-x-[80%]
+          -translate-y-[10%]
+          
+        "
+      >
+        <AnimatedHeading
+          as="h1"
+          delay={0}
+          staggerDelay={0.15}
+          className="text-[clamp(24px,3vw,34px)] font-bold  leading-tight whitespace-pre-line"
+        >
+          The Story
+          {'\n'}
+          Behind the Brand
+        </AnimatedHeading>
+      </div>
 
-            {/* SVG DEFINITIONS */}
-            <svg width="0" height="0" viewBox="0 0 100 400">
-              <defs>
-                {/* LEFT FRAME */}
-                <clipPath id="exactLeft">
-                  <path d="
-              M60 0
-              C20 40 20 120 20 200
-              C20 280 20 360 60 400
-              L100 360
-              L100 40
-              Z
-            " />
-                </clipPath>
+      {/* SVG-MASKED IMAGE */}
+      <div
+        className="w-full h-full bg-center bg-cover"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1501183638710-841dd1904471)",
+          WebkitMaskImage: "url(src/assets/images/logo.svg)",
+          WebkitMaskRepeat: "no-repeat",
+          WebkitMaskSize: "contain",
+          WebkitMaskPosition: "center",
+          maskImage: "url(src/assets/images/logo.svg)",
+          maskRepeat: "no-repeat",
+          maskSize: "contain",
+          maskPosition: "center",
+        }}
+      />
 
-                {/* RIGHT FRAME */}
-                <clipPath id="exactRight">
-                  <path d="
-              M40 0
-              C80 40 80 120 80 200
-              C80 280 80 360 40 400
-              L0 360
-              L0 40
-              Z
-            " />
-                </clipPath>
-              </defs>
-            </svg>
+      {/* BOTTOM-RIGHT TEXT */}
+      <div
+        className="
+          absolute
+          bottom-0 right-0
+          translate-x-[60%]
+          translate-y-[60%]
+          max-w-[26ch]
+          text-right
+        "
+      >
+        <p className="text-[clamp(13px,1.2vw,15px)] text-[#2A2A2A] leading-relaxed mb-6">
+          Our brand tells a story of
+          commitment, trust, and progress.
+        </p>
 
-            {/* LEFT IMAGE */}
-            <img
-              src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
-              alt="Story Left"
-              className="w-[220px] h-full object-cover"
-              style={{ clipPath: "url(#exactLeft)" }}
-            />
+        <button className="text-[11px] tracking-widest uppercase text-[#111] border-b border-[#111] pb-1">
+          KNOW MORE
+        </button>
+      </div>
 
-            {/* RIGHT IMAGE */}
-            <img
-              src="https://images.unsplash.com/photo-1501183638710-841dd1904471"
-              alt="Story Right"
-              className="w-[220px] h-full object-cover"
-              style={{ clipPath: "url(#exactRight)" }}
-            />
-          </div>
+    </div>
 
-          {/* RIGHT TEXT */}
-          <div className="max-w-xs text-right">
-            <p className="text-[15px] text-[#2A2A2A] leading-relaxed mb-6">
-              Our brand tells a story of <br />
-              commitment, trust, and progress.
-            </p>
+  </div>
+</section>
 
-            <button className="text-[11px] tracking-widest uppercase text-[#111] border-b border-[#111] pb-1">
-              Know more
-            </button>
-          </div>
 
-        </div>
-      </section>
+
+
+
       {/* ================= WHAT MAKES US DIFFERENT ================= */}
       {/* ================= WHAT MAKES US DIFFERENT (EXACT MATCH) ================= */}
       <section className="bg-white py-28">

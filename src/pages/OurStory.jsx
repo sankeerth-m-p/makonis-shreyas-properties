@@ -58,7 +58,7 @@ deliver more than just properties
           <div className="grid md:grid-cols-2 gap-14  items-start">
 
             {/* LEFT – VERTICAL IMAGE */}
-            <div className="rounded-2xl overflow-hidden shadow-xl ">
+            <div className="rounded-2xl overflow-hidden shadow-xl "> 
               <img
                 src="src\assets\images\story_3.jpg"
                 alt="Design discussion"
