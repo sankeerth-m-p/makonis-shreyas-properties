@@ -5,6 +5,7 @@ import aesthetic from "../assets/images/promise_aesthetic_desgin.png";
 import RevealImageAnimation from "../components/RevealImageAnimation";
 import { useEffect, useState ,useRef} from "react";
 import FloatUpText from "../components/floatUpText";
+import AnimatedHeading from "../components/animatedHeading";
 
 
 
@@ -91,7 +92,7 @@ function Showcase({
 
 export default function PromisePage() {
   return (
-    <div className="flex flex-col items-center justify-center w-full">
+    <div className="flex overflow-hidden flex-col items-center justify-center w-full">
 
       {/* ========= HERO ========= */}
 <section className="relative w-full min-h-screen md:h-screen pt-20 md:pt-28 overflow-hidden bg-white">
@@ -102,10 +103,15 @@ export default function PromisePage() {
 
   {/* Content */}
   <div className="relative z-10 mx-auto max-w-5xl text-center px-4 md:px-6 lg:px-8 pt-6 md:pt-0">
-    
-    <h1 className="text-2xl sm:text-3xl md:text-3xl font-semibold text-gray-900 px-2">
+    <AnimatedHeading 
+  as="h1"
+  delay={0}
+  staggerDelay={0.15} className="text-2xl sm:text-3xl md:text-3xl font-semibold text-gray-900 px-2"
+>
+   
       We Deliver What We Promise
-    </h1>
+  
+    </AnimatedHeading>
           <FloatUpText delay={0}>
             
     <p className="mt-4 text-sm sm:text-base md:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
@@ -119,7 +125,7 @@ export default function PromisePage() {
    
     <RevealImageAnimation
   image={hero}
-  className="mt-6 md:mt-8 h-[40vh] sm:h-[50vh] md:h-[60vh] w-full rounded-xl md:rounded-2xl "
+  className="mt-6 md:mt-6 h-[40vh] sm:h-[0vh] md:h-[50vh] w-full rounded-xl md:rounded-2xl "
 />
 
   </div>
