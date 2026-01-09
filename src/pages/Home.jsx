@@ -372,18 +372,8 @@ const [showWave, setShowWave] = useState(false);
 
       {/* ================= STORY BEHIND THE BRAND (EXACT FRAME) ================= */}
    <section className="w-full bg-[#F4EFE5] h-screen pt-32">
-  <div className="max-w-7xl mx-auto px-6 flex justify-center">
-
-          {/* LEFT TEXT */}
-          <div className="max-w-sm">
-            <AnimatedHeading
-              as="h1"
-              delay={0}
-              staggerDelay={0.15} className="text-[34px] font-semibold text-[#111] leading-tight">
-              The Story
-              Behind the Brand
-            </AnimatedHeading>
-          </div>
+  <div className="max-w-7xl mx-auto px-6 flex justify-center">{/* CENTER GROUP */}
+    <div className="relative w-[min(70vw,520px)] aspect-[520/420]">
 
       {/* TOP-LEFT TEXT */}
       <div
@@ -405,9 +395,7 @@ const [showWave, setShowWave] = useState(false);
           {'\n'}
           Behind the Brand
         </AnimatedHeading>
-      </div>
-
-      {/* SVG-MASKED IMAGE */}
+      </div> {/* SVG-MASKED IMAGE */}
       <div
         className="w-full h-full bg-center bg-cover"
         style={{
@@ -438,16 +426,12 @@ const [showWave, setShowWave] = useState(false);
         <p className="text-[clamp(13px,1.2vw,15px)] text-[#2A2A2A] leading-relaxed mb-6">
           Our brand tells a story of
           commitment, trust, and progress.
-        </p>
-
-        <button className="text-[11px] tracking-widest uppercase text-[#111] border-b border-[#111] pb-1">
+        </p>  <button className="text-[11px] tracking-widest uppercase text-[#111] border-b border-[#111] pb-1">
           KNOW MORE
         </button>
       </div>
 
-    </div>
-
-  </div>
+    </div> </div>
 </section>
 
 
@@ -777,54 +761,46 @@ const [showWave, setShowWave] = useState(false);
 
       {/* ================= SPEAK WITH OUR EXPERTS ================= */}
       <section className="w-full bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6">
+  <div className="max-w-7xl mx-auto px-6">
 
-          <div className="flex items-center justify-center gap-12">
+    <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-12">
 
-            {/* LEFT CONTENT */}
-            <div className="flex flex-col gap-3 w-[260px]">
-              <span className="text-2xl">🎧</span>
+      {/* LEFT CONTENT */}
+      <div className="flex flex-col gap-3 max-w-[260px] justify-self-end text-right">
+        <span className="text-2xl">🎧</span>
 
-              <p className="text-[14px] text-gray-600">
-                Have any questions?
-              </p>
+        <p className="text-[14px] text-gray-600">
+          Have any questions?
+        </p>
 
-              <h3 className="text-[24px] font-semibold text-[#1A1A1A] leading-snug">
-                Speak with <br />
-                our experts
-              </h3>
-            </div>
+        <h3 className="text-[24px] font-semibold text-[#1A1A1A] leading-snug">
+          Speak with <br />
+          our experts
+        </h3>
+      </div>
 
       {/* CENTER IMAGE */}
-        <RevealImageAnimation
-          image="src/assets/Home/expert.jpg"
-          alt="Expert support"
-          className="w-[300px] h-[400px]  rounded-2xl overflow-hidden "
-        />
-            {/* CENTER IMAGE */}
-            <div className="w-[240px] h-[320px] rounded-2xl overflow-hidden shadow-md">
-              <img
-                src={expertImg}
-                alt="Expert support"
-                className="w-full h-full object-cover"
-              />
-            </div>
+      <RevealImageAnimation
+        image="src/assets/Home/expert.jpg"
+        className="w-[300px] h-[400px] rounded-2xl overflow-hidden justify-self-center"
+      />
 
-            {/* RIGHT CONTENT */}
-            <div className="flex flex-col gap-4 w-[260px]">
-              <p className="text-[14px] text-gray-600 leading-relaxed">
-                Request a callback for personalized assistance and project details.
-              </p>
+      {/* RIGHT CONTENT */}
+      <div className="flex flex-col gap-4 max-w-[260px] justify-self-start">
+        <p className="text-[14px] text-gray-600 leading-relaxed">
+          Request a callback for personalized assistance and project details.
+        </p>
 
-              <button className="bg-[#FF6A13] text-white px-7 py-2.5 rounded-full text-[11px] tracking-widest uppercase hover:bg-[#e85c0f] transition w-fit">
-                Request Callback
-              </button>
-            </div>
+        <button className="bg-[#FF6A13] text-white px-7 py-2.5 rounded-full text-[11px] tracking-widest uppercase hover:bg-[#e85c0f] transition w-fit">
+          Request Callback
+        </button>
+      </div>
 
-          </div>
+    </div>
 
-        </div>
-      </section>
+  </div>
+</section>
+
       {/* ================= OUR PROMISE SECTION ================= */}
       <section className="relative w-full h-screen overflow-hidden">
 
