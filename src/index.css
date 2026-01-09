@@ -69,13 +69,13 @@
 
 /* Body text uses Mont */
 body {
-  font-family: "Mont", sans-serif;
   color: #111;
+  font-family: "Aeonik", sans-serif;
 }
 
 /* Headings use Aeonik */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Aeonik", sans-serif;
+  font-family: "Mont", sans-serif;
   font-weight: 400; /* Regular weight for headings */
   margin: 0;
 }

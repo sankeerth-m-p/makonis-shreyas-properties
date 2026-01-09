@@ -1,21 +1,27 @@
 import React from "react";
-
+import AnimatedHeading from "../components/animatedHeading";
+import FloatUpText from "../components/floatUpText";
 const OurStory = () => {
   return (
-    <div className="w-full relative overflow-hidden">
+    <div className="w-full pt-20 relative overflow-hidden">
 
       {/* ================= ORANGE SECTION ================= */}
-      <section className="bg-[#ff6a1a] pt-20 pb-60 relative">
-        <div className="max-w-6xl mx-auto px-6 text-center text-white">
-          <h1 className="text-3xl md:text-4xl font-semibold leading-snug">
-            Our journey is defined by a commitment to <br />
-            deliver more than just properties
-          </h1>
-
+      <section className="bg-ORANGE pt-20 pb-60 relative">
+        <div className="max-w-6xl mx-auto  flex flex-col justify-center px-6 text-center text-white">
+          <AnimatedHeading 
+  as="h1"
+  delay={0}
+  staggerDelay={0.15} className="text-3xl md:text-4xl  font-semibold leading-normal">
+            Our journey is defined by a commitment to {'\n'}
+deliver more than just properties
+          </AnimatedHeading>
+          <FloatUpText>
+            
           <p className="mt-6 max-w-3xl mx-auto text-sm md:text-base opacity-90">
             we create thoughtfully designed spaces that inspire belonging,
             enhance lifestyles, and stand as lasting symbols of quality and trust.
           </p>
+</FloatUpText>
         </div>
 
         {/* WHITE CURVE */}
@@ -54,22 +60,29 @@ const OurStory = () => {
                 
 
               </div>
-
-              <h2 className="text-xl font-semibold text-gray-900 mb-4 leading-snug">
+<AnimatedHeading 
+  as="h1"
+  delay={0}
+                staggerDelay={0.15} className="text-xl font-semibold text-gray-900 mb-4 leading-snug">
+                
+              {/* <h2 className="text-xl font-semibold text-gray-900 mb-4 leading-snug"> */}
                 We are a forward thinking real estate company driven by the belief
                 that well designed spaces shape better lives.
-              </h2>
-
+              {/* </h2> */}
+  </AnimatedHeading>
+              <FloatUpText>
+                
               <p className="text-sm text-gray-600">
                 With a strong focus on quality, transparency, and long-term value,
                 we create developments that blend thoughtful planning with
                 enduring craftsmanship.
               </p>
+</FloatUpText>
             </div>
           </div>
 
           {/* ================= TEXT BELOW ================= */}
-          <div className="mt-20 text-sm text-gray-600 space-y-6 max-w-5xl">
+          <FloatUpText className="my-20 text-sm text-gray-600 space-y-6 max-w-5xl">
             <p>
               We believe real estate is not just about constructing buildings,
               but about creating environments that enhance the way people live,
@@ -87,7 +100,7 @@ const OurStory = () => {
               We strive to balance modern design with sustainability, ensuring our
               developments respect nature while embracing progress.
             </p>
-          </div>
+          </FloatUpText>
 
         </div>
       </section>
@@ -145,34 +158,50 @@ const OurStory = () => {
 
     {/* OUR VISION */}
     <div>
-      <p className="text-sm text-gray-500 mb-3">Our vision</p>
+       <AnimatedHeading 
+  as="h1"
+  delay={0}
+  staggerDelay={0.15} className="text-sm text-gray-500 mb-3">Our vision</AnimatedHeading>
       <div className="w-24 h-[1px] bg-gray-400 mb-8" />
 
-      <h3 className="text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md">
+      <AnimatedHeading 
+  as="h1"
+  delay={0}
+  staggerDelay={0.15} className="text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md">
         To create thoughtfully planned spaces that elevate everyday living.
-      </h3>
-
+      </AnimatedHeading>
+            <FloatUpText>
+              
       <p className="text-sm text-gray-600 leading-relaxed max-w-md">
         To create thoughtfully planned spaces that elevate everyday living,
         blending design, functionality, and sustainability to shape enduring
         communities for the future.
       </p>
+</FloatUpText>
     </div>
 
     {/* OUR MISSION */}
     <div>
-      <p className="text-sm text-gray-500 mb-3">Our mission</p>
+      <AnimatedHeading 
+  as="h1"
+  delay={0}
+  staggerDelay={0.15} className="text-sm text-gray-500 mb-3">Our mission</AnimatedHeading>
       <div className="w-24 h-[1px] bg-gray-400 mb-8" />
 
-      <h3 className="text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md">
+      <AnimatedHeading 
+  as="h1"
+  delay={0}
+  staggerDelay={0.15} className="text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md">
         To develop responsibly by integrating sustainable practices.
-      </h3>
-
+      </AnimatedHeading>
+            <FloatUpText>
+              
       <p className="text-sm text-gray-600 leading-relaxed max-w-md">
         To develop responsibly by integrating sustainable practices,
         respecting the environment, and creating communities that support
         healthier, balanced lifestyles.
       </p>
+</FloatUpText>
     </div>
 
   </div>
@@ -210,16 +239,22 @@ const OurStory = () => {
     <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-20 text-white">
 
       {/* LEFT HEADING */}
-      <h3 className="text-2xl md:text-3xl font-semibold leading-snug max-w-md">
+       <AnimatedHeading 
+  as="h1"
+  delay={0}
+  staggerDelay={0.15} className="text-2xl md:text-3xl font-semibold leading-snug max-w-md">
         A Philosophy that <br />
         puts people first.
-      </h3>
+      </AnimatedHeading>
 
-      {/* RIGHT DESCRIPTION */}
+            {/* RIGHT DESCRIPTION */}
+            <FloatUpText>
+
       <p className="text-sm md:text-base opacity-90 max-w-md">
         Our approach is guided by thoughtful planning, ethical practices,
         and an uncompromising commitment to quality.
       </p>
+            </FloatUpText>
 
     </div>
   </div>
@@ -242,7 +277,7 @@ const OurStory = () => {
     </div>
 
     {/* RIGHT TEXT */}
-    <div className="md:col-span-8 text-gray-600 text-sm leading-relaxed space-y-6">
+    <FloatUpText className="md:col-span-8 text-gray-600 text-sm leading-relaxed space-y-6">
       <p>
         We believe real estate is not just about constructing buildings, but about
         creating environments that enhance the way people live, grow, and connect.
@@ -270,7 +305,7 @@ const OurStory = () => {
         Every project we undertake is guided by thoughtful planning, responsible
         development, and a deep understanding of our customers’ aspirations.
       </p>
-    </div>
+    </FloatUpText>
 
   </div>
 </section>
@@ -278,16 +313,23 @@ const OurStory = () => {
 <section className="w-full bg-[#f4efe4] py-32">
   <div className="max-w-4xl mx-auto px-6 text-center">
 
-    {/* QUOTE TEXT WITH EXACT INLINE QUOTES */}
+          {/* QUOTE TEXT WITH EXACT INLINE QUOTES */}
+         
+
     <p className="text-xl md:text-2xl text-gray-800 leading-relaxed mb-10">
-      <span className="text-3xl align-top">“</span>
+          
+            <span className="text-3xl align-top  ">“</span>
+            <AnimatedHeading >
+
       From the very first meeting to project handover,
-      <br />
+      {'\n'}
       the experience was smooth and transparent.
+            </AnimatedHeading>
       <span className="text-3xl align-bottom">”</span>
     </p>
 
-    {/* AUTHOR */}
+          {/* AUTHOR */}<FloatUpText>
+            
     <p className="text-sm font-medium text-gray-900">
       Krishna samanth Lella
     </p>
@@ -296,6 +338,7 @@ const OurStory = () => {
     <p className="text-xs text-gray-500 mt-1">
       Founder, Shreyas Infra
     </p>
+    </FloatUpText>
 
   </div>
 </section>
