@@ -118,7 +118,7 @@ const Home = () => {
         {/* ORANGE CARD */}
         <div className="absolute bottom-[-90px] left-0 w-full z-10 animate-cardUp">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="bg-orange-600 text-white px-14 py-16 w-full md:w-[65%]">
+            <div className="bg-ORANGE text-white px-14 py-16 w-full md:w-[65%]">
 
               <AnimatedHeading
                 as="h1"
@@ -212,7 +212,7 @@ const Home = () => {
                 </div>
               </div>
 
-              <button className="mt-10 w-fit bg-orange-600 text-white px-10 py-3 rounded-full text-[12px] tracking-widest hover:bg-orange-700 transition">
+              <button className="mt-10 w-fit bg-ORANGE text-white px-10 py-3 rounded-full text-[12px] tracking-widest hover:bg-orange-700 transition">
                 VIEW DETAILS
               </button>
             </div>

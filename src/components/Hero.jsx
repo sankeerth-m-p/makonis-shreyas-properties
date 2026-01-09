@@ -18,7 +18,7 @@ export default function HeroSection() {
       <div className="relative z-10 flex items-end h-full">
         <div className="max-w-7xl px-6 pb-20">
           {/* Orange Info Card */}
-          <div className="bg-orange-600 text-white max-w-md p-6 rounded-sm shadow-lg">
+          <div className="bg-ORANGE text-white max-w-md p-6 rounded-sm shadow-lg">
             <p className="text-xs tracking-wide uppercase opacity-90">
               Premium Living
             </p>
