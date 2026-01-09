@@ -411,18 +411,19 @@ const Home = () => {
 
       {/* ================= WHAT MAKES US DIFFERENT ================= */}
       {/* ================= WHAT MAKES US DIFFERENT (EXACT MATCH) ================= */}
-      <section className="bg-white py-28">
+      <section className="bg-white h-screen pt-28">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
           {/* LEFT IMAGE */}
-          <div>
+          {/* <div>
             <img
               src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
               alt="Team discussion"
               className="w-full h-[520px] object-cover"
             />
-          </div>
-
+          </div> */}
+<RevealImageAnimation image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Team discussion"
+              className="w-full h-[520px] object-cover" />
           {/* RIGHT CONTENT */}
           <div>
 
@@ -682,13 +683,11 @@ const Home = () => {
       </div>
 
       {/* CENTER IMAGE */}
-      <div className="w-[240px] h-[320px] rounded-2xl overflow-hidden shadow-md">
-        <img
-          src={expertImg}
+        <RevealImageAnimation
+          image="src/assets/Home/expert.jpg"
           alt="Expert support"
-          className="w-full h-full object-cover"
+          className="w-[300px] h-[400px]  rounded-2xl overflow-hidden "
         />
-      </div>
 
       {/* RIGHT CONTENT */}
       <div className="flex flex-col gap-4 w-[260px]">
