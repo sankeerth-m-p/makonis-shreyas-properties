@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/footer.jsx";
 import OurStory from "./pages/OurStory.jsx";
+import Projects from "./pages/Projects.jsx";
 import Home from "./pages/Home";
 import PromisePage from "./pages/Promise.jsx";
 import ReactLenis from "lenis/react";
@@ -85,6 +86,21 @@ prevPath.current = location.pathname;
   transition={pageTransition}
 >
                 <OurStory/>
+              </motion.div>
+            }
+            />
+            <Route
+            path="/projects"
+            element={
+              <motion.div
+  custom={direction}
+  variants={pageVariants}
+  initial="initial"
+  animate="animate"
+  exit="exit"
+  transition={pageTransition}
+>
+                <Projects/>
               </motion.div>
             }
             />
