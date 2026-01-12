@@ -11,13 +11,20 @@ import nature2 from "../assets/home/naturesign2.png";
 import nhIcon from "../assets/home/NH-4.svg";
 import airportIcon from "../assets/home/Airport.svg";
 import hillIcon from "../assets/home/Hill.svg";
+import heroImg1 from "../assets/home/Sands Paradise_Vignan Nagar.jpg";
+import heroImg2 from "../assets/home/royalenclave.jpg";
+import heroImg3 from "../assets/home/residential_projects.jpg";
+import heroImg4 from "../assets/home/naturesign.jpg";
+import heroImg5 from "../assets/home/profound_infra.jpg";
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
-  "https://images.unsplash.com/photo-1501183638710-841dd1904471",
-  "https://images.unsplash.com/photo-1523217582562-09d0def993a6",
-  "https://images.unsplash.com/photo-1505691723518-36a5ac3b2d93",
+  heroImg1,
+  heroImg2,
+  heroImg3,
+  heroImg4,
+  heroImg5,
 ];
+
 
 const images = [
   "https://images.unsplash.com/photo-1501183638710-841dd1904471",
