@@ -12,15 +12,15 @@ const leftCircleX = useTransform(scrollYProgress, [0, 1], [-200, 10]);
 const rightCircleX = useTransform(scrollYProgress, [0, 1], [20, -100]);
 
   return (
-    <div className="w-full pt-20 relative overflow-hidden">
+    <div className="w-full md:pt-20 relative overflow-hidden">
 
       {/* ================= ORANGE SECTION ================= */}
-      <section className="bg-ORANGE pt-20 pb-72 relative">
-        <div className="max-w-6xl mx-auto  flex flex-col justify-center px-6 text-center text-white">
+      <section className="bg-ORANGE pt-20 md:pt-28 pb-72 relative">
+        <div className="max-w-6xl mx-auto  flex flex-col justify-center px-4 md:px-6 text-center text-white">
           <AnimatedHeading 
   as="h1"
   delay={0}
-  staggerDelay={0.15} className="text-3xl md:text-4xl  font-semibold leading-normal">
+  staggerDelay={0.15} className="text-xl md:text-4xl  font-semibold leading-normal">
             Our journey is defined by a commitment to {'\n'}
 deliver more than just properties
           </AnimatedHeading>
@@ -38,7 +38,7 @@ deliver more than just properties
       </section>
 
       {/* ================= WHITE SECTION ================= */}
-      <section ref={sectionRef} className=" bg-white   relative -mt-48 pt-10">
+      <section ref={sectionRef} className=" bg-white  relative -mt-48 pt-10">
 
         {/* GREY BACKGROUND SHAPES */}
        {/* LEFT CIRCLE */}
@@ -52,23 +52,23 @@ deliver more than just properties
     style={{ x: rightCircleX }}
     className="absolute top-60 right-[-200px] w-[380px] h-[380px] bg-gray-100 rounded-full z-0"
   />
-        <div className="max-w-6xl -top-24  mx-auto px-6 relative z-10">
+        <div className="max-w-6xl  -top-24   mx-auto px-6 relative z-10">
 
           {/* ================= IMAGES ================= */}
-          <div className="grid md:grid-cols-2 gap-14  items-start">
+          <div className=" grid md:grid-cols-2 gap-14  items-start">
 
             {/* LEFT – VERTICAL IMAGE */}
             <div className="rounded-2xl overflow-hidden shadow-xl "> 
               <img
                 src="src\assets\images\story_3.jpg"
                 alt="Design discussion"
-                className="w-full h-full  object-cover"
+                className="w-full h-[60vh] md:h-full object-top object-cover"
               />
             </div>
 
             {/* RIGHT – IMAGE + TEXT */}
-            <div className="pt-20">
-              <div className="rounded-2xl overflow-hidden shadow-xl  mb-8">
+            <div className="md:pt-20 ">
+              <div className="rounded-2xl md:block hidden overflow-hidden shadow-xl  mb-8">
                 <img
                   src="src\assets\images\story_1.jpg"
                   alt="Client meeting"
@@ -80,7 +80,7 @@ deliver more than just properties
 <AnimatedHeading 
   as="h1"
   delay={0}
-                staggerDelay={0.15} className="text-xl font-semibold text-gray-900 mb-4 leading-snug">
+                staggerDelay={0.15} className="text-base md:text-xl font-bold text-gray-900 mb-4 leading-snug">
                 
               {/* <h2 className="text-xl font-semibold text-gray-900 mb-4 leading-snug"> */}
                 We are a forward thinking real estate company driven by the belief
@@ -94,12 +94,20 @@ deliver more than just properties
                 we create developments that blend thoughtful planning with
                 enduring craftsmanship.
               </p>
-</FloatUpText>
+</FloatUpText><div className="mt-5 rounded-2xl md:hidden overflow-hidden shadow-xl  mb-8">
+                <img
+                  src="src\assets\images\story_1.jpg"
+                  alt="Client meeting"
+                  className="w-full h-full object-cover"
+                />
+                
+
+              </div>
             </div>
           </div>
 
           {/* ================= TEXT BELOW ================= */}
-          <FloatUpText className="mt-20  text-sm text-gray-600 space-y-6 max-w-5xl">
+          <FloatUpText className="md:mt-20 mt-5 text-sm text-gray-600 space-y-6 max-w-5xl">
             <p>
               We believe real estate is not just about constructing buildings,
               but about creating environments that enhance the way people live,
@@ -123,7 +131,7 @@ deliver more than just properties
       </section>
 
       {/* ================= VISION & MISSION SECTION ================= */}
-      <section className="relative w-full bg-[#f4efe4] overflow-hidden py-28">
+      <section className="relative w-full bg-[#f4efe4] overflow-hidden pt-5 md:py-28">
 
   {/* LEFT BACKGROUND ICON – EYE (VISION) */}
   <div className="absolute left-[-140px] top-24 opacity-[0.08]">
@@ -171,7 +179,7 @@ deliver more than just properties
   </div>
 
   {/* CONTENT */}
-  <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-28">
+  <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 md:gap-28 gap-10 pb-10 md:pb-0">
 
     {/* OUR VISION */}
     <div>
@@ -179,12 +187,12 @@ deliver more than just properties
   as="h1"
   delay={0}
   staggerDelay={0.15} className="text-sm text-gray-500 mb-3">Our vision</AnimatedHeading>
-      <div className="w-24 h-[1px] bg-gray-400 mb-8" />
+      <div className="w-36 h-[1px] bg-gray-400 mb-8" />
 
       <AnimatedHeading 
   as="h1"
   delay={0}
-  staggerDelay={0.15} className="text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md">
+  staggerDelay={0.15} className="md:text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md">
         To create thoughtfully planned spaces that elevate everyday living.
       </AnimatedHeading>
             <FloatUpText>
@@ -203,12 +211,12 @@ deliver more than just properties
   as="h1"
   delay={0}
   staggerDelay={0.15} className="text-sm text-gray-500 mb-3">Our mission</AnimatedHeading>
-      <div className="w-24 h-[1px] bg-gray-400 mb-8" />
+      <div className="w-36 h-[1px] bg-gray-400 mb-8" />
 
       <AnimatedHeading 
   as="h1"
   delay={0}
-  staggerDelay={0.15} className="text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md">
+  staggerDelay={0.15} className="md:text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md">
         To develop responsibly by integrating sustainable practices.
       </AnimatedHeading>
             <FloatUpText>
@@ -225,13 +233,13 @@ deliver more than just properties
 </section>
 {/* ================= PEOPLE FIRST PHILOSOPHY SECTION ================= */}
 {/* ================= PEOPLE FIRST PHILOSOPHY SECTION ================= */}
-<section className="relative w-full overflow-hidden">
+<section className="relative w-full min-h-[60vh] h-[60vh] md:min-h-[60vh] md:h-auto overflow-hidden">
   {/* IMAGE AREA */}
   <div className="relative w-full h-full">
     <img
       src="src/assets/images/story_2.jpg"
       alt="Team meeting"
-      className="w-full h-full object-cover"
+      className="w-full h-f object-cover"
     />
 
     {/* SVG DIVIDER */}
@@ -239,44 +247,45 @@ deliver more than just properties
       src="src/assets/images/story_orsngebg.svg"
       alt=""
       className="absolute bottom-0 left-0 w-full h-auto pointer-events-none"
-    />{/* ORANGE CONTENT AREA */}
-  <div className="bg-ORANGE  absolute bottom-28 left-0 w-full h-auto ">
-    <div className="max-w-6xl mx-auto  grid md:grid-cols-2 gap-20 text-white">
-      
-      {/* LEFT HEADING */}
-      <AnimatedHeading
-        as="h1"
-        delay={0}
-        staggerDelay={0.15}
-        className="text-2xl md:text-3xl font-semibold leading-snug max-w-md"
-      >
-        A Philosophy that 
-        puts people first.
-      </AnimatedHeading>
+    />
 
-      {/* RIGHT DESCRIPTION */}
-      <FloatUpText>
-        <p className="text-sm md:text-base opacity-90 max-w-md">
-          Our approach is guided by thoughtful planning, ethical practices,
-          and an uncompromising commitment to quality.
-        </p>
-      </FloatUpText>
+    {/* ORANGE CONTENT AREA */}
+    <div className="absolute inset-x-0 bg-ORANE bottom-5 md:bottom-28">
+      <div className="max-w-6xl mx-auto px-6 grid gap-4 md:grid-cols-2 md:gap-20 text-white">
+        
+        {/* LEFT HEADING */}
+        <AnimatedHeading
+          as="h1"
+          delay={0}
+          staggerDelay={0.15}
+          className="text-lg md:text-3xl font-semibold leading-snug max-w-md"
+        >
+          A Philosophy that {'\n'}
+          puts people first.
+        </AnimatedHeading>
 
+        {/* RIGHT DESCRIPTION */}
+        <FloatUpText>
+          <p className="text-sm md:text-base opacity-90 max-w-md">
+            Our approach is guided by thoughtful planning, ethical practices,
+            and an uncompromising commitment to quality.
+          </p>
+        </FloatUpText>
+
+      </div>
     </div>
   </div>
-  </div>
-
-  
 </section>
 
 
+
 {/* ================= IMAGE + TEXT SECTION ================= */}
-<section className="w-full bg-white py-24">
-  <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-16 items-start">
+<section className="w-full bg-white py-5 md:py-24">
+  <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-12  gap-5 md:gap-16 items-start">
 
     {/* LEFT IMAGE */}
     <div className="md:col-span-4">
-      <div className="w-full h-[420px] overflow-hidden rounded-sm">
+      <div className="w-full md:h-[420px] overflow-hidden rounded-sm">
         <img
           src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80"
           alt="Conversation"
@@ -286,7 +295,7 @@ deliver more than just properties
     </div>
 
     {/* RIGHT TEXT */}
-    <FloatUpText className="md:col-span-8 text-gray-600 text-sm leading-relaxed space-y-6">
+    <FloatUpText className="md:col-span-8 text-gray-600 text-sm leading-relaxed md:space-y-6">
       <p>
         We believe real estate is not just about constructing buildings, but about
         creating environments that enhance the way people live, grow, and connect.
@@ -319,19 +328,19 @@ deliver more than just properties
   </div>
 </section>
 {/* ================= TESTIMONIAL SECTION ================= */}
-<section className="w-full bg-[#f4efe4] py-32">
-  <div className="max-w-4xl mx-auto px-6 text-center">
+<section className="w-full bg-[#f4efe4] py-12  md:py-32">
+  <div className="max-w-4xl mx-auto px-3 md:px-6 text-center">
 
     {/* QUOTE BLOCK */}
-    <div className="relative inline-block px-10 py-6">
+    <div className="relative inline-block md:px-10 py-6">
 
       {/* OPENING QUOTE */}
 
-      <span className="absolute -top-6 -left-4 text-9xl text-gray-700 leading-none">
+      <span className="absolute -top-6 flex md:-left-4 text-7xl md:text-9xl text-gray-700 leading-none">
         “
       </span>
       {/* QUOTE TEXT */}
-      <AnimatedHeading className="text-xl md:text-2xl text-gray-800 leading-relaxed">
+      <AnimatedHeading className="text-lg md:text-2xl text-gray-800 leading-relaxed">
           From the very first meeting to project handover,
           {'\n'}
           the experience was smooth and transparent.
@@ -339,7 +348,7 @@ deliver more than just properties
       </AnimatedHeading>
 
       {/* CLOSING QUOTE */}
-      <span className="absolute -bottom-6 -right-4 text-7xl text-gray-700 leading-none">
+      <span className="absolute hidden md:block -bottom-6 -right-4 text-7xl text-gray-700 leading-none">
         ”
       </span>
 
@@ -347,11 +356,11 @@ deliver more than just properties
 
     {/* AUTHOR */}
     <FloatUpText>
-      <p className="mt-10 text-md font-medium text-gray-900">
+      <p className="md:mt-10 mt-2  text-sm md:text-md font-medium text-gray-900">
         Krishna Samanth Lella
       </p>
 
-      <p className="text-sm text-gray-500 mt-1">
+      <p className="md:text-sm text-xs text-gray-500 mt-1">
         Founder, Shreyas Infra
       </p>
     </FloatUpText>
