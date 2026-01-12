@@ -56,14 +56,15 @@ function BespokeImageHover() {
   const [active, setActive] = useState(0);
 
   return (
-    <div className="w-[70%] h-[380px] flex gap-4">
+    <div className="w-full md:w-[70%] h-[260px] md:h-[380px] flex gap-3 md:gap-4">
       {bespokeImages.map((img, index) => (
         <div
           key={index}
           onMouseEnter={() => setActive(index)}
+          onTouchStart={() => setActive(index)}
           className={`
             relative overflow-hidden rounded-xl transition-all duration-500 ease-in-out
-            ${active === index ? "w-[50%]" : "w-[25%]"}
+            ${active === index ? "flex-[2]" : "flex-[1]"}
           `}
         >
           <img
@@ -73,12 +74,48 @@ function BespokeImageHover() {
           />
 
           {active === index && (
-            <span className="absolute bottom-4 left-4 text-white text-[11px] tracking-widest">
+            <span className="absolute bottom-3 left-3 text-white text-[10px] md:text-[11px] tracking-widest">
               {img.label}
             </span>
           )}
         </div>
       ))}
+    </div>
+  );
+}
+
+function BespokeMobile() {
+  return (
+    <div className="block md:hidden bg-white rounded-2xl p-5">
+      <h3 className="text-[20px] font-semibold text-gray-900 mb-4 leading-snug">
+        Bespoke services for <br /> elevated living
+      </h3>
+
+      <div className="flex gap-3 h-[260px]">
+        {/* BIG IMAGE */}
+        <div className="flex-[2] rounded-xl overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* TWO SMALL STACKED */}
+        <div className="flex flex-col gap-3 flex-1">
+          <div className="flex-1 rounded-xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex-1 rounded-xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -138,244 +175,217 @@ const [showWave, setShowWave] = useState(false);
   return (
     <>
       {/* ================= HERO SECTION ================= */}
-      <section className="relative h-screen w-full overflow-hidden">
+<section className="relative h-screen w-full overflow-hidden">
 
-        {/* HERO SLIDER */}
-        <div
-          className={`absolute inset-0 flex ${enableTransition
-            ? "transition-transform duration-[1200ms] ease-in-out"
-            : ""
-            }`}
-          style={{ transform: `translateX(-${index * 100}vw)` }}
-          onTransitionEnd={handleTransitionEnd}
+  {/* HERO SLIDER */}
+  <div
+    className={`absolute inset-0 flex ${enableTransition
+      ? "transition-transform duration-[1200ms] ease-in-out"
+      : ""
+      }`}
+    style={{ transform: `translateX(-${index * 100}vw)` }}
+    onTransitionEnd={handleTransitionEnd}
+  >
+    {slides.map((img, i) => (
+      <img
+        key={i}
+        src={img}
+        alt={`hero-${i}`}
+        className="w-screen h-full object-cover flex-shrink-0"
+      />
+    ))}
+  </div>
+
+  {/* ORANGE CARD */}
+  <div className="absolute bottom-0 md:bottom-[-90px] left-0 w-full z-10 animate-cardUp">
+    <div className="max-w-7xl mx-auto px-4 md:px-6">
+      <div className="bg-ORANGE text-white px-6 py-10 md:px-14 md:py-16 w-full md:w-[65%]">
+
+        <AnimatedHeading
+          as="h1"
+          delay={0}
+          staggerDelay={0.15}
+          className="text-2xl md:text-5xl font-semibold leading-tight mb-4 md:mb-6"
         >
-          {slides.map((img, i) => (
-            <img
-              key={i}
-              src={img}
-              alt={`hero-${i}`}
-              className="w-screen h-full object-cover flex-shrink-0"
-            />
-          ))}
-        </div>
+          WHERE EVERY LUXURY
+          SQUARE FOOT SPEAKS
+          QUALITY.
+        </AnimatedHeading>
 
-        {/* ORANGE CARD */}
-        <div className="absolute bottom-[-90px] left-0 w-full z-10 animate-cardUp">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="bg-ORANGE text-white px-14 py-16 w-full md:w-[65%]">
-
-              <AnimatedHeading
-                as="h1"
-                delay={0}
-                staggerDelay={0.15} className="text-4xl md:text-5xl font-semibold leading-tight mb-6">
-                WHERE EVERY LUXURY
-                SQUARE FOOT SPEAKS
-                QUALITY.
-              </AnimatedHeading>
+        <p className="text-sm md:text-lg text-orange-100 max-w-lg">
+          Enter a world of refined workspaces where elegance meets
+          extraordinary service.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-              <p className="text-base md:text-lg text-orange-100 max-w-lg">
-                Enter a world of refined workspaces where elegance meets
-                extraordinary service.
-              </p>
-            </div>
+     {/* ================= THOUGHTFUL SECTION ================= */}
+<section className="relative bg-white pt-32 md:pt-56 pb-20 md:pb-32 overflow-hidden">
+  <div className="relative max-w-7xl mx-auto px-4 md:px-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
+
+      {/* IMAGE */}
+      <div className="flex justify-start md:justify-end">
+        <RevealImageAnimation
+          image={aboutUsImg}
+          className="w-full max-w-[320px] h-[420px] md:w-[420px] md:h-[520px] object-cover rounded-2xl"
+        />
+      </div>
+
+      {/* CONTENT */}
+      <div className="flex flex-col text-left">
+
+        <h2 className="text-[22px] leading-tight font-semibold text-[#1A1A1A] mb-3 max-w-[300px] md:max-w-none md:text-[38px]">
+          Thoughtfully developing spaces that reflect city’s progress and promise
+        </h2>
+
+        <p className="text-[13px] text-gray-600 mb-6 max-w-[300px] md:max-w-md">
+          Crafting meaningful experiences where every detail is carefully envisioned.
+        </p>
+
+        {/* VISION */}
+        <div className="flex gap-3 mb-5">
+          <span className="text-orange-600 mt-1">👁️</span>
+          <div>
+            <h4 className="text-[14px] font-semibold">Our vision</h4>
+            <p className="text-[12px] text-gray-600 leading-relaxed max-w-[280px]">
+              To create thoughtfully planned spaces that elevate everyday living,
+              blending design, functionality and sustainability.
+            </p>
           </div>
         </div>
-      </section>
 
-      {/* ================= THOUGHTFUL SECTION (UNCHANGED) ================= */}
-      <section className="relative bg-white pt-56 pb-32 overflow-hidden">
-
-        <div className="absolute -left-56 top-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border-[40px] border-[#EEF2F3]"></div>
-        <div className="absolute -right-56 top-[140px] w-[520px] h-[520px] rounded-full border-[40px] border-[#EEF2F3]"></div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-
-            <div className="flex justify-end pr-2">
-              {/* <img
-                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36"
-                alt="Thoughtful Spaces"
-                className="w-[420px] h-[520px] object-cover"
-              /> */}
-              <RevealImageAnimation
-                image={aboutUsImg}
-                className="w-[420px] h-[520px] object-cover "
-              />
-            </div>
-
-            <div className="flex flex-col justify-between h-[520px]">
-              <div>
-
-                <AnimatedHeading
-                  as="h2"
-                  delay={0}
-                  staggerDelay={0.15} className="text-[38px] font-semibold text-gray-900 leading-[1.25] mb-6">
-                  Thoughtfully developing
-                  spaces that reflect city’s
-                  progress and promise
-                </AnimatedHeading>
-
-                <FloatUpText delay={0}>
-                  <p className="text-gray-600 text-[15px] leading-relaxed mb-8 max-w-md">
-                    Crafting meaningful experiences where <br />
-                    every detail is carefully envisioned.
-                  </p>
-                </FloatUpText>
-                <div className="flex gap-4 mb-6">
-                  <span className="text-orange-600 text-[18px] mt-1">👁️</span>
-                  <div>
-                    <FloatUpText delay={0}>
-                      <h4 className="text-gray-900 font-semibold text-[15px] mb-1">
-                        Our vision
-                      </h4>
-
-                      <p className="text-gray-600 text-[13px] leading-relaxed max-w-md">
-                        To create thoughtfully planned spaces that elevate everyday
-                        living, blending design, functionality, and sustainability
-                        to shape enduring communities for the future.
-                      </p>
-                    </FloatUpText>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <span className="text-orange-600 text-[18px] mt-1">🎯</span>
-                  <div>
-                    <FloatUpText delay={0}>
-                      <h4 className="text-gray-900 font-semibold text-[15px] mb-1">
-                        Our mission
-                      </h4>
-                      <p className="text-gray-600 text-[13px] leading-relaxed max-w-md">
-                        To develop responsibly by integrating sustainable practices,
-                        respecting the environment, and creating communities that
-                        support healthier, balanced lifestyles.
-                      </p>
-                    </FloatUpText>
-                  </div>
-                </div>
-              </div>
-
-              <button className="mt-10 w-fit bg-ORANGE text-white px-10 py-3 rounded-full text-[12px] tracking-widest hover:bg-orange-700 transition">
-                VIEW DETAILS
-              </button>
-            </div>
-
+        {/* MISSION */}
+        <div className="flex gap-3 mb-8">
+          <span className="text-orange-600 mt-1">🎯</span>
+          <div>
+            <h4 className="text-[14px] font-semibold">Our mission</h4>
+            <p className="text-[12px] text-gray-600 leading-relaxed max-w-[280px]">
+              To develop responsibly by integrating sustainable practices
+              and creating balanced communities.
+            </p>
           </div>
         </div>
-      </section>
+
+        <button className="bg-ORANGE text-white px-8 py-2.5 rounded-full text-[11px] tracking-widest w-fit">
+          VIEW DETAILS
+        </button>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 
-      {/* ================= BESPOKE SERVICES (VIDEO MATCHED EXACT) ================= */}
-      <section className="bg-[#EEF2F3] py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-white rounded-2xl px-10 py-12 flex items-center gap-6">
 
-            {/* LEFT CONTENT */}
-            <div className="w-[30%]">
-              <AnimatedHeading
-                as="h3"
-                delay={0}
-                staggerDelay={0.15} className="text-[28px] font-semibold text-gray-900 leading-snug mb-6">
-                Bespoke
-                services for
-                elevated living
-              </AnimatedHeading>
-              <span className="text-[11px] tracking-widest text-gray-700">
-                VIEW PROJECTS
-              </span>
-            </div>
+<section className="bg-[#EEF2F3] py-16 md:py-28">
+  <div className="max-w-7xl mx-auto px-4 md:px-6">
+    <div className="bg-white rounded-2xl px-5 md:px-10 py-6 md:py-12 flex flex-col md:flex-row gap-6">
 
-            {/* RIGHT IMAGE INTERACTION */}
-            <BespokeImageHover />
+      {/* LEFT CONTENT */}
+      <div className="w-full md:w-[30%]">
+        <AnimatedHeading
+          as="h3"
+          delay={0}
+          staggerDelay={0.15}
+          className="text-[20px] md:text-[28px] font-semibold text-gray-900 leading-snug mb-4 md:mb-6"
+        >
+          Bespoke services for elevated living
+        </AnimatedHeading>
+        <span className="text-[11px] tracking-widest text-gray-700">
+          VIEW PROJECTS
+        </span>
+      </div>
 
-          </div>
-        </div>
-      </section>
+      {/* RIGHT IMAGE INTERACTION (SAME HOVER FOR MOBILE + DESKTOP) */}
+      <BespokeImageHover />
+
+    </div>
+  </div>
+</section>
+
+
 
 
       {/* ================= SIGNATURE SPACES (WORKING VERSION) ================= */}
-      <section className="relative w-full bg-black">
+     {/* ================= SIGNATURE SPACES – TRUE STICKY STACK ================= */}
+<section className="w-full bg-black">
 
-        {[
-          {
-            id: "01",
-            location: "Kondapur, Hyderabad",
-            title: "Modern Profound\nTech Park",
-            image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
-          },
-          {
-            id: "02",
-            location: "Whitefield, Bengaluru",
-            title: "Urban Crest\nBusiness Hub",
-            image: "https://images.unsplash.com/photo-1497366216548-37526070297c",
-          },
-          {
-            id: "03",
-            location: "Gachibowli, Hyderabad",
-            title: "Elevate\nCorporate Tower",
-            image: "https://images.unsplash.com/photo-1529429617124-95b109e86bb8",
-          },
-          {
-            id: "04",
-            location: "Hinjewadi, Pune",
-            title: "Axis\nTech Square",
-            image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
-          },
-        ].map((item, index) => (
-          <div key={index} className="h-[200vh] relative">
+  {[
+    {
+      id: "01",
+      location: "Kondapur, Hyderabad",
+      title: "Modern Profound\nTech Park",
+      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+    },
+    {
+      id: "02",
+      location: "Whitefield, Bengaluru",
+      title: "Urban Crest\nBusiness Hub",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c",
+    },
+    {
+      id: "03",
+      location: "Gachibowli, Hyderabad",
+      title: "Elevate\nCorporate Tower",
+      image: "https://images.unsplash.com/photo-1529429617124-95b109e86bb8",
+    },
+    {
+      id: "04",
+      location: "Hinjewadi, Pune",
+      title: "Axis\nTech Square",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
+    },
+  ].map((item, index) => (
+    <div key={index} className="h-[200vh] relative">
 
-            {/* STICKY PAGE */}
-            <div className="sticky top-0 h-screen w-full flex">
+      {/* STICKY SCREEN */}
+      <div className="sticky top-0 h-screen w-full flex">
 
-              {/* LEFT PANEL */}
-              <div className="w-1/2 bg-[#FF6A13] text-white px-24 py-24 flex flex-col justify-between">
+        {/* LEFT PANEL */}
+        <div className="w-1/2 bg-[#FF6A13] text-white px-24 py-24 flex flex-col justify-between">
+          <h2 className="text-[34px] font-medium leading-tight max-w-sm">
+            Signature spaces
+            crafted for
+            modern living.
+          </h2>
 
-                <AnimatedHeading
-                  as="h2"
-                  delay={0}
-                  staggerDelay={0.15} className="text-[34px] font-medium leading-tight max-w-sm">
-                  Signature spaces
-                  crafted for
-                  modern living.
-                </AnimatedHeading>
-
-                <div>
-                  <div
-                    className="text-[110px] mb-4"
-                    style={{
-                      WebkitTextStroke: "1px #fff",
-                      color: "transparent",
-                    }}
-                  >
-                    {item.id}
-                  </div>
-
-                  <p className="text-[11px] tracking-widest uppercase opacity-80">
-                    {item.location}
-                  </p>
-
-                  <h3 className="text-[20px] mt-4 whitespace-pre-line">
-                    {item.title}
-                  </h3>
-                </div>
-
-              </div>
-
-              {/* RIGHT IMAGE */}
-              <div className="w-1/2 h-full">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
+          <div>
+            <div
+              className="text-[110px] mb-4"
+              style={{ WebkitTextStroke: "1px #fff", color: "transparent" }}
+            >
+              {item.id}
             </div>
-          </div>
-        ))}
 
-      </section>
+            <p className="text-[11px] tracking-widest uppercase opacity-80">
+              {item.location}
+            </p>
+
+            <h3 className="text-[20px] mt-4 whitespace-pre-line">
+              {item.title}
+            </h3>
+          </div>
+        </div>
+
+        {/* RIGHT IMAGE */}
+        <div className="w-1/2 h-full">
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+      </div>
+    </div>
+  ))}
+
+</section>
+
 
       {/* ================= STORY BEHIND THE BRAND (EXACT FRAME) ================= */}
    <section className="w-full bg-[#F4EFE5] h-screen pt-32">
@@ -846,6 +856,7 @@ const [showWave, setShowWave] = useState(false);
         </div>
 
       </section>
+
 
 
 
