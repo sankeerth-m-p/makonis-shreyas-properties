@@ -89,6 +89,13 @@ const Home = () => {
   const [enableTransition, setEnableTransition] = useState(true);
   const whatPeopleRef = useRef(null);
 const [showWave, setShowWave] = useState(false);
+const [scrollY, setScrollY] = useState(0);
+
+useEffect(() => {
+  const handleScroll = () => setScrollY(window.scrollY);
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
 
   // auto slide
@@ -294,152 +301,184 @@ const [showWave, setShowWave] = useState(false);
       </section>
 
 
-      {/* ================= SIGNATURE SPACES (WORKING VERSION) ================= */}
-      <section className="relative w-full bg-black">
+  
+{/* ================= SIGNATURE SPACES (OVERLAPPING STACK CARDS) ================= */}
+<section className="relative w-full bg-black">
 
-        {[
-          {
-            id: "01",
-            location: "Kondapur, Hyderabad",
-            title: "Modern Profound\nTech Park",
-            image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
-          },
-          {
-            id: "02",
-            location: "Whitefield, Bengaluru",
-            title: "Urban Crest\nBusiness Hub",
-            image: "https://images.unsplash.com/photo-1497366216548-37526070297c",
-          },
-          {
-            id: "03",
-            location: "Gachibowli, Hyderabad",
-            title: "Elevate\nCorporate Tower",
-            image: "https://images.unsplash.com/photo-1529429617124-95b109e86bb8",
-          },
-          {
-            id: "04",
-            location: "Hinjewadi, Pune",
-            title: "Axis\nTech Square",
-            image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
-          },
-        ].map((item, index) => (
-          <div key={index} className="h-[200vh] relative">
+  {/* Total scroll area for all cards */}
+  <div className="relative h-[500vh]">
+    {[
+      {
+        id: "01",
+        location: "Kondapur, Hyderabad",
+        title: "Modern Profound\nTech Park",
+        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+      },
+      {
+        id: "02",
+        location: "Whitefield, Bengaluru",
+        title: "Urban Crest\nBusiness Hub",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c",
+      },
+      {
+        id: "03",
+        location: "Gachibowli, Hyderabad",
+        title: "Elevate\nCorporate Tower",
+        image: "https://images.unsplash.com/photo-1529429617124-95b109e86bb8",
+      },
+      {
+        id: "04",
+        location: "Hinjewadi, Pune",
+        title: "Axis\nTech Square",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
+      },
+    ].map((item, i) => {
+      // same transition logic as your reference demo
+      const start = i * 120;
+      const progress = Math.max(0, Math.min(1, (scrollY - start) / 120));
 
-            {/* STICKY PAGE */}
-            <div className="sticky top-0 h-screen w-full flex">
+      // only ORANGE / ORANGE2 with opacity
+      const leftBg =
+        i % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2";
 
-              {/* LEFT PANEL */}
-              <div className="w-1/2 bg-[#FF6A13] text-white px-24 py-24 flex flex-col justify-between">
+      return (
+        <div
+          key={i}
+          className="sticky top-0 h-screen w-full flex"
+          style={{
+            // ✅ overlap stacking (next is always above old)
+            zIndex: i + 1,
+            // ✅ slide from bottom into place
+            transform: `translateY(${(1 - progress) * 100}%)`,
+          }}
+        >
+          {/* LEFT PANEL */}
+          <div className={`w-1/2 ${leftBg} text-white px-24 py-24 flex flex-col justify-between`}>
+            <AnimatedHeading
+              as="h2"
+              delay={0}
+              staggerDelay={0.15}
+              className="text-[34px] font-medium leading-tight max-w-sm"
+            >
+              Signature spaces
+              crafted for
+              modern living.
+            </AnimatedHeading>
 
-                <AnimatedHeading
-                  as="h2"
-                  delay={0}
-                  staggerDelay={0.15} className="text-[34px] font-medium leading-tight max-w-sm">
-                  Signature spaces
-                  crafted for
-                  modern living.
-                </AnimatedHeading>
-
-                <div>
-                  <div
-                    className="text-[110px] mb-4"
-                    style={{
-                      WebkitTextStroke: "1px #fff",
-                      color: "transparent",
-                    }}
-                  >
-                    {item.id}
-                  </div>
-
-                  <p className="text-[11px] tracking-widest uppercase opacity-80">
-                    {item.location}
-                  </p>
-
-                  <h3 className="text-[20px] mt-4 whitespace-pre-line">
-                    {item.title}
-                  </h3>
-                </div>
-
+            <div>
+              <div
+                className="text-[110px] mb-4"
+                style={{
+                  WebkitTextStroke: "1px #fff",
+                  color: "transparent",
+                }}
+              >
+                {item.id}
               </div>
 
-              {/* RIGHT IMAGE */}
-              <div className="w-1/2 h-full">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <p className="text-[11px] tracking-widest uppercase opacity-80">
+                {item.location}
+              </p>
 
+              <h3 className="text-[20px] mt-4 whitespace-pre-line">
+                {item.title}
+              </h3>
             </div>
           </div>
-        ))}
 
-      </section>
+          {/* RIGHT IMAGE */}
+          <div className="w-1/2 h-full">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>
+
+
+
 
       {/* ================= STORY BEHIND THE BRAND (EXACT FRAME) ================= */}
-   <section className="w-full bg-[#F4EFE5] h-screen pt-32">
-  <div className="max-w-7xl mx-auto px-6 flex justify-center">{/* CENTER GROUP */}
+  <section
+  className="
+    w-full 
+    h-screen 
+    pt-32 
+    bg-center 
+    bg-cover 
+    bg-no-repeat
+    bg-fixed
+    relative
+  "
+  style={{
+    backgroundImage:
+      "url(https://images.unsplash.com/photo-1501183638710-841dd1904471)",
+  }}
+>
+  {/* Optional overlay for contrast */}
+  <div className="absolute inset-0 bg-[#F4EFE5]/90" />
+
+  {/* CONTENT */}
+  <div className="relative max-w-7xl mx-auto px-6 flex justify-center">
     <div className="relative w-[min(70vw,520px)] aspect-[520/420]">
 
       {/* TOP-LEFT TEXT */}
-      <div
-        className=" 
-          absolute 
-          top-0 left-0 
-          -translate-x-[80%]
-          -translate-y-[10%]
-          
-        "
-      >
+      <div className="absolute top-0 left-0 -translate-x-[80%] -translate-y-[10%]">
         <AnimatedHeading
           as="h1"
           delay={0}
           staggerDelay={0.15}
-          className="text-[clamp(24px,3vw,34px)] font-bold  leading-tight whitespace-pre-line"
+          className="text-[clamp(24px,3vw,34px)] font-bold leading-tight whitespace-pre-line"
         >
-          The Story
-          {'\n'}
-          Behind the Brand
+          The Story{"\n"}Behind the Brand
         </AnimatedHeading>
-      </div> {/* SVG-MASKED IMAGE */}
-      <div
-        className="w-full h-full bg-center bg-cover"
-        style={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1501183638710-841dd1904471)",
-          WebkitMaskImage: "url(src/assets/images/logo.svg)",
-          WebkitMaskRepeat: "no-repeat",
-          WebkitMaskSize: "contain",
-          WebkitMaskPosition: "center",
-          maskImage: "url(src/assets/images/logo.svg)",
-          maskRepeat: "no-repeat",
-          maskSize: "contain",
-          maskPosition: "center",
-        }}
-      />
+      </div>
+
+      {/* SVG-MASKED FOREGROUND IMAGE */}
+    <div
+  className="
+    w-full 
+    h-full 
+    bg-center 
+    bg-cover 
+    bg-fixed
+  "
+  style={{
+    backgroundImage:
+      "url(https://images.unsplash.com/photo-1501183638710-841dd1904471)",
+
+    WebkitMaskImage: "url(src/assets/images/logo.svg)",
+    WebkitMaskRepeat: "no-repeat",
+    WebkitMaskSize: "contain",
+    WebkitMaskPosition: "center",
+
+    maskImage: "url(src/assets/images/logo.svg)",
+    maskRepeat: "no-repeat",
+    maskSize: "contain",
+    maskPosition: "center",
+  }}
+/>
+
 
       {/* BOTTOM-RIGHT TEXT */}
-      <div
-        className="
-          absolute
-          bottom-0 right-0
-          translate-x-[60%]
-          translate-y-[60%]
-          max-w-[26ch]
-          text-right
-        "
-      >
+      <div className="absolute bottom-0 right-0 translate-x-[60%] translate-y-[60%] max-w-[26ch] text-right">
         <p className="text-[clamp(13px,1.2vw,15px)] text-[#2A2A2A] leading-relaxed mb-6">
-          Our brand tells a story of
-          commitment, trust, and progress.
-        </p>  <button className="text-[11px] tracking-widest uppercase text-[#111] border-b border-[#111] pb-1">
+          Our brand tells a story of commitment, trust, and progress.
+        </p>
+        <button className="text-[11px] tracking-widest uppercase text-[#111] border-b border-[#111] pb-1">
           KNOW MORE
         </button>
       </div>
 
-    </div> </div>
+    </div>
+  </div>
 </section>
+
 
 
 
@@ -724,7 +763,6 @@ const [showWave, setShowWave] = useState(false);
   {/* LEFT ARROW */}
   <button
     onClick={() => setIndex(prev => Math.max(prev - 1, 0))}
-    className="absolute -left-8 z-30 bg-[#0A1E2A]/90 text-[#D7E2E8] w-9 h-9 rounded-full flex items-center justify-center"
   >
     ‹
   </button>
@@ -809,43 +847,51 @@ const [showWave, setShowWave] = useState(false);
 </section>
 
       {/* ================= OUR PROMISE SECTION ================= */}
-      <section className="relative w-full h-screen overflow-hidden">
+     <section
+  className="
+    relative 
+    w-full 
+    h-screen 
+    bg-center 
+    bg-cover 
+    bg-no-repeat 
+    bg-fixed
+    overflow-hidden
+  "
+  style={{
+    backgroundImage: `url(${promiseImg})`,
+  }}
+>
+  {/* DARK OVERLAY */}
+  <div className="absolute inset-0 bg-black/60" />
 
-        {/* BACKGROUND IMAGE */}
-        <img
-          src={promiseImg}
-          alt="Our Promise"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+  {/* CONTENT */}
+  <div className="relative z-10 max-w-4xl mx-auto px-6 h-full flex flex-col items-center justify-center text-center text-white">
 
-        {/* DARK OVERLAY */}
-        <div className="absolute inset-0 bg-black/60"></div>
+    <AnimatedHeading
+      as="h2"
+      delay={0}
+      staggerDelay={0.15}
+      className="text-[28px] md:text-[34px] font-medium leading-snug mb-6"
+    >
+      Our promise is to turn urban spaces into meaningful lives.
+    </AnimatedHeading>
 
-        {/* CONTENT */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 h-full flex flex-col items-center justify-center text-center text-white">
+    <FloatUpText delay={0}>
+      <p className="text-[13px] md:text-[14px] text-white/80 max-w-2xl mx-auto mb-10">
+        We design spaces that nurture life itself where <br />
+        craftsmanship and dedicated service come together
+        to elevate living.
+      </p>
+    </FloatUpText>
 
-          <AnimatedHeading
-            as="h2"
-            delay={0}
-            staggerDelay={0.15} className="text-[28px] md:text-[34px] font-medium leading-snug mb-6">
-            Our promise is to turn urban spaces into 
-            meaningful lives.
-          </AnimatedHeading>
-           
-           <FloatUpText delay={0}>
-          <p className="text-[13px] md:text-[14px] text-white/80 max-w-2xl mx-auto mb-10">
-            We design spaces that nurture life itself where <br />
-            craftsmanship and dedicated service come together
-            to elevate living.
-          </p>
-           </FloatUpText>
-          <button className="bg-[#FF6A13] text-white px-10 py-3 rounded-full text-[11px] tracking-widest uppercase hover:bg-[#e85c0f] transition">
-            Know More
-          </button>
+    <button className="bg-[#FF6A13] text-white px-10 py-3 rounded-full text-[11px] tracking-widest uppercase hover:bg-[#e85c0f] transition">
+      Know More
+    </button>
 
-        </div>
+  </div>
+</section>
 
-      </section>
 
 
 
