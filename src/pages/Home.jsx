@@ -11,11 +11,11 @@ import nature2 from "../assets/Home/naturesign2.png";
 import nhIcon from "../assets/Home/NH-4.svg";
 import airportIcon from "../assets/Home/Airport.svg";
 import hillIcon from "../assets/Home/Hill.svg";
-import heroImg1 from "../assets/home/Sands Paradise_Vignan Nagar.jpg";
-import heroImg2 from "../assets/home/royalenclave.jpg";
-import heroImg3 from "../assets/home/residential_projects.jpg";
-import heroImg4 from "../assets/home/naturesign.jpg";
-import heroImg5 from "../assets/home/profound_infra.jpg";
+import heroImg1 from "../assets/Home/Sands Paradise_Vignan Nagar.jpg";
+import heroImg2 from "../assets/Home/royalenclave.jpg";
+import heroImg3 from "../assets/Home/residential_projects.jpg";
+import heroImg4 from "../assets/Home/naturesign.jpg";
+import heroImg5 from "../assets/Home/profound_infra.jpg";
 const heroImages = [
   heroImg1,
   heroImg2,
@@ -671,7 +671,7 @@ useEffect(() => {
 
   {/* BACKGROUND IMAGE (UNCHANGED) */}
   <img
-    src={nature1} // assets/home image ONLY
+    src={nature1} // assets/Home image ONLY
     alt="Nature’s Sign"
     className="absolute inset-0 w-full h-full object-cover"
   />
