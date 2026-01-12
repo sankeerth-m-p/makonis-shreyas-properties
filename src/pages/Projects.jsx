@@ -1,6 +1,6 @@
 import React from "react";
-import heroImg2 from "../assets/home/royalenclave.jpg";
-import heroImg5 from "../assets/home/profound_infra.jpg";
+import heroImg2 from "../assets/Home/royalenclave.jpg";
+import heroImg5 from "../assets/Home/profound_infra.jpg";
 
 export default function Projects() {
   return (
