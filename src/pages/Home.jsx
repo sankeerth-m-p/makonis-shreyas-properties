@@ -87,7 +87,7 @@ function BespokeMobile() {
   return (
     <div className="block md:hidden bg-white rounded-2xl p-5">
       <h3 className="text-[20px] font-semibold text-gray-900 mb-4 leading-snug">
-        Bespoke services for {'\n'} elevated living
+        Bespoke services for <br /> elevated living
       </h3>
 
       <div className="flex gap-3 h-[260px]">
@@ -181,56 +181,40 @@ useEffect(() => {
   return (
     <>
       {/* ================= HERO SECTION ================= */}
-<section className="relative w-full overflow-hidden">
-  {/* ================= HERO IMAGE AREA ================= */}
-  <div className="relative w-full h-[40vh] md:h-screen overflow-hidden">
-    {/* HERO SLIDER */}
-    <div
-      className={`absolute inset-0 flex ${
-        enableTransition ? "transition-transform duration-[1200ms] ease-in-out" : ""
-      }`}
-      style={{ transform: `translateX(-${index * 100}vw)` }}
-      onTransitionEnd={handleTransitionEnd}
-    >
-      {slides.map((img, i) => (
-        <img
-          key={i}
-          src={img}
-          alt={`hero-${i}`}
-          className="w-screen h-full object-cover flex-shrink-0"
-        />
-      ))}
-    </div>
+<section className="relative h-screen w-full overflow-hidden">
 
-   
+  {/* HERO SLIDER */}
+  <div
+    className={`absolute inset-0 flex ${enableTransition
+      ? "transition-transform duration-[1200ms] ease-in-out"
+      : ""
+      }`}
+    style={{ transform: `translateX(-${index * 100}vw)` }}
+    onTransitionEnd={handleTransitionEnd}
+  >
+    {slides.map((img, i) => (
+      <img
+        key={i}
+        src={img}
+        alt={`hero-${i}`}
+        className="w-screen h-full object-cover flex-shrink-0"
+      />
+    ))}
   </div>
 
-  {/* ================= ORANGE CARD ================= */}
-  <div className="w-full z-10">
+  {/* ORANGE CARD */}
+  <div className="absolute bottom-0 md:bottom-[-90px] left-0 w-full z-10 animate-cardUp">
     <div className="max-w-7xl mx-auto px-4 md:px-6">
-      <div
-        className="
-          bg-ORANGE text-white
-          px-6 py-5 
-          md:px-14 md:py-16
-          w-full md:w-[65%]
+      <div className="bg-ORANGE text-white px-6 py-10 md:px-14 md:py-16 w-full md:w-[65%]">
 
-          relative md:absolute
-          md:bottom-[-90px] md:left-0
-
-          animate-cardUp
-        "
-      >
         <AnimatedHeading
           as="h1"
           delay={0}
           staggerDelay={0.15}
-          className="text-xl md:text-5xl font-semibold leading-tight mb-4 md:mb-6"
+          className="text-2xl md:text-5xl font-semibold leading-tight mb-4 md:mb-6"
         >
           WHERE EVERY LUXURY
-          {'\n'}
           SQUARE FOOT SPEAKS
-          {'\n'}
           QUALITY.
         </AnimatedHeading>
 
@@ -244,7 +228,6 @@ useEffect(() => {
 </section>
 
 
-
      {/* ================= THOUGHTFUL SECTION ================= */}
 <section className="relative bg-white pt-10 md:pt-56 pb-20 md:pb-32 overflow-hidden">
   <div className="relative max-w-7xl mx-auto px-4 md:px-6">
@@ -254,27 +237,27 @@ useEffect(() => {
       <div className="flex justify-start md:justify-end">
         <RevealImageAnimation
           image={aboutUsImg}
-          className="w-full max-w-[320px] h-[420px] md:w-[420px] md:h-[520px] object-cover rounded-2xl"
+          className="w-full   h-[420px] md:w-[420px] md:h-[520px] object-cover rounded-2xl"
         />
       </div>
 
       {/* CONTENT */}
-      <div className="flex flex-col text-left">
+      <div className="flex flex-col text-left ">
 
-        <h2 className="text-[22px] leading-tight font-semibold text-[#1A1A1A] mb-3 max-w-[300px] md:max-w-none md:text-[38px]">
+        <h2 className="text-[22px] leading-tight font-semibold text-[#1A1A1A] mb-3  md:max-w-none md:text-[38px]">
           Thoughtfully developing spaces that reflect city’s progress and promise
         </h2>
 
-        <p className="text-[13px] text-gray-600 mb-6 max-w-[300px] md:max-w-md">
+        <p className="text-[13px] text-gray-600 mb-6  md:max-w-md">
           Crafting meaningful experiences where every detail is carefully envisioned.
         </p>
 
         {/* VISION */}
-        <div className="flex gap-3 mb-5">
+        <div className="flex gap-3     mb-5">
           <span className="text-orange-600 mt-1">👁️</span>
           <div>
             <h4 className="text-[14px] font-semibold">Our vision</h4>
-            <p className="text-[12px] text-gray-600 leading-relaxed max-w-[280px]">
+            <p className="text-[12px] text-gray-600 leading-relaxed    ">
               To create thoughtfully planned spaces that elevate everyday living,
               blending design, functionality and sustainability.
             </p>
@@ -286,7 +269,7 @@ useEffect(() => {
           <span className="text-orange-600 mt-1">🎯</span>
           <div>
             <h4 className="text-[14px] font-semibold">Our mission</h4>
-            <p className="text-[12px] text-gray-600 leading-relaxed max-w-[280px]">
+            <p className="text-[12px] text-gray-600 leading-relaxed    ">
               To develop responsibly by integrating sustainable practices
               and creating balanced communities.
             </p>
@@ -397,8 +380,8 @@ useEffect(() => {
               <div className="absolute -left-24 top-16 w-[280px] h-[280px] rounded-full bg-white/10" />
 
               <h2 className="text-[26px] font-medium leading-tight max-w-[260px] relative z-10">
-                Signature spaces {'\n'}
-                crafted for {'\n'}
+                Signature spaces <br />
+                crafted for <br />
                 modern living.
               </h2>
 
@@ -761,8 +744,8 @@ useEffect(() => {
   {/* HEADING */}
   <div className="relative z-10 pt-24 text-center">
     <p className="text-[16px] text-[#1A1A1A] leading-tight">
-      What {'\n'}
-      people {'\n'}
+      What <br />
+      people <br />
       says
     </p>
   </div>
@@ -903,8 +886,8 @@ useEffect(() => {
         {/* CENTER – TEXT */}
         <div className="flex-1 max-w-md">
           <h3 className="text-[18px] leading-snug font-medium">
-            Nature’s sign, {'\n'}
-            Where luxury and nature flow {'\n'}
+            Nature’s sign, <br />
+            Where luxury and nature flow <br />
             in perfect harmony.
           </h3>
         </div>
@@ -988,7 +971,7 @@ useEffect(() => {
         </p>
 
         <h3 className="text-[24px] font-semibold text-[#1A1A1A] leading-snug">
-          Speak with {'\n'}
+          Speak with <br />
           our experts
         </h3>
       </div>
@@ -1051,7 +1034,7 @@ useEffect(() => {
 
     <FloatUpText delay={0}>
       <p className="text-[13px] md:text-[14px] text-white/80 max-w-2xl mx-auto mb-10">
-        We design spaces that nurture life itself where {'\n'}
+        We design spaces that nurture life itself where <br />
         craftsmanship and dedicated service come together
         to elevate living.
       </p>
