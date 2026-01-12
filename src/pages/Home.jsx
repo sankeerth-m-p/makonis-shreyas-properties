@@ -87,7 +87,7 @@ function BespokeMobile() {
   return (
     <div className="block md:hidden bg-white rounded-2xl p-5">
       <h3 className="text-[20px] font-semibold text-gray-900 mb-4 leading-snug">
-        Bespoke services for <br /> elevated living
+        Bespoke services for {'\n'} elevated living
       </h3>
 
       <div className="flex gap-3 h-[260px]">
@@ -181,40 +181,56 @@ useEffect(() => {
   return (
     <>
       {/* ================= HERO SECTION ================= */}
-<section className="relative h-screen w-full overflow-hidden">
-
-  {/* HERO SLIDER */}
-  <div
-    className={`absolute inset-0 flex ${enableTransition
-      ? "transition-transform duration-[1200ms] ease-in-out"
-      : ""
+<section className="relative w-full overflow-hidden">
+  {/* ================= HERO IMAGE AREA ================= */}
+  <div className="relative w-full h-[40vh] md:h-screen overflow-hidden">
+    {/* HERO SLIDER */}
+    <div
+      className={`absolute inset-0 flex ${
+        enableTransition ? "transition-transform duration-[1200ms] ease-in-out" : ""
       }`}
-    style={{ transform: `translateX(-${index * 100}vw)` }}
-    onTransitionEnd={handleTransitionEnd}
-  >
-    {slides.map((img, i) => (
-      <img
-        key={i}
-        src={img}
-        alt={`hero-${i}`}
-        className="w-screen h-full object-cover flex-shrink-0"
-      />
-    ))}
+      style={{ transform: `translateX(-${index * 100}vw)` }}
+      onTransitionEnd={handleTransitionEnd}
+    >
+      {slides.map((img, i) => (
+        <img
+          key={i}
+          src={img}
+          alt={`hero-${i}`}
+          className="w-screen h-full object-cover flex-shrink-0"
+        />
+      ))}
+    </div>
+
+   
   </div>
 
-  {/* ORANGE CARD */}
-  <div className="absolute bottom-0 md:bottom-[-90px] left-0 w-full z-10 animate-cardUp">
+  {/* ================= ORANGE CARD ================= */}
+  <div className="w-full z-10">
     <div className="max-w-7xl mx-auto px-4 md:px-6">
-      <div className="bg-ORANGE text-white px-6 py-10 md:px-14 md:py-16 w-full md:w-[65%]">
+      <div
+        className="
+          bg-ORANGE text-white
+          px-6 py-5 
+          md:px-14 md:py-16
+          w-full md:w-[65%]
 
+          relative md:absolute
+          md:bottom-[-90px] md:left-0
+
+          animate-cardUp
+        "
+      >
         <AnimatedHeading
           as="h1"
           delay={0}
           staggerDelay={0.15}
-          className="text-2xl md:text-5xl font-semibold leading-tight mb-4 md:mb-6"
+          className="text-xl md:text-5xl font-semibold leading-tight mb-4 md:mb-6"
         >
           WHERE EVERY LUXURY
+          {'\n'}
           SQUARE FOOT SPEAKS
+          {'\n'}
           QUALITY.
         </AnimatedHeading>
 
@@ -228,8 +244,9 @@ useEffect(() => {
 </section>
 
 
+
      {/* ================= THOUGHTFUL SECTION ================= */}
-<section className="relative bg-white pt-32 md:pt-56 pb-20 md:pb-32 overflow-hidden">
+<section className="relative bg-white pt-10 md:pt-56 pb-20 md:pb-32 overflow-hidden">
   <div className="relative max-w-7xl mx-auto px-4 md:px-6">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
 
@@ -287,7 +304,7 @@ useEffect(() => {
 
 
 
-<section className="bg-[#EEF2F3] py-16 md:py-28">
+<section className="bg-[#EEF2F3] py-10 md:py-28">
   <div className="max-w-7xl mx-auto px-4 md:px-6">
     <div className="bg-white rounded-2xl px-5 md:px-10 py-6 md:py-12 flex flex-col md:flex-row gap-6">
 
@@ -320,8 +337,100 @@ useEffect(() => {
 {/* ================= SIGNATURE SPACES (OVERLAPPING STACK CARDS) ================= */}
 <section className="relative w-full bg-black">
 
-  {/* Total scroll area for all cards */}
-  <div className="relative h-[500vh]">
+  {/* ✅ MOBILE ONLY: Horizontal Scroll */}
+  <div className="md:hidden w-full overflow-x-auto snap-x snap-mandatory">
+    <div className="flex  w-max">
+      {[
+        {
+          id: "01",
+          location: "Kondapur, Hyderabad",
+          title: "Modern Profound\nTech Park",
+          image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+        },
+        {
+          id: "02",
+          location: "Whitefield, Bengaluru",
+          title: "Urban Crest\nBusiness Hub",
+          image: "https://images.unsplash.com/photo-1497366216548-37526070297c",
+        },
+        {
+          id: "03",
+          location: "Gachibowli, Hyderabad",
+          title: "Elevate\nCorporate Tower",
+          image: "https://images.unsplash.com/photo-1529429617124-95b109e86bb8",
+        },
+        {
+          id: "04",
+          location: "Hinjewadi, Pune",
+          title: "Axis\nTech Square",
+          image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
+        },
+      ].map((item, i) => {
+        const leftBg = i % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2";
+
+        return (
+          <div
+            key={i}
+            className="
+              w-[95vw] max-w-[360px] h-screen flex-shrink-0
+              snap-center
+              flex flex-col
+            "
+          >
+            {/* IMAGE */}
+            <div className="w-full h-[45vh]">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* ORANGE CARD */}
+            <div
+              className={`
+                ${leftBg} flex-1 text-white
+                px-6 py-10 flex flex-col justify-between relative overflow-hidden
+              `}
+            >
+              {/* faded circle */}
+              <div className="absolute -left-24 top-16 w-[280px] h-[280px] rounded-full bg-white/10" />
+
+              <h2 className="text-[26px] font-medium leading-tight max-w-[260px] relative z-10">
+                Signature spaces {'\n'}
+                crafted for {'\n'}
+                modern living.
+              </h2>
+
+              <div className="mt-10 flex items-end gap-6 relative z-10">
+                <div
+                  className="text-[88px] leading-none"
+                  style={{
+                    WebkitTextStroke: "1px #fff",
+                    color: "transparent",
+                  }}
+                >
+                  {item.id}
+                </div>
+
+                <div className="pb-2">
+                  <p className="text-[11px] tracking-widest uppercase opacity-80">
+                    {item.location}
+                  </p>
+                  <h3 className="text-[22px] mt-2 whitespace-pre-line leading-snug">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  {/* ✅ DESKTOP ONLY: Your existing sticky scroll */}
+  <div className="hidden md:block relative h-[500vh]">
     {[
       {
         id: "01",
@@ -339,7 +448,7 @@ useEffect(() => {
         id: "03",
         location: "Gachibowli, Hyderabad",
         title: "Elevate\nCorporate Tower",
-        image: "https://images.unsplash.com/photo-1529429617124-95b109e86bb8",
+        image: "https://images.unsplash.com/photo-1529429617124-95b-109e86bb8",
       },
       {
         id: "04",
@@ -348,27 +457,23 @@ useEffect(() => {
         image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
       },
     ].map((item, i) => {
-      // same transition logic as your reference demo
       const start = i * 120;
       const progress = Math.max(0, Math.min(1, (scrollY - start) / 120));
-
-      // only ORANGE / ORANGE2 with opacity
-      const leftBg =
-        i % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2";
+      const leftBg = i % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2";
 
       return (
         <div
           key={i}
           className="sticky top-0 h-screen w-full flex"
           style={{
-            // ✅ overlap stacking (next is always above old)
             zIndex: i + 1,
-            // ✅ slide from bottom into place
             transform: `translateY(${(1 - progress) * 100}%)`,
           }}
         >
           {/* LEFT PANEL */}
-          <div className={`w-1/2 ${leftBg} text-white px-24 py-24 flex flex-col justify-between`}>
+          <div
+            className={`w-1/2 ${leftBg} text-white px-24 py-24 flex flex-col justify-between`}
+          >
             <AnimatedHeading
               as="h2"
               delay={0}
@@ -418,78 +523,114 @@ useEffect(() => {
 
 
 
+
       {/* ================= STORY BEHIND THE BRAND (EXACT FRAME) ================= */}
-  <section
+<section
   className="
-    w-full 
-    h-screen 
-    pt-32 
-    bg-center 
-    bg-cover 
-    bg-no-repeat
-    bg-fixed
-    relative
+    relative w-full
+    h-[70vh] md:h-screen
+    bg-center bg-cover bg-no-repeat
+    overflow-hidden
   "
   style={{
     backgroundImage:
       "url(https://images.unsplash.com/photo-1501183638710-841dd1904471)",
   }}
 >
-  {/* Optional overlay for contrast */}
+  {/* overlay */}
   <div className="absolute inset-0 bg-[#F4EFE5]/90" />
 
   {/* CONTENT */}
-  <div className="relative max-w-7xl mx-auto px-6 flex justify-center">
-    <div className="relative w-[min(70vw,520px)] aspect-[520/420]">
-
-      {/* TOP-LEFT TEXT */}
-      <div className="absolute top-0 left-0 -translate-x-[80%] -translate-y-[10%]">
-        <AnimatedHeading
-          as="h1"
-          delay={0}
-          staggerDelay={0.15}
-          className="text-[clamp(24px,3vw,34px)] font-bold leading-tight whitespace-pre-line"
-        >
-          The Story{"\n"}Behind the Brand
-        </AnimatedHeading>
-      </div>
-
-      {/* SVG-MASKED FOREGROUND IMAGE */}
+  <div className="relative h-full max-w-7xl mx-auto px-6">
     <div
-  className="
-    w-full 
-    h-full 
-    bg-center 
-    bg-cover 
-    bg-fixed
-  "
-  style={{
-    backgroundImage:
-      "url(https://images.unsplash.com/photo-1501183638710-841dd1904471)",
+      className="
+        h-full
+        grid
+        place-items-center
+      "
+    >
+      {/* wrapper */}
+      <div
+        className="
+          relative
+          w-[min(78vw,520px)]
+          aspect-[520/420]
+        "
+      >
+        {/* TOP LEFT TITLE */}
+        <div
+          className="
+            absolute
+            top-0 left-0
+            -translate-y-[130%]
+            text-left
+            md:-translate-x-[80%] md:-translate-y-[10%]
+          "
+        >
+          <AnimatedHeading
+            as="h1"
+            delay={0}
+            staggerDelay={0.15}
+            className="
+              font-bold leading-tight whitespace-pre-line
+              text-[clamp(22px,5vw,34px)]
+            "
+          >
+            The Story{"\n"}Behind the Brand
+          </AnimatedHeading>
+        </div>
 
-    WebkitMaskImage: "url(src/assets/images/logo.svg)",
-    WebkitMaskRepeat: "no-repeat",
-    WebkitMaskSize: "contain",
-    WebkitMaskPosition: "center",
+        {/* MASK IMAGE */}
+        <div
+          className="
+            w-full h-full
+            bg-center bg-cover
+            md:bg-fixed
+          "
+          style={{
+            backgroundImage:
+              "url(https://images.unsplash.com/photo-1501183638710-841dd1904471)",
 
-    maskImage: "url(src/assets/images/logo.svg)",
-    maskRepeat: "no-repeat",
-    maskSize: "contain",
-    maskPosition: "center",
-  }}
-/>
+            WebkitMaskImage: "url(src/assets/images/logo.svg)",
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "contain",
+            WebkitMaskPosition: "center",
 
+            maskImage: "url(src/assets/images/logo.svg)",
+            maskRepeat: "no-repeat",
+            maskSize: "contain",
+            maskPosition: "center",
+          }}
+        />
 
-      {/* BOTTOM-RIGHT TEXT */}
-      <div className="absolute bottom-0 right-0 translate-x-[60%] translate-y-[60%] max-w-[26ch] text-right">
-        <p className="text-[clamp(13px,1.2vw,15px)] text-[#2A2A2A] leading-relaxed mb-6">
-          Our brand tells a story of commitment, trust, and progress.
-        </p>
-        <button className="text-[11px] tracking-widest uppercase text-[#111] border-b border-[#111] pb-1">
-          KNOW MORE
-        </button>
+        {/* BOTTOM TEXT */}
+        <div
+          className="
+            absolute
+            left-1/2
+            -translate-x-1/2
+            top-full
+            mt-6
+            text-center
+            max-w-[32ch]
+
+            md:mt-0
+            md:left-auto md:right-0
+            md:bottom-0 md:top-auto
+            md:translate-x-[60%] md:translate-y-[60%]
+            md:text-right
+            md:max-w-[26ch]
+          "
+        >
+          <p className="text-[clamp(13px,1.2vw,15px)] text-[#2A2A2A] leading-relaxed mb-5">
+            Our brand tells a story of commitment, trust, and progress.
+          </p>
+
+          <button className="text-[11px] tracking-widest uppercase text-[#111] border-b border-[#111] pb-1">
+            KNOW MORE
+          </button>
+        </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -499,21 +640,16 @@ useEffect(() => {
 
 
 
+
+
       {/* ================= WHAT MAKES US DIFFERENT ================= */}
       {/* ================= WHAT MAKES US DIFFERENT (EXACT MATCH) ================= */}
-      <section className="bg-white h-screen pt-28">
+      <section className="bg-white md:h-screen pt-10 md:pt-28">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
-          {/* LEFT IMAGE */}
-          {/* <div>
-            <img
-              src={aboutUsImg1}
-              alt="Team discussion"
-              className="w-full h-[520px] object-cover"
-            />
-          </div> */}
+         
 <RevealImageAnimation image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Team discussion"
-              className="w-full h-[520px] object-cover" />
+              className="md:w-full h-[40vh] md:h-[520px] object-cover" />
           {/* RIGHT CONTENT */}
           <div>
 
@@ -521,7 +657,7 @@ useEffect(() => {
             <AnimatedHeading
               as="h2"
               delay={0}
-              staggerDelay={0.15} className="text-[34px] font-semibold text-[#1A1A1A] leading-tight mb-4">
+              staggerDelay={0.15} className="text-md md:text-[34px] font-semibold text-[#1A1A1A] leading-tight mb-4">
               What makes us different
               lies in how we blend vision
               with execution.
@@ -529,14 +665,14 @@ useEffect(() => {
 
             {/* SUBTEXT */}
             <FloatUpText delay={0}>
-              <p className="text-[14px] text-gray-600 mb-12 max-w-md">
+              <p className="text-sm md:text-[14px] text-gray-600 mb-12 max-w-md">
                 What makes every project distinctly ours,
                 from vision and design to lasting value.
               </p>
             </FloatUpText>
 
             {/* ITEM 1 */}
-            <div className="flex gap-5 pb-6 mb-6 border-b border-gray-300">
+            <div className="flex gap-5 pb-2 mb-2 md:pb-6 md:mb-6 border-b border-gray-300">
               <div className="w-10 h-10 bg-[#FF6A13] flex items-center justify-center">
                 <span className="text-white text-sm">◆</span>
               </div>
@@ -554,7 +690,7 @@ useEffect(() => {
             </div>
 
             {/* ITEM 2 */}
-            <div className="flex gap-5 pb-6 mb-6 border-b border-gray-300">
+            <div className="flex gap-5 pb-2 mb-2 md:pb-6 md:mb-6 border-b border-gray-300">
               <div className="w-10 h-10 bg-[#FF6A13] flex items-center justify-center">
                 <span className="text-white text-sm">◆</span>
               </div>
@@ -625,20 +761,20 @@ useEffect(() => {
   {/* HEADING */}
   <div className="relative z-10 pt-24 text-center">
     <p className="text-[16px] text-[#1A1A1A] leading-tight">
-      What <br />
-      people <br />
+      What {'\n'}
+      people {'\n'}
       says
     </p>
   </div>
 
   {/* CONTENT */}
-  <div className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-36">
+  <div className="relative z-10     max-w-5xl mx-auto px-6 md:pt-32 py-10 md:pb-36">
 
     {/* QUOTE */}
     <div className="relative max-w-4xl mx-auto text-center">
       <span className="absolute -left-12 top-0 text-[48px]">“</span>
 
-      <p className="text-[22px] leading-relaxed">
+      <p className=" text-lg md:text-[22px] leading-relaxed">
         From the very first meeting to project handover,
         the experience was smooth and transparent.
       </p>
@@ -767,8 +903,8 @@ useEffect(() => {
         {/* CENTER – TEXT */}
         <div className="flex-1 max-w-md">
           <h3 className="text-[18px] leading-snug font-medium">
-            Nature’s sign, <br />
-            Where luxury and nature flow <br />
+            Nature’s sign, {'\n'}
+            Where luxury and nature flow {'\n'}
             in perfect harmony.
           </h3>
         </div>
@@ -822,11 +958,29 @@ useEffect(() => {
       {/* ================= SPEAK WITH OUR EXPERTS ================= */}
       <section className="w-full bg-white py-20">
   <div className="max-w-7xl mx-auto px-6">
+    
+    {/* GRID */}
+    <div className="
+      grid gap-10 items-center
+      grid-cols-1 text-center
+      md:grid-cols-[1fr_auto_1fr] md:text-left
+    ">
 
-    <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-12">
+      {/* CENTER IMAGE */}
+      <RevealImageAnimation
+        image="src/assets/Home/expert.jpg"
+        className="
+          w-[260px] h-[320px] rounded-2xl overflow-hidden mx-auto
+          md:w-[300px] md:h-[400px]
+        "
+      />
 
-      {/* LEFT CONTENT */}
-      <div className="flex flex-col gap-3 max-w-[260px] justify-self-end text-right">
+      {/* LEFT CONTENT (but on mobile comes after image) */}
+      <div className="
+        flex flex-col gap-3 max-w-[260px] mx-auto
+        md:justify-self-end md:text-right md:mx-0
+        order-2 md:order-1
+      ">
         <span className="text-2xl">🎧</span>
 
         <p className="text-[14px] text-gray-600">
@@ -834,24 +988,26 @@ useEffect(() => {
         </p>
 
         <h3 className="text-[24px] font-semibold text-[#1A1A1A] leading-snug">
-          Speak with <br />
+          Speak with {'\n'}
           our experts
         </h3>
       </div>
 
-      {/* CENTER IMAGE */}
-      <RevealImageAnimation
-        image="src/assets/Home/expert.jpg"
-        className="w-[300px] h-[400px] rounded-2xl overflow-hidden justify-self-center"
-      />
-
       {/* RIGHT CONTENT */}
-      <div className="flex flex-col gap-4 max-w-[260px] justify-self-start">
+      <div className="
+        flex flex-col gap-4 max-w-[260px] mx-auto
+        md:justify-self-start md:mx-0
+        order-3 md:order-3
+      ">
         <p className="text-[14px] text-gray-600 leading-relaxed">
           Request a callback for personalized assistance and project details.
         </p>
 
-        <button className="bg-[#FF6A13] text-white px-7 py-2.5 rounded-full text-[11px] tracking-widest uppercase hover:bg-[#e85c0f] transition w-fit">
+        <button className="
+          bg-[#FF6A13] text-white px-7 py-2.5 rounded-full text-[11px]
+          tracking-widest uppercase hover:bg-[#e85c0f] transition
+          mx-auto md:mx-0 w-fit
+        ">
           Request Callback
         </button>
       </div>
@@ -860,6 +1016,7 @@ useEffect(() => {
 
   </div>
 </section>
+
 
       {/* ================= OUR PROMISE SECTION ================= */}
      <section
@@ -894,7 +1051,7 @@ useEffect(() => {
 
     <FloatUpText delay={0}>
       <p className="text-[13px] md:text-[14px] text-white/80 max-w-2xl mx-auto mb-10">
-        We design spaces that nurture life itself where <br />
+        We design spaces that nurture life itself where {'\n'}
         craftsmanship and dedicated service come together
         to elevate living.
       </p>

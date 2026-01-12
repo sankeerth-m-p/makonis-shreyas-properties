@@ -5,11 +5,11 @@ const Footer = () => {
     <footer
       className="
         bg-gradient-to-b  font-medium uppercase from-neutral-900 to-black text-neutral-400
-        h-[50vh] md:h-[66vh] bottom-0 relative 
+        min-h-[50vh] md:h-[66vh]  relative 
         flex justify-center items-center
       "
     >
-      <div className="w-full px-4 sm:px-6 md:px-8 lg:m-36 lg:mx-64 py-8 md:py-0">
+      <div className="w-full px-4 sm:px-6  md:px-8 lg:m-36 lg:mx-64 py-8 md:py-0">
 
         {/* ✅ MOBILE VERSION ONLY (matches screenshot) */}
         <div className="md:hidden h-full flex flex-col justify-between">
