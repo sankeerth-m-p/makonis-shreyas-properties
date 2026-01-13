@@ -18,7 +18,9 @@ const images = [
   nature3,
 ];
 
-const NatureSign = () => {
+const NatureSign = () => {const visibleCount = 3; // 3 thumbnails visible
+const thumbWidth = 110; // your spacing (100px img + 10 gap)
+
   const [index, setIndex] = useState(0);
   const [bgImage, setBgImage] = useState(nature1);
 
@@ -99,37 +101,56 @@ const NatureSign = () => {
             </div>
 
             {/* SLIDER */}
-            <div className="relative w-[360px] flex items-center">
+           {/* SLIDER */}
+<div className="relative w-[360px] flex items-center">
 
-              <button onClick={() => setIndex(prev => Math.max(prev - 1, 0))}>‹</button>
+  {/* LEFT */}
+  <button
+    onClick={() =>
+      setIndex((prev) => (prev - 1 + images.length) % images.length)
+    }
+    className="absolute -left-8 bg-[#0A1E2A]/90 w-9 h-9 rounded-full"
+  >
+    ‹
+  </button>
 
-              <div className="w-[320px] overflow-hidden mx-auto">
-                <div
-                  className="flex gap-3 transition-transform duration-500"
-                  style={{ transform: `translateX(-${index * 110}px)` }}
-                >
-                  {images.map((img, i) => (
-                    <img
-                      key={i}
-                      src={img}
-                      className="w-[100px] h-[70px] object-cover shrink-0 cursor-pointer hover:scale-105 transition"
-                      onClick={() => {
-                        setBgImage(img);
-                        setIndex(i);
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
+  <div className="w-[320px] overflow-hidden mx-auto">
+    <div
+      className="flex gap-3 transition-transform duration-500"
+      style={{
+        transform: `translateX(-${index * thumbWidth}px)`,
+      }}
+    >
+      {[...images, ...images].map((img, i) => {
+        const realIndex = i % images.length;
 
-              <button
-                onClick={() => setIndex(prev => Math.min(prev + 1, images.length - 3))}
-                className="absolute -right-8 bg-[#0A1E2A]/90 w-9 h-9 rounded-full"
-              >
-                ›
-              </button>
+        return (
+          <img
+            key={i}
+            src={img}
+            className="w-[100px] h-[70px] object-cover shrink-0 cursor-pointer hover:scale-105 transition"
+            onClick={() => {
+              setBgImage(img);
+              setIndex(realIndex);
+            }}
+          />
+        );
+      })}
+    </div>
+  </div>
 
-            </div>
+  {/* RIGHT */}
+  <button
+    onClick={() =>
+      setIndex((prev) => (prev + 1) % images.length)
+    }
+    className="absolute -right-8 bg-[#0A1E2A]/90 w-9 h-9 rounded-full"
+  >
+    ›
+  </button>
+
+</div>
+
 
           </div>
         </div>
