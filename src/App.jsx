@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/footer.jsx";
 import OurStory from "./pages/OurStory.jsx";
 import Projects from "./pages/Projects.jsx";
+import Media from "./pages/Media.jsx";
 import Home from "./pages/Home";
 import PromisePage from "./pages/Promise.jsx";
 import ReactLenis from "lenis/react";
@@ -101,6 +102,21 @@ prevPath.current = location.pathname;
   transition={pageTransition}
 >
                 <Projects/>
+              </motion.div>
+            }
+            />
+             <Route
+            path="/media-center"
+            element={
+              <motion.div
+  custom={direction}
+  variants={pageVariants}
+  initial="initial"
+  animate="animate"
+  exit="exit"
+  transition={pageTransition}
+>
+                <Media/>
               </motion.div>
             }
             />
