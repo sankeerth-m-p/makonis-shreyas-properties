@@ -1,7 +1,7 @@
-import hero from "../assets/images/promise_hero.jpg";
-import artistry from "../assets/images/promise_artistry.jpg";
-import nature from "../assets/images/promise_nature.jpg";
-import aesthetic from "../assets/images/promise_aesthetic_desgin.jpg";
+import hero from "../assets/images/promise_hero.webp";
+import aesthetic from "../assets/images/promise_artistry.webp";
+import nature from "../assets/images/promise_nature.webp";
+import artistry  from "../assets/images/promise_aesthetic_desgin.webp";
 import RevealImageAnimation from "../components/RevealImageAnimation";
 import { useEffect, useState ,useRef} from "react";
 import FloatUpText from "../components/floatUpText";
@@ -75,11 +75,12 @@ function Showcase({
           reverse ? "md:order-1 md:items-end" : ""
         }`} delay={0}>
         
-        <p className="text-gray-700 leading-relaxed mb-4 text-sm md:text-base max-w-full md:max-w-md">
+        <p className="text-[20px] text-gray-700 leading-relaxed mb-4 max-w-full md:max-w-md">
+
           {para1}
         </p>
 
-        <p className="text-gray-600 leading-relaxed text-sm md:text-base max-w-full md:max-w-md">
+       <p className="text-[20px] text-gray-600 leading-relaxed max-w-full md:max-w-md">
           {para2}
         </p>
      
@@ -114,7 +115,8 @@ export default function PromisePage() {
     </AnimatedHeading>
           <FloatUpText delay={0}>
             
-    <p className="mt-4 text-sm sm:text-base md:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
+   <p className="mt-4 text-[20px] sm:text-[20px] md:text-[20px] text-gray-600 leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
+
       At every stage of our journey, we stand by our word. From project
       planning to final handover, we ensure transparency, timely delivery,
       and uncompromising quality, so what we promise is exactly what you
