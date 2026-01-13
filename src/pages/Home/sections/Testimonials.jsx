@@ -21,7 +21,7 @@ const Testimonials = () => {
       
       // Smooth scroll progress calculation (0 to 1)
       const progress = Math.max(0, Math.min(1, 
-        (windowHeight - elementTop) / (windowHeight + elementHeight * 0.)
+        (windowHeight - elementTop) / (windowHeight + elementHeight * 0.3)
       ));
       setScrollProgress(progress);
     };
@@ -78,8 +78,8 @@ const Testimonials = () => {
         }}
       >
         <p className="text-[16px] text-[#1A1A1A] leading-tight">
-          What  {'\n'}
-          people  {'\n'}
+          What <br />
+          people <br />
           says
         </p>
       </div>

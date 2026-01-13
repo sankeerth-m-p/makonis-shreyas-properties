@@ -3,11 +3,51 @@ import aboutUsImg from "../../../assets/Home/aboutUsImg.webp";
 import AnimatedHeading from "../../../components/animatedHeading";
 import FloatUpText from "../../../components/floatUpText";
 import vision from "../../../assets/Home/vision.svg";
-import mission from "../../../assets/Home/mission.svg";
-const ThoughtfulSection = () => {
+import mission from "../../../assets/Home/mission.svg";import circleBg from "../../../assets/Home/cicle.svg";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+const ThoughtfulSection = () => {const sectionRef = useRef(null);
+
+
+const { scrollYProgress } = useScroll({
+  target: sectionRef,
+  offset: ["start end", "end start"],
+});
+
+/// Bottom-left circle moves diagonally upward/right (closer to center)
+const bottomLeftX = useTransform(scrollYProgress, [0, 1], [-160, 50]);
+const bottomLeftY = useTransform(scrollYProgress, [0, 1], [20, -10]);
+
+// Top-right circle moves diagonally downward/left (closer to center)
+const topRightX = useTransform(scrollYProgress, [0, 1], [20, 10]);
+const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
+
+
   return (
-   <section className="   relative h-screen pt-10 md:pt-28 pb-20 md:pb-0 overflow-hidden">
-  <div className="relative max-w-6xl mx-auto px-4  h-full   md:px-0">
+   <section ref={sectionRef} className="   relative h-screen pt-10 md:pt-28 pb-20 md:pb-0 overflow-hidden">{/* ===== CIRCLE SVG BACKGROUND (ANIMATED) ===== */}
+{/* ===== SVG CIRCLES BACKGROUND ===== */}
+{/* BOTTOM LEFT */}
+<motion.img
+  src={circleBg}
+  alt=""
+  aria-hidden="true"
+  style={{ x: bottomLeftX, y: bottomLeftY }}
+  className="pointer-events-none select-none absolute left-[-220px] bottom-[-200px] w-[560px] opacity-[0.12] z-[1]"
+/>
+
+{/* TOP RIGHT */}
+<motion.img
+  src={circleBg}
+  alt=""
+  aria-hidden="true"
+  style={{ x: topRightX, y: topRightY }}
+  className="pointer-events-none select-none absolute right-[-220px] top-[-200px] w-[560px] opacity-[0.12] z-[1]"
+/>
+
+
+
+  <div className="relative max-w-6xl mx-auto px-4  h-full  z-10  md:px-0">
     <div className="grid grid-cols-1 md:grid-cols-5 h-full  gap-10 md:gap-0 items-start">
 
       {/* IMAGE */}
