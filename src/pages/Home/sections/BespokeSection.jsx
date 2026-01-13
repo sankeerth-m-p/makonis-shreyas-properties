@@ -7,17 +7,17 @@ const bespokeImages = [
     label: "PLOTTED DEVELOPMENT",
   },
   {
-    src: "src/assets/Home/residential_projects.jpg",
+    src: "src/assets/Home/residential_projects.webp",
     label: "residential projects",
   },
   {
-    src: "src/assets/Home/services_plotted_developemnt.webp",
-    label: "PLOTTED DEVELOPMENT",
+    src: "src/assets/Home/hospitality.webp",
+    label: "hospitality",
   },
-  // {
-  //   src: "src/assets/Home/residential_projects.jpg",
-  //   label: "residential projects",
-  // },
+  {
+    src: "src/assets/Home/commercial&retailsspaces.webp",
+    label: "commercial and retail spaces",
+  },
   
   // {
   //   src: "src/assets/Home/residential_projects.jpg",
