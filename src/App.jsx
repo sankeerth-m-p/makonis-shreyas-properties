@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/footer.jsx";
 import OurStory from "./pages/OurStory.jsx";
 import Projects from "./pages/Projects.jsx";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home.jsx";
 import PromisePage from "./pages/Promise.jsx";
 import ReactLenis from "lenis/react";
 import ScrollToTop from "./components/scrollToTop.jsx";

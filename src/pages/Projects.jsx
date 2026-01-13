@@ -2,6 +2,7 @@ import React from "react";
 import heroImg2 from "../assets/Home/royalenclave.jpg";
 import heroImg5 from "../assets/Home/profound_infra.jpg";
 import brandLogo from "../assets/images/modern_propound_logo.png";
+import FloatUpText from "../components/floatUpText";
 
 const statusStyles = {
   Ongoing: "bg-ORANGE2",
@@ -19,7 +20,9 @@ const ProjectCard = ({
   buttonText = "VIEW DETAILS",
   onClick,
 }) => {
-  return (
+  return (<FloatUpText>
+
+  
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
       {/* IMAGE */}
       <div className="relative w-full md:w-1/2 h-64 md:h-auto">
@@ -67,7 +70,7 @@ const ProjectCard = ({
           {buttonText}
         </button>
       </div>
-    </div>
+    </div></FloatUpText>
   );
 };
 
