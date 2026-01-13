@@ -11,7 +11,7 @@ import PromiseSection from "./sections/PromiseSection.jsx";
 
 const HomeLayout = () => {
   return (
-    <>
+    <div className="overflow-hidden">
       <HeroSection />
       <ThoughtfulSection />
       <BespokeSection />
@@ -22,7 +22,7 @@ const HomeLayout = () => {
       <NatureSign />
       <ExpertsSection />
       <PromiseSection />
-    </>
+    </div>
   );
 };
 

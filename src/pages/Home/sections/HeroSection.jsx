@@ -69,7 +69,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-<section className="relative h-screen w-full overflow-y-visible ">
+<section className="relative  h-screen w-full overflow-y-visible ">
       {/* Current Slide (underneath) */}
       <div className="absolute inset-0">
         <img
@@ -93,8 +93,8 @@ const HeroSection = () => {
       </div>
 
       {/* ORANGE CARD */}
-      <div className="absolute left-0 bottom-0 w-full z-20 translate-y-[50%]">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
+      <div className="absolute    left-0 bottom-0 w-full z-20 translate-y-[10%]">
+        <div className="max-w-6xl  mx-auto  px-4 md:px-0">
           <div className="bg-ORANGE text-white px-6 py-10 md:px-14 md:py-16 w-full md:w-[65%] shadow-xl">
             <AnimatedHeading
               as="h1"

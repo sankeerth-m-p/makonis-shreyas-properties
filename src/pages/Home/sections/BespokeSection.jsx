@@ -3,17 +3,27 @@ import AnimatedHeading from "../../../components/animatedHeading";
 
 const bespokeImages = [
   {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    src: "src/assets/Home/services_plotted_developemnt.webp",
     label: "PLOTTED DEVELOPMENT",
   },
   {
-    src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
-    label: "APARTMENTS",
+    src: "src/assets/Home/residential_projects.jpg",
+    label: "residential projects",
   },
   {
-    src: "https://images.unsplash.com/photo-1600585154084-4e5fe7c39198",
-    label: "VILLAS",
+    src: "src/assets/Home/services_plotted_developemnt.webp",
+    label: "PLOTTED DEVELOPMENT",
   },
+  // {
+  //   src: "src/assets/Home/residential_projects.jpg",
+  //   label: "residential projects",
+  // },
+  
+  // {
+  //   src: "src/assets/Home/residential_projects.jpg",
+  //   label: "residential projects",
+  // },
+  
 ];
 function BespokeImageHover() {
   const [active, setActive] = useState(0);
@@ -26,7 +36,7 @@ function BespokeImageHover() {
           onMouseEnter={() => setActive(index)}
           onTouchStart={() => setActive(index)}
           className={`
-            relative overflow-hidden rounded-xl transition-all duration-500 ease-in-out
+            relative overflow-hidden rounded-3xl transition-all duration-500 ease-in-out
             ${active === index ? "flex-[2]" : "flex-[1]"}
           `}
         >
@@ -37,7 +47,7 @@ function BespokeImageHover() {
           />
 
           {active === index && (
-            <span className="absolute bottom-3 left-3 text-white text-[10px] md:text-[11px] tracking-widest">
+            <span className="absolute bottom-0 uppercase left-0 p-5 text-center justify-center text-white bg-black/50 flex w-full text-[10px] md:text-[11px] tracking-widest">
               {img.label}
             </span>
           )}
@@ -50,16 +60,16 @@ const BespokeSection = () => {
 
   return (
    <section className="bg-[#EEF2F3] py-10 md:py-28">
-  <div className="max-w-7xl mx-auto px-4 md:px-6">
-    <div className="bg-white rounded-2xl px-5 md:px-10 py-6 md:py-12 flex flex-col md:flex-row gap-6">
+  <div className="max-w-6xl mx-auto px-4 md:px-6">
+    <div className="bg-white rounded-3xl px-5 md:px-10 py-6 md:py-12 flex flex-col md:flex-row gap-6">
 
       {/* LEFT CONTENT */}
-      <div className="w-full md:w-[30%]">
+      <div className="w-full md:w-[30%]  flex flex-col justify-center font-bold ">
         <AnimatedHeading
           as="h3"
           delay={0}
           staggerDelay={0.15}
-          className="text-[20px] md:text-[28px] font-semibold text-gray-900 leading-snug mb-4 md:mb-6"
+          className="text-lg md:text-4xl  font-semibold text-gray-900 leading-snug mb-4 md:mb-8"
         >
           Bespoke services for elevated living
         </AnimatedHeading>

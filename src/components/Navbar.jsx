@@ -14,7 +14,7 @@ const navItems = [
 ];
 
 const NavContent = ({ location }) => (
-  <nav className="max-w-5xl mx-auto w-full min-h-20 px-6 py-4 flex items-center justify-between">
+  <nav className="max-w-6xl mx-auto w-full min-h-20 px-6 py-4 flex items-center justify-between">
     {/* LOGO */}
     <h1 className="text-2xl font-semibold tracking-wide text-gray-900">
       <Link to="/" className="hover:opacity-80 transition">

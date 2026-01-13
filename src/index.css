@@ -56,14 +56,14 @@
 @font-face {
   font-family: "Aeonik";
   src: url("./assets/fonts/aeonik/fonnts.com-Aeonik-Regular.ttf") format("truetype");
-  font-weight: 400;
+  /* font-weight: 400; */
   font-style: normal;
 }
 
 @font-face {
   font-family: "Mont";
   src: url("./assets/fonts/Mont/Mont-Regular.otf") format("opentype");
-  font-weight: 400;
+  /* font-weight: 400; */
   font-style: normal;
 }
 
@@ -76,8 +76,10 @@ body {
 /* Headings use Aeonik */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Mont", sans-serif;
-  font-weight: 400; /* Regular weight for headings */
   margin: 0;
 }
 
 /* --------------------------------------- */
+.boldFont{
+  font-weight: 900;
+}
