@@ -3,7 +3,7 @@ import aboutUsImg from "../../../assets/Home/aboutus.jpg";
 
 const ThoughtfulSection = () => {
   return (
-   <section className="relative bg-white pt-10 md:pt-56 pb-20 md:pb-32 overflow-hidden">
+   <section className="relative  bg-white pt-10 md:pt-56 pb-20 md:pb-32 overflow-hidden">
   <div className="relative max-w-7xl mx-auto px-4 md:px-6">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
 

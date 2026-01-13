@@ -12,7 +12,7 @@ import nhIcon from "../assets/Home/NH-4.svg";
 import airportIcon from "../assets/Home/Airport.svg";
 import hillIcon from "../assets/Home/Hill.svg";
 import heroImg1 from "../assets/Home/Sands Paradise_Vignan Nagar.jpg";
-import heroImg2 from "../assets/Home/royalenclave.jpg";
+import heroImg2 from "../assets/Home/royalEnclave.webp";
 import heroImg3 from "../assets/Home/residential_projects.jpg";
 import heroImg4 from "../assets/Home/naturesign.jpg";
 import heroImg5 from "../assets/Home/profound_infra.jpg";
