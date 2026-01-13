@@ -1,5 +1,5 @@
 import RevealImageAnimation from "../../../components/RevealImageAnimation";
-import aboutUsImg from "../../../assets/Home/aboutus.jpg";
+import aboutUsImg from "../../../assets/Home/aboutUsImg.webp";
 import AnimatedHeading from "../../../components/animatedHeading";
 import FloatUpText from "../../../components/floatUpText";
 import vision from "../../../assets/Home/vision.svg";
