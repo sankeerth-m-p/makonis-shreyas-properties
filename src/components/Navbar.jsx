@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import LogoImg from "../assets/images/Shreyasinfra_logo.png";
-
+import navClose from '/src/assets/images/nav_close.svg';
+import navMenu from '/src/assets/images/nav_menu.svg';
 const navItems = [
   { label: "OUR STORY", path: "/our-story" },
   { label: "OUR PROMISE", path: "/our-promise" },
@@ -95,21 +96,19 @@ const Navbar = () => {
           className="flex flex-col justify-center items-center w-10 h-10 z-[60]"
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          <span
-            className={`block w-6 h-0.5 bg-gray-900 mb-1.5 transition-all ${
-              isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
-            }`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 bg-gray-900 mb-1.5 transition-all ${
-              isMobileMenuOpen ? "opacity-0" : ""
-            }`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 bg-gray-900 transition-all ${
-              isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-            }`}
-          ></span>
+          {isMobileMenuOpen ? (
+    <img 
+      src={navClose} 
+      alt="Close menu" 
+      className="w-6 h-6"
+    />
+  ) : (
+    <img 
+      src={navMenu} 
+      alt="Open menu" 
+      className="w-6 h-6"
+    />
+  )}
         </button>
 
         {/* LOGO CENTER */}
@@ -152,7 +151,7 @@ const Navbar = () => {
                   <Link
                     key={label}
                     to={path}
-                    className={`py-4 px-2 text-lg font-medium border-b border-gray-200 transition-colors duration-300 ${
+                    className={`py-4 px-2 text-lg font-medium  transition-colors duration-300 ${
                       isActive
                         ? "text-ORANGE"
                         : "text-gray-800 hover:text-ORANGE"
