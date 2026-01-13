@@ -5,10 +5,10 @@ const SignatureSpaces = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const handleScroll = () => setScrollY(window.scrollY);
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   const items = [
     {
@@ -38,7 +38,7 @@ const SignatureSpaces = () => {
   ];
 
   return (
-   <section className="relative w-full bg-black">
+  <section className="relative w-full bg-black">
 
   {/* ✅ MOBILE ONLY: Horizontal Scroll */}
   <div className="md:hidden w-full overflow-x-auto snap-x snap-mandatory">
