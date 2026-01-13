@@ -11,7 +11,7 @@ const StoryBehindBrand = () => {
   "
   style={{
     backgroundImage:
-      "url(https://images.unsplash.com/photo-1501183638710-841dd1904471)",
+      "url(src/assets/Home/naturesign.webp)",
   }}
 >
   {/* overlay */}
@@ -66,7 +66,7 @@ const StoryBehindBrand = () => {
           "
           style={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1501183638710-841dd1904471)",
+              "url(src/assets/Home/naturesign.webp)",
 
             WebkitMaskImage: "url(src/assets/images/logo.svg)",
             WebkitMaskRepeat: "no-repeat",

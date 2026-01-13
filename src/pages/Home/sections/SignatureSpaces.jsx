@@ -15,25 +15,25 @@ const SignatureSpaces = () => {
       id: "01",
       location: "Kondapur, Hyderabad",
       title: "Modern Profound\nTech Park",
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+      image: "src/assets/Home/profoundInfra.webp",
     },
     {
       id: "02",
       location: "Whitefield, Bengaluru",
       title: "Urban Crest\nBusiness Hub",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c",
+      image: "src/assets/Home/profoundInfra.webp",
     },
     {
       id: "03",
       location: "Gachibowli, Hyderabad",
       title: "Elevate\nCorporate Tower",
-      image: "https://images.unsplash.com/photo-1529429617124-95b109e86bb8",
+      image: "src/assets/Home/profoundInfra.webp",
     },
     {
       id: "04",
       location: "Hinjewadi, Pune",
       title: "Axis\nTech Square",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
+      image: "src/assets/Home/profoundInfra.webp",
     },
   ];
 
@@ -43,32 +43,7 @@ const SignatureSpaces = () => {
   {/* ✅ MOBILE ONLY: Horizontal Scroll */}
   <div className="md:hidden w-full overflow-x-auto snap-x snap-mandatory">
     <div className="flex  w-max">
-      {[
-        {
-          id: "01",
-          location: "Kondapur, Hyderabad",
-          title: "Modern Profound\nTech Park",
-          image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
-        },
-        {
-          id: "02",
-          location: "Whitefield, Bengaluru",
-          title: "Urban Crest\nBusiness Hub",
-          image: "https://images.unsplash.com/photo-1497366216548-37526070297c",
-        },
-        {
-          id: "03",
-          location: "Gachibowli, Hyderabad",
-          title: "Elevate\nCorporate Tower",
-          image: "https://images.unsplash.com/photo-1529429617124-95b109e86bb8",
-        },
-        {
-          id: "04",
-          location: "Hinjewadi, Pune",
-          title: "Axis\nTech Square",
-          image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
-        },
-      ].map((item, i) => {
+      {items.map((item, i) => {
         const leftBg = i % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2";
 
         return (
@@ -133,33 +108,8 @@ const SignatureSpaces = () => {
   </div>
 
   {/* ✅ DESKTOP ONLY: Your existing sticky scroll */}
-  <div className="hidden md:block relative h-[500vh]">
-    {[
-      {
-        id: "01",
-        location: "Kondapur, Hyderabad",
-        title: "Modern Profound\nTech Park",
-        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
-      },
-      {
-        id: "02",
-        location: "Whitefield, Bengaluru",
-        title: "Urban Crest\nBusiness Hub",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c",
-      },
-      {
-        id: "03",
-        location: "Gachibowli, Hyderabad",
-        title: "Elevate\nCorporate Tower",
-        image: "https://images.unsplash.com/photo-1529429617124-95b-109e86bb8",
-      },
-      {
-        id: "04",
-        location: "Hinjewadi, Pune",
-        title: "Axis\nTech Square",
-        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
-      },
-    ].map((item, i) => {
+  <div className="  hidden md:block relative h-[500vh]">
+    {items.map((item, i) => {
       const start = i * 120;
       const progress = Math.max(0, Math.min(1, (scrollY - start) / 120));
       const leftBg = i % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2";
@@ -175,7 +125,7 @@ const SignatureSpaces = () => {
         >
           {/* LEFT PANEL */}
           <div
-            className={`w-1/2 ${leftBg} text-white px-24 py-24 flex flex-col justify-between`}
+            className={`w-1/2   ${leftBg} text-white  pl-48 py-24 flex flex-col justify-between `}
           >
             <AnimatedHeading
               as="h2"
