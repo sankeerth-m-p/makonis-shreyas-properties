@@ -1,9 +1,9 @@
 import RevealImageAnimation from "../../../components/RevealImageAnimation";
-import aboutUsImg from "../../../assets/Home/aboutUsImg.webp";
+import aboutUsImg from "/Home/aboutUsImg.webp";
 import AnimatedHeading from "../../../components/animatedHeading";
 import FloatUpText from "../../../components/floatUpText";
-import vision from "../../../assets/Home/vision.svg";
-import mission from "../../../assets/Home/mission.svg";import circleBg from "../../../assets/Home/cicle.svg";
+import vision from "/Home/vision.svg";
+import mission from "/Home/mission.svg";import circleBg from "/Home/cicle.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 

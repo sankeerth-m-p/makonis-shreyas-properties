@@ -4,7 +4,7 @@ import FloatUpText from "../components/floatUpText"; import { motion, useScroll,
 import { useRef } from "react";
 import banner from "../assets/images/banner.svg";
 import banner1 from "../assets/images/banner1.svg";
-import aboutUsImg from "../assets/Home/aboutUsImg.webp";
+import aboutUsImg from "/Home/aboutUsImg.webp";
 
 const OurStory = () => {
   const sectionRef = useRef(null);

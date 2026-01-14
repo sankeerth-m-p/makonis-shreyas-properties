@@ -15,25 +15,25 @@ const SignatureSpaces = () => {
       id: "01",
       location: "Kondapur, Hyderabad",
       title: "Modern Profound\nTech Park",
-      image: "src/assets/Home/profoundInfra.webp",
+      image: "/Home/profoundInfra.webp",
     },
     {
       id: "02",
       location: "Whitefield, Bengaluru",
       title: "Urban Crest\nBusiness Hub",
-      image: "src/assets/Home/profoundInfra.webp",
+      image: "/Home/profoundInfra.webp",
     },
     {
       id: "03",
       location: "Gachibowli, Hyderabad",
       title: "Elevate\nCorporate Tower",
-      image: "src/assets/Home/profoundInfra.webp",
+      image: "/Home/profoundInfra.webp",
     },
     {
       id: "04",
       location: "Hinjewadi, Pune",
       title: "Axis\nTech Square",
-      image: "src/assets/Home/profoundInfra.webp",
+      image: "/Home/profoundInfra.webp",
     },
   ];
 

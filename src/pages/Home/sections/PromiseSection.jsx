@@ -1,6 +1,6 @@
 import AnimatedHeading from "../../../components/animatedHeading";
 import FloatUpText from "../../../components/floatUpText";
-import promiseImg from "../../../assets/Home/promisesection.jpg";
+import promiseImg from "/Home/promisesection.jpg";
 
 const PromiseSection = () => {
   return (

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import AnimatedHeading from "../../../components/animatedHeading";
 
-import profoundInfra from "../../../assets/Home/profoundInfra.webp";
-import royalEnclave from "../../../assets/Home/royalEnclave.webp";
-import ChourasiaShreyas from "../../../assets/Home/ChourasiaShreyasMarathahalli.webp";
-import natureSign from "../../../assets/Home/naturesign.webp";
-import Paradise from "../../../assets/Home/SandsParadiseVignanNagar.webp";
-import ModernView from "../../../assets/Home/ModernView.webp";
+import profoundInfra from "/Home/profoundInfra.webp";
+import royalEnclave from "/Home/royalEnclave.webp";
+import ChourasiaShreyas from "/Home/ChourasiaShreyasMarathahalli.webp";
+import natureSign from "/Home/naturesign.webp";
+import Paradise from "/Home/SandsParadiseVignanNagar.webp";
+import ModernView from "/Home/ModernView.webp";
 
 const heroSlides = [
   {

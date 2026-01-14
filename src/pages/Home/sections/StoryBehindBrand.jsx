@@ -11,7 +11,7 @@ const StoryBehindBrand = () => {
   "
   style={{
     backgroundImage:
-      "url(src/assets/Home/naturesign.webp)",
+      "url(/Home/naturesign.webp)",
   }}
 >
   {/* overlay */}
@@ -66,7 +66,7 @@ const StoryBehindBrand = () => {
           "
           style={{
             backgroundImage:
-              "url(src/assets/Home/naturesign.webp)",
+              "url(/Home/naturesign.webp)",
 
             WebkitMaskImage: "url(src/assets/images/logo.svg)",
             WebkitMaskRepeat: "no-repeat",

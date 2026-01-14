@@ -1,6 +1,6 @@
 import React from "react";
-import heroImg2 from "../assets/Home/royalEnclave.webp";
-import heroImg5 from "../assets/Home/profound_infra.jpg";
+import heroImg2 from "/Home/royalEnclave.webp";
+import heroImg5 from "/Home/profound_infra.jpg";
 import brandLogo from "../assets/images/modern_propound_logo.png";
 import FloatUpText from "../components/floatUpText";
 

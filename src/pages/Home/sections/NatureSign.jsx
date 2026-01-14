@@ -1,13 +1,13 @@
-import nature1 from "../../../assets/Home/naturesign1.jpg";
-import nature2 from "../../../assets/Home/naturesign2.png";
-import nhIcon from "../../../assets/Home/NH-4.svg";
-import airportIcon from "../../../assets/Home/Airport.svg";
-import hillIcon from "../../../assets/Home/Hill.svg";
-import nature7 from "../../../assets/Home/naturesign_2.webp";
-import nature6 from "../../../assets/Home/naturesign_3.webp";
-import nature3 from "../../../assets/Home/naturesign_4.webp";
-import nature4 from "../../../assets/Home/naturesign_5.webp";
-import nature5 from "../../../assets/Home/naturesign_6.webp";
+import nature1 from "/Home/naturesign1.jpg";
+import nature2 from "/Home/naturesign2.png";
+import nhIcon from "/Home/NH-4.svg";
+import airportIcon from "/Home/Airport.svg";
+import hillIcon from "/Home/Hill.svg";
+import nature7 from "/Home/naturesign_2.webp";
+import nature6 from "/Home/naturesign_3.webp";
+import nature3 from "/Home/naturesign_4.webp";
+import nature4 from "/Home/naturesign_5.webp";
+import nature5 from "/Home/naturesign_6.webp";
 import { useState } from "react";
 
 const images = [

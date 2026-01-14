@@ -9,7 +9,7 @@ const WhatMakesUsDifferent = () => {
     
     {/* LEFT IMAGE - Takes 2 columns on desktop */}
     <RevealImageAnimation 
-      image="src/assets/Home/wahtmakesusdiffrent.webp" 
+      image="/Home/wahtmakesusdiffrent.webp" 
       alt="Team discussion"
       className="md:w-full h-[40vh] md:h-[80vh] object-cover md:col-span-2" />
     
@@ -38,7 +38,7 @@ const WhatMakesUsDifferent = () => {
       <div className="flex gap-5 pb-2 mb-2 md:pb-6 md:mb-6 border-b border-gray-300">
          <div className="w-10 h-10 bg-ORANGE flex items-center justify-center">
           <img 
-            src="src/assets/Home/diamondlicon.svg" 
+            src="/Home/diamondlicon.svg" 
             alt="Diamond icon" />
         </div>
         <div>
@@ -58,7 +58,7 @@ const WhatMakesUsDifferent = () => {
       <div className="flex gap-5 pb-2 mb-2 md:pb-6 md:mb-6 border-b border-gray-300">
         <div className="w-10 h-10 bg-ORANGE flex items-center justify-center">
           <img 
-            src="src/assets/Home/diamondlicon.svg" 
+            src="/Home/diamondlicon.svg" 
             alt="Diamond icon" />
         </div>
         <div>
@@ -78,7 +78,7 @@ const WhatMakesUsDifferent = () => {
       <div className="flex gap-5">
         <div className="w-10 h-10 bg-ORANGE flex items-center justify-center">
           <img 
-            src="src/assets/Home/diamondlicon.svg" 
+            src="/Home/diamondlicon.svg" 
             alt="Diamond icon" />
         </div>
         <div>

@@ -3,19 +3,19 @@ import AnimatedHeading from "../../../components/animatedHeading";
 
 const bespokeImages = [
   {
-    src: "src/assets/Home/services_plotted_developemnt.webp",
+    src: "/Home/services_plotted_developemnt.webp",
     label: "PLOTTED DEVELOPMENT",
   },
   {
-    src: "src/assets/Home/residential_projects.webp",
+    src: "/Home/residential_projects.webp",
     label: "residential projects",
   },
   {
-    src: "src/assets/Home/hospitality.webp",
+    src: "/Home/hospitality.webp",
     label: "hospitality",
   },
   {
-    src: "src/assets/Home/commercial&retailsspaces.webp",
+    src: "/Home/commercial&retailsspaces.webp",
     label: "commercial and retail spaces",
   },
   
