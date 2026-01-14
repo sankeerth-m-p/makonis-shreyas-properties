@@ -109,7 +109,7 @@ const OurStory = () => {
 
               <div className="mt-5 rounded-2xl md:hidden overflow-hidden shadow-xl  mb-8">
                 <img
-                  src="\story_1.jpg"
+                  src="\story_1.webp"
                   alt="Client meeting"
                   className="w-full h-full object-cover"
                 />
