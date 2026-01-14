@@ -25,19 +25,20 @@ prevPath.current = location.pathname;
     <>
        <Navbar />
 
-          <ReactLenis
-            root
-            options={{
-              lerp: 0.1,
-              duration: 1.2,
-              orientation: 'vertical',
-              gestureOrientation: 'vertical',
-              smoothWheel: true,
-              wheelMultiplier: 1,
-              smoothTouch: false,
-              touchMultiplier: 2,
-            }}
-          ><ScrollToTop/>
+         <ReactLenis
+  root
+  options={{
+    lerp: 0.1,        // Changed from 0.01 - this makes it much smoother
+    duration: 1.5,    // Slightly longer for smoother feel
+    orientation: 'vertical',
+    gestureOrientation: 'vertical',
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+    infinite: false,syncTouch: true,  // Add this line
+  }}
+><ScrollToTop/>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
 

@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import AnimatedHeading from "../../../components/animatedHeading";
+import FloatUpText from "../../../components/floatUpText";
 
 const Testimonials = () => {
   const ref = useRef(null);
@@ -38,7 +40,7 @@ const Testimonials = () => {
   return (
     <section
       ref={ref}
-      className="relative bg-[#F4EFE5] overflow-hidden"
+      className="relative bg-[#F4EFE5] md:min-h-screen  overflow-hidden"
     >
     
       {/* WAVE – RESPONDS TO SCROLL */}
@@ -47,7 +49,7 @@ const Testimonials = () => {
           <svg
             viewBox="0 0 1440 260"
             preserveAspectRatio="none"
-            className="absolute top-0 left-0 w-full h-full"
+            className="absolute top-20 left-0 w-full h-full"
             style={{
               transform: `translateY(${-50 + scrollProgress * 50}px)`,
               opacity: scrollProgress * 0.95 + 0.05
@@ -76,12 +78,11 @@ const Testimonials = () => {
           opacity: Math.min(1, scrollProgress * 1.3),
           transform: `translateY(${(1 - scrollProgress) * 40}px)`
         }}
-      >
-        <p className="text-[16px] text-[#1A1A1A] leading-tight">
-          What <br />
-          people <br />
+      ><AnimatedHeading className="text-[16px] text-[#1A1A1A] leading-tight">
+          What {'\n'}
+          people {'\n'}
           says
-        </p>
+      </AnimatedHeading>
       </div>
     
       {/* CONTENT */}
@@ -94,9 +95,10 @@ const Testimonials = () => {
       >
     
         {/* QUOTE */}
+          <FloatUpText>
         <div className="relative max-w-4xl mx-auto text-center">
           <span className="absolute -left-12 top-0 text-[48px]">"</span>
-    
+            
           <p className=" text-lg md:text-[22px] leading-relaxed">
             From the very first meeting to project handover,
             the experience was smooth and transparent.
@@ -111,7 +113,7 @@ const Testimonials = () => {
             src="https://randomuser.me/api/portraits/women/44.jpg"
             className="w-10 h-10 rounded-full object-cover"
             alt="Neetu sargam"
-          />
+            />
           <div className="text-left">
             <p className="text-[14px] font-semibold">Neetu sargam</p>
             <p className="text-[12px] text-gray-600">
@@ -119,6 +121,7 @@ const Testimonials = () => {
             </p>
           </div>
         </div>
+            </FloatUpText>
     
       </div>
     </section>

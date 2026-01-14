@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const ExpertsSection = () => {
   return (
-    <section className="w-full bg-white py-20 overflow-hidden">
+    <section className="w-full bg-white md:min-h-screen md:flex md:items-center py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-12">
 
