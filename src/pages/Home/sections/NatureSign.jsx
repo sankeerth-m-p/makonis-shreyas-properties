@@ -8,7 +8,7 @@ import nature6 from "/Home/naturesign_3.webp";
 import nature3 from "/Home/naturesign_4.webp";
 import nature4 from "/Home/naturesign_5.webp";
 import nature5 from "/Home/naturesign_6.webp";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 const images = [
   nature7,
@@ -18,20 +18,33 @@ const images = [
   nature3,
 ];
 
-const NatureSign = () => {const visibleCount = 3; // 3 thumbnails visible
-const thumbWidth = 110; // your spacing (100px img + 10 gap)
+
+const NatureSign = () => {
+  const visibleCount = 3;
+  const thumbWidth = 110;
 
   const [index, setIndex] = useState(0);
   const [bgImage, setBgImage] = useState(nature1);
 
-  return (
-    <section className="relative w-full h-screen overflow-hidden bg-[#0B1F1A]">
+useEffect(() => {
+  // if (window.innerWidth >= 768) return; // desktop = NO auto scroll
 
-      {/* BACKGROUND IMAGE (DYNAMIC) */}
+  const interval = setInterval(() => {
+    setIndex((prev) => (prev + 1) % images.length);
+  }, 4000);
+
+  return () => clearInterval(interval);
+}, []);useEffect(() => {
+  setBgImage(images[index]);
+}, [index]);
+
+  return (
+<section className="relative w-full h-[60vh] md:h-screen overflow-hidden bg-[#0B1F1A]">
+      {/* BACKGROUND IMAGE */}
       <img
         src={bgImage}
         alt="Nature’s Sign"
-        className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
+        className="absolute inset-0 w-full h-full object-cover  transition-all duration-700"
       />
 
       {/* OVERLAY */}
@@ -39,70 +52,80 @@ const thumbWidth = 110; // your spacing (100px img + 10 gap)
 
       {/* CONTENT */}
       <div className="relative z-20 h-full flex flex-col justify-end">
+        {/* INFO STRIP */}{/* MOBILE DOT INDICATOR */}
+<div className="md:hidden absolute bottom-[200px] w-full flex justify-center gap-2 z-30">
+  {images.map((_, i) => (
+    <button
+      key={i}
+      onClick={() => setIndex(i)}
+      className={`w-2.5 h-2.5 rounded-full transition ${
+        i === index ? "bg-white" : "bg-white/40"
+      }`}
+    />
+  ))}
+</div>
 
         {/* INFO STRIP */}
-        <div className="absolute bottom-[190px] w-full">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex items-center justify-center text-[#D7E2E8] text-sm">
+<div className="   md:absolute md:bottom-[190px] w-full px-4 md:px-0">
+  <div className="max-w-7xl mx-auto">
+    <div className="flex flex-row  items-center justify-center gap-4 md:gap-0 text-[#D7E2E8] text-xs md:text-sm">
 
-              <div className="flex items-center gap-6">
-                <div className="text-right leading-relaxed">
-                  <p>Located on</p>
-                  <p>NH-44</p>
-                  <p>North Bengaluru</p>
-                </div>
-                <img src={nhIcon} className="w-12 h-12 opacity-80" />
-              </div>
+      {/* ITEM */}
+      <div className="flex   items-center gap-1 md:gap-3">
+        <img src={nhIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
+        <div className="leading-tight text-xs md:text-md text-left md:text-right">
+          <p>Located on</p>
+          <p>NH-44</p>
+          <p>North Bengaluru</p>
+        </div>        <img src={nhIcon} className="md:hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
 
-              <div className="mx-12 flex items-center">
-                <span className="w-[1px] h-[46px] bg-[#6F8C9B]/45" />
-              </div>
+      </div>
 
-              <div className="flex items-center gap-6">
-                <div className="leading-relaxed">
-                  <p>Just</p>
-                  <p>20 minutes</p>
-                  <p>from Airport</p>
-                </div>
-                <img src={airportIcon} className="w-12 h-12 opacity-80" />
-              </div>
+      <span className="block md:mx-12 w-[1px] h-8 md:h-[46px] bg-[#6F8C9B]/45" />
 
-              <div className="mx-12 flex items-center">
-                <span className="w-[1px] h-[46px] bg-[#6F8C9B]/45" />
-              </div>
-
-              <div className="flex items-center gap-6">
-                <div className="leading-relaxed">
-                  <p>Very close</p>
-                  <p>proximity from</p>
-                  <p>Nandi Hills</p>
-                </div>
-                <img src={hillIcon} className="w-12 h-12 opacity-80" />
-              </div>
-
-            </div>
-          </div>
+      <div className="flex   items-center gap-1 md:gap-3">
+        <img src={airportIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
+        <div className="leading-tight text-xs md:text-md text-left md:text-right">
+          <p>Just</p>
+          <p>20 minutes</p>
+          <p>from Airport</p>
         </div>
+        <img src={airportIcon} className="md:hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
+      </div>
+
+      <span className="block md:mx-12 w-[1px] h-8 md:h-[46px] bg-[#6F8C9B]/45" />
+
+      <div className="flex   items-center gap-1 md:gap-3">
+        <img src={hillIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
+        <div className="leading-tight text-xs md:text-md text-left md:text-right">
+          <p>Very close</p>
+          <p>proximity from</p>
+          <p>Nandi Hills</p>
+        </div>
+        <img src={hillIcon} className="md:hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
         {/* BOTTOM BAND */}
-        <div className="bg-[#15272f] py-6">
-          <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-10 text-[#D7E2E8]">
+<div className="bg-[#15272f] py-4 md:py-6">
+  <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-row  items-center md:justify-between gap-4 md:gap-10 text-[#D7E2E8]">
 
-            <div className="min-w-[180px]">
-              <img src={nature2} className="w-[160px]" />
-            </div>
+    {/* LOGO */}
+    <img src={nature2} className="w-[130px] md:w-[160px]" />
 
-            <div className="flex-1 max-w-md">
-              <h3 className="text-[18px] leading-snug font-medium">
-                Nature’s sign, <br />
-                Where luxury and nature flow <br />
-                in perfect harmony.
-              </h3>
-            </div>
+    {/* TEXT */}
+    <h3 className="text-sm md:text-[18px] text-left leading-snug font-medium max-w-xs md:max-w-md">
+      Nature’s sign, where luxury and nature flow in perfect harmony.
+    </h3>
 
+   
             {/* SLIDER */}
            {/* SLIDER */}
-<div className="relative w-[360px] flex items-center">
+<div className="relative w-[360px] hidden md:flex items-center">
 
   {/* LEFT */}
   <button
