@@ -29,15 +29,18 @@ function BespokeImageHover() {
   const [active, setActive] = useState(0);
 
   return (
-    <div className="w-full md:w-[70%] h-[260px] md:h-[380px] flex gap-3 md:gap-4">
-      {bespokeImages.map((img, index) => (
+   <div className="w-full md:w-[70%] h-auto md:h-[380px]">
+  {/* Mobile layout - 2 rows, 2 columns */}
+  <div className="md:hidden grid grid-rows-2 gap-3 h-auto">
+    {/* Row 1 */}
+    <div className="flex gap-3 h-[130px]">
+      {bespokeImages.slice(0, 2).map((img, index) => (
         <div
           key={index}
-          onMouseEnter={() => setActive(index)}
           onTouchStart={() => setActive(index)}
           className={`
-            relative overflow-hidden rounded-3xl transition-all duration-500 ease-in-out
-            ${active === index ? "flex-[2]" : "flex-[1]"}
+            relative overflow-hidden rounded-3xl transition-all duration-300 ease-in-out
+            ${active === index ? "w-[90%]" : active !== null && active < 2 ? "w-[10%]" : "w-1/2"}
           `}
         >
           <img
@@ -45,15 +48,68 @@ function BespokeImageHover() {
             alt={img.label}
             className="w-full h-full object-cover"
           />
-
           {active === index && (
-            <span className="absolute bottom-0 uppercase left-0 p-5 text-center justify-center text-white bg-black/50 flex w-full text-[10px] md:text-[11px] tracking-widest">
+            <span className="absolute bottom-0 uppercase left-0 p-3 text-center justify-center text-white bg-black/50 flex w-full text-[10px] tracking-widest">
               {img.label}
             </span>
           )}
         </div>
       ))}
     </div>
+    
+    {/* Row 2 */}
+    <div className="flex gap-3 h-[130px]">
+      {bespokeImages.slice(2, 4).map((img, index) => (
+        <div
+          key={index + 2}
+          onTouchStart={() => setActive(index + 2)}
+          className={`
+            relative overflow-hidden rounded-3xl transition-all duration-300 ease-in-out
+            ${active === index + 2 ? "w-[90%]" : active !== null && active >= 2 ? "w-[10%]" : "w-1/2"}
+          `}
+        >
+          <img
+            src={img.src}
+            alt={img.label}
+            className="w-full h-full object-cover"
+          />
+          {active === index + 2 && (
+            <span className="absolute bottom-0 uppercase left-0 p-3 text-center justify-center text-white bg-black/50 flex w-full text-[10px] tracking-widest">
+              {img.label}
+            </span>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Desktop layout - original */}
+  <div className="hidden md:flex gap-4 h-[380px]">
+    {bespokeImages.map((img, index) => (
+      <div
+        key={index}
+        onMouseEnter={() => setActive(index)}
+        onTouchStart={() => setActive(index)}
+        className={`
+          relative overflow-hidden rounded-3xl transition-all duration-500 ease-in-out
+          ${active === index ? "flex-[2]" : "flex-[1]"}
+        `}
+      >
+        <img
+          src={img.src}
+          alt={img.label}
+          className="w-full h-full object-cover"
+        />
+
+        {active === index && (
+          <span className="absolute bottom-0 uppercase left-0 p-5 text-center justify-center text-white bg-black/50 flex w-full text-[11px] tracking-widest">
+            {img.label}
+          </span>
+        )}
+      </div>
+    ))}
+  </div>
+</div>
   );
 }
 const BespokeSection = () => {
