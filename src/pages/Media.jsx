@@ -1,112 +1,115 @@
 import React from "react";
+import mediaImg from "/media/media.webp";
 
 const Media = () => {
   return (
-    <div className="bg-white pt-24 pb-16">
+    <div className="bg-white pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Page Heading */}
-        <p className="text-lg text-gray-800 mb-10 max-w-2xl">
+        {/* Heading */}
+        <p className="text-lg text-gray-800 mb-12 max-w-2xl">
           Our journey, values, and projects as recognized and featured by leading media platforms.
         </p>
 
-        {/* Two Card Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-20">
+        {/* Top Two Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
 
-          {/* Left Image Card */}
-          <div className="bg-white rounded-3xl shadow-lg overflow-hidden h-[380px]">
-            <img
-  src="https://via.placeholder.com/900x600?text=Media+Highlight"
-  alt="Media"
-  className="w-full h-full object-cover"
-/>
-
+          <div className="rounded-3xl overflow-hidden h-[380px]">
+            <img src={mediaImg} className="w-full h-full object-cover" />
           </div>
 
-          {/* Right Orange Card */}
-          <div className="bg-[#ff6a13] rounded-3xl p-12 flex flex-col justify-between h-[380px] relative">
-            
-            {/* Logo */}
-            <div className="flex justify-end">
-              <span className="text-white font-semibold text-sm tracking-wide">
-                shreyas
-              </span>
-            </div>
+          <div className="bg-[#ff6a13] rounded-3xl p-12 flex flex-col justify-between h-[380px]">
+            <div className="flex justify-end text-white text-sm font-semibold">Shreyas</div>
 
-            {/* Text + Accent Line */}
             <div>
-              <h2 className="text-white text-4xl font-medium leading-tight mb-4">
-                Headlines <br />
-                that <br />
-                matters.
+              <h2 className="text-white text-4xl leading-tight mb-4">
+                Headlines <br /> that <br /> matters.
               </h2>
-
-              {/* Accent Line (exact thin small line) */}
-              <div className="w-6 h-[1.5px] bg-white mb-4"></div>
-
+              <div className="w-6 h-[2px] bg-white mb-4"></div>
               <p className="text-white/90 text-sm">
-                Our story highlighted in over <br />
-                10 media publications.
+                Our story highlighted in over <br /> 10 media publications.
               </p>
             </div>
           </div>
+
         </div>
 
-        {/* Next Section - Media Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Media Cards Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
 
-          {/* Card 1 */}
-          <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-            <img
-              src="https://via.placeholder.com/600x350"
-              alt="Project"
-              className="w-full h-56 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-                <span className="font-semibold text-black">CNBC</span>
-                <span>| Published on March 08, 2020</span>
-              </div>
-
-              <h3 className="text-sm font-semibold text-gray-800 mb-2">
-                We are a forward-thinking real estate company driven by the belief that well-designed spaces shape better lives.
-              </h3>
-
-              <p className="text-xs text-gray-600 mb-4 leading-relaxed">
-                With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with modern living.
-              </p>
-
-              <button className="border border-gray-300 rounded-full px-4 py-1 text-xs font-medium">
-                READ MORE
-              </button>
+          {/* Card */}
+          <div>
+            <img src={mediaImg} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
+            <div className="flex items-center gap-3 mb-3 text-sm">
+              <span className="font-bold">CNBC TV18</span>
+              <span className="text-gray-500">| Published on: March 06, 2026</span>
             </div>
+            <h3 className="text-lg mb-3">
+              We are a forward-thinking real estate company driven by the belief that well-designed spaces shape better lives.
+            </h3>
+            <p className="text-sm text-gray-600 mb-6">
+              With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with...
+            </p>
+            <button className="border border-black rounded-full px-6 py-2 text-xs tracking-widest">
+              READ MORE
+            </button>
           </div>
 
-          {/* Card 2 */}
-          <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-            <img
-              src="https://via.placeholder.com/600x350"
-              alt="Interview"
-              className="w-full h-56 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-                <span className="font-semibold text-black">ZEE NEWS</span>
-                <span>| Published on March 08, 2020</span>
-              </div>
-
-              <h3 className="text-sm font-semibold text-gray-800 mb-2">
-                We are a forward-thinking real estate company driven by the belief that well-designed spaces shape better lives.
-              </h3>
-
-              <p className="text-xs text-gray-600 mb-4 leading-relaxed">
-                With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with modern living.
-              </p>
-
-              <button className="border border-gray-300 rounded-full px-4 py-1 text-xs font-medium">
-                READ MORE
-              </button>
+          {/* Card */}
+          <div>
+            <img src={mediaImg} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
+            <div className="flex items-center gap-3 mb-3 text-sm">
+              <span className="font-bold">ZEE NEWS</span>
+              <span className="text-gray-500">| Published on: March 06, 2026</span>
             </div>
+            <h3 className="text-lg mb-3">
+              We are a forward-thinking real estate company driven by the belief that well-designed spaces.
+            </h3>
+            <p className="text-sm text-gray-600 mb-6">
+              With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning...
+            </p>
+            <button className="border border-black rounded-full px-6 py-2 text-xs tracking-widest">
+              READ MORE
+            </button>
+          </div>
+
+        </div>
+
+        {/* Second Row Same Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+          <div>
+            <img src={mediaImg} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
+            <div className="flex items-center gap-3 mb-3 text-sm">
+              <span className="font-bold">CNBC TV18</span>
+              <span className="text-gray-500">| Published on: March 06, 2026</span>
+            </div>
+            <h3 className="text-lg mb-3">
+              We are a forward-thinking real estate company driven by the belief that well-designed spaces shape better lives.
+            </h3>
+            <p className="text-sm text-gray-600 mb-6">
+              With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with...
+            </p>
+            <button className="border border-black rounded-full px-6 py-2 text-xs tracking-widest">
+              READ MORE
+            </button>
+          </div>
+
+          <div>
+            <img src={mediaImg} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
+            <div className="flex items-center gap-3 mb-3 text-sm">
+              <span className="font-bold">ZEE NEWS</span>
+              <span className="text-gray-500">| Published on: March 06, 2026</span>
+            </div>
+            <h3 className="text-lg mb-3">
+              We are a forward-thinking real estate company driven by the belief that well-designed spaces.
+            </h3>
+            <p className="text-sm text-gray-600 mb-6">
+              With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning...
+            </p>
+            <button className="border border-black rounded-full px-6 py-2 text-xs tracking-widest">
+              READ MORE
+            </button>
           </div>
 
         </div>
