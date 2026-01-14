@@ -8,15 +8,34 @@ import Testimonials from "./sections/Testimonials.jsx";
 import NatureSign from "./sections/NatureSign.jsx";
 import ExpertsSection from "./sections/ExpertsSection.jsx";
 import PromiseSection from "./sections/PromiseSection.jsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { useLenis } from "lenis/react";
 
 const HomeLayout = () => {
   const lenis = useLenis();
+  const [isMobile, setIsMobile] = useState(false);
 
- useEffect(() => {
-    if (!lenis) return;
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is typical tablet breakpoint
+    };
+    
+    // Initial check
+    checkIfMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkIfMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Don't enable snapping on mobile
+    if (!lenis || isMobile) return;
 
     let scrollDirection = 0;
     let lastScrollY = window.scrollY;
@@ -206,7 +225,7 @@ const HomeLayout = () => {
       clearTimeout(snapTimeout);
       clearTimeout(scrollEndTimer);
     };
-  }, [lenis]);
+  }, [lenis, isMobile]); // Add isMobile to dependency array
 
   return (
     <>
