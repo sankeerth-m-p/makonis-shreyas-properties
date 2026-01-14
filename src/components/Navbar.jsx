@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import LogoImg from "../assets/images/Shreyasinfra_logo.png";
-import navClose from '/src/assets/images/nav_close.svg';
-import navMenu from '/src/assets/images/nav_menu.svg';
+import LogoImg from "/Shreyasinfra_logo.png";
+import navClose from '/nav_close.svg';
+import navMenu from '/nav_menu.svg';
 const navItems = [
   { label: "OUR STORY", path: "/our-story" },
   { label: "OUR PROMISE", path: "/our-promise" },

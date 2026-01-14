@@ -68,7 +68,7 @@ const Footer = () => {
           <div className="flex items-center gap-4 pt-10">
             <img
               className="w-32 h-auto opacity-90"
-              src="src/assets/images/shreyas_logo_footer.png"
+              src="/shreyas_logo_footer.png"
               alt="Shreyas Logo"
             />
             <div className="text-white text-sm normal-case tracking-wide leading-tight">
@@ -177,7 +177,7 @@ const Footer = () => {
             {/* Column 3 */}
             <div className="hidden md:text-right md:flex flex-col md:items-end">
               <div className="flex md:justify-end items-center gap-2 mb-3">
-                <img width="300" src="src/assets/images/shreyas_logo_footer.png" />
+                <img width="300" src="/shreyas_logo_footer.png" />
               </div>
 
               <div className="text-sm mt-20 space-y-3">

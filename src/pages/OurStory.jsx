@@ -2,8 +2,8 @@ import React from "react";
 import AnimatedHeading from "../components/animatedHeading";
 import FloatUpText from "../components/floatUpText"; import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import banner from "../assets/images/banner.svg";
-import banner1 from "../assets/images/banner1.svg";
+import banner from "/banner.svg";
+import banner1 from "/banner1.svg";
 import aboutUsImg from "/Home/aboutUsImg.webp";
 
 const OurStory = () => {
@@ -62,7 +62,7 @@ const OurStory = () => {
             {/* LEFT – VERTICAL IMAGE */}
             <div className="rounded-2xl overflow-hidden shadow-xl ">
               <img
-                src="src\assets\images\story_3.webp"
+                src="\story_3.webp"
                 alt="Design discussion"
                 className="w-full h-[45vh] md:h-[600px] object-cover rounded-2xl"
               />
@@ -72,7 +72,7 @@ const OurStory = () => {
             <div>
               <div className="rounded-2xl md:block hidden overflow-hidden shadow-xl  mb-8">
                 <img
-                  src="src\assets\images\story_1.webp"
+                  src="\story_1.webp"
                   alt="Client meeting"
                   className="w-full h-full object-cover"
                 />
@@ -109,7 +109,7 @@ const OurStory = () => {
 
               <div className="mt-5 rounded-2xl md:hidden overflow-hidden shadow-xl  mb-8">
                 <img
-                  src="src\assets\images\story_1.jpg"
+                  src="\story_1.jpg"
                   alt="Client meeting"
                   className="w-full h-full object-cover"
                 />
@@ -249,11 +249,11 @@ const OurStory = () => {
      {/* ================= PEOPLE FIRST WITH WAVE OVER IMAGE ================= */}
 <section
   className="relative w-full h-screen bg-center bg-cover bg-no-repeat bg-fixed overflow-hidden"
-  style={{ backgroundImage: `url(src/assets/images/story_2.webp)` }}
+  style={{ backgroundImage: `url(/story_2.webp)` }}
 >
   {/* ORANGE WAVE OVERLAY (LIKE DARK OVERLAY) */}
   <img
-    src="src/assets/images/story_orsngebg.svg"
+    src="/story_orsngebg.svg"
     alt=""
     className="absolute bottom-0 left-0 w-full h-auto z-10 pointer-events-none"
   />

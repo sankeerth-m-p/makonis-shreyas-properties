@@ -68,12 +68,12 @@ const StoryBehindBrand = () => {
             backgroundImage:
               "url(/Home/naturesign.webp)",
 
-            WebkitMaskImage: "url(src/assets/images/logo.svg)",
+            WebkitMaskImage: "url(/logo.svg)",
             WebkitMaskRepeat: "no-repeat",
             WebkitMaskSize: "contain",
             WebkitMaskPosition: "center",
 
-            maskImage: "url(src/assets/images/logo.svg)",
+            maskImage: "url(/logo.svg)",
             maskRepeat: "no-repeat",
             maskSize: "contain",
             maskPosition: "center",

@@ -1,7 +1,7 @@
-import hero from "../assets/images/promise_hero.webp";
-import aesthetic from "../assets/images/promise_artistry.webp";
-import nature from "../assets/images/promise_nature.webp";
-import artistry  from "../assets/images/promise_aesthetic_desgin.webp";
+import hero from "/promise_hero.webp";
+import aesthetic from "/promise_artistry.webp";
+import nature from "/promise_nature.webp";
+import artistry  from "/promise_aesthetic_desgin.webp";
 import RevealImageAnimation from "../components/RevealImageAnimation";
 import { useEffect, useState ,useRef} from "react";
 import FloatUpText from "../components/floatUpText";

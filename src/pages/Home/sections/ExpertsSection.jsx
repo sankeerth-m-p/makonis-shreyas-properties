@@ -24,7 +24,7 @@ const ExpertsSection = () => {
           {/* CENTER IMAGE */}
           <div className="flex justify-center">
             <RevealImageAnimation
-              image="src/assets/Home/expert.jpg"
+              image="/Home/expert.jpg"
               className="w-[300px] h-[400px] rounded-3xl object-cover"
             />
           </div>
