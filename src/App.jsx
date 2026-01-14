@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/footer.jsx";
 import OurStory from "./pages/OurStory.jsx";
 import Projects from "./pages/Projects.jsx";
+import Blogs from "./pages/Blogs.jsx";
+import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home/Home.jsx";import Media from "./pages/Media.jsx";
 import PromisePage from "./pages/Promise.jsx";
 import ReactLenis from "lenis/react";
@@ -120,6 +122,39 @@ prevPath.current = location.pathname;
               </motion.div>
             }
             />
+           <Route
+  path="/blogs/*"
+  element={
+    <motion.div
+      custom={direction}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+    >
+      <Blogs/>
+    </motion.div>
+  }
+/>
+<Route
+  path="/contact"
+  element={
+    <motion.div
+      custom={direction}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+    >
+      <Contact />
+    </motion.div>
+  }
+/>
+
+
+            
         </Routes> 
       </AnimatePresence>
 
