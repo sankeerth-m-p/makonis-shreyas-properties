@@ -25,7 +25,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 
 
   return (
-   <section ref={sectionRef} className="   relative h-screen pt-10 md:pt-28 pb-20 md:pb-0 overflow-hidden">{/* ===== CIRCLE SVG BACKGROUND (ANIMATED) ===== */}
+   <section ref={sectionRef} className="   relative md:min-h-screen pt-10 md:pt-28 pb-20 md:pb-0 overflow-hidden">{/* ===== CIRCLE SVG BACKGROUND (ANIMATED) ===== */}
 {/* ===== SVG CIRCLES BACKGROUND ===== */}
 {/* BOTTOM LEFT */}
 <motion.img
@@ -60,7 +60,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 
       {/* CONTENT */}
       <div className="flex flex-col md:col-span-3 md:pl-20    text-left ">
-            <AnimatedHeading className="text-[22px] leading-tight font-bold boldFont mb-3  md:max-w-none md:text-[38px]">
+            <AnimatedHeading className="text-[20px] leading-tight font-bold boldFont mb-3  md:max-w-none md:text-[38px]">
               
         
           Thoughtfully developing spaces that reflect city’s progress and promise
@@ -68,16 +68,19 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 </AnimatedHeading>
             <FloatUpText>
               
-        <p className="text-xl text-gray-600 mb-6  md:max-w-md">
+        <p className="md:text-xl text-md text-gray-600 mb-6  md:max-w-md">
           Crafting meaningful experiences where every detail is carefully envisioned.
         </p>
 
         {/* VISION */}
-        <div className="flex gap-3     mb-5">
-                <img src={vision}  width={24} height={24}/>
+        <div className="flex gap-3  items-start   mb-5">
+                <img src={vision}  className="w-4 h-4 md:w-8 md:h-8" 
+  // w-6 = 24px, h-6 = 24px on mobile
+  // md:w-8 = 32px, md:h-8 = 32px on medium screens and up
+  alt="Mission icon"/>
           <div>
-            <h4 className="text-xl font-semibold">Our vision</h4>
-            <p className="text-lg text-gray-600 leading-relaxed    ">
+            <h4 className="md:text-xl text-md font-semibold">Our vision</h4>
+            <p className="md:text-lg text-sm text-gray-600 leading-relaxed    ">
               To create thoughtfully planned spaces that elevate everyday living,
               blending design, functionality and sustainability.
             </p>
@@ -85,18 +88,23 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
         </div>
 
         {/* MISSION */}
-        <div className="flex gap-3  mb-8">
-           <img src={mission}  width={24} height={24}/>
-          <div>
-            <h4 className="text-xl font-semibold">Our mission</h4>
-            <p className="text-lg text-gray-600 leading-relaxed   ">
+        <div className="flex gap-3 items-start  mb-8">
+<img 
+  src={mission} 
+  className="w-4 h-4 md:w-8 md:h-8" 
+  // w-6 = 24px, h-6 = 24px on mobile
+  // md:w-8 = 32px, md:h-8 = 32px on medium screens and up
+  alt="Mission icon"
+/>          <div>
+            <h4 className="md:text-xl text-md font-semibold">Our mission</h4>
+            <p className="md:text-lg text-sm text-gray-600 leading-relaxed   ">
               To develop responsibly by integrating sustainable practices
               and creating balanced communities.
             </p>
           </div>
         </div>
 
-        <button className="bg-ORANGE hover:bg-ORANGE2 text-white px-8 py-2.5 rounded-full text-xl tracking-widest w-fit">
+        <button className="bg-ORANGE hover:bg-ORANGE2 text-white px-8 py-2.5 rounded-full md:text-xl text-md tracking-widest w-fit">
           VIEW DETAILS
         </button>
 </FloatUpText>
