@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import AnimatedHeading from "../../../components/animatedHeading";
 
 const SignatureSpaces = () => {
   const [scrollY, setScrollY] = useState(0);
+// Add these states near your existing scrollY state:
+const [currentSlide, setCurrentSlide] = useState(0);
+const [isPaused, setIsPaused] = useState(false);
+const scrollContainerRef = useRef(null);// Add this useEffect for auto-scrolling:
 
   useEffect(() => {
   const handleScroll = () => setScrollY(window.scrollY);
@@ -36,12 +40,35 @@ const SignatureSpaces = () => {
       image: "/Home/profoundInfra.webp",
     },
   ];
+useEffect(() => {
+  if (isPaused) return;
+  
+  const interval = setInterval(() => {
+    setCurrentSlide(prev => {
+      const next = (prev + 1) % items.length;
+      // Scroll to the next slide
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.scrollTo({
+          left: next * scrollContainerRef.current.offsetWidth,
+          behavior: 'smooth'
+        });
+      }
+      return next;
+    });
+  }, 4000); // Adjust timing as needed (4000ms = 4 seconds)
 
+  return () => clearInterval(interval);
+}, [isPaused, items.length]);
   return (
   <section className="relative w-full bg-black">
 
-  {/* ✅ MOBILE ONLY: Horizontal Scroll */}
-  <div className="md:hidden  w-full overflow-x-auto snap-x snap-mandatory">
+  {/* ✅ MOBILE ONLY: Horizontal Scroll */}<div
+  ref={scrollContainerRef}
+  className="md:hidden w-full overflow-x-auto snap-x snap-mandatory "
+  onTouchStart={() => setIsPaused(true)}
+  onTouchEnd={() => setTimeout(() => setIsPaused(false), 3000)}
+  onMouseEnter={() => setIsPaused(true)}
+  onMouseLeave={() => setIsPaused(false)}>
     <div className="flex  w-max">
       {items.map((item, i) => {
         const leftBg = i % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2";
@@ -50,7 +77,7 @@ const SignatureSpaces = () => {
           <div
             key={i}
             className="
-              w-[95vw] max-w-[360px] h-screen flex-shrink-0
+              w-[100vw] ma-w-[360px] h-screen flex-shrink-0
               snap-center
               flex flex-col
             "
