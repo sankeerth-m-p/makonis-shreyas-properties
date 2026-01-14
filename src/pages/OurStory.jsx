@@ -159,129 +159,133 @@ const OurStory = () => {
         </div>
       </section>
 
-      {/* ================= VISION & MISSION SECTION ================= */}
-      <section className="relative w-full bg-[#f4efe4] overflow-hidden pt-5 md:py-28">
+{/* ================= VISION & MISSION SECTION ================= */}
+<section className="relative w-full bg-[#f4efe4] overflow-hidden pt-10 md:py-28">
 
-        {/* LEFT BACKGROUND ICON – OUR VISION (EYE) */}
-        <img
-          src={banner1}
-          alt="Vision Icon"
-          className="absolute left-[-120px] top-16 w-[420px] opacity-[0.08] z-0"
-        />
+  {/* LEFT BACKGROUND ICON – OUR VISION (EYE) */}
+  <img
+    src={banner1}
+    alt="Vision Icon"
+   className="absolute left-1/2 -translate-x-1/2 md:left-[-120px] md:translate-x-0 top-10 w-[200px] md:w-[320px] opacity-[0.08] z-0"
 
-        {/* RIGHT BACKGROUND ICON – OUR MISSION (GROWTH) */}
-        <img
-          src={banner}
-          alt="Mission Icon"
-          className="absolute right-[5%] top-[40px] w-[420px] opacity-[0.08] z-0"
-        />
+  />
+
+  {/* RIGHT BACKGROUND ICON – OUR MISSION (GROWTH) */}
+  <img
+    src={banner}
+    alt="Mission Icon"
+    className="absolute left-1/2 -translate-x-1/2 md:left-auto md:right-[5%] top-[340px] md:top-[40px] w-[200px] md:w-[320px] opacity-[0.08] z-0"
+
+  />
+
+  {/* CONTENT */}
+  <div className="relative z-10 max-w-6xl mx-auto px-5 grid md:grid-cols-2 md:gap-28 gap-14 pb-14 md:pb-0">
+
+    {/* OUR VISION */}
+    <div className="text-left">
+      <AnimatedHeading
+        as="h1"
+        delay={0}
+        staggerDelay={0.15}
+        className="text-sm text-gray-500 mb-2"
+      >
+        Our vision
+      </AnimatedHeading>
+
+      <div className="w-24 md:w-36 h-[1px] bg-gray-400 mb-6" />
+
+      <AnimatedHeading
+        as="h1"
+        delay={0}
+        staggerDelay={0.15}
+        className="text-[20px] md:text-2xl font-medium text-gray-900 leading-snug mb-3 max-w-md"
+      >
+        To create thoughtfully planned spaces that elevate everyday living.
+      </AnimatedHeading>
+
+      <FloatUpText>
+        <p className="text-[15px] md:text-[18px] text-gray-600 leading-relaxed max-w-md">
+          To create thoughtfully planned spaces that elevate everyday living,
+          blending design, functionality, and sustainability to shape enduring
+          communities for the future.
+        </p>
+      </FloatUpText>
+    </div>
+
+    {/* OUR MISSION */}
+    <div className="text-left">
+      <AnimatedHeading
+        as="h1"
+        delay={0}
+        staggerDelay={0.15}
+        className="text-sm text-gray-500 mb-2"
+      >
+        Our mission
+      </AnimatedHeading>
+
+      <div className="w-24 md:w-36 h-[1px] bg-gray-400 mb-6" />
+
+      <AnimatedHeading
+        as="h1"
+        delay={0}
+        staggerDelay={0.15}
+        className="text-[20px] md:text-2xl font-medium text-gray-900 leading-snug mb-3 max-w-md"
+      >
+        To develop responsibly by integrating sustainable practices.
+      </AnimatedHeading>
+
+      <FloatUpText>
+        <p className="text-[15px] md:text-[18px] text-gray-600 leading-relaxed max-w-md">
+          To develop responsibly by integrating sustainable practices,
+          respecting the environment, and creating communities that support
+          healthier, balanced lifestyles.
+        </p>
+      </FloatUpText>
+    </div>
+
+  </div>
+</section>
 
 
-        {/* CONTENT */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 md:gap-28 gap-10 pb-10 md:pb-0">
-
-          {/* OUR VISION */}
-          <div>
-            <AnimatedHeading
-              as="h1"
-              delay={0}
-              staggerDelay={0.15}
-              className="text-sm text-gray-500 mb-3"
-            >
-              Our vision
-            </AnimatedHeading>
-
-            <div className="w-36 h-[1px] bg-gray-400 mb-8" />
-
-            <AnimatedHeading
-              as="h1"
-              delay={0}
-              staggerDelay={0.15}
-              className="md:text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md"
-            >
-              To create thoughtfully planned spaces that elevate everyday living.
-            </AnimatedHeading>
-
-            <FloatUpText>
-              <p className="text-[18px] text-gray-600 leading-relaxed max-w-md">
-                To create thoughtfully planned spaces that elevate everyday living,
-                blending design, functionality, and sustainability to shape enduring
-                communities for the future.
-              </p>
-            </FloatUpText>
-          </div>
-
-          {/* OUR MISSION */}
-          <div>
-            <AnimatedHeading
-              as="h1"
-              delay={0}
-              staggerDelay={0.15}
-              className="text-sm text-gray-500 mb-3"
-            >
-              Our mission
-            </AnimatedHeading>
-
-            <div className="w-36 h-[1px] bg-gray-400 mb-8" />
-
-            <AnimatedHeading
-              as="h1"
-              delay={0}
-              staggerDelay={0.15}
-              className="md:text-2xl font-medium text-gray-900 leading-snug mb-4 max-w-md"
-            >
-              To develop responsibly by integrating sustainable practices.
-            </AnimatedHeading>
-
-            <FloatUpText>
-              <p className="text-[18px] text-gray-600 leading-relaxed max-w-md">
-                To develop responsibly by integrating sustainable practices,
-                respecting the environment, and creating communities that support
-                healthier, balanced lifestyles.
-              </p>
-            </FloatUpText>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ================= PEOPLE FIRST PHILOSOPHY SECTION ================= */}
-     {/* ================= PEOPLE FIRST WITH WAVE OVER IMAGE ================= */}
 <section
-  className="relative w-full h-screen bg-center bg-cover bg-no-repeat bg-fixed overflow-hidden"
+  className="relative w-full h-screen bg-center bg-cover bg-no-repeat overflow-hidden md:bg-fixed"
   style={{ backgroundImage: `url(/story_2.webp)` }}
 >
-  {/* ORANGE WAVE OVERLAY (LIKE DARK OVERLAY) */}
+  {/* ORANGE CURVED CARD */}
   <img
     src="/story_orsngebg.svg"
     alt=""
     className="absolute bottom-0 left-0 w-full h-auto z-10 pointer-events-none"
   />
 
-  {/* CONTENT */}
-  <div className="relative z-20 max-w-6xl mx-auto px-6 h-full flex items-end pb-24 text-white">
-    <div className="grid md:grid-cols-2 gap-6">
+  {/* CONTENT ON ORANGE */}
+  <div className="absolute bottom-0 left-0 w-full z-20 md:relative md:h-full md:flex md:items-end">
+    <div className="max-w-6xl mx-auto px-6 pb-20 md:pb-24 text-white w-full">
+      <div className="grid md:grid-cols-2 gap-6">
 
-      <AnimatedHeading
-        as="h1"
-        delay={0}
-        staggerDelay={0.15}
-        className="text-xl md:text-3xl font-semibold leading-snug max-w-md"
-      >
-        A Philosophy that {'\n'}
-        puts people first.
-      </AnimatedHeading>
+        <AnimatedHeading
+          as="h1"
+          delay={0}
+          staggerDelay={0.15}
+          className="text-[22px] md:text-3xl font-semibold leading-snug max-w-md"
+        >
+          A Philosophy that <br className="block md:hidden" />
+          puts people first.
+        </AnimatedHeading>
 
-      <FloatUpText>
-        <p className="text-sm md:text-base opacity-90 max-w-md">
-          Our approach is guided by thoughtful planning, ethical practices,
-          and an uncompromising commitment to quality.
-        </p>
-      </FloatUpText>
+        <FloatUpText>
+          <p className="text-[14px] md:text-base opacity-90 max-w-md mt-3 md:mt-0">
+            Our approach is guided by thoughtful planning, ethical practices,
+            and an uncompromising commitment to quality.
+          </p>
+        </FloatUpText>
 
+      </div>
     </div>
   </div>
 </section>
+
+
 
 
 
