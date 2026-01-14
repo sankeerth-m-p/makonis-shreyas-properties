@@ -6,7 +6,8 @@ import RevealImageAnimation from "../components/RevealImageAnimation";
 import { useEffect, useState ,useRef} from "react";
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
-
+import { motion, useScroll, useTransform } from "framer-motion";
+import circleBg from "/Home/cicle.svg"; // Make sure this path is correct
 
 
 function Showcase({
@@ -91,17 +92,42 @@ function Showcase({
 
 // ================= MAIN PAGE =================
 
-export default function PromisePage() {
+export default function PromisePage() { const sectionRef = useRef(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Animation values for circles
+  const bottomLeftX = useTransform(scrollYProgress, [0, 1], [-160, 50]);
+  const bottomLeftY = useTransform(scrollYProgress, [0, 1], [20, -10]);
+  const topRightX = useTransform(scrollYProgress, [0, 1], [20, 10]);
+  const topRightY = useTransform(scrollYProgress, [0, 1], [-22, 100]);
   return (
     <div className="flex overflow-hidden flex-col items-center justify-center w-full">
 
       {/* ========= HERO ========= */}
-<section className="relative w-full min-h-screen md:h-screen pt-20 md:pt-28 overflow-hidden bg-white">
+<section className="relative  ref={sectionRef} w-full min-h-screen md:h-screen pt-20 md:pt-28 overflow-hidden bg-white">
   
-  {/* Decorative background shapes */}
-  <div className="absolute -left-56 top-36 w-[500px] h-[460px] rounded-full bg-[#F1F4F3] hidden md:block" />
-  <div className="absolute -left-24 top-60 w-[300px] h-[300px] rounded-full bg-[#ffffff] hidden md:block" />
+   {/* ANIMATED CIRCLES - Add these */}
+      {/* BOTTOM LEFT */}
+      <motion.img
+        src={circleBg}
+        alt=""
+        aria-hidden="true"
+        style={{ x: bottomLeftX, y: bottomLeftY }}
+        className="pointer-events-none select-none absolute left-[-220px] bottom-[-200px] w-[560px] opacity-[0.12] z-[1]"
+      />
 
+      {/* TOP RIGHT */}
+      <motion.img
+        src={circleBg}
+        alt=""
+        aria-hidden="true"
+        style={{ x: topRightX, y: topRightY }}
+        className="pointer-events-none select-none absolute right-[-220px] top-[-200px] w-[560px] opacity-[0.12] z-[1]"
+      />
   {/* Content */}
   <div className="relative z-10 mx-auto max-w-5xl text-center px-4 md:px-6 lg:px-8 pt-6 md:pt-0">
     <AnimatedHeading 

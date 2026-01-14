@@ -73,7 +73,7 @@ useEffect(() => {
       {/* ITEM */}
       <div className="flex   items-center gap-1 md:gap-3">
         <img src={nhIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
-        <div className="leading-tight text-xs md:text-md text-left md:text-right">
+        <div className="leading-tight text-xs md:text-base text-left md:text-right">
           <p>Located on</p>
           <p>NH-44</p>
           <p>North Bengaluru</p>
@@ -85,7 +85,7 @@ useEffect(() => {
 
       <div className="flex   items-center gap-1 md:gap-3">
         <img src={airportIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
-        <div className="leading-tight text-xs md:text-md text-left md:text-right">
+        <div className="leading-tight text-xs md:text-base text-left md:text-right">
           <p>Just</p>
           <p>20 minutes</p>
           <p>from Airport</p>
@@ -97,7 +97,7 @@ useEffect(() => {
 
       <div className="flex   items-center gap-1 md:gap-3">
         <img src={hillIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
-        <div className="leading-tight text-xs md:text-md text-left md:text-right">
+        <div className="leading-tight text-xs md:text-base text-left md:text-right">
           <p>Very close</p>
           <p>proximity from</p>
           <p>Nandi Hills</p>

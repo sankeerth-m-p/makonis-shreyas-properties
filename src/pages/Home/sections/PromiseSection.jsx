@@ -42,7 +42,7 @@ const PromiseSection = () => {
       </p>
     </FloatUpText>
 
-    <button className="bg-ORANGE  hover:bg-ORANGE2  text-white px-10 py-3 rounded-full text-sm md:text-md tracking-widest uppercase  w-full md:w-fit transition ">
+    <button className="bg-ORANGE  hover:bg-ORANGE2  text-white px-10 py-3 rounded-full text-sm md:text-base tracking-widest uppercase  w-full md:w-fit transition ">
       Know More
     </button>
 

@@ -20,7 +20,7 @@ const WhatMakesUsDifferent = () => {
         as="h2"
         delay={0}
         staggerDelay={0.15} 
-        className=" text-md md:text-3xl font-semibold text-[#1A1A1A] leading-tight mb-4">
+        className=" text-base md:text-3xl font-semibold text-[#1A1A1A] leading-tight mb-4">
         What makes us different
         lies in how we blend vision
         with execution.
@@ -28,7 +28,7 @@ const WhatMakesUsDifferent = () => {
 
       {/* SUBTEXT */}
       <FloatUpText delay={0}>
-        <p className="text-sm md:md:text-lg text-md text-gray-600 mb-12 max-w-md">
+        <p className="text-sm md:md:text-lg text-base text-gray-600 mb-12 max-w-md">
           What makes every project distinctly ours,
           from vision and design to lasting value.
         </p>
@@ -43,10 +43,10 @@ const WhatMakesUsDifferent = () => {
         </div>
         <div>
           <FloatUpText delay={0}>
-            <h4 className="md:text-lg text-md font-semibold text-[#1A1A1A] mb-1">
+            <h4 className="md:text-lg text-base font-semibold text-[#1A1A1A] mb-1">
               Values Driven Development
             </h4>
-            <p className="md:text-md text-sm text-gray-600 leading-relaxed">
+            <p className="md:text-base text-sm text-gray-600 leading-relaxed">
               Every project is planned with long-term value in mind
               focusing on quality, sustainability, and future appreciation.
             </p>
@@ -63,10 +63,10 @@ const WhatMakesUsDifferent = () => {
         </div>
         <div>
           <FloatUpText delay={0}>
-            <h4 className="md:text-lg text-md font-semibold text-[#1A1A1A] mb-1">
+            <h4 className="md:text-lg text-base font-semibold text-[#1A1A1A] mb-1">
               Thoughtfully Planned Spaces
             </h4>
-            <p className="md:text-md text-sm text-gray-600 leading-relaxed">
+            <p className="md:text-base text-sm text-gray-600 leading-relaxed">
               From layouts to amenities, each development is designed
               to enhance lifestyle, comfort, and functionality.
             </p>
@@ -83,10 +83,10 @@ const WhatMakesUsDifferent = () => {
         </div>
         <div>
           <FloatUpText delay={0}>
-            <h4 className="md:text-lg text-md font-semibold text-[#1A1A1A] mb-1">
+            <h4 className="md:text-lg text-base font-semibold text-[#1A1A1A] mb-1">
               End to End Customer Care
             </h4>
-            <p className="md:text-md text-sm text-gray-600 leading-relaxed">
+            <p className="md:text-base text-sm text-gray-600 leading-relaxed">
               Support that goes beyond possession assisting clients
               from site visits to handover and after-sales service.
             </p>

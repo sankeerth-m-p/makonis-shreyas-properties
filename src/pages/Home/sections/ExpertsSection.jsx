@@ -30,7 +30,7 @@ const ExpertsSection = () => {
             src="/Home/speak.svg" 
             alt="Diamond icon" /></div>
 
-            <p className="md:text-[14px] text-md text-gray-600">
+            <p className="md:text-[14px] text-base text-gray-600">
               Have any questions?
             </p>
 
@@ -61,7 +61,7 @@ const ExpertsSection = () => {
             viewport={{ once: true, amount: 0.4 }}
             className="flex flex-col  gap-4 items-center md:items-start text-center md:text-left"
           >
-            <p className="md:text-[14px] text-md text-gray-600 leading-relaxed max-w-xs">
+            <p className="md:text-[14px] text-base text-gray-600 leading-relaxed max-w-xs">
               Request a callback for personalized assistance and project details.
             </p>
 

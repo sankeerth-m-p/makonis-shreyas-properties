@@ -640,7 +640,7 @@ useEffect(() => {
             <AnimatedHeading
               as="h2"
               delay={0}
-              staggerDelay={0.15} className="text-md md:text-[34px] font-semibold text-[#1A1A1A] leading-tight mb-4">
+              staggerDelay={0.15} className="text-base md:text-[34px] font-semibold text-[#1A1A1A] leading-tight mb-4">
               What makes us different
               lies in how we blend vision
               with execution.

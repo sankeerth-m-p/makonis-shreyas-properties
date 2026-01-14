@@ -68,7 +68,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 </AnimatedHeading>
             <FloatUpText>
               
-        <p className="md:text-xl text-md text-gray-600 mb-6  md:max-w-md">
+        <p className="md:text-xl text-base text-gray-600 mb-6  md:max-w-md">
           Crafting meaningful experiences where every detail is carefully envisioned.
         </p>
 
@@ -79,7 +79,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
   // md:w-8 = 32px, md:h-8 = 32px on medium screens and up
   alt="Mission icon"/>
           <div>
-            <h4 className="md:text-xl text-md font-semibold">Our vision</h4>
+            <h4 className="md:text-xl text-base font-semibold">Our vision</h4>
             <p className="md:text-lg text-sm text-gray-600 leading-relaxed    ">
               To create thoughtfully planned spaces that elevate everyday living,
               blending design, functionality and sustainability.
@@ -96,7 +96,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
   // md:w-8 = 32px, md:h-8 = 32px on medium screens and up
   alt="Mission icon"
 />          <div>
-            <h4 className="md:text-xl text-md font-semibold">Our mission</h4>
+            <h4 className="md:text-xl text-base font-semibold">Our mission</h4>
             <p className="md:text-lg text-sm text-gray-600 leading-relaxed   ">
               To develop responsibly by integrating sustainable practices
               and creating balanced communities.
@@ -104,7 +104,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
           </div>
         </div>
 
-        <button className="bg-ORANGE w-full hover:bg-ORANGE2 text-white px-8 py-2.5 rounded-full md:text-xl text-md tracking-widest md:w-fit">
+        <button className="bg-ORANGE w-full hover:bg-ORANGE2 text-white px-8 py-2.5 rounded-full md:text-xl text-base tracking-widest md:w-fit">
           VIEW DETAILS
         </button>
 </FloatUpText>

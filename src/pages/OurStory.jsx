@@ -91,14 +91,14 @@ const OurStory = () => {
               </AnimatedHeading>
               <FloatUpText>
 
-                <p className="text-[16px] text-gray-600">
+                <p className="text-base text-gray-600">
                   With a strong focus on quality, transparency, and long-term value,
                   we create developments that blend thoughtful planning with
                   enduring craftsmanship.
                 </p>
               </FloatUpText>
               <FloatUpText>
-                <p className="text-[16px] text-gray-600">
+                <p className="text-base text-gray-600">
                   We believe real estate is not just about constructing buildings, but about creating
                   environments that enhance the way people live, grow, and connect. Every project we
                   undertake is guided by thoughtful planning, responsible development, and a deep
@@ -120,7 +120,7 @@ const OurStory = () => {
           </div>
 
           {/* ================= TEXT BELOW ================= */}
-          <FloatUpText className="md:mt-15 mt-5 text-[16px] text-gray-600 space-y-6 max-w-6xl mx-auto px-6">
+          <FloatUpText className="md:m-14 mt-5 text-base  text-gray-600 space-y-6 max-w-6xl mx-auto px-6">
 
             <p>
               Our philosophy is rooted in integrity, quality, and long-term value. From selecting the
@@ -141,17 +141,7 @@ const OurStory = () => {
               understanding of our customers’ aspirations.
             </p>
 
-            <p>
-              Our philosophy is rooted in integrity, quality, and long-term value. From selecting the
-              right location to executing every detail with care, we focus on delivering spaces that
-              are functional today and relevant for generations to come.
-            </p>
-
-            <p>
-              We strive to balance modern design with sustainability, ensuring our developments
-              respect nature while embracing progress. By placing people at the center of our process,
-              we create communities that foster comfort, trust, and a sense of belonging.
-            </p>
+            
 
           </FloatUpText>
 
@@ -367,7 +357,7 @@ const OurStory = () => {
 
           {/* AUTHOR */}
           <FloatUpText>
-            <p className="md:mt-10 mt-2  text-sm md:text-md font-medium text-gray-900">
+            <p className="md:mt-10 mt-2  text-sm md:text-base font-medium text-gray-900">
               Krishna Samanth Lella
             </p>
 
