@@ -53,7 +53,7 @@ useEffect(() => {
       {/* CONTENT */}
       <div className="relative z-20 h-full flex flex-col justify-end">
         {/* INFO STRIP */}{/* MOBILE DOT INDICATOR */}
-<div className="md:hidden absolute bottom-[200px] w-full flex justify-center gap-2 z-30">
+<div className="md:hidden absolute top-[100px] w-full flex justify-center gap-2 z-30">
   {images.map((_, i) => (
     <button
       key={i}
