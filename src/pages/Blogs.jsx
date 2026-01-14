@@ -1,6 +1,8 @@
 import React from "react";
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 import blogImg from "/blogs/blogs.webp";
+import FloatUpText from "../components/floatUpText";
+import AnimatedHeading from "../components/animatedHeading";
 
 /* ---------------- BLOG DATA ---------------- */
 const blogData = [
@@ -46,18 +48,19 @@ const BlogList = () => {
 
     return (
         <section className="bg-white pt-28 pb-24 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-6xl mx-auto px-6">
 
-                <h2 className="text-3xl font-semibold text-gray-900">
+                <AnimatedHeading className="text-3xl font-semibold text-gray-900">
                     Stories That Shape Better Living
-                </h2>
-                <p className="text-gray-500 mt-2">
+                </AnimatedHeading>
+                <FloatUpText className="text-gray-500 mt-2">
                     Expert views, trends, and tips for informed buyers
-                </p>
+                </FloatUpText>
 
                 <div className="grid md:grid-cols-2 gap-10 mt-12">
                     {blogData.map((blog) => (
-                        <div key={blog.id} className="bg-white rounded-2xl shadow overflow-hidden">
+                        <FloatUpText>
+                        <div key={blog.id} className="bg-white  rounded-2xl shadow overflow-hidden">
 
                             <img src={blog.image} className="h-64 w-full object-cover" />
 
@@ -74,12 +77,12 @@ const BlogList = () => {
 
                                 <button
                                     onClick={() => navigate(`/blogs/${blog.id}`)}
-                                    className="mt-5 px-6 py-2 border border-gray-300 rounded-full text-xs text-gray-600"
+                                    className="mt-5 px-6 py-2 border hover:border-ORANGE hover:text-ORANGE hover:bg-ORANGE2/5 border-gray-300 rounded-full text-xs text-gray-600"
                                 >
                                     {blog.tag}
                                 </button>
                             </div>
-                        </div>
+                        </div></FloatUpText>
                     ))}
                 </div>
             </div>
@@ -113,12 +116,13 @@ const BlogDetail = () => {
 
     return (
         <section className="bg-white pt-24 pb-24 relative">
-            <div className="max-w-5xl mx-auto px-6">
+            <div className="max-w-6xl mx-auto px-6">
 
-                <h1 className="text-2xl font-semibold mb-5">
+                <AnimatedHeading className="text-2xl font-semibold mb-5">
                     {blog.title}
-                </h1>
+                </AnimatedHeading>
 
+                    <FloatUpText>
                 <div className="rounded-2xl overflow-hidden shadow">
 
                     {/* Orange Header */}
@@ -135,10 +139,11 @@ const BlogDetail = () => {
                     </div>
 
                     {/* Image */}
+
                     <img
                         src={blog.image}
                         className="w-full h-[420px] object-cover"
-                    />
+                        />
 
                     {/* Content */}
                     <div className="p-8 text-sm text-gray-700 leading-relaxed space-y-6">
@@ -158,13 +163,14 @@ const BlogDetail = () => {
                             <button
                                 onClick={handleShare}
                                 className="border px-6 py-2 rounded-full text-xs text-gray-600"
-                            >
+                                >
                                 SHARE
                             </button>
 
                         </div>
                     </div>
                 </div>
+                                </FloatUpText>
             </div>
         </section>
     );

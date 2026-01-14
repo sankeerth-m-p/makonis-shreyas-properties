@@ -3,6 +3,7 @@ import heroImg2 from "/Home/royalEnclave.webp";
 import heroImg5 from "/Home/profound_infra.jpg";
 import brandLogo from "/modern_propound_logo.png";
 import FloatUpText from "../components/floatUpText";
+import AnimatedHeading from "../components/animatedHeading";
 
 const statusStyles = {
   Ongoing: "bg-ORANGE2",
@@ -81,14 +82,14 @@ export default function Projects() {
       <section className="bg-[#F5F2EF] md:py-20">
         {/* Header */}
         <div className="bg-ORANGE px-4 py-20 text-center text-white">
-          <h2 className="text-lg md:text-3xl font-semibold mb-3">
+          <AnimatedHeading className="text-lg md:text-3xl font-semibold mb-3">
             Smartly planned developments for today’s lifestyle
-          </h2>
-          <p className="max-w-2xl mx-auto text-sm opacity-90">
+          </AnimatedHeading>
+          <FloatUpText className="max-w-2xl mx-auto text-sm opacity-90">
             Smartly planned developments crafted with thoughtful layouts,
             contemporary comforts, and seamless functionality to elevate today’s
             way of living.
-          </p>
+          </FloatUpText>
         </div>
 
         {/* Cards */}

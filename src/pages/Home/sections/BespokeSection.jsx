@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AnimatedHeading from "../../../components/animatedHeading";
-
+import { useNavigate } from 'react-router-dom';
 const bespokeImages = [
   {
     src: "/Home/services_plotted_developemnt.webp",
@@ -27,7 +27,6 @@ const bespokeImages = [
 ];
 function BespokeImageHover() {
   const [active, setActive] = useState(0);
-
   return (
    <div className="w-full md:w-[70%] h-auto md:h-[380px]">
   {/* Mobile layout - 2 rows, 2 columns */}
@@ -113,6 +112,7 @@ function BespokeImageHover() {
   );
 }
 const BespokeSection = () => {
+ const navigate = useNavigate();
 
   return (
    <section className="bg-[#EEF2F3] py-10 md:py-28">
@@ -129,9 +129,9 @@ const BespokeSection = () => {
         >
           Bespoke services for elevated living
         </AnimatedHeading>
-        <span className="text-[11px] tracking-widest text-gray-700">
+        <button onClick={()=>navigate('/projects')} className="text-[11px] hover:text-ORANGE hover:bg-ORANGE2/5 w-fit p-2  rounded-md flex tracking-widest text-gray-700">
           VIEW PROJECTS
-        </span>
+        </button>
       </div>
 
       {/* RIGHT IMAGE INTERACTION (SAME HOVER FOR MOBILE + DESKTOP) */}

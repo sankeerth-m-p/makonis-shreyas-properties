@@ -1,8 +1,9 @@
 import AnimatedHeading from "../../../components/animatedHeading";
 import FloatUpText from "../../../components/floatUpText";
 import promiseImg from "/Home/promisesection.jpg";
-
+import { useNavigate } from "react-router-dom";
 const PromiseSection = () => {
+  const navigate = useNavigate();
   return (
       <section
   className="
@@ -42,7 +43,7 @@ const PromiseSection = () => {
       </p>
     </FloatUpText>
 
-    <button className="bg-ORANGE  hover:bg-ORANGE2  text-white px-10 py-3 rounded-full text-sm md:text-base tracking-widest uppercase  w-full md:w-fit transition ">
+    <button onClick={()=>navigate('/our-promise')}  className="bg-ORANGE  hover:bg-ORANGE2  text-white px-10 py-3 rounded-full text-sm md:text-base tracking-widest uppercase  w-full md:w-fit transition ">
       Know More
     </button>
 

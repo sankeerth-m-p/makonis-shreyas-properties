@@ -1,18 +1,21 @@
 import React from "react";
 import mediaImg from "/media/media.webp";
+import FloatUpText from "../components/floatUpText";
+import AnimatedHeading from "../components/animatedHeading";
 
 const Media = () => {
   return (
     <div className="bg-white pt-24 pb-20">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
 
         {/* Heading */}
-        <p className="text-lg text-gray-800 mb-12 max-w-2xl">
+        <AnimatedHeading className="text-3xl text-gray-800 my-10 max-w-3xl">
           Our journey, values, and projects as recognized and featured by leading media platforms.
-        </p>
+        </AnimatedHeading>
 
-        {/* Top Two Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+        {/* Top Two Cards */}<FloatUpText>
+
+        <div className="grid grid-cols-1  lg:grid-cols-2 gap-8 mb-20">
 
           <div className="rounded-3xl overflow-hidden h-[380px]">
             <img src={mediaImg} className="w-full h-full object-cover" />
@@ -33,9 +36,12 @@ const Media = () => {
           </div>
 
         </div>
-
+        </FloatUpText>
+        <FloatUpText>
+          
         {/* Media Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
+
+        <div className="  grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
 
           {/* Card */}
           <div>
@@ -74,6 +80,8 @@ const Media = () => {
           </div>
 
         </div>
+        </FloatUpText><FloatUpText>
+          
 
         {/* Second Row Same Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -113,7 +121,7 @@ const Media = () => {
           </div>
 
         </div>
-
+</FloatUpText>
       </div>
     </div>
   );

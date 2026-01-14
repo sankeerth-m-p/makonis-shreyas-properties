@@ -1,6 +1,7 @@
 import AnimatedHeading from "../../../components/animatedHeading";
-
+import { useNavigate } from "react-router-dom";
 const StoryBehindBrand = () => {
+  const navigate = useNavigate();
   return (
    <section
   className="
@@ -103,7 +104,7 @@ const StoryBehindBrand = () => {
             Our brand tells a story of commitment, trust, and progress.
           </p>
 
-          <button className="text-[11px] tracking-widest uppercase text-[#111] border-b border-[#111] pb-1">
+          <button onClick={()=>navigate('/our-story')}  className="text-[11px] tracking-widest uppercase text-[#111] border-b hover:text-ORANGE hover:font-bold hover:border-ORANGE  border-[#111] pb-1">
             KNOW MORE
           </button>
         </div>

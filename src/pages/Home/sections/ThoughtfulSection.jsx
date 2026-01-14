@@ -6,10 +6,10 @@ import vision from "/Home/vision.svg";
 import mission from "/Home/mission.svg";import circleBg from "/Home/cicle.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-
+import { useNavigate } from "react-router-dom";
 const ThoughtfulSection = () => {const sectionRef = useRef(null);
 
-
+  const navigate = useNavigate();
 const { scrollYProgress } = useScroll({
   target: sectionRef,
   offset: ["start end", "end start"],
@@ -104,7 +104,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
           </div>
         </div>
 
-        <button className="bg-ORANGE w-full hover:bg-ORANGE2 text-white px-8 py-2.5 rounded-full md:text-xl text-base tracking-widest md:w-fit">
+        <button onClick={()=>navigate('/our-story')} className="bg-ORANGE w-full hover:bg-ORANGE2 text-white px-8 py-2.5 rounded-full md:text-xl text-base tracking-widest md:w-fit">
           VIEW DETAILS
         </button>
 </FloatUpText>
