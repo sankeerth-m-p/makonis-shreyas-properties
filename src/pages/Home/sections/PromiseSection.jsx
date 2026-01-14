@@ -7,8 +7,8 @@ const PromiseSection = () => {
       <section
   className="
     relative 
-    w-full 
-    h-screen 
+    w-full h-[60vh]
+    md:h-screen 
     bg-center 
     bg-cover 
     bg-no-repeat 
@@ -29,20 +29,20 @@ const PromiseSection = () => {
       as="h2"
       delay={0}
       staggerDelay={0.15}
-      className="text-[28px] md:text-[34px] font-medium leading-snug mb-6"
+      className="text-lg md:text-[34px] font-medium leading-snug mb-6"
     >
       Our promise is to turn urban spaces into meaningful lives.
     </AnimatedHeading>
 
     <FloatUpText delay={0}>
-      <p className="text-[13px] md:text-[14px] text-white/80 max-w-2xl mx-auto mb-10">
+      <p className="text-sm md:text-[14px] text-white/80 max-w-2xl mx-auto mb-10">
         We design spaces that nurture life itself where <br />
         craftsmanship and dedicated service come together
         to elevate living.
       </p>
     </FloatUpText>
 
-    <button className="bg-[#FF6A13] text-white px-10 py-3 rounded-full text-[11px] tracking-widest uppercase hover:bg-[#e85c0f] transition">
+    <button className="bg-ORANGE  hover:bg-ORANGE2  text-white px-10 py-3 rounded-full text-sm md:text-md tracking-widest uppercase  w-full md:w-fit transition ">
       Know More
     </button>
 

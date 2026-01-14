@@ -104,7 +104,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
           </div>
         </div>
 
-        <button className="bg-ORANGE hover:bg-ORANGE2 text-white px-8 py-2.5 rounded-full md:text-xl text-md tracking-widest w-fit">
+        <button className="bg-ORANGE w-full hover:bg-ORANGE2 text-white px-8 py-2.5 rounded-full md:text-xl text-md tracking-widest md:w-fit">
           VIEW DETAILS
         </button>
 </FloatUpText>

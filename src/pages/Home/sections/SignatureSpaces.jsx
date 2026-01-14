@@ -41,7 +41,7 @@ const SignatureSpaces = () => {
   <section className="relative w-full bg-black">
 
   {/* ✅ MOBILE ONLY: Horizontal Scroll */}
-  <div className="md:hidden w-full overflow-x-auto snap-x snap-mandatory">
+  <div className="md:hidden  w-full overflow-x-auto snap-x snap-mandatory">
     <div className="flex  w-max">
       {items.map((item, i) => {
         const leftBg = i % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2";
@@ -74,11 +74,11 @@ const SignatureSpaces = () => {
               {/* faded circle */}
               <div className="absolute -left-24 top-16 w-[280px] h-[280px] rounded-full bg-white/10" />
 
-              <h2 className="text-[26px] font-medium leading-tight max-w-[260px] relative z-10">
-                Signature spaces <br />
-                crafted for <br />
+              <AnimatedHeading className=" text-lg md:text-[26px] font-medium leading-tight max-w-[260px] relative z-10">
+                Signature spaces {'\n'}
+                crafted for {'\n'}
                 modern living.
-              </h2>
+              </AnimatedHeading>
 
               <div className="mt-10 flex items-end gap-6 relative z-10">
                 <div
