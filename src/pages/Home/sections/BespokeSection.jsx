@@ -63,7 +63,7 @@ function BespokeImageHover() {
             }}
           >
             {bespokeImages.map((img, index) => (
-              <div key={index} className="w-full shrink-0 relative h-[280px]">
+              <div key={index} className="w-full shrink-0 relative h-[50vh]">
                 <img
                   src={img.src}
                   alt={img.label}
