@@ -107,7 +107,7 @@ useEffect(() => {
             <div
               className={`
                 ${leftBg} flex-1 text-white
-                px-6 py-10 flex flex-col justify-between relative overflow-hidden
+                px-6 py-5 flex flex-col justify-between relative overflow-hidden
               `}
             >
               {/* faded circle */}
@@ -119,7 +119,7 @@ useEffect(() => {
                 modern living.
               </AnimatedHeading>
 
-              <div className="mt-10 flex items-end gap-6 relative z-10">
+              <div className="mt-5 flex items-end gap-6 relative z-10">
                 <div
                   className="text-[88px] leading-none"
                   style={{
