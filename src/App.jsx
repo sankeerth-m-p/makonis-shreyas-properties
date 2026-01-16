@@ -7,7 +7,9 @@ import OurStory from "./pages/OurStory.jsx";
 import Projects from "./pages/Projects.jsx";
 import Blogs from "./pages/Blogs.jsx";
 import Contact from "./pages/Contact.jsx";
-import Home from "./pages/Home/Home.jsx";import Media from "./pages/Media.jsx";
+import Home from "./pages/Home/Home.jsx";
+import Media from "./pages/Media.jsx";
+import Enquire from "./pages/Enquire.jsx";
 import PromisePage from "./pages/Promise.jsx";
 import ReactLenis from "lenis/react";
 import ScrollToTop from "./components/scrollToTop.jsx";
@@ -152,7 +154,21 @@ prevPath.current = location.pathname;
     </motion.div>
   }
 />
-
+<Route
+  path="/enquire"
+  element={
+    <motion.div
+      custom={direction}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+    >
+      <Enquire />
+    </motion.div>
+  }
+/>
 
             
         </Routes> 
