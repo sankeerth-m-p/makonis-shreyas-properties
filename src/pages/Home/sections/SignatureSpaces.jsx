@@ -15,31 +15,43 @@ const scrollContainerRef = useRef(null);// Add this useEffect for auto-scrolling
 }, []);
 
   const items = [
-    {
-      id: "01",
-      location: "Kondapur, Hyderabad",
-      title: "Modern Profound\nTech Park",
-      image: "/Home/profoundInfra.webp",
-    },
-    {
-      id: "02",
-      location: "Whitefield, Bengaluru",
-      title: "Urban Crest\nBusiness Hub",
-      image: "/Home/profoundInfra.webp",
-    },
-    {
-      id: "03",
-      location: "Gachibowli, Hyderabad",
-      title: "Elevate\nCorporate Tower",
-      image: "/Home/profoundInfra.webp",
-    },
-    {
-      id: "04",
-      location: "Hinjewadi, Pune",
-      title: "Axis\nTech Square",
-      image: "/Home/profoundInfra.webp",
-    },
-  ];
+  {
+    id: "01",
+    location: "Kondapur, Hyderabad",
+    title: "Modern Profound Tech Park",
+    image: "/Home/profoundInfra.webp",
+  },
+  {
+    id: "02",
+    location: "Marathahalli, Bangalore",
+    title: "Royal Enclave",
+    image: "/Home/royalEnclave.webp",
+  },
+  {
+    id: "03",
+    location: "Vignana Nagar, Bangalore",
+    title: "Paradise",
+    image: "/Home/SandsParadiseVignanNagar.webp",
+  },
+  {
+    id: "04",
+    location: "Marathahalli, Bangalore",
+    title: "Chourasia Shreyas",
+    image: "/Home/ChourasiaShreyasMarathahalli.webp",
+  },
+  {
+    id: "05",
+    location: "Devanahalli, Bangalore",
+    title: "Nature's Sign",
+    image: "/Home/naturesign.webp",
+  },
+  {
+    id: "06",
+    location: "Marathahalli, Bangalore",
+    title: "Modern View Apartment",
+    image: "/Home/ModernView.webp",
+  },
+];
 useEffect(() => {
   if (isPaused) return;
   
