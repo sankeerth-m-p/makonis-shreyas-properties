@@ -94,9 +94,11 @@ useEffect(() => {
       </div>
 
       {/* ORANGE CARD */}
-      <div className="absolute    left-0 bottom-0 w-full z-20 translate-y-[10%]">
+      <div className="absolute    left-0 bottom-0 w-full z-20 ">
         <div className="max-w-6xl  mx-auto  px-4 md:px-0">
-          <div className="bg-ORANGE text-white px-6 py-10 md:px-14 md:py-16 w-full md:w-[65%] shadow-xl">
+          <div className="bg-ORANGE  text-white px-6 py-10 md:px-14 md:py-10 w-full md:w-[65%] shadow-xl">{/* ✅ DOT CONTROLS */}
+
+
            <div key={currentIndex} className="animate-text-swap">
   <AnimatedHeading
     as="h1"
@@ -111,7 +113,17 @@ useEffect(() => {
     {activeSlide.subtitle}
   </p>
 </div>
-
+<div className=" justify-end z-30 flex gap-2">
+  {heroSlides.map((_, i) => (
+    <button
+      key={i}
+      onClick={() => setCurrentIndex(i)}
+      className={`w-4 h-4 rounded-full transition ${
+        i === currentIndex ? "bg-white" : "bg-white/40"
+      }`}
+    />
+  ))}
+</div>
           </div>
         </div>
       </div>
