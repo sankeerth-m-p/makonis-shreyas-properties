@@ -33,7 +33,7 @@ function BespokeImageHover() {
     intervalRef.current = setInterval(() => {
       if (touchRef.current) return; // if user is interacting, pause auto
       setActive((prev) => (prev + 1) % bespokeImages.length);
-    }, 3500);
+    }, 2000);
 
     return () => clearInterval(intervalRef.current);
   }, []);
