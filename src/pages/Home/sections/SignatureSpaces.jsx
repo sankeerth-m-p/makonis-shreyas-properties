@@ -89,7 +89,7 @@ useEffect(() => {
           <div
             key={i}
             className="
-              w-[100vw] ma-w-[360px] h-screen flex-shrink-0
+              w-[95vw] ma-w-[360px] h-screen flex-shrink-0
               snap-center
               flex flex-col
             "
@@ -147,7 +147,7 @@ useEffect(() => {
   </div>
 
   {/* ✅ DESKTOP ONLY: Your existing sticky scroll */}
-  <div className="  hidden md:block relative h-[500vh]">
+<div className="hidden md:block relative h-[520vh]">
     {items.map((item, i) => {
       const start = i * 120;
       const progress = Math.max(0, Math.min(1, (scrollY - start) / 120));
@@ -156,7 +156,7 @@ useEffect(() => {
       return (
         <div
           key={i}
-          className="sticky top-0 h-screen w-full flex"
+className="sticky top-20 h-[calc(100vh-5rem)] w-full flex"
           style={{
             zIndex: i + 1,
             transform: `translateY(${(1 - progress) * 100}%)`,
