@@ -95,7 +95,7 @@ useEffect(() => {
             "
           >
             {/* IMAGE */}
-            <div className="w-full h-[45vh]">
+            <div className="w-full h-[50vh]">
               <img
                 src={item.image}
                 alt={item.title}
