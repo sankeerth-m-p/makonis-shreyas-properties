@@ -3,7 +3,7 @@ const AnimatedHeading = ({
   children, 
   className = '',
   delay = 0,
-  staggerDelay = 0.15,
+  staggerDelay = 0.5,
   as = 'h1',
   style = {}
 }) => {
