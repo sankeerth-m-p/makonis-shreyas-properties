@@ -56,7 +56,6 @@
 @font-face {
   font-family: "Aeonik";
   src: url("./assets/fonts/aeonik/fonnts.com-Aeonik-Regular.ttf") format("truetype");
-  /* font-weight: 400; */
   font-style: normal;
 }
 
@@ -69,17 +68,19 @@
 
 /* Body text uses Mont */
 body {
-  color: #111;
-  font-family: "Aeonik", sans-serif;
+  font-family: "questrial", sans-serif;color: #2c2c2c;
 }
 
 /* Headings use Aeonik */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Mont", sans-serif;
+  font-family: "Cabin", sans-serif;
+  
   margin: 0;
 }
 
 /* --------------------------------------- */
-.boldFont{
-  font-weight: 900;
+.buttons{
+    font-family: "Aeonik", sans-serif;font-size: 0.75rem /* 12px */;
+    line-height: 1rem /* 16px */;letter-spacing: 0.05em;
+
 }

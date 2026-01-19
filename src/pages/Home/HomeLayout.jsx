@@ -234,8 +234,8 @@ const HomeLayout = () => {
         <HeroSection />
       </div>
       <div className="snap-section">
-        <ThoughtfulSection />
     </div>
+        <ThoughtfulSection />
       </div>
       <div className="snap-section">
         <BespokeSection />

@@ -74,7 +74,7 @@ const swipeThreshold = 50;
 >
 
           <div
-            className="flex transition-transform duration-700 ease-in-out"
+            className="flex  transition-transform duration-700 ease-in-out"
             style={{
               transform: `translateX(-${active * 100}%)`,
             }}
@@ -151,18 +151,18 @@ const BespokeSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#EEF2F3] py-10 md:py-28">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="bg-white rounded-3xl px-5 md:px-10 py-6 md:py-12 flex flex-col md:flex-row gap-6">
+    <section className="bg-[#EEF2F3] py-10  md:py-28">
+      <div className="max-w-6xl mx-auto px-4  md:px-0">
+        <div className="bg-white rounded-3xl px-5 md:px-10 py-6 md:py-12 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}
-          <div className="w-full md:w-[30%] flex flex-col justify-center font-bold">
+          <div className="w-full md:w-[30%]  flex flex-col justify-center font-bold">
             <AnimatedHeading
               as="h3"
               delay={0}
               staggerDelay={0.15}
-              className="text-lg md:text-4xl font-semibold text-gray-900 leading-snug mb-4 md:mb-8"
+              className="text-lg md:text-4xl font-semibold   mb-4 md:mb-8"
             >
-              Bespoke services for elevated living
+              Bespoke {'\n'}services for { '\n'}elevated living {'\n'} 
             </AnimatedHeading>
 
             <button

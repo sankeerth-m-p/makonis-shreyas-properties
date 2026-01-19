@@ -60,27 +60,26 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 
       {/* CONTENT */}
       <div className="flex flex-col md:col-span-3 md:pl-20    text-left ">
-            <AnimatedHeading   delay = "0.5" className="text-[20px] leading-tight font-bold boldFont mb-3  md:max-w-none md:text-[38px]">
+            <AnimatedHeading   delay = "0.5" className="text-[20px] leading-tight font-medium   mb-3  md:max-w-none md:text-[38px]">
               
         
           Thoughtfully developing spaces that reflect city’s progress and promise
        
 </AnimatedHeading>
-            <FloatUpText>
+            <FloatUpText delay={0.5}>
               
-        <p className="md:text-xl text-base text-gray-600 mb-6  md:max-w-md">
+        <p className="md:text-xl text-base   mb-6  md:max-w-md">
           Crafting meaningful experiences where every detail is carefully envisioned.
         </p>
 
         {/* VISION */}
-        <div className="flex gap-3  items-start   mb-5">
-                <img src={vision}  className="w-4 h-4 md:w-8 md:h-8" 
-  // w-6 = 24px, h-6 = 24px on mobile
-  // md:w-8 = 32px, md:h-8 = 32px on medium screens and up
+        <div className="flex gap-3  items-start   mb-8">
+                <img src={vision}  className="w-3 h-4 md:w-7 md:h-7" 
+ 
   alt="Mission icon"/>
           <div>
             <h4 className="md:text-xl text-base font-semibold">Our vision</h4>
-            <p className="md:text-lg text-sm text-gray-600 leading-relaxed    ">
+            <p className="md:text-lg text-sm   leading-relaxed    ">
               To create thoughtfully planned spaces that elevate everyday living,
               blending design, functionality and sustainability.
             </p>
@@ -91,20 +90,18 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
         <div className="flex gap-3 items-start  mb-8">
 <img 
   src={mission} 
-  className="w-4 h-4 md:w-8 md:h-8" 
-  // w-6 = 24px, h-6 = 24px on mobile
-  // md:w-8 = 32px, md:h-8 = 32px on medium screens and up
+  className="w-4 h-4 md:w-7 md:h-7" 
   alt="Mission icon"
 />          <div>
-            <h4 className="md:text-xl text-base font-semibold">Our mission</h4>
-            <p className="md:text-lg text-sm text-gray-600 leading-relaxed   ">
+            <h4 className="md:text-xl text-base  font-semibold">Our mission</h4>
+            <p className="md:text-lg text-sm   leading-relaxed   ">
               To develop responsibly by integrating sustainable practices
               and creating balanced communities.
             </p>
           </div>
         </div>
 
-        <button onClick={()=>navigate('/our-story')} className="bg-ORANGE w-full hover:bg-ORANGE2 text-white px-8 py-2.5 rounded-full md:text-xl text-base tracking-widest md:w-fit">
+        <button onClick={()=>navigate('/our-story')} className="bg-ORANGE w-full hover:bg-ORANGE2 text-white buttons px-8 py-3 rounded-full  text-base  md:w-fit">
           VIEW DETAILS
         </button>
 </FloatUpText>

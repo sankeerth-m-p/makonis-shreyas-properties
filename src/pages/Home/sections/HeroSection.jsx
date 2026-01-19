@@ -7,6 +7,7 @@ import ChourasiaShreyas from "/Home/ChourasiaShreyasMarathahalli.webp";
 import natureSign from "/Home/naturesign.webp";
 import Paradise from "/Home/SandsParadiseVignanNagar.webp";
 import ModernView from "/Home/ModernView.webp";
+import FloatUpText from "../../../components/floatUpText";
 
 const heroSlides = [
   {
@@ -95,10 +96,10 @@ useEffect(() => {
 
       {/* ORANGE CARD */}
 <div className="absolute left-0 bottom-0 w-full z-30 translate-y-0  md:translate-y-10">
-        <div className="max-w-6xl  mx-auto  px-4 md:px-0 ">
+        <div className="max-w-7xl  mx-auto  px-4 md:px-0 ">
     <div
   key={currentIndex}
-  className={`text-white px-6 py-10 md:px-14 md:pb-20 md:pt-10 w-full md:w-[65%] shadow-xl animate-orange-swap
+  className={`text-white  px-6 py-10 md:px-14 md:pb-20 md:pt-10 w-full md:w-[65%] shadow-xl animate-orange-swap 
     ${currentIndex % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2"}
   `}
 >
@@ -109,21 +110,23 @@ useEffect(() => {
     as="h1"
     delay={0}
     staggerDelay={0.15}
-    className="text-2xl md:text-5xl font-semibold leading-tight mb-4 md:mb-6"
+    className="text-lg md:text-5xl font-medium leading-tight mb-4 md:mb-6"
   >
     {activeSlide.title}
   </AnimatedHeading>
-
+            <FloatUpText>
+              
   <p className="text-sm md:text-lg text-orange-100 max-w-lg">
     {activeSlide.subtitle}
   </p>
+</FloatUpText>
 
 <div className=" justify-end z-30 flex gap-2">
   {heroSlides.map((_, i) => (
     <button
       key={i}
       onClick={() => setCurrentIndex(i)}
-      className={`w-4 h-4 rounded-full transition ${
+      className={`w-2 h-2 rounded-full transition  ${
         i === currentIndex ? "bg-white" : "bg-white/40"
       }`}
     />
@@ -163,7 +166,7 @@ useEffect(() => {
 }
 
 .animate-orange-swap {
-  animation: orange-swap 0ms cubic-bezier(0.4, 0, 0.2, 1);
+  animation: orange-swap 300ms  cubic-bezier(0.6, 0, 0.2, 1);
 }
 
 

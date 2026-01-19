@@ -59,11 +59,12 @@ const AnimatedHeading = ({
       {lines.map((line, index) => (
         <span
           key={index}
+          className=""
           style={{
             display: 'block',
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-            transition: `opacity 0.6s ease-out ${delay + index * staggerDelay}s, transform 0.6s ease-out ${delay + index * staggerDelay}s`,
+            transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
+            transition: `opacity 0.7s ease-out ${delay + index * staggerDelay}s, transform 1s ease-out ${delay + index * staggerDelay}s`,
           }}
         >
           {line}

@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         ORANGE: "#ff6417",
         ORANGE2: "#ff7f15",
+        text: "#2c2c2c",
         
       },fontFamily: {
         aeonik: ["Aeonik", "sans-serif"],
