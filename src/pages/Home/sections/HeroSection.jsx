@@ -163,12 +163,12 @@ useEffect(() => {
 }
 
 .animate-orange-swap {
-  animation: orange-swap 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  animation: orange-swap 0ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
   .animate-slide-overlap {
-    animation: slide-overlap ${SLIDE_DURATION}ms cubic-bezier(0.65, 0.25, 0.35, 1) forwards;
+    animation: slide-overlap ${SLIDE_DURATION}ms cubic-bezier(0.25, 0.3, 0.25, 0.1) forwards;
   }
 `}</style>
 

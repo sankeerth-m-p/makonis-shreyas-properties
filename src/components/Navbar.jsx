@@ -29,7 +29,7 @@ const NavContent = ({ location }) => (
     </h1>
 
     {/* NAV LINKS - DESKTOP */}
-    <div className="hidden md:flex gap-8 text-sm font-medium text-gray-800">
+    <div className="hidden md:flex gap-8  tracking-wider text-xs font-medium text-gray-800">
       {navItems.map(({ label, path }) => {
         const isActive = location.pathname === path;
 
@@ -39,12 +39,12 @@ const NavContent = ({ location }) => (
             to={path}
             className={`
               relative transition-colors duration-300
-              after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-ORANGE
+              after:content-['']  pb-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-ORANGE
               after:origin-center after:transition-transform after:duration-300 after:ease-out
               ${
                 isActive
-                  ? "text-ORANGE after:scale-x-100"
-                  : "text-gray-800 hover:text-ORANGE hover:after:scale-x-100 after:scale-x-0"
+                  ? "text-ORANGE  after:scale-x-100"
+                  : "text-gray-800 hover:text-ORANGE border-ORANGE hover:after:scale-x-100 after:scale-x-0"
               }
             `}
           >
@@ -69,14 +69,14 @@ const Navbar = () => {
       const current = window.scrollY;
 
       // reset when back at top
-      if (current === 0) {
+      if (current < 60) {
         triggered.current = false;
         setShowSticky(false);
         return;
       }
 
       // trigger animation once after leaving top
-      if (!triggered.current && current > 80) {
+      if (!triggered.current && current > 60) {
         setShowSticky(true);
         triggered.current = true;
       }
@@ -98,7 +98,7 @@ const Navbar = () => {
       {/* ✅ DEFAULT NAVBAR (slides UP when sticky appears) */}
       <header
         className={`fixed top-0 left-0 w-full z-50 bg-white shadow-lg
-          transition-transform duration-500 ease-in-out will-change-transform
+          transition-transform duration-100 ease-in will-change-transform
           ${showSticky ? "-translate-y-full" : "translate-y-0"}
         `}
       >
@@ -177,7 +177,7 @@ const Navbar = () => {
       {/* ✅ STICKY NAVBAR (slides DOWN after scroll > 80px) */}
       <header
         className={`fixed top-0 left-0 w-full z-50 bg-white shadow-lg
-          transition-transform duration-500 ease-in-out will-change-transform
+          transition-transform duration-300 ease-in-out will-change-transform
           hidden md:block
           ${showSticky ? "translate-y-0" : "-translate-y-full"}
         `}
