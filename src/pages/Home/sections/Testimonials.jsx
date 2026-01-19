@@ -70,10 +70,15 @@ useEffect(() => {
   }, []);
 const t = TESTIMONIALS[activeIndex];
   return (
-    <section
-      ref={ref}
-      className="relative bg-[#F4EFE5] md:min-h-screen  overflow-hidden"
-    >
+<section
+  id="testimonials"
+  ref={ref}
+  className="relative bg-[#F4EFE5] md:min-h-screen overflow-hidden"
+>
+
+
+
+
     
       {/* WAVE – RESPONDS TO SCROLL */}
       {showWave && (

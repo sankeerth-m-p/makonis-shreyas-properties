@@ -18,27 +18,11 @@ function Showcase({
   reverse = false,
 }) {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
 
+  // Trigger animation immediately on page load
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
+    const timer = requestAnimationFrame(() => setIsVisible(true));
+    return () => cancelAnimationFrame(timer);
   }, []);
 
   return (
@@ -46,25 +30,29 @@ function Showcase({
       
       {/* IMAGE BLOCK */}
       <div
-        ref={ref}
         className={`relative bg-gray-300 min-h-[40vh] md:min-h-full ${reverse ? "md:order-2" : ""}`}
         style={{
           opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateX(0)' : `translateX(${reverse ? '100px' : '-100px'})`,
-          transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
+          transform: isVisible
+            ? "translateX(0)"
+            : `translateX(${reverse ? "100px" : "-100px"})`,
+          transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
         }}
       >
-        
         <img
           src={image}
           alt={title}
           className="w-full h-full object-cover"
         />
        
-        {/* TITLE OVERLAY - Mobile optimized */}
-        <div className={`absolute bottom-4 px-5 py-3 bg-ORANGE/80 backdrop-blur-sm w-4/5 md:min-w-60 md:w-auto ${
-          !reverse ? "right-4 md:right-6 text-right md:text-right" : "left-4 md:left-6 text-left md:text-left"
-        }`}>
+        {/* TITLE OVERLAY */}
+        <div
+          className={`absolute bottom-4 px-5 py-3 bg-ORANGE/80 backdrop-blur-sm w-4/5 md:min-w-60 md:w-auto ${
+            !reverse
+              ? "right-4 md:right-6 text-right"
+              : "left-4 md:left-6 text-left"
+          }`}
+        >
           <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">
             {title}
           </h3>
@@ -72,19 +60,19 @@ function Showcase({
       </div>
 
       {/* TEXT BLOCK */}
-      <FloatUpText className={`flex flex-col justify-center px-6 sm:px-8 md:px-20 lg:px-12 py-8 md:py-0 ${
+      <FloatUpText
+        className={`flex flex-col justify-center px-6 sm:px-8 md:px-20 lg:px-12 py-8 md:py-0 ${
           reverse ? "md:order-1 md:items-end" : ""
-        }`} delay={0}>
-        
+        }`}
+        delay={0}
+      >
         <p className="text-[20px] text-gray-700 leading-relaxed mb-4 max-w-full md:max-w-md">
-
           {para1}
         </p>
 
-       <p className="text-[20px] text-gray-600 leading-relaxed max-w-full md:max-w-md">
+        <p className="text-[20px] text-gray-600 leading-relaxed max-w-full md:max-w-md">
           {para2}
         </p>
-     
       </FloatUpText>
     </section>
   );

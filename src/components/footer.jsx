@@ -1,210 +1,86 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  return (
-    <footer
-      className="
-        bg-gradient-to-b  font-medium uppercase from-neutral-900 to-black text-neutral-400
-        min-h-[50vh] md:h-[66vh]  relative 
-        flex justify-center items-center
-      "
-    >
-      <div className="w-full px-4 sm:px-6  md:px-8 lg:m-36 lg:mx-64 py-8 md:py-0">
+  const navigate = useNavigate();
 
-        {/* ✅ MOBILE VERSION ONLY (matches screenshot) */}
+  const goToTestimonials = () => {
+    navigate("/#testimonials");
+  };
+
+  return (
+    <footer className="bg-gradient-to-b from-neutral-900 to-black text-neutral-400 text-sm font-normal min-h-[50vh] md:h-[66vh] relative flex justify-center items-center">
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:m-36 lg:mx-64 py-8 md:py-0">
+
+        {/* MOBILE */}
         <div className="md:hidden h-full flex flex-col justify-between">
-          {/* Top links */}
-          <div className="grid grid-cols-2 gap-x-10 gap-y-6 text-xs pt-6">
-            {/* LEFT COLUMN */}
+          <div className="grid grid-cols-2 gap-x-10 gap-y-6 pt-6">
             <ul className="space-y-4">
-              <li>
-                <Link to="/our-story" className="hover:text-white transition block">
-                  Our Story
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" className="hover:text-white transition block">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="hover:text-white transition block">
-                  Testimonial
-                </Link>
-              </li>
-              <li>
-                <Link to="/media-center" className="hover:text-white transition block">
-                  Media Center
-                </Link>
-              </li>
-              <li>
-                <Link to="/blogs" className="hover:text-white transition block">
-                  Blog
-                </Link>
-              </li>
+              <li><Link to="/our-story" className="hover:text-white block">Our Story</Link></li>
+              <li><Link to="/projects" className="hover:text-white block">Projects</Link></li>
+              <li><button onClick={goToTestimonials} className="hover:text-white block text-left">Testimonial</button></li>
+              <li><Link to="/media-center" className="hover:text-white block">Media Center</Link></li>
+              <li><Link to="/blogs" className="hover:text-white block">Blog</Link></li>
             </ul>
 
-            {/* RIGHT COLUMN */}
             <ul className="space-y-4">
-              <li>
-                <Link to="/career" className="hover:text-white transition block">
-                  Career
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-white transition block">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/faq" className="hover:text-white transition block">
-                  FAQ
-                </Link>
-              </li>
+              <li><Link to="/career" className="hover:text-white block">Career</Link></li>
+              <li><Link to="/contact" className="hover:text-white block">Contact</Link></li>
+              <li><Link to="/faq" className="hover:text-white block">FAQ</Link></li>
             </ul>
           </div>
 
-          {/* Middle logo section */}
           <div className="flex items-center gap-4 pt-10">
-            <img
-              className="w-32 h-auto opacity-90"
-              src="/shreyas_logo_footer.png"
-              alt="Shreyas Logo"
-            />
-            <div className="text-white text-sm normal-case tracking-wide leading-tight">
+            <img className="w-32 opacity-90" src="/shreyas_logo_footer.png" alt="Shreyas Logo" />
+            <div className="text-white leading-tight">
               defining <br /> lifestyles
             </div>
           </div>
 
-          {/* Bottom policy section */}
-          <div className="pt-10 pb-6 text-[10px] tracking-wide text-neutral-500">
-            <div className="flex items-center gap-8">
-              <span className="hover:text-white transition cursor-pointer">
-                Privacy Policy
-              </span>
-              <span className="hover:text-white transition cursor-pointer">
-                Terms of Use
-              </span>
-              <span className="hover:text-white transition cursor-pointer">
-                Disclaimer
-              </span>
+          <div className="pt-10 pb-6 text-neutral-500">
+            <div className="flex gap-8">
+              <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-white">Terms of Use</Link>
+              <Link to="/disclaimer" className="hover:text-white">Disclaimer</Link>
             </div>
-
-            <div className="mt-4">©2025. ALL RIGHTS RESERVED.</div>
+            <div className="mt-4">©2025. All Rights Reserved.</div>
           </div>
         </div>
 
-        {/* ✅ DESKTOP VERSION ONLY (UNCHANGED) */}
+        {/* DESKTOP */}
         <div className="hidden md:block">
-          {/* Top Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-            {/* Column 1 */}
-            <div>
-              <ul className="space-y-4 md:space-y-5 text-xs">
-                <li>
-                  <Link
-                    to="/our-story"
-                    className="hover:text-white cursor-pointer transition block"
-                  >
-                    Our Story
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/projects"
-                    className="hover:text-white cursor-pointer transition block"
-                  >
-                    Projects
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/testimonial"
-                    className="hover:text-white cursor-pointer transition block"
-                  >
-                    Testimonial
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/media-center"
-                    className="hover:text-white cursor-pointer transition block"
-                  >
-                    Media Center
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/blogs"
-                    className="hover:text-white cursor-pointer transition block"
-                  >
-                    Blog
-                  </Link>
-                </li>
-              </ul>
-            </div>
+          <div className="grid md:grid-cols-3 gap-10">
 
-            {/* Column 2 */}
-            <div>
-              <ul className="space-y-4 md:space-y-5 text-xs md:text-sm">
-                <li>
-                  <Link
-                    to="/career"
-                    className="hover:text-white cursor-pointer transition block"
-                  >
-                    Career
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contact"
-                    className="hover:text-white cursor-pointer transition block"
-                  >
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/faq"
-                    className="hover:text-white cursor-pointer transition block"
-                  >
-                    FAQ
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <ul className="space-y-4">
+              <li><Link to="/our-story" className="hover:text-white block">Our Story</Link></li>
+              <li><Link to="/projects" className="hover:text-white block">Projects</Link></li>
+              <li><button onClick={goToTestimonials} className="hover:text-white block text-left">Testimonial</button></li>
+              <li><Link to="/media-center" className="hover:text-white block">Media Center</Link></li>
+              <li><Link to="/blogs" className="hover:text-white block">Blog</Link></li>
+            </ul>
 
-            {/* Column 3 */}
-            <div className="hidden md:text-right md:flex flex-col md:items-end">
-              <div className="flex md:justify-end items-center gap-2 mb-3">
-                <img width="300" src="/shreyas_logo_footer.png" />
-              </div>
+            <ul className="space-y-4">
+              <li><Link to="/career" className="hover:text-white block">Career</Link></li>
+              <li><Link to="/contact" className="hover:text-white block">Contact</Link></li>
+              <li><Link to="/faq" className="hover:text-white block">FAQ</Link></li>
+            </ul>
 
-              <div className="text-sm mt-20 space-y-3">
-                <p className="uppercase text-neutral-500 tracking-wide">
-                  Visiting Hours
-                </p>
+            <div className="text-right flex flex-col items-end">
+              <img width="300" src="/shreyas_logo_footer.png" />
+              <div className="mt-20 space-y-2">
+                <p className="text-neutral-500">Visiting Hours</p>
                 <p>Mon – Fri: 10:00 AM – 6:00 PM</p>
-                <div className="border-b-2 pt-5 border-neutral-400" />
+                <div className="border-b pt-4 w-40 border-neutral-400" />
               </div>
             </div>
+
           </div>
 
-          {/* Bottom Section */}
-          <div className="flex mt-12 md:mt-32 flex-col md:flex-row items-center justify-between text-xs text-neutral-400 gap-4">
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6">
-              <span className="hover:text-white cursor-pointer text-center">
-                Privacy Policy
-              </span>
-              <span className="hover:text-white cursor-pointer text-center">
-                Terms of Use
-              </span>
-              <span className="hover:text-white cursor-pointer text-center">
-                Disclaimer
-              </span>
-              <span className="hover:text-white cursor-pointer text-center">
-                © 2025. All Rights Reserved.
-              </span>
+          <div className="flex mt-24 justify-between items-center">
+            <div className="flex gap-6">
+              <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-white">Terms of Use</Link>
+              <Link to="/disclaimer" className="hover:text-white">Disclaimer</Link>
+              <span>© 2025. All Rights Reserved.</span>
             </div>
           </div>
         </div>

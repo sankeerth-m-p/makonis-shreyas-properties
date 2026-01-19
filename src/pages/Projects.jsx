@@ -20,58 +20,52 @@ const ProjectCard = ({
   description,
   buttonText = "VIEW DETAILS",
   onClick,
+  noFade = false,
 }) => {
-  return (<FloatUpText>
+  const Wrapper = noFade ? React.Fragment : FloatUpText;
 
-  
-    <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
-      {/* IMAGE */}
-      <div className="relative w-full md:w-1/2 h-64 md:h-auto">
-        <img src={image} alt={title} className="w-full  h-full object-cover" />
+  return (
+    <Wrapper>
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+        {/* IMAGE */}
+        <div className="relative w-full md:w-1/2 h-64 md:h-auto">
+          <img src={image} alt={title} className="w-full h-full object-cover" />
 
-        {/* STATUS */}
-        <span
-          className={`hidden md:block absolute top-4 right-4 ${
-            statusStyles[status] || "bg-ORANGE"
-          } text-white text-xs px-3 py-1 rounded-full`}
-        >
-          {status}
-        </span>
+          {/* STATUS */}
+          <span
+            className={`hidden md:block absolute top-4 right-4 ${
+              statusStyles[status] || "bg-ORANGE"
+            } text-white text-xs px-3 py-1 rounded-full`}
+          >
+            {status}
+          </span>
+        </div>
+
+        {/* CONTENT */}
+        <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
+          <img
+            src={brandLogo}
+            alt={brand}
+            className="w-32 py-2 h-auto -ml-5 object-contain"
+          />
+
+          <h3 className="text-2xl md:text-xl font-semibold">{title}</h3>
+
+          <p className="text-gray-500 text-sm mb-4">{location}</p>
+
+          <div className="w-full h-[1px] bg-gray-300 mb-5 md:mb-4" />
+
+          <p className="text-sm text-gray-600 mb-6">{description}</p>
+
+          <button
+            onClick={onClick}
+            className="bg-ORANGE hover:bg-ORANGE2 text-white px-6 py-2 rounded-full text-sm w-fit tracking-wider"
+          >
+            {buttonText}
+          </button>
+        </div>
       </div>
-
-      {/* CONTENT */}
-      <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
-        {/* BRAND */}
-       {/* <p className="text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2"> */}
-  <img
-    src={brandLogo}
-    alt={brand}
-    className="w-32 py-2 h-auto -ml-5 object-contain"
-  />
-{/* </p> */}
-
-
-        {/* TITLE */}
-        <h3 className="text-2xl md:text-xl font-semibold">{title}</h3>
-
-        {/* LOCATION */}
-        <p className="text-gray-500 text-sm mb-4">{location}</p>
-
-        {/* LINE */}
-        <div className="w-full h-[1px] bg-gray-300 mb-5 md:mb-4" />
-
-        {/* DESCRIPTION */}
-        <p className="text-sm text-gray-600 mb-6">{description}</p>
-
-        {/* BUTTON */}
-        <button
-          onClick={onClick}
-          className="bg-ORANGE hover:bg-ORANGE2 text-white px-6 py-2 rounded-full text-sm w-fit tracking-wider"
-        >
-          {buttonText}
-        </button>
-      </div>
-    </div></FloatUpText>
+    </Wrapper>
   );
 };
 
@@ -94,7 +88,9 @@ export default function Projects() {
 
         {/* Cards */}
         <div className="max-w-6xl mx-auto px-6 -mt-14 md:-mt-10 space-y-10">
+          {/* FIRST CARD - NO OPACITY FADE */}
           <ProjectCard
+            noFade
             image={heroImg2}
             status="Ongoing"
             title="Royal Enclave"
@@ -107,6 +103,7 @@ export default function Projects() {
             onClick={() => console.log("Royal Enclave clicked")}
           />
 
+          {/* SECOND CARD - NORMAL ANIMATION */}
           <ProjectCard
             image={heroImg5}
             status="Ongoing"
