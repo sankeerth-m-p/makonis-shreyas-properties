@@ -89,13 +89,13 @@ useEffect(() => {
           <div
             key={i}
             className="
-              w-[95vw] ma-w-[360px] h-screen flex-shrink-0
+              w-[90vw] md:w-[95vw] ma-w-[360px] md:h-screen h-[80vh] flex-shrink-0
               snap-center
               flex flex-col
             "
           >
             {/* IMAGE */}
-            <div className="w-full h-[50vh]">
+            <div className="w-full h-[50%]">
               <img
                 src={item.image}
                 alt={item.title}
@@ -111,15 +111,15 @@ useEffect(() => {
               `}
             >
               {/* faded circle */}
-              <div className="absolute -left-24 top-16 w-[280px] h-[280px] rounded-full bg-white/10" />
+              <div className="absolute  -left-24 top-16 w-[280px] h-[280px] rounded-full bg-white/10" />
 
-              <AnimatedHeading className=" text-lg md:text-[26px] font-medium leading-tight max-w-[260px] relative z-10">
+              <AnimatedHeading className=" text-base md:text-[26px] font-medium leading-tight max-w-[260px] relative z-10">
                 Signature spaces {'\n'}
                 crafted for {'\n'}
                 modern living.
               </AnimatedHeading>
 
-              <div className="mt-5 flex items-end gap-6 relative z-10">
+              <div className="md:mt-5  flex items-end  gap-6 relative z-10">
                 <div
                   className="text-[88px] leading-none"
                   style={{
@@ -130,11 +130,11 @@ useEffect(() => {
                   {item.id}
                 </div>
 
-                <div className="pb-2">
+                <div className="pb-2 ">
                   <p className="text-[11px] tracking-widest uppercase opacity-80">
                     {item.location}
                   </p>
-                  <h3 className="text-[22px] mt-2 whitespace-pre-line leading-snug">
+                  <h3 className="text-lg md:text-[22px] mt-2 whitespace-pre-line leading-snug">
                     {item.title}
                   </h3>
                 </div>

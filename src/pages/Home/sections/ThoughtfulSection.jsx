@@ -25,7 +25,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 
 
   return (
-   <section ref={sectionRef} className="   relative md:min-h-screen pt-10 md:pt-28 pb-20 md:pb-0 overflow-hidden">{/* ===== CIRCLE SVG BACKGROUND (ANIMATED) ===== */}
+   <section ref={sectionRef} className="relative md:min-h-screen pt-24 md:pt-40 pb-20 overflow-hidden">{/* ===== CIRCLE SVG BACKGROUND (ANIMATED) ===== */}
 {/* ===== SVG CIRCLES BACKGROUND ===== */}
 {/* BOTTOM LEFT */}
 <motion.img
@@ -60,7 +60,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 
       {/* CONTENT */}
       <div className="flex flex-col md:col-span-3 md:pl-20    text-left ">
-            <AnimatedHeading className="text-[20px] leading-tight font-bold boldFont mb-3  md:max-w-none md:text-[38px]">
+            <AnimatedHeading   delay = "0.5" className="text-[20px] leading-tight font-bold boldFont mb-3  md:max-w-none md:text-[38px]">
               
         
           Thoughtfully developing spaces that reflect city’s progress and promise

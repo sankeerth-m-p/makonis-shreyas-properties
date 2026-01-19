@@ -8,7 +8,7 @@ const StoryBehindBrand = () => {
     relative w-full
     h-[70vh] md:h-screen
     bg-center bg-cover bg-no-repeat
-    overflow-hidden
+    overflow-hidden 
   "
   style={{
     backgroundImage:
@@ -16,10 +16,10 @@ const StoryBehindBrand = () => {
   }}
 >
   {/* overlay */}
-  <div className="absolute inset-0 bg-[#F4EFE5]" />
+  <div className="absolute  inset-0 bg-[#F4EFE5]" />
 
   {/* CONTENT */}
-  <div className="relative h-full max-w-7xl mx-auto px-6">
+  <div className="relative h-full  max-w-7xl mx-auto px-6">
     <div
       className="
         h-full
@@ -41,7 +41,7 @@ const StoryBehindBrand = () => {
             absolute
             top-0 left-0
             -translate-y-[130%]
-            text-left
+            text-left mt-10
             md:-translate-x-[80%] md:-translate-y-[10%]
           "
         >

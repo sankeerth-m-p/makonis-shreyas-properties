@@ -25,7 +25,8 @@ function BespokeImageHover() {
   const [active, setActive] = useState(0);
   const intervalRef = useRef(null);
   const touchRef = useRef(false);
-
+const startXRef = useRef(0);
+const swipeThreshold = 50;
   // ✅ Auto slide ONLY on mobile
   useEffect(() => {
     if (window.innerWidth >= 768) return;
@@ -44,18 +45,34 @@ function BespokeImageHover() {
       <div className="md:hidden relative w-full">
         {/* Slides */}
         <div
-          className="w-full overflow-hidden rounded-3xl"
-          onTouchStart={() => {
-            touchRef.current = true;
-            clearInterval(intervalRef.current);
-          }}
-          onTouchEnd={() => {
-            // allow auto scroll again after a short delay
-            setTimeout(() => {
-              touchRef.current = false;
-            }, 1200);
-          }}
-        >
+  className="w-full overflow-hidden rounded-3xl"
+  onTouchStart={(e) => {
+    touchRef.current = true;
+    clearInterval(intervalRef.current);
+    startXRef.current = e.touches[0].clientX;
+  }}
+  onTouchEnd={(e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startXRef.current - endX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // swipe left → next
+        setActive((prev) => (prev + 1) % bespokeImages.length);
+      } else {
+        // swipe right → prev
+        setActive((prev) =>
+          prev === 0 ? bespokeImages.length - 1 : prev - 1
+        );
+      }
+    }
+
+    setTimeout(() => {
+      touchRef.current = false;
+    }, 1200);
+  }}
+>
+
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{
@@ -108,9 +125,20 @@ function BespokeImageHover() {
             <img src={img.src} alt={img.label} className="w-full h-full object-cover" />
 
             {active === index && (
-              <span className="absolute bottom-0 uppercase left-0 p-5 text-center justify-center text-white bg-black/50 flex w-full text-[11px] tracking-widest">
-                {img.label}
-              </span>
+              <span
+  className={`
+    absolute bottom-0 left-0 w-full h-[44px]
+    flex items-center justify-center
+    uppercase text-white text-[11px] tracking-widest
+    bg-black/50
+    whitespace-nowrap 
+    transition-opacity duration-300 ease-in-out
+    ${active === index ? "opacity-100" : "opacity-0"}
+  `}
+>
+  {img.label}
+</span>
+
             )}
           </div>
         ))}

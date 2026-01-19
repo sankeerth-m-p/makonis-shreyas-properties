@@ -36,7 +36,7 @@ const WhatMakesUsDifferent = () => {
 
       {/* ITEM 1 */}
       <div className="flex gap-5 pb-2 mb-2 md:pb-6 md:mb-6 border-b border-gray-300">
-         <div className="w-20 md:w-10 h-10 bg-ORANGE flex items-center justify-center">
+         <div className="w-20 md:w-10 h-10 aspect-square bg-ORANGE flex items-center justify-center">
           <img 
             src="/Home/diamondlicon.svg" 
             alt="Diamond icon" />
@@ -56,10 +56,10 @@ const WhatMakesUsDifferent = () => {
 
       {/* ITEM 2 */}
       <div className="flex gap-5 pb-2 mb-2 md:pb-6 md:mb-6 border-b border-gray-300">
-        <div className="w-20 md:w-10 h-10 bg-ORANGE flex items-center justify-center">
+        <div className="w-20 md:w-10 h-10 aspect-square bg-ORANGE flex items-center justify-center">
           <img 
-            src="/Home/diamondlicon.svg" 
-            alt="Diamond icon" />
+            src="/Home/plannedicon.svg" 
+            alt="icon" />
         </div>
         <div>
           <FloatUpText delay={0}>
@@ -76,10 +76,10 @@ const WhatMakesUsDifferent = () => {
 
       {/* ITEM 3 */}
       <div className="flex gap-5">
-        <div className="w-20 md:w-10 h-10 bg-ORANGE flex items-center justify-center">
+        <div className="w-20 md:w-10 h-10 aspect-square bg-ORANGE flex items-center justify-center">
           <img 
-            src="/Home/diamondlicon.svg" 
-            alt="Diamond icon" />
+            src="/Home/shakehandicon.svg" 
+            alt="icon" />
         </div>
         <div>
           <FloatUpText delay={0}>

@@ -70,7 +70,7 @@ useEffect(() => {
 
 
   return (
-<section className="relative h-[80vh] md:h-screen w-full overflow-hidden ">
+<section className="relative h-[80vh] md:h-screen w-full overflow-y-visible">
       {/* Current Slide (underneath) */}
       <div className="absolute inset-0">
         <img
@@ -94,12 +94,17 @@ useEffect(() => {
       </div>
 
       {/* ORANGE CARD */}
-      <div className="absolute    left-0 bottom-0 w-full z-20 ">
-        <div className="max-w-6xl  mx-auto  px-4 md:px-0">
-          <div className="bg-ORANGE  text-white px-6 py-10 md:px-14 md:py-10 w-full md:w-[65%] shadow-xl">{/* ✅ DOT CONTROLS */}
+<div className="absolute left-0 bottom-0 w-full z-30 translate-y-0  md:translate-y-10">
+        <div className="max-w-6xl  mx-auto  px-4 md:px-0 ">
+    <div
+  key={currentIndex}
+  className={`text-white px-6 py-10 md:px-14 md:pb-20 md:pt-10 w-full md:w-[65%] shadow-xl animate-orange-swap
+    ${currentIndex % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2"}
+  `}
+>
 
 
-           <div key={currentIndex} className="animate-text-swap">
+
   <AnimatedHeading
     as="h1"
     delay={0}
@@ -112,7 +117,7 @@ useEffect(() => {
   <p className="text-sm md:text-lg text-orange-100 max-w-lg">
     {activeSlide.subtitle}
   </p>
-</div>
+
 <div className=" justify-end z-30 flex gap-2">
   {heroSlides.map((_, i) => (
     <button
@@ -146,7 +151,21 @@ useEffect(() => {
 
 .animate-text-swap {
   animation: text-swap 4000ms fade-in;
+}@keyframes orange-swap {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+.animate-orange-swap {
+  animation: orange-swap 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 
   .animate-slide-overlap {
     animation: slide-overlap ${SLIDE_DURATION}ms cubic-bezier(0.65, 0.25, 0.35, 1) forwards;

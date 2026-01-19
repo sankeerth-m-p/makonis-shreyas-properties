@@ -228,12 +228,14 @@ const HomeLayout = () => {
   }, [lenis, isMobile]); // Add isMobile to dependency array
 
   return (
-    <>
-      <div className="snap-section overflow-x-hidden">
+    <><div className="overflow-hidden">
+      
+      <div className="snap-section ">
         <HeroSection />
       </div>
       <div className="snap-section">
         <ThoughtfulSection />
+    </div>
       </div>
       <div className="snap-section">
         <BespokeSection />
