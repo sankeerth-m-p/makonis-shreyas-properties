@@ -71,8 +71,9 @@ useEffect(() => {
   }, []);
 const t = TESTIMONIALS[activeIndex];
   return (
+
     <section
-  ref={ref}
+  ref={ref} id="testimonials"
   className="relative md:min-h-screen overflow-hidden"
   style={{
     backgroundImage: "url(/Home/testimonialbg.svg)",
@@ -82,6 +83,9 @@ const t = TESTIMONIALS[activeIndex];
     // backgroundColor: "#F4EFE5", // fallback behind svg
   }}
 >
+
+
+
 
     
       {/* WAVE – RESPONDS TO SCROLL */}

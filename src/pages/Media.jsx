@@ -4,7 +4,6 @@ import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
 
 const Media = () => {
-
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
@@ -18,20 +17,28 @@ const Media = () => {
           Our journey, values, and projects as recognized and featured by leading media platforms.
         </AnimatedHeading>
 
+        {/* ================= BANNER SECTION ================= */}
         <FloatUpText>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24">
 
-            <div className="rounded-3xl overflow-hidden h-[380px]">
+            {/* Banner Image */}
+            <div className="rounded-3xl overflow-hidden h-[420px]">
               <img src={mediaImg} className="w-full h-full object-cover" />
             </div>
 
-            <div className="bg-[#ff6a13] rounded-3xl p-12 flex flex-col justify-between h-[380px]">
-              <div className="flex justify-end text-white text-sm font-semibold">Shreyas</div>
+            {/* Banner Content */}
+            <div className="bg-[#ff6a13] rounded-3xl p-14 flex flex-col justify-between h-[420px]">
+              <div className="flex justify-end text-white text-sm font-semibold">
+                Shreyas
+              </div>
+
               <div>
                 <h2 className="text-white text-4xl leading-tight mb-4">
                   Headlines <br /> that <br /> matters.
                 </h2>
-                <div className="w-6 h-[2px] bg-white mb-4"></div>
+
+                <div className="w-8 h-[2px] bg-white mb-4"></div>
+
                 <p className="text-white/90 text-sm">
                   Our story highlighted in over <br /> 10 media publications.
                 </p>
@@ -41,9 +48,15 @@ const Media = () => {
           </div>
         </FloatUpText>
 
+        {/* ================= NEWS SECTION ================= */}
         <FloatUpText>
+          <h3 className="text-xl font-semibold text-gray-800 mb-10">
+            In The News
+          </h3>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
 
+            {/* News Card 1 */}
             <div>
               <img src={mediaImg} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
               <div className="flex items-center gap-3 mb-3 text-sm">
@@ -60,6 +73,7 @@ const Media = () => {
               </button>
             </div>
 
+            {/* News Card 2 */}
             <div>
               <img src={mediaImg} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
               <div className="flex items-center gap-3 mb-3 text-sm">
@@ -82,6 +96,7 @@ const Media = () => {
         <FloatUpText>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
 
+            {/* News Card 3 */}
             <div>
               <img src={mediaImg} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
               <div className="flex items-center gap-3 mb-3 text-sm">
@@ -98,6 +113,7 @@ const Media = () => {
               </button>
             </div>
 
+            {/* News Card 4 */}
             <div>
               <img src={mediaImg} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
               <div className="flex items-center gap-3 mb-3 text-sm">

@@ -11,6 +11,11 @@ import Home from "./pages/Home/Home.jsx";
 import Media from "./pages/Media.jsx";
 import Enquire from "./pages/Enquire.jsx";
 import PromisePage from "./pages/Promise.jsx";
+import FAQ from "./pages/FAQ";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import TermsOfUse from "./pages/TermsOfUse.jsx";
+import Disclaimer from "./pages/Disclaimer";
+import Career from "./pages/Career";
 import ReactLenis from "lenis/react";
 import ScrollToTop from "./components/scrollToTop.jsx";
 import { pageVariants, pageTransition } from "./components/pageTransitions.js";
@@ -169,6 +174,84 @@ prevPath.current = location.pathname;
     </motion.div>
   }
 />
+<Route
+  path="/faq"
+  element={
+    <motion.div
+      custom={direction}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+    >
+      <FAQ />
+    </motion.div>
+  }
+/>
+<Route
+  path="/privacy-policy"
+  element={
+    <motion.div
+      custom={direction}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+    >
+      <PrivacyPolicy />
+    </motion.div>
+  }
+/>
+<Route
+  path="/terms"
+  element={
+    <motion.div
+      custom={direction}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+    >
+      <TermsOfUse />
+    </motion.div>
+  }
+/>
+<Route
+  path="/disclaimer"
+  element={
+    <motion.div
+      custom={direction}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+    >
+      <Disclaimer />
+    </motion.div>
+  }
+/>
+<Route
+  path="/career"
+  element={
+    <motion.div
+      custom={direction}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+    >
+      <Career />
+    </motion.div>
+  }
+/>
+
+
+
 
             
         </Routes> 
