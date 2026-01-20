@@ -4,25 +4,21 @@ const FloatUpText = ({ children, delay = 0, duration = 0.8, className = '', styl
   const ref = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      setIsVisible(entry.isIntersecting);
+    },
+{ threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+  );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+  const el = ref.current;
+  if (el) observer.observe(el);
 
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
+  return () => {
+    if (el) observer.unobserve(el);
+  };
+}, []);
+
 
   return (
     <div

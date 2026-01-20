@@ -5,22 +5,23 @@ function RevealImageAnimation({ image, className = "" }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
+  const el = containerRef.current;
+  if (!el) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setReveal(true);
-          observer.unobserve(el); // animate once
-        }
-      },
-      { threshold: 0.3 }
-    );
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      setReveal(entry.isIntersecting);
+    },
+    { threshold: 0.3, rootMargin: "0px 0px -10% 0px" }
+  );
 
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  observer.observe(el);
+
+  return () => {
+    observer.disconnect();
+  };
+}, []);
+
 
   return (
     <div

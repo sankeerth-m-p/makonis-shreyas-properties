@@ -10,26 +10,22 @@ const AnimatedHeading = ({
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      setIsVisible(entry.isIntersecting);
+    },
+{ threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+  );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
+  const el = containerRef.current;
+  if (el) observer.observe(el);
 
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, []);
+  return () => {
+    if (el) observer.unobserve(el);
+  };
+}, []);
+
 
   // Split text by \n to get lines
   const getText = () => {
