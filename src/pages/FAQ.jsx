@@ -57,7 +57,7 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <div className="bg-white py-20 px-4">
+    <div className="bg-white pt-5 pb-20 px-4">
       <div className="max-w-5xl mx-auto">
 
         {/* Heading */}

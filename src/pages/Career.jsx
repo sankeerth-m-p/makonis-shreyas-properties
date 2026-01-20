@@ -2,7 +2,7 @@ import React from "react";
 
 const Career = () => {
   return (
-    <div className="bg-[#f3f0ef] pt-36 py-20">
+    <div className="bg-[#f3f0ef] pt-5 py-20">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Top Hiring Card */}

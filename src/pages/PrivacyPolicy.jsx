@@ -2,7 +2,7 @@ import React from "react";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="bg-white py-24 px-4">
+    <div className="bg-white pt-5 pb-24 px-4">
       <div className="max-w-5xl mx-auto">
 
         {/* Heading Box */}

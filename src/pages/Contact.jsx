@@ -6,7 +6,7 @@ import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className="bg-white pt-32">
+    <div className="bg-white pt-5">
 
       {/* ===== Top Section ===== */}
       <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
