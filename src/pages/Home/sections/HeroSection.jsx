@@ -17,36 +17,7 @@ const heroSlides = [
     subtitle:
       "A prestigious Kondapur landmark beside Satyam, neighboring tech giants TCS, Cognizant, and HSBC.",
   }
-  // {
-  //   image: royalEnclave,
-  //   title: "Royal Enclave",
-  //   subtitle:
-  //     "Elegant 2 & 3 BHKs blending lush greenery with rapid access to major IT corridors.",
-  // },
-  // {
-  //   image: Paradise,
-  //   title: "Paradise",
-  //   subtitle:
-  //     "An eco-friendly sanctuary featuring modern infrastructure in a peaceful family setting.",
-  // },
-  // {
-  //   image: ChourasiaShreyas,
-  //   title: "Chourasia Shreyas",
-  //   subtitle:
-  //     "A prime commercial hub placing your business at the center of major IT corridors.",
-  // },
-  // {
-  //   image: natureSign,
-  //   title: "Nature’s Sign",
-  //   subtitle:
-  //     "Build your custom villa in a low-density community with direct access to North Bangalore’s CBD.",
-  // },
-  // {
-  //   image: ModernView,
-  //   title: "Modern View Apartment",
-  //   subtitle:
-  //     "A peaceful residential haven offering immediate access while maintaining a family-friendly atmosphere.",
-  // },
+  
 ];
 
 const HeroSection = () => {
