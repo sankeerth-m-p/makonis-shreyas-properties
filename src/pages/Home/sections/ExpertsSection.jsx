@@ -15,25 +15,27 @@ const ExpertsSection = () => {
     offset: ["start start", "end end"]
   });
 
-  // STAGE 1: Big title in center (0-0.5)
+  // STAGE 1: Big title in center (0-0.5) - masked from bottom to top
   // STAGE 2: Transform to layout (0.5-1)
   
-  // Big title animations - fades out as we transition
-  const titleScale = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 1, 0.4]);
-  const titleX = useTransform(scrollYProgress, [0, 0.3, 0.5], [0, 0, -400]);
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.3, 0.45, 0.55], [1, 1, 1, 0]);
+  // Big title animations - masked out from bottom to top
+const titleClip = useTransform(
+  scrollYProgress,
+  [0, 0.3, 0.5],
+  ["inset(0% 0% 0% 0%)", "inset(0% 0% 0% 0%)", "inset(0% 0% 100% 0%)"]
+);
 
-  // Left content (icon + text) - appears during transition
-  const leftOpacity = useTransform(scrollYProgress, [0.4, 0.6], [0, 1]);
-  const leftX = useTransform(scrollYProgress, [0.4, 0.6], [100, 0]);
+  // Left content - slides in from left side of image
+  const leftOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
+  const leftX = useTransform(scrollYProgress, [0.5, 0.7], [200, 0]);
 
-  // Center image - appears after left content starts
-  const imageOpacity = useTransform(scrollYProgress, [0.55, 0.75], [0, 1]);
-  const imageScale = useTransform(scrollYProgress, [0.55, 0.75], [0.85, 1]);
+  // Center image - appears as title is masked
+  const imageOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
+  const imageY = useTransform(scrollYProgress, [0.5, 0.7], [50, 0]);
 
-  // Right content - appears last
-  const rightOpacity = useTransform(scrollYProgress, [0.65, 0.85], [0, 1]);
-  const rightX = useTransform(scrollYProgress, [0.65, 0.85], [-100, 0]);
+  // Right content - slides in from right side of image
+  const rightOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
+  const rightX = useTransform(scrollYProgress, [0.5, 0.7], [-200, 0]);
 
   return (
     <section 
@@ -103,22 +105,18 @@ const ExpertsSection = () => {
         <div className="h-screen flex items-center justify-center overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 w-full relative">
             
-            {/* STAGE 1: Big centered title */}
-            <motion.div
-              style={{
-                scale: titleScale,
-                x: titleX,
-                opacity: titleOpacity
-              }}
-              className="absolute inset-0 flex items-center justify-center"
-            >
-              <h2 className="text-6xl md:text-7xl font-bold text-center text-gray-900">
-                Have any questions?
-              </h2>
-            </motion.div>
+            {/* STAGE 1: Big centered title - masked from bottom to top */}
+            <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+              <motion.div style={{ clipPath: titleClip }}>
+  <h2 className="text-6xl md:text-7xl font-bold text-center text-gray-900">
+    Have any questions?
+  </h2>
+</motion.div>
+
+            </div>
 
             {/* STAGE 2: Three column layout */}
-            <div className="grid grid-cols-3 items-center gap-12 relative">
+            <div className="grid  grid-cols-3 items-center gap-12 relative">
               
               {/* LEFT CONTENT */}
               <motion.div
@@ -148,7 +146,7 @@ const ExpertsSection = () => {
               <motion.div
                 style={{
                   opacity: imageOpacity,
-                  scale: imageScale
+                  y: imageY
                 }}
                 className="flex justify-center"
               >
