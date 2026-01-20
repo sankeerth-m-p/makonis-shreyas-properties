@@ -8,7 +8,7 @@ const StoryBehindBrand = () => {
     relative w-full
     h-[70vh] md:h-screen
     bg-center bg-cover bg-no-repeat
-    overflow-hidden 
+    overflow-hidden
   "
   style={{
     backgroundImage:
@@ -42,7 +42,7 @@ const StoryBehindBrand = () => {
             top-0 left-0
             -translate-y-[130%]
             text-left mt-10
-            md:-translate-x-[80%] md:-translate-y-[10%]
+            md:-translate-x-[80%] md:-translate-y-[70%]
           "
         >
           <AnimatedHeading
@@ -50,7 +50,7 @@ const StoryBehindBrand = () => {
             delay={0}
             staggerDelay={0.15}
             className="
-              font-bold leading-tight whitespace-pre-line
+              font-medium leading-tight whitespace-pre-line
               text-[clamp(22px,5vw,34px)]
             "
           >

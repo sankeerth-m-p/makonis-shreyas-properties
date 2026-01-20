@@ -16,7 +16,7 @@ const OurStory = () => {
   const rightCircleX = useTransform(scrollYProgress, [0, 1], [20, -100]);
 
   return (
-    <div className="w-full md:pt-20 relative overflow-hidden">
+    <div className="w-full md:pt-0 relative overflow-hidden">
 
       {/* ================= ORANGE SECTION ================= */}
       <section className="bg-ORANGE pt-20 md:pt-28 pb-72 relative">

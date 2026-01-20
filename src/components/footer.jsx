@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer
-      className="
-        bg-gradient-to-b  font-medium uppercase from-neutral-900 to-black text-neutral-400
+      className=" 
+        bg-gradient-to-b  font-medium uppercase tracking-wider from-neutral-900 to-black text-neutral-500 -500
         min-h-[50vh] md:h-[66vh]  relative 
         flex justify-center items-center
       "
     >
-      <div className="w-full px-4 sm:px-6  md:px-8 lg:m-36 lg:mx-64 py-8 md:py-0">
+      <div className="w-full   max-w-6xl  px-4 sm:px-6  md:px-0 lg:m-36 lg:mx-0 py-8 md:py-0">
 
         {/* ✅ MOBILE VERSION ONLY (matches screenshot) */}
         <div className="md:hidden h-full flex flex-col justify-between">
@@ -67,17 +67,17 @@ const Footer = () => {
           {/* Middle logo section */}
           <div className="flex items-center gap-4 pt-10">
             <img
-              className="w-32 h-auto opacity-90"
+              className="w-32  h-auto opacity-90"
               src="/shreyas_logo_footer.png"
               alt="Shreyas Logo"
             />
-            <div className="text-white text-sm normal-case tracking-wide leading-tight">
+            <div className="text-white  text-sm normal-case tracking-wide leading-tight">
               defining <br /> lifestyles
             </div>
           </div>
 
           {/* Bottom policy section */}
-          <div className="pt-10 pb-6 text-[10px] tracking-wide text-neutral-500">
+          <div className="pt-10  pb-6 text-sm tracking-wide text-neutral-500 -500">
             <div className="flex items-center gap-8">
               <span className="hover:text-white transition cursor-pointer">
                 Privacy Policy
@@ -100,7 +100,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {/* Column 1 */}
             <div>
-              <ul className="space-y-4 md:space-y-5 text-xs">
+              <ul className="space-y-4 md:space-y-5 text-xs ">
                 <li>
                   <Link
                     to="/our-story"
@@ -146,7 +146,7 @@ const Footer = () => {
 
             {/* Column 2 */}
             <div>
-              <ul className="space-y-4 md:space-y-5 text-xs md:text-sm">
+              <ul className="space-y-4 md:space-y-5 text-xs">
                 <li>
                   <Link
                     to="/career"
@@ -176,23 +176,23 @@ const Footer = () => {
 
             {/* Column 3 */}
             <div className="hidden md:text-right md:flex flex-col md:items-end">
-              <div className="flex md:justify-end items-center gap-2 mb-3">
-                <img width="300" src="/shreyas_logo_footer.png" />
+              <div className="flex md:justify-end items-center gap-2 w-[300px]  mb-3 ">
+                <img src="/shreyas_logo_footer.png" />
               </div>
 
-              <div className="text-sm mt-20 space-y-3">
-                <p className="uppercase text-neutral-500 tracking-wide">
+              <div className="text-xs mt-20 text-neutral-500 space-y-3">
+                <p className="uppercase text-xs text-neutral-500 -500 ">
                   Visiting Hours
                 </p>
                 <p>Mon – Fri: 10:00 AM – 6:00 PM</p>
-                <div className="border-b-2 pt-5 border-neutral-400" />
+                <div className="border-b-2 pt-5 border-neutral-600" />
               </div>
             </div>
           </div>
 
           {/* Bottom Section */}
-          <div className="flex mt-12 md:mt-32 flex-col md:flex-row items-center justify-between text-xs text-neutral-400 gap-4">
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6">
+          <div className="flex mt-12 md:mt-32 flex-col md:flex-row items-center justify-between text-xs text-neutral-500 -400 gap-4">
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-xs">
               <span className="hover:text-white cursor-pointer text-center">
                 Privacy Policy
               </span>

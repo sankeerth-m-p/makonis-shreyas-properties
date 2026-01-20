@@ -25,6 +25,24 @@ const NatureSign = () => {
 
   const [index, setIndex] = useState(0);
   const [bgImage, setBgImage] = useState(nature1);
+const [currentBg, setCurrentBg] = useState(bgImage);
+const [nextBg, setNextBg] = useState(null);
+const [isFading, setIsFading] = useState(false);
+
+useEffect(() => {
+  if (!bgImage || bgImage === currentBg) return;
+
+  setNextBg(bgImage);
+  setIsFading(true);
+
+  const timeout = setTimeout(() => {
+    setCurrentBg(bgImage);
+    setNextBg(null);
+    setIsFading(false);
+  }, 700); // must match duration
+
+  return () => clearTimeout(timeout);
+}, [bgImage, currentBg]);
 
 useEffect(() => {
   // if (window.innerWidth >= 768) return; // desktop = NO auto scroll
@@ -39,16 +57,17 @@ useEffect(() => {
 }, [index]);
 
   return (
-<section className="relative w-full h-[60vh] md:h-screen overflow-hidden bg-[#0B1F1A]">
+<section className="relative  w-full h-[60vh] md:h-screen overflow-hidden bg-[#0B1F1A]">
       {/* BACKGROUND IMAGE */}
-      <img
-        src={bgImage}
-        alt="Nature’s Sign"
-        className="absolute inset-0 w-full h-full object-cover  transition-all duration-700"
-      />
+       <img
+    key={index}
+    src={bgImage}
+    alt=""
+    className="absolute inset-0 w-full h-full object-cover animate-fadeIn z-0"
+  />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1E2A]/95 via-[#0A1E2A]/80 to-transparent z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1E2A]/100 via-[#0A1E2A]/10 to-transparent z-10" />
 
       {/* CONTENT */}
       <div className="relative z-20 h-full flex flex-col justify-end">
@@ -66,17 +85,16 @@ useEffect(() => {
 </div>
 
         {/* INFO STRIP */}
-<div className="   md:absolute md:bottom-[190px] w-full px-4 md:px-0">
-  <div className="max-w-7xl mx-auto">
-    <div className="flex flex-row  items-center justify-center gap-4 md:gap-0 text-[#D7E2E8] text-xs md:text-sm">
+<div className="   md:absolute md:bottom-[150px]  w-full px-4 md:px-0">
+  <div className="max-w-6xl mx-auto">
+    <div className="flex flex-row       items-center justify-between gap-4 md:gap-0 text-[#D7E2E8] text-xs md:text-sm">
 
       {/* ITEM */}
-      <div className="flex   items-center gap-1 md:gap-3">
-        <img src={nhIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
-        <div className="leading-tight text-xs md:text-base text-left md:text-right">
+      <div className="flex    items-center gap-1 md:gap-3">
+        <img src={nhIcon} className=" md:block hidden w-8 h-7 md:w-12 md:h-8 opacity-80" />
+        <div className="leading-tight text-xs md:text-base text-left    ">
           <p>Located on</p>
-          <p>NH-44</p>
-          <p>North Bengaluru</p>
+          <p>NH-44 North Bengaluru</p>
         </div>        <img src={nhIcon} className="md:hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
 
       </div>
@@ -85,10 +103,9 @@ useEffect(() => {
 
       <div className="flex   items-center gap-1 md:gap-3">
         <img src={airportIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
-        <div className="leading-tight text-xs md:text-base text-left md:text-right">
+        <div className="leading-tight text-xs md:text-base text-left    ">
           <p>Just</p>
-          <p>20 minutes</p>
-          <p>from Airport</p>
+          <p>20 minutes from Airport</p>
         </div>
         <img src={airportIcon} className="md:hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
       </div>
@@ -97,10 +114,9 @@ useEffect(() => {
 
       <div className="flex   items-center gap-1 md:gap-3">
         <img src={hillIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
-        <div className="leading-tight text-xs md:text-base text-left md:text-right">
+        <div className="leading-tight text-xs md:text-base text-left    ">
           <p>Very close</p>
-          <p>proximity from</p>
-          <p>Nandi Hills</p>
+          <p>proximity from Nandi Hills</p>
         </div>
         <img src={hillIcon} className="md:hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
       </div>
@@ -111,14 +127,14 @@ useEffect(() => {
 
 
         {/* BOTTOM BAND */}
-<div className="bg-[#15272f] py-4 md:py-6">
-  <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-row  items-center md:justify-between gap-4 md:gap-10 text-[#D7E2E8]">
+<div className="] py-4 md:py-6 ">
+  <div className="max-w-6xl  mx-auto px-4 md:px-0 flex flex-row  items-center md:justify-between gap-4 md:gap-10 text-[#D7E2E8]">
 
     {/* LOGO */}
     <img src={nature2} className="w-[130px] md:w-[160px]" />
 
     {/* TEXT */}
-    <h3 className="text-sm md:text-[18px] text-left leading-snug font-medium max-w-xs md:max-w-md">
+    <h3 className="text-sm md:text-2xl text-left leading-snug font-light max-w-xs md:max-w-md">
       Nature’s sign, where luxury and nature flow in perfect harmony.
     </h3>
 

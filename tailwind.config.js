@@ -14,6 +14,7 @@ module.exports = {
       },fontFamily: {
         aeonik: ["Aeonik", "sans-serif"],
         mont: ["Mont", "sans-serif"],
+        roboto:["Oswald", "roboto"],
       },
     },
   },

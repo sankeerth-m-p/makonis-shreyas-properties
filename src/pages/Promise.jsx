@@ -108,7 +108,7 @@ export default function PromisePage() { const sectionRef = useRef(null);
     <div className="flex overflow-hidden flex-col items-center justify-center w-full">
 
       {/* ========= HERO ========= */}
-<section className="relative  ref={sectionRef} w-full min-h-screen md:h-screen pt-20 md:pt-28 overflow-hidden bg-white">
+<section className="relative  ref={sectionRef} w-full min-h-screen md:h-screen pt-20 md:pt-2 overflow-hidden bg-white">
   
    {/* ANIMATED CIRCLES - Add these */}
       {/* BOTTOM LEFT */}

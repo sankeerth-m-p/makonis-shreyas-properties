@@ -47,7 +47,7 @@ const BlogList = () => {
     const navigate = useNavigate();
 
     return (
-        <section className="bg-white pt-28 pb-24 relative overflow-hidden">
+        <section className="bg-white pt-2 pb-24 relative overflow-hidden">
             <div className="max-w-6xl mx-auto px-6">
 
                 <AnimatedHeading className="text-3xl font-semibold text-gray-900">

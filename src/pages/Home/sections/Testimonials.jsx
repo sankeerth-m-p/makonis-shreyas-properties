@@ -1,24 +1,25 @@
 import { useEffect, useRef, useState } from "react";
 import AnimatedHeading from "../../../components/animatedHeading";
 import FloatUpText from "../../../components/floatUpText";
+import quote from "/Home/quotes.svg"
 const TESTIMONIALS = [
   {
     quote:
-      "From the very first meeting to project handover, the experience was smooth and transparent.",
+      "From the very first meeting to project handover, the experience was smooth and transparent.\"",
     name: "Neetu Sargam",
     role: "Founder, KPCC International",
     img: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
     quote:
-      "Their attention to detail and commitment to quality exceeded our expectations.",
+      "Their attention to detail and commitment to quality exceeded our expectations.\"",
     name: "Rahul Mehta",
     role: "Director, UrbanNest",
     img: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
     quote:
-      "A rare blend of aesthetics, engineering, and reliability. Highly recommended.",
+      "A rare blend of aesthetics, engineering, and reliability. Highly recommended.\"",
     name: "Ananya Rao",
     role: "Architect, Studio AR",
     img: "https://randomuser.me/api/portraits/women/68.jpg",
@@ -71,37 +72,20 @@ useEffect(() => {
 const t = TESTIMONIALS[activeIndex];
   return (
     <section
-      ref={ref}
-      className="relative bg-[#F4EFE5] md:min-h-screen  overflow-hidden"
-    >
+  ref={ref}
+  className="relative md:min-h-screen overflow-hidden"
+  style={{
+    backgroundImage: "url(/Home/testimonialbg.svg)",
+    backgroundSize: "cover",
+    backgroundPosition: "top ",backgroundPositionY:"100px",
+    backgroundRepeat: "no-repeat",
+    // backgroundColor: "#F4EFE5", // fallback behind svg
+  }}
+>
+
     
       {/* WAVE – RESPONDS TO SCROLL */}
-      {showWave && (
-        <div className="absolute top-0 left-0 w-full h-[260px] z-0 overflow-hidden">
-          <svg
-            viewBox="0 0 1440 260"
-            preserveAspectRatio="none"
-            className="absolute top-0 left-0 w-full h-full"
-            style={{
-              transform: `translateY(${-50 + scrollProgress * 50}px)`,
-              opacity: scrollProgress * 0.95 + 0.05
-            }}
-          >
-            <path
-              d={`
-                M0,${140 - scrollProgress * 20}
-                C${240},${60 - scrollProgress * 20} ${480},${60 - scrollProgress * 20} ${720},${120 - scrollProgress * 10}
-                C${960},${180 + scrollProgress * 20} ${1200},${180 + scrollProgress * 20} ${1440},${110 - scrollProgress * 10}
-                L1440,0 L0,0 Z
-              `}
-              fill="#ffffff"
-              style={{
-                transition: 'none'
-              }}
-            />
-          </svg>
-        </div>
-      )}
+     
     
       {/* HEADING */}
       <div 
@@ -110,7 +94,10 @@ const t = TESTIMONIALS[activeIndex];
           opacity: Math.min(1, scrollProgress * 1.3),
           transform: `translateY(${(1 - scrollProgress) * 40}px)`
         }}
-      ><AnimatedHeading className="text-[16px] text-[#1A1A1A] leading-tight">
+      >
+        <AnimatedHeading
+    className="text-lg     md:text-3xl  "
+    >
           What {'\n'}
           people {'\n'}
           says
@@ -119,7 +106,7 @@ const t = TESTIMONIALS[activeIndex];
     
       {/* CONTENT */}
       <div 
-        className="relative z-10 max-w-5xl mx-auto px-6 md:pt-32 py-10 md:pb-36"
+        className="relative  z-10 max-w-5xl mx-auto px-6 md:pt-32 py-10 md:pb-36"
         style={{
           opacity: Math.min(1, scrollProgress * 1.5),
           transform: `translateY(${(1 - scrollProgress) * 60}px)`
@@ -128,30 +115,33 @@ const t = TESTIMONIALS[activeIndex];
     
         {/* QUOTE */}
           <FloatUpText>
-        <div className="relative max-w-4xl mx-auto text-center transition-all duration-700 ease-in-out">
-  <span className="absolute -left-12 top-0 text-[48px]">"</span>
-
-  <p
+        <div className="relative  max-w-4xl mx-auto text-center     transition-all duration-700 ease-in-out">
+  
+            <img src={quote} className="  -translate-x-1/2 w-3 -tranlate-y-1/2     rotate-180 h-4 md:w-28 md:h-20" 
+  alt=""/>
+  <AnimatedHeading
     key={activeIndex}
-    className="text-lg md:text-[22px] leading-relaxed animate-fadeIn"
-  >
+    className="text-lg     md:text-[38px] font-normal leading-relaxed animate-fadeIn"
+    >
     {t.quote}
-  </p>
+  </AnimatedHeading>
+   
 
-  <span className="absolute -right-12 bottom-0 text-[48px]">"</span>
+            <FloatUpText>
 
   {/* AUTHOR */}
-  <div className="mt-16 flex items-center justify-center gap-3">
+  <div className="mt-16 flex items-center justify-center gap-3 animate-fadeIn">
     <img
       src={t.img}
       className="w-10 h-10 rounded-full object-cover"
       alt={t.name}
     />
     <div className="text-left">
-      <p className="text-[14px] font-semibold">{t.name}</p>
-      <p className="text-[12px] text-gray-600">{t.role}</p>
+      <p className="text-lg font-semibold">{t.name}</p>
+      <p className="text-sm">{t.role}</p>
     </div>
-  </div>
+  </div>              
+</FloatUpText>
 </div>
 
             </FloatUpText>

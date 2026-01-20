@@ -71,7 +71,7 @@ useEffect(() => {
 
 
   return (
-<section className="relative h-[80vh] md:h-screen w-full overflow-y-visible">
+<section className="relative h-[80vh] md:h-screen w-full md:-mt-20  overflow-y-visible">
       {/* Current Slide (underneath) */}
       <div className="absolute inset-0">
         <img

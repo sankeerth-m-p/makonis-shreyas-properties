@@ -20,7 +20,7 @@ const WhatMakesUsDifferent = () => {
         as="h2"
         delay={0}
         staggerDelay={0.15} 
-        className=" text-base md:text-3xl font-semibold text-[#1A1A1A] leading-tight mb-4">
+        className=" text-base md:text-[38px] font-semibold  leading-tight mb-4">
         What makes us different
         lies in how we blend vision
         with execution.
@@ -28,7 +28,7 @@ const WhatMakesUsDifferent = () => {
 
       {/* SUBTEXT */}
       <FloatUpText delay={0}>
-        <p className="text-sm md:md:text-lg text-base text-gray-600 mb-12 max-w-md">
+        <p className="text-sm md:md:text-lg text-base  mb-12 max-w-md">
           What makes every project distinctly ours,
           from vision and design to lasting value.
         </p>
@@ -36,17 +36,17 @@ const WhatMakesUsDifferent = () => {
 
       {/* ITEM 1 */}
       <div className="flex gap-5 pb-2 mb-2 md:pb-6 md:mb-6 border-b border-gray-300">
-         <div className="w-20 md:w-10 h-10 bg-ORANGE flex items-center justify-center">
+         <div className="w-20 md:w-10 p-2  aspect-square h-10 bg-ORANGE flex items-center justify-center">
           <img 
             src="/Home/diamondlicon.svg" 
             alt="Diamond icon" />
         </div>
         <div>
           <FloatUpText delay={0}>
-            <h4 className="md:text-lg text-base font-semibold text-[#1A1A1A] mb-1">
+            <h4 className="md:text-lg text-base font-semibold  mb-1">
               Values Driven Development
             </h4>
-            <p className="md:text-base text-sm text-gray-600 leading-relaxed">
+            <p className="md:text-base text-sm  leading-relaxed">
               Every project is planned with long-term value in mind
               focusing on quality, sustainability, and future appreciation.
             </p>
@@ -56,17 +56,17 @@ const WhatMakesUsDifferent = () => {
 
       {/* ITEM 2 */}
       <div className="flex gap-5 pb-2 mb-2 md:pb-6 md:mb-6 border-b border-gray-300">
-        <div className="w-20 md:w-10 h-10 aspect-square bg-ORANGE flex items-center justify-center">
+        <div className="w-20 md:w-10 p-2 h-10 aspect-square bg-ORANGE flex items-center justify-center">
           <img 
             src="/Home/plannedicon.svg" 
             alt="icon" />
         </div>
         <div>
           <FloatUpText delay={0}>
-            <h4 className="md:text-lg text-base font-semibold text-[#1A1A1A] mb-1">
+            <h4 className="md:text-lg text-base font-semibold  mb-1">
               Thoughtfully Planned Spaces
             </h4>
-            <p className="md:text-base text-sm text-gray-600 leading-relaxed">
+            <p className="md:text-base text-sm  leading-relaxed">
               From layouts to amenities, each development is designed
               to enhance lifestyle, comfort, and functionality.
             </p>
@@ -76,17 +76,17 @@ const WhatMakesUsDifferent = () => {
 
       {/* ITEM 3 */}
       <div className="flex gap-5">
-        <div className="w-20 md:w-10 h-10 aspect-square bg-ORANGE flex items-center justify-center">
+        <div className="w-20 md:w-10 p-2 h-10 aspect-square bg-ORANGE flex items-center justify-center">
           <img 
             src="/Home/shakehandicon.svg" 
             alt="icon" />
         </div>
         <div>
           <FloatUpText delay={0}>
-            <h4 className="md:text-lg text-base font-semibold text-[#1A1A1A] mb-1">
+            <h4 className="md:text-lg text-base font-semibold  mb-1">
               End to End Customer Care
             </h4>
-            <p className="md:text-base text-sm text-gray-600 leading-relaxed">
+            <p className="md:text-base text-sm  leading-relaxed">
               Support that goes beyond possession assisting clients
               from site visits to handover and after-sales service.
             </p>

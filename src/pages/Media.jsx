@@ -11,7 +11,7 @@ const Media = () => {
   const [open4, setOpen4] = useState(false);
 
   return (
-    <div className="bg-white pt-24 pb-20">
+    <div className="bg-white pt-4 pb-20">
       <div className="max-w-6xl mx-auto px-6">
 
         <AnimatedHeading className="text-3xl text-gray-800 my-10 max-w-3xl">

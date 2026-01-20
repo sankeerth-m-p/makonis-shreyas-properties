@@ -134,7 +134,7 @@ useEffect(() => {
                   <p className="text-[11px] tracking-widest uppercase opacity-80">
                     {item.location}
                   </p>
-                  <h3 className="text-lg md:text-[22px] mt-2 whitespace-pre-line leading-snug">
+                  <h3 className="text-lg md:text-[22px]  mt-2 whitespace-pre-line leading-snug">
                     {item.title}
                   </h3>
                 </div>
@@ -147,7 +147,7 @@ useEffect(() => {
   </div>
 
   {/* ✅ DESKTOP ONLY: Your existing sticky scroll */}
-<div className="hidden md:block relative h-[520vh]">
+<div className="hidden   md:block relative h-[520vh]">
     {items.map((item, i) => {
       const start = i * 120;
       const progress = Math.max(0, Math.min(1, (scrollY - start) / 120));
@@ -156,7 +156,7 @@ useEffect(() => {
       return (
         <div
           key={i}
-className="sticky top-20 h-[calc(100vh-5rem)] w-full flex"
+className="sticky top-20   h-[calc(100vh-5rem)] w-full flex"
           style={{
             zIndex: i + 1,
             transform: `translateY(${(1 - progress) * 100}%)`,
@@ -179,7 +179,7 @@ className="sticky top-20 h-[calc(100vh-5rem)] w-full flex"
 
             <div>
               <div
-                className="text-[110px] mb-4"
+                className="text-[110px]  font-roboto mb-1"
                 style={{
                   WebkitTextStroke: "1px #fff",
                   color: "transparent",
@@ -188,11 +188,11 @@ className="sticky top-20 h-[calc(100vh-5rem)] w-full flex"
                 {item.id}
               </div>
 
-              <p className="text-[11px] tracking-widest uppercase opacity-80">
+              <p className="text-xs  tracking-widest  ">
                 {item.location}
               </p>
 
-              <h3 className="text-[20px] mt-4 whitespace-pre-line">
+              <h3 className="md:text-3xl  mt-4 whitespace-pre-line">
                 {item.title}
               </h3>
             </div>

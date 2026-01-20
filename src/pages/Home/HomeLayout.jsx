@@ -230,7 +230,7 @@ const HomeLayout = () => {
   return (
     <><div className="overflow-hidden">
       
-      <div className="snap-section ">
+      <div className="snap-sectio ">
         <HeroSection />
       </div>
       <div className="snap-section">
@@ -243,7 +243,7 @@ const HomeLayout = () => {
       <div className="snap-section ">
   <SignatureSpaces />
 </div>
-      <div className="snap-section">
+      <div className="snap-section mt-20">
         <StoryBehindBrand />
       </div>
       <div className="snap-section">

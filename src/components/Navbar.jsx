@@ -16,7 +16,7 @@ const navItems = [
 
 // ✅ Desktop nav content only (same underline animation)
 const NavContent = ({ location }) => (
-  <nav className="max-w-6xl buttons mx-auto w-full min-h-20 px-  py-4 flex items-center justify-between">
+  <nav className="max-w-6xl  buttons mx-auto w-full min-h-20 px-  py-4 flex items-center justify-between">
     {/* LOGO */}
     <h1 className="text-2xl  font-semibold tracking-wide text-gray-900">
       <Link to="/" className="hover:opacity-80 transition">
@@ -59,32 +59,42 @@ const NavContent = ({ location }) => (
 const Navbar = () => {
   const [showSticky, setShowSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const navRef = useRef(null);
 
   const triggered = useRef(false);
   const location = useLocation();
+useEffect(() => {
+  const observer = new IntersectionObserver(([entry]) => {
+    setShowSticky(!entry.isIntersecting);
+  });
 
-  // ✅ SAME animation logic as your reference
-  useEffect(() => {
-    const onScroll = () => {
-      const current = window.scrollY;
+  if (navRef.current) observer.observe(navRef.current);
 
-      // reset when back at top
-      if (current < 60) {
-        triggered.current = false;
-        setShowSticky(false);
-        return;
-      }
+  return () => observer.disconnect();
+}, []);
 
-      // trigger animation once after leaving top
-      if (!triggered.current && current > 60) {
-        setShowSticky(true);
-        triggered.current = true;
-      }
-    };
+  // // ✅ SAME animation logic as your reference
+  // useEffect(() => {
+  //   const onScroll = () => {
+  //     const current = window.scrollY;
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  //     // reset when back at top
+  //     if (current < 60) {
+  //       triggered.current = false;
+  //       setShowSticky(false);
+  //       return;
+  //     }
+
+  //     // trigger animation once after leaving top
+  //     if (!triggered.current && current > 60) {
+  //       setShowSticky(true);
+  //       triggered.current = true;
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", onScroll, { passive: true });
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, []);
 
   // ✅ Close mobile menu on route change (same as before)
   useEffect(() => {
@@ -96,10 +106,10 @@ const Navbar = () => {
   return (
     <>
       {/* ✅ DEFAULT NAVBAR (slides UP when sticky appears) */}
-      <header
-        className={`fixed top-0 left-0 w-full z-50 bg-white shadow-lg
+      <header ref={navRef}
+        className={`relative w-full z-50 bg-white shadow-lg
           transition-transform duration-100 ease-in will-change-transform
-          ${showSticky ? "-translate-y-full" : "translate-y-0"}
+         
         `}
       >
         {/* MOBILE NAVBAR (UNCHANGED) */}

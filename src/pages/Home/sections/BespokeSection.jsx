@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import AnimatedHeading from "../../../components/animatedHeading";
 import { useNavigate } from "react-router-dom";
 
+import { ArrowRight } from "lucide-react";
 const bespokeImages = [
   {
     src: "/Home/services_plotted_developemnt.webp",
@@ -40,7 +41,7 @@ const swipeThreshold = 50;
   }, []);
 
   return (
-    <div className="w-full md:w-[70%] h-auto md:h-[380px]">
+    <div className="w-full md:w-[70%] h-auto md:h-full  ">
       {/* ✅ MOBILE SLIDER */}
       <div className="md:hidden relative w-full">
         {/* Slides */}
@@ -80,7 +81,7 @@ const swipeThreshold = 50;
             }}
           >
             {bespokeImages.map((img, index) => (
-              <div key={index} className="w-full shrink-0 relative h-[50vh]">
+              <div key={index} className="w-full shrink-0 relative h-[50vh">
                 <img
                   src={img.src}
                   alt={img.label}
@@ -111,14 +112,14 @@ const swipeThreshold = 50;
       </div>
 
       {/* ✅ DESKTOP LAYOUT (unchanged) */}
-      <div className="hidden md:flex gap-4 h-[380px]">
+      <div className="hidden md:flex gap-4 h-full">
         {bespokeImages.map((img, index) => (
           <div
             key={index}
             onMouseEnter={() => setActive(index)}
             onTouchStart={() => setActive(index)}
             className={`
-              relative overflow-hidden rounded-3xl transition-all duration-500 ease-in-out
+              relative overflow-hidden rounded-xl transition-all duration-500 ease-in-out
               ${active === index ? "flex-[2]" : "flex-[1]"}
             `}
           >
@@ -129,7 +130,7 @@ const swipeThreshold = 50;
   className={`
     absolute bottom-0 left-0 w-full h-[44px]
     flex items-center justify-center
-    uppercase text-white text-[11px] tracking-widest
+    uppercase text-white text-[11px] tracking-wide
     bg-black/50
     whitespace-nowrap 
     transition-opacity duration-300 ease-in-out
@@ -151,26 +152,32 @@ const BespokeSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#EEF2F3] py-10  md:py-28">
-      <div className="max-w-6xl mx-auto px-4  md:px-0">
-        <div className="bg-white rounded-3xl px-5 md:px-10 py-6 md:py-12 flex flex-col md:flex-row  gap-6">
+    <section className="bg-[#EEF2F3] py-10 h-screen md:pt-28  ">
+      <div className="max-w-6xl mx-auto px-4 h-full   md:px-0">
+        <div className="bg-white rounded-3xl h-full px-5 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}
-          <div className="w-full md:w-[30%]  flex flex-col justify-center font-bold">
+          <div className="w-full md:w-[30%] items-center flex flex-col justify-center font-bold">
+            <div>
+
             <AnimatedHeading
               as="h3"
               delay={0}
               staggerDelay={0.15}
               className="text-lg md:text-4xl font-semibold   mb-4 md:mb-8"
-            >
+              >
               Bespoke {'\n'}services for { '\n'}elevated living {'\n'} 
             </AnimatedHeading>
 
             <button
               onClick={() => navigate("/projects")}
-              className="text-[11px] hover:text-ORANGE hover:bg-ORANGE2/5 w-fit p-2 rounded-md flex tracking-widest text-gray-700"
-            >
-              VIEW PROJECTS
+              className="text-[11px] buttons  justify-center items-center gap-3  hover:text-ORANGE hover:bg-ORANGE2/5 w-fit p-2 rounded-md flex tracking-widest text-gray-700"
+              >
+                <span>
+                VIEW PROJECTS
+                </span>
+                <ArrowRight className="h-4 w-4" />
             </button>
+              </div>
           </div>
 
           {/* RIGHT IMAGE INTERACTION */}

@@ -79,7 +79,7 @@ export default function Projects() {
   return (
     <>
       {/* ================= FIRST PROJECTS SECTION ================= */}
-      <section className="bg-[#F5F2EF] md:py-20">
+      <section className="bg-[#F5F2EF] ">
         {/* Header */}
         <div className="bg-ORANGE px-4 py-20 text-center text-white">
           <AnimatedHeading className="text-lg md:text-3xl font-semibold mb-3">
