@@ -1,11 +1,12 @@
 import AnimatedHeading from "../../../components/animatedHeading";
 import { useNavigate } from "react-router-dom";
+import FloatUpText from "../../../components/floatUpText";
 const StoryBehindBrand = () => {
   const navigate = useNavigate();
   return (
    <section
   className="
-    relative w-full
+    relative w-full 
     h-[70vh] md:h-screen
     bg-center bg-cover bg-no-repeat
     overflow-hidden 
@@ -99,7 +100,8 @@ const StoryBehindBrand = () => {
             md:text-right
             md:max-w-[26ch]
           "
-        >
+            ><FloatUpText>
+                
           <p className="text-[clamp(13px,1.2vw,15px)] text-[#2A2A2A] leading-relaxed mb-5">
             Our brand tells a story of commitment, trust, and progress.
           </p>
@@ -107,6 +109,7 @@ const StoryBehindBrand = () => {
           <button onClick={()=>navigate('/our-story')}  className="text-[11px] tracking-widest uppercase text-[#111] border-b hover:text-ORANGE hover:font-bold hover:border-ORANGE  border-[#111] pb-1">
             KNOW MORE
           </button>
+        </FloatUpText>
         </div>
       </div>
     </div>

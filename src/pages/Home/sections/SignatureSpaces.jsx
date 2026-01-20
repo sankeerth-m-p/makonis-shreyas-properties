@@ -1,5 +1,6 @@
 import { useEffect, useState,useRef } from "react";
 import AnimatedHeading from "../../../components/animatedHeading";
+import FloatUpText from "../../../components/floatUpText";
 
 const SignatureSpaces = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -178,6 +179,7 @@ className="sticky top-20   h-[calc(100vh-5rem)] w-full flex"
             </AnimatedHeading>
 
             <div>
+              <FloatUpText>
               <div
                 className="text-[110px]  font-roboto mb-1"
                 style={{
@@ -191,10 +193,11 @@ className="sticky top-20   h-[calc(100vh-5rem)] w-full flex"
               <p className="text-xs  tracking-widest  ">
                 {item.location}
               </p>
-
+                
               <h3 className="md:text-3xl  mt-4 whitespace-pre-line">
                 {item.title}
               </h3>
+</FloatUpText>
             </div>
           </div>
 

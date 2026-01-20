@@ -41,7 +41,7 @@ const swipeThreshold = 50;
   }, []);
 
   return (
-    <div className="w-full md:w-[70%] h-auto md:h-full  ">
+    <div className="w-full md:w-[70%] h-auto md:h-full   ">
       {/* ✅ MOBILE SLIDER */}
       <div className="md:hidden relative w-full">
         {/* Slides */}
@@ -112,7 +112,7 @@ const swipeThreshold = 50;
       </div>
 
       {/* ✅ DESKTOP LAYOUT (unchanged) */}
-      <div className="hidden md:flex gap-4 h-full">
+      <div className="hidden md:flex gap-4  h-full">
         {bespokeImages.map((img, index) => (
           <div
             key={index}
@@ -152,7 +152,7 @@ const BespokeSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#EEF2F3] py-10 h-screen md:pt-28  justify-center flex">
+    <section className="bg-[#EEF2F3] py-10 h-screen md:pt-28  justify-center  items-center flex">
       <div className="max-w-6xl px-4 h-full max-h-[550px]    md:px-4">
         <div className="bg-white rounded-3xl h-full px-5 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}

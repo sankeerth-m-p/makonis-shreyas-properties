@@ -14,9 +14,9 @@ const WhatMakesUsDifferent = () => {
       className="md:w-full h-[50vh]  md:h-full object-cover md:col-span-2 " />
     
     {/* RIGHT CONTENT - Takes 3 columns on desktop */}
-    <div className="md:col-span-3 flex flex-col w-full gap-5 h-full justify-around   ">
+    <div className="md:col-span-3 flex flex-col w-full gap-5  h-full justify-around   ">
       {/* HEADING */}
-          <div className="  flex flex-col gap-2">
+          <div className="  flex flex-col gap-3 ">
             
       <AnimatedHeading
         as="h2"
@@ -39,12 +39,12 @@ const WhatMakesUsDifferent = () => {
           </div>
 <div className="  flex gap-3 flex-col">
       {/* ITEM 1 */}
-      <div className="flex gap-2   border-gray-300">
-         <div className="w-20 md:w-10 p-2  aspect-square h-10 bg-ORANGE flex items-center justify-center">
+      <div className="flex gap-3 mb-3  border-gray-300">
+         <FloatUpText className="w-20 md:w-10 p-2  aspect-square h-10 bg-ORANGE flex items-center justify-center">
           <img 
             src="/Home/diamondlicon.svg" 
             alt="Diamond icon" />
-        </div>
+        </FloatUpText>
         <div>
           <FloatUpText delay={0}>
             <h4 className="md:text-lg text-base font-semibold  mb-1">
@@ -59,12 +59,12 @@ const WhatMakesUsDifferent = () => {
       </div>
 
       {/* ITEM 2 */}
-      <div className="flex gap-2   border-gray-300">
-        <div className="w-20 md:w-10 p-2 h-10 aspect-square bg-ORANGE flex items-center justify-center">
+      <div className="flex gap-3 mb-  border-gray-300">
+        <FloatUpText className="w-20 md:w-10 p-2 h-10 aspect-square bg-ORANGE flex items-center justify-center">
           <img 
             src="/Home/plannedicon.svg" 
             alt="icon" />
-        </div>
+        </FloatUpText>
         <div>
           <FloatUpText delay={0}>
             <h4 className="md:text-lg text-base font-semibold  mb-1">
@@ -79,12 +79,12 @@ const WhatMakesUsDifferent = () => {
       </div>
 
       {/* ITEM 3 */}
-      <div className="flex gap-2  ">
-        <div className="w-20 md:w-10  p-2 h-10 aspect-square bg-ORANGE flex items-center justify-center">
+      <div className="flex gap-3  ">
+        <FloatUpText className="w-20 md:w-10  p-2 h-10 aspect-square bg-ORANGE flex items-center justify-center">
           <img 
             src="/Home/shakehandicon.svg" 
             alt="icon" />
-        </div>
+        </FloatUpText>
         <div>
           <FloatUpText delay={0}>
             <h4 className="md:text-lg text-base font-semibold  mb-1">

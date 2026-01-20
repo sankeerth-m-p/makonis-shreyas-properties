@@ -9,6 +9,8 @@ import nature3 from "/Home/naturesign_4.webp";
 import nature4 from "/Home/naturesign_5.webp";
 import nature5 from "/Home/naturesign_6.webp";
 import { useState,useEffect } from "react";
+import FloatUpText from "../../../components/floatUpText";
+import AnimatedHeading from "../../../components/animatedHeading";
 
 const images = [
   nature7,
@@ -93,8 +95,8 @@ useEffect(() => {
       <div className="flex    items-center gap-1 md:gap-3">
         <img src={nhIcon} className=" md:block hidden w-8 h-7 md:w-12 md:h-8 opacity-80" />
         <div className="leading-tight text-xs md:text-base text-left    ">
-          <p>Located on</p>
-          <p>NH-44 North Bengaluru</p>
+          <FloatUpText>Located on</FloatUpText>
+          <FloatUpText>NH-44 North Bengaluru</FloatUpText>
         </div>        <img src={nhIcon} className="md:hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
 
       </div>
@@ -104,8 +106,8 @@ useEffect(() => {
       <div className="flex   items-center gap-1 md:gap-3">
         <img src={airportIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
         <div className="leading-tight text-xs md:text-base text-left    ">
-          <p>Just</p>
-          <p>20 minutes from Airport</p>
+          <FloatUpText>Just</FloatUpText>
+          <FloatUpText>20 minutes from Airport</FloatUpText>
         </div>
         <img src={airportIcon} className="md:hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
       </div>
@@ -115,8 +117,8 @@ useEffect(() => {
       <div className="flex   items-center gap-1 md:gap-3">
         <img src={hillIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
         <div className="leading-tight text-xs md:text-base text-left    ">
-          <p>Very close</p>
-          <p>proximity from Nandi Hills</p>
+          <FloatUpText>Very close</FloatUpText>
+          <FloatUpText>proximity from Nandi Hills</FloatUpText>
         </div>
         <img src={hillIcon} className="md:hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
       </div>
@@ -134,9 +136,9 @@ useEffect(() => {
     <img src={nature2} className="w-[130px] md:w-[160px]" />
 
     {/* TEXT */}
-    <h3 className="text-sm md:text-2xl text-left leading-snug font-light max-w-xs md:max-w-md">
+    <AnimatedHeading className="text-sm md:text-2xl text-left leading-snug font-light max-w-xs md:max-w-md">
       Nature’s sign, where luxury and nature flow in perfect harmony.
-    </h3>
+    </AnimatedHeading>
 
    
             {/* SLIDER */}

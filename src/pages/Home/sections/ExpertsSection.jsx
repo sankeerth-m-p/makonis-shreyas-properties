@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import AnimatedHeading from "../../../components/animatedHeading";
 
 // Placeholder for RevealImageAnimation - replace with your actual component
 const RevealImageAnimation = ({ image, className }) => (
@@ -108,9 +109,9 @@ const titleClip = useTransform(
             {/* STAGE 1: Big centered title - masked from bottom to top */}
             <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
               <motion.div style={{ clipPath: titleClip }}>
-  <h2 className="text-6xl md:text-7xl font-bold text-center text-gray-900">
+  <AnimatedHeading className="text-6xl md:text-7xl font-bold text-center text-gray-900">
     Have any questions?
-  </h2>
+  </AnimatedHeading>
 </motion.div>
 
             </div>

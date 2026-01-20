@@ -213,7 +213,7 @@ const HomeLayout = () => {
       clearTimeout(scrollEndTimer);
       scrollEndTimer = setTimeout(() => {
         handleScrollEnd();
-      }, 100);
+      }, 10);
     };
     
     window.addEventListener('scroll', checkScrollEnd, { passive: true });
@@ -230,7 +230,7 @@ const HomeLayout = () => {
   return (
     <><div className="overflow-hidden">
       
-      <div className="snap-sectio ">
+      <div className="snap-section ">
         <HeroSection />
       </div>
       <div className="snap-section">
