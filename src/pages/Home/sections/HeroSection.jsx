@@ -16,8 +16,37 @@ const heroSlides = [
     title: "Modern Profound Tech Park",
     subtitle:
       "A prestigious Kondapur landmark beside Satyam, neighboring tech giants TCS, Cognizant, and HSBC.",
-  }
-  
+  },
+  {
+    image: royalEnclave,
+    title: "Royal Enclave",
+    subtitle:
+      "Elegant 2 & 3 BHKs blending lush greenery with rapid access to major IT corridors.",
+  },
+  {
+    image: Paradise,
+    title: "Paradise",
+    subtitle:
+      "An eco-friendly sanctuary featuring modern infrastructure in a peaceful family setting.",
+  },
+  {
+    image: ChourasiaShreyas,
+    title: "Chourasia Shreyas",
+    subtitle:
+      "A prime commercial hub placing your business at the center of major IT corridors.",
+  },
+  {
+    image: natureSign,
+    title: "Nature’s Sign",
+    subtitle:
+      "Build your custom villa in a low-density community with direct access to North Bangalore’s CBD.",
+  },
+  {
+    image: ModernView,
+    title: "Modern View Apartment",
+    subtitle:
+      "A peaceful residential haven offering immediate access while maintaining a family-friendly atmosphere.",
+  },
 ];
 
 const HeroSection = () => {
@@ -45,26 +74,38 @@ useEffect(() => {
   return (
 <section className="relative h-[80vh] md:h-screen w-full md:-mt-20  overflow-y-visible">
       {/* Current Slide (underneath) */}
-      <div className="absolute inset-0">
-        <img
-          src={heroSlides[currentIndex].image}
-          alt={heroSlides[currentIndex].title}
-          className="w-full h-full object-cover"
-        />
-      </div>
+<div className="absolute inset-0  ">
+  <img
+  src={heroSlides[currentIndex].image}
+  alt={heroSlides[currentIndex].title}
+  className={`w-full h-full object-cover ${
+    isTransitioning ? "animate-old-zoom-in" : ""
+  }`}
+ />
 
-      {/* Next Slide (overlaps from right) */}
-      <div
-        className={`absolute inset-0 ${
-          isTransitioning ? "animate-slide-overlap" : "translate-x-full"
-        }`}
-      >
-        <img
-          src={heroSlides[nextIndex].image}
-          alt={heroSlides[nextIndex].title}
-          className="w-full h-full object-cover"
-        />
-      </div>
+</div>
+
+{/* Next Slide (reveals using clip-path wipe) */}
+<div
+  className={`absolute inset-0 ${
+    isTransitioning ? "animate-slide-reveal-rtl" : ""
+  }`}
+  style={{
+    clipPath: isTransitioning
+      ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+      : "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
+  }}
+>
+  <img
+    src={heroSlides[nextIndex].image}
+    alt={heroSlides[nextIndex].title}
+    className={`w-full h-full object-cover ${
+      isTransitioning ? "animate-new-zoom-out" : ""
+    }`}
+  />
+</div>
+
+
 
       {/* ORANGE CARD */}
 {/* <div className="absolute left-0 bottom-0 w-full z-30 translate-y-0  md:translate-y-10">
@@ -136,15 +177,48 @@ useEffect(() => {
     transform: translateY(0);
   }
 }
-
-.animate-orange-swap {
-  animation: orange-swap 300ms  cubic-bezier(0.6, 0, 0.2, 1);
-}
-
-
-  .animate-slide-overlap {
-    animation: slide-overlap ${SLIDE_DURATION}ms cubic-bezier(0.25, 0.3, 0.25, 0.1) forwards;
+ @keyframes slide-reveal-rtl {
+    from {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+    to {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
   }
+
+  .animate-slide-reveal-rtl {
+    animation: slide-reveal-rtl ${SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    will-change: clip-path;
+  }/* Old slide zoom IN slightly */
+  @keyframes old-zoom-in {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.06);
+    }
+  }
+
+  .animate-old-zoom-in {
+    animation: old-zoom-in ${SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    will-change: transform;
+  }
+
+  /* New slide zoom OUT to normal */
+  @keyframes new-zoom-out {
+    from {
+      transform: scale(1.8);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  .animate-new-zoom-out {
+    animation: new-zoom-out ${SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    will-change: transform;
+  }
+
 `}</style>
 
     </section>

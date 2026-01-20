@@ -5,8 +5,8 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
   };
  
   return (
-    <footer className="bg-gradient-to-b from-neutral-900 to-black text-neutral-400 text-sm font-normal min-h-[50vh] md:h-[66vh] relative flex justify-center items-center">
-      <div className="w-full px-4 sm:px-6 md:px-8 lg:m-36 lg:mx-64 py-8 md:py-0">
+    <footer className="bg-gradient-to-b  from-neutral-900 to-black text-neutral-400 text-sm font-normal min-h-[50vh] md:h-[66vh] relative  flex justify-center items-center ">
+      <div className="max-w-6xl md:py-5 px-4 md:px-4 sm:px-6  w-full  py-8 ">
 
         {/* MOBILE */}
         <div className="md:hidden h-full flex flex-col justify-between">
@@ -55,7 +55,7 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
         </div>
 
         {/* DESKTOP */}
-        <div className="hidden md:block">
+        <div className="hidden  md:block">
           {/* Top Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {/* Column 1 */}
