@@ -120,7 +120,7 @@ const swipeThreshold = 50;
             onTouchStart={() => setActive(index)}
             className={`
               relative overflow-hidden rounded-xl transition-all duration-500 ease-in-out
-              ${active === index ? "flex-[2]" : "flex-[1]"}
+              ${active === index ? "flex-[5]" : "flex-[1]"}
             `}
           >
             <img src={img.src} alt={img.label} className="w-full h-full object-cover" />
@@ -153,7 +153,7 @@ const BespokeSection = () => {
 
   return (
     <section className="bg-[#EEF2F3] py-10 h-screen md:pt-28  justify-center flex">
-      <div className="max-w-6xl px-4 h-full   md:px-4">
+      <div className="max-w-6xl px-4 h-full max-h-[550px]    md:px-4">
         <div className="bg-white rounded-3xl h-full px-5 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}
           <div className="w-full md:w-[30%] items-center flex flex-col justify-center font-bold">
