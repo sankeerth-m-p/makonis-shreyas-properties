@@ -1,32 +1,42 @@
 import React from "react";
+import AnimatedHeading from "../components/animatedHeading";
 
 const PrivacyPolicy = () => {
   return (
     <div className="bg-white pt-5 pb-24 px-4">
       <div className="max-w-5xl mx-auto">
 
-        {/* Heading Box */}
-        <div className="flex justify-center mb-10">
-          <div className="border border-orange-500 text-orange-500 px-8 py-3 font-semibold tracking-wide uppercase">
-            Privacy & Policy
-          </div>
-        </div>
+{/* Content */}
+<div className="relative z-10 mx-auto max-w-5xl text-center px-4 md:px-6 lg:px-8 pt-6 md:pt-0">
+  <AnimatedHeading
+    as="h1"
+    delay={0}
+    className="text-[20px] md:text-[38px] font-medium leading-tight"
+  >
+  Privacy Policy
+  </AnimatedHeading>
 
-        {/* Content */}
-        <div className="text-gray-700 leading-relaxed space-y-6 text-base">
+
+</div>
+
+
+{/* Content */}
+<div className="text-gray-700 space-y-6 md:text-lg text-sm leading-relaxed px-2 md:px-0">
+
+
 
           <p>
-            Your privacy is important to us. It is Siddanth Developers’ policy to respect your privacy regarding any information we may collect from you across our website, 
+            Your privacy is important to us. It is Siddanth Developers’ policy to respect your privacy regarding any information we may collect from you across our website,
             <span className="font-semibold"> www.siddanthdevelopers.com</span>, and other sites we own and operate.
           </p>
 
           <p>
-            We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. 
+            We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent.
             We also let you know why we’re collecting it and how it will be used.
           </p>
 
           <p>
-            We only retain collected information for as long as necessary to provide you with your requested service. 
+            We only retain collected information for as long as necessary to provide you with your requested service.
             Any data we store will be protected within commercially acceptable means to prevent loss, theft, unauthorised access, disclosure, copying, use, or modification.
           </p>
 
@@ -35,7 +45,7 @@ const PrivacyPolicy = () => {
           </p>
 
           <p>
-            Our website may contain links to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites 
+            Our website may contain links to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites
             and cannot accept responsibility or liability for their respective privacy policies.
           </p>
 
@@ -44,7 +54,7 @@ const PrivacyPolicy = () => {
           </p>
 
           <p>
-            Your continued use of our website will be regarded as acceptance of our practices regarding privacy and personal information. 
+            Your continued use of our website will be regarded as acceptance of our practices regarding privacy and personal information.
             If you have any questions about how we handle user data and personal information, feel free to contact us at:
           </p>
 
