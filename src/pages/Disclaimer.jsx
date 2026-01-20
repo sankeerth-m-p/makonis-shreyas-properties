@@ -1,14 +1,21 @@
+import AnimatedHeading from "../components/animatedHeading";
 const Disclaimer = () => {
   return (
     <div className="bg-white pt-5 pb-24">
-      <div className="max-w-6xl mx-auto px-6 text-gray-800 leading-relaxed space-y-6">
+     <div className="max-w-6xl mx-auto px-6 text-gray-700 space-y-6 md:text-lg text-sm leading-relaxed">
+{/* Content */}
+<div className="relative z-10 mx-auto max-w-5xl text-center px-4 md:px-6 lg:px-8 pt-6 md:pt-0">
+  <AnimatedHeading
+    as="h1"
+    delay={0}
+    className="text-[20px] md:text-[38px] font-medium leading-tight"
+  >
+Disclaimer
+  </AnimatedHeading>
 
-        {/* Title Box */}
-        <div className="flex justify-center mb-12">
-          <div className="border border-orange-500 text-orange-500 px-10 py-2 uppercase tracking-wider font-medium">
-            Disclaimer
-          </div>
-        </div>
+
+</div>
+
 
         <p>
           For all intents and purposes hereinafter, the term “website” shall refer to all websites and/or microsites in

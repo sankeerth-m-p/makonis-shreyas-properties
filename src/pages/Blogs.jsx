@@ -38,7 +38,24 @@ const blogData = [
     desc: "Every project is planned with long-term value in mind focusing on quality.",
     tag: "Lifestyle",
   },
+  {
+    id: 5,
+    image: blogImg,
+    date: "March 05, 2026",
+    title: "Home Loans Made Easy: A Beginner’s Guide to Housing Finance",
+    desc: "Every project is planned with long-term value in mind focusing on quality.",
+    tag: "Housing loan",
+  },
+  {
+    id: 6,
+    image: blogImg,
+    date: "March 05, 2026",
+    title: "Modern Living: How Smart Homes Are Changing Our Lifestyle",
+    desc: "Every project is planned with long-term value in mind focusing on quality.",
+    tag: "Lifestyle",
+  },
 ];
+
 
 /* ---------------- BLOG LIST PAGE ---------------- */
 const BlogList = () => {

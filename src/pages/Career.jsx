@@ -61,6 +61,12 @@ const Career = () => {
             <li>High-ticket sales experience, strong communication, excellent grooming, relationship management skills.</li>
           </ul>
         </div>
+  
+ 
+{/* Divider */}
+<div className="my-10">
+  <div className="h-px w-full bg-orange-500 opacity-60"></div>
+</div>
 
         {/* Marketing Manager */}
         <div className="bg-[#eef1f1] rounded-xl p-8">
