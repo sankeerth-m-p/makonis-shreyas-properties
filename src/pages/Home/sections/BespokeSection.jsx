@@ -152,8 +152,8 @@ const BespokeSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#EEF2F3] py-10 h-screen md:pt-28  ">
-      <div className="max-w-6xl mx-auto px-4 h-full   md:px-0">
+    <section className="bg-[#EEF2F3] py-10 h-screen md:pt-28  justify-center flex">
+      <div className="max-w-6xl px-4 h-full   md:px-4">
         <div className="bg-white rounded-3xl h-full px-5 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}
           <div className="w-full md:w-[30%] items-center flex flex-col justify-center font-bold">

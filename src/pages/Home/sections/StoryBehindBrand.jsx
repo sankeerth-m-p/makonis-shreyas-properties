@@ -8,7 +8,7 @@ const StoryBehindBrand = () => {
     relative w-full
     h-[70vh] md:h-screen
     bg-center bg-cover bg-no-repeat
-    overflow-hidden
+    overflow-hidden 
   "
   style={{
     backgroundImage:
@@ -29,8 +29,8 @@ const StoryBehindBrand = () => {
     >
       {/* wrapper */}
       <div
-        className="
-          relative
+        className=" 
+          relative md:h-[50vh] 
           w-[min(78vw,520px)]
           aspect-[520/420]
         "
@@ -61,7 +61,7 @@ const StoryBehindBrand = () => {
         {/* MASK IMAGE */}
         <div
           className="
-            w-full h-full
+            w-full h-full 
             bg-center bg-cover
             md:bg-fixed
           "

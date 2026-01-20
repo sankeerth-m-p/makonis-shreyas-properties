@@ -119,7 +119,7 @@ const COLORS = {       // warm white (not pure)
 
     {/* ✅ MAIN CONTENT SECTION (FILLED) */}
     <div
-      className="relative pt-28 pb-24"
+      className="relative pt-10 z-50 pb-24"
       style={{
         backgroundColor: COLORS.mainFill,
       }}

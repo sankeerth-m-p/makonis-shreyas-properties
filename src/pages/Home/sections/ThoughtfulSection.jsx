@@ -47,7 +47,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 
 
 
-  <div className="relative max-w-6xl mx-auto px-4  h-full  z-10  md:px-0">
+  <div className="relative max-w-6xl mx-auto px-4  h-full  z-10  md:px-4">
     <div className="grid grid-cols-1 md:grid-cols-5 h-full  gap-10 md:gap-0 items-start">
 
       {/* IMAGE */}

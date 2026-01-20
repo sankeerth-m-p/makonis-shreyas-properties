@@ -1,60 +1,37 @@
 import { useEffect, useState } from "react";
-import AnimatedHeading from "../../../components/animatedHeading";
 
-import profoundInfra from "/Home/profoundInfra.webp";
-import royalEnclave from "/Home/royalEnclave.webp";
-import ChourasiaShreyas from "/Home/ChourasiaShreyasMarathahalli.webp";
-import natureSign from "/Home/naturesign.webp";
-import Paradise from "/Home/SandsParadiseVignanNagar.webp";
-import ModernView from "/Home/ModernView.webp";
-import banner1 from "/Home/SI_bannerimage1.jpg";
-import FloatUpText from "../../../components/floatUpText";
+import banner2 from "/Home/SI_bannerimage2.webp";
+import banner3 from "/Home/SI_bannerimage3.webp";
+import banner4 from "/Home/SI_bannerimage4.webp";
 
 const heroSlides = [
+  
   {
-    image: banner1,
-    title: "Modern Profound Tech Park",
-    subtitle:
-      "A prestigious Kondapur landmark beside Satyam, neighboring tech giants TCS, Cognizant, and HSBC.",
-  },
-  {
-    image: royalEnclave,
+    image: banner2,
     title: "Royal Enclave",
     subtitle:
       "Elegant 2 & 3 BHKs blending lush greenery with rapid access to major IT corridors.",
   },
   {
-    image: Paradise,
+    image: banner3,
     title: "Paradise",
     subtitle:
       "An eco-friendly sanctuary featuring modern infrastructure in a peaceful family setting.",
   },
   {
-    image: ChourasiaShreyas,
+    image: banner4,
     title: "Chourasia Shreyas",
     subtitle:
       "A prime commercial hub placing your business at the center of major IT corridors.",
-  },
-  {
-    image: natureSign,
-    title: "Nature’s Sign",
-    subtitle:
-      "Build your custom villa in a low-density community with direct access to North Bangalore’s CBD.",
-  },
-  {
-    image: ModernView,
-    title: "Modern View Apartment",
-    subtitle:
-      "A peaceful residential haven offering immediate access while maintaining a family-friendly atmosphere.",
-  },
+  }
 ];
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 const nextIndex = (currentIndex + 1) % heroSlides.length;
   const [isTransitioning, setIsTransitioning] = useState(false);
-const SLIDE_DURATION = 1200; // ms (animation speed)
-const SLIDE_DELAY = 4000;   // ms (time per slide)
+const SLIDE_DURATION = 2000; // ms (animation speed)
+const SLIDE_DELAY = 6000;   // ms (time per slide)
 
   const activeSlide = heroSlides[currentIndex];
 useEffect(() => {
@@ -72,38 +49,38 @@ useEffect(() => {
 
 
   return (
-<section className="relative h-[80vh] md:h-screen w-full md:-mt-20  overflow-y-visible">
-      {/* Current Slide (underneath) */}
-<div className="absolute inset-0  ">
-  <img
-  src={heroSlides[currentIndex].image}
-  alt={heroSlides[currentIndex].title}
-  className={`w-full h-full object-cover ${
-    isTransitioning ? "animate-old-zoom-in" : ""
-  }`}
- />
+<section className="relative w-full overflow-hidden h-[80vh] md:h-[calc(100vh-80px)]">
 
-</div>
+  {/* Current Slide */}
+  <div className="absolute inset-0">
+    <img
+      src={heroSlides[currentIndex].image}
+      alt={heroSlides[currentIndex].title}
+      className={`w-full h-full object-cover ${
+        isTransitioning ? "animate-old-zoom-in" : ""
+      }`}
+    />
+  </div>
 
-{/* Next Slide (reveals using clip-path wipe) */}
-<div
-  className={`absolute inset-0 ${
-    isTransitioning ? "animate-slide-reveal-rtl" : ""
-  }`}
-  style={{
-    clipPath: isTransitioning
-      ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
-      : "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
-  }}
->
-  <img
-    src={heroSlides[nextIndex].image}
-    alt={heroSlides[nextIndex].title}
-    className={`w-full h-full object-cover ${
-      isTransitioning ? "animate-new-zoom-out" : ""
+  {/* Next Slide */}
+  <div
+    className={`absolute inset-0 ${
+      isTransitioning ? "animate-slide-reveal-rtl" : ""
     }`}
-  />
-</div>
+    style={{
+      clipPath: isTransitioning
+        ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+        : "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
+    }}
+  >
+    <img
+      src={heroSlides[nextIndex].image}
+      alt={heroSlides[nextIndex].title}
+      className={`w-full h-full object-cover ${
+        isTransitioning ? "animate-new-zoom-out" : ""
+      }`}
+    />
+  </div>
 
 
 
@@ -207,7 +184,7 @@ useEffect(() => {
   /* New slide zoom OUT to normal */
   @keyframes new-zoom-out {
     from {
-      transform: scale(1.8);
+      transform: scale(1.5);
     }
     to {
       transform: scale(1);
