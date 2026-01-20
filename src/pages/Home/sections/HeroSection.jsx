@@ -7,45 +7,46 @@ import ChourasiaShreyas from "/Home/ChourasiaShreyasMarathahalli.webp";
 import natureSign from "/Home/naturesign.webp";
 import Paradise from "/Home/SandsParadiseVignanNagar.webp";
 import ModernView from "/Home/ModernView.webp";
+import banner1 from "/Home/SI_bannerimage1.jpg";
 import FloatUpText from "../../../components/floatUpText";
 
 const heroSlides = [
   {
-    image: profoundInfra,
+    image: banner1,
     title: "Modern Profound Tech Park",
     subtitle:
       "A prestigious Kondapur landmark beside Satyam, neighboring tech giants TCS, Cognizant, and HSBC.",
-  },
-  {
-    image: royalEnclave,
-    title: "Royal Enclave",
-    subtitle:
-      "Elegant 2 & 3 BHKs blending lush greenery with rapid access to major IT corridors.",
-  },
-  {
-    image: Paradise,
-    title: "Paradise",
-    subtitle:
-      "An eco-friendly sanctuary featuring modern infrastructure in a peaceful family setting.",
-  },
-  {
-    image: ChourasiaShreyas,
-    title: "Chourasia Shreyas",
-    subtitle:
-      "A prime commercial hub placing your business at the center of major IT corridors.",
-  },
-  {
-    image: natureSign,
-    title: "Nature’s Sign",
-    subtitle:
-      "Build your custom villa in a low-density community with direct access to North Bangalore’s CBD.",
-  },
-  {
-    image: ModernView,
-    title: "Modern View Apartment",
-    subtitle:
-      "A peaceful residential haven offering immediate access while maintaining a family-friendly atmosphere.",
-  },
+  }
+  // {
+  //   image: royalEnclave,
+  //   title: "Royal Enclave",
+  //   subtitle:
+  //     "Elegant 2 & 3 BHKs blending lush greenery with rapid access to major IT corridors.",
+  // },
+  // {
+  //   image: Paradise,
+  //   title: "Paradise",
+  //   subtitle:
+  //     "An eco-friendly sanctuary featuring modern infrastructure in a peaceful family setting.",
+  // },
+  // {
+  //   image: ChourasiaShreyas,
+  //   title: "Chourasia Shreyas",
+  //   subtitle:
+  //     "A prime commercial hub placing your business at the center of major IT corridors.",
+  // },
+  // {
+  //   image: natureSign,
+  //   title: "Nature’s Sign",
+  //   subtitle:
+  //     "Build your custom villa in a low-density community with direct access to North Bangalore’s CBD.",
+  // },
+  // {
+  //   image: ModernView,
+  //   title: "Modern View Apartment",
+  //   subtitle:
+  //     "A peaceful residential haven offering immediate access while maintaining a family-friendly atmosphere.",
+  // },
 ];
 
 const HeroSection = () => {
@@ -95,7 +96,7 @@ useEffect(() => {
       </div>
 
       {/* ORANGE CARD */}
-<div className="absolute left-0 bottom-0 w-full z-30 translate-y-0  md:translate-y-10">
+{/* <div className="absolute left-0 bottom-0 w-full z-30 translate-y-0  md:translate-y-10">
         <div className="max-w-7xl  mx-auto  px-4 md:px-0 ">
     <div
   key={currentIndex}
@@ -134,7 +135,7 @@ useEffect(() => {
 </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
      <style>{`
   @keyframes slide-overlap {
