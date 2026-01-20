@@ -243,7 +243,7 @@ const HomeLayout = () => {
       <div className="snap-section ">
   <SignatureSpaces />
 </div>
-      <div className="snap-section mt-20">
+      <div className="snap-section ">
         <StoryBehindBrand />
       </div>
       <div className="snap-section">
