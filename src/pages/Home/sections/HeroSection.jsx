@@ -44,51 +44,15 @@ const heroSlides = [
   },
 ];
 
-const HeroSection = () => {
-  const touchStartX = useRef(null);
-const touchEndX = useRef(null);
+const HeroSection = () => {const intervalRef = useRef(null);
+const transitionTimeoutRef = useRef(null);
+const resumeTimeoutRef = useRef(null);
 
-const goToSlide = (index) => {
-  if (isTransitioning) return;
-  setIsTransitioning(true);
+const touchStartX = useRef(0);
+const touchEndX = useRef(0);
 
-  setTimeout(() => {
-    setCurrentIndex(index);
-    setIsTransitioning(false);
-  }, SLIDE_DURATION);
-};
-
-const handleTouchStart = (e) => {
-  // only mobile
-  if (window.innerWidth >= 768) return;
-  touchStartX.current = e.touches[0].clientX;
-};
-
-const handleTouchMove = (e) => {
-  if (window.innerWidth >= 768) return;
-  touchEndX.current = e.touches[0].clientX;
-};
-
-const handleTouchEnd = () => {
-  if (window.innerWidth >= 768) return;
-  if (touchStartX.current == null || touchEndX.current == null) return;
-
-  const SWIPE_THRESHOLD = 50;
-  const diff = touchStartX.current - touchEndX.current;
-
-  // swipe left -> next
-  if (diff > SWIPE_THRESHOLD) {
-    goToSlide((currentIndex + 1) % heroSlides.length);
-  }
-
-  // swipe right -> prev
-  if (diff < -SWIPE_THRESHOLD) {
-    goToSlide((currentIndex - 1 + heroSlides.length) % heroSlides.length);
-  }
-
-  touchStartX.current = null;
-  touchEndX.current = null;
-};
+// Netflix-style: after user interaction, autoplay resumes after X ms
+const RESUME_AUTOPLAY_AFTER = 7000;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const nextIndex = (currentIndex + 1) % heroSlides.length;
@@ -98,19 +62,64 @@ const handleTouchEnd = () => {
   const SLIDE_DELAY = 6000; // ms (time per slide)
 
   const activeSlide = heroSlides[currentIndex];
+const clearTimers = () => {
+  if (intervalRef.current) clearInterval(intervalRef.current);
+  if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
+  if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsTransitioning(true);
+  intervalRef.current = null;
+  transitionTimeoutRef.current = null;
+  resumeTimeoutRef.current = null;
+};
 
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
-        setIsTransitioning(false);
-      }, SLIDE_DURATION);
-    }, SLIDE_DELAY);
+const startAutoplay = () => {
+  // never create duplicates
+  if (intervalRef.current) return;
 
-    return () => clearInterval(interval);
-  }, []);
+  intervalRef.current = setInterval(() => {
+    if (isTransitioning) return;
+
+    setIsTransitioning(true);
+
+    transitionTimeoutRef.current = setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
+      setIsTransitioning(false);
+    }, SLIDE_DURATION);
+  }, SLIDE_DELAY);
+};
+
+const stopAutoplay = () => {
+  if (intervalRef.current) clearInterval(intervalRef.current);
+  intervalRef.current = null;
+};
+
+// ✅ Use this for dots + swipe (manual navigation)
+const goToSlide = (idx) => {
+  if (isTransitioning) return;
+
+  // manual interaction => stop autoplay
+  stopAutoplay();
+
+  setIsTransitioning(true);
+
+  // finish animation, then switch slide
+  transitionTimeoutRef.current = setTimeout(() => {
+    setCurrentIndex(idx);
+    setIsTransitioning(false);
+  }, SLIDE_DURATION);
+
+  // resume autoplay after inactivity
+  if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+  resumeTimeoutRef.current = setTimeout(() => {
+    startAutoplay();
+  }, RESUME_AUTOPLAY_AFTER);
+};
+
+useEffect(() => {
+  startAutoplay();
+  return () => clearTimers();
+}, []);
+
 
   // ✅ decide correct banner based on screen size
   const getSlideImage = (slide) => {
@@ -119,6 +128,33 @@ const handleTouchEnd = () => {
     }
     return slide.imageDesktop;
   };
+const handleTouchStart = (e) => {
+  if (window.innerWidth >= 768) return;
+  touchStartX.current = e.touches[0].clientX;
+  touchEndX.current = e.touches[0].clientX;
+};
+
+const handleTouchMove = (e) => {
+  if (window.innerWidth >= 768) return;
+  touchEndX.current = e.touches[0].clientX;
+};
+
+const handleTouchEnd = () => {
+  if (window.innerWidth >= 768) return;
+
+  const diff = touchStartX.current - touchEndX.current;
+  const SWIPE_THRESHOLD = 60;
+
+  if (Math.abs(diff) < SWIPE_THRESHOLD) return;
+
+  if (diff > 0) {
+    // swipe left -> next
+    goToSlide((currentIndex + 1) % heroSlides.length);
+  } else {
+    // swipe right -> prev
+    goToSlide((currentIndex - 1 + heroSlides.length) % heroSlides.length);
+  }
+};
 
   return (
 <section
@@ -230,8 +266,8 @@ const handleTouchEnd = () => {
           animation: new-zoom-out ${SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
           will-change: transform;
         }
-      `}</style>{/* ✅ Mobile-only dots */}
-<div className="md:hidden absolute left-0 right-0 bottom-4 flex items-center justify-center gap-2 z-50">
+      `}</style>{/* ✅ Mobile only dots */}
+<div className="md:hidden absolute left-0 right-0 bottom-4 flex justify-center gap-2 z-50">
   {heroSlides.map((_, idx) => (
     <button
       key={idx}
