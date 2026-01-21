@@ -23,11 +23,43 @@ const bespokeImages = [
 ];
 
 function BespokeImageHover() {
-  const [active, setActive] = useState(0);
+const [active, setActive] = useState(1); // start at 1 (real first)
+const [noAnim, setNoAnim] = useState(false);
   const intervalRef = useRef(null);
   const touchRef = useRef(false);
 const startXRef = useRef(0);
-const swipeThreshold = 50;
+const swipeThreshold = 50;const mobileSlides = [
+  bespokeImages[bespokeImages.length - 1], // clone last
+  ...bespokeImages,                       // real slides
+  bespokeImages[0],                       // clone first
+];
+useEffect(() => {
+  if (window.innerWidth >= 768) return;
+
+  // when hitting clone at end -> jump to real first
+  if (active === mobileSlides.length - 1) {
+    setTimeout(() => {
+      setNoAnim(true);
+      setActive(1);
+    }, 700); // match transition duration
+  }
+
+  // when hitting clone at start -> jump to real last
+  if (active === 0) {
+    setTimeout(() => {
+      setNoAnim(true);
+      setActive(mobileSlides.length - 2);
+    }, 700);
+  }
+
+  // re-enable animation after snap
+  if (noAnim) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => setNoAnim(false));
+    });
+  }
+}, [active]);
+
   // ✅ Auto slide ONLY on mobile
   useEffect(() => {
     if (window.innerWidth >= 768) return;
@@ -57,15 +89,14 @@ const swipeThreshold = 50;
     const diff = startXRef.current - endX;
 
     if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
-        // swipe left → next
-        setActive((prev) => (prev + 1) % bespokeImages.length);
-      } else {
-        // swipe right → prev
-        setActive((prev) =>
-          prev === 0 ? bespokeImages.length - 1 : prev - 1
-        );
-      }
+     if (diff > 0) {
+  // swipe left → next
+  setActive((prev) => prev + 1);
+} else {
+  // swipe right → prev
+  setActive((prev) => prev - 1);
+}
+
     }
 
     setTimeout(() => {
@@ -75,12 +106,13 @@ const swipeThreshold = 50;
 >
 
           <div
-            className="flex  transition-transform duration-700 ease-in-out"
+            className={`flex ${noAnim ? "" : "transition-transform duration-700 ease-in-out"}`}
             style={{
               transform: `translateX(-${active * 100}%)`,
             }}
           >
-            {bespokeImages.map((img, index) => (
+           {mobileSlides.map((img, index) => (
+
               <div key={index} className="w-full shrink-0 relative h-[50vh">
                 <img
                   src={img.src}
@@ -99,15 +131,16 @@ const swipeThreshold = 50;
 
         {/* ✅ DOT INDICATOR */}
         <div className=" absolute bottom-10 left-0 w-full flex justify-center gap-2">
-          {bespokeImages.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`w-2.5 h-2.5 rounded-full transition ${
-                i === active ? "bg-white" : "bg-white/40"
-              }`}
-            />
-          ))}
+         {bespokeImages.map((_, i) => (
+  <button
+    key={i}
+    onClick={() => setActive(i + 1)} // ✅ offset because of clone
+    className={`w-2.5 h-2.5 rounded-full transition ${
+      i + 1 === active ? "bg-white" : "bg-white/40"
+    }`}
+  />
+))}
+
         </div>
       </div>
 
