@@ -39,13 +39,201 @@ const isMobile = window.matchMedia("(max-width: 767px)").matches;
 <Navbar onEnquireClick={() => setShowEnquire(true)} />
     {isMobile ? (
       <>
-        <ScrollToTop />
+         <ScrollToTop />
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
-            {/* all your routes */}
+
+
+            <Route
+              path="/"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Home />
+                </motion.div>
+              }
+            />
+
+            <Route
+              path="/our-promise"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <PromisePage />
+                </motion.div>
+              }
+            />
+
+            <Route
+              path="/our-story"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <OurStory />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/projects"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Projects />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/media-center/*"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Media />
+                </motion.div>
+              }
+            />
+
+            <Route
+              path="/blogs/*"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Blogs />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Contact />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/faq"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <FAQ />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/privacy-policy"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <PrivacyPolicy />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/terms"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <TermsOfUse />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/disclaimer"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Disclaimer />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/career"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Career />
+                </motion.div>
+              }
+            />
+
+
           </Routes>
         </AnimatePresence>
-        <Footer />
+        {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
+
+      <Footer />
       </>
     ) : (
       <ReactLenis
