@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // ✅ Desktop banners
 import desktopBanner1 from "/Home/hero/desktop/SI_bannerimage1.webp";
@@ -45,6 +45,51 @@ const heroSlides = [
 ];
 
 const HeroSection = () => {
+  const touchStartX = useRef(null);
+const touchEndX = useRef(null);
+
+const goToSlide = (index) => {
+  if (isTransitioning) return;
+  setIsTransitioning(true);
+
+  setTimeout(() => {
+    setCurrentIndex(index);
+    setIsTransitioning(false);
+  }, SLIDE_DURATION);
+};
+
+const handleTouchStart = (e) => {
+  // only mobile
+  if (window.innerWidth >= 768) return;
+  touchStartX.current = e.touches[0].clientX;
+};
+
+const handleTouchMove = (e) => {
+  if (window.innerWidth >= 768) return;
+  touchEndX.current = e.touches[0].clientX;
+};
+
+const handleTouchEnd = () => {
+  if (window.innerWidth >= 768) return;
+  if (touchStartX.current == null || touchEndX.current == null) return;
+
+  const SWIPE_THRESHOLD = 50;
+  const diff = touchStartX.current - touchEndX.current;
+
+  // swipe left -> next
+  if (diff > SWIPE_THRESHOLD) {
+    goToSlide((currentIndex + 1) % heroSlides.length);
+  }
+
+  // swipe right -> prev
+  if (diff < -SWIPE_THRESHOLD) {
+    goToSlide((currentIndex - 1 + heroSlides.length) % heroSlides.length);
+  }
+
+  touchStartX.current = null;
+  touchEndX.current = null;
+};
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const nextIndex = (currentIndex + 1) % heroSlides.length;
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -76,7 +121,12 @@ const HeroSection = () => {
   };
 
   return (
-    <section className=" relative w-full overflow-hidden h-auto md:h-[calc(100vh-80px)]">
+<section
+  className=" relative w-full overflow-hidden h-auto md:h-[calc(100vh-80px)]"
+  onTouchStart={handleTouchStart}
+  onTouchMove={handleTouchMove}
+  onTouchEnd={handleTouchEnd}
+>
       {/* Current Slide */}
       <div className="relative md:absolute inset-0">
         <img
@@ -180,7 +230,20 @@ const HeroSection = () => {
           animation: new-zoom-out ${SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
           will-change: transform;
         }
-      `}</style>
+      `}</style>{/* ✅ Mobile-only dots */}
+<div className="md:hidden absolute left-0 right-0 bottom-4 flex items-center justify-center gap-2 z-50">
+  {heroSlides.map((_, idx) => (
+    <button
+      key={idx}
+      onClick={() => goToSlide(idx)}
+      className={`h-2 w-2 rounded-full transition-all duration-300 ${
+        idx === currentIndex ? "bg-white w-5" : "bg-white/50"
+      }`}
+      aria-label={`Go to slide ${idx + 1}`}
+    />
+  ))}
+</div>
+
     </section>
   );
 };
