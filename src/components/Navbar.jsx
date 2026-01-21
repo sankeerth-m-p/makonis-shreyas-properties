@@ -10,12 +10,12 @@ const navItems = [
   { label: "PROJECTS", path: "/projects" },
   { label: "BLOGS", path: "/blogs" },
   { label: "MEDIA CENTER", path: "/media-center" },
-  { label: "ENQUIRE", path: "/enquire" },
   { label: "CONTACT", path: "/contact" },
 ];
 
+
 // ✅ Desktop nav content only (same underline animation)
-const NavContent = ({ location }) => (
+const NavContent = ({ location, onEnquireClick }) => (
   <nav className="max-w-6xl px-4 buttons mx-auto w-full min-h-20 px-  py-4 flex items-center justify-between">
     {/* LOGO */}
     <h1 className="text-2xl  font-semibold tracking-wide text-gray-900">
@@ -41,37 +41,48 @@ const NavContent = ({ location }) => (
               relative transition-colors duration-300
               after:content-['']  pb-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-ORANGE
               after:origin-center after:transition-transform after:duration-300 after:ease-out
-              ${
-                isActive
-                  ? "text-ORANGE  after:scale-x-100"
-                  : "text-gray-800 hover:text-ORANGE border-ORANGE hover:after:scale-x-100 after:scale-x-0"
+              ${isActive
+                ? "text-ORANGE  after:scale-x-100"
+                : "text-gray-800 hover:text-ORANGE border-ORANGE hover:after:scale-x-100 after:scale-x-0"
               }
             `}
           >
             {label}
           </Link>
+
         );
+
       })}
+      <button
+        onClick={onEnquireClick}
+        className="relative transition-colors duration-300
+    after:content-[''] pb-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-ORANGE
+    after:origin-center after:transition-transform after:duration-300 after:ease-out
+    text-gray-800 hover:text-ORANGE hover:after:scale-x-100 after:scale-x-0"
+      >
+        ENQUIRE
+      </button>
+
     </div>
   </nav>
 );
 
-const Navbar = () => {
+const Navbar = ({ onEnquireClick }) => {
   const [showSticky, setShowSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-const navRef = useRef(null);
+  const navRef = useRef(null);
 
   const triggered = useRef(false);
   const location = useLocation();
-useEffect(() => {
-  const observer = new IntersectionObserver(([entry]) => {
-    setShowSticky(!entry.isIntersecting);
-  });
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setShowSticky(!entry.isIntersecting);
+    });
 
-  if (navRef.current) observer.observe(navRef.current);
+    if (navRef.current) observer.observe(navRef.current);
 
-  return () => observer.disconnect();
-}, []);
+    return () => observer.disconnect();
+  }, []);
 
   // // ✅ SAME animation logic as your reference
   // useEffect(() => {
@@ -143,7 +154,7 @@ useEffect(() => {
 
         {/* DESKTOP NAV */}
         <div className="hidden md:block">
-          <NavContent location={location} />
+          <NavContent location={location} onEnquireClick={onEnquireClick} />
         </div>
 
         {/* ✅ MOBILE MENU OVERLAY + MENU (UNCHANGED) */}
@@ -167,17 +178,26 @@ useEffect(() => {
                     <Link
                       key={label}
                       to={path}
-                      className={`py-4 px-2 text-lg font-medium transition-colors duration-300 ${
-                        isActive
+                      className={`py-4 px-2 text-lg font-medium transition-colors duration-300 ${isActive
                           ? "text-ORANGE"
                           : "text-gray-800 hover:text-ORANGE"
-                      }`}
+                        }`}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {label}
                     </Link>
                   );
                 })}
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    onEnquireClick();
+                  }}
+                  className="py-4 px-2 text-lg font-medium text-left text-gray-800 hover:text-ORANGE"
+                >
+                  ENQUIRE
+                </button>
+
               </div>
             </div>
           </div>
@@ -192,7 +212,7 @@ useEffect(() => {
           ${showSticky ? "translate-y-0" : "-translate-y-full"}
         `}
       >
-        <NavContent location={location} />
+        <NavContent location={location} onEnquireClick={onEnquireClick} />
       </header>
     </>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AnimatedHeading from "../components/animatedHeading";
 
 const faqs = [
   {
@@ -54,20 +55,24 @@ const faqs = [
 ];
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="bg-white pt-5 pb-20 px-4">
+    <div className="bg-white pt-16 pb-20 px-4">
       <div className="max-w-5xl mx-auto">
+{/* Premium Animated Heading */}
+<div className="relative z-10 mx-auto max-w-5xl text-center px-4 md:px-6 lg:px-8 pt-6 md:pt-0 mb-6">
+  <AnimatedHeading
+    as="h2"
+    delay={0}
+    className="text-[20px] md:text-[38px] font-medium leading-tight text-gray-800"
+  >
+    FREQUENTLY ASKED QUESTIONS (FAQ)
+  </AnimatedHeading>
+</div>
 
-        {/* Heading */}
-        <div className="flex justify-center mb-6">
-          <div className="border border-orange-500 text-orange-500 px-6 py-2 font-semibold tracking-wide">
-            FREQUENTLY ASKED QUESTIONS (FAQ)
-          </div>
-        </div>
 
-        <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+        <p className="text-center text-gray-500 max-w-3xl mx-auto mb-12">
           Frequently Asked Questions (FAQs) provide quick and clear answers to common queries, helping customers make informed
           decisions. They enhance transparency, save time, and improve the overall experience by addressing key concerns efficiently.
         </p>
@@ -78,19 +83,24 @@ const FAQ = () => {
             <div key={index} className="border-b last:border-none">
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full text-left px-6 py-5 font-semibold flex justify-between items-center hover:bg-gray-50"
+                className="w-full text-left px-6 py-5 font-medium flex justify-between items-center hover:bg-gray-50 transition"
               >
                 {item.question}
-                <span className="text-orange-500 text-xl">
+                <span className="text-orange-500 text-2xl transition-transform duration-300">
                   {openIndex === index ? "−" : "+"}
                 </span>
               </button>
 
-              {openIndex === index && (
-                <div className="px-6 pb-5 text-gray-600 leading-relaxed">
+              {/* Smooth Answer Animation */}
+              <div
+                className={`px-6 overflow-hidden transition-all duration-500 ease-in-out ${
+                  openIndex === index ? "max-h-40 opacity-100 pb-5" : "max-h-0 opacity-0"
+                }`}
+              >
+                <p className="text-gray-600 leading-relaxed">
                   {item.answer}
-                </div>
-              )}
+                </p>
+              </div>
             </div>
           ))}
         </div>
