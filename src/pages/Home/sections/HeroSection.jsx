@@ -1,18 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-// ✅ Desktop banners
+// Desktop banners
 import desktopBanner1 from "/Home/hero/desktop/SI_bannerimage1.webp";
 import desktopBanner2 from "/Home/hero/desktop/SI_bannerimage2.webp";
 import desktopBanner3 from "/Home/hero/desktop/SI_bannerimage3.webp";
 import desktopBanner4 from "/Home/hero/desktop/SI_bannerimage4.webp";
 
-// ✅ Mobile banners
+// Mobile banners
 import mobileBanner1 from "/Home/hero/mobile/shreyaainfra web_mobilebanner1.webp";
 import mobileBanner2 from "/Home/hero/mobile/shreyaainfra web_mobilebanner2.webp";
 import mobileBanner3 from "/Home/hero/mobile/shreyaainfra web_mobilebanner3.webp";
 import mobileBanner4 from "/Home/hero/mobile/shreyaainfra web_mobilebanner4.webp";
 
-// ✅ Same slides, just split images for responsive rendering
 const heroSlides = [
   {
     imageDesktop: desktopBanner1,
@@ -44,155 +43,172 @@ const heroSlides = [
   },
 ];
 
-const HeroSection = () => {const intervalRef = useRef(null);
-const transitionTimeoutRef = useRef(null);
-const resumeTimeoutRef = useRef(null);
-
-const touchStartX = useRef(0);
-const touchEndX = useRef(0);
-
-// Netflix-style: after user interaction, autoplay resumes after X ms
-const RESUME_AUTOPLAY_AFTER = 7000;
-
+const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const nextIndex = (currentIndex + 1) % heroSlides.length;
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [isAutoPlayPaused, setIsAutoPlayPaused] = useState(false);
+  
+  const autoPlayTimeoutRef = useRef(null);
+  const slideIntervalRef = useRef(null);
 
-  const SLIDE_DURATION = 2000; // ms (animation speed)
-  const SLIDE_DELAY = 6000; // ms (time per slide)
+  const SLIDE_DURATION = 2000; // animation speed
+  const SLIDE_DELAY = 6000; // time per slide
+  const RESUME_DELAY = 7000; // resume autoplay after user interaction
+  const MIN_SWIPE_DISTANCE = 50;
 
   const activeSlide = heroSlides[currentIndex];
-const clearTimers = () => {
-  if (intervalRef.current) clearInterval(intervalRef.current);
-  if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
-  if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
 
-  intervalRef.current = null;
-  transitionTimeoutRef.current = null;
-  resumeTimeoutRef.current = null;
-};
+  // Check if mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
-const startAutoplay = () => {
-  // never create duplicates
-  if (intervalRef.current) return;
+  // Auto slide logic
+  useEffect(() => {
+    if (isAutoPlayPaused) return;
 
-  intervalRef.current = setInterval(() => {
+    slideIntervalRef.current = setInterval(() => {
+      goToSlide((currentIndex + 1) % heroSlides.length);
+    }, SLIDE_DELAY);
+
+    return () => {
+      if (slideIntervalRef.current) {
+        clearInterval(slideIntervalRef.current);
+      }
+    };
+  }, [currentIndex, isAutoPlayPaused]);
+
+  const goToSlide = (index) => {
     if (isTransitioning) return;
-
+    
     setIsTransitioning(true);
-
-    transitionTimeoutRef.current = setTimeout(() => {
-      setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
+    setTimeout(() => {
+      setCurrentIndex(index);
       setIsTransitioning(false);
     }, SLIDE_DURATION);
-  }, SLIDE_DELAY);
-};
-
-const stopAutoplay = () => {
-  if (intervalRef.current) clearInterval(intervalRef.current);
-  intervalRef.current = null;
-};
-
-// ✅ Use this for dots + swipe (manual navigation)
-const goToSlide = (idx) => {
-  if (isTransitioning) return;
-
-  // manual interaction => stop autoplay
-  stopAutoplay();
-
-  setIsTransitioning(true);
-
-  // finish animation, then switch slide
-  transitionTimeoutRef.current = setTimeout(() => {
-    setCurrentIndex(idx);
-    setIsTransitioning(false);
-  }, SLIDE_DURATION);
-
-  // resume autoplay after inactivity
-  if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
-  resumeTimeoutRef.current = setTimeout(() => {
-    startAutoplay();
-  }, RESUME_AUTOPLAY_AFTER);
-};
-
-useEffect(() => {
-  startAutoplay();
-  return () => clearTimers();
-}, []);
-
-
-  // ✅ decide correct banner based on screen size
-  const getSlideImage = (slide) => {
-    if (typeof window !== "undefined" && window.innerWidth < 768) {
-      return slide.imageMobile;
-    }
-    return slide.imageDesktop;
   };
-const handleTouchStart = (e) => {
-  if (window.innerWidth >= 768) return;
-  touchStartX.current = e.touches[0].clientX;
-  touchEndX.current = e.touches[0].clientX;
-};
 
-const handleTouchMove = (e) => {
-  if (window.innerWidth >= 768) return;
-  touchEndX.current = e.touches[0].clientX;
-};
+  const pauseAutoPlay = () => {
+    setIsAutoPlayPaused(true);
+    
+    if (autoPlayTimeoutRef.current) {
+      clearTimeout(autoPlayTimeoutRef.current);
+    }
+    
+    autoPlayTimeoutRef.current = setTimeout(() => {
+      setIsAutoPlayPaused(false);
+    }, RESUME_DELAY);
+  };
 
-const handleTouchEnd = () => {
-  if (window.innerWidth >= 768) return;
+  const handleTouchStart = (e) => {
+    if (!isMobile) return;
+    setTouchStart(e.targetTouches[0].clientX);
+  };
 
-  const diff = touchStartX.current - touchEndX.current;
-  const SWIPE_THRESHOLD = 60;
+  const handleTouchMove = (e) => {
+    if (!isMobile) return;
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
 
-  if (Math.abs(diff) < SWIPE_THRESHOLD) return;
+  const handleTouchEnd = () => {
+    if (!isMobile || !touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > MIN_SWIPE_DISTANCE;
+    const isRightSwipe = distance < -MIN_SWIPE_DISTANCE;
 
-  if (diff > 0) {
-    // swipe left -> next
-    goToSlide((currentIndex + 1) % heroSlides.length);
-  } else {
-    // swipe right -> prev
-    goToSlide((currentIndex - 1 + heroSlides.length) % heroSlides.length);
-  }
-};
+    if (isLeftSwipe) {
+      // Swipe left - next slide
+      pauseAutoPlay();
+      goToSlide((currentIndex + 1) % heroSlides.length);
+    } else if (isRightSwipe) {
+      // Swipe right - previous slide
+      pauseAutoPlay();
+      goToSlide((currentIndex - 1 + heroSlides.length) % heroSlides.length);
+    }
+
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
+
+  const handleDotClick = (index) => {
+    if (index === currentIndex || isTransitioning) return;
+    pauseAutoPlay();
+    goToSlide(index);
+  };
+
+  const getSlideImage = (slide) => {
+    return isMobile ? slide.imageMobile : slide.imageDesktop;
+  };
 
   return (
-<section
-  className=" relative w-full overflow-hidden h-auto md:h-[calc(100vh-80px)]"
-  onTouchStart={handleTouchStart}
-  onTouchMove={handleTouchMove}
-  onTouchEnd={handleTouchEnd}
->
-      {/* Current Slide */}
-      <div className="relative md:absolute inset-0">
-        <img
-          src={getSlideImage(heroSlides[currentIndex])}
-          alt={heroSlides[currentIndex].title}
-          className={`w-full h-full object-cover ${
-            isTransitioning ? "animate-old-zoom-in" : ""
+    <section className="relative w-full overflow-hidden h-auto md:h-[calc(100vh-80px)]">
+      {/* Slider Container */}
+      <div
+        className="relative w-full h-full"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* Current Slide */}
+        <div className="relative md:absolute inset-0">
+          <img
+            src={getSlideImage(heroSlides[currentIndex])}
+            alt={heroSlides[currentIndex].title}
+            className={`w-full h-full object-cover ${
+              isTransitioning ? "animate-old-zoom-in" : ""
+            }`}
+          />
+        </div>
+
+        {/* Next Slide */}
+        <div
+          className={`absolute inset-0 ${
+            isTransitioning ? "animate-slide-reveal-rtl" : ""
           }`}
-        />
+          style={{
+            clipPath: isTransitioning
+              ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+              : "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
+          }}
+        >
+          <img
+            src={getSlideImage(heroSlides[nextIndex])}
+            alt={heroSlides[nextIndex].title}
+            className={`w-full h-auto md:h-full object-contain md:object-cover ${
+              isTransitioning ? "animate-new-zoom-out" : ""
+            }`}
+          />
+        </div>
       </div>
 
-      {/* Next Slide */}
-      <div
-        className={` absolute inset-0 ${
-          isTransitioning ? "animate-slide-reveal-rtl" : ""
-        }`}
-        style={{
-          clipPath: isTransitioning
-            ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
-            : "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
-        }}
-      >
-        <img
-          src={getSlideImage(heroSlides[nextIndex])}
-          alt={heroSlides[nextIndex].title}
-          className={`w-full h-auto md:h-full object-contain md:object-cover ${
-            isTransitioning ? "animate-new-zoom-out" : ""
-          }`}
-        />
-      </div>
+      {/* Dots Navigation - Mobile Only */}
+      {isMobile && (
+        <div className="absolute bottom-6 left-0 right-0 flex justify-center items-center gap-2 z-10">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handleDotClick(index)}
+              className={`transition-all duration-300 rounded-full ${
+                index === currentIndex
+                  ? "w-8 h-2 bg-white"
+                  : "w-2 h-2 bg-white/50 hover:bg-white/75"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
 
       <style>{`
         @keyframes slide-overlap {
@@ -266,20 +282,7 @@ const handleTouchEnd = () => {
           animation: new-zoom-out ${SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
           will-change: transform;
         }
-      `}</style>{/* ✅ Mobile only dots */}
-<div className="md:hidden absolute left-0 right-0 bottom-4 flex justify-center gap-2 z-50">
-  {heroSlides.map((_, idx) => (
-    <button
-      key={idx}
-      onClick={() => goToSlide(idx)}
-      className={`h-2 w-2 rounded-full transition-all duration-300 ${
-        idx === currentIndex ? "bg-white w-5" : "bg-white/50"
-      }`}
-      aria-label={`Go to slide ${idx + 1}`}
-    />
-  ))}
-</div>
-
+      `}</style>
     </section>
   );
 };
