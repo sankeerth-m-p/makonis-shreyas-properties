@@ -39,6 +39,13 @@ const COLORS = {       // warm white (not pure)
   wave3: "rgba(244,239,229,0.25)",
   wave4: "#F4EFE5",           // warm white wave front
 };
+const COLORS1 = {
+  mainFill: "#FF8A4D",                 // lighter orange
+  wave1: "rgba(255,138,77,0.55)",
+  wave2: "rgba(255,138,77,0.40)",
+  wave3: "rgba(255,138,77,0.25)",
+  wave4: "#FF8A4D",
+};
 
 
 
@@ -118,12 +125,11 @@ const COLORS = {       // warm white (not pure)
     </div>
 
     {/* ✅ MAIN CONTENT SECTION (FILLED) */}
-    <div
-      className="relative pt-10 z-50 pb-24"
-      style={{
-        backgroundColor: COLORS.mainFill,
-      }}
-    >
+   <div
+  className="relative pt-24 z-50 pb-24 mt-5 md:mt-10"
+  style={{ backgroundColor: COLORS.mainFill }}
+>
+
       <div
         className="relative z-10 max-w-5xl mx-auto px-6"
         style={{

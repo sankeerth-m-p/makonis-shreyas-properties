@@ -33,16 +33,16 @@ const StoryBehindBrand = () => {
         className=" 
           relative md:h-[50vh] 
           w-[min(78vw,520px)]
-          aspect-[520/420]
+          aspect-[520/420] 
         "
       >
         {/* TOP LEFT TITLE */}
         <div
           className="
-            absolute
+            md:absolute
             top-0 left-0
             -translate-y-[130%]
-            text-left mt-10
+            text-left md:mt-10
             md:-translate-x-[80%] md:-translate-y-[70%]
           "
         >

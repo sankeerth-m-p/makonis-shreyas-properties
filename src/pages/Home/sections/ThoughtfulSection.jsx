@@ -25,7 +25,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 
 
   return (
-   <section ref={sectionRef} className="relative md:min-h-screen pt-24 md:pt-40 pb-20 overflow-hidden">{/* ===== CIRCLE SVG BACKGROUND (ANIMATED) ===== */}
+   <section ref={sectionRef} className="relative md:min-h-screen pt-10 md:pt-40 pb-20 overflow-hidden">{/* ===== CIRCLE SVG BACKGROUND (ANIMATED) ===== */}
 {/* ===== SVG CIRCLES BACKGROUND ===== */}
 {/* BOTTOM LEFT */}
 <motion.img

@@ -43,7 +43,7 @@ const swipeThreshold = 50;
   return (
     <div className="w-full md:w-[70%] h-auto md:h-full   ">
       {/* ✅ MOBILE SLIDER */}
-      <div className="md:hidden relative w-full">
+      <div className="md:hidden relative w-full ">
         {/* Slides */}
         <div
   className="w-full overflow-hidden rounded-3xl"
@@ -152,11 +152,11 @@ const BespokeSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#EEF2F3] py-10 h-screen md:pt-28  justify-center  items-center flex">
+    <section className="bg-[#EEF2F3] py-10  md:h-screen md:pt-28  justify-center  items-center flex">
       <div className="max-w-6xl px-4 h-full max-h-[550px]    md:px-4">
-        <div className="bg-white rounded-3xl h-full px-5 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
+        <div className="bg-white  rounded-3xl h-full px-5 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}
-          <div className="w-full md:w-[30%] items-center flex flex-col justify-center font-bold">
+          <div className="w-full  md:w-[30%] items-center flex flex-col justify-center font-bold">
             <div>
 
             <AnimatedHeading

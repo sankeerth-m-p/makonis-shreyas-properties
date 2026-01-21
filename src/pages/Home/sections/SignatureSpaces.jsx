@@ -68,7 +68,7 @@ useEffect(() => {
       }
       return next;
     });
-  }, 4000); // Adjust timing as needed (4000ms = 4 seconds)
+  }, 2000); // Adjust timing as needed (4000ms = 4 seconds)
 
   return () => clearInterval(interval);
 }, [isPaused, items.length]);
@@ -165,13 +165,13 @@ className="sticky top-20   h-[calc(100vh-5rem)] w-full flex"
         >
           {/* LEFT PANEL */}
           <div
-            className={`w-1/2   ${leftBg} text-white  pl-48 py-24 flex flex-col justify-between `}
+            className={`w-1/2   ${leftBg} text-white  pl-48  py-24 flex flex-col justify-between `}
           >
             <AnimatedHeading
               as="h2"
               delay={0}
               staggerDelay={0.15}
-              className="text-[34px] font-medium leading-tight max-w-sm"
+              className="text-[34px]  font-medium leading-tight max-w-sm"
             >
               Signature spaces
               crafted for

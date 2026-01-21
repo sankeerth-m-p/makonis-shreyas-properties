@@ -292,7 +292,7 @@ const HomeLayout = () => {
       <div className="snap-section">
         <NatureSign />
       </div>
-      <div className="snap-section">
+      <div className="snap-section overflow-hidden">
         <ExpertsSection />
       </div>
       <div className="snap-section">

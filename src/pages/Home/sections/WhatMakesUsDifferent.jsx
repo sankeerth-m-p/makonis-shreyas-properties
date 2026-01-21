@@ -4,14 +4,14 @@ import FloatUpText from "../../../components/floatUpText";
 
 const WhatMakesUsDifferent = () => {
   return (
-     <section className="bg-white  md:h-screen pt-10 md:pt-28 pb-10 md:pb-0 flex justify-center">
-  <div className="max-w-6xl  px-4 grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-20 items-start  mb-5">
+     <section className="bg-white  md:h-screen pt-10 md:pt-28 pb-10 md:pb-0 flex justify-center items-center">
+  <div className="max-w-6xl md:max-h[70vh] px-4 grid grid-cols-1 md:grid-cols-5 gap-10  md:gap-20 items-start  mb-5">
     
     {/* LEFT IMAGE - Takes 2 columns on desktop */}
     <RevealImageAnimation 
       image="/Home/wahtmakesusdiffrent.webp" 
       alt="Team discussion"
-      className="md:w-full h-[50vh]  md:h-full object-cover md:col-span-2 " />
+      className="md:w-full h-[50vh]  md:h-full  object-cover md:col-span-2 " />
     
     {/* RIGHT CONTENT - Takes 3 columns on desktop */}
     <div className="md:col-span-3 flex flex-col w-full gap-5  h-full justify-around   ">

@@ -5,6 +5,7 @@ import { useRef } from "react";
 import banner from "/banner.svg";
 import banner1 from "/banner1.svg";
 import aboutUsImg from "/Home/aboutUsImg.webp";
+import RevealImageAnimation from "../components/RevealImageAnimation";
 
 const OurStory = () => {
   const sectionRef = useRef(null);
@@ -64,7 +65,7 @@ const OurStory = () => {
               <img
                 src="\story_3.webp"
                 alt="Design discussion"
-                className="w-full h-[45vh] md:h-[600px] object-cover rounded-2xl"
+                className="w-full h-[45vh] md:h-[600px] hover:scale-105 transition-transform ease-in-out duration-700 object-cover rounded-2xl"
               />
             </div>
 
@@ -74,7 +75,7 @@ const OurStory = () => {
                 <img
                   src="\story_1.webp"
                   alt="Client meeting"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform ease-in-out duration-700"
                 />
 
 
@@ -111,7 +112,7 @@ const OurStory = () => {
                 <img
                   src="\story_1.webp"
                   alt="Client meeting"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover "
                 />
 
 
@@ -245,7 +246,7 @@ const OurStory = () => {
   <img
     src="/story_orsngebg.svg"
     alt=""
-    className="absolute bottom-0 left-0 w-full h-auto z-10 pointer-events-none"
+    className="absolute bottom-0 left-0 w-full h-auto z-10 pointer-events-none "
   />
 
   {/* CONTENT ON ORANGE */}
@@ -286,8 +287,8 @@ const OurStory = () => {
           {/* LEFT IMAGE */}
           <div className="md:col-span-4">
             <div className="w-full md:h-[420px] overflow-hidden rounded-sm">
-              <img
-                src={aboutUsImg}
+              <RevealImageAnimation
+                image={aboutUsImg}
                 alt="Conversation"
                 className="w-full h-full object-cover"
               />

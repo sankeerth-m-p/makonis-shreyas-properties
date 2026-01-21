@@ -53,54 +53,58 @@ function Showcase({
   return (
     <section className="w-full min-h-[50vh] md:min-h-[75vh] grid grid-cols-1 md:grid-cols-2">
       
-      {/* IMAGE BLOCK */}
-      <div
-        ref={containerRef}
-        className={`relative  min-h-[40vh] md:min-h-full overflow-hidden ${
-          reverse ? "md:order-2" : ""
-        }`}
-      >
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover"
-          style={{
-            opacity: 1,
-            transform: "translateZ(0)",
-            clipPath: inView ? shownClip : hiddenClip,
-            transition: "clip-path 3s cubic-bezier(.215, .61, .355, 1)",
-            willChange: "clip-path",
-          }}
-        />
-
-       {/* TITLE OVERLAY */}
+    {/* IMAGE BLOCK */}
 <div
-  className={`absolute bottom-4 px-5 py-3 bg-ORANGE/80 backdrop-blur-sm w-4/5 md:min-w-60 md:w-auto ${
-    !reverse
-      ? "right-4 md:right-6 text-right"
-      : "left-4 md:left-6 text-left"
+  ref={containerRef}
+  className={`relative min-h-[40vh] md:min-h-full overflow-hidden ${
+    reverse ? "md:order-2" : ""
   }`}
-  style={{
-    opacity: inView ? 1 : 0,
-
-    // label comes from the same side as reveal
-    transform: inView
-      ? "translateY(0px) translateX(0px)"
-      : `translateY(14px) translateX(${reverse ? "24px" : "-24px"})`,
-
-    transition:
-      "opacity 0.9s ease, transform 0.9s cubic-bezier(.215, .61, .355, 1)",
-
-    // delay so it feels like the image reveal introduces it
-    transitionDelay: inView ? "0.35s" : "0s",
-  }}
 >
-  <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">
-    {title}
-  </h3>
+  {/* ✅ Clip-mask wrapper (only clip-path animates here) */}
+  <div
+    className="w-full h-full overflow-hidden"
+    style={{
+      clipPath: inView ? shownClip : hiddenClip,
+      transition: "clip-path 3s cubic-bezier(.215, .61, .355, 1)",
+      willChange: "clip-path",
+    }}
+  >
+    {/* ✅ Hover wrapper */}
+    <div className="w-full h-full group">
+      {/* ✅ Transform animates ONLY here */}
+      <img
+        src={image}
+        alt={title}
+        className="w-full h-full object-cover transform-gpu transition-transform duration-700 ease-in-out group-hover:scale-105"
+        draggable={false}
+      />
+    </div>
+  </div>
+
+  {/* TITLE OVERLAY */}
+  <div
+    className={`absolute bottom-4 px-5 py-3 bg-ORANGE/80 backdrop-blur-sm w-4/5 md:min-w-60 md:w-auto ${
+      !reverse
+        ? "right-4 md:right-6 text-right"
+        : "left-4 md:left-6 text-left"
+    }`}
+    style={{
+      opacity: inView ? 1 : 0,
+      transform: inView
+        ? "translateY(0px) translateX(0px)"
+        : `translateY(14px) translateX(${reverse ? "24px" : "-24px"})`,
+      transition:
+        "opacity 1.5s ease, transform 0.9s cubic-bezier(.215, .61, .355, 1)",
+      transitionDelay: inView ? "0.35s" : "0s",
+    }}
+  >
+    <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">
+      {title}
+    </h3>
+  </div>
 </div>
 
-      </div>
+
 
       {/* TEXT BLOCK */}
       <FloatUpText
