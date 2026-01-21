@@ -5,8 +5,8 @@ const StoryBehindBrand = () => {
   const navigate = useNavigate();
   return (
    <section
-  className="
-    relative w-full 
+  className=" 
+    relative w-full p
     h-[70vh] md:h-screen
     bg-center bg-cover bg-no-repeat
     overflow-hidden z-10
@@ -20,7 +20,7 @@ const StoryBehindBrand = () => {
   <div className="absolute  inset-0 bg-[#F4EFE5]" />
 
   {/* CONTENT */}
-  <div className="relative h-full  max-w-7xl mx-auto px-6">
+  <div className="relative h-full pb-10 max-w-7xl mx-auto px-6">
     <div
       className="
         h-full
@@ -31,7 +31,7 @@ const StoryBehindBrand = () => {
       {/* wrapper */}
       <div
         className=" 
-          relative md:h-[50vh] 
+          relative md:h-[50vh] h-1/3 
           w-[min(78vw,520px)]
           aspect-[520/420] 
         "
@@ -39,8 +39,8 @@ const StoryBehindBrand = () => {
         {/* TOP LEFT TITLE */}
         <div
           className="
-            md:absolute
-            top-0 left-0
+            absolute
+            top-0 left-0 
             -translate-y-[130%]
             text-left md:mt-10
             md:-translate-x-[80%] md:-translate-y-[70%]
