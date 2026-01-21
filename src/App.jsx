@@ -36,8 +36,7 @@ const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
   return (
     <>
-       <Navbar />
-
+<Navbar onEnquireClick={() => setShowEnquire(true)} />
     {isMobile ? (
       <>
         <ScrollToTop />
