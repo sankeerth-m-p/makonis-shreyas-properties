@@ -1,13 +1,56 @@
 import React, { useState } from "react";
+import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 import mediaImg from "/media/media.webp";
+import mediaImg1 from "/mediaimg.webp";
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
 
-const Media = () => {
-  const [open1, setOpen1] = useState(false);
-  const [open2, setOpen2] = useState(false);
-  const [open3, setOpen3] = useState(false);
-  const [open4, setOpen4] = useState(false);
+/* ---------------- MEDIA DATA ---------------- */
+const mediaData = [
+  {
+    id: 1,
+    image: mediaImg,
+    logo: "/CNBC.png",
+    date: "March 06, 2026",
+    shortTitle: "We are a forward-thinking real estate company driven by the belief that well-designed spaces shape better lives.",
+    shortDesc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with...",
+    desc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with modern design, sustainability, and customer satisfaction..."
+  },
+  {
+    id: 2,
+    image: mediaImg,
+    logo: "/zee.png",
+    date: "March 06, 2026",
+    shortTitle: "Smart urban communities designed to elevate everyday living experiences.",
+    shortDesc: "Our projects integrate sustainable materials, future-ready infrastructure, and intelligent space planning to support modern lifestyles...",
+    desc: "Our projects are crafted to enhance urban living by integrating smart planning..."
+  },
+  {
+    id: 3,
+    image: mediaImg,
+    logo: "/CNBC.png",
+    date: "March 06, 2026",
+    shortTitle: "Future-ready neighborhoods built for growth, comfort, and innovation.",
+    shortDesc: "We develop thoughtfully planned communities that promote sustainability, technology integration, and superior living standards...",
+    desc: "We develop spaces that prioritize lifestyle, innovation..."
+  },
+  {
+    id: 4,
+    image: mediaImg,
+    logo: "/zee.png",
+    date: "March 06, 2026",
+    shortTitle: "Construction excellence driven by trust, quality, and ethical practices.",
+    shortDesc: "Every project follows strict quality control, advanced engineering, and customer-first execution for lasting value...",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
+];
+
+
+
+
+/* ---------------- MEDIA LIST PAGE ---------------- */
+const MediaList = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="bg-white pt-4 pb-20">
@@ -17,163 +60,142 @@ const Media = () => {
           Our journey, values, and projects as recognized and featured by leading media platforms.
         </AnimatedHeading>
 
- {/* ================= BANNER SECTION ================= */}
-<FloatUpText>
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-24 items-center max-w-5xl mx-auto">
-
-    {/* Left Image */}
-    <div className="rounded-3xl overflow-hidden h-[520px]">
-      <img
-        src={mediaImg}
-        className="w-full h-full object-cover"
-        alt="Media Banner"
-      />
-    </div>
-
-{/* Right Orange Box */}
-<div className="bg-[#ff6a13] rounded-3xl p-16 h-[540px] flex flex-col justify-between">
-
-  {/* Logo */}
-  <div className="flex justify-end">
-    <img
-      src="/shreyas_logo_footer_1.png"
-      alt="Shreyas Infra Projects"
-      className="h-12 object-contain"   // increased from h-8 to h-12
-    />
-  </div>
-
-  {/* Text Content */}
-  <div>
-    <h2 className="text-white text-[46px] leading-[1.1] font-light mb-8">
-      Headlines <br />
-      that <br />
-      matters.
-    </h2>
-
-    {/* Accent Line */}
-    <div className="w-60 h-[2px] bg-white mb-8"></div> {/* longer like image */}
-
-    <p className="text-white/90 text-sm leading-relaxed max-w-xs">
-      Our story highlighted in over <br />
-      10 media publications.
-    </p>
-  </div>
-</div>
-
-
-  </div>
-</FloatUpText>
-
-
-
-        {/* ================= NEWS SECTION ================= */}
+        {/* ================= BANNER (DO NOT REMOVE) ================= */}
         <FloatUpText>
-          {/* <h3 className="text-xl font-semibold text-gray-800 mb-10">
-            In The News
-          </h3> */}
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
-
-            {/* News Card 1 */}
-            <div>
-              <img src={mediaImg} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
-             <div className="flex items-center gap-4 mb-4">
-  <img src="/CNBC.png" alt="CNBC TV18" className="h-10 object-contain" />
-  <div className="h-8 w-px bg-gray-300"></div>
-  <div className="text-sm">
-    <p className="text-gray-500">Published on:</p>
-    <p className="font-medium">March 06, 2026</p>
-  </div>
-</div>
-
-              <p className="text-sm text-gray-600 mb-6">
-                {open1
-                  ? "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with modern design, sustainability, and customer satisfaction."
-                  : "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with..."}
-              </p>
-              <button onClick={() => setOpen1(!open1)} className="border border-black rounded-full px-6 py-2 text-xs tracking-widest">
-                {open1 ? "READ LESS" : "READ MORE"}
-              </button>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-24 items-center max-w-5xl mx-auto">
+            <div className="rounded-3xl overflow-hidden h-[520px]">
+              <img src={mediaImg1} className="w-full h-full object-cover" />
             </div>
 
-            {/* News Card 2 */}
-            <div>
-              <img src={mediaImg} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
-<div className="flex items-center gap-4 mb-4">
-  <img src="/zee.png" alt="Zee News" className="h-10 object-contain" />
-  <div className="h-8 w-px bg-gray-300"></div>
-  <div className="text-sm">
-    <p className="text-gray-500">Published on:</p>
-    <p className="font-medium">March 06, 2026</p>
-  </div>
-</div>
+            <div className="bg-[#ff6a13] rounded-3xl p-16 h-[540px] flex flex-col justify-between">
+              <div className="flex justify-end">
+                <img src="/shreyas_logo_footer_1.png" className="h-12 object-contain" />
+              </div>
 
-
-              <p className="text-sm text-gray-600 mb-6">
-                {open2
-                  ? "Our projects are crafted to enhance urban living by integrating smart planning, sustainable materials, and future-ready infrastructure."
-                  : "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning..."}
-              </p>
-              <button onClick={() => setOpen2(!open2)} className="border border-black rounded-full px-6 py-2 text-xs tracking-widest">
-                {open2 ? "READ LESS" : "READ MORE"}
-              </button>
+              <div>
+                <h2 className="text-white text-[46px] leading-[1.1] font-light mb-8">
+                  Headlines <br /> that <br /> matters.
+                </h2>
+                <div className="w-60 h-[2px] bg-white mb-8"></div>
+                <p className="text-white/90 text-sm leading-relaxed max-w-xs">
+                  Our story highlighted in over <br /> 10 media publications.
+                </p>
+              </div>
             </div>
-
           </div>
         </FloatUpText>
 
-        <FloatUpText>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        {/* ================= MEDIA CARDS ================= */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          {mediaData.map((item) => (
+            <FloatUpText key={item.id}>
+              <div>
+                <img src={item.image} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
 
-            {/* News Card 3 */}
-            <div>
-              <img src={mediaImg} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
-                    <div className="flex items-center gap-4 mb-4">
-  <img src="/CNBC.png" alt="CNBC TV18" className="h-10 object-contain" />
-  <div className="h-8 w-px bg-gray-300"></div>
-  <div className="text-sm">
-    <p className="text-gray-500">Published on:</p>
-    <p className="font-medium">March 06, 2026</p>
-  </div>
-</div>
-              <p className="text-sm text-gray-600 mb-6">
-                {open3
-                  ? "We develop spaces that prioritize lifestyle, innovation, and long-term community growth through world-class design and execution."
-                  : "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with..."}
-              </p>
-              <button onClick={() => setOpen3(!open3)} className="border border-black rounded-full px-6 py-2 text-xs tracking-widest">
-                {open3 ? "READ LESS" : "READ MORE"}
-              </button>
-            </div>
+                <div className="flex items-center gap-4 mb-4">
+                  <img src={item.logo} className="h-10 object-contain" />
+                  <div className="h-8 w-px bg-gray-300"></div>
+                  <div className="text-sm">
+                    <p className="text-gray-500">Published on:</p>
+                    <p className="font-medium">{item.date}</p>
+                  </div>
+                </div>
 
-            {/* News Card 4 */}
-            <div>
-              <img src={mediaImg} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
-   <div className="flex items-center gap-4 mb-4">
-  <img src="/zee.png" alt="Zee News" className="h-10 object-contain" />
-  <div className="h-8 w-px bg-gray-300"></div>
-  <div className="text-sm">
-    <p className="text-gray-500">Published on:</p>
-    <p className="font-medium">March 06, 2026</p>
-  </div>
-</div>
+               <p className="text-lg text-gray-800 leading-snug mb-3 max-w-xl">
+  {item.shortTitle}
+</p>
+
+<p className="text-sm text-gray-600 leading-relaxed mb-6 max-w-xl">
+  {item.shortDesc}
+</p>
 
 
-              <p className="text-sm text-gray-600 mb-6">
-                {open4
-                  ? "Our commitment is to deliver excellence through ethical practices, innovative architecture, and customer-first solutions."
-                  : "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning..."}
-              </p>
-              <button onClick={() => setOpen4(!open4)} className="border border-black rounded-full px-6 py-2 text-xs tracking-widest">
-                {open4 ? "READ LESS" : "READ MORE"}
-              </button>
-            </div>
-
-          </div>
-        </FloatUpText>
-
+                <button
+                  onClick={() => navigate(`/media-center/${item.id}`)}
+                  className="border border-black rounded-full px-6 py-2 text-xs tracking-widest"
+                >
+                  READ MORE
+                </button>
+              </div>
+            </FloatUpText>
+          ))}
+        </div>
       </div>
     </div>
+  );
+};
+
+/* ---------------- MEDIA DETAIL PAGE ---------------- */
+const MediaDetail = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const media = mediaData.find(m => m.id === Number(id));
+
+return (
+  <section className="bg-white pt-24 pb-24">
+    <div className="max-w-5xl mx-auto px-6">
+
+      {/* BACK ARROW OUTSIDE CARD */}
+      <button
+        onClick={() => navigate(-1)}
+   className="mb-6 text-black text-3xl font-semibold flex items-center gap-3"
+
+      >
+        ← 
+      </button>
+
+      <div className="rounded-2xl overflow-hidden shadow">
+
+
+          {/* IMAGE */}
+          <img
+            src={media.image}
+            className="w-full h-[420px] object-cover"
+          />
+
+          {/* CONTENT */}
+          <div className="p-8">
+
+            {/* LOGO + DATE (CARD STYLE) */}
+            <div className="flex items-center gap-4 mb-4">
+              <img src={media.logo} className="h-10 object-contain" />
+              <div className="h-8 w-px bg-gray-300"></div>
+              <div className="text-sm">
+                <p className="text-gray-500">Published on:</p>
+                <p className="font-medium">{media.date}</p>
+              </div>
+            </div>
+
+            {/* TITLE */}
+<p className="text-2xl text-gray-800 leading-snug mb-3 max-w-3xl">
+  {media.shortTitle}
+</p>
+
+<p className="text-base text-gray-600 leading-relaxed mb-6 max-w-3xl">
+  {media.shortDesc}
+</p>
+
+
+            {/* DESCRIPTION */}
+            <p className="text-gray-700 leading-relaxed">
+              {media.desc}
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+/* ---------------- ROUTES ---------------- */
+const Media = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<MediaList />} />
+      <Route path="/:id" element={<MediaDetail />} />
+    </Routes>
   );
 };
 

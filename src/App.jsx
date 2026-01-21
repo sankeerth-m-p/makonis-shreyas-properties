@@ -20,245 +20,233 @@ import ReactLenis from "lenis/react";
 import ScrollToTop from "./components/scrollToTop.jsx";
 import { pageVariants, pageTransition } from "./components/pageTransitions.js";
 import { useLocation } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
-function App() {const location = useLocation();
-const prevPath = useRef(location.pathname);
+function App() {
+  const location = useLocation();
+  const prevPath = useRef(location.pathname);
+  const [showEnquire, setShowEnquire] = useState(false);
 
-const direction =
-  location.pathname.length > prevPath.current.length ? 1 : -1;
 
-prevPath.current = location.pathname;
+  const direction =
+    location.pathname.length > prevPath.current.length ? 1 : -1;
+
+  prevPath.current = location.pathname;
 
   return (
     <>
-       <Navbar />
+      <Navbar onEnquireClick={() => setShowEnquire(true)} />
 
-         <ReactLenis
-  root
-  options={{
-    lerp: 0.1,        // Changed from 0.01 - this makes it much smoother
-    duration: 1.5,    // Slightly longer for smoother feel
-    orientation: 'vertical',
-    gestureOrientation: 'vertical',
-    smoothWheel: true,
-    wheelMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,syncTouch: true,  // Add this line
-  }}
-><ScrollToTop/>
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
+      <ReactLenis
+        root
+        options={{
+          lerp: 0.1,        // Changed from 0.01 - this makes it much smoother
+          duration: 1.5,    // Slightly longer for smoother feel
+          orientation: 'vertical',
+          gestureOrientation: 'vertical',
+          smoothWheel: true,
+          wheelMultiplier: 1,
+          smoothTouch: false,
+          touchMultiplier: 2,
+          infinite: false, syncTouch: true,  // Add this line
+        }}
+      ><ScrollToTop />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
 
-         
-          <Route
-            path="/"
-            element={
-              <motion.div
-  custom={direction}
-  variants={pageVariants}
-  initial="initial"
-  animate="animate"
-  exit="exit"
-  transition={pageTransition}
->
-                <Home />
-              </motion.div>
-            }
-          />
-
-          <Route
-            path="/our-promise"
-            element={
-              <motion.div
-  custom={direction}
-  variants={pageVariants}
-  initial="initial"
-  animate="animate"
-  exit="exit"
-  transition={pageTransition}
->
-                <PromisePage />
-              </motion.div>
-            }
-          />
 
             <Route
-            path="/our-story"
-            element={
-              <motion.div
-  custom={direction}
-  variants={pageVariants}
-  initial="initial"
-  animate="animate"
-  exit="exit"
-  transition={pageTransition}
->
-                <OurStory/>
-              </motion.div>
-            }
+              path="/"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Home />
+                </motion.div>
+              }
+            />
+
+            <Route
+              path="/our-promise"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <PromisePage />
+                </motion.div>
+              }
+            />
+
+            <Route
+              path="/our-story"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <OurStory />
+                </motion.div>
+              }
             />
             <Route
-            path="/projects"
-            element={
-              <motion.div
-  custom={direction}
-  variants={pageVariants}
-  initial="initial"
-  animate="animate"
-  exit="exit"
-  transition={pageTransition}
->
-                <Projects/>
-              </motion.div>
-            }
+              path="/projects"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Projects />
+                </motion.div>
+              }
             />
-             <Route
-            path="/media-center"
-            element={
-              <motion.div
-  custom={direction}
-  variants={pageVariants}
-  initial="initial"
-  animate="animate"
-  exit="exit"
-  transition={pageTransition}
->
-                <Media/>
-              </motion.div>
-            }
+            <Route
+              path="/media-center/*"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Media />
+                </motion.div>
+              }
             />
-           <Route
-  path="/blogs/*"
-  element={
-    <motion.div
-      custom={direction}
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={pageTransition}
-    >
-      <Blogs/>
-    </motion.div>
-  }
-/>
-<Route
-  path="/contact"
-  element={
-    <motion.div
-      custom={direction}
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={pageTransition}
-    >
-      <Contact />
-    </motion.div>
-  }
-/>
-<Route
-  path="/enquire"
-  element={
-    <motion.div
-      custom={direction}
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={pageTransition}
-    >
-      <Enquire />
-    </motion.div>
-  }
-/>
-<Route
-  path="/faq"
-  element={
-    <motion.div
-      custom={direction}
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={pageTransition}
-    >
-      <FAQ />
-    </motion.div>
-  }
-/>
-<Route
-  path="/privacy-policy"
-  element={
-    <motion.div
-      custom={direction}
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={pageTransition}
-    >
-      <PrivacyPolicy />
-    </motion.div>
-  }
-/>
-<Route
-  path="/terms"
-  element={
-    <motion.div
-      custom={direction}
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={pageTransition}
-    >
-      <TermsOfUse />
-    </motion.div>
-  }
-/>
-<Route
-  path="/disclaimer"
-  element={
-    <motion.div
-      custom={direction}
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={pageTransition}
-    >
-      <Disclaimer />
-    </motion.div>
-  }
-/>
-<Route
-  path="/career"
-  element={
-    <motion.div
-      custom={direction}
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={pageTransition}
-    >
-      <Career />
-    </motion.div>
-  }
-/>
+
+            <Route
+              path="/blogs/*"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Blogs />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Contact />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/faq"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <FAQ />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/privacy-policy"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <PrivacyPolicy />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/terms"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <TermsOfUse />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/disclaimer"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Disclaimer />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/career"
+              element={
+                <motion.div
+                  custom={direction}
+                  variants={pageVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={pageTransition}
+                >
+                  <Career />
+                </motion.div>
+              }
+            />
 
 
+          </Routes>
+        </AnimatePresence>
+        {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
 
 
-            
-        </Routes> 
-      </AnimatePresence>
-
-      <Footer />
-          </ReactLenis>
+        <Footer />
+      </ReactLenis>
     </>
   );
 }

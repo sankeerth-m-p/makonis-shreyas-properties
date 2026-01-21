@@ -1,44 +1,118 @@
-import React from "react";
+import React, { useState } from "react";
 import { X } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const Enquire = () => {
+const Enquire = ({ onClose }) => {
+  const [phone, setPhone] = useState("");
+  const [countryCode, setCountryCode] = useState("+91");
+
+  const handlePhoneChange = (e) => {
+    const value = e.target.value.replace(/\D/g, "");
+    if (value.length <= 10) setPhone(value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (phone.length !== 10) {
+      alert("Mobile number must be exactly 10 digits");
+      return;
+    }
+
+    alert("Form submitted successfully");
+  };
+
   return (
-    <div className="bg-white min-h-screen flex flex-col">
+    <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-[9999]">
+      <div className="bg-white w-[90%] max-w-xl rounded-lg p-10 relative shadow-2xl">
 
-      {/* Content Area Between Navbar & Footer */}
-      <div className="flex-grow flex items-center justify-center">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-500 hover:text-black"
+        >
+          <X size={22} />
+        </button>
 
-        <div className="bg-white w-[90%] max-w-xl rounded-lg p-10 relative shadow-2xl">
+        <form onSubmit={handleSubmit} className="space-y-6">
 
-          {/* Close Icon */}
-          <button className="absolute top-4 right-4 text-gray-500 hover:text-black">
-            <X size={22} />
-          </button>
+          <input required type="text" placeholder="Name" className="w-full border-b outline-none py-2" />
+          <input required type="email" placeholder="Email address" className="w-full border-b outline-none py-2" />
+<select
+  required
+  className="w-full border-b outline-none py-2 bg-transparent text-gray-500"
+>
+  <option value="">Select Country</option>
+  <option value="India">India</option>
+  <option value="United States">United States</option>
+  <option value="United Kingdom">United Kingdom</option>
+  <option value="United Arab Emirates">United Arab Emirates</option>
+  <option value="Australia">Australia</option>
+  <option value="Canada">Canada</option>
+  <option value="Singapore">Singapore</option>
+  <option value="Germany">Germany</option>
+  <option value="France">France</option>
+  <option value="Japan">Japan</option>
+</select>
 
-          {/* Form Fields */}
-          <div className="space-y-6">
-            <input type="text" placeholder="Name" className="w-full border-b outline-none py-2" />
-            <input type="email" placeholder="Email address" className="w-full border-b outline-none py-2" />
-            <input type="text" placeholder="Select country" className="w-full border-b outline-none py-2" />
-            <input type="text" placeholder="Select city" className="w-full border-b outline-none py-2" />
-            <input type="text" placeholder="Mobile number" className="w-full border-b outline-none py-2" />
+          <input required type="text" placeholder="City" className="w-full border-b outline-none py-2" />
 
-            <div className="flex items-start gap-2 text-xs text-gray-600">
-              <input type="checkbox" className="mt-1" />
-              <p>
-                By checking this box you confirm that you have read and agree to our
-                terms of service, and that you have read our privacy policy.
-              </p>
-            </div>
+          {/* Phone with Country Code */}
+          <div className="flex gap-3">
+            <select
+              value={countryCode}
+              onChange={(e) => setCountryCode(e.target.value)}
+              className="border-b outline-none py-2 bg-transparent"
+              required
+            >
+              <option value="+91">+91 India</option>
+              <option value="+1">+1 USA</option>
+              <option value="+44">+44 UK</option>
+              <option value="+971">+971 UAE</option>
+              <option value="+61">+61 Australia</option>
+              <option value="+49">+49 Germany</option>
+              <option value="+33">+33 France</option>
+              <option value="+81">+81 Japan</option>
+              <option value="+65">+65 Singapore</option>
+              <option value="+86">+86 China</option>
+              <option value="+7">+7 Russia</option>
+            </select>
 
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-2 rounded-full mt-4">
-              REQUEST CALLBACK
-            </button>
+            <input
+              required
+              type="text"
+              placeholder="Mobile number"
+              value={phone}
+              onChange={handlePhoneChange}
+              className="w-full border-b outline-none py-2"
+              maxLength="10"
+            />
           </div>
 
-        </div>
-      </div>
+          {/* Terms & Privacy */}
+          <div className="flex items-start gap-2 text-xs text-gray-600">
+            <input required type="checkbox" className="mt-1" />
+            <p>
+              By checking this box you confirm that you have read and agree to our{" "}
+           <Link to="/terms" target="_blank" className="text-orange-500 underline">
+  Terms of Use
+</Link>{" "}
+and{" "}
+<Link to="/privacy-policy" target="_blank" className="text-orange-500 underline">
+  Privacy Policy
+</Link>.
 
+            </p>
+          </div>
+
+          <button
+            type="submit"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-2 rounded-full mt-4"
+          >
+            REQUEST CALLBACK
+          </button>
+
+        </form>
+      </div>
     </div>
   );
 };
