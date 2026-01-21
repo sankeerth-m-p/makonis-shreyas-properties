@@ -24,6 +24,7 @@ import { useRef } from "react";
 
 function App() {const location = useLocation();
 const prevPath = useRef(location.pathname);
+const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
 const direction =
   location.pathname.length > prevPath.current.length ? 1 : -1;
@@ -34,20 +35,33 @@ prevPath.current = location.pathname;
     <>
        <Navbar />
 
-         <ReactLenis
-  root
-  options={{
-    lerp: 0.1,        // Changed from 0.01 - this makes it much smoother
-    duration: 1.5,    // Slightly longer for smoother feel
-    orientation: 'vertical',
-    gestureOrientation: 'vertical',
-    smoothWheel: true,
-    wheelMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,syncTouch: true,  // Add this line
-  }}
-><ScrollToTop/>
+        {isMobile ? (
+      <>
+        <ScrollToTop />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            {/* all your routes */}
+          </Routes>
+        </AnimatePresence>
+        <Footer />
+      </>
+    ) : (
+      <ReactLenis
+        root
+        options={{
+          lerp: 0.1,
+          duration: 1.5,
+          orientation: "vertical",
+          gestureOrientation: "vertical",
+          smoothWheel: true,
+          wheelMultiplier: 1,
+          smoothTouch: false,
+          touchMultiplier: 2,
+          infinite: false,
+          syncTouch: true,
+        }}
+      >
+        <ScrollToTop />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
 
@@ -258,8 +272,8 @@ prevPath.current = location.pathname;
       </AnimatePresence>
 
       <Footer />
-          </ReactLenis>
-    </>
+     </ReactLenis>
+    )}    </>
   );
 }
 
