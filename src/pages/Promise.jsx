@@ -17,46 +17,89 @@ function Showcase({
   image,
   reverse = false,
 }) {
-  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
+  const [inView, setInView] = useState(false);
 
-  // Trigger animation immediately on page load
   useEffect(() => {
-    const timer = requestAnimationFrame(() => setIsVisible(true));
-    return () => cancelAnimationFrame(timer);
+    const el = containerRef.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        // When entering viewport => reveal
+        if (entry.isIntersecting) setInView(true);
+        // When leaving viewport => reset so it can animate again
+        else setInView(false);
+      },
+      {
+        threshold: 0.1, // triggers nicely when ~25% visible
+      }
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
   }, []);
+
+  // Reveal direction:
+  // normal (image on left) -> reveal from left to right
+  // reverse (image on right) -> reveal from right to left
+  const hiddenClip = reverse
+    ? "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" // closed at right
+    : "polygon(0 0, 0 0, 0 100%, 0 100%)";            // closed at left
+
+  const shownClip =
+    "polygon(0 0, 100% 0, 100% 100%, 0 100%)";
 
   return (
     <section className="w-full min-h-[50vh] md:min-h-[75vh] grid grid-cols-1 md:grid-cols-2">
       
       {/* IMAGE BLOCK */}
       <div
-        className={`relative bg-gray-300 min-h-[40vh] md:min-h-full ${reverse ? "md:order-2" : ""}`}
-        style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible
-            ? "translateX(0)"
-            : `translateX(${reverse ? "100px" : "-100px"})`,
-          transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
-        }}
+        ref={containerRef}
+        className={`relative  min-h-[40vh] md:min-h-full overflow-hidden ${
+          reverse ? "md:order-2" : ""
+        }`}
       >
         <img
           src={image}
           alt={title}
           className="w-full h-full object-cover"
+          style={{
+            opacity: 1,
+            transform: "translateZ(0)",
+            clipPath: inView ? shownClip : hiddenClip,
+            transition: "clip-path 3s cubic-bezier(.215, .61, .355, 1)",
+            willChange: "clip-path",
+          }}
         />
-       
-        {/* TITLE OVERLAY */}
-        <div
-          className={`absolute bottom-4 px-5 py-3 bg-ORANGE/80 backdrop-blur-sm w-4/5 md:min-w-60 md:w-auto ${
-            !reverse
-              ? "right-4 md:right-6 text-right"
-              : "left-4 md:left-6 text-left"
-          }`}
-        >
-          <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">
-            {title}
-          </h3>
-        </div>
+
+       {/* TITLE OVERLAY */}
+<div
+  className={`absolute bottom-4 px-5 py-3 bg-ORANGE/80 backdrop-blur-sm w-4/5 md:min-w-60 md:w-auto ${
+    !reverse
+      ? "right-4 md:right-6 text-right"
+      : "left-4 md:left-6 text-left"
+  }`}
+  style={{
+    opacity: inView ? 1 : 0,
+
+    // label comes from the same side as reveal
+    transform: inView
+      ? "translateY(0px) translateX(0px)"
+      : `translateY(14px) translateX(${reverse ? "24px" : "-24px"})`,
+
+    transition:
+      "opacity 0.9s ease, transform 0.9s cubic-bezier(.215, .61, .355, 1)",
+
+    // delay so it feels like the image reveal introduces it
+    transitionDelay: inView ? "0.35s" : "0s",
+  }}
+>
+  <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">
+    {title}
+  </h3>
+</div>
+
       </div>
 
       {/* TEXT BLOCK */}
@@ -77,6 +120,7 @@ function Showcase({
     </section>
   );
 }
+
 
 // ================= MAIN PAGE =================
 
