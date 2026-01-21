@@ -82,6 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 .buttons{
     font-family: "Aeonik", sans-serif;font-size: 0.75rem /* 12px */;
     line-height: 1rem /* 16px */;letter-spacing: 0.05em;
+    text-transform: uppercase;
 
 }
 @keyframes fadeIn {

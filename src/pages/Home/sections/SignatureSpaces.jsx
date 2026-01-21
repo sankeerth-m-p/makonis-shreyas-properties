@@ -73,7 +73,7 @@ useEffect(() => {
   return () => clearInterval(interval);
 }, [isPaused, items.length]);
   return (
-  <section className="relative w-full bg-black">
+<section className="relative w-full bg-black z-0">
 
   {/* ✅ MOBILE ONLY: Horizontal Scroll */}<div
   ref={scrollContainerRef}
@@ -96,7 +96,7 @@ useEffect(() => {
             "
           >
             {/* IMAGE */}
-            <div className="w-full h-[50%]">
+            <div className="w-full h-[50%] ">
               <img
                 src={item.image}
                 alt={item.title}
@@ -148,7 +148,7 @@ useEffect(() => {
   </div>
 
   {/* ✅ DESKTOP ONLY: Your existing sticky scroll */}
-<div className="hidden   md:block relative h-[520vh]">
+<div className="hidden   md:block relative h-[calc((100vh-5rem)*6)]">
     {items.map((item, i) => {
       const start = i * 120;
       const progress = Math.max(0, Math.min(1, (scrollY - start) / 120));
@@ -202,11 +202,11 @@ className="sticky top-20   h-[calc(100vh-5rem)] w-full flex"
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="w-1/2 h-full">
+          <div className="w-1/2 h-full overflow-hidden ">
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover hover:scale-105 transition-transform ease-in-out duration-700"
             />
           </div>
         </div>

@@ -57,6 +57,21 @@ useEffect(() => {
 }, []);useEffect(() => {
   setBgImage(images[index]);
 }, [index]);
+  const [origin, setOrigin] = useState({ x: 50, y: 50 });
+  const [isHover, setIsHover] = useState(false);
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+    setOrigin({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setIsHover(false);
+    setOrigin({ x: 50, y: 50 }); // reset to center
+  };
 
   return (
 <section className="relative  w-full h-[60vh] md:h-screen overflow-hidden bg-[#0B1F1A]">
@@ -65,7 +80,7 @@ useEffect(() => {
     key={index}
     src={bgImage}
     alt=""
-    className="absolute inset-0 w-full h-full object-cover animate-fadeIn z-0"
+    className="absolute inset-0 w-full h-full object-cover animate-fadeIn  z-0"
   />
 
       {/* OVERLAY */}

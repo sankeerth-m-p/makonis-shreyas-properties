@@ -9,7 +9,7 @@ const StoryBehindBrand = () => {
     relative w-full 
     h-[70vh] md:h-screen
     bg-center bg-cover bg-no-repeat
-    overflow-hidden 
+    overflow-hidden z-10
   "
   style={{
     backgroundImage:

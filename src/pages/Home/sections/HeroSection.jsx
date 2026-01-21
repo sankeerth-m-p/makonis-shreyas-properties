@@ -49,7 +49,7 @@ useEffect(() => {
 
 
   return (
-<section className="relative w-full overflow-hidden h-[80vh] md:h-[calc(100vh-80px)]">
+<section className=" relative w-full overflow-hidden h-[80vh] md:h-[calc(100vh-80px)]">
 
   {/* Current Slide */}
   <div className="absolute inset-0">

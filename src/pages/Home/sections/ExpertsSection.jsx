@@ -1,11 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import AnimatedHeading from "../../../components/animatedHeading";
-
-// Placeholder for RevealImageAnimation - replace with your actual component
-const RevealImageAnimation = ({ image, className }) => (
-  <img src={image} alt="Expert" className={className} />
-);
+import RevealImageAnimation from "../../../components/RevealImageAnimation";
 
 const ExpertsSection = () => {
   const sectionRef = useRef(null);
@@ -36,7 +32,7 @@ const titleClip = useTransform(
 
   // Right content - slides in from right side of image
   const rightOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
-  const rightX = useTransform(scrollYProgress, [0.5, 0.7], [-200, 0]);
+  const rightX = useTransform(scrollYProgress, [0.5, 0.7], [-80, 0]);
 
   return (
     <section 

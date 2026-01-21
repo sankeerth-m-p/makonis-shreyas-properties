@@ -72,20 +72,20 @@ const COLORS = {       // warm white (not pure)
   const t = TESTIMONIALS[activeIndex];
 
   return (
-  <section ref={ref} id="testimonials" className="relative  w-full overflow-hidden">
+  <section ref={ref} id="testimonials" className="relative md:h-screen flex-col md:justify-end  md:flex w-full overflow-hidden">
     {/* ✅ TOP SECTION (WHITE) */}
-    <div className="relative bg-white  mt-20 pb-20">
+    <div className="relative bottom-0 bg-white  mt-20 pb-20">
       {/* HEADING should be BEFORE wave */}
       <div
-        className="relative z-10 text-center"
+        className="relative z-10 text-center py-10 "
         style={{
           opacity: Math.min(1, scrollProgress * 1.3),
           transform: `translateY(${(1 - scrollProgress) * 40}px)`,
         }}
       >
         <AnimatedHeading className="text-lg md:text-3xl">
-          What {"\n"}
-          people {"\n"}
+          What 
+          people 
           says
         </AnimatedHeading>
       </div>

@@ -119,11 +119,11 @@ const swipeThreshold = 50;
             onMouseEnter={() => setActive(index)}
             onTouchStart={() => setActive(index)}
             className={`
-              relative overflow-hidden rounded-xl transition-all duration-500 ease-in-out
+              relative overflow-hidden rounded-xl transition-all  duration-1000 ease-in-out
               ${active === index ? "flex-[5]" : "flex-[1]"}
             `}
           >
-            <img src={img.src} alt={img.label} className="w-full h-full object-cover" />
+            <img src={img.src} alt={img.label} className="w-full h-full hover:scale-105 transition-transform ease-in-out duration-700 object-cover" />
 
             {active === index && (
               <span
