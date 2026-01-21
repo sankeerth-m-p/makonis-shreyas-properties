@@ -71,7 +71,7 @@ const BlogList = () => {
 
   return (
     <section className="bg-white pt-5 pb-24 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-[1120px] mx-auto px-0">
 
         <AnimatedHeading className="text-3xl font-semibold text-gray-900">
           Stories That Shape Better Living
@@ -153,7 +153,7 @@ const BlogDetail = () => {
 
   return (
     <section className="bg-white pt-24 pb-24 relative">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-[1120px] mx-auto px-0">
 
         <AnimatedHeading className="text-2xl font-semibold mb-5">
           {blog.title}

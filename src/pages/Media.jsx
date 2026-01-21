@@ -53,8 +53,8 @@ const MediaList = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white pt-4 pb-20">
-      <div className="max-w-6xl mx-auto px-6">
+    <div className="bg-white pt-4 pb-24">
+    <div className="max-w-[1120px] mx-auto px-0">
 
         <AnimatedHeading className="text-3xl text-gray-800 my-10 max-w-3xl">
           Our journey, values, and projects as recognized and featured by leading media platforms.
@@ -62,7 +62,7 @@ const MediaList = () => {
 
         {/* ================= BANNER (DO NOT REMOVE) ================= */}
         <FloatUpText>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-24 items-center max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-24 items-center">
             <div className="rounded-3xl overflow-hidden h-[520px]">
               <img src={mediaImg1} className="w-full h-full object-cover" />
             </div>
@@ -101,13 +101,13 @@ const MediaList = () => {
                   </div>
                 </div>
 
-               <p className="text-lg text-gray-800 leading-snug mb-3 max-w-xl">
-  {item.shortTitle}
-</p>
+                <p className="text-lg text-gray-800 leading-snug mb-3 max-w-xl">
+                  {item.shortTitle}
+                </p>
 
-<p className="text-sm text-gray-600 leading-relaxed mb-6 max-w-xl">
-  {item.shortDesc}
-</p>
+                <p className="text-sm text-gray-600 leading-relaxed mb-6 max-w-xl">
+                  {item.shortDesc}
+                </p>
 
 
                 <button
@@ -131,20 +131,20 @@ const MediaDetail = () => {
   const navigate = useNavigate();
   const media = mediaData.find(m => m.id === Number(id));
 
-return (
-  <section className="bg-white pt-24 pb-24">
-    <div className="max-w-5xl mx-auto px-6">
+  return (
+    <section className="bg-white pt-24 pb-24">
+     <div className="max-w-[1400px] mx-auto px-0">
 
-      {/* BACK ARROW OUTSIDE CARD */}
-      <button
-        onClick={() => navigate(-1)}
-   className="mb-6 text-black text-3xl font-semibold flex items-center gap-3"
+        {/* BACK ARROW OUTSIDE CARD */}
+        <button
+          onClick={() => navigate(-1)}
+          className="mb-6 text-black text-3xl font-semibold flex items-center gap-3"
 
-      >
-        ← 
-      </button>
+        >
+          ←
+        </button>
 
-      <div className="rounded-2xl overflow-hidden shadow">
+        <div className="rounded-2xl overflow-hidden shadow">
 
 
           {/* IMAGE */}
@@ -167,13 +167,13 @@ return (
             </div>
 
             {/* TITLE */}
-<p className="text-2xl text-gray-800 leading-snug mb-3 max-w-3xl">
-  {media.shortTitle}
-</p>
+            <p className="text-2xl text-gray-800 leading-snug mb-3 max-w-3xl">
+              {media.shortTitle}
+            </p>
 
-<p className="text-base text-gray-600 leading-relaxed mb-6 max-w-3xl">
-  {media.shortDesc}
-</p>
+            <p className="text-base text-gray-600 leading-relaxed mb-6 max-w-3xl">
+              {media.shortDesc}
+            </p>
 
 
             {/* DESCRIPTION */}

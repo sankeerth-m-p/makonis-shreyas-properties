@@ -3,7 +3,7 @@ import React from "react";
 const Career = () => {
   return (
     <div className="bg-[#f3f0ef] pt-5 py-20">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1120px] mx-auto px-0">
 
         {/* Top Hiring Card */}
         <div className="bg-white rounded-3xl p-10 flex flex-col lg:flex-row items-center gap-10 shadow-sm">
@@ -30,7 +30,7 @@ const Career = () => {
 
         {/* Sales Manager */}
         <div className="bg-[#eef1f1] rounded-xl p-8 mb-12">
-          <h4 className="text-2xl font-semibold mb-3">Sales manager</h4>
+          <h4 className="text-3xl font-semibold mb-3">Sales manager</h4>
           <div className="flex flex-wrap gap-6 text-sm text-gray-600 mb-6">
             <span>Male candidates</span>
             <span>Location: Bengaluru</span>
@@ -70,7 +70,7 @@ const Career = () => {
 
         {/* Marketing Manager */}
         <div className="bg-[#eef1f1] rounded-xl p-8">
-          <h4 className="text-2xl font-semibold mb-3">Marketing manager</h4>
+          <h4 className="text-3xl font-semibold mb-3">Marketing manager</h4>
           <div className="flex flex-wrap gap-6 text-sm text-gray-600 mb-6">
             <span>Male candidates</span>
             <span>Location: Bengaluru</span>

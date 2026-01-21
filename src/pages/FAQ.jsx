@@ -61,7 +61,7 @@ const FAQ = () => {
     <div className="bg-white pt-16 pb-20 px-4">
       <div className="max-w-5xl mx-auto">
 {/* Premium Animated Heading */}
-<div className="relative z-10 mx-auto max-w-5xl text-center px-4 md:px-6 lg:px-8 pt-6 md:pt-0 mb-6">
+<div className="relative z-10 mx-auto max-w-5xl text-center px-4 md:px-6 [20px]:px-8 pt-6 md:pt-0 mb-6">
   <AnimatedHeading
     as="h2"
     delay={0}
@@ -78,7 +78,7 @@ const FAQ = () => {
         </p>
 
         {/* FAQ List */}
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="bg-white shadow-[20px] rounded-[20px] overflow-hidden">
           {faqs.map((item, index) => (
             <div key={index} className="border-b last:border-none">
               <button

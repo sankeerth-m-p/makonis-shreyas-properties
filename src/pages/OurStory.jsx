@@ -21,7 +21,7 @@ const OurStory = () => {
 
       {/* ================= ORANGE SECTION ================= */}
       <section className="bg-ORANGE pt-20 md:pt-28 pb-72 relative">
-        <div className="max-w-6xl mx-auto  flex flex-col justify-center px-6 text-center text-white">
+        <div className="max-w-[1120px] mx-auto px-0 flex flex-col justify-center text-center text-white">
           <AnimatedHeading
             as="h1"
             delay={0}
@@ -54,7 +54,7 @@ const OurStory = () => {
           className="absolute top-60 right-[-200px] w-[380px] h-[380px] bg-gray-100 rounded-full z-0"
         />
 
-        <div className="max-w-6xl mx-auto px-6 relative z-10 -mt-24">
+        <div className="max-w-[1120px] mx-auto px-0 relative z-10 -mt-24">
 
 
           {/* ================= IMAGES ================= */}
@@ -114,14 +114,12 @@ const OurStory = () => {
                   alt="Client meeting"
                   className="w-full h-full object-cover "
                 />
-
-
               </div>
             </div>
           </div>
 
           {/* ================= TEXT BELOW ================= */}
-          <FloatUpText className="md:m-14 mt-5 text-base  text-gray-600 space-y-6 max-w-6xl mx-auto px-6">
+          <FloatUpText className="md:m-14 mt-5 text-base  text-gray-600 space-y-6 max-w-[1120px] mx-auto px-0">
 
             <p>
               Our philosophy is rooted in integrity, quality, and long-term value. From selecting the
@@ -170,7 +168,7 @@ const OurStory = () => {
   />
 
   {/* CONTENT */}
-  <div className="relative z-10 max-w-6xl mx-auto px-5 grid md:grid-cols-2 md:gap-28 gap-14 pb-14 md:pb-0">
+  <div className="relative z-10 max-w-[1120px] mx-auto px-0 grid md:grid-cols-2 md:gap-28 gap-14 pb-14 md:pb-0">
 
     {/* OUR VISION */}
     <div className="text-left">
@@ -251,7 +249,7 @@ const OurStory = () => {
 
   {/* CONTENT ON ORANGE */}
   <div className="absolute bottom-0 left-0 w-full z-20 md:relative md:h-full md:flex md:items-end">
-    <div className="max-w-6xl mx-auto px-6 pb-20 md:pb-24 text-white w-full">
+    <div className="max-w-[1120px] mx-auto px-0 pb-20 md:pb-24 text-white w-full">
       <div className="grid md:grid-cols-2 gap-6">
 
         <AnimatedHeading
@@ -276,13 +274,9 @@ const OurStory = () => {
   </div>
 </section>
 
-
-
-
-
       {/* ================= IMAGE + TEXT SECTION ================= */}
       <section className="w-full bg-white py-5 md:py-24">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-12  gap-5 md:gap-16 items-start">
+        <div className="max-w-[1120px] mx-auto px-0 grid md:grid-cols-12  gap-5 md:gap-16 items-start">
 
           {/* LEFT IMAGE */}
           <div className="md:col-span-4">
@@ -330,7 +324,7 @@ const OurStory = () => {
       </section>
       {/* ================= TESTIMONIAL SECTION ================= */}
       <section className="w-full bg-[#f4efe4] py-12  md:py-32">
-       <div className="max-w-6xl mx-auto px-6 text-center">
+       <div className="max-w-[1120px] mx-auto px-0 text-center">
 
 
           {/* QUOTE BLOCK */}

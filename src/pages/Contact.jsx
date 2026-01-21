@@ -9,7 +9,7 @@ const Contact = () => {
     <div className="bg-white pt-5">
 
       {/* ===== Top Section ===== */}
-      <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
+      <section className="max-w-[1120px] mx-auto px-0 py-20 grid md:grid-cols-2 gap-10 items-center">
         <div>
           <h2 className="text-3xl font-semibold text-gray-900 mb-4">
             We would love to <br /> connect to you.
@@ -29,7 +29,7 @@ const Contact = () => {
 
       {/* ===== Orange CTA Bar ===== */}
       <section className="bg-orange-500 py-10">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+        <div className="max-w-[1120px] mx-auto px-0 flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center gap-4 text-white">
          <span className="text-3xl">🎧</span>
             <div>
@@ -44,7 +44,7 @@ const Contact = () => {
       </section>
 
      {/* ===== Contact Info Row (Exact Style) ===== */}
-<section className="max-w-7xl mx-auto px-6 py-12">
+<section className="max-w-[1120px] mx-auto px-0 py-12">
   <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-6 text-sm text-gray-700">
 
     {/* Call us */}
@@ -107,7 +107,7 @@ const Contact = () => {
 
 {/* ===== Our Office + Contact Form (Final Balanced Layout) ===== */}
 <section className="w-full px-6 py-24 bg-white">
-  <div className="max-w-7xl mx-auto grid md:grid-cols-[1.2fr_1fr] gap-24 items-start">
+  <div className="max-w-[1120px] mx-auto px-0 grid md:grid-cols-[1.2fr_1fr] gap-24 items-start">
 
     {/* Left: Office Info */}
     <div className="md:pl-16">

@@ -87,7 +87,7 @@ export default function Projects() {
         </div>
 
         {/* Cards */}
-        <div className="max-w-6xl mx-auto px-6 -mt-14 md:-mt-10 space-y-10">
+        <div className="max-w-[1120px] mx-auto px-0 -mt-14 md:-mt-10 space-y-10">
           {/* FIRST CARD - NO OPACITY FADE */}
           <ProjectCard
             noFade
