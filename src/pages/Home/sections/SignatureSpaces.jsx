@@ -59,6 +59,34 @@ const SignatureSpaces = () => {
     ...items, // real slides
     items[0], // clone first
   ];
+const [activeIndex, setActiveIndex] = useState(0);
+useEffect(() => {
+  if (window.innerWidth < 768) return;
+
+  const container = desktopScrollRef.current;
+  if (!container) return;
+
+  const slides = Array.from(container.children);
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = slides.indexOf(entry.target);
+          if (index !== -1) setActiveIndex(index);
+        }
+      });
+    },
+    {
+      root: container,
+      threshold: 0.6, // more stable + smoother
+    }
+  );
+
+  slides.forEach((slide) => observer.observe(slide));
+
+  return () => observer.disconnect();
+}, []);
 
   // ✅ DESKTOP: trap wheel scroll only inside section
   useEffect(() => {
@@ -234,82 +262,72 @@ transform: `translateX(-${mobileActive * 92}%)`,
       </div>
 
       {/* ✅ DESKTOP ONLY: Nested vertical snap inside Signature section */}
-      <div
-        ref={desktopScrollRef}
-        className="
-          hidden md:block
-          h-[calc(100vh-5rem)]
-          overflow-y-scroll
-          snap-y snap-mandatory
-          scrollbar-hide
-        "
+      {/* ✅ DESKTOP ONLY */}
+<div className="hidden md:flex h-[calc(100vh-5rem)] w-full">
+  {/* LEFT = STICKY STATIC */}
+  <div className="w-1/2 sticky top-[5rem] h-[calc(100vh-5rem)] overflow-hidden">
+    <div
+      className={`h-full text-white pl-48 py-24 flex flex-col justify-between transition-all duration-500 ease-in-out ${
+        items[activeIndex]?.id % 2 === 1 ? "bg-ORANGE" : "bg-ORANGE2"
+      }`}
+    >
+      <AnimatedHeading
+        as="h2"
+        delay={0}
+        staggerDelay={0.15}
+        className="text-[34px] font-medium leading-tight max-w-sm"
       >
-        {items.map((item, i) => {
-          const leftBg = i % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2";
+        Signature spaces crafted for modern living.
+      </AnimatedHeading>
 
-          return (
-            <div
-              key={i}
-              className="
-                relative
-                h-[calc(100vh-5rem)]
-                w-full
-                snap-start snap-always
-              "
-              style={{ zIndex: i + 1 }}
-            >
-              <div className="sticky top-0 h-[calc(100vh-5rem)] w-full flex">
-                {/* LEFT PANEL */}
-                <div
-                  className={`w-1/2 ${leftBg} text-white pl-48 py-24 flex flex-col justify-between`}
-                >
-                  <AnimatedHeading
-                    as="h2"
-                    delay={0}
-                    staggerDelay={0.15}
-                    className="text-[34px] font-medium leading-tight max-w-sm"
-                  >
-                    Signature spaces crafted for modern living.
-                  </AnimatedHeading>
+      <div className="transition-all duration-500 ease-in-out">
+        <FloatUpText>
+          <div
+            className="text-[110px] font-roboto mb-1"
+            style={{
+              WebkitTextStroke: "1px #fff",
+              color: "transparent",
+            }}
+          >
+            {items[activeIndex]?.id}
+          </div>
 
-                  <div>
-                    <FloatUpText>
-                      <div
-                        className="text-[110px] font-roboto mb-1"
-                        style={{
-                          WebkitTextStroke: "1px #fff",
-                          color: "transparent",
-                        }}
-                      >
-                        {item.id}
-                      </div>
+          <p className="text-xs tracking-widest">
+            {items[activeIndex]?.location}
+          </p>
 
-                      <p className="text-xs tracking-widest">{item.location}</p>
-
-                      <h3 className="md:text-3xl mt-4 whitespace-pre-line">
-                        {item.title}
-                      </h3>
-                    </FloatUpText>
-                  </div>
-                </div>
-
-                {/* RIGHT IMAGE */}
-                <div className="w-1/2 h-full overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="
-                      w-full h-full object-cover
-                      transition-transform duration-700 ease-in-out
-                      hover:scale-105
-                    "
-                  />
-                </div>
-              </div>
-            </div>
-          );
-        })}
+          <h3 className="md:text-3xl mt-4 whitespace-pre-line">
+            {items[activeIndex]?.title}
+          </h3>
+        </FloatUpText>
       </div>
+    </div>
+  </div>
+
+  {/* RIGHT = SNAP SCROLL */}
+  <div
+    ref={desktopScrollRef}
+    className="
+      w-1/2 h-[calc(100vh-5rem)]
+      overflow-y-scroll snap-y snap-mandatory scrollbar-hide
+    "
+  >
+    {items.map((item, i) => (
+      <div
+  key={i}
+  className="sig-slide h-[calc(100vh-5rem)] snap-start snap-always flex"
+>
+
+        <img
+          src={item.image}
+          alt={item.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
 
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {
