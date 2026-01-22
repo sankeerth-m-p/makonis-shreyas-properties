@@ -14,7 +14,7 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
             <ul className="space-y-4">
               <li><Link to="/our-story" className="hover:text-white block">Our Story</Link></li>
               <li><Link to="/projects" className="hover:text-white block">Projects</Link></li>
-              <li><button onClick={goToTestimonials} className="hover:text-white block text-left">Testimonial</button></li>
+              <li><button onClick={goToTestimonials} className="hover:text-white buttons block text-left">Testimonial</button></li>
               <li><Link to="/media-center" className="hover:text-white block">Media Center</Link></li>
               <li><Link to="/blogs" className="hover:text-white block">Blog</Link></li>
             </ul>
@@ -32,14 +32,12 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
               src="/shreyas_logo_footer.png"
               alt="Shreyas Logo"
             />
-            <div className="text-white  text-sm normal-case tracking-wide leading-tight">
-              defining <br /> lifestyles
-            </div>
+           
           </div>
 
           {/* Bottom policy section */}
-          <div className="pt-10  pb-6 text-sm tracking-wide text-neutral-500 -500">
-            <div className="flex items-center gap-8">
+          <div className="pt-10  pb-6 text-xs tracking-wide  text-neutral-400 -500">
+            <div className="flex items-center gap-3">
               <span className="hover:text-white transition cursor-pointer">
                 Privacy Policy
               </span>
@@ -79,7 +77,7 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
                 </li>
                 <li>
                   <button onClick={goToTestimonials} 
-                    className="hover:text-white cursor-pointer transition block"
+                    className="hover:text-white  buttons cursor-pointer transition block"
                   >
                     Testimonial
                   </button>
@@ -151,8 +149,8 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
           </div>
 
           {/* Bottom Section */}
-          <div className="flex mt-12 md:mt-32 flex-col md:flex-row items-center justify-between text-xs text-neutral-500 -400 gap-4">
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-xs">
+          <div className="flex mt-12 md:mt-32 flex-col a1  md:flex-row items-center justify-between text-xs text-neutral-500 -400 gap-4">
+            <div className="flex flex-wrap justify-center md:justify-start gap-1  md:gap-6 text-xs">
               <Link to="/privacy-policy" className="hover:text-white cursor-pointer text-center">
                 Privacy Policy
               </Link>
