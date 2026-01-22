@@ -8,7 +8,7 @@ import Testimonials from "./sections/Testimonials.jsx";
 import NatureSign from "./sections/NatureSign.jsx";
 import ExpertsSection from "./sections/ExpertsSection.jsx";
 import PromiseSection from "./sections/PromiseSection.jsx";
-
+import Footer from "../../components/footer.jsx";
 const HomeLayout = () => {
  return (
   <div
@@ -63,7 +63,10 @@ const HomeLayout = () => {
 
     <div className="snap-start  snap-always">
       <PromiseSection />
-    </div>
+     </div>
+    <div className="snap-end  snap-always">
+     <Footer/>
+     </div>
   </div>
 );
 

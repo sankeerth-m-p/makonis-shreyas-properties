@@ -232,7 +232,7 @@ function App() {
         </AnimatePresence>
         {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
 
-      {/* <Footer /> */}
+      <Footer />
       </>
     ) :  (
         <ReactLenis
