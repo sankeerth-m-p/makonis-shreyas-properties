@@ -58,28 +58,42 @@ const COLORS1 = {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!ref.current) return;
-      const rect = ref.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+  const container = document.getElementById("home-scroll");
+  if (!container) return;
 
-      const progress = Math.max(
-        0,
-        Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height * 0.3))
-      );
-      setScrollProgress(progress);
-    };
+  const handleScroll = () => {
+    if (!ref.current) return;
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    const rect = ref.current.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
+    const containerHeight = containerRect.height;
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    // rect.top relative to container viewport
+    const relativeTop = rect.top - containerRect.top;
+
+    const progress = Math.max(
+      0,
+      Math.min(
+        1,
+        (containerHeight - relativeTop) /
+          (containerHeight + rect.height * 0.3)
+      )
+    );
+
+    setScrollProgress(progress);
+  };
+
+  container.addEventListener("scroll", handleScroll, { passive: true });
+  handleScroll();
+
+  return () => container.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   const t = TESTIMONIALS[activeIndex];
 
   return (
-  <section ref={ref} id="testimonials" className="relative md:h-screen flex-col md:justify-end  md:flex w-full overflow-hidden">
+  <section ref={ref} id="testimonials" className="relative md:h-[calc(100vh-5rem)] flex-col md:justify-end  md:flex w-full overflow-hidden">
     {/* ✅ TOP SECTION (WHITE) */}
     <div className="relative bottom-0 bg-white  mt-20 pb-20">
       {/* HEADING should be BEFORE wave */}
@@ -126,7 +140,7 @@ const COLORS1 = {
 
     {/* ✅ MAIN CONTENT SECTION (FILLED) */}
    <div
-  className="relative pt-24 z-50 pb-24 mt-5 md:mt-10"
+  className="relative pt-2   z-50 pb-24 mt-5 md:mt-10"
   style={{ backgroundColor: COLORS.mainFill }}
 >
 

@@ -7,7 +7,7 @@ const StoryBehindBrand = () => {
    <section
   className=" 
     relative w-full p
-    h-[70vh] md:h-screen
+    h-[70vh] md:h-[calc(100vh-5rem)]
     bg-center bg-cover bg-no-repeat
     overflow-hidden z-10
   "
@@ -17,7 +17,7 @@ const StoryBehindBrand = () => {
   }}
 >
   {/* overlay */}
-  <div className="absolute  inset-0 bg-[#F4EFE5]" />
+  <div className="absolute   inset-0 bg-[#F4EFE5]" />
 
   {/* CONTENT */}
   <div className="relative h-full pb-10 max-w-7xl mx-auto px-6">

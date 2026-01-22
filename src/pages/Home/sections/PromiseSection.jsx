@@ -9,10 +9,10 @@ const PromiseSection = () => {
   className="
     relative 
     w-full h-[60vh]
-    md:h-screen 
+    md:h-[calc(100vh-5rem)] 
     bg-center 
     bg-cover 
-    bg-no-repeat mt-20
+    bg-no-repeat 
     bg-fixed
     overflow-hidden
   "

@@ -74,7 +74,7 @@ useEffect(() => {
   };
 
   return (
-<section className="relative  w-full h-[60vh] md:h-screen overflow-hidden bg-[#0B1F1A]">
+<section className="relative  w-full h-[60vh] md:h-[calc(100vh-5rem)] overflow-hidden bg-[#0B1F1A]">
       {/* BACKGROUND IMAGE */}
        <img
     key={index}

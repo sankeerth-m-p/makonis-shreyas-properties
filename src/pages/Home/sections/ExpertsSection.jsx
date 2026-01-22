@@ -1,44 +1,83 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import AnimatedHeading from "../../../components/animatedHeading";
 import RevealImageAnimation from "../../../components/RevealImageAnimation";
 
 const ExpertsSection = () => {
   const sectionRef = useRef(null);
+  const [currentStage, setCurrentStage] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const scrollRootRef = useRef(null);
   
-  // Track scroll progress through this section
+  useEffect(() => {
+    scrollRootRef.current = document.getElementById("home-scroll");
+  }, []);
+
   const { scrollYProgress } = useScroll({
+    container: scrollRootRef,
     target: sectionRef,
-    offset: ["start start", "end end"]
+    offset: ["start start", "end end"],
   });
 
-  // STAGE 1: Big title in center (0-0.5) - masked from bottom to top
-  // STAGE 2: Transform to layout (0.5-1)
-  
-  // Big title animations - masked out from bottom to top
-const titleClip = useTransform(
-  scrollYProgress,
-  [0, 0.3, 0.5],
-  ["inset(0% 0% 0% 0%)", "inset(0% 0% 0% 0%)", "inset(0% 0% 100% 0%)"]
-);
+  // Monitor scroll progress and snap to stages
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (isTransitioning) return;
+    
+    // Determine which stage we should be at
+    if (latest < 0.25) {
+      if (currentStage !== 0) {
+        setCurrentStage(0);
+        snapToStage(0);
+      }
+    } else {
+      if (currentStage !== 1) {
+        setCurrentStage(1);
+        snapToStage(1);
+      }
+    }
+  });
 
-  // Left content - slides in from left side of image
-  const leftOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
-  const leftX = useTransform(scrollYProgress, [0.5, 0.7], [200, 0]);
+  const snapToStage = (stage) => {
+    if (!sectionRef.current) return;
 
-  // Center image - appears as title is masked
-  const imageOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
-  const imageY = useTransform(scrollYProgress, [0.5, 0.7], [50, 0]);
+    const container = scrollRootRef.current;
+    if (!container) return;
 
-  // Right content - slides in from right side of image
-  const rightOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
-  const rightX = useTransform(scrollYProgress, [0.5, 0.7], [-80, 0]);
+    setIsTransitioning(true);
+
+    const sectionTop = sectionRef.current.offsetTop;
+    const sectionHeight = sectionRef.current.offsetHeight;
+
+    const targetScroll = sectionTop + stage * sectionHeight * 0.4;
+
+    container.scrollTo({
+      top: targetScroll,
+      behavior: "smooth",
+    });
+
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 600);
+  };
+
+  // Animate based on current stage (0 or 1)
+  const titleClip = currentStage === 0 
+    ? "inset(0% 0% 0% 0%)" 
+    : "inset(0% 0% 100% 0%)";
+
+  const leftOpacity = currentStage === 1 ? 1 : 0;
+  const leftX = currentStage === 1 ? 0 : 200;
+
+  const imageOpacity = currentStage === 1 ? 1 : 0;
+  const imageY = currentStage === 1 ? 0 : 50;
+
+  const rightOpacity = currentStage === 1 ? 1 : 0;
+  const rightX = currentStage === 1 ? 0 : -80;
 
   return (
     <section 
       ref={sectionRef}
-      className="w-full bg-white md:relative py-5 md:py-0"
-      style={{ height: window.innerWidth >= 768 ? '200vh' : 'auto' }}
+      className="w-full bg-white md:relative py-5 md:py-0 md:h-[calc(250vh-12.5rem)]"
     >
       {/* MOBILE VERSION - Original simple layout */}
       <div className="md:hidden max-w-7xl mx-auto px-6">
@@ -97,30 +136,33 @@ const titleClip = useTransform(
         </div>
       </div>
 
-      {/* DESKTOP VERSION - Scroll-based animation */}
+      {/* DESKTOP VERSION - Scroll-based animation with snap */}
       <div className="hidden md:block sticky top-0 h-screen">
         <div className="h-screen flex items-center justify-center overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 w-full relative">
             
-            {/* STAGE 1: Big centered title - masked from bottom to top */}
+            {/* STAGE 1: Big centered title */}
             <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-              <motion.div style={{ clipPath: titleClip }}>
-  <AnimatedHeading className="text-6xl md:text-7xl font-bold text-center text-gray-900">
-    Have any questions?
-  </AnimatedHeading>
-</motion.div>
-
+              <motion.div 
+                style={{ clipPath: titleClip }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              >
+                <AnimatedHeading className="text-6xl md:text-7xl font-bold text-center text-gray-900">
+                  Have any questions?
+                </AnimatedHeading>
+              </motion.div>
             </div>
 
             {/* STAGE 2: Three column layout */}
-            <div className="grid  grid-cols-3 items-center gap-12 relative">
+            <div className="grid grid-cols-3 items-center gap-12 relative">
               
               {/* LEFT CONTENT */}
               <motion.div
-                style={{
+                animate={{
                   opacity: leftOpacity,
                   x: leftX
                 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
                 className="flex flex-col gap-3 items-center text-center"
               >
                 <div className="w-10 h-10 flex justify-center">
@@ -141,10 +183,11 @@ const titleClip = useTransform(
 
               {/* CENTER IMAGE */}
               <motion.div
-                style={{
+                animate={{
                   opacity: imageOpacity,
                   y: imageY
                 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
                 className="flex justify-center"
               >
                 <RevealImageAnimation
@@ -155,10 +198,11 @@ const titleClip = useTransform(
 
               {/* RIGHT CONTENT */}
               <motion.div
-                style={{
+                animate={{
                   opacity: rightOpacity,
                   x: rightX
                 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
                 className="flex flex-col gap-4 items-start text-left"
               >
                 <p className="text-[14px] text-gray-600 leading-relaxed max-w-xs">

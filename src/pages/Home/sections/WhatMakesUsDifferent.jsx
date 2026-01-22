@@ -4,7 +4,7 @@ import FloatUpText from "../../../components/floatUpText";
 
 const WhatMakesUsDifferent = () => {
   return (
-     <section className="bg-white  md:h-screen pt-10 md:pt-28 pb-10 md:pb-0 flex justify-center items-center">
+     <section className="bg-white  md:h-[calc(100vh-5rem)] py-10 md:py-0  flex justify-center items-center">
   <div className="max-w-6xl md:max-h[70vh] px-4 grid grid-cols-1 md:grid-cols-5 gap-10  md:gap-20 items-start  mb-5">
     
     {/* LEFT IMAGE - Takes 2 columns on desktop */}

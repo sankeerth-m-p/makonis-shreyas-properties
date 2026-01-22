@@ -25,7 +25,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 
 
   return (
-   <section ref={sectionRef} className="relative md:min-h-screen pt-10 md:pt-40 pb-20 overflow-hidden">{/* ===== CIRCLE SVG BACKGROUND (ANIMATED) ===== */}
+   <section ref={sectionRef} className="relative md:h-[calc(100vh-5rem)]    md:py-0  py-10 overflow-hidden">{/* ===== CIRCLE SVG BACKGROUND (ANIMATED) ===== */}
 {/* ===== SVG CIRCLES BACKGROUND ===== */}
 {/* BOTTOM LEFT */}
 <motion.img
@@ -47,8 +47,8 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 
 
 
-  <div className="relative max-w-6xl mx-auto px-4  h-full  z-10  md:px-4">
-    <div className="grid grid-cols-1 md:grid-cols-5 h-full  gap-10 md:gap-0 items-start">
+  <div className="relative max-w-6xl mx-auto px-4 flex items-center  h-full  z-10  md:px-4">
+    <div className="grid grid-cols-1 md:grid-cols-5 h-ful    gap-10 md:gap-0 items-start">
 
       {/* IMAGE */}
       <div className="flex justify-start h-full md:col-span-2 md:justify-end ">

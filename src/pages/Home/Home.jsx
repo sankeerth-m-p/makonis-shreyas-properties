@@ -7,10 +7,15 @@ const Home = () => {
 
   useEffect(() => {
     if (location.hash === "#testimonials") {
+      const container = document.getElementById("home-scroll");
       const el = document.getElementById("testimonials");
-      if (el) {
+
+      if (container && el) {
         setTimeout(() => {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          container.scrollTo({
+            top: el.offsetTop,
+            behavior: "smooth",
+          });
         }, 200);
       }
     }

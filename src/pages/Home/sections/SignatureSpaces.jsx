@@ -3,17 +3,14 @@ import AnimatedHeading from "../../../components/animatedHeading";
 import FloatUpText from "../../../components/floatUpText";
 
 const SignatureSpaces = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(1); // Start at 1 (first real item)
   const [isPaused, setIsPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const scrollContainerRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+const desktopScrollRef = useRef(null);
+
+const [activeIndex, setActiveIndex] = useState(0);
 
   const items = [
     {
@@ -67,6 +64,36 @@ const SignatureSpaces = () => {
 
     return () => clearInterval(interval);
   }, [isPaused]);
+useEffect(() => {
+  const el = desktopScrollRef.current;
+  if (!el) return;
+
+  const onWheel = (e) => {
+    const delta = e.deltaY;
+
+    const atTop = el.scrollTop <= 0;
+    const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1;
+
+    // ✅ if user wants to scroll UP but we are already at top
+    if (delta < 0 && atTop) {
+      // allow parent to scroll
+      return;
+    }
+
+    // ✅ if user wants to scroll DOWN but we are already at bottom
+    if (delta > 0 && atBottom) {
+      // allow parent to scroll
+      return;
+    }
+
+    // ✅ otherwise, trap scroll inside signature
+    e.stopPropagation();
+  };
+
+  el.addEventListener("wheel", onWheel, { passive: false });
+
+  return () => el.removeEventListener("wheel", onWheel);
+}, []);
 
   // Handle infinite loop transition
   useEffect(() => {
@@ -205,68 +232,87 @@ const SignatureSpaces = () => {
         </div>
       </div>
 
-      {/* ✅ DESKTOP ONLY: Your existing sticky scroll */}
-      <div className="hidden md:block relative h-[calc((100vh-5rem)*6)]">
-        {items.map((item, i) => {
-          const start = i * 120;
-          const progress = Math.max(0, Math.min(1, (scrollY - start) / 120));
-          const leftBg = i % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2";
+     {/* ✅ DESKTOP ONLY: Nested vertical snap inside Signature section */}
+<div
+  ref={desktopScrollRef}
+  className="
+    hidden md:block
+    h-[calc(100vh-5rem)]
+    overflow-y-scroll
+    snap-y snap-mandatory
+    scrollbar-hide
+  "
+>
 
-          return (
-            <div
-              key={i}
-              className="sticky top-20 h-[calc(100vh-5rem)] w-full flex"
-              style={{
-                zIndex: i + 1,
-                transform: `translateY(${(1 - progress) * 100}%)`,
-              }}
+  {items.map((item, i) => {
+    const leftBg = i % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2";
+
+    return (
+      <div
+        key={i}
+        className="
+          relative
+          h-[calc(100vh-5rem)]
+          w-full
+          snap-start snap-always
+        "
+        style={{ zIndex: i + 1 }}
+      >
+        {/* Overlap layer: sticky keeps current slide visible while next comes */}
+        <div className="sticky top-0 h-[calc(100vh-5rem)] w-full flex">
+          {/* LEFT PANEL */}
+          <div
+            className={`w-1/2 ${leftBg} text-white pl-48 py-24 flex flex-col justify-between`}
+          >
+            <AnimatedHeading
+              as="h2"
+              delay={0}
+              staggerDelay={0.15}
+              className="text-[34px] font-medium leading-tight max-w-sm"
             >
-              {/* LEFT PANEL */}
-              <div
-                className={`w-1/2 ${leftBg} text-white pl-48 py-24 flex flex-col justify-between`}
-              >
-                <AnimatedHeading
-                  as="h2"
-                  delay={0}
-                  staggerDelay={0.15}
-                  className="text-[34px] font-medium leading-tight max-w-sm"
+              Signature spaces crafted for modern living.
+            </AnimatedHeading>
+
+            <div>
+              <FloatUpText>
+                <div
+                  className="text-[110px] font-roboto mb-1"
+                  style={{
+                    WebkitTextStroke: "1px #fff",
+                    color: "transparent",
+                  }}
                 >
-                  Signature spaces crafted for modern living.
-                </AnimatedHeading>
-
-                <div>
-                  <FloatUpText>
-                    <div
-                      className="text-[110px] font-roboto mb-1"
-                      style={{
-                        WebkitTextStroke: "1px #fff",
-                        color: "transparent",
-                      }}
-                    >
-                      {item.id}
-                    </div>
-
-                    <p className="text-xs tracking-widest">{item.location}</p>
-
-                    <h3 className="md:text-3xl mt-4 whitespace-pre-line">
-                      {item.title}
-                    </h3>
-                  </FloatUpText>
+                  {item.id}
                 </div>
-              </div>
 
-              {/* RIGHT IMAGE */}
-              <div className="w-1/2 h-full overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform ease-in-out duration-700"
-                />
-              </div>
+                <p className="text-xs tracking-widest">{item.location}</p>
+
+                <h3 className="md:text-3xl mt-4 whitespace-pre-line">
+                  {item.title}
+                </h3>
+              </FloatUpText>
             </div>
-          );
-        })}
+          </div>
+
+          {/* RIGHT IMAGE */}
+          <div className="w-1/2 h-full overflow-hidden">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="
+                w-full h-full object-cover
+                transition-transform duration-700 ease-in-out
+                hover:scale-105
+              "
+            />
+          </div>
+        </div>
       </div>
+    );
+  })}
+</div>
+
+
 
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {
