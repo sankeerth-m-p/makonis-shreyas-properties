@@ -149,7 +149,7 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
           </div>
 
           {/* Bottom Section */}
-          <div className="flex mt-12 md:mt-32 flex-col a1  md:flex-row items-center justify-between text-xs text-neutral-500 -400 gap-4">
+          <div className="flex mt-12 md:mt-32 flex-col   md:flex-row items-center justify-between text-xs text-neutral-500 -400 gap-4">
             <div className="flex flex-wrap justify-center md:justify-start gap-1  md:gap-6 text-xs">
               <Link to="/privacy-policy" className="hover:text-white cursor-pointer text-center">
                 Privacy Policy
