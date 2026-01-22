@@ -25,6 +25,7 @@ function App() {
   const location = useLocation();
   const prevPath = useRef(location.pathname);
   const [showEnquire, setShowEnquire] = useState(false);
+const isHome = location.pathname === "/"; // check if current path is home
 
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
@@ -232,7 +233,7 @@ function App() {
         </AnimatePresence>
         {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
 
-      <Footer />
+{!isHome && <Footer />}
       </>
     ) :  (
         <ReactLenis
