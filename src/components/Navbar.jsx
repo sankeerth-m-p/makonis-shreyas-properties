@@ -16,7 +16,7 @@ const navItems = [
 
 // ✅ Desktop nav content only (same underline animation)
 const NavContent = ({ location, onEnquireClick }) => (
-  <nav className="max-w-6xl px-4 buttons mx-auto w-full min-h-20 px-  py-4 flex items-center justify-between">
+  <nav className="max-w-6xl px-4 buttons mx-auto w-full min-h-[5rem] px-  py-4 flex items-center justify-between">
     {/* LOGO */}
     <h1 className="text-2xl  font-semibold tracking-wide text-gray-900">
       <Link to="/" className="hover:opacity-80 transition">
