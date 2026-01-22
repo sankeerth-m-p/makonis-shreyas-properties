@@ -28,7 +28,7 @@ const ProjectCard = ({
     <Wrapper>
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
         {/* IMAGE */}
-        <div className="relative w-full md:w-1/2 h-64 md:h-auto">
+        <div className="relative w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
           <img src={image} alt={title} className="w-full h-full object-cover hover:scale-105 transition-transform ease-in-out duration-700" />
 
           {/* STATUS */}

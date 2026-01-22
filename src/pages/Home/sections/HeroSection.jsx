@@ -51,14 +51,19 @@ const HeroSection = () => {
   const [touchEnd, setTouchEnd] = useState(0);
   const [isAutoPlayPaused, setIsAutoPlayPaused] = useState(false);
   const [slideDirection, setSlideDirection] = useState("forward"); // "forward" or "backward"
+  const [isManualTransition, setIsManualTransition] = useState(false); // Track if transition is manual
   
   const autoPlayTimeoutRef = useRef(null);
   const slideIntervalRef = useRef(null);
 
-  const SLIDE_DURATION = 2000;
+  const SLIDE_DURATION = 2000; // Auto-scroll duration
+  const MANUAL_SLIDE_DURATION = 500; // Fast duration for manual interactions
   const SLIDE_DELAY = 6000;
   const RESUME_DELAY = 7000;
   const MIN_SWIPE_DISTANCE = 50;
+
+  // Get current duration based on transition type
+  const currentDuration = isManualTransition ? MANUAL_SLIDE_DURATION : SLIDE_DURATION;
 
   // Calculate next/prev index based on direction
   const targetIndex = slideDirection === "forward" 
@@ -82,6 +87,7 @@ const HeroSection = () => {
 
     slideIntervalRef.current = setInterval(() => {
       setSlideDirection("forward");
+      setIsManualTransition(false); // Auto-scroll uses slow animation
       goToSlide((currentIndex + 1) % heroSlides.length);
     }, SLIDE_DELAY);
 
@@ -99,7 +105,7 @@ const HeroSection = () => {
     setTimeout(() => {
       setCurrentIndex(index);
       setIsTransitioning(false);
-    }, SLIDE_DURATION);
+    }, currentDuration);
   };
 
   const pauseAutoPlay = () => {
@@ -134,11 +140,13 @@ const HeroSection = () => {
     if (isLeftSwipe) {
       // Swipe left - next slide (forward)
       setSlideDirection("forward");
+      setIsManualTransition(true); // Manual interaction uses fast animation
       pauseAutoPlay();
       goToSlide((currentIndex + 1) % heroSlides.length);
     } else if (isRightSwipe) {
       // Swipe right - previous slide (backward)
       setSlideDirection("backward");
+      setIsManualTransition(true); // Manual interaction uses fast animation
       pauseAutoPlay();
       goToSlide((currentIndex - 1 + heroSlides.length) % heroSlides.length);
     }
@@ -160,6 +168,7 @@ const HeroSection = () => {
       setSlideDirection("backward");
     }
     
+    setIsManualTransition(true); // Manual interaction uses fast animation
     pauseAutoPlay();
     goToSlide(index);
   };
@@ -185,8 +194,8 @@ const HeroSection = () => {
             className={`w-full h-full object-cover ${
               isTransitioning 
                 ? slideDirection === "forward" 
-                  ? "animate-old-zoom-in" 
-                  : "animate-old-zoom-in-reverse"
+                  ? isManualTransition ? "animate-old-zoom-in-fast" : "animate-old-zoom-in" 
+                  : isManualTransition ? "animate-old-zoom-in-reverse-fast" : "animate-old-zoom-in-reverse"
                 : ""
             }`}
           />
@@ -197,8 +206,8 @@ const HeroSection = () => {
           className={`absolute inset-0 ${
             isTransitioning 
               ? slideDirection === "forward" 
-                ? "animate-slide-reveal-rtl" 
-                : "animate-slide-reveal-ltr"
+                ? isManualTransition ? "animate-slide-reveal-rtl-fast" : "animate-slide-reveal-rtl" 
+                : isManualTransition ? "animate-slide-reveal-ltr-fast" : "animate-slide-reveal-ltr"
               : ""
           }`}
           style={{
@@ -215,8 +224,8 @@ const HeroSection = () => {
             className={`w-full h-auto md:h-full object-contain md:object-cover ${
               isTransitioning 
                 ? slideDirection === "forward" 
-                  ? "animate-new-zoom-out" 
-                  : "animate-new-zoom-out-reverse"
+                  ? isManualTransition ? "animate-new-zoom-out-fast" : "animate-new-zoom-out" 
+                  : isManualTransition ? "animate-new-zoom-out-reverse-fast" : "animate-new-zoom-out-reverse"
                 : ""
             }`}
           />
@@ -242,9 +251,8 @@ const HeroSection = () => {
       )}
 
       <style>{`
-        /* ===== FORWARD ANIMATIONS (Right to Left reveal) ===== */
+        /* ===== FORWARD ANIMATIONS - AUTO (Right to Left reveal) ===== */
         
-        /* Current slide zooms in slightly */
         @keyframes old-zoom-in {
           from {
             transform: scale(1);
@@ -259,7 +267,6 @@ const HeroSection = () => {
           will-change: transform;
         }
 
-        /* New slide reveals from right, zooming out from 1.5 to 1 */
         @keyframes slide-reveal-rtl {
           from {
             clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
@@ -288,9 +295,8 @@ const HeroSection = () => {
           will-change: transform;
         }
 
-        /* ===== BACKWARD ANIMATIONS (Left to Right reveal) ===== */
+        /* ===== BACKWARD ANIMATIONS - AUTO (Left to Right reveal) ===== */
         
-        /* Current slide zooms out slightly (opposite of zoom in) */
         @keyframes old-zoom-in-reverse {
           from {
             transform: scale(1.5);
@@ -305,7 +311,6 @@ const HeroSection = () => {
           will-change: transform;
         }
 
-        /* Previous slide reveals from left */
         @keyframes slide-reveal-ltr {
           from {
             clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
@@ -320,7 +325,6 @@ const HeroSection = () => {
           will-change: clip-path;
         }
 
-        /* Previous slide zooms out from 1.5 to 1 (same as forward) */
         @keyframes new-zoom-out-reverse {
           from {
             transform: scale(1.5);
@@ -332,6 +336,40 @@ const HeroSection = () => {
 
         .animate-new-zoom-out-reverse {
           animation: new-zoom-out-reverse ${SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+          will-change: transform;
+        }
+
+        /* ===== FORWARD ANIMATIONS - MANUAL/FAST (Right to Left reveal) ===== */
+        
+        .animate-old-zoom-in-fast {
+          animation: old-zoom-in ${MANUAL_SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+          will-change: transform;
+        }
+
+        .animate-slide-reveal-rtl-fast {
+          animation: slide-reveal-rtl ${MANUAL_SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+          will-change: clip-path;
+        }
+
+        .animate-new-zoom-out-fast {
+          animation: new-zoom-out ${MANUAL_SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+          will-change: transform;
+        }
+
+        /* ===== BACKWARD ANIMATIONS - MANUAL/FAST (Left to Right reveal) ===== */
+        
+        .animate-old-zoom-in-reverse-fast {
+          animation: old-zoom-in-reverse ${MANUAL_SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+          will-change: transform;
+        }
+
+        .animate-slide-reveal-ltr-fast {
+          animation: slide-reveal-ltr ${MANUAL_SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+          will-change: clip-path;
+        }
+
+        .animate-new-zoom-out-reverse-fast {
+          animation: new-zoom-out-reverse ${MANUAL_SLIDE_DURATION}ms cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
           will-change: transform;
         }
 
