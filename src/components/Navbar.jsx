@@ -53,6 +53,7 @@ const NavContent = ({ location, onEnquireClick }) => (
         );
 
       })}
+      
       <button
         onClick={onEnquireClick}
         className="relative transition-colors duration-300
@@ -177,19 +178,24 @@ useEffect(() => {
         {/* ✅ MOBILE MENU OVERLAY + MENU (UNCHANGED) */}
 {/* ✅ MOBILE MENU OVERLAY + MENU */}
 <div
-  className={`md:hidden fixed inset-0 z-[55] bg-black/30 transition-opacity duration-300
-    ${isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+  className={`md:hidden fixed left-0 right-0 bottom-0 top-[56px] z-[55] bg-black/30 transition-opacity duration-300
+    ${isMobileMenuOpen ? "opacity-100  pointer-events-auto" : "opacity-0 pointer-events-none"}`}
   onClick={() => setIsMobileMenuOpen(false)}
 >
+
+
   {/* MENU PANEL */}
-  <div
-    id="mobile-menu"
-    className={`fixed top-0 left-0 w-full h-screen bg-white z-[56]
-      transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]
-      ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
-    style={{ paddingTop: "5rem" }}
-    onClick={(e) => e.stopPropagation()}
-  >
+<div
+  id="mobile-menu"
+  className={`fixed left-0 w-full h-[calc(100vh-56px)] bg-white z-[56]
+    top-[56px] overflow-y-auto
+    transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]
+    ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
+  style={{ paddingBottom: "2rem" }}
+  onClick={(e) => e.stopPropagation()}
+>
+
+
     <div className="flex flex-col px-6 py-8 space-y-4">
 
       {/* HOME */}
@@ -219,16 +225,30 @@ ${isActive ? "text-ORANGE" : "text-gray-800 hover:text-ORANGE"}`}
           </Link>
         );
       })}
+{/* FAQ */}
+<Link
+  to="/faq"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className="w-full py-4 text-lg font-medium border-b border-gray-400 text-gray-800 hover:text-ORANGE"
+>
+  FAQ
+</Link>
+
+{/* CAREERS */}
+<Link
+  to="/career"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className="w-full py-4 text-lg font-medium border-b border-gray-400 text-gray-800 hover:text-ORANGE"
+>
+  CAREER
+</Link>
 
       <button
         onClick={() => {
           setIsMobileMenuOpen(false);
           onEnquireClick();
         }}
-        className="w-full py-4 text-lg font-medium text-left text-gray-800 border-b border-gray-400 hover:text-ORANGE"
-
-
-      >
+        className="w-full py-4 text-lg font-medium text-left text-gray-800 border-b border-gray-400 hover:text-ORANGE"   >
         ENQUIRE
       </button>
 
@@ -253,7 +273,7 @@ ${isActive ? "text-ORANGE" : "text-gray-800 hover:text-ORANGE"}`}
   </div>
 
   {/* MOBILE STICKY */}
-  <div className="md:hidden flex items-center justify-between w-full px-6 py-2">
+<div className="md:hidden flex items-center justify-between w-full px-6 py-2 bg-white">
     <button onClick={toggleMobileMenu}>
       <img src={navMenu} className="w-6 h-6" />
     </button>
@@ -265,7 +285,8 @@ ${isActive ? "text-ORANGE" : "text-gray-800 hover:text-ORANGE"}`}
     <div className="w-6"></div>
   </div>
 </header>
-<div className="h-20  md:hidden"></div>
+{/* <div className="h-14 md:hidden"></div> */}
+
 
 
 
