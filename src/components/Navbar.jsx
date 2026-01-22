@@ -39,7 +39,7 @@ const NavContent = ({ location, onEnquireClick }) => (
             to={path}
             className={`
               relative transition-colors duration-300
-              after:content-['']  pb-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-ORANGE
+              after:content-['']  pb-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-gray-300
               after:origin-center after:transition-transform after:duration-300 after:ease-out
               ${isActive
                 ? "text-ORANGE  after:scale-x-100"
@@ -56,7 +56,7 @@ const NavContent = ({ location, onEnquireClick }) => (
       <button
         onClick={onEnquireClick}
         className="relative transition-colors duration-300
-    after:content-[''] pb-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-ORANGE
+    after:content-[''] pb-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-gray-300
     after:origin-center after:transition-transform after:duration-300 after:ease-out
     text-gray-800 hover:text-ORANGE hover:after:scale-x-100 after:scale-x-0"
       >
@@ -111,6 +111,23 @@ const Navbar = ({ onEnquireClick }) => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
+  
+  // 🔒 Disable background scroll when mobile menu is open
+useEffect(() => {
+  if (isMobileMenuOpen) {
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+  } else {
+    document.body.style.position = "";
+    document.body.style.width = "";
+  }
+
+  return () => {
+    document.body.style.position = "";
+    document.body.style.width = "";
+  };
+}, [isMobileMenuOpen]);
+
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
 
@@ -158,62 +175,100 @@ const Navbar = ({ onEnquireClick }) => {
         </div>
 
         {/* ✅ MOBILE MENU OVERLAY + MENU (UNCHANGED) */}
-        {isMobileMenuOpen && (
-          <div
-            className="md:hidden fixed inset-0 z-[55]"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            {/* MENU PANEL */}
-            <div
-              id="mobile-menu"
-              className="fixed top-0 left-0 w-full h-screen bg-white z-[56]
-                transition-all duration-500 ease-in-out overflow-y-auto translate-x-0"
-              style={{ paddingTop: "5rem" }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="flex flex-col px-6 py-8">
-                {navItems.map(({ label, path }) => {
-                  const isActive = location.pathname === path;
-                  return (
-                    <Link
-                      key={label}
-                      to={path}
-                      className={`py-4 px-2 text-lg font-medium transition-colors duration-300 ${isActive
-                          ? "text-ORANGE"
-                          : "text-gray-800 hover:text-ORANGE"
-                        }`}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {label}
-                    </Link>
-                  );
-                })}
-                <button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    onEnquireClick();
-                  }}
-                  className="py-4 px-2 text-lg font-medium text-left text-gray-800 hover:text-ORANGE"
-                >
-                  ENQUIRE
-                </button>
+{/* ✅ MOBILE MENU OVERLAY + MENU */}
+<div
+  className={`md:hidden fixed inset-0 z-[55] bg-black/30 transition-opacity duration-300
+    ${isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+  onClick={() => setIsMobileMenuOpen(false)}
+>
+  {/* MENU PANEL */}
+  <div
+    id="mobile-menu"
+    className={`fixed top-0 left-0 w-full h-screen bg-white z-[56]
+      transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]
+      ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
+    style={{ paddingTop: "5rem" }}
+    onClick={(e) => e.stopPropagation()}
+  >
+    <div className="flex flex-col px-6 py-8 space-y-4">
 
-              </div>
-            </div>
-          </div>
-        )}
+      {/* HOME */}
+    <Link
+  to="/"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className="w-full py-4 text-lg font-medium text-gray-800 border-b border-gray-400 hover:text-ORANGE"
+
+  >
+  HOME
+</Link>
+
+
+      {navItems.map(({ label, path }) => {
+        const isActive = location.pathname === path;
+        return (
+          <Link
+            key={label}
+            to={path}
+            onClick={() => setIsMobileMenuOpen(false)}
+         className={`w-full py-4 text-lg font-medium border-b border-gray-400 transition-colors duration-300
+${isActive ? "text-ORANGE" : "text-gray-800 hover:text-ORANGE"}`}
+
+
+          >
+            {label}
+          </Link>
+        );
+      })}
+
+      <button
+        onClick={() => {
+          setIsMobileMenuOpen(false);
+          onEnquireClick();
+        }}
+        className="w-full py-4 text-lg font-medium text-left text-gray-800 border-b border-gray-400 hover:text-ORANGE"
+
+
+      >
+        ENQUIRE
+      </button>
+
+    </div>
+  </div>
+</div>
+
+
       </header>
 
       {/* ✅ STICKY NAVBAR (slides DOWN after scroll > 80px) */}
-      <header
-        className={`fixed top-0 left-0 w-full z-50 bg-white shadow-lg
-          transition-transform duration-300 ease-in-out will-change-transform
-          hidden md:block
-          ${showSticky ? "translate-y-0" : "-translate-y-full"}
-        `}
-      >
-        <NavContent location={location} onEnquireClick={onEnquireClick} />
-      </header>
+     {/* ✅ STICKY NAVBAR (DESKTOP + MOBILE) */}
+<header
+  className={`fixed top-0 left-0 w-full z-50 bg-white shadow-lg
+    transition-transform duration-300 ease-in-out will-change-transform
+    ${showSticky ? "translate-y-0" : "-translate-y-full"}
+  `}
+>
+  {/* DESKTOP STICKY */}
+  <div className="hidden md:block">
+    <NavContent location={location} onEnquireClick={onEnquireClick} />
+  </div>
+
+  {/* MOBILE STICKY */}
+  <div className="md:hidden flex items-center justify-between w-full px-6 py-2">
+    <button onClick={toggleMobileMenu}>
+      <img src={navMenu} className="w-6 h-6" />
+    </button>
+
+    <Link to="/" className="absolute left-1/2 -translate-x-1/2">
+      <img src={LogoImg} className="h-8" />
+    </Link>
+
+    <div className="w-6"></div>
+  </div>
+</header>
+<div className="h-20  md:hidden"></div>
+
+
+
     </>
   );
 };
