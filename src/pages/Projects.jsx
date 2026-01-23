@@ -310,25 +310,27 @@ export default function Projects() {
   {/* 1 */}
   <ProjectCard
     noFade
-    image={heroImg5}
+    image= "/Home/profoundInfra.webp"
     logo={brandLogo}
      status="Completed"
     title="Modern Profound Tech Park"
     location="Kondapur, Hyderabad"
     description="Commercial office spaces designed for flexibility"
-    onClick={() =>
-      setSelectedProject({
-        title: "Modern Profound Tech Park",
-        location: "Kondapur, Hyderabad",
-        status: "Completed",
-         logo: brandLogo,
-      })
-    }
+  onClick={() =>
+  setSelectedProject({
+    title: "Modern Profound Tech Park",
+    location: "Kondapur, Hyderabad",
+    status: "Completed",
+    image: "/Home/profoundInfra.webp",   // ✅ ADD THIS
+    logo: brandLogo,
+  })
+}
+
   />
 
   {/* 2 */}
   <ProjectCard
-    image={heroImg2}
+    image="/Home/royalEnclave.webp"
       logo="/royalenclave.png"
      status="Completed"
     title="Royal Enclave"
@@ -347,7 +349,7 @@ export default function Projects() {
 
   {/* 3 */}
   <ProjectCard
-    image={heroImg2}
+    image= "/Home/SandsParadiseVignanNagar.webp"
       logo="/Paradise.png"
     status="Completed"
     title="Paradise"
@@ -366,7 +368,7 @@ export default function Projects() {
 
   {/* 4 */}
   <ProjectCard
-    image={heroImg5}
+    image= "/Home/ChourasiaShreyasMarathahalli.webp"
       logo="/ChourasiaShreyas.png"
      status="Completed"
     title="Chourasia Shreyas"
@@ -413,7 +415,7 @@ export default function Projects() {
 
   {/* 5 */}
   <ProjectCard
-    image={heroImg2}
+    image= "/Home/ModernView.webp"
       logo="/ModernView.png"
      status="Completed"
     title="Modern View Apartment"
@@ -432,7 +434,7 @@ export default function Projects() {
 
   {/* 6 */}
   <ProjectCard
-    image={heroImg5}
+    image= "/Home/naturesign.webp"
       logo="/naturessign.png"
     status="Ongoing"
     title="Nature’s Sign"
