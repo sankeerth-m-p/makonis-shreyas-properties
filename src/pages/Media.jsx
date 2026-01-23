@@ -133,7 +133,7 @@ const MediaDetail = () => {
 
   return (
     <section className="bg-white pt-24 pb-24">
-     <div className="max-w-[1400px] mx-auto px-0">
+     <div className="max-w-[1120px] mx-auto px-0">
 
         {/* BACK ARROW OUTSIDE CARD */}
         <button

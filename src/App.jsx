@@ -230,7 +230,10 @@ function App() {
 
           </Routes>
         </AnimatePresence>
-        {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
+      <AnimatePresence>
+  {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
+</AnimatePresence>
+
 
       <Footer />
       </>
@@ -447,8 +450,10 @@ function App() {
             </Routes>
           </AnimatePresence>
 
-          {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
-          <Footer />
+        <AnimatePresence>
+  {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
+</AnimatePresence>
+
         </ReactLenis>
       )}
     </>
