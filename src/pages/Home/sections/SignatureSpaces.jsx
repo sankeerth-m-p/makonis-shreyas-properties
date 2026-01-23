@@ -28,7 +28,7 @@ const SignatureSpaces = ({ sections }) => {
       location: 'Vignana Nagar, Bangalore',
       title: 'Paradise',
       description: 'Your urban paradise awaits with thoughtfully designed homes, lush green spaces, and premium facilities. Perfect blend of comfort and convenience in one of Bangalore\'s most sought-after neighborhoods.',
-      image: "/Home/SandsParadiseVignanNagar_enhanced.webp",
+      image: "/Home/SandsParadiseVignanNagar.webp",
        bgColor: 'bg-ORANGE'
     },
     {
