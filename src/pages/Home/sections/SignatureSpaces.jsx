@@ -1,344 +1,156 @@
-import { useEffect, useState, useRef } from "react";
+import { ArrowRight } from 'lucide-react';
 import AnimatedHeading from "../../../components/animatedHeading";
 import FloatUpText from "../../../components/floatUpText";
 
-const SignatureSpaces = () => {
-  // ✅ DESKTOP SCROLL TRAP
-  const desktopScrollRef = useRef(null);
+const SignatureSpaces = ({ sections }) => {
+  
 
-  // ✅ MOBILE INFINITE SLIDER (transform-based like BespokeImageHover)
-  const [mobileActive, setMobileActive] = useState(1); // start at 1 (real first)
-  const [noAnim, setNoAnim] = useState(false);
-  const intervalRef = useRef(null);
-  const touchRef = useRef(false);
-  const startXRef = useRef(0);
-  const swipeThreshold = 50;
-
-  const items = [
+  // Default sections if none provided
+  const defaultSections = [
     {
-      id: "01",
-      location: "Kondapur, Hyderabad",
-      title: "Modern Profound Tech Park",
-      image: "/Home/profoundInfra.webp",
+      number: '01',
+      location: 'Kondapur, Hyderabad',
+      title: 'Modern Profound Tech Park',
+      description: 'A state-of-the-art tech park designed for innovation and collaboration. Features premium office spaces, modern amenities, and excellent connectivity in the heart of Hyderabad\'s IT corridor.',
+      image: '/Home/profoundInfra.webp',
+      bgColor: 'bg-ORANGE'
     },
     {
-      id: "02",
-      location: "Marathahalli, Bangalore",
-      title: "Royal Enclave",
+      number: '02',
+      location: 'Marathahalli, Bangalore',
+      title: 'Royal Enclave',
+      description: 'Experience luxury living at its finest with spacious apartments, world-class amenities, and stunning architecture. Located in Bangalore\'s prime locality with easy access to major IT hubs.',
       image: "/Home/royalEnclave.webp",
+       bgColor: 'bg-ORANGE2'
     },
     {
-      id: "03",
-      location: "Vignana Nagar, Bangalore",
-      title: "Paradise",
+      number: '03',
+      location: 'Vignana Nagar, Bangalore',
+      title: 'Paradise',
+      description: 'Your urban paradise awaits with thoughtfully designed homes, lush green spaces, and premium facilities. Perfect blend of comfort and convenience in one of Bangalore\'s most sought-after neighborhoods.',
       image: "/Home/SandsParadiseVignanNagar.webp",
+       bgColor: 'bg-ORANGE'
     },
     {
-      id: "04",
-      location: "Marathahalli, Bangalore",
-      title: "Chourasia Shreyas",
+      number: '04',
+      location: 'Marathahalli, Bangalore',
+      title: 'Chourasia Shreyas',
+      description: 'Contemporary living spaces crafted with precision and elegance. Offering modern amenities, excellent ventilation, and strategic location near major tech parks and shopping centers.',
       image: "/Home/ChourasiaShreyasMarathahalli.webp",
+       bgColor: 'bg-ORANGE2'
     },
     {
-      id: "05",
-      location: "Devanahalli, Bangalore",
-      title: "Nature's Sign",
+      number: '05',
+      location: 'Devanahalli, Bangalore',
+      title: 'Nature\'s Sign',
+      description: 'Embrace nature with eco-friendly homes surrounded by greenery and fresh air. Features sustainable design, rainwater harvesting, and proximity to the airport making it ideal for modern families.',
       image: "/Home/naturesign.webp",
+       bgColor: 'bg-ORANGE'
     },
     {
-      id: "06",
-      location: "Marathahalli, Bangalore",
-      title: "Modern View Apartment",
+      number: '06',
+      location: 'Marathahalli, Bangalore',
+      title: 'Modern View Apartment',
+      description: 'Contemporary apartments with panoramic views and cutting-edge design. Enjoy spacious layouts, premium finishes, and a lifestyle that complements your aspirations in the city\'s tech hub.',
       image: "/Home/ModernView.webp",
-    },
+       bgColor: 'bg-ORANGE2'
+    }
   ];
 
-  // ✅ clone slides for infinite loop
-  const mobileSlides = [
-    items[items.length - 1], // clone last
-    ...items, // real slides
-    items[0], // clone first
-  ];
-const [activeIndex, setActiveIndex] = useState(0);
-useEffect(() => {
-  if (window.innerWidth < 768) return;
+  const items = sections || defaultSections;
 
-  const container = desktopScrollRef.current;
-  if (!container) return;
-
-  const slides = Array.from(container.children);
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = slides.indexOf(entry.target);
-          if (index !== -1) setActiveIndex(index);
-        }
-      });
-    },
-    {
-      root: container,
-      threshold: 0.6, // more stable + smoother
-    }
-  );
-
-  slides.forEach((slide) => observer.observe(slide));
-
-  return () => observer.disconnect();
-}, []);
-
-  // ✅ DESKTOP: trap wheel scroll only inside section
-  useEffect(() => {
-    const el = desktopScrollRef.current;
-    if (!el) return;
-
-    const onWheel = (e) => {
-      const delta = e.deltaY;
-      const atTop = el.scrollTop <= 0;
-      const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1;
-
-      // allow parent scroll if at edges
-      if (delta < 0 && atTop) return;
-      if (delta > 0 && atBottom) return;
-
-      // otherwise trap scroll
-      e.stopPropagation();
-    };
-
-    el.addEventListener("wheel", onWheel, { passive: false });
-    return () => el.removeEventListener("wheel", onWheel);
-  }, []);
-
-  // ✅ MOBILE: infinite jump logic (same pattern as BespokeImageHover)
-  useEffect(() => {
-    if (window.innerWidth >= 768) return;
-
-    // reached clone last -> jump to real last
-    if (mobileActive === 0) {
-      setTimeout(() => {
-        setNoAnim(true);
-        setMobileActive(mobileSlides.length - 2); // real last index
-      }, 700);
-    }
-
-    // reached clone first -> jump to real first
-    if (mobileActive === mobileSlides.length - 1) {
-      setTimeout(() => {
-        setNoAnim(true);
-        setMobileActive(1); // real first index
-      }, 700);
-    }
-
-    // re-enable animation after snap
-    if (noAnim) {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => setNoAnim(false));
-      });
-    }
-  }, [mobileActive, noAnim, mobileSlides.length]);
-
-  // ✅ MOBILE: autoplay
-  useEffect(() => {
-    if (window.innerWidth >= 768) return;
-
-    intervalRef.current = setInterval(() => {
-      if (touchRef.current) return;
-      setMobileActive((prev) => prev + 1);
-    }, 3000);
-
-    return () => clearInterval(intervalRef.current);
-  }, []);
-
-  // ✅ MOBILE: keep mobileActive always in safe bounds
-  const safeSetMobileActive = (updater) => {
-    setMobileActive((prev) => {
-      const next = typeof updater === "function" ? updater(prev) : updater;
-      // allow 0..last (includes clones)
-      return Math.max(0, Math.min(next, mobileSlides.length - 1));
-    });
-  };
 
   return (
-    <section className="relative w-full bg-black z-0">
-      {/* ✅ MOBILE ONLY: Infinite loop slider (transform-based) */}
-<div className="md:hidden relative w-full overflow-hidden">
-     <div
-          className="w-full overflow-hidden  "
-          onTouchStart={(e) => {
-            touchRef.current = true;
-            clearInterval(intervalRef.current);
-            startXRef.current = e.touches[0].clientX;
-          }}
-          onTouchEnd={(e) => {
-            const endX = e.changedTouches[0].clientX;
-            const diff = startXRef.current - endX;
-
-            if (Math.abs(diff) > swipeThreshold) {
-              if (diff > 0) {
-                // swipe left => next
-                safeSetMobileActive((prev) => prev + 1);
-              } else {
-                // swipe right => prev
-                safeSetMobileActive((prev) => prev - 1);
-              }
-            }
-
-            setTimeout(() => {
-              touchRef.current = false;
-            }, 1200);
-          }}
-        >
-          <div
-            className={`flex ${
-              noAnim ? "" : "transition-transform  duration-700 ease-in-out"
-            }`}
-            style={{
-transform: `translateX(-${mobileActive * 92}%)`,
-            }}
-          >
-            {mobileSlides.map((item, i) => {
-              const leftBg = i % 2 === 0 ? "bg-ORANGE" : "bg-ORANGE2";
-
-              return (
-<div
-  key={i}
-  className="w-[92%] shrink-0 h-[80vh] flex flex-col"
->
-                  {/* IMAGE */}
-                  <div className="w-full h-[50%]">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  {/* ORANGE CARD */}
-                  <div
-                    className={`
-                      ${leftBg} flex-1 text-white
-                      px-6 py-5 flex flex-col justify-between relative overflow-hidden
-                    `}
-                  >
-                    {/* faded circle */}
-                    <div className="absolute -left-24 top-16 w-[280px] h-[280px] rounded-full bg-white/10" />
-
-                    <h3 className="text-base font-medium leading-tight max-w-[260px] relative z-10">
-                      Signature spaces {"\n"}
-                      crafted for {"\n"}
-                      modern living.
-                    </h3>
-
-                    <div className="flex items-end gap-6 relative z-10">
-                      <div
-                        className="text-[88px] leading-none"
-                        style={{
-                          WebkitTextStroke: "1px #fff",
-                          color: "transparent",
-                        }}
-                      >
-                        {item.id}
-                      </div>
-
-                      <div className="pb-2">
-                        <p className="text-[11px] tracking-widest uppercase opacity-80">
-                          {item.location}
-                        </p>
-                        <h3 className="text-lg mt-2 whitespace-pre-line leading-snug">
-                          {item.title}
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          </div>
+    <div className="min-h-[calc(100vh-5rem)] flex flex-col items-center justify-between  md:p-10">
+      <div className='  max-w-xl p-5   md:p-20 flex flex-col justify-center items-center'>
+        <AnimatedHeading className='  text-3xl font-bold md:text-center  uppercase mb-5'>Signature spaces crafted for modern living</AnimatedHeading>
+        <FloatUpText className='px-5 flex flex-col gap-5 items-center' ><p className='text-sm   '>A thoughtfully planned development bringing essential amenities together in one cohesive environment.
+        </p>
+         <button onClick={()=>navigate('/our-story')} className="bg-ORANGE w-full hover:bg-ORANGE2 text-white buttons px-8 py-3 rounded-full  text-base  md:w-fit">
+          VIEW PROJECTS
+        </button>
+          </FloatUpText>
         
+      </div>
+     
 
-    
+     
+       {items.map((section, index) => (
+  <div
+    key={index}
+    className="sticky top-0  flex flex-col md:flex-row h-3/5 md:h-full"
+  >
+    {/* IMAGE */}
+    <div className="
+      relative overflow-hidden mt-10 bg-gray-900
+      h-2/3 md:h-auto
+      md:w-2/3
+    ">
+      <img
+        src={section.image}
+        alt={section.title}
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent" />
+    </div>
+
+    {/* CONTENT */}
+    <div
+      className={`
+        relative flex flex-col md:mt-10 justify-start
+        p-8 md:p-16
+        h-1/3 md:h-auto
+        md:w-1/3
+        ${section.bgColor}
+      `}
+    >
+      {/* Content Wrapper */}
+      <div className="relative z-10 max-w-md">
+        <h3 className="text-2xl md:text-4xl mt-2 md:mt-4 font-bold text-white mb-3 leading-tight">
+          {section.title}
+        </h3>
+
+        <p className="text-xs text-white tracking-widest mb-4">
+          {section.location}
+        </p>
+
+        <p className="text-sm text-white/90 leading-relaxed mb-6 md:mb-10">
+          {section.description}
+        </p>
+
+        <a
+          href="#"
+          className="inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4
+          bg-white text-black text-xs font-bold uppercase tracking-wider
+          rounded-full hover:bg-gray-100 transition-all hover:translate-x-1"
+        >
+          <span>view details</span>
+          <ArrowRight className="w-4 h-4" />
+        </a>
       </div>
 
-      {/* ✅ DESKTOP ONLY: Nested vertical snap inside Signature section */}
-      {/* ✅ DESKTOP ONLY */}
-<div className="hidden md:flex h-[calc(100vh-5rem)] w-full">
-  {/* LEFT = STICKY STATIC */}
-  <div className="w-1/2 sticky top-[5rem] h-[calc(100vh-5rem)] overflow-hidden">
-    <div
-      className={`h-full text-white pl-48 py-24 flex flex-col justify-between transition-all duration-500 ease-in-out ${
-        items[activeIndex]?.id % 2 === 1 ? "bg-ORANGE" : "bg-ORANGE2"
-      }`}
-    >
-      <AnimatedHeading
-        as="h2"
-        delay={0}
-        staggerDelay={0.15}
-        className="text-[34px] font-medium leading-tight max-w-sm"
+      {/* BIG NUMBER (Desktop only – mobile would look dumb) */}
+      <div
+        className="
+          hidden md:block
+          absolute bottom-10 right-16
+          text-[200px] font-roboto leading-none z-0 select-none
+        "
+        style={{
+          WebkitTextStroke: "1px #fff",
+          color: "transparent",
+          fontWeight: 700,
+          letterSpacing: "-8px",
+        }}
       >
-        Signature spaces crafted for modern living.
-      </AnimatedHeading>
-
-      <div className="transition-all duration-500 ease-in-out">
-        <FloatUpText>
-          <div
-            className="text-[110px] font-roboto mb-1"
-            style={{
-              WebkitTextStroke: "1px #fff",
-              color: "transparent",
-            }}
-          >
-            {items[activeIndex]?.id}
-          </div>
-
-          <p className="text-xs tracking-widest">
-            {items[activeIndex]?.location}
-          </p>
-
-          <h3 className="md:text-3xl mt-4 whitespace-pre-line">
-            {items[activeIndex]?.title}
-          </h3>
-        </FloatUpText>
+        {section.number}
       </div>
     </div>
   </div>
+))}
 
-  {/* RIGHT = SNAP SCROLL */}
-  <div
-    ref={desktopScrollRef}
-    className="
-      w-1/2 h-[calc(100vh-5rem)]
-      overflow-y-scroll snap-y snap-mandatory scrollbar-hide
-    "
-  >
-    {items.map((item, i) => (
-      <div
-  key={i}
-  className="sig-slide h-[calc(100vh-5rem)] snap-start snap-always flex"
->
-
-        <img
-          src={item.image}
-          alt={item.title}
-          className="w-full h-full object-cover"
-        />
-      </div>
-    ))}
-  </div>
-</div>
-
-
-      <style>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
-    </section>
+   
+    </div>
   );
 };
 
