@@ -341,7 +341,7 @@ export default function Projects() {
         title: "Royal Enclave",
         location: "Marathahalli, Bangalore",
         status: "Completed",
-        image: heroImg2,
+        image: "/Home/royalEnclave.webp",
          logo: "/royalenclave.png",
       })
     }
@@ -360,7 +360,7 @@ export default function Projects() {
         title: "Paradise",
         location: "Vignana Nagar, Bangalore",
         status: "Completed",
-        image: heroImg2,
+        image:  "/Home/SandsParadiseVignanNagar.webp",
          logo: "/Paradise.png",
       })
     }
@@ -379,7 +379,7 @@ export default function Projects() {
         title: "Chourasia Shreyas",
         location: "Marathahalli, Bangalore",
         status: "Completed",
-        image: heroImg5,
+        image: "/Home/ChourasiaShreyasMarathahalli.webp",
          logo: "/ChourasiaShreyas.png",
       })
     }
@@ -426,7 +426,7 @@ export default function Projects() {
         title: "Modern View Apartment",
         location: "Marathahalli, Bangalore",
         status: "Completed",
-        image: heroImg2,
+        image: "/Home/ModernView.webp",
          logo: "/ModernView.png",
       })
     }
@@ -445,7 +445,7 @@ export default function Projects() {
         title: "Nature’s Sign",
         location: "Devanahalli, Bangalore",
         status: "Ongoing",
-        image: heroImg5,
+        image: "/Home/naturesign.webp",
          logo: "/naturessign.png",
       })
     }
