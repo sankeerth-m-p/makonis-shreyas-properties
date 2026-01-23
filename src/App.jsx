@@ -231,7 +231,10 @@ const isHome = location.pathname === "/"; // check if current path is home
 
           </Routes>
         </AnimatePresence>
-        {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
+      <AnimatePresence>
+  {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
+</AnimatePresence>
+
 
 {!isHome && <Footer />}
       </>
@@ -448,8 +451,10 @@ const isHome = location.pathname === "/"; // check if current path is home
             </Routes>
           </AnimatePresence>
 
-          {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
-          <Footer />
+        <AnimatePresence>
+  {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
+</AnimatePresence>
+
         </ReactLenis>
       )}
     </>
