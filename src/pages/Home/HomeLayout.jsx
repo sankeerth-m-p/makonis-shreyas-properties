@@ -9,19 +9,26 @@ import NatureSign from "./sections/NatureSign.jsx";
 import ExpertsSection from "./sections/ExpertsSection.jsx";
 import PromiseSection from "./sections/PromiseSection.jsx";
 import Footer from "../../components/footer.jsx";
+import Navbar from "../../components/Navbar.jsx";
 const HomeLayout = () => {
- return (
+ return (  <>  <Navbar  onEnquireClick={() => {}} />
+
   <div
-    id="home-scroll"
-    className="
-      h-[calc(100vh-5rem)]
-      overflow-y-scroll
-      snap-y snap-mandatory
-      scroll-smooth
-      overscroll-contain
-    "
-  >
-    <div className="snap-start  snap-always">
+  id="home-scroll"
+  className="relative isolate
+    h-[calc(100vh-5rem)]
+    overflow-y-scroll
+    snap-y snap-mandatory
+    scroll-smooth mt-
+    overscroll-contain
+  "
+>
+  {/* ✅ Navbar inside scroll container */}
+  {/* <div className="absolute -top-10 left-0 w-full z-[999] pointer-events-auto">
+    <Navbar onEnquireClick={() => {}} />
+  </div> */}
+
+    <div className="snap-start  snap-always pt-[5rm]">
       <HeroSection />
     </div>
 
@@ -67,7 +74,7 @@ const HomeLayout = () => {
     <div className="snap-end  snap-always">
      <Footer/>
      </div>
-  </div>
+  </div></>
 );
 
 };

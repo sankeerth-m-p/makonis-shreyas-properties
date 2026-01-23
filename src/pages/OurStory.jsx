@@ -258,7 +258,7 @@ const OurStory = () => {
           staggerDelay={0.15}
           className="text-[22px] md:text-3xl font-semibold leading-snug max-w-md"
         >
-          A Philosophy that <br className="block md:hidden" />
+          A Philosophy that {'\n'}
           puts people first.
         </AnimatedHeading>
 
