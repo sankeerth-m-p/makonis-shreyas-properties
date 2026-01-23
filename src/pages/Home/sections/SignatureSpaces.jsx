@@ -1,9 +1,9 @@
 import { ArrowRight } from 'lucide-react';
 import AnimatedHeading from "../../../components/animatedHeading";
 import FloatUpText from "../../../components/floatUpText";
-
+import { useNavigate } from 'react-router-dom';
 const SignatureSpaces = ({ sections }) => {
-  
+  const navigate = useNavigate();
 
   // Default sections if none provided
   const defaultSections = [
@@ -28,7 +28,7 @@ const SignatureSpaces = ({ sections }) => {
       location: 'Vignana Nagar, Bangalore',
       title: 'Paradise',
       description: 'Your urban paradise awaits with thoughtfully designed homes, lush green spaces, and premium facilities. Perfect blend of comfort and convenience in one of Bangalore\'s most sought-after neighborhoods.',
-      image: "/Home/SandsParadiseVignanNagar.webp",
+      image: "/Home/SandsParadiseVignanNagar_enhanced.webp",
        bgColor: 'bg-ORANGE'
     },
     {
@@ -61,12 +61,12 @@ const SignatureSpaces = ({ sections }) => {
 
 
   return (
-    <div className="min-h-[calc(100vh-5rem)] flex flex-col items-center justify-between  md:p-10">
+    <div className="  min-h-[calc(100vh-5rem)] flex flex-col items-center justify-between  md:p-10">
       <div className='  max-w-xl p-5   md:p-20 flex flex-col justify-center items-center'>
-        <AnimatedHeading className='  text-3xl font-bold md:text-center  uppercase mb-5'>Signature spaces crafted for modern living</AnimatedHeading>
-        <FloatUpText className='px-5 flex flex-col gap-5 items-center' ><p className='text-sm   '>A thoughtfully planned development bringing essential amenities together in one cohesive environment.
+        <AnimatedHeading className='text-2xl  md:text-3xl font-bold md:text-center  uppercase mb-5'>Signature spaces crafted for modern living</AnimatedHeading>
+        <FloatUpText className='md:px-5 flex flex-col gap-5 items-center' ><p className='text-sm   '>A thoughtfully planned development bringing essential amenities together in one cohesive environment.
         </p>
-         <button onClick={()=>navigate('/our-story')} className="bg-ORANGE w-full hover:bg-ORANGE2 text-white buttons px-8 py-3 rounded-full  text-base  md:w-fit">
+         <button onClick={()=>navigate('/projects')} className="bg-ORANGE w-full hover:bg-ORANGE2 text-white buttons px-8 py-3 rounded-full  text-base  md:w-fit">
           VIEW PROJECTS
         </button>
           </FloatUpText>
@@ -78,26 +78,25 @@ const SignatureSpaces = ({ sections }) => {
        {items.map((section, index) => (
   <div
     key={index}
-    className="sticky top-0  flex flex-col md:flex-row h-3/5 md:h-full"
+    className="sticky top-10   flex flex-col md:flex-row h-3/5 md:h-full"
   >
     {/* IMAGE */}
     <div className="
-      relative overflow-hidden mt-10 bg-gray-900
+      relative overflow-hidden  
       h-2/3 md:h-auto
       md:w-2/3
     ">
       <img
         src={section.image}
         alt={section.title}
-        className="w-full h-full object-cover"
+        className="w-full h-full xgrayscale hover:grayscale-0  object-cover hover:scale-105 transition-all ease-in-out duration-700"
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent" />
     </div>
 
     {/* CONTENT */}
     <div
       className={`
-        relative flex flex-col md:mt-10 justify-start
+        relative flex flex-col  justify-start
         p-8 md:p-16
         h-1/3 md:h-auto
         md:w-1/3
@@ -106,9 +105,11 @@ const SignatureSpaces = ({ sections }) => {
     >
       {/* Content Wrapper */}
       <div className="relative z-10 max-w-md">
-        <h3 className="text-2xl md:text-4xl mt-2 md:mt-4 font-bold text-white mb-3 leading-tight">
+        <AnimatedHeading className="text-2xl md:text-4xl mt-2 md:mt-4 font-bold text-white mb-3 leading-tight">
           {section.title}
-        </h3>
+        </AnimatedHeading>
+               <FloatUpText>
+                 
 
         <p className="text-xs text-white tracking-widest mb-4">
           {section.location}
@@ -120,13 +121,13 @@ const SignatureSpaces = ({ sections }) => {
 
         <a
           href="#"
-          className="inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4
+          className="inline-flex buttons items-center gap-3 px-6 md:px-8 py-3 md:py-4
           bg-white text-black text-xs font-bold uppercase tracking-wider
           rounded-full hover:bg-gray-100 transition-all hover:translate-x-1"
         >
           <span>view details</span>
           <ArrowRight className="w-4 h-4" />
-        </a>
+        </a></FloatUpText>
       </div>
 
       {/* BIG NUMBER (Desktop only – mobile would look dumb) */}
