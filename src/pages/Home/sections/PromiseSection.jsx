@@ -9,7 +9,7 @@ const PromiseSection = () => {
   className="
     relative 
     w-full h-[60vh]
-    md:h-[calc(100vh-5rem)] 
+    lg:h-[calc(100vh-5rem)] 
     bg-center 
     bg-cover 
     bg-no-repeat 

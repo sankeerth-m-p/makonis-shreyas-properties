@@ -103,16 +103,68 @@ const ExpertsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white md:relative py-5 md:py-0 md:h-[calc(250vh-12.5rem)]"
+      className="w-full bg-white  lg:relative py-5  lg:py-0  lg:h-[calc(250vh-12.5rem)]"
     >
       {/* MOBILE VERSION unchanged */}
-      <div className="md:hidden max-w-7xl mx-auto px-6">
-        {/* keep your mobile */}
+      <div className=" lg:hidden max-w-7xl h-full mx-auto px-6">
+         <div className="grid grid-cols-1 items-center gap-5">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+            viewport={{ once: true, amount: 0.4 }}
+            className="flex justify-center"
+          >
+            <RevealImageAnimation
+              image="/Home/expert.jpg"
+              className="h-[50vh] w-full rounded-3xl object-cover"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.4 }}
+            className="flex flex-col gap-3 items-center text-center"
+          >
+            <div className="w-10 h-10 flex justify-center">
+              <img 
+                src="/Home/speak.svg" 
+                alt="Diamond icon" 
+              />
+            </div>
+
+            <p className="text-base text-gray-600">
+              Have any questions?
+            </p>
+
+            <h3 className="text-lg font-semibold leading-snug">
+              Speak with <br /> our experts
+            </h3>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.4 }}
+            className="flex flex-col gap-4 items-center text-center"
+          >
+            <p className="text-base text-gray-600 leading-relaxed max-w-xs">
+              Request a callback for personalized assistance and project details.
+            </p>
+
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-[12px] tracking-widest uppercase w-full transition">
+              REQUEST CALLBACK
+            </button>
+          </motion.div>
+        </div>
       </div>
 
       {/* DESKTOP */}
-      <div className="hidden md:block sticky top-0 h-screen">
-        <div className="h-screen flex items-center justify-center overflow-hidden">
+      <div className="hidden  lg:flex sticky top-0 h-screen   lg:h-[calc(100vh-5rem)]  lg:w-full  lg:items-center  lg:justify-center">
+        <div className=" lg:h-full h-screen flex items-center justify-center    overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 w-full relative">
             {/* STAGE 1 */}
             <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
@@ -120,7 +172,7 @@ const ExpertsSection = () => {
                 style={{ clipPath: titleClip }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
               >
-                <AnimatedHeading className="text-6xl md:text-7xl font-bold text-center text-gray-900">
+                <AnimatedHeading className="text-6xl  lg:text-7xl font-bold text-center text-gray-900">
                   Have any questions?
                 </AnimatedHeading>
               </motion.div>

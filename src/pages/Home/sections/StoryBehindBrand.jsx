@@ -6,8 +6,8 @@ const StoryBehindBrand = () => {
   return (
    <section
   className=" 
-    relative w-full p
-    h-[70vh] md:h-[calc(100vh-5rem)]
+    relative w-full 
+    h-[70vh]  lg:h-[calc(100vh-5rem)]
     bg-center bg-cover bg-no-repeat
     overflow-hidden z-10
   "
@@ -31,7 +31,7 @@ const StoryBehindBrand = () => {
       {/* wrapper */}
       <div
         className=" 
-          relative md:h-[50vh] h-1/3 
+          relative  lg:h-[50vh] h-1/3 
           w-[min(78vw,520px)]
           aspect-[520/420] 
         "
@@ -42,8 +42,8 @@ const StoryBehindBrand = () => {
             absolute
             top-0 left-0 
             -translate-y-[130%]
-            text-left md:mt-10
-            md:-translate-x-[80%] md:-translate-y-[70%]
+            text-left  lg:mt-10
+             lg:-translate-x-[80%]  lg:-translate-y-[70%]
           "
         >
           <AnimatedHeading
@@ -64,7 +64,7 @@ const StoryBehindBrand = () => {
           className="
             w-full h-full 
             bg-center bg-cover
-            md:bg-fixed
+             lg:bg-fixed
           "
           style={{
             backgroundImage:
@@ -93,12 +93,12 @@ const StoryBehindBrand = () => {
             text-center
             max-w-[32ch]
 
-            md:mt-0
-            md:left-auto md:right-0
-            md:bottom-0 md:top-auto
-            md:translate-x-[60%] md:translate-y-[60%]
-            md:text-right
-            md:max-w-[26ch]
+             lg:mt-0
+             lg:left-auto  lg:right-0
+             lg:bottom-0  lg:top-auto
+             lg:translate-x-[60%]  lg:translate-y-[60%]
+             lg:text-right
+             lg:max-w-[26ch]
           "
             ><FloatUpText>
                 

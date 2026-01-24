@@ -20,12 +20,12 @@ const NavContent = ({ location, onEnquireClick }) => (
         <img
           src={LogoImg}
           alt="Shreyas Infra"
-          className="h-8 md:h-10 object-contain"
+          className="h-8  lg:h-10 object-contain"
         />
       </Link>
     </h1>
 
-    <div className="hidden md:flex gap-8  tracking-wider text-xs font-medium text-gray-800">
+    <div className="hidden  lg:flex gap-8  tracking-wider text-xs font-medium text-gray-800">
       {navItems.map(({ label, path }) => {
         const isActive = location.pathname === path;
 
@@ -152,7 +152,7 @@ const Navbar = ({ onEnquireClick }) => {
         `}
       >
         {/* MOBILE NAVBAR */}
-        <div className="md:hidden flex items-center justify-between w-full md:min-h-20 px-6 py-2">
+        <div className=" lg:hidden flex items-center justify-between w-full  lg:min-h-20 px-6 py-2">
           <button
             id="mobile-menu-button"
             onClick={toggleMobileMenu}
@@ -171,7 +171,7 @@ const Navbar = ({ onEnquireClick }) => {
               <img
                 src={LogoImg}
                 alt="Shreyas Infra"
-                className="h-8 md:h-10 object-contain"
+                className="h-8  lg:h-10 object-contain"
               />
             </Link>
           </div>
@@ -180,13 +180,13 @@ const Navbar = ({ onEnquireClick }) => {
         </div>
 
         {/* DESKTOP NAV */}
-        <div className="hidden md:block">
+        <div className="hidden  lg:block">
           <NavContent location={location} onEnquireClick={onEnquireClick} />
         </div>
 
         {/* MOBILE MENU OVERLAY */}
         <div
-          className={`md:hidden fixed left-0 right-0 bottom-0 top-[56px] z-[55] bg-black/30 transition-opacity duration-300
+          className={` lg:hidden fixed left-0 right-0 bottom-0 top-[56px] z-[55] bg-black/30 transition-opacity duration-300
             ${isMobileMenuOpen ? "opacity-100  pointer-events-auto" : "opacity-0 pointer-events-none"}`}
           onClick={() => setIsMobileMenuOpen(false)}
         >
@@ -262,12 +262,12 @@ const Navbar = ({ onEnquireClick }) => {
         `}
       >
         {/* DESKTOP STICKY */}
-        <div className="hidden md:block">
+        <div className="hidden  lg:block">
           <NavContent location={location} onEnquireClick={onEnquireClick} />
         </div>
 
         {/* MOBILE STICKY */}
-        <div className="md:hidden flex items-center justify-between w-full px-6 py-2 bg-white">
+        <div className=" lg:hidden flex items-center justify-between w-full px-6 py-2 bg-white">
           <button onClick={toggleMobileMenu}>
             <img src={navMenu} className="w-6 h-6" alt="Menu" />
           </button>

@@ -74,7 +74,7 @@ useEffect(() => {
   };
 
   return (
-<section className="relative  w-full h-[60vh] md:h-[calc(100vh-5rem)] overflow-hidden bg-[#0B1F1A]">
+<section className="relative  w-full h-[60vh]  lg:h-[calc(100vh-5rem)] overflow-hidden bg-[#0B1F1A]">
       {/* BACKGROUND IMAGE */}
        <img
     key={index}
@@ -89,7 +89,7 @@ useEffect(() => {
       {/* CONTENT */}
       <div className="relative z-20 h-full flex flex-col justify-end">
         {/* INFO STRIP */}{/* MOBILE DOT INDICATOR */}
-<div className="md:hidden absolute top-[100px] w-full flex justify-center gap-2 z-30">
+<div className=" lg:hidden absolute top-[100px] w-full flex justify-center gap-2 z-30">
   {images.map((_, i) => (
     <button
       key={i}
@@ -102,40 +102,40 @@ useEffect(() => {
 </div>
 
         {/* INFO STRIP */}
-<div className="   md:absolute md:bottom-[150px]  w-full px-4 md:px-0">
+<div className="    lg:absolute  lg:bottom-[150px]  w-full px-4  lg:px-0">
   <div className="max-w-6xl mx-auto">
-    <div className="flex flex-row       items-center justify-between gap-4 md:gap-0 text-[#D7E2E8] text-xs md:text-sm">
+    <div className="flex flex-row       items-center justify-between gap-4  lg:gap-0 text-[#D7E2E8] text-xs  lg:text-sm">
 
       {/* ITEM */}
-      <div className="flex    items-center gap-1 md:gap-3">
-        <img src={nhIcon} className=" md:block hidden w-8 h-7 md:w-12 md:h-8 opacity-80" />
-        <div className="leading-tight text-xs md:text-base text-left    ">
+      <div className="flex    items-center gap-1  lg:gap-3">
+        <img src={nhIcon} className="  lg:block hidden w-8 h-7  lg:w-12  lg:h-8 opacity-80" />
+        <div className="leading-tight text-xs  lg:text-base text-left    ">
           <FloatUpText>Located on</FloatUpText>
           <FloatUpText>NH-44 North Bengaluru</FloatUpText>
-        </div>        <img src={nhIcon} className="md:hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
+        </div>        <img src={nhIcon} className=" lg:hidden w-8 h-8  lg:w-12  lg:h-12 opacity-80" />
 
       </div>
 
-      <span className="block md:mx-12 w-[1px] h-8 md:h-[46px] bg-[#6F8C9B]/45" />
+      <span className="block  lg:mx-12 w-[1px] h-8  lg:h-[46px] bg-[#6F8C9B]/45" />
 
-      <div className="flex   items-center gap-1 md:gap-3">
-        <img src={airportIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
-        <div className="leading-tight text-xs md:text-base text-left    ">
+      <div className="flex   items-center gap-1  lg:gap-3">
+        <img src={airportIcon} className="  lg:block hidden w-8 h-8  lg:w-12  lg:h-12 opacity-80" />
+        <div className="leading-tight text-xs  lg:text-base text-left    ">
           <FloatUpText>Just</FloatUpText>
           <FloatUpText>20 minutes from Airport</FloatUpText>
         </div>
-        <img src={airportIcon} className="md:hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
+        <img src={airportIcon} className=" lg:hidden w-8 h-8  lg:w-12  lg:h-12 opacity-80" />
       </div>
 
-      <span className="block md:mx-12 w-[1px] h-8 md:h-[46px] bg-[#6F8C9B]/45" />
+      <span className="block  lg:mx-12 w-[1px] h-8  lg:h-[46px] bg-[#6F8C9B]/45" />
 
-      <div className="flex   items-center gap-1 md:gap-3">
-        <img src={hillIcon} className=" md:block hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
-        <div className="leading-tight text-xs md:text-base text-left    ">
+      <div className="flex   items-center gap-1  lg:gap-3">
+        <img src={hillIcon} className="  lg:block hidden w-8 h-8  lg:w-12  lg:h-12 opacity-80" />
+        <div className="leading-tight text-xs  lg:text-base text-left    ">
           <FloatUpText>Very close</FloatUpText>
           <FloatUpText>proximity from Nandi Hills</FloatUpText>
         </div>
-        <img src={hillIcon} className="md:hidden w-8 h-8 md:w-12 md:h-12 opacity-80" />
+        <img src={hillIcon} className=" lg:hidden w-8 h-8  lg:w-12  lg:h-12 opacity-80" />
       </div>
 
     </div>
@@ -144,21 +144,21 @@ useEffect(() => {
 
 
         {/* BOTTOM BAND */}
-<div className="] py-4 md:py-6 ">
-  <div className="max-w-6xl  mx-auto px-4 md:px-0 flex flex-row  items-center md:justify-between gap-4 md:gap-10 text-[#D7E2E8]">
+<div className="] py-4  lg:py-6 ">
+  <div className="max-w-6xl  mx-auto px-4  lg:px-0 flex flex-row  items-center  lg:justify-between gap-4  lg:gap-10 text-[#D7E2E8]">
 
     {/* LOGO */}
-    <img src={nature2} className="w-[130px] md:w-[160px]" />
+    <img src={nature2} className="w-[130px]  lg:w-[160px]" />
 
     {/* TEXT */}
-    <AnimatedHeading className="text-sm md:text-2xl text-left leading-snug font-light max-w-xs md:max-w-md">
+    <AnimatedHeading className="text-sm  lg:text-2xl text-left leading-snug font-light max-w-xs  lg:max-w-md">
       Nature’s sign, where luxury and nature flow in perfect harmony.
     </AnimatedHeading>
 
    
             {/* SLIDER */}
            {/* SLIDER */}
-<div className="relative w-[360px] hidden md:flex items-center">
+<div className="relative w-[360px] hidden  lg:flex items-center">
 
   {/* LEFT */}
   <button

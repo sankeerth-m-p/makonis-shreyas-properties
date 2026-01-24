@@ -5,11 +5,11 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
   };
  
   return (
-    <footer className="bg-gradient-to-b  from-neutral-900 to-black text-neutral-400 text-sm font-normal min-h-[50vh] md:h-[66vh] relative  flex justify-center items-center ">
-      <div className="max-w-6xl md:py-5 uppercase px-4 md:px-4 sm:px-6  w-full  py-8 ">
+    <footer className="bg-gradient-to-b  from-neutral-900 to-black text-neutral-400 text-sm font-normal min-h-[50vh]  lg:h-[66vh] relative  flex justify-center items-center ">
+      <div className="max-w-6xl  lg:py-5 uppercase px-4  lg:px-4 sm:px-6  w-full  py-8 ">
 
         {/* MOBILE */}
-        <div className="md:hidden h-full flex flex-col justify-between">
+        <div className=" lg:hidden h-full flex flex-col justify-between">
           <div className="grid grid-cols-2 gap-x-10 gap-y-6 pt-6">
             <ul className="space-y-4">
               <li><Link to="/our-story" className="hover:text-white block">Our Story</Link></li>
@@ -53,12 +53,12 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
         </div>
 
         {/* DESKTOP */}
-        <div className="hidden  md:block">
+        <div className="hidden   lg:block">
           {/* Top Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+          <div className="grid grid-cols-1  lg:grid-cols-3 gap-8  lg:gap-10">
             {/* Column 1 */}
             <div>
-              <ul className="space-y-4 md:space-y-5 text-xs ">
+              <ul className="space-y-4  lg:space-y-5 text-xs ">
                 <li>
                   <Link
                     to="/our-story"
@@ -103,7 +103,7 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
 
             {/* Column 2 */}
             <div>
-              <ul className="space-y-4 md:space-y-5 text-xs">
+              <ul className="space-y-4  lg:space-y-5 text-xs">
                 <li>
                   <Link
                     to="/career"
@@ -132,8 +132,8 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
             </div>
 
             {/* Column 3 */}
-            <div className="hidden md:text-right md:flex flex-col md:items-end">
-              <div className="flex md:justify-end items-center gap-2 w-[300px]  mb-3 ">
+            <div className="hidden  lg:text-right  lg:flex flex-col  lg:items-end">
+              <div className="flex  lg:justify-end items-center gap-2 w-[300px]  mb-3 ">
                 <img src="/shreyas_logo_footer.png" />
               </div>
 
@@ -149,8 +149,8 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
           </div>
 
           {/* Bottom Section */}
-          <div className="flex mt-12 md:mt-32 flex-col   md:flex-row items-center justify-between text-xs text-neutral-500 -400 gap-4">
-            <div className="flex flex-wrap justify-center md:justify-start gap-1  md:gap-6 text-xs">
+          <div className="flex mt-12  lg:mt-32 flex-col    lg:flex-row items-center justify-between text-xs text-neutral-500 -400 gap-4">
+            <div className="flex flex-wrap justify-center  lg:justify-start gap-1   lg:gap-6 text-xs">
               <Link to="/privacy-policy" className="hover:text-white cursor-pointer text-center">
                 Privacy Policy
               </Link>
