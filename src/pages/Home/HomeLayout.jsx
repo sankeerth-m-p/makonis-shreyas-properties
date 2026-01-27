@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import HeroSection from "./sections/HeroSection.jsx";
 import ThoughtfulSection from "./sections/ThoughtfulSection.jsx";
 import BespokeSection from "./sections/BespokeSection.jsx";
@@ -10,6 +11,46 @@ import ExpertsSection from "./sections/ExpertsSection.jsx";
 import PromiseSection from "./sections/PromiseSection.jsx";
 import Footer from "../../components/footer.jsx";
 const HomeLayout = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const container = document.getElementById("home-scroll");
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollTop = container.scrollTop;
+      const scrollHeight = container.scrollHeight;
+      const clientHeight = container.clientHeight;
+
+      // If scrolling up and at the bottom
+      if (scrollTop < lastScrollTop && scrollTop + clientHeight >= scrollHeight - 10) {
+        // Jump to first section
+        container.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      setLastScrollTop(scrollTop);
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [isMobile, lastScrollTop]);
+
  return (
   <div
     id="home-scroll"
@@ -19,6 +60,7 @@ const HomeLayout = () => {
       snap-y snap-mandatory
       scroll-smooth
       overscroll-contain
+      px-4 md:px-0
     "
   >
     <div className="snap-start  snap-always">

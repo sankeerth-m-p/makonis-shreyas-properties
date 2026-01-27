@@ -5,7 +5,8 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
   };
  
   return (
-    <footer className="bg-gradient-to-b  from-neutral-900 to-black text-neutral-400 text-sm font-normal min-h-[50vh] md:h-[66vh] relative  flex justify-center items-center ">
+    <footer className="bg-gradient-to-b from-neutral-900 to-black text-neutral-400 text-sm font-normal min-h-[50vh] md:min-h-[66vh] relative flex justify-center items-center">
+
       <div className="max-w-6xl md:py-5 uppercase px-4 md:px-4 sm:px-6  w-full  py-8 ">
 
         {/* MOBILE */}

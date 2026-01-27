@@ -27,14 +27,14 @@ const Enquire = ({ onClose }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-   transition={{ duration: 0.6 }}
+      transition={{ duration: 0.15 }}
     >
       <motion.div
         className="bg-white w-[90%] max-w-xl rounded-lg p-10 relative shadow-2xl"
         initial={{ scale: 0.85, y: 40, opacity: 0 }}
         animate={{ scale: 1, y: 0, opacity: 1 }}
         exit={{ scale: 0.85, y: 40, opacity: 0 }}
-       transition={{ duration: 0.7, ease: "easeOut" }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
       >
         <button
           onClick={onClose}
