@@ -10,6 +10,7 @@ import NatureSign from "./sections/NatureSign.jsx";
 import ExpertsSection from "./sections/ExpertsSection.jsx";
 import PromiseSection from "./sections/PromiseSection.jsx";
 import Footer from "../../components/footer.jsx";
+import Navbar from "../../components/Navbar.jsx";
 const HomeLayout = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -52,6 +53,7 @@ const HomeLayout = () => {
   }, [isMobile, lastScrollTop]);
 
  return (
+  <>  <Navbar  onEnquireClick={() => {}} />
   <div
     id="home-scroll"
     className="
@@ -110,7 +112,9 @@ const HomeLayout = () => {
      <Footer/>
      </div>
   </div>
-);
+
+</>
+ );
 
 };
 

@@ -28,7 +28,7 @@ const SignatureSpaces = ({ sections }) => {
       location: 'Vignana Nagar, Bangalore',
       title: 'Paradise',
       description: 'Your urban paradise awaits with thoughtfully designed homes, lush green spaces, and premium facilities. Perfect blend of comfort and convenience in one of Bangalore\'s most sought-after neighborhoods.',
-      image: "/Home/SandsParadiseVignanNagar_enhanced.webp",
+      image: "/Home/SandsParadiseVignanNagar.webp",
        bgColor: 'bg-ORANGE'
     },
     {
@@ -61,12 +61,12 @@ const SignatureSpaces = ({ sections }) => {
 
 
   return (
-    <div className="  min-h-[calc(100vh-5rem)] flex flex-col items-center justify-between  md:p-10">
-      <div className='  max-w-xl p-5   md:p-20 flex flex-col justify-center items-center'>
-        <AnimatedHeading className='text-2xl  md:text-3xl font-bold md:text-center  uppercase mb-5'>Signature spaces crafted for modern living</AnimatedHeading>
-        <FloatUpText className='md:px-5 flex flex-col gap-5 items-center' ><p className='text-sm   '>A thoughtfully planned development bringing essential amenities together in one cohesive environment.
+    <div className="  min-h-[calc(100vh-5rem)] flex flex-col items-center justify-between   lg:p-10">
+      <div className='  max-w-xl p-5    md:p-20 flex flex-col justify-center items-center'>
+        <AnimatedHeading className='text-2xl   lg:text-3xl font-bold  lg:text-center  uppercase mb-5'>Signature spaces crafted for modern living</AnimatedHeading>
+        <FloatUpText className=' lg:px-5 flex flex-col gap-5 items-center' ><p className='text-sm   '>A thoughtfully planned development bringing essential amenities together in one cohesive environment.
         </p>
-         <button onClick={()=>navigate('/projects')} className="bg-ORANGE w-full hover:bg-ORANGE2 text-white buttons px-8 py-3 rounded-full  text-base  md:w-fit">
+         <button onClick={()=>navigate('/projects')} className="bg-ORANGE w-full hover:bg-ORANGE2 text-white buttons px-8 py-3 rounded-full  text-base   lg:w-fit">
           VIEW PROJECTS
         </button>
           </FloatUpText>
@@ -78,18 +78,18 @@ const SignatureSpaces = ({ sections }) => {
        {items.map((section, index) => (
   <div
     key={index}
-    className="sticky top-10   flex flex-col md:flex-row h-3/5 md:h-full"
+    className="sticky top-10   flex flex-col  lg:flex-row h-3/5  lg:h-full"
   >
     {/* IMAGE */}
     <div className="
       relative overflow-hidden  
-      h-2/3 md:h-auto
-      md:w-2/3
+      h-2/3  lg:h-auto
+       lg:w-2/3
     ">
       <img
         src={section.image}
         alt={section.title}
-        className="w-full h-full xgrayscale hover:grayscale-0  object-cover hover:scale-105 transition-all ease-in-out duration-700"
+        className="w-full h-full   object-cover "
       />
     </div>
 
@@ -97,15 +97,15 @@ const SignatureSpaces = ({ sections }) => {
     <div
       className={`
         relative flex flex-col  justify-start
-        p-8 md:p-16
-        h-1/3 md:h-auto
-        md:w-1/3
+        p-8  lg:p-16
+        h-1/3  lg:h-auto
+         lg:w-1/3
         ${section.bgColor}
       `}
     >
       {/* Content Wrapper */}
       <div className="relative z-10 max-w-md">
-        <AnimatedHeading className="text-2xl md:text-4xl mt-2 md:mt-4 font-bold text-white mb-3 leading-tight">
+        <AnimatedHeading className="text-2xl  lg:text-4xl mt-2  lg:mt-4 font-bold text-white mb-3 leading-tight">
           {section.title}
         </AnimatedHeading>
                <FloatUpText>
@@ -115,13 +115,13 @@ const SignatureSpaces = ({ sections }) => {
           {section.location}
         </p>
 
-        <p className="text-sm text-white/90 leading-relaxed mb-6 md:mb-10">
+        <p className="text-sm text-white/90 leading-relaxed mb-6  lg:mb-10">
           {section.description}
         </p>
 
         <a
           href="#"
-          className="inline-flex buttons items-center gap-3 px-6 md:px-8 py-3 md:py-4
+          className="inline-flex buttons items-center gap-3 px-6  lg:px-8 py-3  lg:py-4
           bg-white text-black text-xs font-bold uppercase tracking-wider
           rounded-full hover:bg-gray-100 transition-all hover:translate-x-1"
         >
@@ -133,7 +133,7 @@ const SignatureSpaces = ({ sections }) => {
       {/* BIG NUMBER (Desktop only – mobile would look dumb) */}
       <div
         className="
-          hidden md:block
+          hidden  lg:block
           absolute bottom-10 right-16
           text-[200px] font-roboto leading-none z-0 select-none
         "

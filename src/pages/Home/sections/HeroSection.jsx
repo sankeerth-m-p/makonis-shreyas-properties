@@ -12,20 +12,16 @@ import mobileBanner2 from "/Home/hero/mobile/shreyaainfra web_mobilebanner2.webp
 import mobileBanner3 from "/Home/hero/mobile/shreyaainfra web_mobilebanner3.webp";
 import mobileBanner4 from "/Home/hero/mobile/shreyaainfra web_mobilebanner4.webp";
 
-const heroSlides = [
-  {
-    imageDesktop: desktopBanner1,
-    imageMobile: mobileBanner1,
-    title: "Royal Enclave",
-    subtitle:
-      "Elegant 2 & 3 BHKs blending lush greenery with rapid access to major IT corridors.",
+const heroSlides = [{
+    imageDesktop: desktopBanner4,
+    imageMobile: mobileBanner4,
+
   },
+  
   {
     imageDesktop: desktopBanner2,
     imageMobile: mobileBanner2,
-    title: "Royal Enclave",
-    subtitle:
-      "Elegant 2 & 3 BHKs blending lush greenery with rapid access to major IT corridors.",
+ 
   },
   {
     imageDesktop: desktopBanner3,
@@ -33,14 +29,12 @@ const heroSlides = [
     title: "Paradise",
     subtitle:
       "An eco-friendly sanctuary featuring modern infrastructure in a peaceful family setting.",
+  },{
+    imageDesktop: desktopBanner1,
+    imageMobile: mobileBanner1,
+    
   },
-  {
-    imageDesktop: desktopBanner4,
-    imageMobile: mobileBanner4,
-    title: "Chourasia Shreyas",
-    subtitle:
-      "A prime commercial hub placing your business at the center of major IT corridors.",
-  },
+  
 ];
 
 const HeroSection = () => {
@@ -59,7 +53,7 @@ const HeroSection = () => {
   const SLIDE_DURATION = 2000; // Auto-scroll duration
   const MANUAL_SLIDE_DURATION = 500; // Fast duration for manual interactions
   const SLIDE_DELAY = 6000;
-  const RESUME_DELAY = 7000;
+  const RESUME_DELAY = 5000;
   const MIN_SWIPE_DISTANCE = 50;
 
   // Get current duration based on transition type
@@ -178,7 +172,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden h-auto md:h-[calc(100vh-80px)]">
+    <section className="relative w-full overflow-hidden h-auto  lg:h-[calc(100vh-80px)]">
       {/* Slider Container */}
       <div
         className="relative w-full h-full"
@@ -187,7 +181,7 @@ const HeroSection = () => {
         onTouchEnd={handleTouchEnd}
       >
         {/* Current Slide */}
-        <div className="relative md:absolute inset-0">
+        <div className="relative  lg:absolute inset-0">
           <img
             src={getSlideImage(heroSlides[currentIndex])}
             alt={heroSlides[currentIndex].title}
@@ -221,7 +215,7 @@ const HeroSection = () => {
           <img
             src={getSlideImage(heroSlides[targetIndex])}
             alt={heroSlides[targetIndex].title}
-            className={`w-full h-auto md:h-full object-contain md:object-cover ${
+            className={`w-full h-auto  lg:h-full object-contain  lg:object-cover ${
               isTransitioning 
                 ? slideDirection === "forward" 
                   ? isManualTransition ? "animate-new-zoom-out-fast" : "animate-new-zoom-out" 

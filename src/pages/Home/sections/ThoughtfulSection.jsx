@@ -25,7 +25,7 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 
 
   return (
-   <section ref={sectionRef} className="relative md:h-[calc(100vh-5rem)]    md:py-0  py-10 overflow-hidden">{/* ===== CIRCLE SVG BACKGROUND (ANIMATED) ===== */}
+   <section ref={sectionRef} className="relative lg:h-[calc(100vh-5rem)]    lg:py-0  py-10 overflow-hidden">{/* ===== CIRCLE SVG BACKGROUND (ANIMATED) ===== */}
 {/* ===== SVG CIRCLES BACKGROUND ===== */}
 {/* BOTTOM LEFT */}
 <motion.img
@@ -60,13 +60,13 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
 
       {/* CONTENT */}
       <div className="flex flex-col md:col-span-3 md:pl-20    text-left ">
-            <AnimatedHeading   delay = "0.5" className="text-[20px] leading-tight font-medium   mb-3  md:max-w-none md:text-[38px]">
+            <AnimatedHeading   delay = " 0.2" className="text-[20px] leading-tight font-medium   mb-3  md:max-w-none md:text-[38px]">
               
         
           Thoughtfully developing spaces that reflect city’s progress and promise
        
 </AnimatedHeading>
-            <FloatUpText delay={0.5}>
+            <FloatUpText delay={ 0.2}>
               
         <p className="md:text-xl text-base   mb-6  md:max-w-md">
           Crafting meaningful experiences where every detail is carefully envisioned.

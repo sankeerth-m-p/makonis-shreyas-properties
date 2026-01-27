@@ -93,7 +93,7 @@ const COLORS1 = {
   const t = TESTIMONIALS[activeIndex];
 
   return (
-  <section ref={ref} id="testimonials" className="relative md:h-[calc(100vh-5rem)] flex-col md:justify-end  md:flex w-full overflow-hidden">
+  <section ref={ref} id="testimonials" className="relative  lg:h-[calc(100vh-5rem)] flex-col  lg:justify-end   lg:flex w-full overflow-hidden">
     {/* ✅ TOP SECTION (WHITE) */}
     <div className="relative bottom-0 bg-white  mt-20 pb-20">
       {/* HEADING should be BEFORE wave */}
@@ -104,7 +104,7 @@ const COLORS1 = {
           transform: `translateY(${(1 - scrollProgress) * 40}px)`,
         }}
       >
-        <AnimatedHeading className="text-lg md:text-3xl">
+        <AnimatedHeading className="text-lg  lg:text-3xl">
           What 
           people 
           says
@@ -140,7 +140,7 @@ const COLORS1 = {
 
     {/* ✅ MAIN CONTENT SECTION (FILLED) */}
    <div
-  className="relative pt-2   z-50 pb-24 mt-5 md:mt-10"
+  className="relative pt-2   z-50 pb-24 mt-5  lg:mt-10"
   style={{ backgroundColor: COLORS.mainFill }}
 >
 
@@ -164,7 +164,7 @@ const COLORS1 = {
     -translate-y-2/3
     rotate-180
     w-10 h-10 
-    md:w-20 md:h-16
+     lg:w-20  lg:h-16
     opacity-70
     pointer-events-none
   "
@@ -173,7 +173,7 @@ const COLORS1 = {
 
             <AnimatedHeading
               key={activeIndex}
-              className="text-lg md:text-[38px] font-normal leading-relaxed animate-fadeIn"
+              className="text-lg  lg:text-[38px] font-normal leading-relaxed animate-fadeIn"
             >
               {t.quote}
             </AnimatedHeading>

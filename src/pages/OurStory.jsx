@@ -21,7 +21,7 @@ const OurStory = () => {
 
       {/* ================= ORANGE SECTION ================= */}
       <section className="bg-ORANGE pt-20 md:pt-28 pb-72 relative">
-        <div className="max-w-[1120px] mx-auto px-0 flex flex-col justify-center text-center text-white">
+        <div className="max-w-[1120px] mx-auto px-0 flex flex-col justify-center text-center  text-white">
           <AnimatedHeading
             as="h1"
             delay={0}
@@ -58,7 +58,7 @@ const OurStory = () => {
 
 
           {/* ================= IMAGES ================= */}
-          <div className=" grid md:grid-cols-2 gap-14  items-start">
+          <div className=" grid md:grid-cols-2 gap-14 md:px-5 lg:px-0 items-start">
 
             {/* LEFT – VERTICAL IMAGE */}
             <div className="rounded-2xl overflow-hidden shadow-xl ">
@@ -121,7 +121,7 @@ const OurStory = () => {
           </div>
 
           {/* ================= TEXT BELOW ================= */}
-          <FloatUpText className="md:m-14 mt-5 text-base  text-gray-600 space-y-6 max-w-[1120px] mx-auto px-0">
+          <FloatUpText className="md:m-14 mt-5 text-base  lg:px-0 text-gray-600 space-y-6 max-w-[1120px] mx-auto px-5">
 
             <p>
               Our philosophy is rooted in integrity, quality, and long-term value. From selecting the
@@ -261,7 +261,7 @@ const OurStory = () => {
           staggerDelay={0.15}
           className="text-[22px] md:text-3xl font-semibold leading-snug max-w-md"
         >
-          A Philosophy that <br className="block md:hidden" />
+          A Philosophy that {'\n'}
           puts people first.
         </AnimatedHeading>
 

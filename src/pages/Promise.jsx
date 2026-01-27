@@ -8,122 +8,137 @@ import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
 import { motion, useScroll, useTransform } from "framer-motion";
 import circleBg from "/Home/cicle.svg"; // Make sure this path is correct
+import { useLayoutEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 
-function Showcase({
-  title,
-  para1,
-  para2,
-  image,
-  reverse = false,
-}) {
-  const containerRef = useRef(null);
-  const [inView, setInView] = useState(false);
+function Showcase({ title, para1, para2, image, reverse = false }) {
+  const wrapperRef = useRef(null);
+  const imgRef = useRef(null);
+  const textRef = useRef(null);
 
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      /* ---------------- IMAGE REVEAL (TOP → BOTTOM) ---------------- */
+      gsap.fromTo(
+        wrapperRef.current,
+        {
+          clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+        },
+        {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          ease: "none",
+          scrollTrigger: {
+            trigger: wrapperRef.current,
+            start: "top 60%",
+end: "top 20%",
 
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        // When entering viewport => reveal
-        if (entry.isIntersecting) setInView(true);
-        // When leaving viewport => reset so it can animate again
-        else setInView(false);
-      },
-      {
-        threshold: 0.1, // triggers nicely when ~25% visible
-      }
-    );
+            scrub: true,
+          },
+        }
+      );
 
-    obs.observe(el);
-    return () => obs.disconnect();
+      /* ---------------- IMAGE ZOOM OUT (SLIGHTLY DELAYED) ---------------- */
+      gsap.fromTo(
+  imgRef.current,
+  { scale: 1.5 },
+  {
+    scale: 1,
+    ease: "none",
+    scrollTrigger: {
+      trigger: wrapperRef.current,
+      start: "top 80%",
+      end: "top 15%",
+      scrub: true,
+    },
+  }
+);
+
+
+      /* ---------------- TEXT LINE-BY-LINE REVEAL ---------------- */
+      const lines = textRef.current.querySelectorAll(".text-line");
+
+      gsap.fromTo(
+  lines,
+  {
+    y: 50,
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+    stagger: 0.28,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: wrapperRef.current,
+      start: "top 55%",
+      end: "top 15%",
+      scrub: true,
+    },
+  }
+);
+
+    });
+
+    return () => ctx.revert();
   }, []);
-
-  // Reveal direction:
-  // normal (image on left) -> reveal from left to right
-  // reverse (image on right) -> reveal from right to left
-  const hiddenClip = reverse
-    ? "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" // closed at right
-    : "polygon(0 0, 0 0, 0 100%, 0 100%)";            // closed at left
-
-  const shownClip =
-    "polygon(0 0, 100% 0, 100% 100%, 0 100%)";
 
   return (
     <section className="w-full min-h-[50vh] md:min-h-[75vh] grid grid-cols-1 md:grid-cols-2">
       
-    {/* IMAGE BLOCK */}
-<div
-  ref={containerRef}
-  className={`relative min-h-[40vh] md:min-h-full overflow-hidden ${
-    reverse ? "md:order-2" : ""
-  }`}
->
-  {/* ✅ Clip-mask wrapper (only clip-path animates here) */}
-  <div
-    className="w-full h-full overflow-hidden"
-    style={{
-      clipPath: inView ? shownClip : hiddenClip,
-      transition: "clip-path 3s cubic-bezier(.215, .61, .355, 1)",
-      willChange: "clip-path",
-    }}
-  >
-    {/* ✅ Hover wrapper */}
-    <div className="w-full h-full group">
-      {/* ✅ Transform animates ONLY here */}
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover transform-gpu transition-transform duration-700 ease-in-out group-hover:scale-105"
-        draggable={false}
-      />
-    </div>
-  </div>
+      {/* IMAGE BLOCK */}
+      <div
+        className={`relative min-h-[40vh] md:min-h-full overflow-hidden ${
+          reverse ? "md:order-2" : ""
+        }`}
+      >
+        <div
+          ref={wrapperRef}
+          className="w-full h-full overflow-hidden"
+        >
+          <img
+            ref={imgRef}
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover"
+            draggable={false}
+          />
+        </div>
 
-  {/* TITLE OVERLAY */}
-  <div
-    className={`absolute bottom-4 px-5 py-3 bg-ORANGE/80 backdrop-blur-sm w-4/5 md:min-w-60 md:w-auto ${
-      !reverse
-        ? "right-4 md:right-6 text-right"
-        : "left-4 md:left-6 text-left"
-    }`}
-    style={{
-      opacity: inView ? 1 : 0,
-      transform: inView
-        ? "translateY(0px) translateX(0px)"
-        : `translateY(14px) translateX(${reverse ? "24px" : "-24px"})`,
-      transition:
-        "opacity 1.5s ease, transform 0.9s cubic-bezier(.215, .61, .355, 1)",
-      transitionDelay: inView ? "0.35s" : "0s",
-    }}
-  >
-    <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">
-      {title}
-    </h3>
-  </div>
-</div>
-
-
+        {/* TITLE OVERLAY */}
+        <div
+          className={`absolute bottom-4 px-5 py-3 bg-ORANGE/80 backdrop-blur-sm w-4/5 md:w-auto ${
+            reverse ? "left-4 text-left" : "right-4 text-right"
+          }`}
+        >
+          <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">
+            {title}
+          </h3>
+        </div>
+      </div>
 
       {/* TEXT BLOCK */}
-      <FloatUpText
-        className={`flex flex-col justify-center px-6 sm:px-8 md:px-20 lg:px-12 py-8 md:py-0 ${
+      <div
+        ref={textRef}
+        className={`flex flex-col justify-center px-6 sm:px-8 md:px-20 py-8 ${
           reverse ? "md:order-1 md:items-end" : ""
         }`}
-        delay={0}
       >
-        <p className="text-[20px] text-gray-700 leading-relaxed mb-4 max-w-full md:max-w-md">
+        <p className="text-line text-[20px] text-gray-700 leading-relaxed mb-4 max-w-md">
           {para1}
         </p>
 
-        <p className="text-[20px] text-gray-600 leading-relaxed max-w-full md:max-w-md">
+        <p className="text-line text-[20px] text-gray-600 leading-relaxed max-w-md">
           {para2}
         </p>
-      </FloatUpText>
+      </div>
     </section>
   );
 }
+
 
 
 // ================= MAIN PAGE =================
