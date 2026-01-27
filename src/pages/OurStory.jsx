@@ -62,11 +62,12 @@ const OurStory = () => {
 
             {/* LEFT – VERTICAL IMAGE */}
             <div className="rounded-2xl overflow-hidden shadow-xl ">
-              <img
-                src="\story_3.webp"
-                alt="Design discussion"
-                className="w-full h-[45vh] md:h-[600px] hover:scale-105 transition-transform ease-in-out duration-700 object-cover rounded-2xl"
-              />
+             <img
+  src="\story_3.webp"
+  alt="Design discussion"
+  className="w-full h-auto md:h-[600px] hover:scale-105 transition-transform ease-in-out duration-700 object-contain md:object-cover rounded-2xl"
+/>
+
             </div>
 
             {/* RIGHT – IMAGE + TEXT */}
@@ -108,13 +109,14 @@ const OurStory = () => {
               </FloatUpText>
 
 
-              <div className="mt-5 rounded-2xl md:hidden overflow-hidden shadow-xl  mb-8">
-                <img
-                  src="\story_1.webp"
-                  alt="Client meeting"
-                  className="w-full h-full object-cover "
-                />
-              </div>
+              <div className="mt-5 rounded-2xl md:hidden overflow-hidden shadow-xl mb-8">
+  <img
+    src="\story_1.webp"
+    alt="Client meeting"
+    className="w-full h-auto object-contain"
+  />
+</div>
+
             </div>
           </div>
 
@@ -237,7 +239,8 @@ const OurStory = () => {
 
 
 <section
-  className="relative w-full h-screen bg-center bg-cover bg-no-repeat overflow-hidden md:bg-fixed"
+  className="relative w-full h-[70vh] md:h-screen bg-center bg-cover bg-no-repeat overflow-hidden md:bg-fixed"
+
   style={{ backgroundImage: `url(/story_2.webp)` }}
 >
   {/* ORANGE CURVED CARD */}

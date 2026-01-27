@@ -5,7 +5,8 @@ import brandLogo from "/modern_propound_logo.png";
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
 import RevealImageAnimation from "../components/RevealImageAnimation";
-
+import { AnimatePresence } from "framer-motion";
+import Enquire from "./Enquire";
 
 const statusStyles = {
   Ongoing: "bg-ORANGE2",
@@ -25,7 +26,10 @@ const ProjectCard = ({
   onClick,
   noFade = false,
 }) => {
-  const Wrapper = noFade ? React.Fragment : FloatUpText;
+  const Wrapper = noFade || typeof window !== "undefined" && window.innerWidth < 768
+  ? React.Fragment
+  : FloatUpText;
+
 
   return (
     <Wrapper>
@@ -128,14 +132,17 @@ const ProjectDetails = ({ project, onBack }) => {
 {/* Spacer to prevent overlap */}
 <div className="h-4 md:h-0" />
 
-      {/* ===== HERO IMAGE ===== */}
- <div className="w-full md:h-[85vh] overflow-hidden">
+   
+{/* ===== HERO IMAGE (NO JUMP) ===== */}
+<div className="w-full h-[60vh] md:h-[85vh] overflow-hidden bg-gray-100">
   <img
     src={project.image}
-    className="w-full h-auto md:h-full object-cover object-center block"
     alt="Project"
+    className="w-full h-full object-cover object-center block"
+    loading="eager"
   />
 </div>
+
 
 
       {/* ===== ABOUT SECTION ===== */}
@@ -282,7 +289,7 @@ const ProjectDetails = ({ project, onBack }) => {
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
-
+const [showEnquire, setShowEnquire] = useState(false);
   return selectedProject ? (
     <ProjectDetails
       project={selectedProject}
@@ -349,7 +356,7 @@ export default function Projects() {
 
   {/* 3 */}
   <ProjectCard
-    image= "/Home/SandsParadiseVignanNagar.webp"
+    image= "/Home/SandsParadiseVignanNagar_enhanced.webp"
       logo="/Paradise.png"
     status="Completed"
     title="Paradise"
@@ -360,7 +367,7 @@ export default function Projects() {
         title: "Paradise",
         location: "Vignana Nagar, Bangalore",
         status: "Completed",
-        image:  "/Home/SandsParadiseVignanNagar.webp",
+        image:  "/Home/SandsParadiseVignanNagar_enhanced.webp",
          logo: "/Paradise.png",
       })
     }
@@ -403,9 +410,13 @@ export default function Projects() {
             </p>
           </div>
 
-          <button className="border border-black px-5 py-2 rounded-full text-sm hover:bg-black hover:text-white transition w-fit">
-            REQUEST CALLBACK
-          </button>
+       <button
+  onClick={() => setShowEnquire(true)}
+  className="border border-black px-5 py-2 rounded-full text-sm hover:bg-black hover:text-white transition w-fit"
+>
+  REQUEST CALLBACK
+</button>
+
         </div>
       </section>
 
@@ -454,6 +465,10 @@ export default function Projects() {
 </div>
 
       </section>
+      <AnimatePresence>
+  {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
+</AnimatePresence>
+
     </>
   );
 

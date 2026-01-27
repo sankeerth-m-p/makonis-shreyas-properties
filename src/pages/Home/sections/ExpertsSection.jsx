@@ -2,12 +2,14 @@ import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-mot
 import { useRef, useState, useEffect } from "react";
 import AnimatedHeading from "../../../components/animatedHeading";
 import RevealImageAnimation from "../../../components/RevealImageAnimation";
-
+import { AnimatePresence } from "framer-motion";
+import Enquire from "../../Enquire";
 const ExpertsSection = () => {
   const sectionRef = useRef(null);
   const [currentStage, setCurrentStage] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const scrollRootRef = useRef(null);
+  const [showEnquire, setShowEnquire] = useState(false);
   
   useEffect(() => {
     scrollRootRef.current = document.getElementById("home-scroll");
@@ -128,10 +130,13 @@ const ExpertsSection = () => {
             <p className="text-base text-gray-600 leading-relaxed max-w-xs">
               Request a callback for personalized assistance and project details.
             </p>
+<button
+  onClick={() => setShowEnquire(true)}
+  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-[12px] tracking-widest uppercase w-full transition"
+>
+  REQUEST CALLBACK
+</button>
 
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-[12px] tracking-widest uppercase w-full transition">
-              REQUEST CALLBACK
-            </button>
           </motion.div>
         </div>
       </div>
@@ -209,17 +214,27 @@ const ExpertsSection = () => {
                   Request a callback for personalized assistance and project details.
                 </p>
 
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-[12px] tracking-widest uppercase transition">
-                  REQUEST CALLBACK
-                </button>
+               <button
+  onClick={() => setShowEnquire(true)}
+  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-[12px] tracking-widest uppercase transition"
+>
+  REQUEST CALLBACK
+</button>
+
               </motion.div>
 
             </div>
           </div>
         </div>
       </div>
+      <AnimatePresence>
+  {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
+</AnimatePresence>
+
     </section>
+    
   );
+  
 };
 
 export default ExpertsSection;

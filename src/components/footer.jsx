@@ -26,14 +26,16 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
             </ul>
           </div>
 
-          <div className="flex items-center gap-4 pt-10">
-            <img
-              className="w-32  h-auto opacity-90"
-              src="/shreyas_logo_footer.png"
-              alt="Shreyas Logo"
-            />
-           
-          </div>
+     <div className="flex items-center gap-6 pt-10">
+  <img className="w-32 h-auto opacity-90" src="/shreyas_logo_footer.png" />
+
+  <div className="flex gap-3">
+    <img src="/LinkedIn.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
+    <img src="/insta.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
+    <img src="/facebook.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
+  </div>
+</div>
+
 
           {/* Bottom policy section */}
           <div className="pt-10  pb-6 text-xs tracking-wide  text-neutral-400 -500">
@@ -137,13 +139,19 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
                 <img src="/shreyas_logo_footer.png" />
               </div>
 
-              <div className="text-xs mt-20 text-neutral-500 space-y-3">
-                <p className="uppercase text-xs text-neutral-500 -500 ">
-                  Visiting Hours
-                </p>
-                <p>Mon – Fri: 10:00 AM – 6:00 PM</p>
-                <div className="border-b-2 pt-5 border-neutral-600" />
-              </div>
+             <div className="text-xs mt-20 text-neutral-500 space-y-3 text-right">
+  <p className="uppercase text-xs text-neutral-500">Visiting Hours</p>
+  <p>Mon – Fri: 10:00 AM – 6:00 PM</p>
+  <div className="border-b-2 pt-5 border-neutral-600 w-40 ml-auto" />
+
+  {/* Social Icons */}
+  <div className="flex justify-end gap-4 pt-4">
+    <img src="/LinkedIn.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
+    <img src="/insta.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
+    <img src="/facebook.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
+  </div>
+</div>
+
             </div>
 
           </div>

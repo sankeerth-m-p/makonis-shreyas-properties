@@ -8,7 +8,7 @@ const Career = () => {
         {/* Top Hiring Card */}
         <div className="bg-white rounded-3xl p-10 flex flex-col lg:flex-row items-center gap-10 shadow-sm">
           <img
-            src="/Career.jpg"
+            src="/career.webp"
             alt="We are hiring"
             className="w-full lg:w-[420px] rounded-2xl object-cover"
           />

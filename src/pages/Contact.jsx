@@ -1,57 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
 import contactImg from "/Contact/contact.jpg"; // replace with your image
 //import { Phone, Mail, Globe, Headphones } from "lucide-react";
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
-
+import Enquire from "./Enquire";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Contact = () => {
+  const [showEnquire, setShowEnquire] = useState(false);
+
   return (
-    <div className="bg-white pt-5">
+    <div className="bg-white">
 
       {/* ===== Top Section ===== */}
-      <section className="max-w-[1120px] mx-auto px-0 py-20 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-            We would love to <br /> connect to you.
-          </h2>
-          <p className="text-gray-500 max-w-md">
-            Reach out to us with your queries, requirements, or ideas, and we’ll get back to you promptly.
-          </p>
-        </div>
-        <div>
-          <img
-            src={contactImg}
-            alt="Support"
-            className="rounded-2xl w-full object-cover"
-          />
-        </div>
-      </section>
+{/* ===== Top Section ===== */}
+<section className="w-full bg-white overflow-hidden">
+  <div className="flex flex-col md:flex-row min-h-[520px]">
+
+    {/* LEFT TEXT */}
+    <div className="w-full md:w-1/2 flex items-center py-12 md:py-0">
+      <div className="max-w-[560px] mx-auto md:ml-auto px-6 md:pr-20">
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6 leading-snug">
+          We would love to <br className="hidden md:block" /> connect to you.
+        </h2>
+        <p className="text-gray-600 text-base leading-relaxed">
+          Reach out to us with your questions, requirements,
+          or ideas, and we’ll get back to you promptly.
+        </p>
+      </div>
+    </div>
+
+    {/* RIGHT IMAGE */}
+    <div className="w-full md:w-1/2 h-[300px] md:h-auto">
+      <img
+        src="/webcontent.jpg"
+        alt="Support"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+
 
       {/* ===== Orange CTA Bar ===== */}
       <section className="bg-orange-500 py-10">
         <div className="max-w-[1120px] mx-auto px-0 flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center gap-4 text-white">
-         <span className="text-3xl">🎧</span>
+         <img src="/headphone.svg" alt="Headphone" className="w-10 h-10" />
             <div>
               <p className="text-sm">Have any questions?</p>
               <h3 className="text-lg font-semibold">Speak with our experts.</h3>
             </div>
           </div>
-          <button className="mt-4 md:mt-0 bg-white text-orange-500 px-6 py-2 rounded-full text-sm font-medium">
-            REQUEST CALLBACK
-          </button>
+        <button
+  onClick={() => setShowEnquire(true)}
+  className="mt-4 md:mt-0 bg-white text-orange-500 px-6 py-2 rounded-full text-sm font-medium"
+>
+  REQUEST CALLBACK
+</button>
+
         </div>
       </section>
 
      {/* ===== Contact Info Row (Exact Style) ===== */}
 <section className="max-w-[1120px] mx-auto px-0 py-12">
-  <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-6 text-sm text-gray-700">
+ <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center gap-6 text-sm text-gray-700">
 
     {/* Call us */}
     <div className="flex items-center gap-4">
-      <div className="bg-orange-500 text-white p-3 rounded">
-        📞
-      </div>
+     <div className="bg-orange-500 p-3 rounded">
+  <img src="/call.svg" className="w-5 h-5" alt="Call" />
+</div>
+
       <div>
         <p className="font-medium">Call us</p>
         <p className="text-gray-500">+91 99642 00191</p>
@@ -60,9 +82,10 @@ const Contact = () => {
 
     {/* Email us */}
     <div className="flex items-center gap-4">
-      <div className="bg-orange-500 text-white p-3 rounded">
-        ✉️
-      </div>
+     <div className="bg-orange-500 p-3 rounded">
+  <img src="/email.svg" className="w-5 h-5" alt="Email" />
+</div>
+
       <div>
         <p className="font-medium">Email us</p>
         <p className="text-gray-500">info@shreyasinfra.com</p>
@@ -71,9 +94,10 @@ const Contact = () => {
 
     {/* Website */}
     <div className="flex items-center gap-4">
-      <div className="bg-orange-500 text-white p-3 rounded">
-        🌐
-      </div>
+     <div className="bg-orange-500 p-3 rounded">
+  <img src="/web.svg" className="w-5 h-5" alt="Website" />
+</div>
+
       <div>
         <p className="font-medium">Website</p>
         <p className="text-gray-500">www.shreyasinfra.com</p>
@@ -81,7 +105,7 @@ const Contact = () => {
     </div>
 
     {/* Follow us with divider */}
-<div className="flex items-center gap-6 border-l pl-6">
+<div className="flex items-center gap-6 md:border-l md:pl-6">
   <p className="text-gray-500">Follow us on</p>
   <div className="flex gap-4 text-gray-700 text-sm">
     <FaLinkedinIn className="cursor-pointer hover:text-orange-500" />
@@ -107,7 +131,8 @@ const Contact = () => {
 
 {/* ===== Our Office + Contact Form (Final Balanced Layout) ===== */}
 <section className="w-full px-6 py-24 bg-white">
-  <div className="max-w-[1120px] mx-auto px-0 grid md:grid-cols-[1.2fr_1fr] gap-24 items-start">
+  <div className="max-w-[1120px] mx-auto px-0 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-16 md:gap-24 items-start">
+
 
     {/* Left: Office Info */}
     <div className="md:pl-16">
@@ -185,6 +210,9 @@ const Contact = () => {
 
   </div>
 </section>
+<AnimatePresence>
+  {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
+</AnimatePresence>
 
 
     </div>
