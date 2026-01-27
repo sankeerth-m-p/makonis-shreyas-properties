@@ -17,11 +17,11 @@ const HomeLayout = () => {
 
   <div
   id="home-scroll"
-  className="relative isolate
+  className="relative md:isolate
     md:h-[calc(100vh-5rem)]
-    overflow-y-scroll
-    snap-y snap-mandatory
-    scroll-smooth mt-
+    md:overflow-y-scroll
+    md:snap-y md:snap-mandatory
+    scroll-smooth md:mt-
     overscroll-contain
   "
 >
