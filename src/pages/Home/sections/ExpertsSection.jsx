@@ -103,7 +103,7 @@ const ExpertsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white  lg:relative py-5  lg:py-0  lg:h-[calc(250vh-12.5rem)]"
+      className="w-full bg-white   lg:relative py-5  lg:py-0  lg:h-[calc(250vh)]"
     >
       {/* MOBILE VERSION unchanged */}
       <div className=" lg:hidden max-w-7xl h-full mx-auto px-6">
@@ -163,11 +163,11 @@ const ExpertsSection = () => {
       </div>
 
       {/* DESKTOP */}
-      <div className="hidden  lg:flex sticky top-0 h-screen   lg:h-[calc(100vh-5rem)]  lg:w-full  lg:items-center  lg:justify-center">
+      <div className="hidden  lg:flex sticky top-0 h-screen   lg:h-[calc(100vh)]  lg:w-full  lg:items-center  lg:justify-center">
         <div className=" lg:h-full h-screen flex items-center justify-center    overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 w-full relative">
             {/* STAGE 1 */}
-            <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+            <div className="absolute  inset-0 flex items-center justify-center overflow-hidden">
               <motion.div
                 style={{ clipPath: titleClip }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}

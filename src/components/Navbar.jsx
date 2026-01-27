@@ -66,8 +66,7 @@ const Navbar = ({ onEnquireClick }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef(null);
   const location = useLocation();
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
-
+const isMobile = window.matchMedia("(max-width: 1023px)").matches;
   const isHomePage = location.pathname === "/";
 
   // ✅ For NON-HOME pages: Use IntersectionObserver on the navbar itself
@@ -257,8 +256,8 @@ const Navbar = ({ onEnquireClick }) => {
 
       {/* STICKY NAVBAR */}
       <header
-        className={`fixed top-0 left-0 w-full z-50 bg-white shadow-lg
-          transition-transform duration-1000 ease-in-out will-change-transform
+        className={`fixed top-0 left-0 w-full  z-50 bg-white shadow-lg
+          transition-transform duration-700 ease-in-out will-change-transform
           ${showSticky ? "translate-y-0" : "-translate-y-full"}
         `}
       >

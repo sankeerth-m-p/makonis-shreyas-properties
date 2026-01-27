@@ -100,7 +100,10 @@ const COLORS1 = {
       <div
         className="relative z-10 text-center py-10 "
         style={{
-          opacity: Math.min(1, scrollProgress * 1.3),
+          opacity:
+      window.innerWidth > 768
+        ? Math.min(1, scrollProgress * 1.3)
+        : 1,
           transform: `translateY(${(1 - scrollProgress) * 40}px)`,
         }}
       >
@@ -140,14 +143,17 @@ const COLORS1 = {
 
     {/* ✅ MAIN CONTENT SECTION (FILLED) */}
    <div
-  className="relative pt-2   z-50 pb-24 mt-5  lg:mt-10"
+  className="relative pt-2   z-40 pb-24 mt-5  lg:mt-10"
   style={{ backgroundColor: COLORS.mainFill }}
 >
 
       <div
         className="relative z-10 max-w-5xl mx-auto px-6"
         style={{
-          opacity: Math.min(1, scrollProgress * 1.5),
+          opacity:
+      window.innerWidth > 768
+        ? Math.min(1, scrollProgress * 1.5)
+        : 1,
           transform: `translateY(${(1 - scrollProgress) * 60}px)`,
         }}
       >

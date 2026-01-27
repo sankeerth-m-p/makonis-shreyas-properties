@@ -11,66 +11,64 @@ import PromiseSection from "./sections/PromiseSection.jsx";
 import Footer from "../../components/footer.jsx";
 import Navbar from "../../components/Navbar.jsx";
 const HomeLayout = () => {
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    const isMobile = window.matchMedia("(max-width: 1020px)").matches;
 
- return (  <> {!isMobile&& <Navbar  onEnquireClick={() => {}} />}
+ return (  <> 
 
   <div
   id="home-scroll"
-  className="relative md:isolate
-    md:h-[calc(100vh-5rem)]
-    md:overflow-y-scroll
-    md:snap-y md:snap-mandatory
-    scroll-smooth md:mt-
+  className="relative lg:isolate
+    lg:h-[calc(100vh)]
+    lg:overflow-y-scroll
+    lg:snap-y lg:snap-mandatory
+    scroll-smooth lg:mt-
     overscroll-contain
   "
 >
-  {/* ✅ Navbar inside scroll container */}
-  {/* <div className="absolute -top-10 left-0 w-full z-[999] pointer-events-auto">
-    <Navbar onEnquireClick={() => {}} />
-  </div> */}
+  
 
-    <div className="snap-start  snap-always pt-[5rm]">
+     <div className="snap-start lg:h-screen  snap-always pt-[5rm]">
+      {!isMobile && <Navbar onEnquireClick={() => {}} />}
       <HeroSection />
     </div>
 
-    <div className="snap-start  snap-always">
+    <div className="snap-start  lg:pt-20 lg:h-screen snap-always">
       <ThoughtfulSection />
     </div>
 
-    <div className="snap-start  snap-always">
+    <div className="snap-start  lg:pt-20  snap-always">
       <BespokeSection />
     </div>
 
     {/* ✅ Signature becomes nested snap zone */}
-    <div className="snap-start snap-always">
+    <div className="snap-start  lg:pt-20 snap-always">
       <SignatureSpaces />
     </div>
 
-    <div className="snap-start  snap-always">
+    <div className="snap-start  lg:pt-20 snap-always">
       <StoryBehindBrand />
     </div>
 
-    <div className="snap-start  snap-always">
+    <div className="snap-start  lg:pt-20 snap-always">
       <WhatMakesUsDifferent />
     </div>
 
-    <div className="snap-start   snap-always" id="testimonials">
+    <div className="snap-start   lg:pt-20 snap-always" id="testimonials">
       <Testimonials />
     </div>
 
-    <div className="snap-start snap-always">
+    <div className="snap-start  lg:pt-20 bg-[#F4EFE5] snap-always">
       <NatureSign />
     </div>
 
     <div 
-  className="snap-start snap-always overflow-hidden md:overflow-visible"
+  className="snap-start  snap-always mt-20 overflow-hidden lg:overflow-visible"
   style={{ scrollSnapStop: 'always' }}
 >
   <ExpertsSection />
 </div>
 
-    <div className="snap-start  snap-always">
+    <div className="snap-start  lg:pt-20  snap-always">
       <PromiseSection />
      </div>
     <div className="snap-end  snap-always">

@@ -27,8 +27,7 @@ function App() {
   const [showEnquire, setShowEnquire] = useState(false);
 const isHome = location.pathname === "/"; // check if current path is home
 
-  const isMobile = window.matchMedia("(max-width: 767px)").matches;
-
+const isMobile = window.matchMedia("(max-width: 1020px)").matches;
   const direction =
     location.pathname.length > prevPath.current.length ? 1 : -1;
 
