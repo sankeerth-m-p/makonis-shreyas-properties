@@ -36,8 +36,9 @@ const isHome = location.pathname === "/"; // check if current path is home
 
   return (
     <>
-{!isHome && <Navbar onEnquireClick={() => setShowEnquire(true)} />}
-    
+{(!isHome || isMobile) && (
+  <Navbar onEnquireClick={() => setShowEnquire(true)} />
+)}    
       <>
          <ScrollToTop />
         <AnimatePresence mode="wait">

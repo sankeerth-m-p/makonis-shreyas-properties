@@ -66,12 +66,13 @@ const Navbar = ({ onEnquireClick }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef(null);
   const location = useLocation();
-  
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
   const isHomePage = location.pathname === "/";
 
   // ✅ For NON-HOME pages: Use IntersectionObserver on the navbar itself
   useEffect(() => {
-    if (isHomePage) return;
+    if (isHomePage && !isMobile) return;
 
     const observer = new IntersectionObserver(([entry]) => {
       setShowSticky(!entry.isIntersecting);
@@ -84,7 +85,7 @@ const Navbar = ({ onEnquireClick }) => {
 
   // ✅ For HOME page: Listen to internal scroll container + observe HeroSection
   useEffect(() => {
-    if (!isHomePage) return;
+    if (!(isHomePage && !isMobile)) return;
 
     // Wait for the scroll container to be available
     const checkContainer = setInterval(() => {
@@ -152,7 +153,7 @@ const Navbar = ({ onEnquireClick }) => {
         `}
       >
         {/* MOBILE NAVBAR */}
-        <div className=" lg:hidden flex items-center justify-between w-full  lg:min-h-20 px-6 py-2">
+        <div className=" lg:hidden   flex items-center justify-between w-full  lg:min-h-20 px-6 py-2">
           <button
             id="mobile-menu-button"
             onClick={toggleMobileMenu}
@@ -267,17 +268,29 @@ const Navbar = ({ onEnquireClick }) => {
         </div>
 
         {/* MOBILE STICKY */}
-        <div className=" lg:hidden flex items-center justify-between w-full px-6 py-2 bg-white">
-          <button onClick={toggleMobileMenu}>
-            <img src={navMenu} className="w-6 h-6" alt="Menu" />
-          </button>
+        <div className="lg:hidden flex items-center justify-between w-full px-6 py-2 bg-white">
+  {/* MENU BUTTON */}
+  <button
+    onClick={toggleMobileMenu}
+    className="flex items-center justify-center w-10 h-10 z-[60]"
+    aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+  >
+    <img
+      src={isMobileMenuOpen ? navClose : navMenu}
+      className="w-6 h-6"
+      alt="Menu"
+    />
+  </button>
 
-          <Link to="/" className="absolute left-1/2 -translate-x-1/2">
-            <img src={LogoImg} className="h-8" alt="Shreyas Infra" />
-          </Link>
+  {/* LOGO */}
+  <Link to="/" className="absolute left-1/2 -translate-x-1/2">
+    <img src={LogoImg} className="h-8 object-contain" alt="Shreyas Infra" />
+  </Link>
 
-          <div className="w-6"></div>
-        </div>
+  {/* SPACER */}
+  <div className="w-10"></div>
+</div>
+
       </header>
     </>
   );

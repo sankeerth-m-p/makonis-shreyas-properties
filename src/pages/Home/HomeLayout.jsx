@@ -11,12 +11,14 @@ import PromiseSection from "./sections/PromiseSection.jsx";
 import Footer from "../../components/footer.jsx";
 import Navbar from "../../components/Navbar.jsx";
 const HomeLayout = () => {
- return (  <>  <Navbar  onEnquireClick={() => {}} />
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+ return (  <> {!isMobile&& <Navbar  onEnquireClick={() => {}} />}
 
   <div
   id="home-scroll"
   className="relative isolate
-    h-[calc(100vh-5rem)]
+    md:h-[calc(100vh-5rem)]
     overflow-y-scroll
     snap-y snap-mandatory
     scroll-smooth mt-
