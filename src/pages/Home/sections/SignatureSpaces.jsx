@@ -65,7 +65,7 @@ const SignatureSpaces = ({ sections }) => {
       <div className='  max-w-xl md:p-20 flex flex-col justify-center items-center'>
        <AnimatedHeading
   delay={0}
-  className="text-lg md:text-4xl font-semibold mb-4 md:mb-8 text-center"
+  className="text-3xl md:text-4xl font-semibold mb-4 md:mb-8 text-center"
 >
   Signature spaces crafted for modern living
 </AnimatedHeading>
@@ -73,11 +73,11 @@ const SignatureSpaces = ({ sections }) => {
        <p className="text-sm w-full text-center">
   A thoughtfully planned development bringing essential amenities together in one cohesive environment.
 </p>
-
-        <button
+<button
   onClick={()=>navigate('/projects')}
-  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1"
+  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1 mb-6 lg:mb-0"
 >
+
   <span>VIEW PROJECTS</span>
   <ArrowRight className="w-4 h-4" />
 </button>
@@ -110,7 +110,7 @@ const SignatureSpaces = ({ sections }) => {
     <div
       className={`
         relative flex flex-col  justify-start
-        p-8  lg:p-16
+        p-6  lg:p-16
         h-1/3  lg:h-auto
          lg:w-1/3
         ${section.bgColor}
@@ -118,18 +118,19 @@ const SignatureSpaces = ({ sections }) => {
     >
       {/* Content Wrapper */}
       <div className="relative z-10 max-w-md">
-<h3 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8 text-white leading-tight">
+<h3 className="text-2xl md:text-4xl font-semibold mb-3 md:mb-8 text-white leading-tight">
+
   {section.title}
 </h3>
 
                
                  
 
-        <p className="text-xs text-white tracking-widest mb-4">
+        <p className="text-xs text-white tracking-widest mb-2">
           {section.location}
         </p>
 
-      <p className="text-sm text-center text-white/90 leading-relaxed mb-6 lg:mb-10">
+    <p className="text-sm text-left md:text-left lg:text-left text-white/90 leading-relaxed mb-6 lg:mb-10">
   {section.description}
 </p>
 

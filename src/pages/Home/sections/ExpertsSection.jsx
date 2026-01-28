@@ -117,10 +117,10 @@ const ExpertsSection = () => {
             viewport={{ once: true, amount: 0.4 }}
             className="flex justify-center"
           >
-            <RevealImageAnimation
-              image="/Home/expert.jpg"
-              className="h-[50vh] w-full rounded-3xl object-cover"
-            />
+           <RevealImageAnimation
+  image="/Home/expert.jpg"
+    className="w-[220px] h-[300px] object-cover rounded-lg"
+/>
           </motion.div>
 
           <motion.div
