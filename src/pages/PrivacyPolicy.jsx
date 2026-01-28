@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
   <AnimatedHeading
     as="h1"
     delay={0}
-    className="text-[20px] md:text-[38px] font-medium leading-tight"
+    className="text-lg md:text-4xl font-semibold mb-4 md:mb-8"
   >
   Privacy Policy
   </AnimatedHeading>

@@ -184,7 +184,7 @@ export default function PromisePage() { const sectionRef = useRef(null);
     <AnimatedHeading 
   as="h1"
   delay={0}
-  staggerDelay={0.15} className="text-2xl sm:text-3xl md:text-3xl font-semibold text-gray-900 px-2"
+  staggerDelay={0.15} className="text-lg md:text-4xl font-semibold mb-4 md:mb-8"
 >
    
       We Deliver What We Promise
@@ -213,7 +213,7 @@ export default function PromisePage() { const sectionRef = useRef(null);
       {/* ========= ORANGE STRIP ========= */}
       <section className="bg-ORANGE p-10 items-center flex text-white h-screen md:h-auto w-full py-16">
         <div className="mx-auto max-w-4xl">
-          <AnimatedHeading className="text-4xl font-semibold leading-relaxed">
+          <AnimatedHeading className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
             Shaping the urban lifestyle through thoughtful design and purposeful planning.
 
           </AnimatedHeading>

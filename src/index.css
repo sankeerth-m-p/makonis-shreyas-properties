@@ -71,11 +71,12 @@ body {
   font-family: "questrial", sans-serif;color: #2c2c2c;
 }
 
-/* Headings use Aeonik */
+/* Headings use Inter Tight */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Cabin", sans-serif;
+  font-family: "Inter Tight", sans-serif;
   font-weight: 500;
   margin: 0;
+  color: #2c2c2c;
 }
 
 /* --------------------------------------- */

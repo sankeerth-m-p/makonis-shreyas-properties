@@ -7,6 +7,7 @@ import mission from "/Home/mission.svg";import circleBg from "/Home/cicle.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight } from 'lucide-react';
 const ThoughtfulSection = () => {const sectionRef = useRef(null);
 
   const navigate = useNavigate();
@@ -45,41 +46,91 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
   className="pointer-events-none select-none absolute right-[-220px] top-[-200px] w-[560px] opacity-[0.12] z-[1]"
 />
 
+{/* MOBILE LAYOUT: Heading and subheading above image, rest below */}
+<div className="block lg:hidden relative max-w-6xl mx-auto z-10 px-4">
+  {/* HEADING AND SUBHEADING ABOVE IMAGE */}
+  <div className="py-8 text-center">
+    <AnimatedHeading delay={0} className="text-3xl lg:text-4xl font-semibold mb-4 md:mb-8 text">
+      Thoughtfully developing spaces that reflect city's progress and promise
+    </AnimatedHeading>
+    <FloatUpText delay={0}>
+      <p className="text-lg md:text-xl text-base mb-6 md:max-w-md mx-auto">
+        Crafting meaningful experiences where every detail is carefully envisioned.
+      </p>
+    </FloatUpText>
+  </div>
 
+  {/* IMAGE IN MIDDLE */}
+  <div className="flex justify-center mb-8">
+    <RevealImageAnimation
+      image={aboutUsImg}
+      className="w-full h-[420px] object-cover"
+    />
+  </div>
 
-  <div className="relative max-w-6xl mx-auto px-4 flex items-center  h-full  z-10  md:px-4">
-    <div className="grid grid-cols-1 md:grid-cols-5 h-ful    gap-10 md:gap-0 items-start">
-
-      {/* IMAGE */}
-      <div className="flex justify-start h-full md:col-span-2 md:justify-end ">
-        <RevealImageAnimation
-          image={aboutUsImg}
-          className="w-full   h-[420px] md:w- md:h-[70vh]  object-cover "
-        />
+  {/* VISION, MISSION AND BUTTON BELOW IMAGE */}
+  <div className="py-8 text-center">
+    <FloatUpText delay={0}>
+      {/* VISION */}
+      <div className="flex gap-3 items-center justify-center mb-8">
+        <img src={vision} className="w-3 h-4 md:w-7 md:h-7" alt="Mission icon"/>
+        <div>
+          <h4 className="md:text-xl text-base font-semibold">Our vision</h4>
+          <p className="md:text-lg text-sm leading-relaxed">
+            To create thoughtfully planned spaces that elevate everyday living,
+            blending design, functionality and sustainability.
+          </p>
+        </div>
       </div>
 
-      {/* CONTENT */}
-      <div className="flex flex-col md:col-span-3 md:pl-20    text-left ">
-            <AnimatedHeading   delay = " 0.2" className="text-[20px] leading-tight font-medium   mb-3  md:max-w-none md:text-[38px]">
-              
-        
-          Thoughtfully developing spaces that reflect city’s progress and promise
-       
-</AnimatedHeading>
-            <FloatUpText delay={ 0.2}>
-              
-        <p className="md:text-xl text-base   mb-6  md:max-w-md">
+      {/* MISSION */}
+      <div className="flex gap-3 items-center justify-center mb-8">
+        <img src={mission} className="w-4 h-4 md:w-7 md:h-7" alt="Mission icon"/>
+        <div>
+          <h4 className="md:text-xl text-base font-semibold">Our mission</h4>
+          <p className="md:text-lg text-sm leading-relaxed">
+            To develop responsibly by integrating sustainable practices
+            and creating balanced communities.
+          </p>
+        </div>
+      </div>
+
+      <button onClick={()=>navigate('/our-story')} className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1">
+        <span>VIEW DETAILS</span>
+        <ArrowRight className="w-4 h-4" />
+      </button>
+    </FloatUpText>
+  </div>
+</div>
+
+{/* DESKTOP LAYOUT: Image and text side by side */}
+<div className="hidden lg:block relative max-w-6xl mx-auto flex items-center h-full z-10 md:px-4">
+  <div className="grid grid-cols-1 md:grid-cols-5 h-full gap-10 md:gap-0 items-start">
+
+    {/* IMAGE */}
+    <div className="flex justify-start h-full md:col-span-2 md:justify-end md:mt-10">
+      <RevealImageAnimation
+        image={aboutUsImg}
+        className="w-full h-[420px] md:h-[70vh] object-cover"
+      />
+    </div>
+
+    {/* CONTENT */}
+    <div className="flex flex-col md:col-span-3 md:pl-20 md:mt-10 text-left">
+      <AnimatedHeading delay={0} className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+        Thoughtfully developing spaces that reflect city's progress and promise
+      </AnimatedHeading>
+      <FloatUpText delay={0}>
+        <p className="md:text-xl text-base mb-6 md:max-w-md">
           Crafting meaningful experiences where every detail is carefully envisioned.
         </p>
 
         {/* VISION */}
-        <div className="flex gap-3  items-start   mb-8">
-                <img src={vision}  className="w-3 h-4 md:w-7 md:h-7" 
- 
-  alt="Mission icon"/>
+        <div className="flex gap-3 items-start mb-8">
+          <img src={vision} className="w-3 h-4 md:w-7 md:h-7" alt="Mission icon"/>
           <div>
             <h4 className="md:text-xl text-base font-semibold">Our vision</h4>
-            <p className="md:text-lg text-sm   leading-relaxed    ">
+            <p className="md:text-lg text-sm leading-relaxed">
               To create thoughtfully planned spaces that elevate everyday living,
               blending design, functionality and sustainability.
             </p>
@@ -87,28 +138,26 @@ const topRightY = useTransform(scrollYProgress, [0, 1], [-22,  100]);
         </div>
 
         {/* MISSION */}
-        <div className="flex gap-3 items-start  mb-8">
-<img 
-  src={mission} 
-  className="w-4 h-4 md:w-7 md:h-7" 
-  alt="Mission icon"
-/>          <div>
-            <h4 className="md:text-xl text-base  font-semibold">Our mission</h4>
-            <p className="md:text-lg text-sm   leading-relaxed   ">
+        <div className="flex gap-3 items-start mb-8">
+          <img src={mission} className="w-4 h-4 md:w-7 md:h-7" alt="Mission icon"/>
+          <div>
+            <h4 className="md:text-xl text-base font-semibold">Our mission</h4>
+            <p className="md:text-lg text-sm leading-relaxed">
               To develop responsibly by integrating sustainable practices
               and creating balanced communities.
             </p>
           </div>
         </div>
 
-        <button onClick={()=>navigate('/our-story')} className="bg-ORANGE w-full hover:bg-ORANGE2 text-white buttons px-8 py-3 rounded-full  text-base  md:w-fit">
-          VIEW DETAILS
+        <button onClick={()=>navigate('/our-story')} className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1">
+          <span>VIEW DETAILS</span>
+          <ArrowRight className="w-4 h-4" />
         </button>
-</FloatUpText>
-
-      </div>
+      </FloatUpText>
     </div>
   </div>
+</div>
+
 </section>
   );
 };

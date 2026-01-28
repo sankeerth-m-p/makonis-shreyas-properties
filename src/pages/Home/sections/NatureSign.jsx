@@ -102,14 +102,14 @@ useEffect(() => {
 </div>
 
         {/* INFO STRIP */}
-<div className="    lg:absolute  lg:bottom-[150px]  w-full px-4  lg:px-0">
+<div className="    lg:absolute  lg:bottom-[150px]  w-full lg:px-0">
   <div className="max-w-6xl mx-auto">
     <div className="flex flex-row       items-center justify-between gap-4  lg:gap-0 text-[#D7E2E8] text-xs  lg:text-sm">
 
       {/* ITEM */}
       <div className="flex    items-center gap-1  lg:gap-3">
-        <img src={nhIcon} className="  lg:block hidden w-8 h-7  lg:w-12  lg:h-8 opacity-80" />
-        <div className="leading-tight text-xs  lg:text-base text-left    ">
+       <FloatUpText> <img src={nhIcon} className="  lg:block hidden w-8 h-7  lg:w-12  lg:h-8 opacity-80" /></FloatUpText>
+        <div className="leading-tight text-xs  lg:text-base text-center lg:text-left">
           <FloatUpText>Located on</FloatUpText>
           <FloatUpText>NH-44 North Bengaluru</FloatUpText>
         </div>        <img src={nhIcon} className=" lg:hidden w-8 h-8  lg:w-12  lg:h-12 opacity-80" />
@@ -119,8 +119,8 @@ useEffect(() => {
       <span className="block  lg:mx-12 w-[1px] h-8  lg:h-[46px] bg-[#6F8C9B]/45" />
 
       <div className="flex   items-center gap-1  lg:gap-3">
-        <img src={airportIcon} className="  lg:block hidden w-8 h-8  lg:w-12  lg:h-12 opacity-80" />
-        <div className="leading-tight text-xs  lg:text-base text-left    ">
+      <FloatUpText> <img src={airportIcon} className="  lg:block hidden w-8 h-8  lg:w-12  lg:h-12 opacity-80" /></FloatUpText> 
+        <div className="leading-tight text-xs  lg:text-base text-center lg:text-left">
           <FloatUpText>Just</FloatUpText>
           <FloatUpText>20 minutes from Airport</FloatUpText>
         </div>
@@ -130,8 +130,8 @@ useEffect(() => {
       <span className="block  lg:mx-12 w-[1px] h-8  lg:h-[46px] bg-[#6F8C9B]/45" />
 
       <div className="flex   items-center gap-1  lg:gap-3">
-        <img src={hillIcon} className="  lg:block hidden w-8 h-8  lg:w-12  lg:h-12 opacity-80" />
-        <div className="leading-tight text-xs  lg:text-base text-left    ">
+       <FloatUpText><img src={hillIcon} className="  lg:block hidden w-8 h-8  lg:w-12  lg:h-12 opacity-80" /></FloatUpText> 
+        <div className="leading-tight text-xs  lg:text-base text-center lg:text-left">
           <FloatUpText>Very close</FloatUpText>
           <FloatUpText>proximity from Nandi Hills</FloatUpText>
         </div>
@@ -145,13 +145,13 @@ useEffect(() => {
 
         {/* BOTTOM BAND */}
 <div className="] py-4  lg:py-6 ">
-  <div className="max-w-6xl  mx-auto px-4  lg:px-0 flex flex-row  items-center  lg:justify-between gap-4  lg:gap-10 text-[#D7E2E8]">
+  <div className="max-w-6xl  mx-auto lg:px-0 flex flex-row  items-center  lg:justify-between gap-4  lg:gap-10 text-[#D7E2E8]">
 
     {/* LOGO */}
     <img src={nature2} className="w-[130px]  lg:w-[160px]" />
 
     {/* TEXT */}
-    <AnimatedHeading className="text-sm  lg:text-2xl text-left leading-snug font-light max-w-xs  lg:max-w-md">
+    <AnimatedHeading delay={0} className="text-sm  lg:text-2xl text-left leading-snug font-light max-w-xs  lg:max-w-md text-white">
       Nature’s sign, where luxury and nature flow in perfect harmony.
     </AnimatedHeading>
 

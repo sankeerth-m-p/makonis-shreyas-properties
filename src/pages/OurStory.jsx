@@ -2,6 +2,7 @@ import React from "react";
 import AnimatedHeading from "../components/animatedHeading";
 import FloatUpText from "../components/floatUpText"; import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { ArrowRight } from 'lucide-react';
 import banner from "/banner.svg";
 import banner1 from "/banner1.svg";
 import aboutUsImg from "/Home/aboutUsImg.webp";
@@ -29,7 +30,7 @@ const OurStory = () => {
             Our journey is defined by a commitment to {'\n'}
             deliver more than just properties
           </AnimatedHeading>
-          <FloatUpText>
+          <FloatUpText delay={0}>
 
             <p className="mt-6 max-w-3xl mx-auto text-sm md:text-base opacity-90">
               we create thoughtfully designed spaces that inspire belonging,
@@ -84,7 +85,7 @@ const OurStory = () => {
               <AnimatedHeading
                 as="h1"
                 delay={0}
-                staggerDelay={0.15} className="text-base md:text-xl font-bold text-gray-900 mb-4 leading-snug">
+                staggerDelay={0.15} className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
 
                 {/* <h2 className="text-xl font-semibold text-gray-900 mb-4 leading-snug"> */}
                 We are a forward thinking real estate company driven by the belief

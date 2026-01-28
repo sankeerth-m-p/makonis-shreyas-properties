@@ -6,6 +6,7 @@ import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
 import RevealImageAnimation from "../components/RevealImageAnimation";
 import { AnimatePresence } from "framer-motion";
+import { ArrowRight } from 'lucide-react';
 import Enquire from "./Enquire";
 
 const statusStyles = {
@@ -67,9 +68,10 @@ const ProjectCard = ({
 
           <button
             onClick={onClick}
-            className="bg-ORANGE hover:bg-ORANGE2 text-white px-6 py-2 rounded-full text-sm w-fit tracking-wider"
+            className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1 w-fit"
           >
-            {buttonText}
+            <span>{buttonText}</span>
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </div>
@@ -89,10 +91,10 @@ const ProjectDetails = ({ project, onBack }) => {
   <div className="max-w-[1120px] mx-auto px-0 ">
    <button
   onClick={onBack}
-  className="flex items-center gap-2 text-sm text-gray-700 hover:text-ORANGE transition"
+  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1 w-fit"
 >
- <span className="text-2xl md:text-3xl font-light">←</span>
   <span>Back to Projects</span>
+  <ArrowRight className="w-4 h-4" />
 </button>
 
   </div>
@@ -152,7 +154,7 @@ const ProjectDetails = ({ project, onBack }) => {
           <div className="relative">
             <div className="absolute -left-16 -top-10 w-64 h-64 bg-gray-200 rounded-full opacity-30"></div>
 
-            <h2 className="text-3xl font-semibold mb-4">
+            <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
               Signature spaces crafted <br /> for modern living.
             </h2>
 
@@ -199,7 +201,7 @@ const ProjectDetails = ({ project, onBack }) => {
 
   <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 md:h-full flex flex-col md:justify-center">
 
-    <h2 className="text-white text-2xl md:text-4xl font-medium text-center mb-12">
+    <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
       Key Features and Amenities
     </h2>
 
@@ -233,7 +235,7 @@ const ProjectDetails = ({ project, onBack }) => {
         <div className="max-w-[1120px] mx-auto px-4 md:px-0">
 
           {/* Heading aligned to image left edge */}
-          <h2 className="text-3xl font-semibold mb-10">
+          <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
             Location and Business Advantages
           </h2>
 
@@ -301,10 +303,10 @@ const [showEnquire, setShowEnquire] = useState(false);
       <section className="bg-[#F5F2EF] ">
         {/* Header */}
         <div className="bg-ORANGE px-4 py-20 text-center text-white">
-          <AnimatedHeading className="text-lg md:text-3xl font-semibold mb-3">
+          <AnimatedHeading delay={0} className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
             Smartly planned developments for today’s lifestyle
           </AnimatedHeading>
-          <FloatUpText className="max-w-2xl mx-auto text-sm opacity-90">
+          <FloatUpText delay={0} className="max-w-2xl mx-auto text-sm opacity-90">
             Smartly planned developments crafted with thoughtful layouts,
             contemporary comforts, and seamless functionality to elevate today’s
             way of living.
@@ -401,7 +403,7 @@ const [showEnquire, setShowEnquire] = useState(false);
     <section className="bg-[#F6DCA6] hidden md:block py-16 mt-16">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:justify-between md:items-center gap-6">
           <div>
-            <h2 className="text-2xl font-semibold text-gray-900">
+            <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
               Expert Assistance, Simplified
             </h2>
             <p className="text-sm text-gray-700 mt-1">
@@ -412,9 +414,10 @@ const [showEnquire, setShowEnquire] = useState(false);
 
        <button
   onClick={() => setShowEnquire(true)}
-  className="border border-black px-5 py-2 rounded-full text-sm hover:bg-black hover:text-white transition w-fit"
+  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-white text-black text-xs font-bold uppercase tracking-wider rounded-full hover:bg-orange-500 hover:text-white transition-all hover:translate-x-1"
 >
-  REQUEST CALLBACK
+  <span>REQUEST CALLBACK</span>
+  <ArrowRight className="w-4 h-4" />
 </button>
 
         </div>

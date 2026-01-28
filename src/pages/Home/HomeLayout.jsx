@@ -62,7 +62,6 @@ const HomeLayout = () => {
       snap-y snap-mandatory
       scroll-smooth
       overscroll-contain
-      px-4 md:px-0
     "
   >
     <div className="snap-start  snap-always">

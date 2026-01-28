@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { X } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -111,9 +111,10 @@ const Enquire = ({ onClose }) => {
 
           <button
             type="submit"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-2 rounded-full mt-4"
+            className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1 w-fit"
           >
-            REQUEST CALLBACK
+            <span>REQUEST CALLBACK</span>
+            <ArrowRight className="w-4 h-4" />
           </button>
 
         </form>

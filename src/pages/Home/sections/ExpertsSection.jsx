@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import AnimatedHeading from "../../../components/animatedHeading";
 import RevealImageAnimation from "../../../components/RevealImageAnimation";
 import { AnimatePresence } from "framer-motion";
+import { ArrowRight } from 'lucide-react';
 import Enquire from "../../Enquire";
 const ExpertsSection = () => {
   const sectionRef = useRef(null);
@@ -107,7 +108,7 @@ const ExpertsSection = () => {
       className="w-full bg-white  lg:relative py-5  lg:py-0  lg:h-[calc(250vh-12.5rem)]"
     >
       {/* MOBILE VERSION unchanged */}
-      <div className=" lg:hidden max-w-7xl h-full mx-auto px-6">
+      <div className=" lg:hidden max-w-7xl h-full mx-auto">
          <div className="grid grid-cols-1 items-center gap-5">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
@@ -136,11 +137,11 @@ const ExpertsSection = () => {
               />
             </div>
 
-            <p className="text-base text-gray-600">
-              Have any questions?
-            </p>
+           <p className="text-lg md:text-4xl font-semibold mb-4 md:mb-8 text-black">
+  Have any questions?
+</p>
 
-            <h3 className="text-lg font-semibold leading-snug">
+            <h3 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
               Speak with <br /> our experts
             </h3>
           </motion.div>
@@ -157,9 +158,10 @@ const ExpertsSection = () => {
             </p>
 <button
   onClick={() => setShowEnquire(true)}
-  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-[12px] tracking-widest uppercase w-full transition"
+  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1"
 >
-  REQUEST CALLBACK
+  <span>REQUEST CALLBACK</span>
+  <ArrowRight className="w-4 h-4" />
 </button>
 
           </motion.div>
@@ -176,9 +178,10 @@ const ExpertsSection = () => {
                 style={{ clipPath: titleClip }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
               >
-                <AnimatedHeading className="text-6xl  lg:text-7xl font-bold text-center text-gray-900">
-                  Have any questions?
-                </AnimatedHeading>
+               <AnimatedHeading className="text-lg md:text-4xl font-semibold mb-4 md:mb-8 text-center text-gray-900">
+  Have any questions?
+</AnimatedHeading>
+
               </motion.div>
             </div>
 
@@ -194,7 +197,7 @@ const ExpertsSection = () => {
                   <img src="/Home/speak.svg" alt="Diamond icon" />
                 </div>
                 <p className="text-[14px] text-gray-600">Have any questions?</p>
-                <h3 className="text-2xl font-semibold leading-snug">
+                <h3 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
                   Speak with <br /> our experts
                 </h3>
               </motion.div>
@@ -224,9 +227,10 @@ const ExpertsSection = () => {
 
                <button
   onClick={() => setShowEnquire(true)}
-  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-[12px] tracking-widest uppercase transition"
+  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1"
 >
-  REQUEST CALLBACK
+  <span>REQUEST CALLBACK</span>
+  <ArrowRight className="w-4 h-4" />
 </button>
 
               </motion.div>

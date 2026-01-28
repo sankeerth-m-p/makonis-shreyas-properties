@@ -28,7 +28,7 @@ const SignatureSpaces = ({ sections }) => {
       location: 'Vignana Nagar, Bangalore',
       title: 'Paradise',
       description: 'Your urban paradise awaits with thoughtfully designed homes, lush green spaces, and premium facilities. Perfect blend of comfort and convenience in one of Bangalore\'s most sought-after neighborhoods.',
-      image: "/Home/SandsParadiseVignanNagar.webp",
+      image: "/Home/SandsParadiseVignanNagar_enhanced.webp",
        bgColor: 'bg-ORANGE'
     },
     {
@@ -62,13 +62,26 @@ const SignatureSpaces = ({ sections }) => {
 
   return (
     <div className="  min-h-[calc(100vh-5rem)] flex flex-col items-center justify-between   lg:p-10">
-      <div className='  max-w-xl p-5    md:p-20 flex flex-col justify-center items-center'>
-        <AnimatedHeading className='text-2xl   lg:text-3xl font-bold  lg:text-center  uppercase mb-5'>Signature spaces crafted for modern living</AnimatedHeading>
-        <FloatUpText className=' lg:px-5 flex flex-col gap-5 items-center' ><p className='text-sm   '>A thoughtfully planned development bringing essential amenities together in one cohesive environment.
-        </p>
-         <button onClick={()=>navigate('/projects')} className="bg-ORANGE w-full hover:bg-ORANGE2 text-white buttons px-8 py-3 rounded-full  text-base   lg:w-fit">
-          VIEW PROJECTS
-        </button>
+      <div className='  max-w-xl md:p-20 flex flex-col justify-center items-center'>
+       <AnimatedHeading
+  delay={0}
+  className="text-lg md:text-4xl font-semibold mb-4 md:mb-8 text-center"
+>
+  Signature spaces crafted for modern living
+</AnimatedHeading>
+        <FloatUpText delay={0} className=' lg:px-5 flex flex-col gap-5 items-center' >
+       <p className="text-sm w-full text-center">
+  A thoughtfully planned development bringing essential amenities together in one cohesive environment.
+</p>
+
+        <button
+  onClick={()=>navigate('/projects')}
+  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1"
+>
+  <span>VIEW PROJECTS</span>
+  <ArrowRight className="w-4 h-4" />
+</button>
+
           </FloatUpText>
         
       </div>
@@ -105,19 +118,20 @@ const SignatureSpaces = ({ sections }) => {
     >
       {/* Content Wrapper */}
       <div className="relative z-10 max-w-md">
-        <AnimatedHeading className="text-2xl  lg:text-4xl mt-2  lg:mt-4 font-bold text-white mb-3 leading-tight">
-          {section.title}
-        </AnimatedHeading>
-               <FloatUpText>
+<h3 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8 text-white leading-tight">
+  {section.title}
+</h3>
+
+               
                  
 
         <p className="text-xs text-white tracking-widest mb-4">
           {section.location}
         </p>
 
-        <p className="text-sm text-white/90 leading-relaxed mb-6  lg:mb-10">
-          {section.description}
-        </p>
+      <p className="text-sm text-center text-white/90 leading-relaxed mb-6 lg:mb-10">
+  {section.description}
+</p>
 
         <a
           href="#"
@@ -127,7 +141,7 @@ const SignatureSpaces = ({ sections }) => {
         >
           <span>view details</span>
           <ArrowRight className="w-4 h-4" />
-        </a></FloatUpText>
+        </a>
       </div>
 
       {/* BIG NUMBER (Desktop only – mobile would look dumb) */}

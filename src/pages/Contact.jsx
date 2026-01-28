@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import contactImg from "/Contact/contact.jpg"; // replace with your image
 //import { Phone, Mail, Globe, Headphones } from "lucide-react";
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
+import { ArrowRight } from "lucide-react";
 import Enquire from "./Enquire";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -19,7 +20,7 @@ const Contact = () => {
     {/* LEFT TEXT */}
     <div className="w-full md:w-1/2 flex items-center py-12 md:py-0">
       <div className="max-w-[560px] mx-auto md:ml-auto px-6 md:pr-20">
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6 leading-snug">
+        <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
           We would love to <br className="hidden md:block" /> connect to you.
         </h2>
         <p className="text-gray-600 text-base leading-relaxed">
@@ -56,9 +57,10 @@ const Contact = () => {
           </div>
         <button
   onClick={() => setShowEnquire(true)}
-  className="mt-4 md:mt-0 bg-white text-orange-500 px-6 py-2 rounded-full text-sm font-medium"
+  className="mt-4 md:mt-0 bg-white text-orange-500 px-6 py-2 rounded-full text-sm font-medium inline-flex items-center gap-3 hover:bg-orange-500 hover:text-white transition-all"
 >
-  REQUEST CALLBACK
+  <span>REQUEST CALLBACK</span>
+  <ArrowRight className="w-4 h-4" />
 </button>
 
         </div>
@@ -136,7 +138,7 @@ const Contact = () => {
 
     {/* Left: Office Info */}
     <div className="md:pl-16">
-      <h2 className="text-3xl font-medium mb-10">Our office</h2>
+      <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">Our office</h2>
 
       <p className="font-semibold mb-4">Shreyas Infra Projects Pvt.Ltd.</p>
 

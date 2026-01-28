@@ -20,7 +20,7 @@ const StoryBehindBrand = () => {
   <div className="absolute   inset-0 bg-[#F4EFE5]" />
 
   {/* CONTENT */}
-  <div className="relative h-full pb-10 max-w-7xl mx-auto px-6">
+  <div className="relative h-full pb-10 max-w-7xl mx-auto md:px-6">
     <div
       className="
         h-full
@@ -51,9 +51,7 @@ const StoryBehindBrand = () => {
             delay={0}
             staggerDelay={0.15}
             className="
-              font-medium leading-tight whitespace-pre-line
-              text-[clamp(22px,5vw,34px)]
-            "
+              text-lg md:text-4xl font-semibold mb-4 md:mb-8"
           >
             The Story{"\n"}Behind the Brand
           </AnimatedHeading>
@@ -100,7 +98,7 @@ const StoryBehindBrand = () => {
              lg:text-right
              lg:max-w-[26ch]
           "
-            ><FloatUpText>
+            ><FloatUpText delay={0}>
                 
           <p className="text-[clamp(13px,1.2vw,15px)] text-[#2A2A2A] leading-relaxed mb-5">
             Our brand tells a story of commitment, trust, and progress.

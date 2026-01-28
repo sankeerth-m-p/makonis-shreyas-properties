@@ -50,9 +50,9 @@ const HeroSection = () => {
   const autoPlayTimeoutRef = useRef(null);
   const slideIntervalRef = useRef(null);
 
-  const SLIDE_DURATION = 2000; // Auto-scroll duration
-  const MANUAL_SLIDE_DURATION = 500; // Fast duration for manual interactions
-  const SLIDE_DELAY = 6000;
+  const SLIDE_DURATION = isMobile ? 600 : 1300; // Faster auto-scroll duration on mobile
+  const MANUAL_SLIDE_DURATION = isMobile ? 150 : 200; // Faster manual duration on mobile
+  const SLIDE_DELAY = isMobile ? 3000 : 6000; // Shorter delay between slides on mobile
   const RESUME_DELAY = 5000;
   const MIN_SWIPE_DISTANCE = 50;
 

@@ -186,7 +186,7 @@ const BespokeSection = () => {
 
   return (
     <section className="bg-[#EEF2F3] py-10  lg:h-[calc(100vh-5rem)] md:h-[50vh]  justify-center  items-center flex">
-      <div className="max-w-6xl px-4 h-full max-h-[550px]    md:px-4">
+      <div className="max-w-6xl h-full max-h-[550px]    md:px-4">
         <div className="bg-white  rounded-3xl h-full px-5 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}
           <div className="w-full  md:w-[30%] items-center flex flex-col justify-center font-bold">
@@ -203,12 +203,10 @@ const BespokeSection = () => {
 
             <button
               onClick={() => navigate("/projects")}
-              className="text-[11px] buttons  justify-center items-center gap-3  hover:text-ORANGE hover:bg-ORANGE2/5 w-fit p-2 rounded-md flex tracking-widest text-gray-700"
+              className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1"
               >
-                <span>
-                VIEW PROJECTS
-                </span>
-                <ArrowRight className="h-4 w-4" />
+                <span>VIEW PROJECTS</span>
+                <ArrowRight className="w-4 h-4" />
             </button>
               </div>
           </div>

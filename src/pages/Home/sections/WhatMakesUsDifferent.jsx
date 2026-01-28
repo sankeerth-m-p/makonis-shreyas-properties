@@ -4,8 +4,8 @@ import FloatUpText from "../../../components/floatUpText";
 
 const WhatMakesUsDifferent = () => {
   return (
-     <section className="bg-white  lg:h-[calc(100vh-5rem)] py-10 lg:py-0  flex justify-center items-center">
-  <div className="max-w-6xl md:max-h[70vh] px-4 grid grid-cols-1 md:grid-cols-5 gap-10  md:gap-20 items-start  mb-5">
+     <section className="bg-white px-6 lg:px-6 lg:h-[calc(100vh-5rem)] py-10 lg:py-0  flex justify-center items-center">
+  <div className="max-w-6xl md:max-h[70vh] grid grid-cols-1 md:grid-cols-5 gap-10  md:gap-20 items-start  mb-5 md:px-4">
     
     {/* LEFT IMAGE - Takes 2 columns on desktop */}
     <RevealImageAnimation 
@@ -14,7 +14,7 @@ const WhatMakesUsDifferent = () => {
       className="md:w-full h-[50vh]  md:h-full  object-cover md:col-span-2 " />
     
     {/* RIGHT CONTENT - Takes 3 columns on desktop */}
-    <div className="md:col-span-3 flex flex-col w-full gap-5  h-full justify-around   ">
+    <div className="md:col-span-3 flex flex-col w-full gap-5 h-full justify-around text-center md:text-left">
       {/* HEADING */}
           <div className="  flex flex-col gap-3 ">
             
@@ -22,7 +22,7 @@ const WhatMakesUsDifferent = () => {
         as="h2"
         delay={0}
         staggerDelay={0.15} 
-        className=" text-base md:text-[38px] font-semibold    leading-tight ">
+        className=" text-lg md:text-4xl font-semibold mb-4 md:mb-8 ">
         What makes us different
         lies in how we blend vision
         with execution.

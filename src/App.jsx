@@ -40,7 +40,7 @@ const isHome = location.pathname === "/"; // check if current path is home
     
       <>
          <ScrollToTop />
-        <div className="px-4 md:px-0">
+        <div className={isHome ? "" : "px-2 md:px-0"}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
 

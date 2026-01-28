@@ -2,6 +2,7 @@ import AnimatedHeading from "../../../components/animatedHeading";
 import FloatUpText from "../../../components/floatUpText";
 import promiseImg from "/Home/promisesection.jpg";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight } from 'lucide-react';
 const PromiseSection = () => {
   const navigate = useNavigate();
   return (
@@ -24,13 +25,13 @@ const PromiseSection = () => {
   <div className="absolute inset-0 bg-black/60" />
 
   {/* CONTENT */}
-  <div className="relative z-10   max-w-4xl mx-auto px-6 h-full flex flex-col items-center justify-center text-center text-white">
+  <div className="relative z-10   max-w-4xl mx-auto md:px-6 h-full flex flex-col items-center justify-center text-center text-white">
 
     <AnimatedHeading
       as="h2"
       delay={0}
       staggerDelay={0.15}
-      className="text-lg md:text-[38px] font-medium leading-snug mb-6"
+      className="text-lg md:text-4xl font-semibold mb-4 md:mb-8 text-white"
     >
           Our promise is to turn urban spaces  { '\n'}into meaningful lives.
     </AnimatedHeading>
@@ -43,8 +44,9 @@ const PromiseSection = () => {
       </p>
     </FloatUpText>
 
-   <button onClick={()=>navigate('/our-promise')}  className="bg-ORANGE w-full hover:bg-ORANGE2 text-white buttons px-8 py-3 rounded-full  text-base  md:w-fit">
-      Know More
+   <button onClick={()=>navigate('/our-promise')}  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1">
+      <span>Know More</span>
+      <ArrowRight className="w-4 h-4" />
     </button>
 
   </div>
