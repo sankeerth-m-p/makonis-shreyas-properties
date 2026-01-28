@@ -26,7 +26,7 @@ const OurStory = () => {
           <AnimatedHeading
             as="h1"
             delay={0}
-            staggerDelay={0.15} className="text-xl md:text-4xl  text-white font-semibold leading-normal">
+            staggerDelay={0.15} className="text-xl section-heading md:text-4xl  text-white font-semibold leading-normal">
             Our journey is defined by a commitment to {'\n'}
             deliver more than just properties
           </AnimatedHeading>
@@ -248,13 +248,13 @@ const OurStory = () => {
   <img
     src="/story_orsngebg.svg"
     alt=""
-    className="absolute bottom-0 left-0 w-full h-auto z-10 pointer-events-none "
+    className="absolute lg:bottom-0 md:bottom-20 bottom-28  left-0 w-full h-auto z-10 pointer-events-none "
   />
 
   {/* CONTENT ON ORANGE */}
-  <div className="absolute bottom-0 left-0 w-full z-20 md:relative md:h-full md:flex md:items-end">
-    <div className="max-w-[1120px] mx-auto px-0 pb-5 md:pb-24 text-white w-full">
-      <div className="grid md:grid-cols-2 px-4 gap-2 lg:gap-6">
+  <div className="absolute bottom-0   left-0 w-full z-20 md:relative md:h-full md:flex md:items-end">
+    <div className="max-w-[1120px] mx-auto bg-ORANGE lg:bg-transparent px-0 pb-5 md:pb-24 text-white w-full">
+      <div className="grid md:grid-cols-2   px-4 gap-2 lg:gap-6">
 
         <AnimatedHeading
           as="h1"
