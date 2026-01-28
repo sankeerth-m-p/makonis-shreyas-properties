@@ -31,14 +31,14 @@ const StoryBehindBrand = () => {
       {/* wrapper */}
       <div
         className=" 
-          relative  lg:h-[50vh] h-1/3 
+          relative  lg:h-[50vh] h-2/5 
           w-[min(78vw,520px)]
           aspect-[520/420] 
         "
       >
         {/* TOP LEFT TITLE */}
         <div
-          className="
+          className=" 
             absolute
             top-0 left-0 
             -translate-y-[130%]
@@ -59,7 +59,7 @@ const StoryBehindBrand = () => {
 
         {/* MASK IMAGE */}
         <div
-          className="
+          className=" 
             w-full h-full 
             bg-center bg-cover
              bg-fixed
