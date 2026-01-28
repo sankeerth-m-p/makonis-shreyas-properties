@@ -107,8 +107,7 @@ const COLORS1 = {
           transform: `translateY(${(1 - scrollProgress) * 40}px)`,
         }}
       >
-          <AnimatedHeading className="text-lg     md:text-4xl font-semibold mb-6  md:mb-20
-        ">
+<AnimatedHeading className="text-3xl md:text-4xl font-semibold mb-3 md:mb-8">
           What 
           people 
           says
@@ -149,7 +148,7 @@ const COLORS1 = {
 >
 
       <div
-        className="relative z-10 max-w-5xl mx-auto md:px-6"
+  className="relative z-10 max-w-5xl mx-auto px-4 md:px-6"
         style={{
           opacity:
       window.innerWidth > 768

@@ -25,13 +25,14 @@ const PromiseSection = () => {
   <div className="absolute inset-0 bg-black/60" />
 
   {/* CONTENT */}
-  <div className="relative z-10   max-w-4xl mx-auto md:px-6 h-full flex flex-col items-center justify-center text-center text-white">
+<div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 h-full flex flex-col items-center justify-center text-center text-white">
+
 
     <AnimatedHeading
       as="h2"
       delay={0}
       staggerDelay={0.15}
-      className="text-lg md:text-4xl font-semibold mb-4 md:mb-8 text-white"
+     className="text-3xl md:text-4xl font-semibold mb-3 md:mb-8 text-white"
     >
           Our promise is to turn urban spaces  { '\n'}into meaningful lives.
     </AnimatedHeading>
