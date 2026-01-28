@@ -39,7 +39,7 @@ const WhatMakesUsDifferent = () => {
 
             {/* ITEM 1 */}
             <div className="flex gap-3 items-start mb-3">
-<FloatUpText className="w-16 h-10 md:w-10 md:h-10 p-2 bg-ORANGE flex items-center justify-center">
+<FloatUpText className="w-16 h-10  aspect-square md:w-10 md:h-10 p-1 bg-ORANGE flex items-center justify-center">
   <img src="/Home/diamondlicon.svg" alt="Diamond icon" />
 </FloatUpText>
               <div>
@@ -57,7 +57,7 @@ const WhatMakesUsDifferent = () => {
 
             {/* ITEM 2 */}
             <div className="flex gap-3 items-start mb-3">
- <FloatUpText className="w-16 h-10 md:w-10 md:h-10 p-2 bg-ORANGE flex items-center justify-center">
+ <FloatUpText className="w-16 h-10 md:w-10 md:h-10  p-2 aspect-square bg-ORANGE flex items-center justify-center">
   <img src="/Home/plannedicon.svg" alt="icon" />
 </FloatUpText>
 
@@ -76,7 +76,7 @@ const WhatMakesUsDifferent = () => {
 
             {/* ITEM 3 */}
             <div className="flex gap-3 items-start">
-       <FloatUpText className="w-16 h-10 md:w-10 md:h-10 p-2 bg-ORANGE flex items-center justify-center">
+       <FloatUpText className="w-16  h-10 md:w-10 aspect-square md:h-10  p-[0.3rem] bg-ORANGE flex items-center justify-center">
   <img src="/Home/shakehandicon.svg" alt="icon" />
 </FloatUpText>
 

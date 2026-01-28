@@ -93,12 +93,12 @@ const COLORS1 = {
   const t = TESTIMONIALS[activeIndex];
 
   return (
-  <section ref={ref} id="testimonials" className="relative  lg:h-[calc(100vh-5rem)] flex-col  lg:justify-end   lg:flex w-full overflow-hidden">
+  <section ref={ref} id="testimonials" className="relative    lg:h-[calc(100vh-5rem)] flex-col  lg:justify-end   lg:flex w-full overflow-hidden">
     {/* ✅ TOP SECTION (WHITE) */}
     <div className="relative bottom-0 bg-white  mb-0     pb-0">
       {/* HEADING should be BEFORE wave */}
       <div
-        className="relative z-10 text-center py-20   "
+        className="relative z-10 text-center pt-10 lg:pt-36 pb-36    "
         style={{
           opacity:
       window.innerWidth > 768
@@ -179,7 +179,7 @@ const COLORS1 = {
 
             <AnimatedHeading
               key={activeIndex}
-              className="text-lg  lg:text-[38px] font-normal leading-relaxed animate-fadeIn"
+              className="text-2xl  max-w-xl lg:max-w-full lg:text-[38px] font-normal leading-normal animate-fadeIn"
             >
               {t.quote}
             </AnimatedHeading>

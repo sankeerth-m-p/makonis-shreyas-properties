@@ -62,10 +62,10 @@ const SignatureSpaces = ({ sections }) => {
 
   return (
     <div className="  min-h-[calc(100vh-5rem)] flex flex-col items-center justify-between   lg:p-10">
-      <div className='  max-w-xl md:p-20 flex flex-col justify-center items-center'>
+      <div className=' py-6 max-w-xl md:p-20 flex flex-col justify-center items-center'>
        <AnimatedHeading
   delay={0}
-  className="text-3xl md:text-4xl font-semibold mb-4 md:mb-8 text-center"
+  className="text-3xl md:text-4xl  font-semibold mb-4 md:mb-8 text-center"
 >
   Signature spaces crafted for modern living
 </AnimatedHeading>
@@ -117,7 +117,7 @@ const SignatureSpaces = ({ sections }) => {
       `}
     >
       {/* Content Wrapper */}
-      <div className="relative z-10 max-w-md">
+      <div className="relative z-10  py-5 max-w-md">
 <h3 className="text-2xl md:text-4xl font-semibold mb-3 md:mb-8 text-white leading-tight">
 
   {section.title}
@@ -149,7 +149,7 @@ const SignatureSpaces = ({ sections }) => {
       <div
         className="
             lg:tracking-tight
-          absolute bottom-2 lg:bottom-10 right-4 lg:right-16
+          absolute bottom-8 lg:bottom-10 right-4 lg:right-16
            text-7xl lg:text-[200px] font-roboto leading-none z-0 select-none
         "
         style={{

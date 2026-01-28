@@ -84,12 +84,12 @@ useEffect(() => {
   />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1E2A]/100 via-[#0A1E2A]/10 to-transparent z-10" />
+      <div className="absolute  h-1/2 bottom-0  w-full bg-gradient-to-t from-[#0A1E2A]/100 via-[#0A1E2A]/40  to-transparent z-10" />
 
       {/* CONTENT */}
       <div className="relative z-20 h-full flex flex-col justify-end">
         {/* INFO STRIP */}{/* MOBILE DOT INDICATOR */}
-<div className=" lg:hidden absolute top-[100px] w-full flex justify-center gap-2 z-30">
+<div className=" hidden  absolute top-[100px] w-full flex justify-center gap-2 z-30">
   {images.map((_, i) => (
     <button
       key={i}
@@ -102,7 +102,7 @@ useEffect(() => {
 </div>
 
         {/* INFO STRIP */}
-<div className="    lg:absolute  lg:bottom-[150px]  w-full lg:px-0">
+<div className="    lg:absolute hidden md:block lg:bottom-[150px]  w-full lg:px-0">
   <div className="max-w-6xl mx-auto">
     <div className="flex flex-row       items-center justify-between gap-4  lg:gap-0 text-[#D7E2E8] text-xs  lg:text-sm">
 
