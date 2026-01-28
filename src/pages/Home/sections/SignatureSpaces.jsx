@@ -61,15 +61,15 @@ const SignatureSpaces = ({ sections }) => {
 
 
   return (
-    <div className="  min-h-[calc(100vh-5rem)] flex flex-col items-center justify-between   lg:p-10">
-      <div className=' py-6 max-w-xl md:p-20 flex flex-col justify-center items-center'>
+    <div className=" min-h-[calc(100vh-5rem)] flex flex-col items-center justify-between   lg:p-10">
+      <div className='mx-4 md:mx-0  py-6 max-w-xl md:p-20 flex flex-col justify-center items-center'>
        <AnimatedHeading
   delay={0}
   className="text-3xl md:text-4xl  font-semibold mb-4 md:mb-8 text-center"
 >
   Signature spaces crafted for modern living
 </AnimatedHeading>
-        <FloatUpText delay={0} className=' lg:px-5 flex flex-col gap-5 items-center' >
+        <FloatUpText delay={0} className=' lg:px-5  flex flex-col gap-5 items-center' >
        <p className="text-sm w-full text-center">
   A thoughtfully planned development bringing essential amenities together in one cohesive environment.
 </p>
@@ -110,7 +110,7 @@ const SignatureSpaces = ({ sections }) => {
     <div
       className={`
         relative flex flex-col  justify-start
-        p-6  lg:p-16
+        p-4    lg:p-16
         h-1/3  lg:h-auto
          lg:w-1/3
         ${section.bgColor}

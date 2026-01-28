@@ -152,7 +152,7 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
         `}
       >
         {/* MOBILE NAVBAR */}
-        <div className=" lg:hidden   flex items-center justify-between w-full  lg:min-h-20 px-6 py-2">
+        <div className=" lg:hidden   flex items-center justify-between w-full  lg:min-h-20 px-4 py-2">
           <button
             id="mobile-menu-button"
             onClick={toggleMobileMenu}

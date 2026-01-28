@@ -74,7 +74,7 @@ const NatureSign = () => {
 
   return (
     <section
-      className="relative w-full h-[60vh] lg:h-[calc(100vh-5rem)] overflow-hidden bg-[#0B1F1A]"
+      className="relative  w-full h-[60vh] lg:h-[calc(100vh-5rem)] overflow-hidden bg-[#0B1F1A]"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -91,9 +91,9 @@ const NatureSign = () => {
       <div className="absolute h-1/2 bottom-0 w-full bg-gradient-to-t from-[#0A1E2A]/100 via-[#0A1E2A]/40 to-transparent z-10" />
 
       {/* CONTENT */}
-      <div className="relative z-20 h-full flex flex-col justify-end">
+      <div className="relative  z-20 h-full flex flex-col justify-end">
         {/* INFO STRIP – DESKTOP ONLY (UNCHANGED) */}
-        <div className="lg:absolute hidden md:block lg:bottom-[150px] w-full">
+        <div className="lg:absolute hidden px-4 lg:px-0 md:block lg:bottom-[150px] w-full">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-between text-[#D7E2E8] text-sm">
               <div className="flex items-center gap-3">
@@ -134,7 +134,7 @@ const NatureSign = () => {
         </div>
 
         {/* BOTTOM BAND */}
-        <div className="py-4 lg:py-6">
+        <div className="py-4 px-4 lg:px-0 lg:py-6">
           <div className="max-w-6xl mx-auto flex items-center justify-between gap-6 text-[#D7E2E8]">
             <img src={nature2} className="w-[130px] lg:w-[160px]" />
             <div className="flex flex-col gap-2">
@@ -152,7 +152,7 @@ const NatureSign = () => {
       }`}
     />
   ))}
-</div><AnimatedHeading className="text-sm lg:text-2xl max-w-xs lg:max-w-md text-white">
+</div><AnimatedHeading className="text-sm lg:text-2xl  max-w-xs lg:max-w-md text-white">
               Nature’s sign, where luxury and nature flow in perfect harmony.
             </AnimatedHeading>
 </div>

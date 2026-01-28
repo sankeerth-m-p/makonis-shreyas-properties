@@ -57,7 +57,7 @@ const HomeLayout = () => {
     <>
       <div
         id="home-scroll"
-        className="relative lg:isolate
+        className="relative lg:isolate 
           lg:h-[calc(100vh)]
           lg:overflow-y-scroll
           lg:snap-y lg:snap-mandatory

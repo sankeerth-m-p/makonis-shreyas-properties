@@ -165,7 +165,7 @@ const COLORS1 = {
   alt=""
   className="
     absolute 
-    left-0 top-0
+    left-6 md:left-0 top-0
     -translate-x-2/3
     -translate-y-2/3
     rotate-180

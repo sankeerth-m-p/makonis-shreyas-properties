@@ -73,7 +73,7 @@ useEffect(() => {
   }, []);
 
   return (
-    <div className="w-full md:w-[70%] h-auto md:h-full   ">
+    <div className="w-full md:w-[70%] h-auto  md:h-full   ">
       {/* ✅ MOBILE SLIDER */}
       <div className="md:hidden relative w-full ">
         {/* Slides */}
@@ -187,10 +187,10 @@ const BespokeSection = () => {
   return (
     <section className="bg-[#EEF2F3] py-10  lg:h-[calc(100vh-5rem)] md:h-[50vh]  justify-center  items-center flex">
       <div className="max-w-6xl h-full max-h-[550px]    md:px-4">
-        <div className="bg-white  rounded-3xl h-full px-5 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
+        <div className="bg-white  rounded-3xl h-full px-4 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}
           <div className="w-full md:w-[30%] flex flex-col items-center justify-center font-bold text-center">
-  <div className="text-center">
+  <div className="text-center ">
 
     <AnimatedHeading
       as="h3"

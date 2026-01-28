@@ -4,18 +4,18 @@ import FloatUpText from "../../../components/floatUpText";
 
 const WhatMakesUsDifferent = () => {
   return (
-    <section className="bg-white px-6 lg:px-6 lg:h-[calc(100vh-5rem)] py-10 lg:py-0 flex justify-center items-center">
+    <section className="bg-white px-4  lg:px-6 lg:h-[calc(100vh-5rem)] py-10 lg:py-0 flex justify-center items-center">
       <div className="max-w-6xl md:max-h[70vh] grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-20 items-start mb-5 md:px-4">
 
         <RevealImageAnimation
           image="/Home/wahtmakesusdiffrent.webp"
           alt="Team discussion"
-          className="md:w-full h-[50vh] md:h-full object-cover md:col-span-2"
+          className="md:w-full h-[50vh]  md:h-full object-cover md:col-span-2"
         />
 
         <div className="md:col-span-3 flex flex-col w-full gap-5 h-full justify-around text-center md:text-left">
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col  gap-3">
             <AnimatedHeading
               as="h2"
               delay={0}
