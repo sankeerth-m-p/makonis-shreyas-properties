@@ -75,7 +75,7 @@ const SignatureSpaces = ({ sections }) => {
 </p>
 <button
   onClick={()=>navigate('/projects')}
-  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1 mb-6 lg:mb-0"
+  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-black border-2 border-transparent hover:border-black transition-all hover:translate-x-1 mb-6 lg:mb-0"
 >
 
   <span>VIEW PROJECTS</span>
