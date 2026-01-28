@@ -62,7 +62,7 @@ const StoryBehindBrand = () => {
           className="
             w-full h-full 
             bg-center bg-cover
-             lg:bg-fixed
+             bg-fixed
           "
           style={{
             backgroundImage:
