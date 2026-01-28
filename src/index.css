@@ -7,6 +7,11 @@
   border-color: red;
   background: #fa07070e;
 }/* ignore this*/
+.a2{
+  border-width: 1px;
+  border-color: red;
+  background: #fa07ad1d;
+}/* ignore this*/
 
 
 
@@ -38,18 +43,7 @@
 .animate-cardUp {
   animation: cardUp 1s ease-out forwards;
 }
-/* @keyframes heroInfinite {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
 
-.animate-heroInfinite {
-  animation: heroInfinite 12s linear infinite;
-} */
 
 
 /* FONT STYLING--------------------------------------- */
@@ -96,4 +90,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 ::-webkit-scrollbar {
     display: none;
+}
+
+.section-heading {
+  @apply md:text-4xl;
+}
+
+/* md and lower */
+@media (max-width: 767px) {
+  .section-heading {
+    font-size: 1.8rem; /* 30px */
+    line-height: 2.2rem;
+  }
 }

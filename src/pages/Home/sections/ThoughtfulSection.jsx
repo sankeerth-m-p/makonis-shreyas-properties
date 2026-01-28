@@ -46,7 +46,7 @@ const ThoughtfulSection = () => {
       <div className="block lg:hidden  relative max-w-6xl mx-auto  z-10 px-4">
 
         <div className="py-8  text-center  ">
-          <AnimatedHeading delay={0} className="text-3xl font-semibold mb-4">
+          <AnimatedHeading delay={0} className="  section-heading font-semibold mb-4">
             Thoughtfully developing spaces that reflect city's progress and promise
           </AnimatedHeading>
           <FloatUpText delay={0}>
@@ -68,7 +68,7 @@ const ThoughtfulSection = () => {
               <img src={vision} className="w-6 h-6" alt="Vision icon" />
               <div>
                 <h4 className="text-lg font-semibold">Our Vision</h4>
-                <p className="text-base leading-relaxed">
+                <p className="text-base   leading-relaxed">
                   To create thoughtfully planned spaces that elevate everyday living,
                   blending design, functionality and sustainability.
                 </p>
