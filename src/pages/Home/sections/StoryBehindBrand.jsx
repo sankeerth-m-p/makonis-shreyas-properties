@@ -7,7 +7,7 @@ const StoryBehindBrand = () => {
    <section
   className=" 
     relative w-full 
-    h-[70vh]  lg:h-[calc(100vh-5rem)]
+    h-[70vh]   lg:h-[calc(100vh-5rem)]
     bg-center bg-cover bg-no-repeat
     overflow-hidden z-10
   "
@@ -51,7 +51,7 @@ const StoryBehindBrand = () => {
             delay={0}
             staggerDelay={0.15}
             className="
-             text-3xl md:text-4xl font-semibold mb-3 md:mb-8"
+             text-3xl md:text-4xl font-semibold mb-3 lg:mb-8"
           >
             The Story{"\n"}Behind the Brand
           </AnimatedHeading>
