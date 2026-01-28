@@ -343,12 +343,12 @@ const [showEnquire, setShowEnquire] = useState(false);
       logo="/royalenclave.png"
      status="Completed"
     title="Royal Enclave"
-    location="Marathahalli, Bangalore"
+    location="Marathahalli, Bengaluru"
     description="2BHK & 3BHK residential apartments"
     onClick={() =>
       setSelectedProject({
         title: "Royal Enclave",
-        location: "Marathahalli, Bangalore",
+        location: "Marathahalli, Bengaluru",
         status: "Completed",
         image: "/Home/royalEnclave.webp",
          logo: "/royalenclave.png",
@@ -362,12 +362,12 @@ const [showEnquire, setShowEnquire] = useState(false);
       logo="/Paradise.png"
     status="Completed"
     title="Paradise"
-    location="Vignana Nagar, Bangalore"
+    location="Vignana Nagar, Bengaluru"
     description="2BHK and 3BHK luxury apartments"
     onClick={() =>
       setSelectedProject({
         title: "Paradise",
-        location: "Vignana Nagar, Bangalore",
+        location: "Vignana Nagar, Bengaluru",
         status: "Completed",
         image:  "/Home/SandsParadiseVignanNagar_enhanced.webp",
          logo: "/Paradise.png",
@@ -381,12 +381,12 @@ const [showEnquire, setShowEnquire] = useState(false);
       logo="/ChourasiaShreyas.png"
      status="Completed"
     title="Chourasia Shreyas"
-    location="Marathahalli, Bangalore"
+    location="Marathahalli, Bengaluru"
     description="Commercial units suitable for offices, showrooms, or retail outlets"
     onClick={() =>
       setSelectedProject({
         title: "Chourasia Shreyas",
-        location: "Marathahalli, Bangalore",
+        location: "Marathahalli, Bengaluru",
         status: "Completed",
         image: "/Home/ChourasiaShreyasMarathahalli.webp",
          logo: "/ChourasiaShreyas.png",
@@ -433,12 +433,12 @@ const [showEnquire, setShowEnquire] = useState(false);
       logo="/ModernView.png"
      status="Completed"
     title="Modern View Apartment"
-    location="Marathahalli, Bangalore"
+    location="Marathahalli, Bengaluru"
     description="32 exclusive homes fostering a close-knit family environment"
     onClick={() =>
       setSelectedProject({
         title: "Modern View Apartment",
-        location: "Marathahalli, Bangalore",
+        location: "Marathahalli, Bengaluru",
         status: "Completed",
         image: "/Home/ModernView.webp",
          logo: "/ModernView.png",
@@ -452,12 +452,12 @@ const [showEnquire, setShowEnquire] = useState(false);
       logo="/naturessign.png"
     status="Ongoing"
     title="Nature’s Sign"
-    location="Devanahalli, Bangalore"
-    description="Plotted development community in North Bangalore’s fastest growing locations"
+    location="Devanahalli, Bengaluru"
+    description="Plotted development community in North Bengaluru’s fastest growing locations"
     onClick={() =>
       setSelectedProject({
         title: "Nature’s Sign",
-        location: "Devanahalli, Bangalore",
+        location: "Devanahalli, Bengaluru",
         status: "Ongoing",
         image: "/Home/naturesign.webp",
          logo: "/naturessign.png",
