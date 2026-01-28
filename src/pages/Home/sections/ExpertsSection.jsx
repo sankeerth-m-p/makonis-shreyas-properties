@@ -5,6 +5,7 @@ import RevealImageAnimation from "../../../components/RevealImageAnimation";
 import { AnimatePresence } from "framer-motion";
 import { ArrowRight } from 'lucide-react';
 import Enquire from "../../Enquire";
+import FloatUpText from "../../../components/floatUpText";
 const ExpertsSection = () => {
   const sectionRef = useRef(null);
   const scrollRootRef = useRef(null);
@@ -110,30 +111,22 @@ const ExpertsSection = () => {
       {/* MOBILE VERSION unchanged */}
       <div className=" lg:hidden max-w-7xl h-full mx-auto">
          <div className="grid grid-cols-1 items-center gap-5">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
-            viewport={{ once: true, amount: 0.4 }}
+          <div
             className="flex justify-center"
           >
             <RevealImageAnimation
               image="/Home/expert.jpg"
               className="h-[50vh] w-full rounded-3xl object-cover"
             />
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.4 }}
+          <FloatUpText
             className="flex flex-col gap-3 items-center text-center"
           >
             <div className="w-10 h-10 flex justify-center">
               <img 
                 src="/Home/speak.svg" 
-                alt="Diamond icon" 
+                alt="speak" 
               />
             </div>
 
@@ -144,13 +137,9 @@ const ExpertsSection = () => {
             <h3 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
               Speak with <br /> our experts
             </h3>
-          </motion.div>
+          </FloatUpText>
 
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.4 }}
+          <FloatUpText
             className="flex flex-col gap-4 items-center text-center"
           >
             <p className="text-base text-gray-600 leading-relaxed max-w-xs">
@@ -164,7 +153,7 @@ const ExpertsSection = () => {
   <ArrowRight className="w-4 h-4" />
 </button>
 
-          </motion.div>
+          </FloatUpText>
         </div>
       </div>
 
