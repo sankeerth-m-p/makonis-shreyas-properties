@@ -193,14 +193,14 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
           {/* MENU PANEL */}
           <div
             id="mobile-menu"
-            className={`fixed left-0 w-full h-[calc(100vh-56px)] bg-white z-[56]
+            className={`fixed left-0 w-full  h-[calc(100vh-56px)] bg-white z-[56]
               top-[56px] overflow-y-auto
               transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]
               ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
             style={{ paddingBottom: "2rem" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex flex-col px-6 py-8 space-y-4">
+            <div className="flex flex-col  px-4 py-8 space-y-4">
               <Link
                 to="/"
                 onClick={() => setIsMobileMenuOpen(false)}
