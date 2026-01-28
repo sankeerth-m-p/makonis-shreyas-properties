@@ -147,15 +147,14 @@ const SignatureSpaces = ({ sections }) => {
       {/* BIG NUMBER (Desktop only – mobile would look dumb) */}
       <div
         className="
-          hidden  lg:block
-          absolute bottom-10 right-16
-          text-[200px] font-roboto leading-none z-0 select-none
+            lg:tracking-tight
+          absolute bottom-2 lg:bottom-10 right-4 lg:right-16
+           text-7xl lg:text-[200px] font-roboto leading-none z-0 select-none
         "
         style={{
           WebkitTextStroke: "1px #fff",
           color: "transparent",
           fontWeight: 700,
-          letterSpacing: "-8px",
         }}
       >
         {section.number}
