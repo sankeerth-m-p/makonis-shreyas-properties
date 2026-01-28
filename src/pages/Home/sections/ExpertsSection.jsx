@@ -109,7 +109,7 @@ const ExpertsSection = () => {
       className="w-full bg-white   lg:relative py-5  lg:py-0  lg:h-[calc(250vh)]"
     >
       {/* MOBILE VERSION unchanged */}
-      <div className=" lg:hidden max-w-7xl h-full mx-auto">
+      <div className=" lg:hidden pb-10 max-w-7xl h-full mx-auto">
          <div className="grid grid-cols-1 items-center gap-5">
           <div
             className="flex justify-center"
@@ -130,11 +130,11 @@ const ExpertsSection = () => {
               />
             </div>
 
-           <p className="text-lg md:text-4xl font-semibold mb-4 md:mb-8 text-black">
+           <p className="text-2xl md:text-4xl font-semibold mb-4 md:mb-8 text-black">
   Have any questions?
 </p>
 
-            <h3 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+            <h3 className="text-xl leading-tight md:text-4xl font-semibold mb-4 md:mb-8">
               Speak with <br /> our experts
             </h3>
           </FloatUpText>

@@ -43,9 +43,9 @@ const ThoughtfulSection = () => {
       />
 
       {/* MOBILE */}
-      <div className="block lg:hidden  relative max-w-6xl mx-auto z-10 px-4">
+      <div className="block lg:hidden  relative max-w-6xl mx-auto  z-10 px-4">
 
-        <div className="py-8  text-center ">
+        <div className="py-8  text-center  ">
           <AnimatedHeading delay={0} className="text-3xl font-semibold mb-4">
             Thoughtfully developing spaces that reflect city's progress and promise
           </AnimatedHeading>

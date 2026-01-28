@@ -164,8 +164,8 @@ const COLORS1 = {
   src={quote}
   alt=""
   className="
-    absolute 
-    left-6 md:left-0 top-0
+    absolute -top-4
+    left-6 md:left-0 lg:top-0
     -translate-x-2/3
     -translate-y-2/3
     rotate-180

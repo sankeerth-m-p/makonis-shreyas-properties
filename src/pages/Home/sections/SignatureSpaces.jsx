@@ -118,7 +118,7 @@ const SignatureSpaces = ({ sections }) => {
     >
       {/* Content Wrapper */}
       <div className="relative z-10  py-5 max-w-md">
-<h3 className="text-2xl md:text-4xl font-semibold mb-3 md:mb-8 text-white leading-tight">
+<h3 className="text-2xl md:text-4xl font-semibold mb-2 lg:mb-6 text-white leading-tight">
 
   {section.title}
 </h3>
@@ -126,7 +126,7 @@ const SignatureSpaces = ({ sections }) => {
                
                  
 
-        <p className="text-xs text-white tracking-widest mb-2">
+        <p className="text-xs text-white tracking-widest mb-4">
           {section.location}
         </p>
 
