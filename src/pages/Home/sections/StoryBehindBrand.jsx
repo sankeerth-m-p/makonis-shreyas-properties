@@ -31,7 +31,7 @@ const StoryBehindBrand = () => {
       {/* wrapper */}
       <div
         className=" 
-          relative  lg:h-[50vh] h-2/5 
+          relative  lg:h-[50vh] md:h-3/5  h-2/5
           w-[min(78vw,520px)]
           aspect-[520/420] 
         "

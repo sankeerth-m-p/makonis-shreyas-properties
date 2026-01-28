@@ -95,10 +95,10 @@ const COLORS1 = {
   return (
   <section ref={ref} id="testimonials" className="relative  lg:h-[calc(100vh-5rem)] flex-col  lg:justify-end   lg:flex w-full overflow-hidden">
     {/* ✅ TOP SECTION (WHITE) */}
-    <div className="relative bottom-0 bg-white  mt-20 pb-20">
+    <div className="relative bottom-0 bg-white  mb-0     pb-0">
       {/* HEADING should be BEFORE wave */}
       <div
-        className="relative z-10 text-center py-10 "
+        className="relative z-10 text-center py-20   "
         style={{
           opacity:
       window.innerWidth > 768
@@ -107,7 +107,8 @@ const COLORS1 = {
           transform: `translateY(${(1 - scrollProgress) * 40}px)`,
         }}
       >
-        <AnimatedHeading className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+          <AnimatedHeading className="text-lg     md:text-4xl font-semibold mb-6  md:mb-20
+        ">
           What 
           people 
           says
@@ -115,12 +116,12 @@ const COLORS1 = {
       </div>
 
       {/* ✅ Wave at BOTTOM of header section */}
-      <div className="absolute bottom-0 left-0 w-full z-20 translate-y-[45%] pointer-events-none">
+      <div className="absolute   bottom-0 left-0 w-full z-20 translate-y-[45%] pointer-events-none">
         <svg
           className="mm-waves"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
-          viewBox="0 24 150 28"
+          viewBox="0 29 150 28"
           preserveAspectRatio="none"
           shapeRendering="auto"
         >
@@ -143,7 +144,7 @@ const COLORS1 = {
 
     {/* ✅ MAIN CONTENT SECTION (FILLED) */}
    <div
-  className="relative pt-2   z-40 pb-24 mt-5  lg:mt-10"
+  className="relative pt-2   z-40 pb-32     flex h-full mt-5  lg:mt-10"
   style={{ backgroundColor: COLORS.mainFill }}
 >
 
