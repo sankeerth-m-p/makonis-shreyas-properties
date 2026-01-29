@@ -35,7 +35,7 @@ const ProjectCard = ({
 
   return (
     <Wrapper>
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+      <div className="bg-white  rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
         {/* IMAGE */}
         <div className="relative w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
           <img src={image} alt={title} className="w-full h-full object-cover hover:scale-105 transition-transform ease-in-out duration-700" />
@@ -50,26 +50,28 @@ const ProjectCard = ({
         </div>
 
         {/* CONTENT */}
-        <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
-        <img
+        <div className="w-full md:w-1/2   px-6 py-10 md:py-16 md:px-10 flex flex-col justify-center">
+          <div className="border-2 mb-2 flex w-fit h-18 aspect-video items-center p-1 justify-center ">
+          <img
   src={logo}
   alt={title}
-  className="w-32 mb-2 object-contain"
+  className="w-32  h-18 object-contain"
 />
+  </div>
 
 
 
-          <h3 className="text-2xl md:text-xl font-semiboldx">{title}</h3>
+          <h3 className="text-2xl  ">{title}</h3>
 
           <p className="text-gray-500 text-sm mb-4">{location}</p>
 
           <div className="w-full h-[1px] bg-gray-300 mb-5 md:mb-4" />
 
-          <p className="text-sm text-gray-600 mb-6">{description}</p>
+          <p className="text-sm text-gray-600 mb-8">{description}</p>
 
           <button
             onClick={onClick}
-            className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1 w-fit"
+            className="btn btn-orange w-fit mt-4 "
           >
             <span>{buttonText}</span>
             <ArrowRight className="w-4 h-4" />
@@ -85,7 +87,7 @@ const ProjectDetails = ({ project, onBack }) => {
     window.scrollTo(0, 0);   // <-- replace smooth scroll
   }, []);
   return (
-   <div className="relative w-full bg-white overflow-hidden">
+   <div className="relative w-full bg-white  overflow-hidden">
 
       {/* ===== BACK BUTTON ===== */}
      <div className="pt-4">
@@ -520,21 +522,30 @@ return selectedProject ? (
 ) : (
   <>
       {/* ================= FIRST PROJECTS SECTION ================= */}
-      <section className="bg-[#F5F2EF] ">
-        {/* Header */}
-        <div className="bg-ORANGE px-4 py-20 text-center text-white">
-         <AnimatedHeading delay={0} className="text-lg md:text-4xl font-semibold mb-4 md:mb-8 text-white">
+      <section className="bg-ORANGE px-6 md:px-0  pt-20 md:pt-28 pb-20 -z-10 relative">
+        <div className="max-w-[1120px] mx-auto px-0 flex flex-col justify-center items-center text-center  text-white">
+          <AnimatedHeading
+            as="h1"
+            delay={0}
+            staggerDelay={0.15} className=" section-heading md:text-4xl md:max-w-xl  text-white font-semiboldx leading-normal">
             Smartly planned developments for today’s lifestyle
           </AnimatedHeading>
-          <FloatUpText delay={0} className="max-w-2xl mx-auto text-sm opacity-90">
-            Smartly planned developments crafted with thoughtful layouts,
+          <FloatUpText delay={0}>
+
+            <p className="mt-6 max-w-3xl mx-auto text-lg opacity-90">
+              Smartly planned developments crafted with thoughtful layouts,
             contemporary comforts, and seamless functionality to elevate today’s
             way of living.
+            </p>
           </FloatUpText>
         </div>
 
+      </section>
+        {/* Header */}
+        <section className="bg-[#eef2f3] flex pb-20    " >
+
         {/* Cards */}
-  <div className="max-w-[1120px] mx-auto px-0 -mt-14 md:-mt-10 space-y-10">
+  <div className="max-w-6xl mx-auto px-6 lg:px-2 -mt-14 md:-mt-10 space-y-10">
 
   {/* 1 */}
   <ProjectCard
@@ -640,13 +651,13 @@ return selectedProject ? (
       </section>
 
       {/* ================= EXPERT ASSISTANCE HEADER ================= */}
-    <section className="bg-[#F6DCA6] hidden md:block py-16 mt-16">
+    <section className="bg-[#fae4b4]  px-6 hidden md:block py-16 ">
         <div className="max-w-[1120px] mx-auto px-0 flex flex-col md:flex-row md:justify-between md:items-center gap-6">
           <div>
-            <h2 className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8">
+            <h2 className="section-heading mb-4 ">
               Expert Assistance, Simplified
             </h2>
-            <p className="text-sm text-gray-700 mt-1">
+            <p className="text-lg text-black mt-1">
               Our team ensures smooth, transparent, and hassle-free experience
               at every stage.
             </p>
@@ -654,8 +665,7 @@ return selectedProject ? (
 
        <button
   onClick={() => setShowEnquire(true)}
-  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-white text-black text-xs font-bold uppercase tracking-wider rounded-full hover:bg-orange-500 hover:text-white transition-all hover:translate-x-1"
->
+className="btn btn-white">
   <span>REQUEST CALLBACK</span>
   <ArrowRight className="w-4 h-4" />
 </button>
@@ -664,8 +674,8 @@ return selectedProject ? (
       </section>
 
       {/* ================= EXPERT ASSISTANCE CARDS ================= */}
-      <section className="bg-[#F5F2EF] pb-10 md:py-20">
-<div className="max-w-[1120px] mx-auto px-0 mt-10 space-y-10">
+      <section className="bg-[#eef2f3] px-6 pb-10 md:py-20">
+<div className="max-w-[1120px] mx-auto px-0  space-y-10">
 
   {/* 5 */}
   <ProjectCard
