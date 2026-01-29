@@ -50,7 +50,7 @@ const ThoughtfulSection = () => {
             Thoughtfully developing spaces that reflect city's progress and promise
           </AnimatedHeading>
           <FloatUpText delay={0}>
-            <p className="text-base mb-6 max-w-md mx-auto">
+            <p className="text-lg mb-6 max-w-md mx-auto">
               Crafting meaningful experiences where every detail is carefully envisioned.
             </p>
           </FloatUpText>

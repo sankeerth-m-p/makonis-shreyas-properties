@@ -189,21 +189,21 @@ const BespokeSection = () => {
       <div className="max-w-6xl h-full max-h-[550px]    md:px-6">
         <div className="bg-white  rounded-3xl h-full px-6 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}
-          <div className="w-full md:w-[30%] flex flex-col items-center justify-center font-bold text-center">
-  <div className="text-center ">
+          <div className="w-full md:w-[30%] flex flex-col md:items-center  justify-center font-bold text-center">
+  <div className=" text-center  flex flex-col items-center md:items-start">
 
     <AnimatedHeading
       as="h3"
       delay={0}
       staggerDelay={0.15}
-    className="text-3xl md:text-4xl font-semiboldx mb-4 md:mb-8 text-center"
+    className="text-3xl md:text-4xl   mb-4 md:mb-8  text-center  md:text-left"
     >
       Bespoke {'\n'}services for { '\n'}elevated living {'\n'} 
     </AnimatedHeading>
 
             <button
               onClick={() => navigate("/projects")}
-              className=" buttons btn btn-orange "
+              className=" buttons  btn btn-orange "
               >
                 <span>VIEW PROJECTS</span>
                 <ArrowRight className="w-4 h-4" />
