@@ -154,21 +154,24 @@ const OurStory = () => {
 {/* ================= VISION & MISSION SECTION ================= */}
 <section className="relative w-full px-6 md-px-0 bg-[#f4efe4] overflow-hidden pt-10 md:py-28">
 
-  {/* LEFT BACKGROUND ICON – OUR VISION (EYE) */}
+        {/* LEFT BACKGROUND ICON – OUR VISION (EYE) */}
+        <div className="flex flex-col  absolute justify-between   h-full w-full top-0  left-0 pointer-events-none z-0">
+
   <img
     src={banner1}
     alt="Vision Icon"
-   className="absolute left-1/2 -translate-x-1/2 md:left-[-120px] md:translate-x-0 top-10 w-[200px] md:w-[320px] opacity-[0.08] z-0"
-
-  />
+    className="md:absolute left-1/2    mt-10 -translate-x-1/2 md:left-0  md:-translate-x-1/4 top-10 w-[200px] md:w-[320px] opacity-[0.05] z-0"
+    
+    />
 
   {/* RIGHT BACKGROUND ICON – OUR MISSION (GROWTH) */}
   <img
     src={banner}
     alt="Mission Icon"
-    className="absolute left-1/2 -translate-x-1/2 md:left-auto md:right-[5%] top-[340px] md:top-[40px] w-[200px] md:w-[320px] opacity-[0.08] z-0"
-
-  />
+    className="md:absolute left-1/2    mb-10 -translate-x-1/2 md:left-auto md:right-[5%] top-10 md:top-[90px] w-[200px] md:w-[260px] opacity-[0.05] z-0"
+    
+    />
+    </div>
 
   {/* CONTENT */}
   <div className="relative z-10 max-w-[1120px] mx-auto px-0 grid md:grid-cols-2 md:gap-28 gap-14 pb-14 md:pb-0">
