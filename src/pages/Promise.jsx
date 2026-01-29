@@ -87,7 +87,7 @@ end: "top 20%",
   }, []);
 
   return (
-    <section className="w-full a2 min-h-[50vh] lg:min-h-[40vh] grid grid-cols-1   lg:grid-cols-2">
+    <section className="w-full  min-h-[50vh] lg:min-h-[40vh] grid grid-cols-1   lg:grid-cols-2">
       
       {/* IMAGE BLOCK */}
       <div
