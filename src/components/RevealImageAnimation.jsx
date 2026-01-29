@@ -6,7 +6,7 @@ export default function RevealImageAnimation({
   className = "",
   intialSize="50%",
   // controls
-  zoom = 1.5,                 // start zoom (1.0 = no zoom)
+  zoom = 1.1,                 // start zoom (1.0 = no zoom)
   duration = 2500,             // image animation duration
   frameDuration = 2000,        // reveal frame duration
   easing = "cubic-bezier(.19,1,.22,1)", // smooth premium easing
