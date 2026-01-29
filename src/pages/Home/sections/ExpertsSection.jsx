@@ -15,10 +15,13 @@ const ExpertsSection = () => {
   const [showStage1, setShowStage1] = useState(true);
   const [hasTriggeredStage2, setHasTriggeredStage2] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [imageRevealedByDefault, setImageRevealedByDefault] = useState(false);
   
   useEffect(() => {
     scrollRootRef.current = document.getElementById("home-scroll");
   }, []);
+
+  
 
   const { scrollYProgress } = useScroll({
     container: scrollRootRef,
@@ -40,6 +43,7 @@ const ExpertsSection = () => {
       if (scrollTop < sectionTop - 80) {
         setShowStage1(true);
         setHasTriggeredStage2(false);
+        setImageRevealedByDefault(false);
       }
     };
 
@@ -55,7 +59,7 @@ const ExpertsSection = () => {
     if (latest > 0.25 && !hasTriggeredStage2) {
       setHasTriggeredStage2(true);
       setShowStage1(false);
-
+setImageRevealedByDefault(true);
       // snap to stage2
       snapToStage2();
     }
@@ -97,9 +101,6 @@ const ExpertsSection = () => {
   const leftOpacity = stage2Active ? 1 : 0;
   const leftX = stage2Active ? 0 : 200;
 
-  const imageOpacity = stage2Active ? 1 : 0;
-  const imageY = stage2Active ? 0 : 50;
-
   const rightOpacity = stage2Active ? 1 : 0;
   const rightX = stage2Active ? 0 : -80;
 
@@ -130,11 +131,11 @@ const ExpertsSection = () => {
               />
             </div>
 
-           <p className="text-2xl md:text-4xl font-semiboldx mb-4 md:mb-8 text-black">
+           <p className="text-xl md:text-4xl font-semiboldx mb-4 md:mb-8 text-black">
   Have any questions?
 </p>
 
-            <h3 className="text-xl leading-tight md:text-4xl font-semiboldx mb-4 md:mb-8">
+            <h3 className="text-3xl leading-none md:text-4xl font-semiboldx mb-4 md:mb-8">
               Speak with <br /> our experts
             </h3>
           </FloatUpText>
@@ -192,16 +193,24 @@ const ExpertsSection = () => {
               </motion.div>
 
               {/* CENTER IMAGE */}
-              <motion.div
-                animate={{ opacity: imageOpacity, y: imageY }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="flex justify-center"
-              >
-                <RevealImageAnimation
-                  image="/Home/expert.jpg"
-                  className="w-[300px] h-[400px] rounded-3xl object-cover"
-                />
-              </motion.div>
+              <div className="flex justify-center">
+                {imageRevealedByDefault ? (
+                  // User came from bottom - show image immediately without trigger
+                  <RevealImageAnimation
+                    image="/Home/expert.jpg"
+                    className="w-[300px] h-[400px] rounded-3xl object-cover"
+                  />
+                ) : (
+                  // User came from top - use trigger animation
+                  <RevealImageAnimation
+                    image="/Home/expert.jpg"
+                    className="w-[300px] h-[400px] rounded-3xl object-cover"
+                    triggerAnimation={stage2Active}
+                      
+                      intialSize="0%"
+                  />
+                )}
+              </div>
 
               {/* RIGHT */}
               <motion.div
