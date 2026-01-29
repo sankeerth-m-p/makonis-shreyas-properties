@@ -232,9 +232,9 @@ const ProjectDetails = ({ project, onBack }) => {
 
     <div className="relative z-10 max-w-[1120px] mx-auto px-0 py-24 md:h-full flex flex-col md:justify-center">
 
-      <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
-        Key Features and Amenities
-      </h2>
+    <h2 className="text-lg md:text-4xl font-semibold mb-8 text-center text-white">
+  Key Features and Amenities
+</h2>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-y-16 text-center text-white">
         {[
