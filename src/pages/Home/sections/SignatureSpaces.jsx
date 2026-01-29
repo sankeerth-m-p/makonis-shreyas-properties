@@ -65,7 +65,7 @@ const SignatureSpaces = ({ sections }) => {
       <div className='mx-4 md:mx-0  py-6 max-w-xl md:p-20 flex flex-col justify-center items-center'>
        <AnimatedHeading
   delay={0}
-  className="text-3xl md:text-4xl  font-semibold mb-4 md:mb-8 text-center"
+  className="text-3xl md:text-4xl  font-semiboldx mb-4 md:mb-8 text-center"
 >
   Signature spaces crafted for modern living
 </AnimatedHeading>
@@ -75,7 +75,7 @@ const SignatureSpaces = ({ sections }) => {
 </p>
 <button
   onClick={()=>navigate('/projects')}
-  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-black border-2 border-transparent hover:border-black transition-all hover:translate-x-1 mb-6 lg:mb-0"
+  className="inline-flex buttons btn btn-orange"
 >
 
   <span>VIEW PROJECTS</span>
@@ -118,7 +118,7 @@ const SignatureSpaces = ({ sections }) => {
     >
       {/* Content Wrapper */}
       <div className="relative z-10  py-5 max-w-md">
-<h3 className="text-2xl md:text-4xl font-semibold mb-2 lg:mb-6 text-white leading-tight">
+<h3 className="text-2xl md:text-4xl font-semiboldx mb-2 lg:mb-6 text-white leading-tight">
 
   {section.title}
 </h3>

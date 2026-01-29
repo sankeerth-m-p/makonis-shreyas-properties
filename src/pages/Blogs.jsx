@@ -73,7 +73,7 @@ const BlogList = () => {
     <section className="bg-white pt-5 pb-24 relative overflow-hidden">
       <div className="max-w-[1120px] mx-auto px-0">
 
-        <AnimatedHeading className="text-3xl font-semibold text-gray-900">
+        <AnimatedHeading className="text-3xl font-semiboldx text-gray-900">
           Stories That Shape Better Living
         </AnimatedHeading>
 
@@ -89,7 +89,7 @@ const BlogList = () => {
               onClick={() => setActiveCategory(cat)}
               className={`${
                 activeCategory === cat
-                  ? "font-semibold text-black"
+                  ? "font-semiboldx text-black"
                   : "text-gray-500"
               }`}
             >
@@ -120,7 +120,7 @@ const BlogList = () => {
                 <div className="p-6">
                   <p className="text-xs text-gray-400">{blog.date}</p>
 
-                  <h3 className="text-lg font-semibold mt-3 text-gray-900">
+                  <h3 className="text-lg font-semiboldx mt-3 text-gray-900">
                     {blog.title}
                   </h3>
 
@@ -155,7 +155,7 @@ const BlogDetail = () => {
     <section className="bg-white pt-24 pb-24 relative">
       <div className="max-w-[1120px] mx-auto px-0">
 
-        <AnimatedHeading className="text-2xl font-semibold mb-5">
+        <AnimatedHeading className="text-2xl font-semiboldx mb-5">
           {blog.title}
         </AnimatedHeading>
 

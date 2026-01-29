@@ -103,3 +103,33 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 2.2rem;
   }
 }
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-3
+      px-6 lg:px-8
+      py-3 lg:py-4
+      text-xs font-bold uppercase tracking-wider
+      rounded-full
+      transition-transform
+      
+      hover:translate-x-1;
+  }
+}
+@layer components {
+  .btn-orange {
+    @apply bg-ORANGE  text-white border border-transparent;
+  }
+
+  .btn-orange:hover { 
+    @apply bg-ORANGE2 text-black border-black;
+  }
+}
+@layer components {
+  .btn-white {
+    @apply bg-white text-black border ;
+  }
+
+  .btn-orange:hover {
+    @apply bg-gray-100 text-black ;
+  }
+}

@@ -46,7 +46,7 @@ const ThoughtfulSection = () => {
       <div className="block lg:hidden  relative max-w-6xl mx-auto  z-10 px-4">
 
         <div className="py-8  text-center  ">
-          <AnimatedHeading delay={0} className="  section-heading font-semibold mb-4">
+          <AnimatedHeading delay={0} className="  section-heading  mb-4">
             Thoughtfully developing spaces that reflect city's progress and promise
           </AnimatedHeading>
           <FloatUpText delay={0}>
@@ -67,7 +67,7 @@ const ThoughtfulSection = () => {
             <div className="flex gap-3 items-start mb-8">
               <img src={vision} className="w-6 h-6" alt="Vision icon" />
               <div>
-                <h4 className="text-lg font-semibold">Our Vision</h4>
+                <h4 className="text-lg font-semiboldx">Our Vision</h4>
                 <p className="text-base   leading-relaxed">
                   To create thoughtfully planned spaces that elevate everyday living,
                   blending design, functionality and sustainability.
@@ -78,7 +78,7 @@ const ThoughtfulSection = () => {
             <div className="flex gap-3 items-start mb-8">
               <img src={mission} className="w-6 h-6" alt="Mission icon" />
               <div>
-                <h4 className="text-lg font-semibold">Our Mission</h4>
+                <h4 className="text-lg font-semiboldx">Our Mission</h4>
                 <p className="text-base leading-relaxed">
                   To develop responsibly by integrating sustainable practices
                   and creating balanced communities.
@@ -89,7 +89,7 @@ const ThoughtfulSection = () => {
            <div className="flex justify-center md:justify-start">
   <button
     onClick={() => navigate('/our-story')}
-    className="inline-flex buttons items-center gap-3 px-6 py-3 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1"
+    className="buttons btn btn-orange"
   >
     <span>VIEW DETAILS</span>
     <ArrowRight className="w-4 h-4" />
@@ -113,7 +113,7 @@ const ThoughtfulSection = () => {
           </div>
 
           <div className="flex flex-col md:col-span-3 md:pl-20 md:mt-10 text-left">
-            <AnimatedHeading delay={0} className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+            <AnimatedHeading delay={0} className="text-lg md:text-4xl  mb-4 md:mb-8">
               Thoughtfully developing spaces that reflect city's progress and promise
             </AnimatedHeading>
 
@@ -125,7 +125,7 @@ const ThoughtfulSection = () => {
               <div className="flex gap-3 items-start mb-8">
                 <img src={vision} className="w-7 h-7" alt="Vision icon" />
                 <div>
-                  <h4 className="md:text-xl text-base font-semibold">Our Vision</h4>
+                  <h4 className="md:text-xl text-base font-semiboldx">Our Vision</h4>
                   <p className="md:text-lg text-sm leading-relaxed">
                     To create thoughtfully planned spaces that elevate everyday living,
                     blending design, functionality and sustainability.
@@ -136,7 +136,7 @@ const ThoughtfulSection = () => {
               <div className="flex gap-3 items-start mb-8">
                 <img src={mission} className="w-7 h-7" alt="Mission icon" />
                 <div>
-                  <h4 className="md:text-xl text-base font-semibold">Our Mission</h4>
+                  <h4 className="md:text-xl text-base font-semiboldx">Our Mission</h4>
                   <p className="md:text-lg text-sm leading-relaxed">
                     To develop responsibly by integrating sustainable practices
                     and creating balanced communities.
@@ -146,8 +146,7 @@ const ThoughtfulSection = () => {
 
               <button
                 onClick={() => navigate('/our-story')}
-                className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1"
-              >
+                className="buttons btn btn-orange">
                 <span>VIEW DETAILS</span>
                 <ArrowRight className="w-4 h-4" />
               </button>

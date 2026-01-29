@@ -87,7 +87,7 @@ end: "top 20%",
   }, []);
 
   return (
-    <section className="w-full min-h-[50vh] md:min-h-[75vh] grid grid-cols-1 md:grid-cols-2">
+    <section className="w-full min-h-[50vh] md:min-h-[40vh] grid grid-cols-1 md:grid-cols-2">
       
       {/* IMAGE BLOCK */}
       <div
@@ -109,7 +109,7 @@ end: "top 20%",
         </div>
 
         {/* TITLE OVERLAY */}
-        <div
+        {/* <div
           className={`absolute bottom-4 px-5 py-3 bg-ORANGE/80 backdrop-blur-sm w-4/5 md:w-auto ${
             reverse ? "left-4 text-left" : "right-4 text-right"
           }`}
@@ -117,7 +117,7 @@ end: "top 20%",
           <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">
             {title}
           </h3>
-        </div>
+        </div> */}
       </div>
 
       {/* TEXT BLOCK */}
@@ -126,12 +126,14 @@ end: "top 20%",
         className={`flex flex-col justify-center px-6 sm:px-8 md:px-20 py-8 ${
           reverse ? "md:order-1 md:items-end" : ""
         }`}
-      >
-        <p className="text-line text-[20px] text-gray-700 leading-relaxed mb-4 max-w-md">
+      ><AnimatedHeading className="section-heading  font-semibold mb-5">
+            {title}
+          </AnimatedHeading>
+        <p className="text-line text-base text-gray-700 leading-relaxed mb-4 max-w-md">
           {para1}
         </p>
 
-        <p className="text-line text-[20px] text-gray-600 leading-relaxed max-w-md">
+        <p className="text-line text-base text-gray-600 leading-relaxed max-w-md">
           {para2}
         </p>
       </div>
@@ -192,7 +194,7 @@ export default function PromisePage() { const sectionRef = useRef(null);
     </AnimatedHeading>
           <FloatUpText delay={0}>
             
-   <p className="mt-4 text-[20px] sm:text-[20px] md:text-[20px] text-gray-600 leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
+   <p className="mt-4 text-base sm:text-[20px] md:text-[20px] text-gray-600 leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
 
       At every stage of our journey, we stand by our word. From project
       planning to final handover, we ensure transparency, timely delivery,

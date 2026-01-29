@@ -26,7 +26,7 @@ const OurStory = () => {
           <AnimatedHeading
             as="h1"
             delay={0}
-            staggerDelay={0.15} className="text-xl section-heading md:text-4xl  text-white font-semibold leading-normal">
+            staggerDelay={0.15} className="text-xl section-heading md:text-4xl  text-white font-semiboldx leading-normal">
             Our journey is defined by a commitment to {'\n'}
             deliver more than just properties
           </AnimatedHeading>
@@ -62,18 +62,18 @@ const OurStory = () => {
           <div className=" grid md:grid-cols-2 gap-14 md:px-5 lg:px-0 items-start">
 
             {/* LEFT – VERTICAL IMAGE */}
-            <div className="rounded-2xl overflow-hidden shadow-xl ">
+            <div className="rounded-lg overflow-hidden shadow-xl ">
              <img
   src="\story_3.webp"
   alt="Design discussion"
-  className="w-full h-auto md:h-[600px] hover:scale-105 transition-transform ease-in-out duration-700 object-contain md:object-cover rounded-2xl"
+  className="w-full h-auto md:h-[600px] text-bahover:scale-105 transition-transform ease-in-out duration-700 object-contain md:object-cover  rounded-lg"
 />
 
             </div>
 
             {/* RIGHT – IMAGE + TEXT */}
             <div>
-              <div className="rounded-2xl md:block hidden overflow-hidden shadow-xl  mb-8">
+              <div className="rounded-lg md:block hidden overflow-hidden shadow-xl  mb-8">
                 <img
                   src="\story_1.webp"
                   alt="Client meeting"
@@ -85,9 +85,9 @@ const OurStory = () => {
               <AnimatedHeading
                 as="h1"
                 delay={0}
-                staggerDelay={0.15} className="text-xl md:text-2xl lg:text-4xl font-semibold mb-4 md:mb-8">
+                staggerDelay={0.15} className="text-xl md:text-2xl lg:text-4xl font-semiboldx mb-4 md:mb-8">
 
-                {/* <h2 className="text-xl font-semibold text-gray-900 mb-4 leading-snug"> */}
+                {/* <h2 className="text-xl font-semiboldx text-gray-900 mb-4 leading-snug"> */}
                 We are a forward thinking real estate company driven by the belief
                 that well designed spaces shape better lives.
                 {/* </h2> */}
@@ -110,7 +110,7 @@ const OurStory = () => {
               </FloatUpText>
 
 
-              <div className="mt-5  rounded-2xl md:hidden overflow-hidden shadow-xl mb-8">
+              <div className="mt-5   rounded-lg md:hidden overflow-hidden shadow-xl mb-8">
   <img
     src="\story_1.webp"
     alt="Client meeting"
@@ -260,7 +260,7 @@ const OurStory = () => {
           as="h1"
           delay={0}
           staggerDelay={0.15}
-          className="text-[22px] text-white md:text-3xl font-semibold leading-snug max-w-md"
+          className="text-[22px] text-white md:text-3xl font-semiboldx leading-snug max-w-md"
         >
           A Philosophy that {'\n'}
           puts people first.
@@ -340,7 +340,7 @@ const OurStory = () => {
               “
             </span>
             {/* QUOTE TEXT */}
-            <AnimatedHeading className="text-lg md:text-2xl text-gray-800 leading-relaxed">
+            <AnimatedHeading delay={0} className="text-lg md:text-2xl text-gray-800 ">
               From the very first meeting to project handover,
               {'\n'}
               the experience was smooth and transparent.

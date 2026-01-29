@@ -138,7 +138,7 @@ const MediaDetail = () => {
         {/* BACK ARROW OUTSIDE CARD */}
         <button
           onClick={() => navigate(-1)}
-          className="mb-6 text-black text-3xl font-semibold flex items-center gap-3"
+          className="mb-6 text-black text-3xl font-semiboldx flex items-center gap-3"
 
         >
           ←

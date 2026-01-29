@@ -196,14 +196,14 @@ const BespokeSection = () => {
       as="h3"
       delay={0}
       staggerDelay={0.15}
-    className="text-3xl md:text-4xl font-semibold mb-4 md:mb-8 text-center"
+    className="text-3xl md:text-4xl font-semiboldx mb-4 md:mb-8 text-center"
     >
       Bespoke {'\n'}services for { '\n'}elevated living {'\n'} 
     </AnimatedHeading>
 
             <button
               onClick={() => navigate("/projects")}
-              className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1"
+              className=" buttons btn btn-orange "
               >
                 <span>VIEW PROJECTS</span>
                 <ArrowRight className="w-4 h-4" />

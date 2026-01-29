@@ -58,7 +58,7 @@ const ProjectCard = ({
 
 
 
-          <h3 className="text-2xl md:text-xl font-semibold">{title}</h3>
+          <h3 className="text-2xl md:text-xl font-semiboldx">{title}</h3>
 
           <p className="text-gray-500 text-sm mb-4">{location}</p>
 
@@ -114,7 +114,7 @@ const ProjectDetails = ({ project, onBack }) => {
 
           {/* Title & Location */}
           <div className="flex flex-col leading-tight">
-            <span className="text-2xl font-semibold text-gray-900">
+            <span className="text-2xl font-semiboldx text-gray-900">
               {project.title}
             </span>
             <span className="text-base text-gray-500">
@@ -154,7 +154,7 @@ const ProjectDetails = ({ project, onBack }) => {
           <div className="relative">
             <div className="absolute -left-16 -top-10 w-64 h-64 bg-gray-200 rounded-full opacity-30"></div>
 
-            <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+            <h2 className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8">
               Signature spaces crafted <br /> for modern living.
             </h2>
 
@@ -201,7 +201,7 @@ const ProjectDetails = ({ project, onBack }) => {
 
   <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 md:h-full flex flex-col md:justify-center">
 
-    <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+    <h2 className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8">
       Key Features and Amenities
     </h2>
 
@@ -235,7 +235,7 @@ const ProjectDetails = ({ project, onBack }) => {
         <div className="max-w-[1120px] mx-auto px-4 md:px-0">
 
           {/* Heading aligned to image left edge */}
-          <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+          <h2 className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8">
             Location and Business Advantages
           </h2>
 
@@ -303,7 +303,7 @@ const [showEnquire, setShowEnquire] = useState(false);
       <section className="bg-[#F5F2EF] ">
         {/* Header */}
         <div className="bg-ORANGE px-4 py-20 text-center text-white">
-          <AnimatedHeading delay={0} className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+          <AnimatedHeading delay={0} className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8">
             Smartly planned developments for today’s lifestyle
           </AnimatedHeading>
           <FloatUpText delay={0} className="max-w-2xl mx-auto text-sm opacity-90">
@@ -403,7 +403,7 @@ const [showEnquire, setShowEnquire] = useState(false);
     <section className="bg-[#F6DCA6] hidden md:block py-16 mt-16">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:justify-between md:items-center gap-6">
           <div>
-            <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+            <h2 className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8">
               Expert Assistance, Simplified
             </h2>
             <p className="text-sm text-gray-700 mt-1">

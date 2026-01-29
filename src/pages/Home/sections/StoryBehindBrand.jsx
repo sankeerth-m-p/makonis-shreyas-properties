@@ -51,7 +51,7 @@ const StoryBehindBrand = () => {
             delay={0}
             staggerDelay={0.15}
             className="
-             text-3xl md:text-4xl font-semibold mb-3 lg:mb-8"
+             text-3xl md:text-4xl font-semiboldx mb-3 lg:mb-8"
           >
             The Story{"\n"}Behind the Brand
           </AnimatedHeading>
