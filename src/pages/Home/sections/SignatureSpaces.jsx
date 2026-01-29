@@ -62,7 +62,7 @@ const SignatureSpaces = ({ sections }) => {
 
   return (
     <div className=" min-h-[calc(100vh-5rem)] flex flex-col items-center justify-between   lg:p-10">
-      <div className='mx-4 md:mx-0  py-6 max-w-xl md:p-20 flex flex-col justify-center items-center'>
+      <div className='mx-6 md:mx-0  py-6 max-w-xl md:p-20 flex flex-col justify-center items-center'>
        <AnimatedHeading
   delay={0}
   className="text-3xl md:text-4xl  font-semiboldx mb-4 md:mb-8 text-center"
@@ -110,7 +110,7 @@ const SignatureSpaces = ({ sections }) => {
     <div
       className={`
         relative flex flex-col  justify-start
-        p-4    lg:p-16
+        p-6    lg:p-16
         h-1/3  lg:h-auto
          lg:w-1/3
         ${section.bgColor}

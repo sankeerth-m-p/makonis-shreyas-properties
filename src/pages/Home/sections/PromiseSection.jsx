@@ -25,7 +25,7 @@ const PromiseSection = () => {
   <div className="absolute inset-0 bg-black/60" />
 
   {/* CONTENT */}
-<div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 h-full flex flex-col items-center justify-center text-center text-white">
+<div className="relative z-10 max-w-4xl mx-auto px-6 md:px-6 h-full flex flex-col items-center justify-center text-center text-white">
 
 
     <AnimatedHeading

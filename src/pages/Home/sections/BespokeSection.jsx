@@ -121,7 +121,7 @@ useEffect(() => {
                 />
 
                 {/* Label */}
-                <span className="absolute bottom-0 uppercase left-0 px-4 py-3 text-center justify-center text-white bg-black/50 flex w-full text-[10px] tracking-widest">
+                <span className="absolute bottom-0 uppercase left-0 px-6 py-3 text-center justify-center text-white bg-black/50 flex w-full text-[10px] tracking-widest">
                   {img.label}
                 </span>
               </div>
@@ -186,8 +186,8 @@ const BespokeSection = () => {
 
   return (
     <section className="bg-[#EEF2F3] py-10  lg:h-[calc(100vh-5rem)] md:h-[50vh]  justify-center  items-center flex">
-      <div className="max-w-6xl h-full max-h-[550px]    md:px-4">
-        <div className="bg-white  rounded-3xl h-full px-4 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
+      <div className="max-w-6xl h-full max-h-[550px]    md:px-6">
+        <div className="bg-white  rounded-3xl h-full px-6 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}
           <div className="w-full md:w-[30%] flex flex-col items-center justify-center font-bold text-center">
   <div className="text-center ">

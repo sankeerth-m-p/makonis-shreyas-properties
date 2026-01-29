@@ -4,8 +4,8 @@ import FloatUpText from "../../../components/floatUpText";
 
 const WhatMakesUsDifferent = () => {
   return (
-    <section className="bg-white px-4  lg:px-6 lg:h-[calc(100vh-5rem)] py-10 lg:py-0 flex justify-center items-center">
-      <div className="max-w-6xl md:max-h[70vh] grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-20 items-start mb-5 md:px-4">
+    <section className="bg-white px-6  lg:px-6 lg:h-[calc(100vh-5rem)] py-10 lg:py-0 flex justify-center items-center">
+      <div className="max-w-6xl md:max-h[70vh] grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-20 items-start mb-5 md:px-6">
 
         <RevealImageAnimation
           image="/Home/wahtmakesusdiffrent.webp"
@@ -115,7 +115,7 @@ export default WhatMakesUsDifferent;
 // const WhatMakesUsDifferent = () => {
 //   return (
 //      <section className="bg-white  md:h-screen pt-10 md:pt-28 pb-10 md:pb-0 flex justify-center">
-//   <div className="max-w-6xl  px-4 grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-20 items-start">
+//   <div className="max-w-6xl  px-6 grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-20 items-start">
     
 //     {/* LEFT IMAGE - Takes 2 columns on desktop */}
 //     <RevealImageAnimation 

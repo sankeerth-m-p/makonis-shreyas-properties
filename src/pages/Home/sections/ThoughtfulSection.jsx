@@ -43,7 +43,7 @@ const ThoughtfulSection = () => {
       />
 
       {/* MOBILE */}
-      <div className="block lg:hidden  relative max-w-6xl mx-auto  z-10 px-4">
+      <div className="block lg:hidden  relative max-w-6xl mx-auto  z-10 px-6">
 
         <div className="py-8  text-center  ">
           <AnimatedHeading delay={0} className="  section-heading  mb-4">
@@ -102,7 +102,7 @@ const ThoughtfulSection = () => {
       </div>
 
       {/* DESKTOP (UNCHANGED) */}
-      <div className="hidden lg:block relative max-w-6xl mx-auto flex items-center h-full z-10 md:px-4">
+      <div className="hidden lg:block relative max-w-6xl mx-auto flex items-center h-full z-10 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-5 h-full gap-10 md:gap-0 items-start">
 
           <div className="flex justify-start h-full md:col-span-2 md:justify-end md:mt-10">

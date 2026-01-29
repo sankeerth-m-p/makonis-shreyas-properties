@@ -21,7 +21,7 @@ const OurStory = () => {
     <div className="w-full   relative overflow-hidden">
 
       {/* ================= ORANGE SECTION ================= */}
-      <section className="bg-ORANGE px-4 md:px-0  pt-20 md:pt-28 pb-72 relative">
+      <section className="bg-ORANGE px-6 md:px-0  pt-20 md:pt-28 pb-72 relative">
         <div className="max-w-[1120px] mx-auto px-0 flex flex-col justify-center text-center  text-white">
           <AnimatedHeading
             as="h1"
@@ -55,7 +55,7 @@ const OurStory = () => {
           className="absolute top-60 right-[-200px] w-[380px] h-[380px] bg-gray-100 rounded-full z-0"
         />
 
-        <div className="max-w-[1120px] mx-auto px-4 md:px-0 relative z-10 -mt-24">
+        <div className="max-w-[1120px] mx-auto px-6 md:px-0 relative z-10 -mt-24">
 
 
           {/* ================= IMAGES ================= */}
@@ -152,7 +152,7 @@ const OurStory = () => {
       </section>
 
 {/* ================= VISION & MISSION SECTION ================= */}
-<section className="relative w-full px-4 md-px-0 bg-[#f4efe4] overflow-hidden pt-10 md:py-28">
+<section className="relative w-full px-6 md-px-0 bg-[#f4efe4] overflow-hidden pt-10 md:py-28">
 
   {/* LEFT BACKGROUND ICON – OUR VISION (EYE) */}
   <img
@@ -254,7 +254,7 @@ const OurStory = () => {
   {/* CONTENT ON ORANGE */}
   <div className="absolute bottom-0   left-0 w-full z-20 md:relative md:h-full md:flex md:items-end">
     <div className="max-w-[1120px] mx-auto bg-ORANGE lg:bg-transparent px-0 pb-5 md:pb-24 text-white w-full">
-      <div className="grid md:grid-cols-2   px-4 gap-2 lg:gap-6">
+      <div className="grid md:grid-cols-2   px-6 gap-2 lg:gap-6">
 
         <AnimatedHeading
           as="h1"
@@ -279,7 +279,7 @@ const OurStory = () => {
 </section>
 
       {/* ================= IMAGE + TEXT SECTION ================= */}
-      <section className="w-full px-4 md:px-0 bg-white py-5 md:py-24">
+      <section className="w-full px-6 md:px-0 bg-white py-5 md:py-24">
         <div className="max-w-[1120px]   mx-auto grid md:grid-cols-12  gap-5 md:gap-16 items-start">
 
           {/* LEFT IMAGE */}
@@ -327,7 +327,7 @@ const OurStory = () => {
         </div>
       </section>
       {/* ================= TESTIMONIAL SECTION ================= */}
-      <section className="w-full px-4 md:px-0 bg-[#f4efe4] py-12  md:py-32">
+      <section className="w-full px-6 md:px-0 bg-[#f4efe4] py-12  md:py-32">
        <div className="max-w-[1120px] mx-auto px-0 text-center">
 
 
