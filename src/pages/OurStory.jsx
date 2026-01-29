@@ -32,7 +32,7 @@ const OurStory = () => {
           </AnimatedHeading>
           <FloatUpText delay={0}>
 
-            <p className="mt-6 max-w-3xl mx-auto text-sm md:text-base opacity-90">
+            <p className="mt-6 max-w-3xl mx-auto text-lg opacity-90">
               we create thoughtfully designed spaces that inspire belonging,
               enhance lifestyles, and stand as lasting symbols of quality and trust.
             </p>

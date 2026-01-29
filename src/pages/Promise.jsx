@@ -70,7 +70,7 @@ end: "top 20%",
   {
     y: 0,
     opacity: 1,
-    stagger: 0.28,
+    stagger: 0.5,
     ease: "power1.out",
     scrollTrigger: {
       trigger: wrapperRef.current,
@@ -87,12 +87,12 @@ end: "top 20%",
   }, []);
 
   return (
-    <section className="w-full min-h-[50vh] md:min-h-[40vh] grid grid-cols-1 md:grid-cols-2">
+    <section className="w-full a2 min-h-[50vh] lg:min-h-[40vh] grid grid-cols-1   lg:grid-cols-2">
       
       {/* IMAGE BLOCK */}
       <div
-        className={`relative min-h-[40vh] md:min-h-full overflow-hidden ${
-          reverse ? "md:order-2" : ""
+        className={`relative min-h-[40vh] lg:min-h-full overflow-hidden ${
+          reverse ? "lg:order-2" : ""
         }`}
       >
         <div
@@ -108,23 +108,14 @@ end: "top 20%",
           />
         </div>
 
-        {/* TITLE OVERLAY */}
-        {/* <div
-          className={`absolute bottom-4 px-5 py-3 bg-ORANGE/80 backdrop-blur-sm w-4/5 md:w-auto ${
-            reverse ? "left-4 text-left" : "right-4 text-right"
-          }`}
-        >
-          <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">
-            {title}
-          </h3>
-        </div> */}
+        
       </div>
 
       {/* TEXT BLOCK */}
       <div
         ref={textRef}
         className={`flex flex-col justify-center px-6 sm:px-8 md:px-20 py-8 ${
-          reverse ? "md:order-1 md:items-end" : ""
+          reverse ? "  lg:order-1   lg:items-end" : ""
         }`}
       ><AnimatedHeading className="section-heading  font-semibold mb-5">
             {title}
@@ -158,10 +149,10 @@ export default function PromisePage() { const sectionRef = useRef(null);
   const topRightX = useTransform(scrollYProgress, [0, 1], [20, 10]);
   const topRightY = useTransform(scrollYProgress, [0, 1], [-22, 100]);
   return (
-    <div className="flex overflow-hidden flex-col items-center justify-center w-full">
+    <div className="flex overflow-hidden  flex-col items-center justify-center w-full">
 
       {/* ========= HERO ========= */}
-<section className="relative  ref={sectionRef} w-full min-h-screen md:h-screen pt-20 md:pt-2 overflow-hidden bg-white">
+<section className="relative   ref={sectionRef} px-6 lg:px-0  w-full  lg:h-screen  py-10 lg:pt-28 overflow-hidden bg-white">
   
    {/* ANIMATED CIRCLES - Add these */}
       {/* BOTTOM LEFT */}
@@ -182,11 +173,11 @@ export default function PromisePage() { const sectionRef = useRef(null);
         className="pointer-events-none select-none absolute right-[-220px] top-[-200px] w-[560px] opacity-[0.12] z-[1]"
       />
   {/* Content */}
-  <div className="relative z-10 mx-auto max-w-5xl text-center px-4 md:px-6 lg:px-8 pt-6 md:pt-0">
+  <div className="relative z-10    mx-auto max-w-5xl text-center  pt-6 md:pt-0">
     <AnimatedHeading 
   as="h1"
   delay={0}
-  staggerDelay={0.15} className="text-lg md:text-4xl font-semibold mb-4 md:mb-8"
+  staggerDelay={0.15} className=" section-heading  mb-4 md:mb-8"
 >
    
       We Deliver What We Promise
@@ -194,7 +185,7 @@ export default function PromisePage() { const sectionRef = useRef(null);
     </AnimatedHeading>
           <FloatUpText delay={0}>
             
-   <p className="mt-4 text-base sm:text-[20px] md:text-[20px] text-gray-600 leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
+   <p className="mt-4 text-lg  leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
 
       At every stage of our journey, we stand by our word. From project
       planning to final handover, we ensure transparency, timely delivery,
@@ -206,16 +197,16 @@ export default function PromisePage() { const sectionRef = useRef(null);
    
     <RevealImageAnimation
   image={hero}
-  className="mt-6 md:mt-6 h-[40vh] sm:h-[0vh] md:h-[60vh] w-full rounded-xl md:rounded-2xl "
+  className="mt-6 md:mt-6 h-[40vh] sm:h-[0vh] md:h-[60vh] w-full rounded-lg  "
 />
 
   </div>
 </section>
 
       {/* ========= ORANGE STRIP ========= */}
-      <section className="bg-ORANGE p-10 items-center flex text-white h-screen md:h-auto w-full py-16">
+      <section className="bg-ORANGE px-6 items-center flex md:h-auto w-full py-16">
         <div className="mx-auto max-w-4xl">
-          <AnimatedHeading className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+          <AnimatedHeading className="section-heading text-white  mb-4 md:mb-8">
             Shaping the urban lifestyle through thoughtful design and purposeful planning.
 
           </AnimatedHeading>
@@ -241,6 +232,7 @@ export default function PromisePage() { const sectionRef = useRef(null);
         reverse
         />
 
+    
       <Showcase
         title="Nature Oriented"
         para1="Our nature-oriented projects are designed to live in harmony with the environment. By preserving natural landscapes, integrating green spaces, and prioritizing open, breathable layouts, we create developments that offer a healthier and more balanced way of living."
