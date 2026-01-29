@@ -117,7 +117,7 @@ end: "top 20%",
         className={`flex flex-col justify-center px-6 sm:px-8 md:px-20 py-8 ${
           reverse ? "  lg:order-1   lg:items-end" : ""
         }`}
-      ><AnimatedHeading className="section-heading  font-semibold mb-5">
+      ><AnimatedHeading className="section-heading   mb-5">
             {title}
           </AnimatedHeading>
         <p className="text-line text-base text-gray-700 leading-relaxed mb-4 max-w-md">
