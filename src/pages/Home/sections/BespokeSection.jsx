@@ -78,7 +78,7 @@ useEffect(() => {
       <div className="md:hidden relative w-full ">
         {/* Slides */}
         <div
-  className="w-full overflow-hidden rounded-3xl"
+  className="w-full overflow-hidden   rounded-lg"
   onTouchStart={(e) => {
     touchRef.current = true;
     clearInterval(intervalRef.current);
@@ -113,7 +113,7 @@ useEffect(() => {
           >
            {mobileSlides.map((img, index) => (
 
-              <div key={index} className="w-full shrink-0 relative h-[50vh">
+              <div key={index} className="w-full shrink-0 relative h-[50vh]">
                 <img
                   src={img.src}
                   alt={img.label}
@@ -185,9 +185,9 @@ const BespokeSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#EEF2F3] py-10  lg:h-[calc(100vh-5rem)] md:h-[50vh]  justify-center  items-center flex">
-      <div className="max-w-6xl h-full max-h-[550px]    md:px-6">
-        <div className="bg-white  rounded-3xl h-full px-6 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
+    <section className="bg-[#EEF2F3] py-10 h-[90vh]  lg:h-[calc(100vh-5rem)] md:h-[50vh]  justify-center  items-center flex">
+      <div className="max-w-6xl h-full md:max-h-[550px]    md:px-6">
+        <div className="bg-white  md:rounded-3xl h-full px-6 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}
           <div className="w-full md:w-[30%] flex flex-col md:items-center  justify-center font-bold text-center">
   <div className=" text-center  flex flex-col items-center md:items-start">
