@@ -87,11 +87,11 @@ const ProjectDetails = ({ project, onBack }) => {
     window.scrollTo(0, 0);   // <-- replace smooth scroll
   }, []);
   return (
-   <div className="relative w-full bg-white     pt-10   overflow-hidden">
+   <div className="relative w-full bg-white pt-4    md:pt-10   overflow-hidden">
 
       {/* ===== BACK BUTTON ===== */}
   
-  <div className="   hidden md:block   max-w-6xl  px-2 mx-auto ">
+  <div className="   max-w-6xl  px-6 mx-auto ">
    <button
   onClick={onBack}
 className="btn">
@@ -105,7 +105,7 @@ className="btn">
 
 
       {/* ===== TOP CENTER INFO BAR ===== */}
-      <div className="w-full py-6 flex px-6 lg:px-0 pb-10 justify-between max-w-6xl mx-auto ">
+      <div className="w-full py-6 flex max-w-6xl px-6 lg:px-6 pb-10 justify-between max-w-6xl mx-auto ">
         <div className="flex items-start gap-6 md:flex-row flex-col     ">
 
           {/* Logo with rectangle */}
@@ -348,7 +348,7 @@ const ShreyasSunriseDetails = ({ project, onBack }) => {
 
       {/* SECTION 5 – Image Right, Content Left */}
 <div className="bg-[#F5F2EF] py-20">
-  <div className="max-w-6xl   mx-auto px-6 lg:px-2">
+  <div className="max-w-6xl   mx-auto px-6 lg:px-6">
 
   <AnimatedHeading className="section-heading  mb-4 md:mb-8">
   {project.title === "Shreyas Sunrise" ? "Location Advantages" : "Section Title"}
@@ -396,7 +396,7 @@ const ShreyasSunriseDetails = ({ project, onBack }) => {
 
 {/* EXTRA Location & Business Advantages (SAME DESIGN, IMAGE LEFT) */}
 <div className="bg-[#F5F2EF] pb-20 ">
-  <div className="max-w-6xl  mx-auto px-6 lg:px-2">
+  <div className="max-w-6xl  mx-auto px-6 lg:px-6">
 
     <AnimatedHeading className="section-heading mb-4 md:mb-8">
       Location and Business Advantages
@@ -465,7 +465,7 @@ const ShreyasSunriseDetails = ({ project, onBack }) => {
   <>
     {/* LAYOUT PLAN */}
 {/* LAYOUT PLAN */}
-<section className="bg-white py-20 px-6">
+<section className="bg-white py-20 px-6 max-w-6xl mx-auto">
   <AnimatedHeading className="text-center section-heading mb-10">
     Layout Plan
   </AnimatedHeading>
@@ -481,7 +481,7 @@ const ShreyasSunriseDetails = ({ project, onBack }) => {
 </section>
 
 {/* LOCATION MAP */}
-<section className="bg-white pb-20 px-6">
+<section className="bg-white pb-20 px-6 max-w-6xl mx-auto">
   <AnimatedHeading className="text-center section-heading mb-10">
     Location Map
   </AnimatedHeading>
@@ -548,7 +548,7 @@ return selectedProject ? (
         <section className="bg-[#eef2f3]     flex pb-10 md:pb-20    " >
 
         {/* Cards */}
-  <div className="max-w-6xl mx-auto px-6 lg:px-2 -mt-14 md:-mt-10 space-y-10">
+  <div className="max-w-6xl mx-auto px-6 lg:px-6 -mt-14 md:-mt-10 space-y-10">
 
   {/* 1 */}
   <ProjectCard
