@@ -4,8 +4,8 @@ import FloatUpText from "../../../components/floatUpText";
 
 const WhatMakesUsDifferent = () => {
   return (
-    <section className="bg-white px-4  lg:px-6 lg:h-[calc(100vh-5rem)] py-10 lg:py-0 flex justify-center items-center">
-      <div className="max-w-6xl md:max-h[70vh] grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-20 items-start mb-5 md:px-4">
+    <section className="bg-white px-6  lg:px-6 lg:h-[calc(100vh-5rem)] py-10 lg:py-0 flex justify-center items-center">
+      <div className="max-w-6xl md:max-h[70vh] grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-20 items-start mb-5 md:px-6">
 
         <RevealImageAnimation
           image="/Home/wahtmakesusdiffrent.webp"
@@ -20,7 +20,7 @@ const WhatMakesUsDifferent = () => {
               as="h2"
               delay={0}
               staggerDelay={0.15}
-             className="text-3xl md:text-4xl font-semibold mb-3 md:mb-8"
+             className="text-3xl md:text-4xl font-semiboldx mb-3 md:mb-8"
             >
               What makes us different
               lies in how we blend vision
@@ -44,7 +44,7 @@ const WhatMakesUsDifferent = () => {
 </FloatUpText>
               <div>
                 <FloatUpText delay={0}>
-                  <h4 className="md:text-lg text-base font-semibold mb-1">
+                  <h4 className="md:text-lg text-base font-semiboldx mb-1">
                     Values Driven Development
                   </h4>
                   <p className="md:text-base text-sm leading-relaxed">
@@ -63,7 +63,7 @@ const WhatMakesUsDifferent = () => {
 
               <div>
                 <FloatUpText delay={0}>
-                  <h4 className="md:text-lg text-base font-semibold mb-1">
+                  <h4 className="md:text-lg text-base font-semiboldx mb-1">
                     Thoughtfully Planned Spaces
                   </h4>
                   <p className="md:text-base text-sm leading-relaxed">
@@ -82,7 +82,7 @@ const WhatMakesUsDifferent = () => {
 
               <div>
                 <FloatUpText delay={0}>
-                  <h4 className="md:text-lg text-base font-semibold mb-1">
+                  <h4 className="md:text-lg text-base font-semiboldx mb-1">
                     End to End Customer Care
                   </h4>
                   <p className="md:text-base text-sm leading-relaxed">
@@ -115,7 +115,7 @@ export default WhatMakesUsDifferent;
 // const WhatMakesUsDifferent = () => {
 //   return (
 //      <section className="bg-white  md:h-screen pt-10 md:pt-28 pb-10 md:pb-0 flex justify-center">
-//   <div className="max-w-6xl  px-4 grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-20 items-start">
+//   <div className="max-w-6xl  px-6 grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-20 items-start">
     
 //     {/* LEFT IMAGE - Takes 2 columns on desktop */}
 //     <RevealImageAnimation 
@@ -130,7 +130,7 @@ export default WhatMakesUsDifferent;
 //         as="h2"
 //         delay={0}
 //         staggerDelay={0.15} 
-//         className=" text-base md:text-[38px] font-semibold    leading-tight mb-4">
+//         className=" text-base md:text-[38px] font-semiboldx    leading-tight mb-4">
 //         What makes us different
 //         lies in how we blend vision
 //         with execution.
@@ -153,7 +153,7 @@ export default WhatMakesUsDifferent;
 //         </div>
 //         <div>
 //           <FloatUpText delay={0}>
-//             <h4 className="md:text-lg text-base font-semibold  mb-1">
+//             <h4 className="md:text-lg text-base font-semiboldx  mb-1">
 //               Values Driven Development
 //             </h4>
 //             <p className="md:text-base text-sm  leading-relaxed">
@@ -173,7 +173,7 @@ export default WhatMakesUsDifferent;
 //         </div>
 //         <div>
 //           <FloatUpText delay={0}>
-//             <h4 className="md:text-lg text-base font-semibold  mb-1">
+//             <h4 className="md:text-lg text-base font-semiboldx  mb-1">
 //               Thoughtfully Planned Spaces
 //             </h4>
 //             <p className="md:text-base text-sm  leading-relaxed">
@@ -193,7 +193,7 @@ export default WhatMakesUsDifferent;
 //         </div>
 //         <div>
 //           <FloatUpText delay={0}>
-//             <h4 className="md:text-lg text-base font-semibold  mb-1">
+//             <h4 className="md:text-lg text-base font-semiboldx  mb-1">
 //               End to End Customer Care
 //             </h4>
 //             <p className="md:text-base text-sm  leading-relaxed">

@@ -20,7 +20,7 @@ const Contact = () => {
     {/* LEFT TEXT */}
     <div className="w-full md:w-1/2 flex items-center py-12 md:py-0">
       <div className="max-w-[560px] mx-auto md:ml-auto px-6 md:pr-20">
-        <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+        <h2 className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8">
           We would love to <br className="hidden md:block" /> connect to you.
         </h2>
         <p className="text-gray-600 text-base leading-relaxed">
@@ -52,7 +52,7 @@ const Contact = () => {
          <img src="/headphone.svg" alt="Headphone" className="w-10 h-10" />
             <div>
               <p className="text-sm">Have any questions?</p>
-              <h3 className="text-lg font-semibold">Speak with our experts.</h3>
+              <h3 className="text-lg font-semiboldx">Speak with our experts.</h3>
             </div>
           </div>
         <button
@@ -138,9 +138,9 @@ const Contact = () => {
 
     {/* Left: Office Info */}
     <div className="md:pl-16">
-      <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">Our office</h2>
+      <h2 className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8">Our office</h2>
 
-      <p className="font-semibold mb-4">Shreyas Infra Projects Pvt.Ltd.</p>
+      <p className="font-semiboldx mb-4">Shreyas Infra Projects Pvt.Ltd.</p>
 
       <p className="text-gray-600 leading-relaxed text-base">
         3rd Floor, Chourasia Shreyas Arcade,<br />
@@ -151,7 +151,7 @@ const Contact = () => {
 
       <div className="border-t border-gray-300 w-40 my-8"></div>
 
-      <p className="font-semibold mb-1">Visiting Hours</p>
+      <p className="font-semiboldx mb-1">Visiting Hours</p>
       <p className="text-gray-600">Mon-Fri: 10:00 am to 6:00 pm</p>
     </div>
 

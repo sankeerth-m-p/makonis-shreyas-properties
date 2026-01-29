@@ -4,7 +4,7 @@ export default function RevealImageAnimation({
   image,
   alt = "",
   className = "",
-  
+  intialSize="50%",
   // controls
   zoom = 1.1,                 // start zoom (1.0 = no zoom)
   duration = 2500,             // image animation duration
@@ -13,11 +13,25 @@ export default function RevealImageAnimation({
   repeat = true,    
   // hover effect control
   hoverZoom = true,
+  
+  // ✅ NEW: external trigger control
+  triggerAnimation = null,  // if provided, overrides IntersectionObserver
 }) {
   const [show, setShow] = useState(false);
   const ref = useRef(null);
 
+  // ✅ Handle external trigger
   useEffect(() => {
+    if (triggerAnimation !== null) {
+      setShow(triggerAnimation);
+      return; // skip IntersectionObserver when external trigger is provided
+    }
+  }, [triggerAnimation]);
+
+  // ✅ Original IntersectionObserver (only runs when triggerAnimation is null)
+  useEffect(() => {
+    if (triggerAnimation !== null) return; // skip if externally controlled
+
     const el = ref.current;
     if (!el) return;
 
@@ -31,7 +45,7 @@ export default function RevealImageAnimation({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [repeat]);
+  }, [repeat, triggerAnimation]);
 
   return (
     <div
@@ -42,8 +56,8 @@ export default function RevealImageAnimation({
       <div
         className="absolute rounded-lg inset-1/2 -translate-x-1/2 -translate-y-1/2 bg-white overflow-hidden"
         style={{
-          width: show ? "100%" : "50%",
-          height: show ? "100%" : "50%",
+          width: show ? "100%" : intialSize,
+          height: show ? "100%" : intialSize,
           transition: `width ${frameDuration}ms ${easing}, height ${frameDuration}ms ${easing}`,
         }}
       >

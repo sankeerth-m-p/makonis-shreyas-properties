@@ -40,7 +40,7 @@ const isMobile = window.matchMedia("(max-width: 1020px)").matches;
 )}    
       <>
          <ScrollToTop />
-        <div className={isHome ? "" : "px-2 md:px-0"}>
+        
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
 
@@ -232,7 +232,7 @@ const isMobile = window.matchMedia("(max-width: 1020px)").matches;
 
           </Routes>
         </AnimatePresence>
-        </div>
+      
       <AnimatePresence>
   {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
 </AnimatePresence>

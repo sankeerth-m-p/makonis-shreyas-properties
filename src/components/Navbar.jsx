@@ -14,8 +14,8 @@ const navItems = [
 ];
 
 const NavContent = ({ location, onEnquireClick }) => (
-  <nav className="max-w-6xl px-4 buttons mx-auto w-full min-h-[5rem] px-  py-4 flex items-center justify-between">
-    <h1 className="text-2xl  font-semibold tracking-wide text-gray-900" style={{fontFamily: "Cabin, sans-serif"}}>
+  <nav className="max-w-6xl px-6 buttons mx-auto w-full min-h-[5rem] px-  py-4 flex items-center justify-between">
+    <h1 className="text-2xl  font-semiboldx tracking-wide text-gray-900" style={{fontFamily: "Cabin, sans-serif"}}>
       <Link to="/" className="hover:opacity-80 transition">
         <img
           src={LogoImg}
@@ -152,7 +152,7 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
         `}
       >
         {/* MOBILE NAVBAR */}
-        <div className=" lg:hidden   flex items-center justify-between w-full  lg:min-h-20 px-4 py-2">
+        <div className=" lg:hidden   flex items-center justify-between w-full  lg:min-h-20 px-6 py-2">
           <button
             id="mobile-menu-button"
             onClick={toggleMobileMenu}
@@ -193,14 +193,14 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
           {/* MENU PANEL */}
           <div
             id="mobile-menu"
-            className={`fixed left-0 w-full h-[calc(100vh-56px)] bg-white z-[56]
+            className={`fixed left-0 w-full  h-[calc(100vh-56px)] bg-white z-[56]
               top-[56px] overflow-y-auto
               transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]
               ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
             style={{ paddingBottom: "2rem" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex flex-col px-6 py-8 space-y-4">
+            <div className="flex flex-col  px-6 py-8 space-y-4">
               <Link
                 to="/"
                 onClick={() => setIsMobileMenuOpen(false)}

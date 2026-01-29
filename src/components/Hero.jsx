@@ -23,7 +23,7 @@ export default function HeroSection() {
               Premium Living
             </p>
 
-            <h1 className="mt-2 text-2xl md:text-3xl font-semibold leading-snug">
+            <h1 className="mt-2 text-2xl md:text-3xl font-semiboldx leading-snug">
               Where every luxury <br />
               square foot speaks quality.
             </h1>

@@ -18,15 +18,15 @@ const OurStory = () => {
   const rightCircleX = useTransform(scrollYProgress, [0, 1], [20, -100]);
 
   return (
-    <div className="w-full md:pt-0 relative overflow-hidden">
+    <div className="w-full   relative overflow-hidden">
 
       {/* ================= ORANGE SECTION ================= */}
-      <section className="bg-ORANGE pt-20 md:pt-28 pb-72 relative">
+      <section className="bg-ORANGE px-6 md:px-0  pt-20 md:pt-28 pb-72 relative">
         <div className="max-w-[1120px] mx-auto px-0 flex flex-col justify-center text-center  text-white">
           <AnimatedHeading
             as="h1"
             delay={0}
-            staggerDelay={0.15} className="text-xl md:text-4xl  font-semibold leading-normal">
+            staggerDelay={0.15} className="text-xl section-heading md:text-4xl  text-white font-semiboldx leading-normal">
             Our journey is defined by a commitment to {'\n'}
             deliver more than just properties
           </AnimatedHeading>
@@ -55,25 +55,25 @@ const OurStory = () => {
           className="absolute top-60 right-[-200px] w-[380px] h-[380px] bg-gray-100 rounded-full z-0"
         />
 
-        <div className="max-w-[1120px] mx-auto px-0 relative z-10 -mt-24">
+        <div className="max-w-[1120px] mx-auto px-6 md:px-0 relative z-10 -mt-24">
 
 
           {/* ================= IMAGES ================= */}
           <div className=" grid md:grid-cols-2 gap-14 md:px-5 lg:px-0 items-start">
 
             {/* LEFT – VERTICAL IMAGE */}
-            <div className="rounded-2xl overflow-hidden shadow-xl ">
+            <div className="rounded-lg overflow-hidden shadow-xl ">
              <img
   src="\story_3.webp"
   alt="Design discussion"
-  className="w-full h-auto md:h-[600px] hover:scale-105 transition-transform ease-in-out duration-700 object-contain md:object-cover rounded-2xl"
+  className="w-full h-auto md:h-[600px] text-bahover:scale-105 transition-transform ease-in-out duration-700 object-contain md:object-cover  rounded-lg"
 />
 
             </div>
 
             {/* RIGHT – IMAGE + TEXT */}
             <div>
-              <div className="rounded-2xl md:block hidden overflow-hidden shadow-xl  mb-8">
+              <div className="rounded-lg md:block hidden overflow-hidden shadow-xl  mb-8">
                 <img
                   src="\story_1.webp"
                   alt="Client meeting"
@@ -85,9 +85,9 @@ const OurStory = () => {
               <AnimatedHeading
                 as="h1"
                 delay={0}
-                staggerDelay={0.15} className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+                staggerDelay={0.15} className="text-xl md:text-2xl lg:text-4xl font-semiboldx mb-4 md:mb-8">
 
-                {/* <h2 className="text-xl font-semibold text-gray-900 mb-4 leading-snug"> */}
+                {/* <h2 className="text-xl font-semiboldx text-gray-900 mb-4 leading-snug"> */}
                 We are a forward thinking real estate company driven by the belief
                 that well designed spaces shape better lives.
                 {/* </h2> */}
@@ -110,7 +110,7 @@ const OurStory = () => {
               </FloatUpText>
 
 
-              <div className="mt-5 rounded-2xl md:hidden overflow-hidden shadow-xl mb-8">
+              <div className="mt-5   rounded-lg md:hidden overflow-hidden shadow-xl mb-8">
   <img
     src="\story_1.webp"
     alt="Client meeting"
@@ -122,7 +122,7 @@ const OurStory = () => {
           </div>
 
           {/* ================= TEXT BELOW ================= */}
-          <FloatUpText className="md:m-14 mt-5 text-base  lg:px-0 text-gray-600 space-y-6 max-w-[1120px] mx-auto px-5">
+          <FloatUpText className="md:m-14 my-5 text-base   lg:px-0 text-gray-600 space-y-6 max-w-[1120px] mx-auto ">
 
             <p>
               Our philosophy is rooted in integrity, quality, and long-term value. From selecting the
@@ -152,7 +152,7 @@ const OurStory = () => {
       </section>
 
 {/* ================= VISION & MISSION SECTION ================= */}
-<section className="relative w-full bg-[#f4efe4] overflow-hidden pt-10 md:py-28">
+<section className="relative w-full px-6 md-px-0 bg-[#f4efe4] overflow-hidden pt-10 md:py-28">
 
   {/* LEFT BACKGROUND ICON – OUR VISION (EYE) */}
   <img
@@ -240,7 +240,7 @@ const OurStory = () => {
 
 
 <section
-  className="relative w-full h-[70vh] md:h-screen bg-center bg-cover bg-no-repeat overflow-hidden md:bg-fixed"
+  className="relative w-full h-[70vh] lg:h-screen bg-center bg-cover bg-no-repeat overflow-hidden bg-fixed"
 
   style={{ backgroundImage: `url(/story_2.webp)` }}
 >
@@ -248,19 +248,19 @@ const OurStory = () => {
   <img
     src="/story_orsngebg.svg"
     alt=""
-    className="absolute bottom-0 left-0 w-full h-auto z-10 pointer-events-none "
+    className="absolute lg:bottom-0 md:bottom-20 bottom-28  left-0 w-full h-auto z-10 pointer-events-none "
   />
 
   {/* CONTENT ON ORANGE */}
-  <div className="absolute bottom-0 left-0 w-full z-20 md:relative md:h-full md:flex md:items-end">
-    <div className="max-w-[1120px] mx-auto px-0 pb-20 md:pb-24 text-white w-full">
-      <div className="grid md:grid-cols-2 gap-6">
+  <div className="absolute bottom-0   left-0 w-full z-20 md:relative md:h-full md:flex md:items-end">
+    <div className="max-w-[1120px] mx-auto bg-ORANGE lg:bg-transparent px-0 pb-5 md:pb-24 text-white w-full">
+      <div className="grid md:grid-cols-2   px-6 gap-2 lg:gap-6">
 
         <AnimatedHeading
           as="h1"
           delay={0}
           staggerDelay={0.15}
-          className="text-[22px] md:text-3xl font-semibold leading-snug max-w-md"
+          className="text-[22px] text-white md:text-3xl font-semiboldx leading-snug max-w-md"
         >
           A Philosophy that {'\n'}
           puts people first.
@@ -279,12 +279,12 @@ const OurStory = () => {
 </section>
 
       {/* ================= IMAGE + TEXT SECTION ================= */}
-      <section className="w-full bg-white py-5 md:py-24">
-        <div className="max-w-[1120px] mx-auto px-0 grid md:grid-cols-12  gap-5 md:gap-16 items-start">
+      <section className="w-full px-6 md:px-0 bg-white py-5 md:py-24">
+        <div className="max-w-[1120px]   mx-auto grid md:grid-cols-12  gap-5 md:gap-16 items-start">
 
           {/* LEFT IMAGE */}
-          <div className="md:col-span-4">
-            <div className="w-full md:h-[420px] overflow-hidden rounded-sm">
+          <div className="md:col-span-4 md:ml-4 lg:ml-0">
+            <div className="w-full  md:h-[420px] overflow-hidden rounded-sm">
               <RevealImageAnimation
                 image={aboutUsImg}
                 alt="Conversation"
@@ -294,7 +294,7 @@ const OurStory = () => {
           </div>
 
           {/* RIGHT TEXT */}
-          <FloatUpText className="md:col-span-8 text-gray-600 text-[20px]leading-relaxed md:space-y-6">
+          <FloatUpText className="md:col-span-8  md:mr-4 lg:mr-0 text-gray-600 text-[20px]leading-relaxed md:space-y-6">
             <p>
               We believe real estate is not just about constructing buildings, but about
               creating environments that enhance the way people live, grow, and connect.
@@ -327,12 +327,12 @@ const OurStory = () => {
         </div>
       </section>
       {/* ================= TESTIMONIAL SECTION ================= */}
-      <section className="w-full bg-[#f4efe4] py-12  md:py-32">
+      <section className="w-full px-6 md:px-0 bg-[#f4efe4] py-12  md:py-32">
        <div className="max-w-[1120px] mx-auto px-0 text-center">
 
 
           {/* QUOTE BLOCK */}
-          <div className="relative inline-block md:px-10 py-6">
+          <div className="relative inline-block md:px-10 px-5 py-6">
 
             {/* OPENING QUOTE */}
 
@@ -340,7 +340,7 @@ const OurStory = () => {
               “
             </span>
             {/* QUOTE TEXT */}
-            <AnimatedHeading className="text-lg md:text-2xl text-gray-800 leading-relaxed">
+            <AnimatedHeading delay={0} className="text-lg md:text-2xl text-gray-800 ">
               From the very first meeting to project handover,
               {'\n'}
               the experience was smooth and transparent.

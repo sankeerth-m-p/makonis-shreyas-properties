@@ -13,24 +13,24 @@ const Career = () => {
             className="w-full lg:w-[420px] rounded-2xl object-cover"
           />
           <div className="max-w-xl">
-            <h2 className="text-3xl font-semibold mb-4">We are hiring !</h2>
+            <h2 className="text-3xl font-semiboldx mb-4">We are hiring !</h2>
             <p className="text-gray-700 mb-8">
               Looking for a workplace that values <br />
               ambition and dedication? Join us!.
             </p>
             <p className="text-gray-800">
               Apply now at: <br />
-              <span className="font-semibold">career@shreyasinfr.com</span>
+              <span className="font-semiboldx">career@shreyasinfr.com</span>
             </p>
           </div>
         </div>
 
         {/* Current Openings */}
-        <h3 className="text-2xl font-semibold mt-20 mb-8">Current openings</h3>
+        <h3 className="text-2xl font-semiboldx mt-20 mb-8">Current openings</h3>
 
         {/* Sales Manager */}
         <div className="bg-[#eef1f1] rounded-xl p-8 mb-12">
-          <h4 className="text-3xl font-semibold mb-3">Sales manager</h4>
+          <h4 className="text-3xl font-semiboldx mb-3">Sales manager</h4>
           <div className="flex flex-wrap gap-6 text-sm text-gray-600 mb-6">
             <span>Male candidates</span>
             <span>Location: Bengaluru</span>
@@ -44,10 +44,10 @@ const Career = () => {
             targets are met while maintaining strong customer relationships.
           </p>
 
-          <p className="font-semibold mb-1">Minimum Qualification</p>
+          <p className="font-semiboldx mb-1">Minimum Qualification</p>
           <p className="mb-4">MBA - Master of Business Administration</p>
 
-          <p className="font-semibold mb-2">Key Responsibilities Area &nbsp; KRA</p>
+          <p className="font-semiboldx mb-2">Key Responsibilities Area &nbsp; KRA</p>
           <ul className="space-y-1 text-gray-700 text-sm">
             <li>Develop and implement effective sales strategies for real estate projects.</li>
             <li>Lead, mentor, and manage the sales team to achieve targets.</li>
@@ -70,7 +70,7 @@ const Career = () => {
 
         {/* Marketing Manager */}
         <div className="bg-[#eef1f1] rounded-xl p-8">
-          <h4 className="text-3xl font-semibold mb-3">Marketing manager</h4>
+          <h4 className="text-3xl font-semiboldx mb-3">Marketing manager</h4>
           <div className="flex flex-wrap gap-6 text-sm text-gray-600 mb-6">
             <span>Male candidates</span>
             <span>Location: Bengaluru</span>
@@ -84,10 +84,10 @@ const Career = () => {
             targets are met while maintaining strong customer relationships.
           </p>
 
-          <p className="font-semibold mb-1">Minimum Qualification</p>
+          <p className="font-semiboldx mb-1">Minimum Qualification</p>
           <p className="mb-4">MBA - Master of Business Administration</p>
 
-          <p className="font-semibold mb-2">Key Responsibilities Area &nbsp; KRA</p>
+          <p className="font-semiboldx mb-2">Key Responsibilities Area &nbsp; KRA</p>
           <ul className="space-y-1 text-gray-700 text-sm">
             <li>Develop and implement effective sales strategies for real estate projects.</li>
             <li>Lead, mentor, and manage the sales team to achieve targets.</li>

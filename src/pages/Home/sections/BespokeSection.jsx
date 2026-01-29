@@ -121,7 +121,7 @@ useEffect(() => {
                 />
 
                 {/* Label */}
-                <span className="absolute bottom-0 uppercase left-0 px-4 py-3 text-center justify-center text-white bg-black/50 flex w-full text-[10px] tracking-widest">
+                <span className="absolute bottom-0 uppercase left-0 px-6 py-3 text-center justify-center text-white bg-black/50 flex w-full text-[10px] tracking-widest">
                   {img.label}
                 </span>
               </div>
@@ -186,24 +186,24 @@ const BespokeSection = () => {
 
   return (
     <section className="bg-[#EEF2F3] py-10  lg:h-[calc(100vh-5rem)] md:h-[50vh]  justify-center  items-center flex">
-      <div className="max-w-6xl h-full max-h-[550px]    md:px-4">
-        <div className="bg-white  rounded-3xl h-full px-4 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
+      <div className="max-w-6xl h-full max-h-[550px]    md:px-6">
+        <div className="bg-white  rounded-3xl h-full px-6 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}
-          <div className="w-full md:w-[30%] flex flex-col items-center justify-center font-bold text-center">
-  <div className="text-center ">
+          <div className="w-full md:w-[30%] flex flex-col md:items-center  justify-center font-bold text-center">
+  <div className=" text-center  flex flex-col items-center md:items-start">
 
     <AnimatedHeading
       as="h3"
       delay={0}
       staggerDelay={0.15}
-    className="text-3xl md:text-4xl font-semibold mb-4 md:mb-8 text-center"
+    className="text-3xl md:text-4xl   mb-4 md:mb-8  text-center  md:text-left"
     >
       Bespoke {'\n'}services for { '\n'}elevated living {'\n'} 
     </AnimatedHeading>
 
             <button
               onClick={() => navigate("/projects")}
-              className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1"
+              className=" buttons  btn btn-orange "
               >
                 <span>VIEW PROJECTS</span>
                 <ArrowRight className="w-4 h-4" />

@@ -59,7 +59,7 @@ const ProjectCard = ({
 
 
 
-          <h3 className="text-2xl md:text-xl font-semibold">{title}</h3>
+          <h3 className="text-2xl md:text-xl font-semiboldx">{title}</h3>
 
           <p className="text-gray-500 text-sm mb-4">{location}</p>
 
@@ -115,7 +115,7 @@ const ProjectDetails = ({ project, onBack }) => {
 
           {/* Title & Location */}
           <div className="flex flex-col leading-tight">
-            <span className="text-2xl font-semibold text-gray-900">
+            <span className="text-2xl font-semiboldx text-gray-900">
               {project.title}
             </span>
             <span className="text-base text-gray-500">
@@ -643,7 +643,7 @@ return selectedProject ? (
     <section className="bg-[#F6DCA6] hidden md:block py-16 mt-16">
         <div className="max-w-[1120px] mx-auto px-0 flex flex-col md:flex-row md:justify-between md:items-center gap-6">
           <div>
-            <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+            <h2 className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8">
               Expert Assistance, Simplified
             </h2>
             <p className="text-sm text-gray-700 mt-1">

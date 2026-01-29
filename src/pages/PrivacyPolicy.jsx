@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
   <AnimatedHeading
     as="h1"
     delay={0}
-    className="text-lg md:text-4xl font-semibold mb-4 md:mb-8"
+    className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8"
   >
   Privacy Policy
   </AnimatedHeading>
@@ -27,7 +27,7 @@ const PrivacyPolicy = () => {
 
           <p>
             Your privacy is important to us. It is Siddanth Developers’ policy to respect your privacy regarding any information we may collect from you across our website,
-            <span className="font-semibold"> www.siddanthdevelopers.com</span>, and other sites we own and operate.
+            <span className="font-semiboldx"> www.siddanthdevelopers.com</span>, and other sites we own and operate.
           </p>
 
           <p>
@@ -59,16 +59,16 @@ const PrivacyPolicy = () => {
           </p>
 
           <div className="pt-4">
-            <p className="font-semibold">Office Address</p>
+            <p className="font-semiboldx">Office Address</p>
             <p>
               Siddanth Developers, #305, 3rd Floor, Brigade Business Suites, Ashoka Pillar Road, Jayanagar 2nd Block, Bengaluru, Karnataka 560011
             </p>
 
             <p className="mt-2">
-              <span className="font-semibold">Email:</span> info@siddanthdevelopers.com
+              <span className="font-semiboldx">Email:</span> info@siddanthdevelopers.com
             </p>
             <p>
-              <span className="font-semibold">Phone:</span> +91 73377 80808
+              <span className="font-semiboldx">Phone:</span> +91 73377 80808
             </p>
           </div>
 
