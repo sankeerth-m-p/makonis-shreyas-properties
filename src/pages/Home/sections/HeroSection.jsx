@@ -5,17 +5,23 @@ import desktopBanner1 from "/Home/hero/desktop/SI_bannerimage1.webp";
 import desktopBanner2 from "/Home/hero/desktop/SI_bannerimage2.webp";
 import desktopBanner3 from "/Home/hero/desktop/SI_bannerimage3.webp";
 import desktopBanner4 from "/Home/hero/desktop/SI_bannerimage4.webp";
-
+import desktopBanner5 from "/Home/hero/desktop/SI_bannerimage5.webp";
 // Mobile banners
 import mobileBanner1 from "/Home/hero/mobile/shreyaainfra web_mobilebanner1.webp";
 import mobileBanner2 from "/Home/hero/mobile/shreyaainfra web_mobilebanner2.webp";
 import mobileBanner3 from "/Home/hero/mobile/shreyaainfra web_mobilebanner3.webp";
 import mobileBanner4 from "/Home/hero/mobile/shreyaainfra web_mobilebanner4.webp";
+import mobileBanner5 from "/Home/hero/mobile/shreyaainfra web_mobilebanner5.webp";
 
 const heroSlides = [{
     imageDesktop: desktopBanner4,
     imageMobile: mobileBanner4,
 
+  },
+   {
+    imageDesktop: desktopBanner5,
+    imageMobile: mobileBanner5,
+ 
   },
   
   {
