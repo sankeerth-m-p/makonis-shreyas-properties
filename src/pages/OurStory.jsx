@@ -22,12 +22,12 @@ const OurStory = () => {
 
       {/* ================= ORANGE SECTION ================= */}
       <section className="bg-ORANGE px-6 md:px-0  pt-20 md:pt-28 pb-72 relative">
-        <div className="max-w-[1120px] mx-auto px-0 flex flex-col justify-center text-center  text-white">
+        <div className="max-w-[1120px] mx-auto px-0 flex flex-col justify-center items-center text-center  text-white">
           <AnimatedHeading
             as="h1"
             delay={0}
-            staggerDelay={0.15} className="text-xl section-heading md:text-4xl  text-white font-semiboldx leading-normal">
-            Our journey is defined by a commitment to {'\n'}
+            staggerDelay={0.15} className="text-xl section-heading md:text-4xl md:max-w-3xl  text-white font-semiboldx leading-normal">
+            Our journey is defined by a commitment to 
             deliver more than just properties
           </AnimatedHeading>
           <FloatUpText delay={0}>
@@ -43,7 +43,7 @@ const OurStory = () => {
         <div className="absolute bottom-0 left-0 w-full h-40 bg-white rounded-t-[100%]" />
       </section>
 
-      <section ref={sectionRef} className="bg-white relative pt-10 -mt-48">
+      <section ref={sectionRef} className="bg-white pb-10 relative pt-20 -mt-48">
 
         <motion.div
           style={{ x: leftCircleX }}
@@ -352,9 +352,8 @@ const OurStory = () => {
             <AnimatedHeading
               className="text-2xl  max-w-xl lg:max-w-full lg:text-[38px] font-normal leading-normal animate-fadeIn"
             >
-              From the very first meeting to project handover,
-              
-              the experience was smooth and transparent.
+              More than infrastructure, we create foundations for better living.
+Quality, trust, and vision guide everything we do.
             </AnimatedHeading>
 
             {/* AUTHOR */}
