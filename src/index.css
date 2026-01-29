@@ -133,3 +133,16 @@ h1, h2, h3, h4, h5, h6 {
     @apply bg-gray-100 text-black ;
   }
 }
+@layer utilities {
+  .label-mask {
+    width: 100%;
+    max-width: 100%;
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 500ms ease-out;
+  }
+
+  .label-mask-active {
+    clip-path: inset(0 0 0 0);
+    transition-delay: 700ms; /* sync with flex expand */
+  }
+}
