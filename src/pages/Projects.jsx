@@ -63,11 +63,11 @@ const ProjectCard = ({
 
           <h3 className="text-2xl  ">{title}</h3>
 
-          <p className="text-gray-500 text-sm mb-4">{location}</p>
+          <p className="text-gray-500       mb-4">{location}</p>
 
           <div className="w-full h-[1px] bg-gray-300 mb-5 md:mb-4" />
 
-          <p className="text-sm text-gray-600 mb-8">{description}</p>
+          <p className="            mb-8">{description}</p>
 
           <button
             onClick={onClick}
@@ -87,49 +87,53 @@ const ProjectDetails = ({ project, onBack }) => {
     window.scrollTo(0, 0);   // <-- replace smooth scroll
   }, []);
   return (
-   <div className="relative w-full bg-white  overflow-hidden">
+   <div className="relative w-full bg-white     pt-10   overflow-hidden">
 
       {/* ===== BACK BUTTON ===== */}
-     <div className="pt-4">
-  <div className="max-w-[1120px] mx-auto px-0 ">
+  
+  <div className="   hidden md:block   max-w-6xl  px-2 mx-auto ">
    <button
   onClick={onBack}
-  className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1 w-fit"
->
-  <span>Back to Projects</span>
-  <ArrowRight className="w-4 h-4" />
+className="btn">
+  
+  <ArrowRight className="w-5 h-5 rotate-180" />
 </button>
 
-  </div>
+
 </div>
 
 
 
       {/* ===== TOP CENTER INFO BAR ===== */}
-      <div className="w-full py-6 flex justify-center">
-        <div className="flex items-center gap-6">
+      <div className="w-full py-6 flex px-6 lg:px-0 pb-10 justify-between max-w-6xl mx-auto ">
+        <div className="flex items-start gap-6 md:flex-row flex-col     ">
 
           {/* Logo with rectangle */}
-         <div className="border border-gray-300 px-4 py-2 flex items-center">
-  <img src={project.logo} className="h-14 object-contain" />
-</div>
+       <div className="border-2 mb-2       flex w-fit h-18 aspect-video items-center p-1 justify-center ">
+          <img
+  src={project.logo}
+  
+  className="w-32  h-18 object-contain"
+/>
+  </div>
 
 
           {/* Title & Location */}
-          <div className="flex flex-col leading-tight">
-            <span className="text-2xl font-semiboldx text-gray-900">
+          <div className="flex md:f flex-col  leading-tight gap-4">
+            <div className="flex flex-col">
+              <h3 className="section-heading     ">
               {project.title}
-            </span>
-            <span className="text-base text-gray-500">
+            </h3>
+            <span className="text-lg     ">
               {project.location}
-            </span>
-          </div>
-
+            </span></div>
        <span
- className={`${statusStyles[project.status]} text-white text-sm px-5 py-1.5 rounded`}
+ className={`${statusStyles[project.status]} text-white h-fit w-fit buttons       px-5 py-1.5 rounded-lg `}
 >
   {project.status}
 </span>
+          </div>
+
 
         </div>
       </div>
@@ -139,7 +143,7 @@ const ProjectDetails = ({ project, onBack }) => {
 
    
 {/* ===== HERO IMAGE (NO JUMP) ===== */}
-<div className="w-full h-[60vh] md:h-[85vh] overflow-hidden bg-gray-100">
+<div className="w-full h-[30vh] md:h-[50vh] lg:h-[85vh] overflow-hidden bg-gray-100">
   <img
     src={project.image}
     alt="Project"
@@ -151,60 +155,59 @@ const ProjectDetails = ({ project, onBack }) => {
 
 
       {/* ===== ABOUT SECTION ===== */}
-      <div className="bg-[#F5F2EF] py-20">
-        <div className="max-w-[1120px] mx-auto px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <div className="bg-[#F5F2EF] py-20       px-6 ">
+        <div className="max-w-[1120px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 tems-center">
 
           <div className="relative">
-            <div className="absolute -left-16 -top-10 w-64 h-64 bg-gray-200 rounded-full opacity-30"></div>
 
            {/* text above circle */}
-  <h2 className="relative z-10 text-lg md:text-4xl font-semibold mb-4 md:mb-8">
     {project.title === "Shreyas Sunrise" ? (
-      <>
-        This project is strategically located very close to <br />
+  <AnimatedHeading className="relative z-10  mb-4 md:mb-8 section-heading">
+      
+        This project is strategically located very close to 
         Bengaluru’s fast developing satellite township
-      </>
+      </AnimatedHeading>
     ) : (
-      <>
-        Signature spaces crafted <br /> for modern living.
-      </>
+       <AnimatedHeading className="relative z-10 mb-4 md:mb-8 section-heading">
+
+        Signature spaces crafted {'\n'} for modern living.
+  </AnimatedHeading>
     )}
-  </h2>
 
 
           {project.title === "Shreyas Sunrise" ? (
-  <>
-    <p className="text-sm text-gray-600 leading-relaxed mb-4">
+  <FloatUpText className="text-base">
+    <p className="            leading-relaxed mb-4">
       Shreyas Sunrise is developed by Shreyas Properties, a company with a passionate approach towards creating infrastructure and living spaces that add beauty to life.
     </p>
 
-    <p className="text-sm text-gray-600 leading-relaxed mb-4">
+    <p className="            leading-relaxed mb-4">
       This project is strategically located very close to Bengaluru’s fast developing satellite township of Nandagudi and is just a few minutes away from Devanahalli.
     </p>
 
-    <p className="text-sm text-gray-600 leading-relaxed mb-4">
+    <p className="            leading-relaxed mb-4">
       The widening of roads and future connectivity through the planned Peripheral Ring Road, along with the elevated expressway to the airport and the high-speed rail link, has made this area one of the most sought-after destinations.
     </p>
 
-    <p className="text-sm text-gray-600 leading-relaxed">
+    <p className="            leading-relaxed">
       This is an opportunity that speaks for itself. Its location, as you will soon see, is the key.
     </p>
-  </>
+  </FloatUpText>
 ) : (
-  <>
-    <p className="text-sm text-gray-600 leading-relaxed mb-4">
+   <FloatUpText className="text-base">
+    <p className="            leading-relaxed mb-4">
       Modern Profound Tech Park is a prominent commercial property located in Kondapur, Hyderabad, with a landmark beside Sarath City Mall. Designed for modern businesses, this premium office complex provides spacious and skilfully designed commercial spaces suitable for IT, corporate offices, and startups alike. The project reflects a blend of functionality and modern architecture, offering an environment that fosters productivity and professional growth.
     </p>
 
-    <p className="text-sm text-gray-600 leading-relaxed">
+    <p className="            leading-relaxed">
       The building enjoys excellent connectivity and a prime location surrounded by leading companies like Capita, TCS, Cognizant, and HSBC. With seamless access to public transportation, proximity to restaurants, hotels, and retail hubs, and in-house dedicated parking, this tech park ensures a comfortable and business-friendly ecosystem for its occupants.
     </p>
-  </>
+  </FloatUpText>
 )}
 
           </div>
 
-          <div className="overflow-hidden">
+          <div className="overflow-hidden ">
             <RevealImageAnimation
               image="/family.jpg"
               className="w-full h-[350px] md:h-[600px] object-cover"
@@ -220,23 +223,23 @@ const ProjectDetails = ({ project, onBack }) => {
   <section
     className="
       relative 
-      w-full min-h-screen
-      md:h-screen 
+      w-full  h-fit
+      lg:h-screen 
       bg-center 
       bg-cover 
       bg-no-repeat
-      md:bg-fixed
+      md:bg-fixed px-6
       overflow-hidden
     "
     style={{ backgroundImage: "url(/hotel.jpg)" }}
   >
     <div className="absolute inset-0 bg-black/65" />
 
-    <div className="relative z-10 max-w-[1120px] mx-auto px-0 py-24 md:h-full flex flex-col md:justify-center">
+    <div className="relative z-10 max-w-6xl mx-auto px-0 py-24 md:h-full flex flex-col md:justify-center">
 
-    <h2 className="text-lg md:text-4xl font-semibold mb-8 text-center text-white">
+    <AnimatedHeading className="section-heading pb-32 text-center text-white">
   Key Features and Amenities
-</h2>
+</AnimatedHeading>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-y-16 text-center text-white">
         {[
@@ -247,13 +250,13 @@ const ProjectDetails = ({ project, onBack }) => {
           { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
           { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
         ].map((item, i) => (
-          <div key={i} className="flex flex-col items-center gap-5 px-4">
+          <div key={i} className="flex flex-col items-center gap-5 ">
             <img
               src={item.icon}
               className="w-16 h-16 md:w-20 md:h-20 object-contain invert"
               alt=""
             />
-            <p className="text-sm md:text-base leading-snug max-w-[240px]">
+            <p className="      text-base leading-snug max-w-[240px]">
               {item.text}
             </p>
           </div>
@@ -266,51 +269,51 @@ const ProjectDetails = ({ project, onBack }) => {
 
 
       {/* ===== LOCATION & BUSINESS ADVANTAGES ===== */}
-      <div className="bg-[#F5F2EF] py-20">
-        <div className="max-w-[1120px] mx-auto px-4 md:px-0">
+      <div className="  px-6 lg:px-0 py-20 ">
+        <div className="max-w-[1120px] mx-auto ">
 
           {/* Heading aligned to image left edge */}
-         <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+         <AnimatedHeading className="section-heading mb-4 md:mb-8">
   {project.title === "Shreyas Sunrise"
     ? "Facilities & Amentities"
     : "Location and Business Advantages"}
-</h2>
+</AnimatedHeading>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
 
             {/* LEFT IMAGE – no rounding, no shadow, exact frame */}
             <div>
               <RevealImageAnimation
-                image="/business.jpg"
-                className="w-full md:w-[480px] h-[300px] md:h-[500px] object-cover"
+                image="/swimmingpool.webp"
+                className="w-full md:w-auto h-[300px] md:h-[500px] object-cover"
               />
 
             </div>
 
             {/* RIGHT CONTENT – bullets start from image top */}
-            <div className="pt-1">
-             <ul className="space-y-4 text-sm text-gray-700">
+            <div className="pt-1 text-base">
+             <ul className="space-y-4       ">
   {project.title === "Shreyas Sunrise" ? (
     <>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Swimming pool</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Overhead storage tanks for water</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Playground for children</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Basketball court, tennis court & cricket practice net</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Space for commercial complex & schools</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Clubhouse with library, yoga & aerobics room</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Spa & Multi-Gym</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Plot sizes: 30x40, 30x50, 40x50, 40x60 & 60x80</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Well-designed arch</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Eco-friendly environment</li>
+      <li className="flex  item-center gap-2"><span className=" text-base">›</span> Swimming pool</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Overhead storage tanks for water</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Playground for children</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Basketball court, tennis court & cricket practice net</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Space for commercial complex & schools</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Clubhouse with library, yoga & aerobics room</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Spa & Multi-Gym</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Plot sizes: 30x40, 30x50, 40x50, 40x60 & 60x80</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Well-designed arch</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Eco-friendly environment</li>
     </>
   ) : (
     <>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Situated in Kondapur, beside Sarath City Mall, a major IT corridor</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Surrounded by Capita, TCS, Cognizant, and HSBC</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Excellent public transport connectivity with bus and cabs</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Easy access to malls, eateries, and business support services</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Ideal for IT companies, startups, and corporate offices</li>
-      <li className="flex items-start gap-2"><span className="text-lg">›</span> Looking for a prestigious business address</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Situated in Kondapur, beside Sarath City Mall, a major IT corridor</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Surrounded by Capita, TCS, Cognizant, and HSBC</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Excellent public transport connectivity with bus and cabs</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Easy access to malls, eateries, and business support services</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Ideal for IT companies, startups, and corporate offices</li>
+      <li className="flex  items-center gap-2"><span className="text-base">›</span> Looking for a prestigious business address</li>
     </>
   )}
 </ul>
@@ -345,31 +348,31 @@ const ShreyasSunriseDetails = ({ project, onBack }) => {
 
       {/* SECTION 5 – Image Right, Content Left */}
 <div className="bg-[#F5F2EF] py-20">
-  <div className="max-w-[1120px] mx-auto px-4 md:px-0">
+  <div className="max-w-6xl   mx-auto px-6 lg:px-2">
 
-  <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
-  {project.title === "Shreyas Sunrise" ? "LOCATION ADVANTAGES" : "Section Title"}
-</h2>
+  <AnimatedHeading className="section-heading  mb-4 md:mb-8">
+  {project.title === "Shreyas Sunrise" ? "Location Advantages" : "Section Title"}
+</AnimatedHeading>
 
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
 
       {/* CONTENT LEFT */}
-      <div className="pt-1 md:order-1">
-       <ul className="space-y-4 text-sm text-gray-700">
+      <div className="pt-1 md:order-1 text-base ">
+       <ul className="space-y-4       ">
   {project.title === "Shreyas Sunrise" && (
     <>
-      <li className="flex items-start gap-2"><span>›</span> Attached to State Highway 35</li>
-      <li className="flex items-start gap-2"><span>›</span> Approx 20 mins away from the International Airport</li>
-      <li className="flex items-start gap-2"><span>›</span> Approx 15 mins from AERO SEZ Devanahalli IT Park (SAP Labs, Boeing, Wipro, Mahindra, Shell, etc.)</li>
-      <li className="flex items-start gap-2"><span>›</span> Approx 20 mins drive to Narasapura Industrial Area (Apple, Honda, Scania, Volvo, Triumph, etc.)</li>
-      <li className="flex items-start gap-2"><span>›</span> Approx 15 mins from Vemgal Industrial Area (GSK, Mitsubishi, TATA Motors, etc.)</li>
-      <li className="flex items-start gap-2"><span>›</span> Approx 15 mins from Devanahalli Old Jain Temple</li>
-      <li className="flex items-start gap-2"><span>›</span> Approx 10 mins from Nandagudi SEZ</li>
-      <li className="flex items-start gap-2"><span>›</span> 20 mins from Hoskote</li>
-      <li className="flex items-start gap-2"><span>›</span> 40 mins from ITPL</li>
-      <li className="flex items-start gap-2"><span>›</span> Approx 10 mins from Cargo Road</li>
-      <li className="flex items-start gap-2"><span>›</span> Approx 5 mins from Central University of North Bengaluru</li>
+      <li className="flex  items-center gap-2"><span>›</span> Attached to State Highway 35</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 20 mins away from the International Airport</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 15 mins from AERO SEZ Devanahalli IT Park (SAP Labs, Boeing, Wipro, Mahindra, Shell, etc.)</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 20 mins drive to Narasapura Industrial Area (Apple, Honda, Scania, Volvo, Triumph, etc.)</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 15 mins from Vemgal Industrial Area (GSK, Mitsubishi, TATA Motors, etc.)</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 15 mins from Devanahalli Old Jain Temple</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 10 mins from Nandagudi SEZ</li>
+      <li className="flex  items-center gap-2"><span>›</span> 20 mins from Hoskote</li>
+      <li className="flex  items-center gap-2"><span>›</span> 40 mins from ITPL</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 10 mins from Cargo Road</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 5 mins from Central University of North Bengaluru</li>
     </>
   )}
 </ul>
@@ -377,10 +380,10 @@ const ShreyasSunriseDetails = ({ project, onBack }) => {
       </div>
 
       {/* IMAGE RIGHT – same animation & spacing */}
-      <div className="md:order-2">
+      <div className="md:order-2 ">
         <RevealImageAnimation
           image="/sunrise.webp"
-          className="w-full md:w-[480px] h-[300px] md:h-[500px] object-cover"
+          className="w-full md:w-full h-[300px] md:h-[500px] object-cover"
         />
       </div>
 
@@ -392,17 +395,17 @@ const ShreyasSunriseDetails = ({ project, onBack }) => {
 
 
 {/* EXTRA Location & Business Advantages (SAME DESIGN, IMAGE LEFT) */}
-<div className="bg-[#F5F2EF] py-20">
-  <div className="max-w-[1120px] mx-auto px-4 md:px-0">
+<div className="bg-[#F5F2EF] pb-20 ">
+  <div className="max-w-6xl  mx-auto px-6 lg:px-2">
 
-    <h2 className="text-lg md:text-4xl font-semibold mb-4 md:mb-8">
+    <AnimatedHeading className="section-heading mb-4 md:mb-8">
       Location and Business Advantages
-    </h2>
+    </AnimatedHeading>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start">
 
       {/* IMAGE LEFT (same animation) */}
-      <div className="md:order-1">
+      <div className="md:order-1 md:mx-auto lg:mx-0">
         <RevealImageAnimation
           image="/business.jpg"
           className="w-full md:w-[480px] h-[300px] md:h-[500px] object-cover"
@@ -412,39 +415,39 @@ const ShreyasSunriseDetails = ({ project, onBack }) => {
       {/* CONTENT RIGHT (same bullets, same style) */}
       <div className="pt-1 md:order-2">
 {project.title === "Shreyas Sunrise" && (
-  <ul className="space-y-4 text-sm text-gray-700">
-    <li className="flex items-start gap-2">
-      <span className="text-lg leading-none">›</span>
+  <ul className="space-y-4       ">
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
       <p><strong>Bengaluru Aerospace SEZ:</strong> 950-acre Bengaluru Aerospace Park including 250-acre special economic zone (SEZ) has attracted investments from 56 large and mid-sized companies.</p>
     </li>
 
-    <li className="flex items-start gap-2">
-      <span className="text-lg leading-none">›</span>
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
       <p><strong>Bengaluru University:</strong> Bengaluru North University would be established as an affiliating university with headquarters at Jangamakote (Sidlaghatta taluk).</p>
     </li>
 
-    <li className="flex items-start gap-2">
-      <span className="text-lg leading-none">›</span>
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
       <p><strong>Devanahalli Business Park:</strong> 413-acre Devanahalli Business Park expects to attract an investment of $2.2 billion over the next three to five years.</p>
     </li>
 
-    <li className="flex items-start gap-2">
-      <span className="text-lg leading-none">›</span>
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
       <p><strong>Narsapura Industrial Area:</strong> Developed over 700.75 acres, abutting NH-4, 15 Km from Kolar and 55 Km from Bengaluru.</p>
     </li>
 
-    <li className="flex items-start gap-2">
-      <span className="text-lg leading-none">›</span>
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
       <p><strong>Vemgal Industrial Area:</strong> Located on SH-96, about 10 Km from Narasapura & Jakkasandra Industrial Area, covering 666 acres.</p>
     </li>
 
-    <li className="flex items-start gap-2">
-      <span className="text-lg leading-none">›</span>
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
       <p><strong>International Convention Centre:</strong> Proposed on 35 acres next to Bengaluru International Airport under PPP model.</p>
     </li>
 
-    <li className="flex items-start gap-2">
-      <span className="text-lg leading-none">›</span>
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
       <p><strong>Devanahalli–Kolar Road (SH-96):</strong> Being widened from 2 to 6 lanes to support airport and real estate growth.</p>
     </li>
   </ul>
@@ -462,35 +465,35 @@ const ShreyasSunriseDetails = ({ project, onBack }) => {
   <>
     {/* LAYOUT PLAN */}
 {/* LAYOUT PLAN */}
-<section className="bg-white py-20">
-  <h2 className="text-center text-lg md:text-4xl font-semibold mb-10">
+<section className="bg-white py-20 px-6">
+  <AnimatedHeading className="text-center section-heading mb-10">
     Layout Plan
-  </h2>
+  </AnimatedHeading>
 
-  <div className="max-w-[1120px] mx-auto px-0 border-2 border-black">
+  <FloatUpText className="max-w-6xl mx-auto px-0 border-2 border-black">
     <div className="overflow-hidden">
       <RevealImageAnimation
         image="/layoutplan.jpg"
         className="w-full h-[70vh] md:h-[85vh] object-contain"
       />
     </div>
-  </div>
+  </FloatUpText>
 </section>
 
 {/* LOCATION MAP */}
-<section className="bg-white py-20">
-  <h2 className="text-center text-lg md:text-4xl font-semibold mb-10">
+<section className="bg-white pb-20 px-6">
+  <AnimatedHeading className="text-center section-heading mb-10">
     Location Map
-  </h2>
+  </AnimatedHeading>
 
- <div className="max-w-[1120px] mx-auto px-0 border-2 border-black">
+ <FloatUpText className="max-w-[1120px] mx-auto px-0 border-2 border-black">
     <div className="overflow-hidden">
       <RevealImageAnimation
         image="/locationmap.jpg"
         className="w-full h-[70vh] md:h-[85vh] object-contain"
       />
     </div>
-  </div>
+  </FloatUpText>
 </section>
 
 
