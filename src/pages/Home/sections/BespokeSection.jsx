@@ -185,9 +185,9 @@ const BespokeSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#EEF2F3] py-10 h-[90vh]  lg:h-[calc(100vh-5rem)] md:h-[50vh]  justify-center  items-center flex">
+    <section className="bg-[#EEF2F3] py-10   lg:h-[calc(100vh-5rem)] md:h-[50vh]  justify-center  items-center flex">
       <div className="max-w-6xl h-full md:max-h-[550px]    md:px-6">
-        <div className="bg-white  md:rounded-3xl h-full px-6 md:px-5 py-6 md:py-5 flex flex-col md:flex-row  gap-6">
+        <div className="bg-white  md:rounded-3xl h-full px-6 md:px-5 pt-14 pb-5 md:py-5 flex flex-col md:flex-row  gap-6">
           {/* LEFT CONTENT */}
           <div className="w-full md:w-[30%] flex flex-col md:items-center  justify-center font-bold text-center">
   <div className=" text-center  flex flex-col items-center md:items-start">

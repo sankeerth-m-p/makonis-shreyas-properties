@@ -62,7 +62,7 @@ const SignatureSpaces = ({ sections }) => {
 
   return (
     <div className=" min-h-[calc(100vh-5rem)] flex flex-col items-center justify-between   lg:p-10">
-      <div className='mx-6 md:mx-0  py-6 max-w-xl md:p-20 flex flex-col justify-center items-center'>
+      <div className='mx-6 md:mx-0   pt-14 pb-10 max-w-xl md:p-20 flex flex-col justify-center items-center'>
        <AnimatedHeading
   delay={0}
   className="text-3xl md:text-4xl  font-semiboldx mb-4 md:mb-8 text-center"
@@ -70,7 +70,7 @@ const SignatureSpaces = ({ sections }) => {
   Signature spaces crafted for modern living
 </AnimatedHeading>
         <FloatUpText delay={0} className=' lg:px-5  flex flex-col gap-5 items-center' >
-       <p className="text-sm w-full text-center">
+       <p className="text-lg w-full text-center">
   A thoughtfully planned development bringing essential amenities together in one cohesive environment.
 </p>
 <button
@@ -126,11 +126,11 @@ const SignatureSpaces = ({ sections }) => {
                
                  
 
-        <p className="text-xs text-white tracking-widest mb-4">
+        <p className="text-xs md:text-sm text-white tracking-widest mb-4">
           {section.location}
         </p>
 
-    <p className="text-sm text-left md:text-left lg:text-left text-white/90 leading-relaxed mb-6 lg:mb-10">
+    <p className="text-sm md:text-base text-left md:text-left lg:text-left text-white/90 leading-relaxed mb-6 lg:mb-10">
   {section.description}
 </p>
 
@@ -150,7 +150,7 @@ const SignatureSpaces = ({ sections }) => {
         className="
             lg:tracking-tight
           absolute bottom-8 lg:bottom-10 right-4 lg:right-16
-           text-7xl lg:text-[200px] font-roboto leading-none z-0 select-none
+           text-7xl  md:text-[170px] lg:text-[180px] font-roboto leading-none z-0 select-none
         "
         style={{
           WebkitTextStroke: "1px #fff",

@@ -28,7 +28,7 @@ const WhatMakesUsDifferent = () => {
             </AnimatedHeading>
 
             <FloatUpText delay={0}>
-              <p className="text-sm md:text-lg max-w-lg">
+              <p className="text-lg md:text-lg max-w-lg">
                 What makes every project distinctly ours,
                 from vision and design to lasting value.
               </p>
@@ -47,7 +47,7 @@ const WhatMakesUsDifferent = () => {
                   <h4 className="md:text-lg text-base font-semiboldx mb-1">
                     Values Driven Development
                   </h4>
-                  <p className="md:text-base text-sm leading-relaxed">
+                  <p className="md:text-base text-base leading-relaxed">
                     Every project is planned with long-term value in mind
                     focusing on quality, sustainability, and future appreciation.
                   </p>
@@ -66,7 +66,7 @@ const WhatMakesUsDifferent = () => {
                   <h4 className="md:text-lg text-base font-semiboldx mb-1">
                     Thoughtfully Planned Spaces
                   </h4>
-                  <p className="md:text-base text-sm leading-relaxed">
+                  <p className="md:text-base text-base leading-relaxed">
                     From layouts to amenities, each development is designed
                     to enhance lifestyle, comfort, and functionality.
                   </p>
@@ -85,7 +85,7 @@ const WhatMakesUsDifferent = () => {
                   <h4 className="md:text-lg text-base font-semiboldx mb-1">
                     End to End Customer Care
                   </h4>
-                  <p className="md:text-base text-sm leading-relaxed">
+                  <p className="md:text-base text-base leading-relaxed">
                     Support that goes beyond possession assisting clients
                     from site visits to handover and after-sales service.
                   </p>

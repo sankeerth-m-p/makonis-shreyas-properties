@@ -98,7 +98,7 @@ const COLORS1 = {
     <div className="relative bottom-0 bg-white  mb-0     pb-0">
       {/* HEADING should be BEFORE wave */}
       <div
-        className="relative z-10 text-center pt-10 lg:pt-36 pb-36    "
+        className="relative z-10 text-center pt-10 lg:pt-36 pb-28    "
         style={{
           opacity:
       window.innerWidth > 768
@@ -107,7 +107,7 @@ const COLORS1 = {
           transform: `translateY(${(1 - scrollProgress) * 40}px)`,
         }}
       >
-<AnimatedHeading className="text-3xl md:text-4xl font-semiboldx mb-3 md:mb-8">
+<AnimatedHeading className="text-3xl md:text-4xl font-semiboldx  md:mb-8">
           What 
           people 
           says

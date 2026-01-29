@@ -100,11 +100,11 @@ const StoryBehindBrand = () => {
           "
             ><FloatUpText delay={0}>
                 
-          <p className="text-[clamp(13px,1.2vw,15px)] text-[#2A2A2A] leading-relaxed mb-5">
+          <p className="text-[clamp(16px,1.2vw,16px)]   mb-5">
             Our brand tells a story of commitment, trust, and progress.
           </p>
 
-          <button onClick={()=>navigate('/our-story')}  className="text-[11px] tracking-widest uppercase text-[#111] border-b hover:text-ORANGE hover:font-bold hover:border-ORANGE  border-[#111] pb-1">
+          <button onClick={()=>navigate('/our-story')}  className="text-[16px] tracking-widest uppercase text-[#111] border-b hover:text-ORANGE hover:font-bold hover:border-ORANGE  border-[#111] pb-1">
             KNOW MORE
           </button>
         </FloatUpText>
