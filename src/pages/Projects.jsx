@@ -29,7 +29,7 @@ const ProjectCard = ({
   noFade = false,
 }) => {
   const Wrapper = noFade || typeof window !== "undefined" && window.innerWidth < 768
-  ? React.Fragment
+  ? FloatUpText
   : FloatUpText;
 
 
@@ -37,7 +37,7 @@ const ProjectCard = ({
     <Wrapper>
       <div className="bg-white  rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
         {/* IMAGE */}
-        <div className="relative w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
+        <div className="relative w-full md:w-1/2  md:h-auto overflow-hidden">
           <img src={image} alt={title} className="w-full h-full object-cover hover:scale-105 transition-transform ease-in-out duration-700" />
 
           {/* STATUS */}
@@ -542,7 +542,7 @@ return selectedProject ? (
 
       </section>
         {/* Header */}
-        <section className="bg-[#eef2f3] flex pb-20    " >
+        <section className="bg-[#eef2f3]     flex pb-10 md:pb-20    " >
 
         {/* Cards */}
   <div className="max-w-6xl mx-auto px-6 lg:px-2 -mt-14 md:-mt-10 space-y-10">
@@ -674,7 +674,7 @@ className="btn btn-white">
       </section>
 
       {/* ================= EXPERT ASSISTANCE CARDS ================= */}
-      <section className="bg-[#eef2f3] px-6 pb-10 md:py-20">
+      <section className="bg-[#eef2f3] px-6 pb-10     md:py-20">
 <div className="max-w-[1120px] mx-auto px-0  space-y-10">
 
   {/* 5 */}
@@ -717,6 +717,27 @@ className="btn btn-white">
 
 </div>
 
+      </section> {/* ================= EXPERT ASSISTANCE HEADER ================= */}
+    <section className="bg-[#fae4b4]  px-6 md:hidden block py-16 ">
+        <div className="max-w-[1120px] mx-auto px-0 flex flex-col md:flex-row md:justify-between md:items-center gap-6">
+          <div>
+            <h2 className="section-heading mb-4 ">
+              Expert Assistance, Simplified
+            </h2>
+            <p className="text-lg text-black mt-1">
+              Our team ensures smooth, transparent, and hassle-free experience
+              at every stage.
+            </p>
+          </div>
+
+       <button
+  onClick={() => setShowEnquire(true)}
+className="btn btn-white w-fit">
+  <span>REQUEST CALLBACK</span>
+  <ArrowRight className="w-4 h-4" />
+</button>
+
+        </div>
       </section>
       <AnimatePresence>
   {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
