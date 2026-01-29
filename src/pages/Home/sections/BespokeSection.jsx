@@ -19,7 +19,7 @@ const bespokeImages = [
   },
   {
     src: "/Home/commercial&retailsspaces.webp",
-    label: "Commercial and\n retail spaces",
+    label: "Commercial \n spaces",
   },
 ];
 
@@ -126,36 +126,36 @@ useEffect(() => {
                 <h3
   className="
     absolute bottom-0 left-0 w-full
-    px-6 pb-4
+    px-6 pb-9   items-end flex
     text-2xl  text-white
     whitespace-pre-line
 h-1/3
     bg-gradient-to-t
     from-[#0A1E2A]/100
-    via-[#0A1E2A]/80
+    via-[#0A1E2A]/90
     to-transparent
   "
 >
                   {img.label}
-                </h3>
-              </div>
-            ))}
-          </div>
-        </div>
-</FloatUpText>
-        {/* ✅ DOT INDICATOR */}
-        <div className=" absolute bottom-10 left-0 w-full flex justify-center gap-2">
+                </h3> {/* ✅ DOT INDICATOR */}
+        <div className=" absolute bottom-9  w-full flex justify-end pr-6 gap-2">
          {bespokeImages.map((_, i) => (
   <button
     key={i}
     onClick={() => setActive(i + 1)} // ✅ offset because of clone
-    className={`w-2.5 h-2.5 rounded-full transition ${
+    className={`w-2 h-2 rounded-full transition ${
       i + 1 === active ? "bg-white" : "bg-white/40"
     }`}
   />
 ))}
 
         </div>
+              </div>
+            ))}
+          </div>
+        </div>
+</FloatUpText>
+       
       </div>
 
       {/* ✅ DESKTOP LAYOUT (unchanged) */}
@@ -181,10 +181,10 @@ h-1/3
     bg-gradient-to-t from-[#0A1E2A]/100 via-[#0A1E2A]/60 to-transparent
     whitespace-pre-line
 
-    transition-all duration-1000 ease-in-out
+    transition-all duration-1000  delay-200 ease-in-out
     ${active === index
-      ? "opacity-100 translate-y-0 delay-[700ms]"
-      : "opacity-0 translate-y-4 delay-0"}
+      ? "opacity-100 translate-y-0 "
+      : "opacity-0 translate-y- "}
   `}
 >
   
