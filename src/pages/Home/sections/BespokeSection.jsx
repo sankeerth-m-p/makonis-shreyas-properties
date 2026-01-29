@@ -3,6 +3,7 @@ import AnimatedHeading from "../../../components/animatedHeading";
 import { useNavigate } from "react-router-dom";
 
 import { ArrowRight } from "lucide-react";
+import FloatUpText from "../../../components/floatUpText";
 const bespokeImages = [
   {
     src: "/Home/services_plotted_developemnt.webp",
@@ -77,8 +78,9 @@ useEffect(() => {
       {/* ✅ MOBILE SLIDER */}
       <div className="md:hidden relative w-full ">
         {/* Slides */}
+        <FloatUpText>
         <div
-  className="w-full overflow-hidden   rounded-lg"
+  className="w-full overflow-hidden a  rounded-lg"
   onTouchStart={(e) => {
     touchRef.current = true;
     clearInterval(intervalRef.current);
@@ -106,14 +108,14 @@ useEffect(() => {
 >
 
           <div
-            className={`flex ${noAnim ? "" : "transition-transform duration-700 ease-in-out"}`}
+            className={`flex  ${noAnim ? "" : " transition-transform duration-700 ease-in-out"}`}
             style={{
               transform: `translateX(-${active * 100}%)`,
             }}
           >
            {mobileSlides.map((img, index) => (
 
-              <div key={index} className="w-full shrink-0 relative h-[50vh]">
+              <div key={index} className="w-full  shrink-0 relative h-[50vh]">
                 <img
                   src={img.src}
                   alt={img.label}
@@ -128,7 +130,7 @@ useEffect(() => {
             ))}
           </div>
         </div>
-
+</FloatUpText>
         {/* ✅ DOT INDICATOR */}
         <div className=" absolute bottom-10 left-0 w-full flex justify-center gap-2">
          {bespokeImages.map((_, i) => (
@@ -195,12 +197,12 @@ const BespokeSection = () => {
     <AnimatedHeading
       as="h3"
       delay={0}
-      staggerDelay={0.15}
     className="text-3xl md:text-4xl   mb-4 md:mb-8  text-center  md:text-left"
     >
       Bespoke {'\n'}services for { '\n'}elevated living {'\n'} 
     </AnimatedHeading>
-
+              <FloatUpText>
+                
             <button
               onClick={() => navigate("/projects")}
               className=" buttons  btn btn-orange "
@@ -208,6 +210,7 @@ const BespokeSection = () => {
                 <span>VIEW PROJECTS</span>
                 <ArrowRight className="w-4 h-4" />
             </button>
+              </FloatUpText>
               </div>
           </div>
 
