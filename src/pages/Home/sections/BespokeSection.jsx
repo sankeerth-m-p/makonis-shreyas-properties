@@ -7,19 +7,19 @@ import FloatUpText from "../../../components/floatUpText";
 const bespokeImages = [
   {
     src: "/Home/services_plotted_developemnt.webp",
-    label: "PLOTTED DEVELOPMENT",
+    label: "Plotted\n development",
   },
   {
     src: "/Home/residential_projects.webp",
-    label: "residential projects",
+    label: "Residential\n projects",
   },
   {
     src: "/Home/hospitality.webp",
-    label: "hospitality",
+    label: "Hospitality",
   },
   {
     src: "/Home/commercial&retailsspaces.webp",
-    label: "commercial and retail spaces",
+    label: "Commercial and\n retail spaces",
   },
 ];
 
@@ -123,9 +123,21 @@ useEffect(() => {
                 />
 
                 {/* Label */}
-                <span className="absolute bottom-0 uppercase left-0 px-6 py-3 text-center justify-center text-white bg-black/50 flex w-full text-[10px] tracking-widest">
+                <h3
+  className="
+    absolute bottom-0 left-0 w-full
+    px-6 pb-4
+    text-2xl  text-white
+    whitespace-pre-line
+h-1/3
+    bg-gradient-to-t
+    from-[#0A1E2A]/100
+    via-[#0A1E2A]/80
+    to-transparent
+  "
+>
                   {img.label}
-                </span>
+                </h3>
               </div>
             ))}
           </div>
@@ -161,19 +173,24 @@ useEffect(() => {
             <img src={img.src} alt={img.label} className="w-full h-full hover:scale-105 transition-transform ease-in-out duration-700 object-cover" />
 
             {active === index && (
-              <span
+            <h1
   className={`
-    absolute bottom-0 left-0 w-full h-[44px]
-    flex items-center justify-center
-    uppercase text-white text-[11px] tracking-wide
-    bg-black/50
-    whitespace-nowrap 
-    transition-opacity duration-300 ease-in-out
-    ${active === index ? "opacity-100" : "opacity-0"}
+    absolute bottom-0 left-0 w-full h-1/3
+    flex items-end pl-10 pb-6 
+    text-white md:text-2xl lg:text-3xl
+    bg-gradient-to-t from-[#0A1E2A]/100 via-[#0A1E2A]/60 to-transparent
+    whitespace-pre-line
+
+    transition-all duration-1000 ease-in-out
+    ${active === index
+      ? "opacity-100 translate-y-0 delay-[700ms]"
+      : "opacity-0 translate-y-4 delay-0"}
   `}
 >
+  
+
   {img.label}
-</span>
+</h1>
 
             )}
           </div>

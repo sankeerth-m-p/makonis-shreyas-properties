@@ -62,18 +62,18 @@ const OurStory = () => {
           <div className=" grid md:grid-cols-2 gap-14 md:px-5 lg:px-0 items-start">
 
             {/* LEFT – VERTICAL IMAGE */}
-            <div className="rounded-lg overflow-hidden shadow-xl ">
+            <div className="rounded-lg overflow-hidden    ">
              <img
   src="\story_3.webp"
   alt="Design discussion"
-  className="w-full h-auto md:h-[600px] text-bahover:scale-105 transition-transform ease-in-out duration-700 object-contain md:object-cover  rounded-lg"
+  className="w-full h-auto md:h-[600px]  hover:scale-105 transition-transform ease-in-out duration-700 object-contain md:object-cover  rounded-lg"
 />
 
             </div>
 
             {/* RIGHT – IMAGE + TEXT */}
             <div>
-              <div className="rounded-lg md:block hidden overflow-hidden shadow-xl  mb-8">
+              <div className="rounded-lg md:block hidden overflow-hidden     mb-8">
                 <img
                   src="\story_1.webp"
                   alt="Client meeting"
@@ -85,7 +85,7 @@ const OurStory = () => {
               <AnimatedHeading
                 as="h1"
                 delay={0}
-                staggerDelay={0.15} className="text-xl md:text-2xl lg:text-4xl font-semiboldx mb-4 md:mb-8">
+                staggerDelay={0.15} className="text-xl md:text-2xl lg:text-2xl font-semiboldx mb-4 md:mb-8">
 
                 {/* <h2 className="text-xl font-semiboldx text-gray-900 mb-4 leading-snug"> */}
                 We are a forward thinking real estate company driven by the belief
@@ -110,7 +110,7 @@ const OurStory = () => {
               </FloatUpText>
 
 
-              <div className="mt-5   rounded-lg md:hidden overflow-hidden shadow-xl mb-8">
+              <div className="mt-5   rounded-lg md:hidden overflow-hidden    mb-8">
   <img
     src="\story_1.webp"
     alt="Client meeting"
@@ -122,7 +122,7 @@ const OurStory = () => {
           </div>
 
           {/* ================= TEXT BELOW ================= */}
-          <FloatUpText className="md:m-14 my-5 text-base   lg:px-0 text-gray-600 space-y-6 max-w-[1120px] mx-auto ">
+          <FloatUpText className="md:my-14 my-5 text-base   lg:px-0  space-y-6   ">
 
             <p>
               Our philosophy is rooted in integrity, quality, and long-term value. From selecting the

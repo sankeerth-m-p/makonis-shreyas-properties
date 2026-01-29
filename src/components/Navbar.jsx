@@ -35,7 +35,7 @@ const NavContent = ({ location, onEnquireClick }) => (
             to={path}
             className={`
               relative transition-colors duration-300
-              after:content-['']  pb-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-gray-300
+              after:content-['']  pb-2 after:absolute  after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-ORANGE
               after:origin-center after:transition-transform after:duration-300 after:ease-out
               ${isActive
                 ? "text-ORANGE  after:scale-x-100"
@@ -51,9 +51,9 @@ const NavContent = ({ location, onEnquireClick }) => (
       <button
         onClick={onEnquireClick}
         className="relative transition-colors duration-300
-    after:content-[''] pb-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-gray-300
+    after:content-[''] pb-2 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-ORANGE
     after:origin-center after:transition-transform after:duration-300 after:ease-out
-    text-gray-800 hover:text-ORANGE hover:after:scale-x-100 after:scale-x-0"
+    text-gray-800 hover:text-ORANGE  hover:after:scale-x-100 after:scale-x-0"
       >
         ENQUIRE
       </button>
@@ -204,7 +204,7 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
               <Link
                 to="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full py-4 text-lg font-medium text-gray-800 border-b border-gray-400 hover:text-ORANGE"
+                className="w-full py-4 text-lg font-medium text-gray-800  border-b border-gray-400 hover:text-ORANGE"
               >
                 HOME
               </Link>
@@ -216,7 +216,7 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
                     key={label}
                     to={path}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`w-full py-4 text-lg font-medium border-b border-gray-400 transition-colors duration-300
+                    className={`w-full py-4 text-lg font-medium border-b  border-gray-400 transition-colors duration-300
                       ${isActive ? "text-ORANGE" : "text-gray-800 hover:text-ORANGE"}`}
                   >
                     {label}
@@ -227,7 +227,7 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
               <Link
                 to="/faq"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full py-4 text-lg font-medium border-b border-gray-400 text-gray-800 hover:text-ORANGE"
+                className="w-full py-4 text-lg font-medium border-b  border-gray-400 text-gray-800 hover:text-ORANGE"
               >
                 FAQ
               </Link>
@@ -235,7 +235,7 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
               <Link
                 to="/career"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full py-4 text-lg font-medium border-b border-gray-400 text-gray-800 hover:text-ORANGE"
+                className="w-full py-4 text-lg font-medium border-b  border-gray-400 text-gray-800 hover:text-ORANGE"
               >
                 CAREER
               </Link>
@@ -245,7 +245,7 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
                   setIsMobileMenuOpen(false);
                   onEnquireClick();
                 }}
-                className="w-full py-4 text-lg font-medium text-left text-gray-800 border-b border-gray-400 hover:text-ORANGE"
+                className="w-full py-4 text-lg font-medium text-left text-gray-800 border-b  border-gray-400 hover:text-ORANGE"
               >
                 ENQUIRE
               </button>
