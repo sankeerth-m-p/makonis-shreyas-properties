@@ -7,7 +7,7 @@ import banner from "/banner.svg";
 import banner1 from "/banner1.svg";
 import aboutUsImg from "/Home/aboutUsImg.webp";
 import RevealImageAnimation from "../components/RevealImageAnimation";
-
+import quote from "/Home/quotes.svg";
 const OurStory = () => {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -63,10 +63,10 @@ const OurStory = () => {
 
             {/* LEFT – VERTICAL IMAGE */}
             <div className="rounded-lg overflow-hidden    ">
-             <img
-  src="\story_3.webp"
+             <RevealImageAnimation
+  image="\story_3.webp"
   alt="Design discussion"
-  className="w-full h-auto md:h-[600px]  hover:scale-105 transition-transform ease-in-out duration-700 object-contain md:object-cover  rounded-lg"
+  className="w-full h-[400px] md:h-[600px]  hover:scale-105 transition-transform ease-in-out duration-700 object-contain md:object-cover  rounded-lg"
 />
 
             </div>
@@ -74,10 +74,10 @@ const OurStory = () => {
             {/* RIGHT – IMAGE + TEXT */}
             <div>
               <div className="rounded-lg md:block hidden overflow-hidden     mb-8">
-                <img
-                  src="\story_1.webp"
+                <RevealImageAnimation
+                  image="\story_1.webp"
                   alt="Client meeting"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform ease-in-out duration-700"
+                  className="w-full h-[250px] object-cover hover:scale-105 transition-transform ease-in-out duration-700"
                 />
 
 
@@ -111,10 +111,10 @@ const OurStory = () => {
 
 
               <div className="mt-5   rounded-lg md:hidden overflow-hidden    mb-8">
-  <img
-    src="\story_1.webp"
+  <RevealImageAnimation
+    image="\story_1.webp"
     alt="Client meeting"
-    className="w-full h-auto object-contain"
+    className="w-full h-[250px] object-contain"
   />
 </div>
 
@@ -122,7 +122,7 @@ const OurStory = () => {
           </div>
 
           {/* ================= TEXT BELOW ================= */}
-          <FloatUpText className="md:my-14 my-5 text-base   lg:px-0  space-y-6   ">
+          <FloatUpText className="md:my-14   md:px-6 my-5 text-base   lg:px-0  space-y-6   ">
 
             <p>
               Our philosophy is rooted in integrity, quality, and long-term value. From selecting the
@@ -282,22 +282,22 @@ const OurStory = () => {
 </section>
 
       {/* ================= IMAGE + TEXT SECTION ================= */}
-      <section className="w-full px-6 md:px-0 bg-white py-5 md:py-24">
-        <div className="max-w-[1120px]   mx-auto grid md:grid-cols-12  gap-5 md:gap-16 items-start">
+      <section className="w-full px-6 lg:px-0 bg-white py-5 md:py-24 ">
+        <div className="max-w-[1120px]   mx-auto grid md:grid-cols-12     gap-5 lg:gap-16 items-start">
 
           {/* LEFT IMAGE */}
-          <div className="md:col-span-4 md:ml-4 lg:ml-0">
-            <div className="w-full  md:h-[420px] overflow-hidden rounded-sm">
+          <div className="lg:col-span-4 md:col-span-5    h-full  ">
+            <div className="lg:w-full  h-full lg:h-[420px] overflow-hidden rounded-sm">
               <RevealImageAnimation
                 image={aboutUsImg}
                 alt="Conversation"
-                className="w-full h-full object-cover"
+                className="w-full h-full    object-cover"
               />
             </div>
           </div>
 
           {/* RIGHT TEXT */}
-          <FloatUpText className="md:col-span-8  md:mr-4 lg:mr-0 text-gray-600 text-[20px]leading-relaxed md:space-y-6">
+          <FloatUpText className="lg:col-span-8 md:col-span-7 w-full    md:mr-4 lg:mr-0  text-base  leading-relaxed md:space-y-6">
             <p>
               We believe real estate is not just about constructing buildings, but about
               creating environments that enhance the way people live, grow, and connect.
@@ -319,56 +319,56 @@ const OurStory = () => {
               trust, and a sense of belonging.
             </p>
 
-            <p>
-              We believe real estate is not just about constructing buildings, but about
-              creating environments that enhance the way people live, grow, and connect.
-              Every project we undertake is guided by thoughtful planning, responsible
-              development, and a deep understanding of our customers’ aspirations.
-            </p>
           </FloatUpText>
 
         </div>
       </section>
       {/* ================= TESTIMONIAL SECTION ================= */}
-      <section className="w-full px-6 md:px-0 bg-[#f4efe4] py-12  md:py-32">
-       <div className="max-w-[1120px] mx-auto px-0 text-center">
+      <section className="relative pb-20 pt-28 md:py-32 lg:py-40   z-40    bg-[#F4EFE5]  flex h-full mt-5  lg:mt-10">
+        <div
+  className="relative z-10 max-w-5xl mx-auto px-6 md:px-6"
+        
+      >
+        <FloatUpText>
+          <div className="relative max-w-4xl  mx-auto text-center transition-all duration-700 ease-in-out">
+            {/* Quote SVG */}
+            <img
+  src={quote}
+  alt=""
+  className="
+    absolute -top-4
+    left-6 md:left-0
+    -translate-x-2/3
+    -translate-y-2/3
+    rotate-180
+    w-10 h-10 
+     lg:w-20  lg:h-16
+    opacity-70
+    pointer-events-none
+  "
+/>
 
 
-          {/* QUOTE BLOCK */}
-          <div className="relative inline-block md:px-10 px-5 py-6">
-
-            {/* OPENING QUOTE */}
-
-            <span className="absolute -top-6 flex md:-left-4 text-7xl md:text-9xl text-gray-700 leading-none">
-              “
-            </span>
-            {/* QUOTE TEXT */}
-            <AnimatedHeading delay={0} className="text-lg md:text-2xl text-gray-800 ">
+            <AnimatedHeading
+              className="text-2xl  max-w-xl lg:max-w-full lg:text-[38px] font-normal leading-normal animate-fadeIn"
+            >
               From the very first meeting to project handover,
-              {'\n'}
+              
               the experience was smooth and transparent.
-
             </AnimatedHeading>
 
-            {/* CLOSING QUOTE */}
-            <span className="absolute hidden md:block -bottom-6 -right-4 text-7xl text-gray-700 leading-none">
-              ”
-            </span>
-
+            {/* AUTHOR */}
+            <div className="mt-16 flex items-center justify-center gap-3 animate-fadeIn">
+              
+              <div className="text-left flex flex-col items-center">
+                <p className="text-lg font-semibold">Mr. Sandeep Lella</p>
+                <p className="text-sm">Founder, Shreyas Infra</p>
+              </div>
+            </div>
           </div>
-
-          {/* AUTHOR */}
-          <FloatUpText>
-            <p className="md:mt-10 mt-2  text-sm md:text-base font-medium text-gray-900">
-              Krishna Samanth Lella
-            </p>
-
-            <p className="md:text-sm text-xs text-gray-500 mt-1">
-              Founder, Shreyas Infra
-            </p>
-          </FloatUpText>
-
-        </div>
+        </FloatUpText>
+      </div>
+      
       </section>
 
 
