@@ -32,14 +32,14 @@ const PromiseSection = () => {
       as="h2"
       delay={0}
       staggerDelay={0.15}
-     className="text-3xl md:text-4xl font-semiboldx mb-3 md:mb-8 text-white"
+     className="text-3xl md:text-4xl  mb-3 md:mb-8 text-white"
     >
           Our promise is to turn urban spaces  { '\n'}into meaningful lives.
     </AnimatedHeading>
 
     <FloatUpText delay={0}>
-      <p className="text-sm md:text-lg text-white/80 max-w-2xl mx-auto mb-10">
-        We design spaces that nurture life itself where <br />
+      <p className="text-lg md:text-lg text-white/80 max-w-2xl mx-auto mb-10">
+        We design spaces that nurture life itself where 
         craftsmanship and dedicated service come together
         to elevate living.
       </p>
