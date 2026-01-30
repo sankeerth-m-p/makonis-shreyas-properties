@@ -30,7 +30,7 @@ import gsap from "gsap"; gsap.registerPlugin(ScrollTrigger);
 
   return (
     <section className="relative py-20 w-full flex px-6 items-center justify-center bg-cover bg-center" 
-             style={{backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070')"}}>
+             style={{backgroundImage: 'url("/Home/profoundInfra.webp")'}}>
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
       
