@@ -170,7 +170,7 @@ return selectedProject ? (
   {/* 2 */}
   <ProjectCard
     image="/Home/royalEnclave.webp"
-      logo="/royalenclave.webp"
+      logo="/royalenclave.png"
      status="Completed"
     title="Royal Enclave"
     location="Marathahalli, Bengaluru"
