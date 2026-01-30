@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import LogoImg from "/Shreyasinfra_logo.png";
+import LogoImg from "/Shreyasinfra_logo.webp";
 import navClose from "/nav_close.svg";
 import navMenu from "/nav_menu.svg";
 

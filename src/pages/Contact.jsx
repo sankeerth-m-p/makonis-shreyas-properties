@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import contactImg from "/Contact/contact.jpg"; // replace with your image
-//import { Phone, Mail, Globe, Headphones } from "lucide-react";
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
 import Enquire from "./Enquire";
@@ -20,7 +18,7 @@ const Contact = () => {
     {/* LEFT TEXT */}
     <div className="w-full md:w-1/2 flex items-center py-12 md:py-0">
       <div className="max-w-[560px] mx-auto md:ml-auto px-6 md:pr-20">
-        <h2 className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8">
+        <h2 className="section-heading font-semiboldx mb-4 md:mb-8">
           We would love to <br className="hidden md:block" /> connect to you.
         </h2>
         <p className="text-gray-600 text-base leading-relaxed">
@@ -33,7 +31,7 @@ const Contact = () => {
     {/* RIGHT IMAGE */}
     <div className="w-full md:w-1/2 h-[300px] md:h-auto">
       <img
-        src="/webcontent.jpg"
+        src="/webcontent.webp"
         alt="Support"
         className="w-full h-full object-cover"
       />
@@ -52,7 +50,7 @@ const Contact = () => {
          <img src="/headphone.svg" alt="Headphone" className="w-10 h-10" />
             <div>
               <p className="text-sm">Have any questions?</p>
-              <h3 className="text-lg font-semiboldx">Speak with our experts.</h3>
+              <h3 className="text-lg font-semiboldx text-white">Speak with our experts.</h3>
             </div>
           </div>
         <button
@@ -186,13 +184,13 @@ const Contact = () => {
           />
         </div>
 
-        <div>
+        {/* <div>
           <label className="text-sm text-gray-600">City</label>
           <input
             type="text"
             className="w-full mt-2 p-3 rounded-lg border border-gray-300 bg-white"
           />
-        </div>
+        </div> */}
 
         <div>
           <label className="text-sm text-gray-600">What are you enquiring about?</label>

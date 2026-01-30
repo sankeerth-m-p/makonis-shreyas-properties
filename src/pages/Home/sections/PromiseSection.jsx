@@ -1,6 +1,6 @@
 import AnimatedHeading from "../../../components/animatedHeading";
 import FloatUpText from "../../../components/floatUpText";
-import promiseImg from "/Home/promisesection.jpg";
+import promiseImg from "/Home/promisesection.webp";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from 'lucide-react';
 const PromiseSection = () => {

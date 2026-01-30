@@ -1,0 +1,493 @@
+import { useEffect, useRef, useLayoutEffect } from "react";
+import { ArrowRight } from 'lucide-react';
+import FloatUpText from "../components/floatUpText";
+import AnimatedHeading from "../components/animatedHeading";
+import RevealImageAnimation from "../components/RevealImageAnimation";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const statusStyles = {
+  Ongoing: "bg-[#04c2ae]", 
+  Completed:"bg-[#04c23e]",
+  Upcoming: "bg-yellow-500",
+};
+
+export const ProjectDetails = ({ project, onBack }) => {
+    
+  const heroWrapperRef = useRef(null);
+  const heroClipRef = useRef(null);
+  const heroImgRef = useRef(null);
+ 
+  useEffect(() => {
+    window.scrollTo(0, 0);   // <-- replace smooth scroll
+  }, []);
+    useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+
+      /* --- CLIP PATH REVEAL (TOP → BOTTOM) --- */
+      gsap.fromTo(
+        heroClipRef.current,
+        {
+          clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+        },
+        {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroWrapperRef.current,
+            start: "top 70%",
+            end: "top 20%",
+            scrub: true,
+          },
+        }
+      );
+
+      /* --- IMAGE ZOOM OUT --- */
+      gsap.fromTo(
+        heroImgRef.current,
+        { scale: 1.5 },
+        {
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroWrapperRef.current,
+            start: "top 80%",
+            end: "top 15%",
+            scrub: true,
+          },
+        }
+      );
+
+    });
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+   <div className="relative w-full bg-white pt-4    md:pt-10   overflow-hidden">
+
+      {/* ===== BACK BUTTON ===== */}
+  
+  <div className="   max-w-6xl  px-6 mx-auto ">
+   <button
+  onClick={onBack}
+className="btn">
+  
+  <ArrowRight className="w-5 h-5 rotate-180" />
+</button>
+
+
+</div>
+
+
+
+      {/* ===== TOP CENTER INFO BAR ===== */}
+      <div className="w-full py-6 flex max-w-6xl px-6 lg:px-6 pb-10 justify-between max-w-6xl mx-auto ">
+        <div className="flex items-start gap-6 md:flex-row flex-col     ">
+
+          {/* Logo with rectangle */}
+       <div className="border-2 mb-2       flex w-fit h-18 aspect-video items-center p-1 justify-center ">
+          <img
+  src={project.logo}
+  
+  className="w-32  h-18 object-contain"
+/>
+  </div>
+
+
+          {/* Title & Location */}
+          <div className="flex md:f flex-col  leading-tight gap-4">
+            <div className="flex flex-col">
+              <h3 className="section-heading     ">
+              {project.title}
+            </h3>
+            <span className="text-lg     ">
+              {project.location}
+            </span></div>
+       <span
+ className={`${statusStyles[project.status]} text-white h-fit w-fit buttons       px-5 py-1.5 rounded-lg `}
+>
+  {project.status}
+</span>
+          </div>
+
+
+        </div>
+      </div>
+
+{/* Spacer to prevent overlap */}
+<div className="h-4 md:h-0" />
+
+   
+{/* ===== HERO IMAGE (NO JUMP) ===== */}
+{/* ===== HERO IMAGE WITH GSAP REVEAL ===== */}
+<div
+  ref={heroWrapperRef}
+  className="w-full h-[30vh] md:h-[50vh] lg:h-[85vh] overflow-hidden"
+>
+  <div ref={heroClipRef} className="w-full h-full overflow-hidden">
+    <img
+      ref={heroImgRef}
+      src={project.image}
+      alt="Project"
+      className="w-full h-full object-cover"
+      draggable={false}
+    />
+  </div>
+</div>
+
+
+
+      {/* ===== ABOUT SECTION ===== */}
+      <div className="bg-[#F5F2EF] py-20       px-6 ">
+        <div className="max-w-[1120px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 tems-center">
+
+          <div className="relative">
+
+           {/* text above circle */}
+    {project.title === "Shreyas Sunrise" ? (
+  <AnimatedHeading className="relative z-10  mb-4 md:mb-8 section-heading">
+      
+        This project is strategically located very close to 
+        Bengaluru's fast developing satellite township
+      </AnimatedHeading>
+    ) : (
+       <AnimatedHeading className="relative z-10 mb-4 md:mb-8 section-heading">
+
+        Signature spaces crafted {'\n'} for modern living.
+  </AnimatedHeading>
+    )}
+
+
+          {project.title === "Shreyas Sunrise" ? (
+  <FloatUpText className="text-base">
+    <p className="            leading-relaxed mb-4">
+      Shreyas Sunrise is developed by Shreyas Properties, a company with a passionate approach towards creating infrastructure and living spaces that add beauty to life.
+    </p>
+
+    <p className="            leading-relaxed mb-4">
+      This project is strategically located very close to Bengaluru's fast developing satellite township of Nandagudi and is just a few minutes away from Devanahalli.
+    </p>
+
+    <p className="            leading-relaxed mb-4">
+      The widening of roads and future connectivity through the planned Peripheral Ring Road, along with the elevated expressway to the airport and the high-speed rail link, has made this area one of the most sought-after destinations.
+    </p>
+
+    <p className="            leading-relaxed">
+      This is an opportunity that speaks for itself. Its location, as you will soon see, is the key.
+    </p>
+  </FloatUpText>
+) : (
+   <FloatUpText className="text-base">
+    <p className="            leading-relaxed mb-4">
+      Modern Profound Tech Park is a prominent commercial property located in Kondapur, Hyderabad, with a landmark beside Sarath City Mall. Designed for modern businesses, this premium office complex provides spacious and skilfully designed commercial spaces suitable for IT, corporate offices, and startups alike. The project reflects a blend of functionality and modern architecture, offering an environment that fosters productivity and professional growth.
+    </p>
+
+    <p className="            leading-relaxed">
+      The building enjoys excellent connectivity and a prime location surrounded by leading companies like Capita, TCS, Cognizant, and HSBC. With seamless access to public transportation, proximity to restaurants, hotels, and retail hubs, and in-house dedicated parking, this tech park ensures a comfortable and business-friendly ecosystem for its occupants.
+    </p>
+  </FloatUpText>
+)}
+
+          </div>
+
+          <div className="overflow-hidden ">
+            <RevealImageAnimation
+              image="/family.webp"
+              className="w-full h-[350px] md:h-[600px] object-cover"
+            />
+          </div>
+
+
+
+        </div>
+      </div>
+
+{project.title !== "Shreyas Sunrise" && (
+  <section
+    className="
+      relative 
+      w-full  h-fit
+      lg:h-screen 
+      bg-center 
+      bg-cover 
+      bg-no-repeat
+      md:bg-fixed px-6
+      overflow-hidden
+    "
+    style={{ backgroundImage: "url(/hotel.webp)" }}
+  >
+    <div className="absolute inset-0 bg-black/65" />
+
+    <div className="relative z-10 max-w-6xl mx-auto px-0 py-24 md:h-full flex flex-col md:justify-center">
+
+    <AnimatedHeading className="section-heading pb-32 text-center text-white">
+  Key Features and Amenities
+</AnimatedHeading>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-y-16 text-center text-white">
+        {[
+          { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
+          { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
+          { icon: "/c.svg", text: "In-house parking for employees and visitors" },
+          { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
+          { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
+          { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+        ].map((item, i) => (
+          <div key={i} className="flex flex-col items-center gap-5 ">
+            <img
+              src={item.icon}
+              className="w-16 h-16 md:w-20 md:h-20 object-contain invert"
+              alt=""
+            />
+            <p className="      text-base leading-snug max-w-[240px]">
+              {item.text}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+)}
+
+
+      {/* ===== LOCATION & BUSINESS ADVANTAGES ===== */}
+      <div className="  px-6 lg:px-0 py-20 ">
+        <div className="max-w-[1120px] mx-auto ">
+
+          {/* Heading aligned to image left edge */}
+         <AnimatedHeading className="section-heading mb-4 md:mb-8">
+  {project.title === "Shreyas Sunrise"
+    ? "Facilities & Amentities"
+    : "Location and Business Advantages"}
+</AnimatedHeading>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+
+            {/* LEFT IMAGE – no rounding, no shadow, exact frame */}
+            <div>
+              <RevealImageAnimation
+                image="/swimmingpool.webp"
+                className="w-full md:w-auto h-[300px] md:h-[500px] object-cover"
+              />
+
+            </div>
+
+            {/* RIGHT CONTENT – bullets start from image top */}
+            <div className="pt-1 text-base">
+             <ul className="space-y-4       ">
+  {project.title === "Shreyas Sunrise" ? (
+    <>
+      <li className="flex  item-center gap-2"><span className=" text-base">›</span> Swimming pool</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Overhead storage tanks for water</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Playground for children</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Basketball court, tennis court & cricket practice net</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Space for commercial complex & schools</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Clubhouse with library, yoga & aerobics room</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Spa & Multi-Gym</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Plot sizes: 30x40, 30x50, 40x50, 40x60 & 60x80</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Well-designed arch</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Eco-friendly environment</li>
+    </>
+  ) : (
+    <>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Situated in Kondapur, beside Sarath City Mall, a major IT corridor</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Surrounded by Capita, TCS, Cognizant, and HSBC</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Excellent public transport connectivity with bus and cabs</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Easy access to malls, eateries, and business support services</li>
+      <li className="flex item-center gap-2"><span className=" text-base">›</span> Ideal for IT companies, startups, and corporate offices</li>
+      <li className="flex  items-center gap-2"><span className="text-base">›</span> Looking for a prestigious business address</li>
+    </>
+  )}
+</ul>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  );
+};
+
+export const ShreyasSunriseDetails = ({ project, onBack }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="w-full bg-white">
+
+      {/* SECTION 1 – SAME AS ProjectDetails TOP */}
+      <ProjectDetails project={project} onBack={onBack} />
+
+      {/* SECTION 2 – same (you will edit later) */}
+
+      {/* SECTION 3 – hidden (skip) */}
+
+      {/* SECTION 4 – same layout */}
+
+      {/* SECTION 5 – Image Right, Content Left */}
+<div className="bg-[#F5F2EF] py-20">
+  <div className="max-w-6xl   mx-auto px-6 lg:px-6">
+
+  <AnimatedHeading className="section-heading  mb-4 md:mb-8">
+  {project.title === "Shreyas Sunrise" ? "Location Advantages" : "Section Title"}
+</AnimatedHeading>
+
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+
+      {/* CONTENT LEFT */}
+      <div className="pt-1 md:order-1 text-base ">
+       <ul className="space-y-4       ">
+  {project.title === "Shreyas Sunrise" && (
+    <>
+      <li className="flex  items-center gap-2"><span>›</span> Attached to State Highway 35</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 20 mins away from the International Airport</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 15 mins from AERO SEZ Devanahalli IT Park (SAP Labs, Boeing, Wipro, Mahindra, Shell, etc.)</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 20 mins drive to Narasapura Industrial Area (Apple, Honda, Scania, Volvo, Triumph, etc.)</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 15 mins from Vemgal Industrial Area (GSK, Mitsubishi, TATA Motors, etc.)</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 15 mins from Devanahalli Old Jain Temple</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 10 mins from Nandagudi SEZ</li>
+      <li className="flex  items-center gap-2"><span>›</span> 20 mins from Hoskote</li>
+      <li className="flex  items-center gap-2"><span>›</span> 40 mins from ITPL</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 10 mins from Cargo Road</li>
+      <li className="flex  items-center gap-2"><span>›</span> Approx 5 mins from Central University of North Bengaluru</li>
+    </>
+  )}
+</ul>
+
+      </div>
+
+      {/* IMAGE RIGHT – same animation & spacing */}
+      <div className="md:order-2 ">
+        <RevealImageAnimation
+          image="/sunrise.webp"
+          className="w-full md:w-full h-[300px] md:h-[500px] object-cover"
+        />
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+{/* EXTRA Location & Business Advantages (SAME DESIGN, IMAGE LEFT) */}
+<div className="bg-[#F5F2EF] pb-20 ">
+  <div className="max-w-6xl  mx-auto px-6 lg:px-6">
+
+    <AnimatedHeading className="section-heading mb-4 md:mb-8">
+      Location and Business Advantages
+    </AnimatedHeading>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start">
+
+      {/* IMAGE LEFT (same animation) */}
+      <div className="md:order-1 md:mx-auto lg:mx-0">
+        <RevealImageAnimation
+          image="/business.webp"
+          className="w-full md:w-[480px] h-[300px] md:h-[500px] object-cover"
+        />
+      </div>
+
+      {/* CONTENT RIGHT (same bullets, same style) */}
+      <div className="pt-1 md:order-2">
+{project.title === "Shreyas Sunrise" && (
+  <ul className="space-y-4       ">
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
+      <p><strong>Bengaluru Aerospace SEZ:</strong> 950-acre Bengaluru Aerospace Park including 250-acre special economic zone (SEZ) has attracted investments from 56 large and mid-sized companies.</p>
+    </li>
+
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
+      <p><strong>Bengaluru University:</strong> Bengaluru North University would be established as an affiliating university with headquarters at Jangamakote (Sidlaghatta taluk).</p>
+    </li>
+
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
+      <p><strong>Devanahalli Business Park:</strong> 413-acre Devanahalli Business Park expects to attract an investment of $2.2 billion over the next three to five years.</p>
+    </li>
+
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
+      <p><strong>Narsapura Industrial Area:</strong> Developed over 700.75 acres, abutting NH-4, 15 Km from Kolar and 55 Km from Bengaluru.</p>
+    </li>
+
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
+      <p><strong>Vemgal Industrial Area:</strong> Located on SH-96, about 10 Km from Narasapura & Jakkasandra Industrial Area, covering 666 acres.</p>
+    </li>
+
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
+      <p><strong>International Convention Centre:</strong> Proposed on 35 acres next to Bengaluru International Airport under PPP model.</p>
+    </li>
+
+    <li className="flex  items-center gap-2">
+      <span className="text-base  leading-none">›</span>
+      <p><strong>Devanahalli–Kolar Road (SH-96):</strong> Being widened from 2 to 6 lanes to support airport and real estate growth.</p>
+    </li>
+  </ul>
+)}
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{project.title === "Shreyas Sunrise" && (
+  <>
+    {/* LAYOUT PLAN */}
+{/* LAYOUT PLAN */}
+<section className="bg-white py-20 px-6 max-w-6xl mx-auto">
+  <AnimatedHeading className="text-center section-heading mb-10">
+    Layout Plan
+  </AnimatedHeading>
+
+  <FloatUpText className="max-w-6xl mx-auto px-0 border-2 border-black">
+    <div className="overflow-hidden">
+      <RevealImageAnimation
+        image="/layoutplan.webp"
+        className="w-full h-[70vh] md:h-[85vh] object-contain"
+      />
+    </div>
+  </FloatUpText>
+</section>
+
+{/* LOCATION MAP */}
+<section className="bg-white pb-20 px-6 max-w-6xl mx-auto">
+  <AnimatedHeading className="text-center section-heading mb-10">
+    Location Map
+  </AnimatedHeading>
+
+ <FloatUpText className="max-w-[1120px] mx-auto px-0 border-2 border-black">
+    <div className="overflow-hidden">
+      <RevealImageAnimation
+        image="/locationmap.webp"
+        className="w-full h-[70vh] md:h-[85vh] object-contain"
+      />
+    </div>
+  </FloatUpText>
+</section>
+
+
+  </>
+)}
+
+
+
+    </div>
+  );
+};
