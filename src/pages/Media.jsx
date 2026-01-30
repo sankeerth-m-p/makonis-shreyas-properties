@@ -53,31 +53,34 @@ const MediaList = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white pt-4 pb-24">
-    <div className="max-w-[1120px] mx-auto px-0">
+    <div className="bg-white pt-5 md:pt-28   pb-24">
+    <div className="max-w-6xl  px-6 mx-auto ">
 
-        <AnimatedHeading className="text-3xl text-gray-800 my-10 max-w-3xl">
+        <AnimatedHeading className="section-heading  mb-10 max-w-3xl">
           Our journey, values, and projects as recognized and featured by leading media platforms.
         </AnimatedHeading>
 
-        {/* ================= BANNER (DO NOT REMOVE) ================= */}
+        {/* ================= BANNER ================= */}
         <FloatUpText>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-24 items-center">
-            <div className="rounded-3xl overflow-hidden h-[520px]">
+          <div className="grid grid-cols-1  md:grid-cols-5 md:gap-5 gap-y-5 mb-16 items-center">
+            <div className="rounded-lg col-span-3 overflow-hidden h-full">
               <img src={mediaImg1} className="w-full h-full object-cover" />
             </div>
 
-            <div className="bg-[#ff6a13] rounded-3xl p-16 h-[540px] flex flex-col justify-between">
-              <div className="flex justify-end">
+            <div className="bg-ORANGE w-full  col-span-2 rounded-lg p-6 lg:p-16 h-full flex flex-col justify-between">
+              <div className="flex justify-end ">
                 <img src="/shreyas_logo_footer_1.png" className="h-12 object-contain" />
               </div>
 
               <div>
-                <h2 className="text-white text-[46px] leading-[1.1] font-light mb-8">
+                <h2 className="hidden lg:block text-white section-heading mb-8">
                   Headlines <br /> that <br /> matters.
                 </h2>
-                <div className="w-60 h-[2px] bg-white mb-8"></div>
-                <p className="text-white/90 text-sm leading-relaxed max-w-xs">
+                <h2 className="block lg:hidden mt-10 text-white section-heading mb-8">
+                  Headlines  that <br /> matters.
+                </h2>
+                <div className="w-60 h-[2px] bg-white mb-4"></div>
+                <p className="text-white/90 text-lg max-w-xs">
                   Our story highlighted in over <br /> 10 media publications.
                 </p>
               </div>
@@ -89,33 +92,35 @@ const MediaList = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {mediaData.map((item) => (
             <FloatUpText key={item.id}>
-              <div>
-                <img src={item.image} className="rounded-2xl mb-6 w-full h-[240px] object-cover" />
+              <div className="bg-white rounded-lg shadow overflow-hidden">
+                <img src={item.image} className=" mb-6 w-full lg:h-64 h-48 object-cover" />
+                <div className="p-6">
+                  
 
-                <div className="flex items-center gap-4 mb-4">
+                <div className="flex items-center  gap-4 mb-4">
                   <img src={item.logo} className="h-10 object-contain" />
                   <div className="h-8 w-px bg-gray-300"></div>
                   <div className="text-sm">
-                    <p className="text-gray-500">Published on:</p>
+                    <p className="   y-500">Published on:</p>
                     <p className="font-medium">{item.date}</p>
                   </div>
                 </div>
 
-                <p className="text-lg text-gray-800 leading-snug mb-3 max-w-xl">
+                <p className="text-lg   mb-3 max-w-xl">
                   {item.shortTitle}
                 </p>
 
-                <p className="text-sm text-gray-600 leading-relaxed mb-6 max-w-xl">
+                <p className="text-base t  mb-6 max-w-xl">
                   {item.shortDesc}
                 </p>
 
 
                 <button
                   onClick={() => navigate(`/media-center/${item.id}`)}
-                  className="border border-black rounded-full px-6 py-2 text-xs tracking-widest"
+                  className=" btn btn-white"
                 >
                   READ MORE
-                </button>
+                </button> </div>
               </div>
             </FloatUpText>
           ))}
@@ -161,23 +166,23 @@ const MediaDetail = () => {
               <img src={media.logo} className="h-10 object-contain" />
               <div className="h-8 w-px bg-gray-300"></div>
               <div className="text-sm">
-                <p className="text-gray-500">Published on:</p>
+                <p className="   y-500">Published on:</p>
                 <p className="font-medium">{media.date}</p>
               </div>
             </div>
 
             {/* TITLE */}
-            <p className="text-2xl text-gray-800 leading-snug mb-3 max-w-3xl">
+            <p className="text-2xl    y-800 leading-snug mb-3 max-w-3xl">
               {media.shortTitle}
             </p>
 
-            <p className="text-base text-gray-600 leading-relaxed mb-6 max-w-3xl">
+            <p className="text-base    y-600 leading-relaxed mb-6 max-w-3xl">
               {media.shortDesc}
             </p>
 
 
             {/* DESCRIPTION */}
-            <p className="text-gray-700 leading-relaxed">
+            <p className="   y-700 leading-relaxed">
               {media.desc}
             </p>
 

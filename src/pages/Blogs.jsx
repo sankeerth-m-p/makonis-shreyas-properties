@@ -1081,8 +1081,8 @@ const BlogList = () => {
       : blogData.filter((blog) => blog.tag === activeCategory);
 
   return (
-    <section className="bg-white pt-5 px-6 lg:px-0 flex flex-col  justify-center items-center  pb-24  relative overflow-hidden">
-     <div className="md:max-w-6xl lg:p-6    ">
+    <section className="bg-white pt-5 md:pt-28 lg:pt-28 px-6 lg:px-0 flex flex-col  justify-center items-center  pb-24  relative overflow-hidden">
+     <div className="md:max-w-6xl lg:px-6    ">
 
         <AnimatedHeading className="section-heading ">
           Stories That Shape Better Living
@@ -1116,17 +1116,17 @@ const BlogList = () => {
               <div className="bg-white rounded-lg shadow overflow-hidden">
 
                 {/* Image with black rectangle tag */}
-                <div className="relative h-64 w-full overflow-hidden">
+                <div className="relative lg:h-64 w-full overflow-hidden">
                   
 
                   <img
                     src={blog.image}
-                    className="h-64 w-full object-cover transition-transform ease-in-out duration-500 hover:scale-105 cursor-pointer"
+                    className="lg:h-64 h-48 w-full  object-cover transition-transform ease-in-out duration-500 hover:scale-105 cursor-pointer"
                     onClick={() => navigate(`/blogs/${blog.id}`)}
                     />
                     
 
-                  <div className="absolute bottom-4 right-4 bg-black/80 rounded-md text-white text-xs px-4 py-2">
+                  <div className="absolute bottom-4 right-4 bg-black/70 rounded-sm text-white text-xs px-4 py-2">
                     {blog.tag.toUpperCase()}
                   </div>
                 </div>
@@ -1166,22 +1166,25 @@ const BlogDetail = () => {
   const blog = blogData.find((b) => b.id === Number(id));
 
   return (
-    <section className="bg-white pt-24 pb-24 relative">
-    <div className="max-w-[1120px] mx-auto px-6 md:px-0">
+    <section className="bg-white pt-5 md:pt-28 lg: pb-24 relative">
+    <div className="max-w-6xl mx-auto px-6 ">
+        <div className="mb-10  md:flex justify-between">
+          
 
-        <AnimatedHeading className="text-3xl font-semiboldx mb-5">
+        <AnimatedHeading className=" section-heading ">
           {blog.title}
         </AnimatedHeading>
-
-        <div className="rounded-2xl overflow-hidden shadow">
+        {/* <span className="text-3xl">share</span> */}
+</div>
+        <div className="rounded-lg overflow-hidden shadow">
 
           <div className="bg-orange-500 flex items-center justify-between px-5 py-3">
             <button onClick={() => navigate(-1)} className="text-white text-lg">
               ←
             </button>
 
-            <div className="flex items-center gap-3">
-              <span className="border border-white text-white text-xs px-4 py-1 rounded-full">
+            <div className="flex items-center gap-3"> <span className="text-white">share</span>
+              <span className="border border-white text-white text-xs px-4 py-1 rounded-sm">
                 {blog.tag}
               </span>
               <span className="text-white text-xs">{blog.date}</span>
@@ -1190,10 +1193,10 @@ const BlogDetail = () => {
 
           <img
             src={blog.image}
-            className="w-full h-[420px] object-cover"
+            className="w-full  md:h-[420px] object-cover"
           />
 
-         <div className="p-6 text-base  -700 leading-relaxed space-y-6 whitespace-pre-line rounded-lg">
+         <div className="p-6 text-base   leading-relaxed space-y-6 whitespace-pre-line rounded-lg">
   {blog.content ? blog.content : "Full article coming soon..."}
 </div>
 

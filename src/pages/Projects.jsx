@@ -37,7 +37,7 @@ const ProjectCard = ({
     <Wrapper>
       <div className="bg-white  rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
         {/* IMAGE */}
-        <div className="relative w-full md:w-1/2  md:h-auto overflow-hidden">
+        <div className="relative w-full md:w-1/2  md:h-auto h-48 overflow-hidden">
           <img src={image} alt={title} className="w-full h-full object-cover hover:scale-105 transition-transform ease-in-out duration-700" />
 
           {/* STATUS */}
@@ -50,7 +50,7 @@ const ProjectCard = ({
         </div>
 
         {/* CONTENT */}
-        <div className="w-full md:w-1/2   px-6 py-10 md:py-16 md:px-10 flex flex-col justify-center">
+        <div className="w-full md:w-1/2   px-6 py-5 pb-10 md:py-16 md:px-10 flex flex-col justify-center">
           <div className="border-2 mb-2 flex w-fit h-18 aspect-video items-center p-1 justify-center ">
           <img
   src={logo}
@@ -65,13 +65,13 @@ const ProjectCard = ({
 
           <p className="text-gray-500       mb-4">{location}</p>
 
-          <div className="w-full h-[1px] bg-gray-300 mb-5 md:mb-4" />
+          <div className="w-full h-[1px] bg-gray-300 mb-2 md:mb-4" />
 
           <p className="            mb-8">{description}</p>
 
           <button
             onClick={onClick}
-            className="btn btn-orange w-fit mt-4 "
+            className="btn btn-orange w-fit mt-2 md:mt-4 "
           >
             <span>{buttonText}</span>
             <ArrowRight className="w-4 h-4" />

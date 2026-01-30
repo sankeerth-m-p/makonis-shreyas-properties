@@ -14,8 +14,8 @@ const navItems = [
 ];
 
 const NavContent = ({ location, onEnquireClick }) => (
-  <nav className="max-w-6xl px-6 buttons mx-auto w-full min-h-[5rem] px-  py-4 flex items-center justify-between">
-    <h1 className="text-2xl  font-semiboldx tracking-wide text-gray-900" style={{fontFamily: "Cabin, sans-serif"}}>
+  <nav className="max-w-6xl px-6  buttons mx-auto w-full min-h-[5rem] px-  py-4 flex items-center justify-between">
+    <h1 className="text-2xl   font-semiboldx tracking-wide text-gray-900" style={{fontFamily: "Cabin, sans-serif"}}>
       <Link to="/" className="hover:opacity-80 transition">
         <img
           src={LogoImg}
