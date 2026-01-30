@@ -13,8 +13,8 @@ const mediaData = [
     logo: "/CNBC.png",
     date: "March 06, 2026",
     shortTitle: "We are a forward-thinking real estate company driven by the belief that well-designed spaces shape better lives.",
-    shortDesc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with...",
-    desc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with modern design, sustainability, and customer satisfaction..."
+    shortDesc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with modern design, sustainability, and customer satisfaction .",
+    desc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with modern design, sustainability, and customer satisfaction ."
   },
   {
     id: 2,
@@ -22,8 +22,8 @@ const mediaData = [
     logo: "/zee.png",
     date: "March 06, 2026",
     shortTitle: "Smart urban communities designed to elevate everyday living experiences.",
-    shortDesc: "Our projects integrate sustainable materials, future-ready infrastructure, and intelligent space planning to support modern lifestyles...",
-    desc: "Our projects are crafted to enhance urban living by integrating smart planning..."
+    shortDesc: "Our projects integrate sustainable materials, future-ready infrastructure, and intelligent space planning to support modern lifestyles  .",
+    desc: "Our projects are crafted to enhance urban living by integrating smart planning ."
   },
   {
     id: 3,
@@ -31,8 +31,8 @@ const mediaData = [
     logo: "/CNBC.png",
     date: "March 06, 2026",
     shortTitle: "Future-ready neighborhoods built for growth, comfort, and innovation.",
-    shortDesc: "We develop thoughtfully planned communities that promote sustainability, technology integration, and superior living standards...",
-    desc: "We develop spaces that prioritize lifestyle, innovation..."
+    shortDesc: "We develop thoughtfully planned communities that promote sustainability, technology integration, and superior living standards  .",
+    desc: "We develop spaces that prioritize lifestyle, innovation  ."
   },
   {
     id: 4,
@@ -40,8 +40,8 @@ const mediaData = [
     logo: "/zee.png",
     date: "March 06, 2026",
     shortTitle: "Construction excellence driven by trust, quality, and ethical practices.",
-    shortDesc: "Every project follows strict quality control, advanced engineering, and customer-first execution for lasting value...",
-    desc: "Our commitment is to deliver excellence through ethical practices..."
+    shortDesc: "Every project follows strict quality control, advanced engineering, and customer-first execution for lasting value  .",
+    desc: "Our commitment is to deliver excellence through ethical practices  ."
   }
 ];
 
@@ -92,36 +92,42 @@ const MediaList = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           {mediaData.map((item) => (
             <FloatUpText key={item.id}>
-              <div className="bg-white rounded-lg shadow overflow-hidden">
-                <img src={item.image} className=" mb-6 w-full lg:h-64 h-48 object-cover" />
-                <div className="p-6">
-                  
+              <div className="bg-white rounded-lg shadow overflow-hidden flex flex-col h-full ">
+                <div className="overflow-hidden ">
+                <img
+    src={item.image}
+    className="mb-6 w-full lg:h-64 h-48 object-cover hover:scale-105 transition-transform duration-300"
+  />
+</div>
+  <div className="p-6 flex flex-col flex-1">
+    <div>
+      <div className="flex items-center gap-4 mb-4">
+        <img src={item.logo} className="h-10 object-contain" />
+        <div className="h-8 w-px bg-gray-300"></div>
+        <div className="text-sm">
+          <p className="text-gray-500">Published on:</p>
+          <p className="font-medium">{item.date}</p>
+        </div>
+      </div>
 
-                <div className="flex items-center  gap-4 mb-4">
-                  <img src={item.logo} className="h-10 object-contain" />
-                  <div className="h-8 w-px bg-gray-300"></div>
-                  <div className="text-sm">
-                    <p className="   y-500">Published on:</p>
-                    <p className="font-medium">{item.date}</p>
-                  </div>
-                </div>
+      <h3 className="text-2xl mt-3 mb-3 line-clamp-2">
+        {item.shortTitle}
+      </h3>
 
-                <p className="text-lg   mb-3 max-w-xl">
-                  {item.shortTitle}
-                </p>
+      <p className="text-base line-clamp-3 mb-6 max-w-xl">
+        {item.shortDesc}
+      </p>
+    </div>
 
-                <p className="text-base t  mb-6 max-w-xl">
-                  {item.shortDesc}
-                </p>
+    <button
+      onClick={() => navigate(`/media-center/${item.id}`)}
+      className="btn btn-white py-3 w-fit px-6 text-[10px] mt-auto"
+    >
+      READ MORE
+    </button>
+  </div>
+</div>
 
-
-                <button
-                  onClick={() => navigate(`/media-center/${item.id}`)}
-                  className=" btn btn-white"
-                >
-                  READ MORE
-                </button> </div>
-              </div>
             </FloatUpText>
           ))}
         </div>

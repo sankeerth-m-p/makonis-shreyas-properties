@@ -15,7 +15,7 @@ createRoot(document.getElementById("root")).render(
 
   {/* Right guide */}
   <div className="fixed top-0 right-6 h-screen w-px bg-red-500 pointer-events-none z-[9999]" />
-  <div className="fixed md:top-44 lg:top-[12.5rem] right-0 w-screen h-[2px] bg-green-500 pointer-events-none z-[9999]" />
+  <div className="fixed md:top-44 lg:top-[12.5rem]  right-0 w-screen h-[2px] bg-green-500 pointer-events-none z-[9999]" />
         {/* Left guide */}
         <div className="absolute h-screen  w-screen hidden lg:flex justify-center items-center pointer-events-none z-[9999]">
           

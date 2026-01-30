@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 //import blogImg from "/blogs/blogs.webp";
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
+import { Share2} from "lucide-react";
 
 /* ---------------- BLOG DATA ---------------- */
 const blogData = [
@@ -1098,7 +1099,7 @@ const BlogList = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={` transition-all duration-300 ease-in-out ${
+              className={` transition-all  duration-300 ease-in-out ${
                 activeCategory === cat
                   ? " text-ORANGE"
                   : " "
@@ -1113,44 +1114,42 @@ const BlogList = () => {
         <div className="grid md:grid-cols-2  gap-10">
           {filteredBlogs.map((blog) => (
             <FloatUpText key={blog.id}>
-              <div className="bg-white rounded-lg shadow overflow-hidden">
+              <div className="bg-white rounded-lg shadow overflow-hidden flex flex-col h-full">
+  {/* Image with black rectangle tag */}
+  <div className="relative lg:h-64 w-full overflow-hidden">
+    <img
+      src={blog.image}
+      className="lg:h-64 h-48 w-full object-cover transition-transform ease-in-out duration-500 hover:scale-105 cursor-pointer"
+      onClick={() => navigate(`/blogs/${blog.id}`)}
+    />
 
-                {/* Image with black rectangle tag */}
-                <div className="relative lg:h-64 w-full overflow-hidden">
-                  
+    <div className="absolute bottom-4 right-4 bg-black/70 rounded-sm text-white text-xs px-4 py-2">
+      {blog.tag.toUpperCase()}
+    </div>
+  </div>
 
-                  <img
-                    src={blog.image}
-                    className="lg:h-64 h-48 w-full  object-cover transition-transform ease-in-out duration-500 hover:scale-105 cursor-pointer"
-                    onClick={() => navigate(`/blogs/${blog.id}`)}
-                    />
-                    
+  <div className="p-6 flex flex-col flex-1 ">
+    <div className=" mb-4">
+      <p className="text-sm ">{blog.date}</p>
 
-                  <div className="absolute bottom-4 right-4 bg-black/70 rounded-sm text-white text-xs px-4 py-2">
-                    {blog.tag.toUpperCase()}
-                  </div>
-                </div>
+      <h3 className="text-2xl mt-3 line-clamp-2">
+        {blog.title}
+      </h3>
 
-                <div className="p-6">
-                  <p className="text-sm ">{blog.date}</p>
+      <p className="text-base mt-3 line-clamp-3">
+        {blog.desc}
+      </p>
+    </div>
 
-                 <h3 className="text-2xl  mt-3   line-clamp-2">
-  {blog.title}
-</h3>
+    <button
+      onClick={() => navigate(`/blogs/${blog.id}`)}
+      className="btn btn-white py-3 px-6 w-fit text-[10px] mt-auto"
+    >
+      Read More
+    </button>
+  </div>
+</div>
 
-                 <p className="text-base   mt-3 line-clamp-3">
-  {blog.desc}
-</p>
-
-                  <button
-                    onClick={() => navigate(`/blogs/${blog.id}`)} 
-                    className="mt-5 btn btn-white"
-                  >
-                    Read More
-                  </button>
-                </div>
-
-              </div>
             </FloatUpText>
           ))}
         </div>
@@ -1164,6 +1163,24 @@ const BlogDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const blog = blogData.find((b) => b.id === Number(id));
+const handleShare = async () => {
+  const shareData = {
+    title: document.title,
+    text: "Check this out",
+    url: window.location.href,
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      console.log("Share cancelled", err);
+    }
+  } else {
+    await navigator.clipboard.writeText(shareData.url);
+    alert("Link copied to clipboard");
+  }
+};
 
   return (
     <section className="bg-white pt-5 md:pt-28 lg: pb-24 relative">
@@ -1174,21 +1191,30 @@ const BlogDetail = () => {
         <AnimatedHeading className=" section-heading ">
           {blog.title}
         </AnimatedHeading>
-        {/* <span className="text-3xl">share</span> */}
 </div>
-        <div className="rounded-lg overflow-hidden shadow">
+        <div className="rounded-lg overflow-hidden shadow ">
 
-          <div className="bg-orange-500 flex items-center justify-between px-5 py-3">
+          <div className="bg-orange-500 flex  items-center justify-between px-5 py-3">
             <button onClick={() => navigate(-1)} className="text-white text-lg">
               ←
             </button>
 
-            <div className="flex items-center gap-3"> <span className="text-white">share</span>
+            <div className="flex items-center      justify-center gap-3"> 
+
               <span className="border border-white text-white text-xs px-4 py-1 rounded-sm">
                 {blog.tag}
               </span>
-              <span className="text-white text-xs">{blog.date}</span>
+              <span className="text-white text-xs">{blog.date}
+              </span>
+              <div className=" pl-4   "><button
+  onClick={handleShare}
+  aria-label="Share"
+  className=" text-white  w-5 flex hover:translate-x-1 transition-transform duration-300"
+>
+  <Share2/>
+</button>
             </div>
+          </div>
           </div>
 
           <img
