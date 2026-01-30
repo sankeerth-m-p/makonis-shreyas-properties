@@ -30,11 +30,44 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
      <div className="flex items-center gap-6 pt-10">
   <img className="w-32 h-auto opacity-90" src="/shreyas_logo_footer.webp" />
 
-  <div className="flex gap-3">
-    <img src="/LinkedIn.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
-    <img src="/insta.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
-    <img src="/facebook.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
-  </div>
+ <div className="flex gap-3">
+  <a
+    href="https://www.linkedin.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+  >
+    <img
+      src="/LinkedIn.svg"
+      className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer transition"
+    />
+  </a>
+
+  <a
+    href="https://www.instagram.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <img
+      src="/insta.svg"
+      className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer transition"
+    />
+  </a>
+
+  <a
+    href="https://www.facebook.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <img
+      src="/facebook.svg"
+      className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer transition"
+    />
+  </a>
+</div>
+
 </div>
 
 
@@ -146,13 +179,44 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
   <div className="border-b-2 pt-5 border-neutral-600 w-40 ml-auto" />
 
   {/* Social Icons */}
-  <div className="flex justify-end gap-4 pt-4">
-    <img src="/LinkedIn.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
-    <img src="/insta.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
-    <img src="/facebook.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
-  </div>
-</div>
+<div className="flex justify-end gap-4 pt-4">
+  <a
+    href="https://www.linkedin.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+  >
+    <img
+      src="/LinkedIn.svg"
+      className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer transition"
+    />
+  </a>
 
+  <a
+    href="https://www.instagram.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <img
+      src="/insta.svg"
+      className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer transition"
+    />
+  </a>
+
+  <a
+    href="https://www.facebook.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <img
+      src="/facebook.svg"
+      className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer transition"
+    />
+  </a>
+</div>
+</div>
             </div>
 
           </div>

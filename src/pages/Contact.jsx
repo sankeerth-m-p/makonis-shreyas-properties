@@ -45,7 +45,7 @@ const Contact = () => {
 
       {/* ===== Orange CTA Bar ===== */}
       <section className="bg-orange-500 py-10">
-        <div className="max-w-[1120px] mx-auto px-0 flex flex-col md:flex-row items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center gap-4 text-white">
          <img src="/headphone.svg" alt="Headphone" className="w-10 h-10" />
             <div>
@@ -65,7 +65,7 @@ const Contact = () => {
       </section>
 
      {/* ===== Contact Info Row (Exact Style) ===== */}
-<section className="max-w-[1120px] mx-auto px-0 py-12">
+<section className="max-w-6xl mx-auto px-6 py-12">
  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center gap-6 text-sm text-gray-700">
 
     {/* Call us */}
@@ -107,11 +107,35 @@ const Contact = () => {
     {/* Follow us with divider */}
 <div className="flex items-center gap-6 md:border-l md:pl-6">
   <p className="text-gray-500">Follow us on</p>
-  <div className="flex gap-4 text-gray-700 text-sm">
-    <FaLinkedinIn className="cursor-pointer hover:text-orange-500" />
-    <FaInstagram className="cursor-pointer hover:text-orange-500" />
-    <FaFacebookF className="cursor-pointer hover:text-orange-500" />
-  </div>
+ <div className="flex gap-4 text-gray-700 text-sm">
+  <a
+    href="https://www.linkedin.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+  >
+    <FaLinkedinIn className="cursor-pointer hover:text-orange-500 transition-colors" />
+  </a>
+
+  <a
+    href="https://www.instagram.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <FaInstagram className="cursor-pointer hover:text-orange-500 transition-colors" />
+  </a>
+
+  <a
+    href="https://www.facebook.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <FaFacebookF className="cursor-pointer hover:text-orange-500 transition-colors" />
+  </a>
+</div>
+
 </div>
 
 
@@ -130,8 +154,8 @@ const Contact = () => {
       </section>
 
 {/* ===== Our Office + Contact Form (Final Balanced Layout) ===== */}
-<section className="w-full px-6 py-24 bg-white">
-  <div className="max-w-[1120px] mx-auto px-0 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-16 md:gap-24 items-start">
+<section className="w-full py-24 bg-white">
+  <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-16 md:gap-24 items-start">
 
 
     {/* Left: Office Info */}

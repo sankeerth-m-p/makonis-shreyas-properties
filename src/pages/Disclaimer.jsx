@@ -2,9 +2,10 @@ import AnimatedHeading from "../components/animatedHeading";
 const Disclaimer = () => {
   return (
     <div className="bg-white pt-5 pb-24">
-     <div className="max-w-[1120px] mx-auto px-0 text-gray-700 space-y-6 md:text-[20px] text-sm leading-relaxed">
+   <div className="max-w-6xl mx-auto px-6 text-gray-700 space-y-6 md:text-[20px] text-sm leading-relaxed">
+
 {/* Content */}
-<div className="relative z-10 mx-auto max-w-5xl text-center px-4 md:px-6 [20px]:px-8 pt-6 md:pt-0">
+<div className="relative z-10 mx-auto max-w-5xl text-center pt-6 md:pt-0">
   <AnimatedHeading
     as="h1"
     delay={0}
