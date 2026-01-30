@@ -33,16 +33,16 @@ const Enquire = ({ onClose }) => {
       transition={{ duration: 0.15 }}
     >
       <motion.div
-        className=" w-full  rounded-3xl shadow-2xl p-8 py-20 md:p-32"
+        className=" w-full  rounded-3xl shadow-2xl p-8 py-10 md:p-32"
         initial={{ scale: 0.85, y: 40, opacity: 0 }}
         animate={{ scale: 1, y: 0, opacity: 1 }}
         exit={{ scale: 0.85, y: 40, opacity: 0 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
       >
-        <div className="max-4xl relative  bg-white rounded-3xl shadow-2xl p-8 py-20 md:p-32">
+        <div className="max-4xl relative  bg-white rounded-3xl shadow-2xl p-8 pt-20 pb-10 md:p-32">
         <button
           onClick={onClose}
-          className=" top-10 z-[999]  absolute right-10 "
+          className=" top-5 right-5 md:top-10 z-[999]  absolute md:right-10 "
           >
           <X size={36} />
         </button>
@@ -57,7 +57,7 @@ const Enquire = ({ onClose }) => {
        
 
         {/* Heading */}
-        <h1 className="section-heading text-center text-black mb-12">
+        <h1 className="md:text-3xl text-xl text-center text-black mb-12">
           Share query by filling out the form, we will assist you at the earliest.
         </h1>
 

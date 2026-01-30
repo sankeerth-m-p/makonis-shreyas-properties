@@ -41,7 +41,7 @@ import gsap from "gsap"; gsap.registerPlugin(ScrollTrigger);
        
 
         {/* Heading */}
-        <h1 className="section-heading text-center text-black mb-12">
+        <h1 className="md:text-3xl text-xl  text-center text-black mb-12">
           Share query by filling out the form, we will assist you at the earliest.
         </h1>
 
