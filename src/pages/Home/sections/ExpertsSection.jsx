@@ -116,7 +116,7 @@ setImageRevealedByDefault(true);
             className="flex justify-center"
           >
            <RevealImageAnimation
-  image="/Home/expert.jpg"
+  image="/Home/expert.webp"
     className="w-[220px] h-[300px] object-cover rounded-lg"
 />
           </div>
@@ -197,13 +197,13 @@ setImageRevealedByDefault(true);
                 {imageRevealedByDefault ? (
                   // User came from bottom - show image immediately without trigger
                   <RevealImageAnimation
-                    image="/Home/expert.jpg"
+                    image="/Home/expert.webp"
                     className="w-[300px] h-[400px] rounded-3xl object-cover"
                   />
                 ) : (
                   // User came from top - use trigger animation
                   <RevealImageAnimation
-                    image="/Home/expert.jpg"
+                    image="/Home/expert.webp"
                     className="w-[300px] h-[400px] rounded-3xl object-cover"
                     triggerAnimation={stage2Active}
                       

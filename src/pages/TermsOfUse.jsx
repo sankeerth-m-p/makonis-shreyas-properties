@@ -22,8 +22,8 @@ Terms Of Use
         <p><strong>Last Updated:</strong> April 5, 2025</p>
 
         <p>
-          Welcome to the official website of <strong>Siddanth Developers</strong>. This website
-          (<strong>www.siddanthdevelopers.com</strong>) is owned and operated by <strong>Siddanth Developers</strong>.
+          Welcome to the official website of <strong>Shreyas Infra Developers</strong>. This website
+          (<strong>www.shreyasinfradevelopers.com</strong>) is owned and operated by <strong>Shreyas Infra Developers</strong>.
           By visiting our website and accessing the information, resources, services, products, and tools we provide,
           you understand and agree to accept and adhere to the following terms and conditions (hereafter referred to as
           ‘User Agreement’), along with the terms and conditions as stated in our Privacy Policy (please refer to the
@@ -69,14 +69,14 @@ Terms Of Use
 
         <h3 className="font-semiboldx text-[20px]">7. Limitation of Liability</h3>
         <p>
-          You expressly understand and agree that <strong>Siddanth Developers</strong> shall not be liable for any direct,
+          You expressly understand and agree that <strong>Shreyas Infra Developers</strong> shall not be liable for any direct,
           indirect, incidental, consequential, or exemplary damages incurred by you as a result of using our Resources.
         </p>
 
         <h3 className="font-semiboldx text-[20px]">8. Copyrights/Trademarks</h3>
         <p>
-          All content and materials available on www.siddanthdevelopers.com, including but not limited to text, graphics,
-          website name, code, images, and logos, are the intellectual property of <strong>Siddanth Developers</strong> and
+          All content and materials available on www.shreyasinfradevelopers.com, including but not limited to text, graphics,
+          website name, code, images, and logos, are the intellectual property of <strong>Shreyas Infra Developers</strong> and
           are protected by applicable copyright and trademark laws. Unauthorized use, reproduction, or distribution of
           any content is strictly prohibited unless explicitly authorized in writing.
         </p>
@@ -90,7 +90,7 @@ Terms Of Use
 
         <h3 className="font-semiboldx text-[20px]">10. Governing Law</h3>
         <p>
-          This website is controlled by <strong>Siddanth Developers</strong> from our offices located in
+          This website is controlled by <strong>Shreyas Infra Developers</strong> from our offices located in
           <strong> Bengaluru, Karnataka, India</strong>. By accessing our website, you agree that the statutes and laws
           of <strong>Karnataka, India</strong> will apply to all matters relating to the use of this website.
         </p>
@@ -101,12 +101,12 @@ Terms Of Use
         </p>
 
         <p>
-          Siddanth Developers, #305, 3rd Floor, Brigade Business Suites, Ashoka Pillar Road,
+          Shreyas Infra Developers, #305, 3rd Floor, Brigade Business Suites, Ashoka Pillar Road,
           Jayanagar 2nd Block, Bengaluru, Karnataka 560011
         </p>
 
         <p>
-          <strong>Email:</strong> info@siddanthdevelopers.com<br />
+          <strong>Email:</strong> info@shreyasinfradevelopers.com<br />
           <strong>Phone:</strong> +91 73377 80808
         </p>
 

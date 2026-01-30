@@ -19,29 +19,29 @@ Disclaimer
 
         <p>
           For all intents and purposes hereinafter, the term “website” shall refer to all websites and/or microsites in
-          the domain <strong>www.siddanthdevelopers.com</strong>, but not third-party websites. This website is the sole
-          property of <strong>Siddanth Developers</strong>. The contents of this website, including but not limited to
+          the domain <strong>www.shreyasinfradevelopers.com</strong>, but not third-party websites. This website is the sole
+          property of <strong>Shreyas Infra Developers</strong>. The contents of this website, including but not limited to
           the text, content, information, graphics, logos, software, trademarks, plans, drawings, amenities, images,
           renders, specifications, photography, etc., are the sole and exclusive property of
-          <strong> Siddanth Developers</strong> and protected by law. They should not be copied, reproduced, published,
+          <strong> Shreyas Infra Developers</strong> and protected by law. They should not be copied, reproduced, published,
           republished, posted, transmitted, or distributed in any way without express, advance, and written consent
-          from <strong>Siddanth Developers</strong>.
+          from <strong>Shreyas Infra Developers</strong>.
         </p>
 
         <p>
           All the information and material provided on this website are solely illustrations and are not intended to
           and shall not be deemed to create any business, contractual obligation, or employment relationship with
-          <strong> Siddanth Developers</strong>. <strong>Siddanth Developers</strong> does not guarantee the timeliness,
+          <strong> Shreyas Infra Developers</strong>. <strong>Shreyas Infra Developers</strong> does not guarantee the timeliness,
           completeness, or performance of this website or any of its contents. While we strive to ensure that all
           content featured on this website is correct at the time of publication, we accept no responsibility for any
-          errors, omissions, or inaccurate content on the website. <strong>Siddanth Developers</strong> will not be
+          errors, omissions, or inaccurate content on the website. <strong>Shreyas Infra Developers</strong> will not be
           liable for any loss or damage, financial or otherwise, including but not limited to actual, consequential,
           direct, exemplary, incidental, indirect, punitive, or special damages as a result of using the information
           herein. We do not guarantee the suitability or quality of any products or services featured on the website.
         </p>
 
         <p>
-          <strong>Siddanth Developers</strong> expressly disclaims all warranties of any kind, whether express or
+          <strong>Shreyas Infra Developers</strong> expressly disclaims all warranties of any kind, whether express or
           implied, including the warranties of merchantability and fitness for a particular purpose. We reserve the
           right, without any obligation whatsoever, to review, correct, remove, or modify all or any content submitted
           herein. All plans, drawings, amenities, features, specifications, and other information mentioned herein are

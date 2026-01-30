@@ -28,7 +28,7 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
           </div>
 
      <div className="flex items-center gap-6 pt-10">
-  <img className="w-32 h-auto opacity-90" src="/shreyas_logo_footer.png" />
+  <img className="w-32 h-auto opacity-90" src="/shreyas_logo_footer.webp" />
 
   <div className="flex gap-3">
     <img src="/LinkedIn.svg" className="w-4 h-4 opacity-70 hover:opacity-100 cursor-pointer" />
@@ -137,7 +137,7 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
             {/* Column 3 */}
             <div className="hidden  lg:text-right  lg:flex flex-col  lg:items-end">
               <div className="flex  lg:justify-end items-center gap-2 w-[300px]  mb-3 ">
-                <img src="/shreyas_logo_footer.png" />
+                <img src="/shreyas_logo_footer.webp" />
               </div>
 
              <div className="text-xs mt-20 text-neutral-500 space-y-3 text-right">

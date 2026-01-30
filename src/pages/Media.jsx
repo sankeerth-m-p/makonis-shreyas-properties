@@ -10,7 +10,7 @@ const mediaData = [
   {
     id: 1,
     image: mediaImg,
-    logo: "/CNBC.png",
+    logo: "/CNBC.webp",
     date: "March 06, 2026",
     shortTitle: "We are a forward-thinking real estate company driven by the belief that well-designed spaces shape better lives.",
     shortDesc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with...",
@@ -19,7 +19,7 @@ const mediaData = [
   {
     id: 2,
     image: mediaImg,
-    logo: "/zee.png",
+    logo: "/zee.webp",
     date: "March 06, 2026",
     shortTitle: "Smart urban communities designed to elevate everyday living experiences.",
     shortDesc: "Our projects integrate sustainable materials, future-ready infrastructure, and intelligent space planning to support modern lifestyles...",
@@ -28,7 +28,7 @@ const mediaData = [
   {
     id: 3,
     image: mediaImg,
-    logo: "/CNBC.png",
+    logo: "/CNBC.webp",
     date: "March 06, 2026",
     shortTitle: "Future-ready neighborhoods built for growth, comfort, and innovation.",
     shortDesc: "We develop thoughtfully planned communities that promote sustainability, technology integration, and superior living standards...",
@@ -37,7 +37,7 @@ const mediaData = [
   {
     id: 4,
     image: mediaImg,
-    logo: "/zee.png",
+    logo: "/zee.webp",
     date: "March 06, 2026",
     shortTitle: "Construction excellence driven by trust, quality, and ethical practices.",
     shortDesc: "Every project follows strict quality control, advanced engineering, and customer-first execution for lasting value...",
@@ -69,7 +69,7 @@ const MediaList = () => {
 
             <div className="bg-[#ff6a13] rounded-3xl p-16 h-[540px] flex flex-col justify-between">
               <div className="flex justify-end">
-                <img src="/shreyas_logo_footer_1.png" className="h-12 object-contain" />
+                <img src="/shreyas_logo_footer_1.webp" className="h-12 object-contain" />
               </div>
 
               <div>

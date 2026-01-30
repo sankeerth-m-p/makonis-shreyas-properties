@@ -6,20 +6,30 @@ import { motion } from "framer-motion";
 const Enquire = ({ onClose }) => {
   const [phone, setPhone] = useState("");
   const [countryCode, setCountryCode] = useState("+91");
-
+const [enquiry, setEnquiry] = useState("");
+const [error, setError] = useState("");
   const handlePhoneChange = (e) => {
     const value = e.target.value.replace(/\D/g, "");
     if (value.length <= 10) setPhone(value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (phone.length !== 10) {
-      alert("Mobile number must be exactly 10 digits");
-      return;
-    }
-    alert("Form submitted successfully");
-  };
+ const handleSubmit = (e) => {
+  e.preventDefault();
+
+  if (phone.length !== 10) {
+    setError("Mobile number must be exactly 10 digits");
+    return;
+  }
+
+  if (!enquiry.trim()) {
+    setError("Please tell us what you are enquiring about");
+    return;
+  }
+
+  setError("");
+  alert("Form submitted successfully");
+};
+
 
   return (
     <motion.div
@@ -48,7 +58,7 @@ const Enquire = ({ onClose }) => {
           <input required type="text" placeholder="Name" className="w-full border-b outline-none py-2" />
           <input required type="email" placeholder="Email address" className="w-full border-b outline-none py-2" />
 
-          <select required className="w-full border-b outline-none py-2 bg-transparent text-gray-500">
+          {/* <select required className="w-full border-b outline-none py-2 bg-transparent text-gray-500">
             <option value="">Select Country</option>
             <option value="India">India</option>
             <option value="United States">United States</option>
@@ -60,9 +70,9 @@ const Enquire = ({ onClose }) => {
             <option value="Germany">Germany</option>
             <option value="France">France</option>
             <option value="Japan">Japan</option>
-          </select>
+          </select> */}
 
-          <input required type="text" placeholder="City" className="w-full border-b outline-none py-2" />
+          {/* <input required type="text" placeholder="City" className="w-full border-b outline-none py-2" /> */}
 
           <div className="flex gap-3">
             <select
@@ -94,6 +104,29 @@ const Enquire = ({ onClose }) => {
               maxLength="10"
             />
           </div>
+ 
+   <div>
+  <label className="text-sm text-gray-600">
+    What are you enquiring about?
+  </label>
+
+  <textarea
+    rows="4"
+    value={enquiry}
+    onChange={(e) => {
+      setEnquiry(e.target.value);
+      if (e.target.value.trim()) setError("");
+    }}
+    placeholder="Please describe your requirement"
+    className={`w-full mt-2 p-3 rounded-lg border bg-white outline-none
+      ${error ? "border-red-500" : "border-gray-300"}`}
+    required
+  />
+
+  {error && (
+    <p className="text-xs text-red-500 mt-1">{error}</p>
+  )}
+</div>
 
           <div className="flex items-start gap-2 text-xs text-gray-600">
             <input required type="checkbox" className="mt-1" />

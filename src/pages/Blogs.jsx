@@ -9,7 +9,7 @@ const blogData = [
   {
   id: 1,
   image: "/blogs/homesearching.webp",
-  date: "March 05, 2026",
+  date: "Jan 05, 2024",
   title: "What to Look for During a Home Inspection: A Complete Checklist",
   desc: "Buying a home is an exciting milestone, but before you sign on the dotted line, it’s essential to ensure that...",
   tag: "Property",
@@ -164,7 +164,7 @@ const blogData = [
   {
     id: 2,
     image: "/blogs/creditscore.webp",
-    date: "March 05, 2026",
+    date: "Feb 08, 2024",
     title: "How to Improve Your Credit Score Before Buying a House",
     desc: "If you’re planning to buy a house, your credit score plays a critical role in determining whether you’ll get approved...",
     tag: "Real estate",
@@ -265,7 +265,7 @@ const blogData = [
   {
     id: 3,
     image: "/blogs/legalmistakes.webp",
-    date: "March 05, 2026",
+    date: "March 15, 2024",
     title: "Common Legal Mistakes Homebuyers Make",
     desc: "Buying a home is an exciting milestone, but it’s also one of the biggest financial commitments most people will ever...",
     tag: "Investment",
@@ -361,7 +361,7 @@ const blogData = [
   {
     id: 4,
     image: "/blogs/renthome.webp",
-    date: "March 05, 2026",
+    date: "April 25, 2024",
     title: "Pros and Cons of Buying or Renting a Home",
     desc: "Pros of Buying a Home 1. Long-Term Investment and Equity Building When you buy a home, you're not just securing...",
     tag: "Lifestyle",
@@ -482,7 +482,7 @@ const blogData = [
   {
     id: 5,
     image: "/blogs/interiordesignideas.webp",
-    date: "March 05, 2026",
+    date: "May 12, 2024",
     title: "Transform Your Space: Top House Interior Ideas for 2025",
     desc: "A well-designed home interior is more than just aesthetics — it’s about creating a space that reflects your personality while...",
     tag: "Housing loan",
@@ -574,7 +574,7 @@ const blogData = [
   {
     id: 6,
     image: "/blogs/commercialland.webp",
-    date: "March 05, 2026",
+    date: "Aug 17, 2024",
     title: "Modern Living: Pros and Cons of Investing in Commercial Real Estate",
     desc: "Commercial real estate (CRE) is an attractive investment avenue for many, offering the potential for high returns and long-term stability....",
     tag: "Lifestyle",
@@ -644,7 +644,7 @@ const blogData = [
   {
     id: 7,
     image: "/blogs/plotinvestment.webp",
-    date: "March 10, 2026",
+    date: "Nov 10, 2024",
     title: "The Benefits of Investing in Plotted Developments",
     desc: "Investing in plotted developments has gained significant traction among real estate investors in recent years. Plotted developments, also known as...",
     tag: "Property",
@@ -715,7 +715,7 @@ const blogData = [
   {
     id: 8,
     image: "/blogs/material.webp",
-    date: "March 12, 2026",
+    date: "March 15, 2025",
     title: "Sustainable Building Materials for Modern Homes: Eco-Friendly Choices That Matter",
     desc: "As the world moves toward a more eco-conscious future,homebuyers and builders alike are prioritising sustainable building materials that reduce environmental...",
     tag: "Investment",
@@ -816,7 +816,7 @@ const blogData = [
   {
     id: 9,
     image: "/blogs/investmentrealeste.webp",
-    date: "March 14, 2026",
+    date: "June 19, 2025",
     title: "A Beginner’s Guide to Investing in Real Estate Successfully",
     desc: "Investing in real estate is one of the most reliable ways to build wealth and achieve financial security. For beginners,...",
     tag: "Lifestyle",
@@ -893,7 +893,7 @@ const blogData = [
   {
     id: 10,
     image:"/blogs/rera.webp",
-    date: "March 16, 2026",
+    date: "July 16, 2025",
     title: "Understanding RERA: What Every Homebuyer Should Know",
     desc: "The Real Estate (Regulation and Development) Act, 2016 (RERA) was introduced by the Government of India to regulate the real...",
     tag: "Real estate",
@@ -953,7 +953,7 @@ const blogData = [
   {
     id: 11,
     image: "/blogs/happycouple.webp",
-    date: "March 18, 2026",
+    date: "Sept 18, 2025",
     title: "The Ultimate Guide to Buying Your First Home",
     desc: "Buying your first home is an exciting milestone, but it requires careful planning and informed decision-making. From budgeting to closing....",
     tag: "Investment",
@@ -1014,7 +1014,7 @@ const blogData = [
   {
     id: 12,
     image: "/blogs/banglore.webp",
-    date: "March 20, 2026",
+    date: "Jan 13, 2026",
     title: "Why Bangalore?",
     desc: "Life is all about decisions. Yes almost. And yet it is not so always. The career we chose might be...",
     tag: "Housing loan",

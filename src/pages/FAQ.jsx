@@ -3,32 +3,32 @@ import AnimatedHeading from "../components/animatedHeading";
 
 const faqs = [
   {
-    question: "Who is Siddanth Developers?",
+    question: "Who is Shreyas Infra Developers?",
     answer:
-      "Siddanth Developers is a leading real estate company specializing in premium residential, commercial, hospitality, and plotted developments in Bengaluru.",
+      "Shreyas Infra Developers is a leading real estate company specializing in premium residential, commercial, hospitality, and plotted developments in Bengaluru.",
   },
   {
-    question: "When was Siddanth Developers established?",
+    question: "When was Shreyas Infra Developers established?",
     answer:
-      "Siddanth Developers was established with a vision to deliver high-quality, sustainable, and innovative real estate solutions.",
+      "Shreyas Infra Developers was established with a vision to deliver high-quality, sustainable, and innovative real estate solutions.",
   },
   {
-    question: "What types of properties does Siddanth Developers offer?",
+    question: "What types of properties does Shreyas Infra Developers offer?",
     answer:
       "They offer residential apartments, villas, commercial spaces, hospitality projects, and premium plotted developments.",
   },
   {
-    question: "Are Siddanth Developers' projects legally approved?",
+    question: "Are Shreyas Infra Developers' projects legally approved?",
     answer:
       "Yes, all projects are legally approved and comply with RERA and local government regulations.",
   },
   {
-    question: "Does Siddanth Developers assist with home loans?",
+    question: "Does Shreyas Infra Developers assist with home loans?",
     answer:
       "Yes, they assist customers with home loan approvals through leading national and private banks.",
   },
   {
-    question: "What amenities do Siddanth Developers' projects include?",
+    question: "What amenities do Shreyas Infra Developers' projects include?",
     answer:
       "Amenities include landscaped gardens, clubhouse, gym, swimming pool, children’s play area, security, and more.",
   },
@@ -38,12 +38,12 @@ const faqs = [
       "Project timelines vary by development, but they are delivered as per committed schedules with quality assurance.",
   },
   {
-    question: "Does Siddanth Developers offer joint development opportunities?",
+    question: "Does Shreyas Infra Developers offer joint development opportunities?",
     answer:
       "Yes, they welcome landowners for joint development partnerships and strategic collaborations.",
   },
   {
-    question: "How can I book a site visit for Siddanth Developers project?",
+    question: "How can I book a site visit for Shreyas Infra Developers project?",
     answer:
       "You can book a site visit through their official website, phone, or by contacting their sales team directly.",
   },

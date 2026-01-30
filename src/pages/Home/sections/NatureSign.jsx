@@ -1,4 +1,3 @@
-import nature1 from "/Home/naturesign1.jpg";
 import nature2 from "/Home/naturesign2.png";
 import nhIcon from "/Home/NH-4.svg";
 import airportIcon from "/Home/Airport.svg";
@@ -18,7 +17,7 @@ const NatureSign = () => {
   const thumbWidth = 110;
 
   const [index, setIndex] = useState(0);
-  const [bgImage, setBgImage] = useState(nature1);
+  const [bgImage, setBgImage] = useState(nature7);
 
   /* ---------------- MOBILE ---------------- */
   const [isMobile, setIsMobile] = useState(false);

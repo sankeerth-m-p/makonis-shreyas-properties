@@ -26,8 +26,8 @@ const PrivacyPolicy = () => {
 
 
           <p>
-            Your privacy is important to us. It is Siddanth Developers’ policy to respect your privacy regarding any information we may collect from you across our website,
-            <span className="font-semiboldx"> www.siddanthdevelopers.com</span>, and other sites we own and operate.
+            Your privacy is important to us. It is Shreyas Infra Developers’ policy to respect your privacy regarding any information we may collect from you across our website,
+            <span className="font-semiboldx"> www.shreyasinfradevelopers.com</span>, and other sites we own and operate.
           </p>
 
           <p>
@@ -61,11 +61,11 @@ const PrivacyPolicy = () => {
           <div className="pt-4">
             <p className="font-semiboldx">Office Address</p>
             <p>
-              Siddanth Developers, #305, 3rd Floor, Brigade Business Suites, Ashoka Pillar Road, Jayanagar 2nd Block, Bengaluru, Karnataka 560011
+              Shreyas Infra Developers, #305, 3rd Floor, Brigade Business Suites, Ashoka Pillar Road, Jayanagar 2nd Block, Bengaluru, Karnataka 560011
             </p>
 
             <p className="mt-2">
-              <span className="font-semiboldx">Email:</span> info@siddanthdevelopers.com
+              <span className="font-semiboldx">Email:</span> info@shreyasinfradevelopers.com
             </p>
             <p>
               <span className="font-semiboldx">Phone:</span> +91 73377 80808
