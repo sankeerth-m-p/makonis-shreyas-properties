@@ -59,7 +59,7 @@ const SignatureSpaces = ({ sections }) => {
     {
       number: '07',
       location: 'Nandagudi, Bengaluru',
-      title: 'Sunrise Apartments',
+      title: 'Shreyas Sunrise ',
       description: 'Well-planned residences in the fast-growing satellite township of Nandagudi. With strong future connectivity and close proximity to Devanahalli and the airport, it offers a perfect balance of serene living and long-term value.',
       image: "/sunrise.webp",
        bgColor: 'bg-ORANGE'
