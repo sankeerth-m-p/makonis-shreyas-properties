@@ -69,7 +69,7 @@ const MediaList = () => {
 
             <div className="bg-ORANGE w-full  col-span-2 rounded-lg p-6 lg:p-16 h-full flex flex-col justify-between">
               <div className="flex justify-end ">
-                <img src="/shreyas_logo_footer_1.webp" className="h-12 object-contain" />
+                <img src="/shreyas_logo_footer_1.webp" className="h-12  top-10 lg:absolute right-10 object-contain" />
               </div>
 
               <div>
@@ -120,7 +120,7 @@ const MediaList = () => {
     </div>
 
     <button
-      onClick={() => navigate(`/media-center/${item.id}`)}
+      
       className="btn btn-white py-3 w-fit px-6 text-[10px] mt-auto"
     >
       READ MORE

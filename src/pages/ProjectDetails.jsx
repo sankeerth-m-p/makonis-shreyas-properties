@@ -135,14 +135,14 @@ className="btn">
 
 
       {/* ===== ABOUT SECTION ===== */}
-      <div className="bg-[#F5F2EF] py-20       px-6 ">
-        <div className="max-w-[1120px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 tems-center">
+      <div className="bg-white py-20     ">
+        <div className="max-w-6xl px-6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 tems-center">
 
           <div className="relative">
 
            {/* text above circle */}
     {project.title === "Shreyas Sunrise" ? (
-  <AnimatedHeading className="relative z-10  mb-4 md:mb-8 section-heading">
+  <AnimatedHeading className="relative z-10   mb-4 md:mb-8 section-heading">
       
         This project is strategically located very close to 
         Bengaluru's fast developing satellite township
@@ -156,7 +156,7 @@ className="btn">
 
 
           {project.title === "Shreyas Sunrise" ? (
-  <FloatUpText className="text-base">
+  <FloatUpText className="text-base ">
     <p className="            leading-relaxed mb-4">
       Shreyas Sunrise is developed by Shreyas Properties, a company with a passionate approach towards creating infrastructure and living spaces that add beauty to life.
     </p>
@@ -233,10 +233,10 @@ className="btn">
           <div key={i} className="flex flex-col items-center gap-5 ">
             <img
               src={item.icon}
-              className="w-16 h-16 md:w-20 md:h-20 object-contain invert"
+              className="w-12 h-12 md:w-16 md:h-16 object-contain invert"
               alt=""
             />
-            <p className="      text-base leading-snug max-w-[240px]">
+            <p className="  px-4   text-sm lg:text-base leading-snug max-w-[240px]">
               {item.text}
             </p>
           </div>
@@ -249,8 +249,8 @@ className="btn">
 
 
       {/* ===== LOCATION & BUSINESS ADVANTAGES ===== */}
-      <div className="  px-6 lg:px-0 py-20 ">
-        <div className="max-w-[1120px] mx-auto ">
+      <div className="  bg-[#F4EFE5] py-20 ">
+        <div className="max-w-6xl px-6 mx-auto ">
 
           {/* Heading aligned to image left edge */}
          <AnimatedHeading className="section-heading mb-4 md:mb-8">
@@ -320,14 +320,8 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
       {/* SECTION 1 – SAME AS ProjectDetails TOP */}
       <ProjectDetails project={project} onBack={onBack} />
 
-      {/* SECTION 2 – same (you will edit later) */}
-
-      {/* SECTION 3 – hidden (skip) */}
-
-      {/* SECTION 4 – same layout */}
-
-      {/* SECTION 5 – Image Right, Content Left */}
-<div className="bg-[#F5F2EF] py-20">
+  
+<div className="bg-white py-20">
   <div className="max-w-6xl   mx-auto px-6 lg:px-6">
 
   <AnimatedHeading className="section-heading  mb-4 md:mb-8">
@@ -375,7 +369,7 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
 
 
 {/* EXTRA Location & Business Advantages (SAME DESIGN, IMAGE LEFT) */}
-<div className="bg-[#F5F2EF] pb-20 ">
+<div className="bg-[#F5F2EF] py-20 ">
   <div className="max-w-6xl  mx-auto px-6 lg:px-6">
 
     <AnimatedHeading className="section-heading mb-4 md:mb-8">
@@ -446,15 +440,15 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
     {/* LAYOUT PLAN */}
 {/* LAYOUT PLAN */}
 <section className="bg-white py-20 px-6 max-w-6xl mx-auto">
-  <AnimatedHeading className="text-center section-heading mb-10">
+  <AnimatedHeading className=" section-heading mb-10">
     Layout Plan
   </AnimatedHeading>
 
   <FloatUpText className="max-w-6xl mx-auto px-0 border-2 border-black">
     <div className="overflow-hidden">
-      <RevealImageAnimation
-        image="/layoutplan.webp"
-        className="w-full h-[70vh] md:h-[85vh] object-contain"
+      <img
+        src="/layoutplan.webp"
+        className="w-full   object-contain"
       />
     </div>
   </FloatUpText>
@@ -462,15 +456,15 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
 
 {/* LOCATION MAP */}
 <section className="bg-white pb-20 px-6 max-w-6xl mx-auto">
-  <AnimatedHeading className="text-center section-heading mb-10">
+  <AnimatedHeading className=" section-heading mb-10">
     Location Map
   </AnimatedHeading>
 
  <FloatUpText className="max-w-[1120px] mx-auto px-0 border-2 border-black">
     <div className="overflow-hidden">
-      <RevealImageAnimation
-        image="/locationmap.webp"
-        className="w-full h-[70vh] md:h-[85vh] object-contain"
+      <img
+        src="/locationmap.webp"
+        className="w-full object-contain"
       />
     </div>
   </FloatUpText>
