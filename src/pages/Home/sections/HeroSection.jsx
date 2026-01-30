@@ -100,7 +100,7 @@ const HeroSection = () => {
     if (isTransitioning) return;
     
     setIsTransitioning(true);
-    setTimeout(() => {
+    setTimeout(() => {setIsManualTransition(false);
       setCurrentIndex(index);
       setIsTransitioning(false);
     }, currentDuration);
