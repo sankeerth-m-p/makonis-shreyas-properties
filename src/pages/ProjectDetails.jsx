@@ -5,7 +5,7 @@ import AnimatedHeading from "../components/animatedHeading";
 import RevealImageAnimation from "../components/RevealImageAnimation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useNavigate } from "react-router-dom";
+import ScrollToTop from "../components/scrollToTop";
 gsap.registerPlugin(ScrollTrigger);
 
 const statusStyles = {
@@ -19,19 +19,7 @@ export const ProjectDetails = ({ project, onBack }) => {
   const heroWrapperRef = useRef(null);
   const heroClipRef = useRef(null);
   const heroImgRef = useRef(null);
- const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleBack = () => {
-      navigate("/projects", { replace: true });
-    };
-
-    window.addEventListener("popstate", handleBack);
-
-    return () => {
-      window.removeEventListener("popstate", handleBack);
-    };
-  }, [navigate]);
+ 
   useLayoutEffect(() => {
   let tl;
 
@@ -73,10 +61,10 @@ export const ProjectDetails = ({ project, onBack }) => {
 
   return (
    <div className="relative w-full bg-white    md:pt-10   overflow-hidden">
-
+<ScrollToTop/>
       {/* ===== BACK BUTTON ===== */}
   
-  <div className="  hidden md:flex   max-w-6xl  px-6 mx-auto ">
+  <div className="     max-w-6xl  px-6 mx-auto ">
    <button
   onClick={onBack}
 className="btn">
