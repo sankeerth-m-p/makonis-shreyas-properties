@@ -32,10 +32,8 @@ const heroSlides = [{
   {
     imageDesktop: desktopBanner3,
     imageMobile: mobileBanner3,
-    title: "Paradise",
-    subtitle:
-      "An eco-friendly sanctuary featuring modern infrastructure in a peaceful family setting.",
-  },{
+  },
+  {
     imageDesktop: desktopBanner1,
     imageMobile: mobileBanner1,
     
@@ -189,9 +187,20 @@ const HeroSection = () => {
         {/* Current Slide */}
         <div className="relative  lg:absolute inset-0">
           <img
-            src={getSlideImage(heroSlides[currentIndex])}
-            alt={heroSlides[currentIndex].title}
-            className={`w-full h-full object-cover ${
+            src={heroSlides[currentIndex].imageMobile}
+    alt={heroSlides[currentIndex].title}
+            className={`w-full h-full md:hidden object-cover ${
+              isTransitioning 
+                ? slideDirection === "forward" 
+                  ? isManualTransition ? "animate-old-zoom-in-fast" : "animate-old-zoom-in" 
+                  : isManualTransition ? "animate-old-zoom-in-reverse-fast" : "animate-old-zoom-in-reverse"
+                : ""
+            }`}
+          />
+          <img
+            src={heroSlides[currentIndex].imageDesktop}
+    alt={heroSlides[currentIndex].title}
+            className={`w-full h-full hidden md:block object-cover ${
               isTransitioning 
                 ? slideDirection === "forward" 
                   ? isManualTransition ? "animate-old-zoom-in-fast" : "animate-old-zoom-in" 
