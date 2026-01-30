@@ -4,32 +4,25 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Enquire = ({ onClose }) => {
-  const [phone, setPhone] = useState("");
-  const [countryCode, setCountryCode] = useState("+91");
-const [enquiry, setEnquiry] = useState("");
-const [error, setError] = useState("");
-  const handlePhoneChange = (e) => {
-    const value = e.target.value.replace(/\D/g, "");
-    if (value.length <= 10) setPhone(value);
-  };
-
- const handleSubmit = (e) => {
-  e.preventDefault();
-
-  if (phone.length !== 10) {
-    setError("Mobile number must be exactly 10 digits");
-    return;
-  }
-
-  if (!enquiry.trim()) {
-    setError("Please tell us what you are enquiring about");
-    return;
-  }
-
-  setError("");
-  alert("Form submitted successfully");
-};
-
+  const [formData, setFormData] = useState({
+      name: '',
+      email: '',
+      phone: '',
+      inquiry: ''
+    });
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log('Form submitted:', formData);
+    };
+  
+    const handleChange = (e) => {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value
+      });
+    };
+  
 
   return (
     <motion.div
@@ -40,117 +33,108 @@ const [error, setError] = useState("");
       transition={{ duration: 0.15 }}
     >
       <motion.div
-        className="bg-white w-[90%] max-w-xl rounded-lg p-10 relative shadow-2xl"
+        className=" w-full  rounded-3xl shadow-2xl p-8 py-20 md:p-32"
         initial={{ scale: 0.85, y: 40, opacity: 0 }}
         animate={{ scale: 1, y: 0, opacity: 1 }}
         exit={{ scale: 0.85, y: 40, opacity: 0 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
       >
+        <div className="max-4xl relative  bg-white rounded-3xl shadow-2xl p-8 py-20 md:p-32">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-black"
-        >
-          <X size={22} />
+          className=" top-10 z-[999]  absolute right-10 "
+          >
+          <X size={36} />
         </button>
+          
+        
+          
+ 
+      
 
+      
+      <div className="relative  max-w-2xl  mx-auto"> 
+       
+
+        {/* Heading */}
+        <h1 className="section-heading text-center text-black mb-12">
+          Share query by filling out the form, we will assist you at the earliest.
+        </h1>
+
+        {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-6">
-
-          <input required type="text" placeholder="Name" className="w-full border-b outline-none py-2" />
-          <input required type="email" placeholder="Email address" className="w-full border-b outline-none py-2" />
-
-          {/* <select required className="w-full border-b outline-none py-2 bg-transparent text-gray-500">
-            <option value="">Select Country</option>
-            <option value="India">India</option>
-            <option value="United States">United States</option>
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="United Arab Emirates">United Arab Emirates</option>
-            <option value="Australia">Australia</option>
-            <option value="Canada">Canada</option>
-            <option value="Singapore">Singapore</option>
-            <option value="Germany">Germany</option>
-            <option value="France">France</option>
-            <option value="Japan">Japan</option>
-          </select> */}
-
-          {/* <input required type="text" placeholder="City" className="w-full border-b outline-none py-2" /> */}
-
-          <div className="flex gap-3">
-            <select
-              value={countryCode}
-              onChange={(e) => setCountryCode(e.target.value)}
-              className="border-b outline-none py-2 bg-transparent"
-              required
-            >
-              <option value="+91">+91 India</option>
-              <option value="+1">+1 USA</option>
-              <option value="+44">+44 UK</option>
-              <option value="+971">+971 UAE</option>
-              <option value="+61">+61 Australia</option>
-              <option value="+49">+49 Germany</option>
-              <option value="+33">+33 France</option>
-              <option value="+81">+81 Japan</option>
-              <option value="+65">+65 Singapore</option>
-              <option value="+86">+86 China</option>
-              <option value="+7">+7 Russia</option>
-            </select>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Name Input */}
             <input
-              required
               type="text"
-              placeholder="Mobile number"
-              value={phone}
-              onChange={handlePhoneChange}
-              className="w-full border-b outline-none py-2"
-              maxLength="10"
+              name="name"
+              placeholder="Your Name*"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full px-6 py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
+            />
+
+            {/* Email Input */}
+            <input
+              type="email"
+              name="email"
+              placeholder="Email*"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full px-6 py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
             />
           </div>
- 
-   <div>
-  <label className="text-sm text-gray-600">
-    What are you enquiring about?
-  </label>
 
-  <textarea
-    rows="4"
-    value={enquiry}
-    onChange={(e) => {
-      setEnquiry(e.target.value);
-      if (e.target.value.trim()) setError("");
-    }}
-    placeholder="Please describe your requirement"
-    className={`w-full mt-2 p-3 rounded-lg border bg-white outline-none
-      ${error ? "border-red-500" : "border-gray-300"}`}
-    required
-  />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Phone Input */}
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number *"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="w-full px-6 py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
+            />
 
-  {error && (
-    <p className="text-xs text-red-500 mt-1">{error}</p>
-  )}
-</div>
-
-          <div className="flex items-start gap-2 text-xs text-gray-600">
-            <input required type="checkbox" className="mt-1" />
-            <p>
-              By checking this box you confirm that you have read and agree to our{" "}
-              <Link to="/terms" target="_blank" className="text-orange-500 underline">
-                Terms of Use
-              </Link>{" "}
-              and{" "}
-              <Link to="/privacy-policy" target="_blank" className="text-orange-500 underline">
-                Privacy Policy
-              </Link>.
-            </p>
+            {/* Dropdown */}
+            <textarea
+     name="message"
+     placeholder="Your inquiry about..."
+     value={formData.message}
+     onChange={handleChange}
+     rows="1"
+     className="w-full px-6 py-4 bg-[#f2f2f2] rounded-3xl text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black resize-none"
+   ></textarea>
           </div>
 
-          <button
-            type="submit"
-            className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-orange-500 hover:border hover:border-orange-500 transition-all hover:translate-x-1 w-fit"
-          >
-            <span>REQUEST CALLBACK</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          {/* Footer Text and Button */}
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mt-8">
+            <p className="text-black text-sm md:text-base">
+              
+              Required fields are marked *
+            </p>
 
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="group relative px-8 py-4 btn btn-orange w-fit font-semibold rounded-full transition-all duration-300 flex items-center gap-2"
+            >
+              Get A Call Back
+              <svg 
+                className="w-5 h-5 transition-transform group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          </div>
         </form>
+      </div></div>
       </motion.div>
     </motion.div>
   );
