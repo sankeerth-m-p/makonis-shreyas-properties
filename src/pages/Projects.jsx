@@ -253,8 +253,8 @@ className="btn btn-white">
       </section>
 
       {/* ================= EXPERT ASSISTANCE CARDS ================= */}
-      <section className="bg-[#eef2f3] px-6 pb-10     md:py-20">
-<div className="max-w-[1120px] mx-auto px-0  space-y-10">
+      <section className="bg-[#eef2f3]   pb-10     md:py-20">
+<div className="max-w-6xl mx-auto px-6   space-y-10">
 
   {/* 5 */}
   <ProjectCard
