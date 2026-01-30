@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
-import mediaImg from "/media/media.webp";
-import mediaImg1 from "/mediaimg.webp";
+import mediaImg1 from "/media/media (1).webp";
+import mediaImg2 from "/media/media (2).webp";
+import mediaImg3 from "/media/media (3).webp";
+import mediaImg4 from "/media/media (4).webp";
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
 
@@ -9,39 +11,39 @@ import AnimatedHeading from "../components/animatedHeading";
 const mediaData = [
   {
     id: 1,
-    image: mediaImg,
+    image: mediaImg1,
     logo: "/CNBC.webp",
     date: "March 06, 2026",
     shortTitle: "We are a forward-thinking real estate company driven by the belief that well-designed spaces shape better lives.",
-    shortDesc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with modern design, sustainability, and customer satisfaction .",
-    desc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with modern design, sustainability, and customer satisfaction ."
+    shortDesc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with...",
+    desc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with modern design, sustainability, and customer satisfaction..."
   },
   {
     id: 2,
-    image: mediaImg,
+    image: mediaImg2,
     logo: "/zee.webp",
     date: "March 06, 2026",
     shortTitle: "Smart urban communities designed to elevate everyday living experiences.",
-    shortDesc: "Our projects integrate sustainable materials, future-ready infrastructure, and intelligent space planning to support modern lifestyles  .",
-    desc: "Our projects are crafted to enhance urban living by integrating smart planning ."
+    shortDesc: "Our projects integrate sustainable materials, future-ready infrastructure, and intelligent space planning to support modern lifestyles...",
+    desc: "Our projects are crafted to enhance urban living by integrating smart planning..."
   },
   {
     id: 3,
-    image: mediaImg,
+    image: mediaImg3,
     logo: "/CNBC.webp",
     date: "March 06, 2026",
     shortTitle: "Future-ready neighborhoods built for growth, comfort, and innovation.",
-    shortDesc: "We develop thoughtfully planned communities that promote sustainability, technology integration, and superior living standards  .",
-    desc: "We develop spaces that prioritize lifestyle, innovation  ."
+    shortDesc: "We develop thoughtfully planned communities that promote sustainability, technology integration, and superior living standards...",
+    desc: "We develop spaces that prioritize lifestyle, innovation..."
   },
   {
     id: 4,
-    image: mediaImg,
+    image: mediaImg4,
     logo: "/zee.webp",
     date: "March 06, 2026",
     shortTitle: "Construction excellence driven by trust, quality, and ethical practices.",
-    shortDesc: "Every project follows strict quality control, advanced engineering, and customer-first execution for lasting value  .",
-    desc: "Our commitment is to deliver excellence through ethical practices  ."
+    shortDesc: "Every project follows strict quality control, advanced engineering, and customer-first execution for lasting value...",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
   }
 ];
 
