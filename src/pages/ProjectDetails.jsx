@@ -5,7 +5,7 @@ import AnimatedHeading from "../components/animatedHeading";
 import RevealImageAnimation from "../components/RevealImageAnimation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { useNavigate } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 const statusStyles = {
@@ -19,58 +19,64 @@ export const ProjectDetails = ({ project, onBack }) => {
   const heroWrapperRef = useRef(null);
   const heroClipRef = useRef(null);
   const heroImgRef = useRef(null);
- 
+ const navigate = useNavigate();
+
   useEffect(() => {
-    window.scrollTo(0, 0);   // <-- replace smooth scroll
-  }, []);
-    useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
+    const handleBack = () => {
+      navigate("/projects", { replace: true });
+    };
 
-      /* --- CLIP PATH REVEAL (TOP → BOTTOM) --- */
-      gsap.fromTo(
-        heroClipRef.current,
-        {
-          clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-        },
-        {
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-          ease: "none",
-          scrollTrigger: {
-            trigger: heroWrapperRef.current,
-            start: "top 70%",
-            end: "top 20%",
-            scrub: true,
-          },
-        }
-      );
+    window.addEventListener("popstate", handleBack);
 
-      /* --- IMAGE ZOOM OUT --- */
-      gsap.fromTo(
-        heroImgRef.current,
-        { scale: 1.5 },
-        {
-          scale: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: heroWrapperRef.current,
-            start: "top 80%",
-            end: "top 15%",
-            scrub: true,
-          },
-        }
-      );
+    return () => {
+      window.removeEventListener("popstate", handleBack);
+    };
+  }, [navigate]);
+  useLayoutEffect(() => {
+  let tl;
 
+  const ctx = gsap.context(() => {
+    tl = gsap.timeline({
+      defaults: { ease: "power2.out" }
     });
 
-    return () => ctx.revert();
-  }, []);
+    /* CLIP PATH REVEAL */
+    tl.fromTo(
+      heroClipRef.current,
+      {
+        clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+      },
+      {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        duration: 1.2,
+      }
+    );
+
+    /* IMAGE ZOOM OUT */
+    tl.fromTo(
+      heroImgRef.current,
+      { scale: 1.5 },
+      {
+        scale: 1,
+        duration: 1.2,
+      },
+      0
+    );
+  }, heroWrapperRef);
+
+  return () => {
+    tl?.kill(); // ❗ stop animation but KEEP final state
+    ctx.kill(); // remove GSAP context safely
+  };
+}, []);
+
 
   return (
-   <div className="relative w-full bg-white pt-4    md:pt-10   overflow-hidden">
+   <div className="relative w-full bg-white    md:pt-10   overflow-hidden">
 
       {/* ===== BACK BUTTON ===== */}
   
-  <div className="   max-w-6xl  px-6 mx-auto ">
+  <div className="  hidden md:flex   max-w-6xl  px-6 mx-auto ">
    <button
   onClick={onBack}
 className="btn">
