@@ -3,7 +3,7 @@ import React from "react";
 const Career = () => {
   return (
     <div className="bg-[#f3f0ef] pt-5 py-20">
-      <div className="max-w-[1120px] mx-auto px-0">
+      <div className="max-w-6xl mx-auto px-6">
 
         {/* Top Hiring Card */}
         <div className="bg-white rounded-3xl p-10 flex flex-col lg:flex-row items-center gap-10 shadow-sm">
