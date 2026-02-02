@@ -1,4 +1,5 @@
-import { useEffect, useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { ArrowRight } from 'lucide-react';
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
@@ -8,474 +9,698 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollToTop from "../components/scrollToTop";
 gsap.registerPlugin(ScrollTrigger);
 
+const projectsData = [
+
+  {
+    slug: "chourasia-shreyas",
+    title: "Chourasia Shreyas",
+    location: "Marathahalli, Bengaluru",
+    status: "Completed",
+    image: "/Home/ChourasiaShreyasMarathahalli.webp",
+    logo: "/ChourasiaShreyas.webp",
+    about: {
+      heading: "Modern commercial spaces built for visibility and growth.",
+      image: "/family.webp",
+      text: [
+        "Modern View is developed to meet the needs of small and mid-sized businesses.",
+        "The project focuses on accessibility, efficient layouts, and long-term value.",
+        "Ideal for offices, retail outlets, and professional services.",
+      ],
+    },
+
+    amenities: {
+      background: "/hotel.webp",
+      title: "Key Features & Amenities",
+      items: [
+        { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
+        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
+        { icon: "/c.svg", text: "In-house parking for employees and visitors" },
+        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
+        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
+        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+      ],
+    },
+
+
+    advantages: {
+      image: "/swimmingpool.webp",
+      title: "Strategic Advantages",
+      items: [
+        "Located in a busy commercial zone",
+        "Easy access to Outer Ring Road",
+        "Surrounded by residential communities",
+      ],
+    },
+  },
+  {
+    slug: "shreyas-sunrise",
+    title: "Shreyas Sunrise",
+    location: "Nandagudi, Bengaluru",
+    status: "Ongoing",
+    image: "/sunrise.webp",
+    logo: "/shreyas_sunrise.webp",
+  },
+ 
+  {
+    slug: "natures-sign",
+    title: "Nature’s Sign",
+    location: "Devanahalli, Bengaluru",
+    status: "Ongoing",
+    image: "/Home/naturesign.webp",
+    logo: "/naturessign.webp", about: {
+      heading: "Modern commercial spaces built for visibility and growth.",
+      image: "/family.webp",
+      text: [
+        "Modern View is developed to meet the needs of small and mid-sized businesses.",
+        "The project focuses on accessibility, efficient layouts, and long-term value.",
+        "Ideal for offices, retail outlets, and professional services.",
+      ],
+    },
+
+    amenities: {
+      background: "/hotel.webp",
+      title: "Key Features & Amenities",
+      items: [
+        { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
+        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
+        { icon: "/c.svg", text: "In-house parking for employees and visitors" },
+        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
+        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
+        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+      ],
+    },
+
+
+    advantages: {
+      image: "/swimmingpool.webp",
+      title: "Strategic Advantages",
+      items: [
+        "Located in a busy commercial zone",
+        "Easy access to Outer Ring Road",
+        "Surrounded by residential communities",
+      ],
+    },
+  }, {
+    slug: "modern-profound-tech-park",
+    title: "Nature’s Sign",
+    location: "Devanahalli, Bengaluru",
+    status: "Completed",
+    image: "/Home/royalEnclave.webp",
+    logo: "/modern_propound_logo.webp",
+
+    about: {
+      heading: "A contemporary workspace designed for growing enterprises.",
+      image: "/family.webp",
+      text: [
+        "Modern Profound Tech Park offers premium commercial spaces tailored for IT firms and corporate offices.",
+        "The project blends smart design with functionality to support efficient business operations.",
+        "Its professional environment encourages innovation, collaboration, and long-term growth.",
+      ],
+    },
+
+    amenities: {
+      background: "/hotel.webp",
+      title: "Key Features & Amenities",
+      items: [
+        { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
+        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
+        { icon: "/c.svg", text: "In-house parking for employees and visitors" },
+        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
+        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
+        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+      ],
+    },
+
+
+    advantages: {
+      image: "/swimmingpool.webp",
+      title: "Location & Business Advantages",
+      items: [
+        "Located in Kondapur, a major IT corridor",
+        "Surrounded by leading tech companies",
+        "Excellent connectivity via public transport",
+        "Close to hotels, restaurants, and retail hubs",
+      ],
+    },
+  },
+
+  {
+    slug: "royal-enclave",
+    title: "Royal Enclave",
+    location: "Marathahalli, Bangalore",
+    status: "Completed",
+    image: "/Home/royalEnclave.webp",
+    logo: "/royalenclave.png",
+
+    about: {
+      heading: "Thoughtfully planned homes in a thriving urban neighborhood.",
+      image: "/family.webp",
+      text: [
+        "Royal Enclave is crafted for families seeking comfort and convenience.",
+        "The project offers well-designed living spaces with a focus on quality construction.",
+        "Located close to key business hubs, it balances lifestyle and connectivity.",
+      ],
+    },
+
+    amenities: {
+      background: "/hotel.webp",
+      title: "Key Features & Amenities",
+      items: [
+        { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
+        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
+        { icon: "/c.svg", text: "In-house parking for employees and visitors" },
+        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
+        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
+        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+      ],
+    },
+
+
+    advantages: {
+      image: "/swimmingpool.webp",
+      title: "Location Benefits",
+      items: [
+        "Close to IT parks and workplaces",
+        "Easy access to Outer Ring Road",
+        "Nearby schools, hospitals, and malls",
+      ],
+    },
+  },
+
+  {
+    slug: "paradise",
+    title: "Paradise",
+    location: "Vignan Nagar, Bangalore",
+    status: "Completed",
+    image: "/Home/royalEnclave.webp",
+    logo: "/royalenclave.webp",
+
+    about: {
+      heading: "Comfortable residences built for peaceful city living.",
+      image: "/family.webp",
+      text: [
+        "Paradise is a residential project designed for calm and secure living.",
+        "The project emphasizes space optimization and natural ventilation.",
+        "Ideal for families looking for a quiet yet well-connected locality.",
+      ],
+    },
+
+    amenities: {
+      background: "/hotel.webp",
+      title: "Key Features & Amenities",
+      items: [
+        { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
+        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
+        { icon: "/c.svg", text: "In-house parking for employees and visitors" },
+        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
+        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
+        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+      ],
+    },
+
+
+    advantages: {
+      image: "/swimmingpool.webp",
+      title: "Connectivity Advantages",
+      items: [
+        "Located in a developed residential area",
+        "Close to Old Airport Road",
+        "Good access to public transportation",
+      ],
+    },
+  },
+
+  {
+    slug: "chourasia-shreyas",
+    title: "Chourasia Shreyas",
+    location: "Marathahalli, Bangalore",
+    status: "Completed",
+    image: "/Home/royalEnclave.webp",
+    logo: "/royalenclave.webp",
+
+    about: {
+      heading: "A smart commercial destination in a high-demand business zone.",
+      image: "/family.webp",
+      text: [
+        "Chourasia Shreyas is a commercial project designed for modern businesses.",
+        "The structure supports offices, showrooms, and service-based enterprises.",
+        "Its design ensures visibility, accessibility, and professional appeal.",
+      ],
+    },
+
+    amenities: {
+      background: "/hotel.webp",
+      title: "Key Features & Amenities",
+      items: [
+        { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
+        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
+        { icon: "/c.svg", text: "In-house parking for employees and visitors" },
+        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
+        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
+        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+      ],
+    },
+
+
+    advantages: {
+      image: "/swimmingpool.webp",
+      title: "Business Location Benefits",
+      items: [
+        "Prime location in Marathahalli",
+        "High footfall area",
+        "Close to IT hubs and residential zones",
+        "Excellent road connectivity",
+      ],
+    },
+  },
+
+  {
+    slug: "modern-view-apartment",
+    title: "Modern View",
+    location: "Marathahalli, Bangalore",
+    status: "Completed",
+    image: "/Home/royalEnclave.webp",
+    logo: "/royalenclave.webp",
+
+    about: {
+      heading: "Modern commercial spaces built for visibility and growth.",
+      image: "/family.webp",
+      text: [
+        "Modern View is developed to meet the needs of small and mid-sized businesses.",
+        "The project focuses on accessibility, efficient layouts, and long-term value.",
+        "Ideal for offices, retail outlets, and professional services.",
+      ],
+    },
+
+    amenities: {
+      background: "/hotel.webp",
+      title: "Key Features & Amenities",
+      items: [
+        { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
+        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
+        { icon: "/c.svg", text: "In-house parking for employees and visitors" },
+        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
+        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
+        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+      ],
+    },
+
+
+    advantages: {
+      image: "/swimmingpool.webp",
+      title: "Strategic Advantages",
+      items: [
+        "Located in a busy commercial zone",
+        "Easy access to Outer Ring Road",
+        "Surrounded by residential communities",
+      ],
+    },
+  },
+];
 const statusStyles = {
-  Ongoing: "bg-[#04c2ae]", 
-  Completed:"bg-[#04c23e]",
+  Ongoing: "bg-[#04c2ae]",
+  Completed: "bg-[#04c23e]",
   Upcoming: "bg-yellow-500",
 };
 
-export const ProjectDetails = ({ project, onBack }) => {
-    
+
+
+const ProjectDetailsPage = () => {
+  const { slug } = useParams();
+
+  console.log("ALL PROJECT SLUGS:", projectsData.map(p => p.slug));
+  console.log("CURRENT SLUG:", slug);
+  const navigate = useNavigate();
+
+  const project = projectsData.find(p => p.slug === slug);
+
+  if (!project) {
+    return <div className="pt-40 text-center">Project not found</div>;
+  }
+
+
+  // 🔥 DECIDE WHICH PAGE TO SHOW BASED ON SLUG
+
+  if (project.slug === "shreyas-sunrise") {
+    return (
+      <ShreyasSunriseDetails
+        project={project}
+        onBack={() => navigate("/projects")}
+      />
+    );
+  }
+
+
+  // ✅ DEFAULT for all other projects
+  return (
+    <ProjectDetailsContent
+      project={project}
+      onBack={() => navigate("/projects")}
+    />
+  );
+
+
+};
+
+
+const ProjectDetailsContent = ({ project, onBack }) => {
   const heroWrapperRef = useRef(null);
   const heroClipRef = useRef(null);
   const heroImgRef = useRef(null);
- 
+
+  /* ================= HERO ANIMATION ================= */
   useLayoutEffect(() => {
-  let tl;
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
-  const ctx = gsap.context(() => {
-    tl = gsap.timeline({
-      defaults: { ease: "power2.out" }
-    });
+      tl.fromTo(
+        heroClipRef.current,
+        { clipPath: "polygon(0 0,100% 0,100% 0,0 0)" },
+        {
+          clipPath: "polygon(0 0,100% 0,100% 100%,0 100%)",
+          duration: 1.2,
+        }
+      ).fromTo(
+        heroImgRef.current,
+        { scale: 1.5 },
+        { scale: 1, duration: 1.2 },
+        0
+      );
+    }, heroWrapperRef);
 
-    /* CLIP PATH REVEAL */
-    tl.fromTo(
-      heroClipRef.current,
-      {
-        clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-      },
-      {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        duration: 1.2,
-      }
-    );
-
-    /* IMAGE ZOOM OUT */
-    tl.fromTo(
-      heroImgRef.current,
-      { scale: 1.5 },
-      {
-        scale: 1,
-        duration: 1.2,
-      },
-      0
-    );
-  }, heroWrapperRef);
-
-  return () => {
-    tl?.kill(); // ❗ stop animation but KEEP final state
-    ctx.kill(); // remove GSAP context safely
-  };
-}, []);
-
+    return () => ctx.kill();
+  }, []);
 
   return (
-   <div className="relative w-full bg-white    md:pt-10   overflow-hidden">
-<ScrollToTop/>
-      {/* ===== BACK BUTTON ===== */}
-  
-  <div className="     max-w-6xl  px-6 mx-auto ">
-   <button
-  onClick={onBack}
-className="btn">
-  
-  <ArrowRight className="w-5 h-5 rotate-180" />
-</button>
+    <div className="w-full bg-white overflow-hidden">
 
+      {/* ================= BACK BUTTON ================= */}
+      <div className="max-w-6xl mx-auto px-6 pt-10">
+        <button onClick={onBack} className="btn">
+          <ArrowRight className="w-5 h-5 rotate-180" />
+        </button>
+      </div>
 
-</div>
+      {/* ================= TOP INFO ================= */}
+      <div className="max-w-6xl mx-auto px-6 py-10">
+        <div className="flex flex-col md:flex-row gap-6 items-start">
 
-
-
-      {/* ===== TOP CENTER INFO BAR ===== */}
-      <div className="w-full py-6 flex max-w-6xl px-6 lg:px-6 pb-10 justify-between max-w-6xl mx-auto ">
-        <div className="flex items-start gap-6 md:flex-row flex-col     ">
-
-          {/* Logo with rectangle */}
-       <div className="border-2 mb-2       flex w-fit h-18 aspect-video items-center p-1 justify-center ">
-          <img
-  src={project.logo}
-  
-  className="w-32  h-18 object-contain"
-/>
-  </div>
-
-
-          {/* Title & Location */}
-          <div className="flex md:f flex-col  leading-tight gap-4">
-            <div className="flex flex-col">
-              <h3 className="section-heading     ">
-              {project.title}
-            </h3>
-            <span className="text-lg     ">
-              {project.location}
-            </span></div>
-       <span
- className={`${statusStyles[project.status]} text-white h-fit w-fit buttons       px-5 py-1.5 rounded-lg `}
->
-  {project.status}
-</span>
+          {/* LOGO */}
+          <div className="border-2 p-2 flex items-center justify-center">
+            <img
+              src={project.logo}
+              alt={project.title}
+              className="w-32 object-contain"
+            />
           </div>
 
+          {/* TITLE + STATUS */}
+          <div className="flex flex-col gap-4">
+            <div>
+              <h3 className="section-heading">{project.title}</h3>
+              <p className="text-lg">{project.location}</p>
+            </div>
 
+            <span
+              className={`${statusStyles[project.status]} text-white px-5 py-1.5 rounded-lg w-fit`}
+            >
+              {project.status}
+            </span>
+          </div>
         </div>
       </div>
 
-{/* Spacer to prevent overlap */}
-<div className="h-4 md:h-0" />
+      {/* ================= HERO IMAGE ================= */}
+      <div
+        ref={heroWrapperRef}
+        className="w-full h-[30vh] md:h-[50vh] lg:h-[85vh] overflow-hidden"
+      >
+        <div ref={heroClipRef} className="w-full h-full overflow-hidden">
+          <img
+            ref={heroImgRef}
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+            draggable={false}
+          />
+        </div>
+      </div>
 
-   
-{/* ===== HERO IMAGE (NO JUMP) ===== */}
-{/* ===== HERO IMAGE WITH GSAP REVEAL ===== */}
-<div
-  ref={heroWrapperRef}
-  className="w-full h-[30vh] md:h-[50vh] lg:h-[85vh] overflow-hidden"
->
-  <div ref={heroClipRef} className="w-full h-full overflow-hidden">
-    <img
-      ref={heroImgRef}
-      src={project.image}
-      alt="Project"
-      className="w-full h-full object-cover"
-      draggable={false}
-    />
-  </div>
-</div>
+      {/* ================= ABOUT SECTION ================= */}
+      {project.about && (
+        <section className="bg-white py-20">
+          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
+            <div>
+              <AnimatedHeading className="section-heading mb-6">
+                {project.about.heading}
+              </AnimatedHeading>
 
+              <FloatUpText className="text-base">
+                {project.about.text.map((para, i) => (
+                  <p key={i} className="leading-relaxed mb-4">
+                    {para}
+                  </p>
+                ))}
+              </FloatUpText>
+            </div>
 
-      {/* ===== ABOUT SECTION ===== */}
-      <div className="bg-white py-20     ">
-        <div className="max-w-6xl px-6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 tems-center">
-
-          <div className="relative">
-
-           {/* text above circle */}
-    {project.title === "Shreyas Sunrise" ? (
-  <AnimatedHeading className="relative z-10   mb-4 md:mb-8 section-heading">
-      
-        This project is strategically located very close to 
-        Bengaluru's fast developing satellite township
-      </AnimatedHeading>
-    ) : (
-       <AnimatedHeading className="relative z-10 mb-4 md:mb-8 section-heading">
-
-        Signature spaces crafted {'\n'} for modern living.
-  </AnimatedHeading>
-    )}
-
-
-          {project.title === "Shreyas Sunrise" ? (
-  <FloatUpText className="text-base ">
-    <p className="            leading-relaxed mb-4">
-      Shreyas Sunrise is developed by Shreyas Properties, a company with a passionate approach towards creating infrastructure and living spaces that add beauty to life.
-    </p>
-
-    <p className="            leading-relaxed mb-4">
-      This project is strategically located very close to Bengaluru's fast developing satellite township of Nandagudi and is just a few minutes away from Devanahalli.
-    </p>
-
-    <p className="            leading-relaxed mb-4">
-      The widening of roads and future connectivity through the planned Peripheral Ring Road, along with the elevated expressway to the airport and the high-speed rail link, has made this area one of the most sought-after destinations.
-    </p>
-
-    <p className="            leading-relaxed">
-      This is an opportunity that speaks for itself. Its location, as you will soon see, is the key.
-    </p>
-  </FloatUpText>
-) : (
-   <FloatUpText className="text-base">
-    <p className="            leading-relaxed mb-4">
-      Modern Profound Tech Park is a prominent commercial property located in Kondapur, Hyderabad, with a landmark beside Sarath City Mall. Designed for modern businesses, this premium office complex provides spacious and skilfully designed commercial spaces suitable for IT, corporate offices, and startups alike. The project reflects a blend of functionality and modern architecture, offering an environment that fosters productivity and professional growth.
-    </p>
-
-    <p className="            leading-relaxed">
-      The building enjoys excellent connectivity and a prime location surrounded by leading companies like Capita, TCS, Cognizant, and HSBC. With seamless access to public transportation, proximity to restaurants, hotels, and retail hubs, and in-house dedicated parking, this tech park ensures a comfortable and business-friendly ecosystem for its occupants.
-    </p>
-  </FloatUpText>
-)}
-
-          </div>
-
-          <div className="overflow-hidden ">
             <RevealImageAnimation
-              image="/family.webp"
+              image={project.about.image}
               className="w-full h-[350px] md:h-[600px] object-cover"
             />
           </div>
+        </section>
+      )}
 
 
+      {/* ================= AMENITIES SECTION ================= */}
+      {project.amenities && (
+        <section
+          className="relative w-full bg-cover bg-center md:bg-fixed"
+          style={{ backgroundImage: `url(${project.amenities.background})` }}
+        >
+          <div className="absolute inset-0 bg-black/65" />
 
-        </div>
-      </div>
+          <div className="relative z-10 max-w-6xl mx-auto px-6 py-24">
+            <AnimatedHeading className="section-heading text-white text-center pb-20">
+              {project.amenities.title}
+            </AnimatedHeading>
 
-{project.title !== "Shreyas Sunrise" && (
-  <section
-    className="
-      relative 
-      w-full  h-fit
-      lg:h-screen 
-      bg-center 
-      bg-cover 
-      bg-no-repeat
-      md:bg-fixed px-6
-      overflow-hidden
-    "
-    style={{ backgroundImage: "url(/hotel.webp)" }}
-  >
-    <div className="absolute inset-0 bg-black/65" />
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-y-16 text-center text-white">
+              {project.amenities.items.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col items-center gap-5"
+                >
+                  {/* ICON */}
+                  <img
+                    src={item.icon}
+                    alt=""
+                    className="w-12 h-12 md:w-16 md:h-16 object-contain invert"
+                  />
 
-    <div className="relative z-10 max-w-6xl mx-auto px-0 py-24 md:h-full flex flex-col md:justify-center">
-
-    <AnimatedHeading className="section-heading pb-32 text-center text-white">
-  Key Features and Amenities
-</AnimatedHeading>
-
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-y-16 text-center text-white">
-        {[
-          { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
-          { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
-          { icon: "/c.svg", text: "In-house parking for employees and visitors" },
-          { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
-          { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
-          { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
-        ].map((item, i) => (
-          <div key={i} className="flex flex-col items-center gap-5 ">
-            <img
-              src={item.icon}
-              className="w-12 h-12 md:w-16 md:h-16 object-contain invert"
-              alt=""
-            />
-            <p className="  px-4   text-sm lg:text-base leading-snug max-w-[240px]">
-              {item.text}
-            </p>
+                  {/* TEXT */}
+                  <p className="px-4 text-sm lg:text-base leading-snug max-w-[240px]">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-
-    </div>
-  </section>
-)}
+        </section>
+      )}
 
 
-      {/* ===== LOCATION & BUSINESS ADVANTAGES ===== */}
-      <div className="  bg-[#F4EFE5] py-20 ">
-        <div className="max-w-6xl px-6 mx-auto ">
 
-          {/* Heading aligned to image left edge */}
-         <AnimatedHeading className="section-heading mb-4 md:mb-8">
-  {project.title === "Shreyas Sunrise"
-    ? "Facilities & Amentities"
-    : "Location and Business Advantages"}
-</AnimatedHeading>
+      {/* ================= ADVANTAGES ================= */}
+      {project.advantages && (
+        <section className="bg-[#F4EFE5] py-20">
+          <div className="max-w-6xl mx-auto px-6">
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <AnimatedHeading className="section-heading mb-8">
+              {project.advantages.title}
+            </AnimatedHeading>
 
-            {/* LEFT IMAGE – no rounding, no shadow, exact frame */}
-            <div>
+            <div className="grid md:grid-cols-2 gap-16 items-start">
+
               <RevealImageAnimation
-                image="/swimmingpool.webp"
-                className="w-full md:w-auto h-[300px] md:h-[500px] object-cover"
+                image={project.advantages.image}
+                className="w-full h-[300px] md:h-[500px] object-cover"
               />
 
-            </div>
-
-            {/* RIGHT CONTENT – bullets start from image top */}
-            <div className="pt-1 text-base">
-             <ul className="space-y-4       ">
-  {project.title === "Shreyas Sunrise" ? (
-    <>
-      <li className="flex  item-center gap-2"><span className=" text-base">›</span> Swimming pool</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Overhead storage tanks for water</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Playground for children</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Basketball court, tennis court & cricket practice net</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Space for commercial complex & schools</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Clubhouse with library, yoga & aerobics room</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Spa & Multi-Gym</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Plot sizes: 30x40, 30x50, 40x50, 40x60 & 60x80</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Well-designed arch</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Eco-friendly environment</li>
-    </>
-  ) : (
-    <>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Situated in Kondapur, beside Sarath City Mall, a major IT corridor</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Surrounded by Capita, TCS, Cognizant, and HSBC</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Excellent public transport connectivity with bus and cabs</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Easy access to malls, eateries, and business support services</li>
-      <li className="flex item-center gap-2"><span className=" text-base">›</span> Ideal for IT companies, startups, and corporate offices</li>
-      <li className="flex  items-center gap-2"><span className="text-base">›</span> Looking for a prestigious business address</li>
-    </>
-  )}
-</ul>
+              <ul className="space-y-4 text-base">
+                {project.advantages.items.map((item, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span>›</span> {item}
+                  </li>
+                ))}
+              </ul>
 
             </div>
-
           </div>
-        </div>
-      </div>
-
+        </section>
+      )}
 
     </div>
   );
 };
 
 export const ShreyasSunriseDetails = ({ project, onBack }) => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="w-full bg-white">
 
-      {/* SECTION 1 – SAME AS ProjectDetails TOP */}
-      <ProjectDetails project={project} onBack={onBack} />
+      {/* COMMON TOP SECTION */}
+      <ProjectDetailsContent project={project} onBack={onBack} />
 
-  
-<div className="bg-white py-20">
-  <div className="max-w-6xl   mx-auto px-6 lg:px-6">
+      {/* ================= ABOUT SHREYAS SUNRISE ================= */}
+      <section className="bg-white py-20">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-  <AnimatedHeading className="section-heading  mb-4 md:mb-8">
-  {project.title === "Shreyas Sunrise" ? "Location Advantages" : "Section Title"}
-</AnimatedHeading>
+          <div>
+            <AnimatedHeading className="section-heading mb-8">
+              This project is strategically located very close to <br />
+              Bengaluru&apos;s fast developing satellite township
+            </AnimatedHeading>
 
+            <FloatUpText className="text-base leading-relaxed space-y-4">
+              <p>
+                Shreyas Sunrise is developed by Shreyas Properties, a company with
+                a passionate approach towards creating infrastructure and living
+                spaces that add beauty to life.
+              </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+              <p>
+                This project is strategically located very close to Bengaluru's
+                fast developing satellite township of Nandagudi and is just a
+                few minutes away from Devanahalli.
+              </p>
 
-      {/* CONTENT LEFT */}
-      <div className="pt-1 md:order-1 text-base ">
-       <ul className="space-y-4       ">
-  {project.title === "Shreyas Sunrise" && (
-    <>
-      <li className="flex  items-center gap-2"><span>›</span> Attached to State Highway 35</li>
-      <li className="flex  items-center gap-2"><span>›</span> Approx 20 mins away from the International Airport</li>
-      <li className="flex  items-center gap-2"><span>›</span> Approx 15 mins from AERO SEZ Devanahalli IT Park (SAP Labs, Boeing, Wipro, Mahindra, Shell, etc.)</li>
-      <li className="flex  items-center gap-2"><span>›</span> Approx 20 mins drive to Narasapura Industrial Area (Apple, Honda, Scania, Volvo, Triumph, etc.)</li>
-      <li className="flex  items-center gap-2"><span>›</span> Approx 15 mins from Vemgal Industrial Area (GSK, Mitsubishi, TATA Motors, etc.)</li>
-      <li className="flex  items-center gap-2"><span>›</span> Approx 15 mins from Devanahalli Old Jain Temple</li>
-      <li className="flex  items-center gap-2"><span>›</span> Approx 10 mins from Nandagudi SEZ</li>
-      <li className="flex  items-center gap-2"><span>›</span> 20 mins from Hoskote</li>
-      <li className="flex  items-center gap-2"><span>›</span> 40 mins from ITPL</li>
-      <li className="flex  items-center gap-2"><span>›</span> Approx 10 mins from Cargo Road</li>
-      <li className="flex  items-center gap-2"><span>›</span> Approx 5 mins from Central University of North Bengaluru</li>
-    </>
-  )}
-</ul>
+              <p>
+                The widening of roads and future connectivity through the planned
+                Peripheral Ring Road, along with the elevated expressway to the
+                airport and the high-speed rail link, has made this area one of
+                the most sought-after destinations.
+              </p>
 
-      </div>
+              <p>
+                This is an opportunity that speaks for itself. Its location, as
+                you will soon see, is the key.
+              </p>
+            </FloatUpText>
+          </div>
 
-      {/* IMAGE RIGHT – same animation & spacing */}
-      <div className="md:order-2 ">
-        <RevealImageAnimation
-          image="/sunrise.webp"
-          className="w-full md:w-full h-[300px] md:h-[500px] object-cover"
+          <RevealImageAnimation
+            image="/family.webp"
+            className="h-[350px] md:h-[600px] object-cover"
+          />
+        </div>
+      </section>
+
+      {/* ================= LOCATION ADVANTAGES ================= */}
+      <section className="bg-white py-20">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+
+          <div>
+            <AnimatedHeading className="section-heading mb-8">
+              Location Advantages
+            </AnimatedHeading>
+
+            <ul className="space-y-4 text-base leading-relaxed">
+              <li>› Attached to State Highway 35</li>
+              <li>› Approx 20 mins away from the International Airport</li>
+              <li>› Approx 15 mins from AERO SEZ Devanahalli IT Park (SAP Labs, Boeing, Wipro, Mahindra, Shell, etc.)</li>
+              <li>› Approx 20 mins drive to Narasapura Industrial Area (Apple, Honda, Scania, Volvo, Triumph, etc.)</li>
+              <li>› Approx 15 mins from Vemgal Industrial Area (GSK, Mitsubishi, TATA Motors, etc.)</li>
+              <li>› Approx 15 mins from Devanahalli Old Jain Temple</li>
+              <li>› Approx 10 mins from Nandagudi SEZ</li>
+              <li>› 20 mins from Hoskote</li>
+              <li>› 40 mins from ITPL</li>
+              <li>› Approx 10 mins from Cargo Road</li>
+              <li>› Approx 5 mins from Central University of North Bengaluru</li>
+            </ul>
+          </div>
+
+          <RevealImageAnimation
+            image="/sunrise.webp"
+            className="h-[500px] object-cover rounded-xl"
+          />
+        </div>
+      </section>
+
+      {/* ================= LOCATION & BUSINESS ADVANTAGES ================= */}
+      <section className="bg-[#F5F2EF] py-20">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+
+          <RevealImageAnimation
+            image="/business.webp"
+            className="h-[500px] object-cover rounded-xl"
+          />
+
+          <ul className="space-y-4 text-base leading-relaxed">
+            <li>
+              <strong>Bengaluru Aerospace SEZ:</strong> 950-acre Bengaluru Aerospace Park including
+              250-acre SEZ has attracted investments from 56 companies.
+            </li>
+
+            <li>
+              <strong>Bengaluru University:</strong> Bengaluru North University proposed at
+              Jangamakote (Sidlaghatta taluk).
+            </li>
+
+            <li>
+              <strong>Devanahalli Business Park:</strong> 413-acre park expecting $2.2B investment.
+            </li>
+
+            <li>
+              <strong>Narsapura Industrial Area:</strong> 700.75 acres, abutting NH-4.
+            </li>
+
+            <li>
+              <strong>Vemgal Industrial Area:</strong> 666 acres on SH-96.
+            </li>
+
+            <li>
+              <strong>International Convention Centre:</strong> Proposed near Bengaluru Airport.
+            </li>
+
+            <li>
+              <strong>Devanahalli–Kolar Road (SH-96):</strong> Expansion from 2 to 6 lanes.
+            </li>
+          </ul>
+
+        </div>
+      </section>
+
+      {/* ================= LAYOUT PLAN ================= */}
+      <section className="bg-white py-20 px-6 max-w-6xl mx-auto">
+        <AnimatedHeading className="section-heading mb-10">
+          Layout Plan
+        </AnimatedHeading>
+
+        <img
+          src="/layoutplan.webp"
+          className="w-full object-contain border"
         />
-      </div>
+      </section>
 
-    </div>
-  </div>
-</div>
+      {/* ================= LOCATION MAP ================= */}
+      <section className="bg-white pb-20 px-6 max-w-6xl mx-auto">
+        <AnimatedHeading className="section-heading mb-10">
+          Location Map
+        </AnimatedHeading>
 
-
-
-
-{/* EXTRA Location & Business Advantages (SAME DESIGN, IMAGE LEFT) */}
-<div className="bg-[#F5F2EF] py-20 ">
-  <div className="max-w-6xl  mx-auto px-6 lg:px-6">
-
-    <AnimatedHeading className="section-heading mb-4 md:mb-8">
-      Location and Business Advantages
-    </AnimatedHeading>
-
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start">
-
-      {/* IMAGE LEFT (same animation) */}
-      <div className="md:order-1 md:mx-auto lg:mx-0">
-        <RevealImageAnimation
-          image="/business.webp"
-          className="w-full md:w-[480px] h-[300px] md:h-[500px] object-cover"
+        <img
+          src="/locationmap.webp"
+          className="w-full object-contain border"
         />
-      </div>
-
-      {/* CONTENT RIGHT (same bullets, same style) */}
-      <div className="pt-1 md:order-2">
-{project.title === "Shreyas Sunrise" && (
-  <ul className="space-y-4       ">
-    <li className="flex  items-center gap-2">
-      <span className="text-base  leading-none">›</span>
-      <p><strong>Bengaluru Aerospace SEZ:</strong> 950-acre Bengaluru Aerospace Park including 250-acre special economic zone (SEZ) has attracted investments from 56 large and mid-sized companies.</p>
-    </li>
-
-    <li className="flex  items-center gap-2">
-      <span className="text-base  leading-none">›</span>
-      <p><strong>Bengaluru University:</strong> Bengaluru North University would be established as an affiliating university with headquarters at Jangamakote (Sidlaghatta taluk).</p>
-    </li>
-
-    <li className="flex  items-center gap-2">
-      <span className="text-base  leading-none">›</span>
-      <p><strong>Devanahalli Business Park:</strong> 413-acre Devanahalli Business Park expects to attract an investment of $2.2 billion over the next three to five years.</p>
-    </li>
-
-    <li className="flex  items-center gap-2">
-      <span className="text-base  leading-none">›</span>
-      <p><strong>Narsapura Industrial Area:</strong> Developed over 700.75 acres, abutting NH-4, 15 Km from Kolar and 55 Km from Bengaluru.</p>
-    </li>
-
-    <li className="flex  items-center gap-2">
-      <span className="text-base  leading-none">›</span>
-      <p><strong>Vemgal Industrial Area:</strong> Located on SH-96, about 10 Km from Narasapura & Jakkasandra Industrial Area, covering 666 acres.</p>
-    </li>
-
-    <li className="flex  items-center gap-2">
-      <span className="text-base  leading-none">›</span>
-      <p><strong>International Convention Centre:</strong> Proposed on 35 acres next to Bengaluru International Airport under PPP model.</p>
-    </li>
-
-    <li className="flex  items-center gap-2">
-      <span className="text-base  leading-none">›</span>
-      <p><strong>Devanahalli–Kolar Road (SH-96):</strong> Being widened from 2 to 6 lanes to support airport and real estate growth.</p>
-    </li>
-  </ul>
-)}
-
-
-
-      </div>
-
-    </div>
-  </div>
-</div>
-
-{project.title === "Shreyas Sunrise" && (
-  <>
-    {/* LAYOUT PLAN */}
-{/* LAYOUT PLAN */}
-<section className="bg-white py-20 px-6 max-w-6xl mx-auto">
-  <AnimatedHeading className=" section-heading mb-10">
-    Layout Plan
-  </AnimatedHeading>
-
-  <FloatUpText className="max-w-6xl mx-auto px-0 border-2 border-black">
-    <div className="overflow-hidden">
-      <img
-        src="/layoutplan.webp"
-        className="w-full   object-contain"
-      />
-    </div>
-  </FloatUpText>
-</section>
-
-{/* LOCATION MAP */}
-<section className="bg-white pb-20 px-6 max-w-6xl mx-auto">
-  <AnimatedHeading className=" section-heading mb-10">
-    Location Map
-  </AnimatedHeading>
-
- <FloatUpText className="max-w-[1120px] mx-auto px-0 border-2 border-black">
-    <div className="overflow-hidden">
-      <img
-        src="/locationmap.webp"
-        className="w-full object-contain"
-      />
-    </div>
-  </FloatUpText>
-</section>
-
-
-  </>
-)}
-
-
+      </section>
 
     </div>
   );
 };
+
+
+
+
+export default ProjectDetailsPage;

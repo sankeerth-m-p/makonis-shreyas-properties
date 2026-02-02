@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/footer.jsx";
 import OurStory from "./pages/OurStory.jsx";
 import Projects from "./pages/Projects.jsx";
+import ProjectDetails from "./pages/ProjectDetails.jsx";
 import Blogs from "./pages/Blogs.jsx";
 import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home/Home.jsx";
@@ -107,6 +108,23 @@ const isMobile = window.matchMedia("(max-width: 1020px)").matches;
                 </motion.div>
               }
             />
+ <Route
+  path="/projects/:slug"
+  element={
+    <motion.div
+      custom={direction}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={pageTransition}
+    >
+      <ProjectDetails />
+    </motion.div>
+  }
+/>
+
+
             <Route
               path="/media-center/*"
               element={
