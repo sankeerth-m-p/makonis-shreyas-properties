@@ -22,9 +22,8 @@ const projectsData = [
       heading: "Modern commercial spaces built for visibility and growth.",
       image: "/family.webp",
       text: [
-        "Modern View is developed to meet the needs of small and mid-sized businesses.",
-        "The project focuses on accessibility, efficient layouts, and long-term value.",
-        "Ideal for offices, retail outlets, and professional services.",
+        "Chourasia Shreyas is a well-planned commercial project located in the prime locality of Marathahalli, Bangalore. Designed with modern architecture and functionality, it caters to businesses looking for a strategic location with high visibility and easy connectivity. Its smart design ensures that both businesses and visitors enjoy a convenient and professional environment..",
+        "The project benefits from its strategic placement in one of Bangalore’s most vibrant and well-connected localities. Marathahalli is known for its proximity to IT hubs, tech parks, residential neighborhoods, and major road networks like Outer Ring Road and Old Airport Road, making it an ideal choice for retail, office, and service-based businesses.",
       ],
     },
 
@@ -32,12 +31,12 @@ const projectsData = [
       background: "/hotel.webp",
       title: "Key Features & Amenities",
       items: [
-        { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
-        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
-        { icon: "/c.svg", text: "In-house parking for employees and visitors" },
-        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
-        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
-        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+       { icon: "/a.svg", text: "Spacious commercial units suitable for offices, showrooms, or retail outlets" },
+        { icon: "/b.svg", text: "24/7 security and CCTV surveillance for a safe business environment" },
+        { icon: "/c.svg", text: "Ample parking space for visitors and occupants" },
+        { icon: "/d.svg", text: "High visibility from main roads to attract footfall and customers" },
+        { icon: "/e.svg", text: "Power backup and modern lift facilities for smooth operations" },
+        { icon: "/f.svg", text: "Rainwater harvesting and eco-friendly infrastructure" },
       ],
     },
 
@@ -46,9 +45,11 @@ const projectsData = [
       image: "/swimmingpool.webp",
       title: "Strategic Advantages",
       items: [
-        "Located in a busy commercial zone",
-        "Easy access to Outer Ring Road",
-        "Surrounded by residential communities",
+    "Situated in Marathahalli’s prime commercial hub",
+"Close to IT parks, business centers, and corporate offices",
+"High footfall from nearby residential communities and tech employees",
+"Easy connectivity to Whitefield, Bellandur, and Outer Ring Road",
+"Ideal for startups, retail businesses, and professional offices",
       ],
     },
   },
@@ -102,19 +103,18 @@ const projectsData = [
     },
   }, {
     slug: "modern-profound-tech-park",
-    title: "Nature’s Sign",
-    location: "Devanahalli, Bengaluru",
+    title: "Modern Profound Tech Park",
+    location: "Kondapur, Hyderabad",
     status: "Completed",
-    image: "/Home/royalEnclave.webp",
+    image: "/Home/profoundInfra.webp",
     logo: "/modern_propound_logo.webp",
 
     about: {
       heading: "A contemporary workspace designed for growing enterprises.",
       image: "/family.webp",
       text: [
-        "Modern Profound Tech Park offers premium commercial spaces tailored for IT firms and corporate offices.",
-        "The project blends smart design with functionality to support efficient business operations.",
-        "Its professional environment encourages innovation, collaboration, and long-term growth.",
+        "Modern Profound Tech Park is a prominent commercial property located in Kondapur, Hyderabad, with a landmark beside Satyam. Designed for modern businesses, this premium office complex provides spacious and skillfully designed commercial spaces suitable for IT, corporate offices, and startups alike. The project reflects a blend of functionality and modern architecture, offering an environment that fosters productivity and professional growth.",
+        "The building enjoys excellent connectivity and a prime location surrounded by leading companies like Capitol IQ, TCS, Cognizant, and HSBC. With seamless access to public transportation, proximity to restaurants, hotels, and retail hubs, and in-house dedicated parking, this tech park ensures a comfortable and business-friendly ecosystem for its occupants.",
       ],
     },
 
@@ -136,10 +136,11 @@ const projectsData = [
       image: "/swimmingpool.webp",
       title: "Location & Business Advantages",
       items: [
-        "Located in Kondapur, a major IT corridor",
-        "Surrounded by leading tech companies",
-        "Excellent connectivity via public transport",
-        "Close to hotels, restaurants, and retail hubs",
+        "Situated in Kondapur, beside Satyam, a major IT corridor",
+        "Surrounded by Capitol IQ, TCS, Cognizant, and HSBC",
+        "Excellent public transport connectivity via bus and cabs",
+        "Easy access to malls, eateries, and business support services",
+        "Ideal for IT companies, startups, and corporate offices looking for a prestigious address",
       ],
     },
   },
@@ -156,9 +157,8 @@ const projectsData = [
       heading: "Thoughtfully planned homes in a thriving urban neighborhood.",
       image: "/family.webp",
       text: [
-        "Royal Enclave is crafted for families seeking comfort and convenience.",
-        "The project offers well-designed living spaces with a focus on quality construction.",
-        "Located close to key business hubs, it balances lifestyle and connectivity.",
+        "Royal Enclave is an ultimate reflection of the urban chic lifestyle located in the vibrant neighborhood of Marathahalli, Bangalore. This residential project offers exclusively designed apartments that embody elegance, simplicity, and comfort. With thoughtfully planned interiors and quality construction, it is tailored for modern families seeking a stylish yet peaceful living experience.",
+        " The project is inspiring in design and surrounded by lush greenery, providing a calm escape from the city’s hustle while keeping you close to urban conveniences. Strategically positioned in Marathahalli, Royal Enclave allows residents to enjoy quick connectivity to Outer Ring Road, Whitefield, and IT hubs, making it an excellent choice for working professionals.",
       ],
     },
 
@@ -166,23 +166,26 @@ const projectsData = [
       background: "/hotel.webp",
       title: "Key Features & Amenities",
       items: [
-        { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
-        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
-        { icon: "/c.svg", text: "In-house parking for employees and visitors" },
-        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
-        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
-        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+        { icon: "/a.svg", text: "Spacious 2BHK & 3BHK residential apartments" },
+//        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
+        { icon: "/c.svg", text: "Dedicated parking facilities for residents and visitors" },
+        { icon: "/d.svg", text: "Landscaped gardens and green surroundings" },
+        { icon: "/e.svg", text: "Power backup for uninterrupted living" },
+        { icon: "/f.svg", text: "Children’s play area and recreational spaces" },
+        { icon: "/f.svg", text: "Rainwater harvesting and eco-friendly infrastructure" },
       ],
     },
 
 
     advantages: {
       image: "/swimmingpool.webp",
-      title: "Location Benefits",
+      title: "Locality & Lifestyle Advantages",
       items: [
-        "Close to IT parks and workplaces",
-        "Easy access to Outer Ring Road",
-        "Nearby schools, hospitals, and malls",
+"Located in Marathahalli’s prime residential zone" ,
+"Close to renowned schools, colleges, and educational institutes",
+"Easy access to hospitals, malls, and supermarkets",
+"Proximity to tech parks and major IT corridors",
+"Perfect balance of peaceful community living and urban convenience",
       ],
     },
   },
@@ -192,16 +195,16 @@ const projectsData = [
     title: "Paradise",
     location: "Vignan Nagar, Bangalore",
     status: "Completed",
-    image: "/Home/royalEnclave.webp",
-    logo: "/royalenclave.webp",
+    image: "/Home/SandsParadiseVignanNagar_enhanced.webp",
+    logo: "/Paradise.webp",
 
     about: {
       heading: "Comfortable residences built for peaceful city living.",
       image: "/family.webp",
       text: [
-        "Paradise is a residential project designed for calm and secure living.",
-        "The project emphasizes space optimization and natural ventilation.",
-        "Ideal for families looking for a quiet yet well-connected locality.",
+        "Paradise, located in Vignana Nagar, Bangalore, is precisely planned for the modern city dweller.Designed to provide a pollution-free living environment, this residential community is surrounded by wide open spaces that offer not just the luxury of space, but also peace of mind.. Every corner of this development reflects careful planning to balance urban convenience with serene living. ",
+        "The project is strategically located, placing residents in close proximity to schools, shopping centers, hospitals, and entertainment hubs. Whether it’s daily essentials, healthcare, or leisure activities, everything is just a short drive away, making Paradise a perfect choice for families and professionals seeking comfort and convenience.",
+       
       ],
     },
 
@@ -209,12 +212,13 @@ const projectsData = [
       background: "/hotel.webp",
       title: "Key Features & Amenities",
       items: [
-        { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
+        { icon: "/a.svg", text: "Spacious 2BHK and 3BHK luxury apartments" },
         { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
         { icon: "/c.svg", text: "In-house parking for employees and visitors" },
-        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
-        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
-        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+        { icon: "/d.svg", text: "Landscaped gardens and green surroundings" },
+        { icon: "/e.svg", text: "Power backup for all common areas and lifts" },
+        { icon: "/f.svg", text: "Children’s play area and recreational spaces" },
+    //     { icon: "/f.svg", text: "Rainwater harvesting and eco-friendly design" },
       ],
     },
 
@@ -223,72 +227,73 @@ const projectsData = [
       image: "/swimmingpool.webp",
       title: "Connectivity Advantages",
       items: [
-        "Located in a developed residential area",
-        "Close to Old Airport Road",
-        "Good access to public transportation",
+       "Located in a peaceful and pollution-free environment",
+"Surrounded by beautiful natural spots for a refreshing lifestyle",
+"Close to schools, hospitals, malls, and entertainment avenues",
+"Well-connected to IT hubs and key areas of East Bangalore",
+"Ideal for those seeking modern living with a community feel",
       ],
     },
   },
 
-  {
-    slug: "chourasia-shreyas",
-    title: "Chourasia Shreyas",
-    location: "Marathahalli, Bangalore",
-    status: "Completed",
-    image: "/Home/royalEnclave.webp",
-    logo: "/royalenclave.webp",
+//   {
+//     slug: "chourasia-shreyas",
+//     title: "Chourasia Shreyas",
+//     location: "Marathahalli, Bangalore",
+//     status: "Completed",
+//     image: "/Home/royalEnclave.webp",
+//     logo: "/royalenclave.webp",
 
-    about: {
-      heading: "A smart commercial destination in a high-demand business zone.",
-      image: "/family.webp",
-      text: [
-        "Chourasia Shreyas is a commercial project designed for modern businesses.",
-        "The structure supports offices, showrooms, and service-based enterprises.",
-        "Its design ensures visibility, accessibility, and professional appeal.",
-      ],
-    },
+//     about: {
+//       heading: "A smart commercial destination in a high-demand business zone.",
+//       image: "/family.webp",
+//       text: [
+//         "Chourasia Shreyas is a well-planned commercial project located in the prime locality of Marathahalli, Bangalore. Designed with modern architecture and functionality, it caters to businesses looking for a strategic location with high visibility and easy connectivity. Its smart design ensures that both businesses and visitors enjoy a convenient and professional environment..",
+//         "The project benefits from its strategic placement in one of Bangalore’s most vibrant and well-connected localities. Marathahalli is known for its proximity to IT hubs, tech parks, residential neighborhoods, and major road networks like Outer Ring Road and Old Airport Road, making it an ideal choice for retail, office, and service-based businesses.",
+//       ],
+//     },
 
-    amenities: {
-      background: "/hotel.webp",
-      title: "Key Features & Amenities",
-      items: [
-        { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
-        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
-        { icon: "/c.svg", text: "In-house parking for employees and visitors" },
-        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
-        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
-        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
-      ],
-    },
+//     amenities: {
+//       background: "/hotel.webp",
+//       title: "Key Features & Amenities",
+//       items: [
+//         { icon: "/a.svg", text: "Spacious commercial units suitable for offices, showrooms, or retail outlets" },
+//         { icon: "/b.svg", text: "24/7 security and CCTV surveillance for a safe business environment" },
+//         { icon: "/c.svg", text: "Ample parking space for visitors and occupants" },
+//         { icon: "/d.svg", text: "High visibility from main roads to attract footfall and customers" },
+//         { icon: "/e.svg", text: "Power backup and modern lift facilities for smooth operations" },
+//         { icon: "/f.svg", text: "Rainwater harvesting and eco-friendly infrastructure" },
+//       ],
+//     },
 
 
-    advantages: {
-      image: "/swimmingpool.webp",
-      title: "Business Location Benefits",
-      items: [
-        "Prime location in Marathahalli",
-        "High footfall area",
-        "Close to IT hubs and residential zones",
-        "Excellent road connectivity",
-      ],
-    },
-  },
+//     advantages: {
+//       image: "/swimmingpool.webp",
+//       title: "Location & Business Advantages",
+//       items: [
+// "Situated in Marathahalli’s prime commercial hub",
+// "Close to IT parks, business centers, and corporate offices",
+// "High footfall from nearby residential communities and tech employees",
+// "Easy connectivity to Whitefield, Bellandur, and Outer Ring Road",
+// "Ideal for startups, retail businesses, and professional offices",
+//       ],
+//     },
+//   },
 
   {
     slug: "modern-view-apartment",
     title: "Modern View",
     location: "Marathahalli, Bangalore",
     status: "Completed",
-    image: "/Home/royalEnclave.webp",
-    logo: "/royalenclave.webp",
+    image: "/Home/ModernView.webp",
+    logo: "/ModernView.webp",
 
     about: {
       heading: "Modern commercial spaces built for visibility and growth.",
       image: "/family.webp",
       text: [
-        "Modern View is developed to meet the needs of small and mid-sized businesses.",
-        "The project focuses on accessibility, efficient layouts, and long-term value.",
-        "Ideal for offices, retail outlets, and professional services.",
+        "Nestled amidst a bustling IT corridor, the society offers 32 exclusive homes, fostering a close-knit and family-friendly environment. Its strategic location provides excellent connectivity to Outer Ring Road, Whitefield, and ITPL, making it an ideal choice for working professionals and families alike.",
+        "The society emphasizes comfortable and secure living, ensuring that residents enjoy a peaceful atmosphere while staying connected to urban conveniences. Essential facilities and modern infrastructure make day-to-day life effortless and enjoyable.",
       ],
     },
 
@@ -298,21 +303,24 @@ const projectsData = [
       items: [
         { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
         { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
-        { icon: "/c.svg", text: "In-house parking for employees and visitors" },
-        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
-        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
-        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+        { icon: "/c.svg", text: "Dedicated covered and open parking spaces" },
+        { icon: "/d.svg", text: "Lift facility for easy access to all floors" },
+        { icon: "/e.svg", text: "Power backup for uninterrupted living" },
+        { icon: "/f.svg", text: "Rainwater harvesting and eco-friendly infrastructure" },
+       // { icon: "/f.svg", text: "Landscaped garden and walking areas for relaxation" },
       ],
     },
 
 
     advantages: {
       image: "/swimmingpool.webp",
-      title: "Strategic Advantages",
+      title: "Lifestyle Benefits for Residents",
       items: [
-        "Located in a busy commercial zone",
-        "Easy access to Outer Ring Road",
-        "Surrounded by residential communities",
+      " Children’s play area for recreational activities",
+"Well-maintained party hall for gatherings and events",
+"Close proximity to schools, hospitals, malls, and supermarkets",
+"Easy access to public transportation and nearby IT hubs",
+"Peaceful community living in a low-density environment",
       ],
     },
   },
@@ -395,11 +403,12 @@ const ProjectDetailsContent = ({ project, onBack }) => {
     <div className="w-full bg-white overflow-hidden">
 
       {/* ================= BACK BUTTON ================= */}
-      <div className="max-w-6xl mx-auto px-6 pt-10">
-        <button onClick={onBack} className="btn">
-          <ArrowRight className="w-5 h-5 rotate-180" />
-        </button>
-      </div>
+<div className="max-w-6xl mx-auto px-6 pt-10 hidden md:block">
+  <button onClick={onBack} className="btn">
+    <ArrowRight className="w-5 h-5 rotate-180" />
+  </button>
+</div>
+
 
       {/* ================= TOP INFO ================= */}
       <div className="max-w-6xl mx-auto px-6 py-10">
@@ -559,33 +568,18 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
 
           <div>
             <AnimatedHeading className="section-heading mb-8">
-              This project is strategically located very close to <br />
-              Bengaluru&apos;s fast developing satellite township
+              This project is strategically located very close to Bengaluru’s fast developing satellite township
             </AnimatedHeading>
 
             <FloatUpText className="text-base leading-relaxed space-y-4">
               <p>
-                Shreyas Sunrise is developed by Shreyas Properties, a company with
-                a passionate approach towards creating infrastructure and living
-                spaces that add beauty to life.
+               Shreyas Sunrise is developed by Shreyas properties, a company with a passionate approach towards creating infracture and living space that adds beauty to life.
+This project is strategically located very close to Bengaluru’s fast developing satellite township the Nandagudi and is just a few minutes away from Devanahalli.
               </p>
 
               <p>
-                This project is strategically located very close to Bengaluru's
-                fast developing satellite township of Nandagudi and is just a
-                few minutes away from Devanahalli.
-              </p>
-
-              <p>
-                The widening of roads and future connectivity through the planned
-                Peripheral Ring Road, along with the elevated expressway to the
-                airport and the high-speed rail link, has made this area one of
-                the most sought-after destinations.
-              </p>
-
-              <p>
-                This is an opportunity that speaks for itself. Its location, as
-                you will soon see, is the key.
+The Widening of roads and future connectivity through the planned peripheral ring road, along with the elevated expressway to the airport and the high-speed rail link, has also made this area the most sought-after one.
+This is an opportunity that speaks for itself its location, as you will soon see, is the key.
               </p>
             </FloatUpText>
           </div>
@@ -629,48 +623,93 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
       </section>
 
       {/* ================= LOCATION & BUSINESS ADVANTAGES ================= */}
-      <section className="bg-[#F5F2EF] py-20">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+  {/* ================= LOCATION & BUSINESS ADVANTAGES ================= */}
+<section className="bg-[#F5F2EF] py-20">
+  <div className="max-w-6xl mx-auto px-6">
 
-          <RevealImageAnimation
-            image="/business.webp"
-            className="h-[500px] object-cover rounded-xl"
-          />
+    {/* SECTION HEADING */}
+    <AnimatedHeading className="section-heading mb-14">
+      Location and Business Advantages
+    </AnimatedHeading>
 
-          <ul className="space-y-4 text-base leading-relaxed">
-            <li>
+    {/* CONTENT GRID */}
+    <div className="grid md:grid-cols-2 gap-16 items-start">
+
+      {/* LEFT IMAGE */}
+      <RevealImageAnimation
+        image="/business.webp"
+        className="h-[520px] w-full object-cover rounded-xl"
+      />
+
+      {/* RIGHT CONTENT */}
+      <div>
+        <ul className="space-y-5 text-sm leading-relaxed text-gray-800">
+
+          <li className="flex gap-3">
+            <span className="text-lg leading-none">›</span>
+            <p>
               <strong>Bengaluru Aerospace SEZ:</strong> 950-acre Bengaluru Aerospace Park including
-              250-acre SEZ has attracted investments from 56 companies.
-            </li>
+              a 250-acre Special Economic Zone (SEZ) has attracted investments from 56 large
+              and mid-sized companies.
+            </p>
+          </li>
 
-            <li>
-              <strong>Bengaluru University:</strong> Bengaluru North University proposed at
-              Jangamakote (Sidlaghatta taluk).
-            </li>
+          <li className="flex gap-3">
+            <span className="text-lg leading-none">›</span>
+            <p>
+              <strong>Bengaluru University:</strong> Bengaluru North University would be established
+              as an affiliating university with its headquarters at Jangamakote
+              (Sidlaghatta taluk).
+            </p>
+          </li>
 
-            <li>
-              <strong>Devanahalli Business Park:</strong> 413-acre park expecting $2.2B investment.
-            </li>
+          <li className="flex gap-3">
+            <span className="text-lg leading-none">›</span>
+            <p>
+              <strong>Devanahalli Business Park:</strong> 413-acre Devanahalli Business Park expects
+              to attract an investment of $2.2 billion over the next three to five years.
+            </p>
+          </li>
 
-            <li>
-              <strong>Narsapura Industrial Area:</strong> 700.75 acres, abutting NH-4.
-            </li>
+          <li className="flex gap-3">
+            <span className="text-lg leading-none">›</span>
+            <p>
+              <strong>Narsapura Industrial Area:</strong> Developed over 700.75 acres, abutting NH-4,
+              about 15 km from Kolar and 55 km from Bengaluru.
+            </p>
+          </li>
 
-            <li>
-              <strong>Vemgal Industrial Area:</strong> 666 acres on SH-96.
-            </li>
+          <li className="flex gap-3">
+            <span className="text-lg leading-none">›</span>
+            <p>
+              <strong>Vemgal Industrial Area:</strong> Located on SH-96, about 10 km from
+              Narsapura & Jakkasandra Industrial Area, covering 666 acres.
+            </p>
+          </li>
 
-            <li>
-              <strong>International Convention Centre:</strong> Proposed near Bengaluru Airport.
-            </li>
+          <li className="flex gap-3">
+            <span className="text-lg leading-none">›</span>
+            <p>
+              <strong>International Convention Centre:</strong> Proposed on 35 acres next to
+              Bengaluru International Airport under a PPP model.
+            </p>
+          </li>
 
-            <li>
-              <strong>Devanahalli–Kolar Road (SH-96):</strong> Expansion from 2 to 6 lanes.
-            </li>
-          </ul>
+          <li className="flex gap-3">
+            <span className="text-lg leading-none">›</span>
+            <p>
+              <strong>Devanahalli–Kolar Road (SH-96):</strong> Being widened from 2 to 6 lanes to
+              support airport expansion and real estate growth.
+            </p>
+          </li>
 
-        </div>
-      </section>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* ================= LAYOUT PLAN ================= */}
       <section className="bg-white py-20 px-6 max-w-6xl mx-auto">
