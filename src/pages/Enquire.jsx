@@ -76,28 +76,31 @@ const Enquire = ({ onClose }) => {
         transition={{ duration: 0.25, ease: "easeOut" }}
       > */}
       <motion.div
-        className="relative w-full max-w-6xl bg-white rounded-3xl shadow-2xl p-8 py-20 md:p-32"
+        className="
+    relative w-full max-w-6xl bg-white rounded-3xl shadow-2xl p-6 py-10 md:p-32
+  "
         initial={{ scale: 0.9, y: 40, opacity: 0 }}
         animate={{ scale: 1, y: 0, opacity: 1 }}
         exit={{ scale: 0.9, y: 40, opacity: 0 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
       >
-        <button
-          onClick={onClose}
-          className=" top-5 right-5 md:top-10 z-[999]  absolute md:right-10 "
-        >
-          <X size={36} />
-        </button>
+       <button
+  onClick={onClose}
+  className="absolute top-4 right-4 md:top-10 md:right-10 z-[999]"
+>
+  <X className="w-5 h-5 md:w-9 md:h-9" />
+</button>
+
         <div className="relative  max-w-2xl  mx-auto">
 
 
           {/* Heading */}
-          <h1 className="md:text-3xl text-xl text-center text-black mb-12">
+     <h1 className=" text-base md:text-3xl text-center text-black mb-4 md:mb-12">
             Share query by filling out the form, we will assist you at the earliest.
           </h1>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name Input */}
               <input
@@ -107,8 +110,8 @@ const Enquire = ({ onClose }) => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-6 py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
-              />
+                className="w-full px-5 py-3 md:px-6 md:py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
+              />  
 
               {errors.name && (
                 <p className="text-red-500 text-sm mt-1">
@@ -124,7 +127,7 @@ const Enquire = ({ onClose }) => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-6 py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
+                className="w-full px-5 py-3 md:px-6 md:py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
               />
             </div>
 
@@ -138,7 +141,7 @@ const Enquire = ({ onClose }) => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
+                  className="w-full px-5 py-3 md:px-6 md:py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
                 />
 
                 {errors.phone && (
@@ -156,7 +159,7 @@ const Enquire = ({ onClose }) => {
                 value={formData.message}
                 onChange={handleChange}
                 rows="1"
-                className="w-full px-6 py-4 bg-[#f2f2f2] rounded-3xl text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black resize-none"
+                className="w-full px-5 py-3 md:px-6 md:py-4 bg-[#f2f2f2] rounded-3xl text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black resize-none"
               ></textarea>
             </div>
 

@@ -7,17 +7,17 @@ const SignatureSpaces = ({ sections }) => {
 
   // Default sections if none provided
 const defaultSections = [
+  // {
+  //   number: '01',
+  //   location: 'Kondapur, Hyderabad',
+  //   title: 'Modern Profound Tech Park',
+  //   slug: 'modern-profound-tech-park',
+  //   description: 'A state-of-the-art tech park designed for innovation...',
+  //   image: '/Home/profoundInfra.webp',
+  //   bgColor: 'bg-ORANGE'
+  // },
   {
     number: '01',
-    location: 'Kondapur, Hyderabad',
-    title: 'Modern Profound Tech Park',
-    slug: 'modern-profound-tech-park',
-    description: 'A state-of-the-art tech park designed for innovation...',
-    image: '/Home/profoundInfra.webp',
-    bgColor: 'bg-ORANGE'
-  },
-  {
-    number: '02',
     location: 'Marathahalli, Bangalore',
     title: 'Royal Enclave',
     slug: 'royal-enclave',
@@ -26,7 +26,7 @@ const defaultSections = [
     bgColor: 'bg-ORANGE2'
   },
   {
-    number: '03',
+    number: '02',
     location: 'Vignana Nagar, Bangalore',
     title: 'Paradise',
     slug: 'paradise',
@@ -35,7 +35,7 @@ const defaultSections = [
     bgColor: 'bg-ORANGE'
   },
   {
-    number: '04',
+    number: '03',
     location: 'Marathahalli, Bangalore',
     title: 'Chourasia Shreyas',
     slug: 'chourasia-shreyas',
@@ -44,7 +44,7 @@ const defaultSections = [
     bgColor: 'bg-ORANGE2'
   },
   {
-    number: '05',
+    number: '04',
     location: 'Devanahalli, Bangalore',
     title: "Nature's Sign",
     slug: 'natures-sign',
@@ -53,7 +53,7 @@ const defaultSections = [
     bgColor: 'bg-ORANGE'
   },
   {
-    number: '06',
+    number: '05',
     location: 'Marathahalli, Bangalore',
     title: 'Modern View Apartment',
     slug: 'modern-view-apartment',
@@ -62,7 +62,7 @@ const defaultSections = [
     bgColor: 'bg-ORANGE2'
   },
   {
-    number: '07',
+    number: '06',
     location: 'Nandagudi, Bengaluru',
     title: 'Shreyas Sunrise',
     slug: 'shreyas-sunrise',

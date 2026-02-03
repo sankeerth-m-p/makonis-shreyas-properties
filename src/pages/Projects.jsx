@@ -114,7 +114,7 @@ return (
   <div className="max-w-6xl mx-auto px-6 lg:px-6 -mt-14 md:-mt-10 space-y-10">
 
   {/* 1 */}
-<ProjectCard
+{/* <ProjectCard
   noFade
   image="/Home/profoundInfra.webp"
   logo={brandLogo}
@@ -123,7 +123,7 @@ return (
   location="Kondapur, Hyderabad"
   description="Commercial office spaces designed for flexibility"
   onClick={() => navigate("/projects/modern-profound-tech-park")}
-/>
+/> */}
 
 {/* 7 */}
    <ProjectCard

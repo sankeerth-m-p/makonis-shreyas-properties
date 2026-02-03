@@ -101,49 +101,50 @@ const projectsData = [
         "Surrounded by residential communities",
       ],
     },
-  }, {
-    slug: "modern-profound-tech-park",
-    title: "Modern Profound Tech Park",
-    location: "Kondapur, Hyderabad",
-    status: "Completed",
-    image: "/Home/profoundInfra.webp",
-    logo: "/modernpropound.webp",
-
-    about: {
-      heading: "A contemporary workspace designed for growing enterprises.",
-      image: "/family.webp",
-      text: [
-        "Modern Profound Tech Park is a prominent commercial property located in Kondapur, Hyderabad, with a landmark beside Satyam. Designed for modern businesses, this premium office complex provides spacious and skillfully designed commercial spaces suitable for IT, corporate offices, and startups alike. The project reflects a blend of functionality and modern architecture, offering an environment that fosters productivity and professional growth.",
-        "The building enjoys excellent connectivity and a prime location surrounded by leading companies like Capitol IQ, TCS, Cognizant, and HSBC. With seamless access to public transportation, proximity to restaurants, hotels, and retail hubs, and in-house dedicated parking, this tech park ensures a comfortable and business-friendly ecosystem for its occupants.",
-      ],
-    },
-
-    amenities: {
-      background: "/hotel.webp",
-      title: "Key Features & Amenities",
-      items: [
-        { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
-        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
-        { icon: "/c.svg", text: "In-house parking for employees and visitors" },
-        { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
-        { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
-        { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
-      ],
-    },
-
-
-    advantages: {
-      image: "/transport.webp",
-      title: "Location & Business Advantages",
-      items: [
-        "Situated in Kondapur, beside Satyam, a major IT corridor",
-        "Surrounded by Capitol IQ, TCS, Cognizant, and HSBC",
-        "Excellent public transport connectivity via bus and cabs",
-        "Easy access to malls, eateries, and business support services",
-        "Ideal for IT companies, startups, and corporate offices looking for a prestigious address",
-      ],
-    },
   },
+  //  {
+  //   slug: "modern-profound-tech-park",
+  //   title: "Modern Profound Tech Park",
+  //   location: "Kondapur, Hyderabad",
+  //   status: "Completed",
+  //   image: "/Home/profoundInfra.webp",
+  //   logo: "/modernpropound.webp",
+
+  //   about: {
+  //     heading: "A contemporary workspace designed for growing enterprises.",
+  //     image: "/family.webp",
+  //     text: [
+  //       "Modern Profound Tech Park is a prominent commercial property located in Kondapur, Hyderabad, with a landmark beside Satyam. Designed for modern businesses, this premium office complex provides spacious and skillfully designed commercial spaces suitable for IT, corporate offices, and startups alike. The project reflects a blend of functionality and modern architecture, offering an environment that fosters productivity and professional growth.",
+  //       "The building enjoys excellent connectivity and a prime location surrounded by leading companies like Capitol IQ, TCS, Cognizant, and HSBC. With seamless access to public transportation, proximity to restaurants, hotels, and retail hubs, and in-house dedicated parking, this tech park ensures a comfortable and business-friendly ecosystem for its occupants.",
+  //     ],
+  //   },
+
+  //   amenities: {
+  //     background: "/hotel.webp",
+  //     title: "Key Features & Amenities",
+  //     items: [
+  //       { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
+  //       { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
+  //       { icon: "/c.svg", text: "In-house parking for employees and visitors" },
+  //       { icon: "/d.svg", text: "Modern infrastructure with high-speed connectivity" },
+  //       { icon: "/e.svg", text: "Power backup and lift facilities for smooth operations" },
+  //       { icon: "/f.svg", text: "Proximity to restaurants, hotels, and essential services" },
+  //     ],
+  //   },
+
+
+  //   advantages: {
+  //     image: "/transport.webp",
+  //     title: "Location & Business Advantages",
+  //     items: [
+  //       "Situated in Kondapur, beside Satyam, a major IT corridor",
+  //       "Surrounded by Capitol IQ, TCS, Cognizant, and HSBC",
+  //       "Excellent public transport connectivity via bus and cabs",
+  //       "Easy access to malls, eateries, and business support services",
+  //       "Ideal for IT companies, startups, and corporate offices looking for a prestigious address",
+  //     ],
+  //   },
+  // },
 
   {
     slug: "royal-enclave",
