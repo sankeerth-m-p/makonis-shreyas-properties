@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import brandLogo from "/modern_propound_logo.webp";
+import brandLogo from "/modernpropound.webp";
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
 import RevealImageAnimation from "../components/RevealImageAnimation";

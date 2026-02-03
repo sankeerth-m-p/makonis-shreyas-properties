@@ -4,6 +4,7 @@ import mediaImg1 from "/media/media (1).webp";
 import mediaImg2 from "/media/media (2).webp";
 import mediaImg3 from "/media/media (3).webp";
 import mediaImg4 from "/media/media (4).webp";
+import mediaImg5 from "/mediaimg.webp";
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
 
@@ -66,7 +67,7 @@ const MediaList = () => {
         <FloatUpText>
           <div className="grid grid-cols-1  md:grid-cols-5 md:gap-5 gap-y-5 mb-16 items-center">
             <div className="rounded-lg col-span-3 overflow-hidden h-full">
-              <img src={mediaImg1} className="w-full h-full object-cover" />
+              <img src={mediaImg5} className="w-full h-full object-cover" />
             </div>
 
             <div className="bg-ORANGE w-full  col-span-2 rounded-lg p-6 lg:p-16 h-full flex flex-col justify-between">

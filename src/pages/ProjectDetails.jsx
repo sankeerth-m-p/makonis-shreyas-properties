@@ -34,15 +34,15 @@ const projectsData = [
        { icon: "/a.svg", text: "Spacious commercial units suitable for offices, showrooms, or retail outlets" },
         { icon: "/b.svg", text: "24/7 security and CCTV surveillance for a safe business environment" },
         { icon: "/c.svg", text: "Ample parking space for visitors and occupants" },
-        { icon: "/d.svg", text: "High visibility from main roads to attract footfall and customers" },
+        { icon: "/highvisibility.svg", text: "High visibility from main roads to attract footfall and customers" },
         { icon: "/e.svg", text: "Power backup and modern lift facilities for smooth operations" },
-        { icon: "/f.svg", text: "Rainwater harvesting and eco-friendly infrastructure" },
+        { icon: "/harvesting.svg", text: "Rainwater harvesting and eco-friendly infrastructure" },
       ],
     },
 
 
     advantages: {
-      image: "/swimmingpool.webp",
+      image: "/tech.webp",
       title: "Strategic Advantages",
       items: [
     "Situated in Marathahalli’s prime commercial hub",
@@ -107,7 +107,7 @@ const projectsData = [
     location: "Kondapur, Hyderabad",
     status: "Completed",
     image: "/Home/profoundInfra.webp",
-    logo: "/modern_propound_logo.webp",
+    logo: "/modernpropound.webp",
 
     about: {
       heading: "A contemporary workspace designed for growing enterprises.",
@@ -133,7 +133,7 @@ const projectsData = [
 
 
     advantages: {
-      image: "/swimmingpool.webp",
+      image: "/transport.webp",
       title: "Location & Business Advantages",
       items: [
         "Situated in Kondapur, beside Satyam, a major IT corridor",
@@ -169,16 +169,16 @@ const projectsData = [
         { icon: "/a.svg", text: "Spacious 2BHK & 3BHK residential apartments" },
 //        { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
         { icon: "/c.svg", text: "Dedicated parking facilities for residents and visitors" },
-        { icon: "/d.svg", text: "Landscaped gardens and green surroundings" },
+        { icon: "/landscape.svg", text: "Landscaped gardens and green surroundings" },
         { icon: "/e.svg", text: "Power backup for uninterrupted living" },
-        { icon: "/f.svg", text: "Children’s play area and recreational spaces" },
-        { icon: "/f.svg", text: "Rainwater harvesting and eco-friendly infrastructure" },
+        { icon: "/kidsplayarea.svg", text: "Children’s play area and recreational spaces" },
+        { icon: "/harvesting.svg", text: "Rainwater harvesting and eco-friendly infrastructure" },
       ],
     },
 
 
     advantages: {
-      image: "/swimmingpool.webp",
+      image: "/fam.webp",
       title: "Locality & Lifestyle Advantages",
       items: [
 "Located in Marathahalli’s prime residential zone" ,
@@ -215,16 +215,16 @@ const projectsData = [
         { icon: "/a.svg", text: "Spacious 2BHK and 3BHK luxury apartments" },
         { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
         { icon: "/c.svg", text: "In-house parking for employees and visitors" },
-        { icon: "/d.svg", text: "Landscaped gardens and green surroundings" },
+        { icon: "/landscape.svg", text: "Landscaped gardens and green surroundings" },
         { icon: "/e.svg", text: "Power backup for all common areas and lifts" },
-        { icon: "/f.svg", text: "Children’s play area and recreational spaces" },
+        { icon: "/kidsplayarea.svg", text: "Children’s play area and recreational spaces" },
     //     { icon: "/f.svg", text: "Rainwater harvesting and eco-friendly design" },
       ],
     },
 
 
     advantages: {
-      image: "/swimmingpool.webp",
+      image: "/nature.webp",
       title: "Connectivity Advantages",
       items: [
        "Located in a peaceful and pollution-free environment",
@@ -304,16 +304,16 @@ const projectsData = [
         { icon: "/a.svg", text: "Spacious commercial office spaces designed for flexibility" },
         { icon: "/b.svg", text: "24/7 security with CCTV surveillance" },
         { icon: "/c.svg", text: "Dedicated covered and open parking spaces" },
-        { icon: "/d.svg", text: "Lift facility for easy access to all floors" },
-        { icon: "/e.svg", text: "Power backup for uninterrupted living" },
-        { icon: "/f.svg", text: "Rainwater harvesting and eco-friendly infrastructure" },
-       // { icon: "/f.svg", text: "Landscaped garden and walking areas for relaxation" },
+        { icon: "/lift.svg", text: "Lift facility for easy access to all floors" },
+      //  { icon: "/e.svg", text: "Power backup for uninterrupted living" },
+        { icon: "/harvesting.svg", text: "Rainwater harvesting and eco-friendly infrastructure" },
+       { icon: "/landscape.svg", text: "Landscaped garden and walking areas for relaxation" },
       ],
     },
 
 
     advantages: {
-      image: "/swimmingpool.webp",
+      image: "/kids.webp",
       title: "Lifestyle Benefits for Residents",
       items: [
       " Children’s play area for recreational activities",
@@ -590,6 +590,55 @@ This is an opportunity that speaks for itself its location, as you will soon see
           />
         </div>
       </section>
+{/* ================= STRATEGIC LOCATION HIGHLIGHTS ================= */}
+<section className="bg-[#F5F2EF] py-20">
+  <div className="max-w-6xl mx-auto px-6">
+
+    {/* SECTION HEADING */}
+    <AnimatedHeading className="section-heading mb-14">
+     Facilities & Amenities
+    </AnimatedHeading>
+
+    {/* CONTENT GRID */}
+    <div className="grid md:grid-cols-2 gap-16 items-start">
+
+      {/* LEFT IMAGE */}
+      <RevealImageAnimation
+        image="/Gym.jpg"
+        className="h-[520px] w-full object-cover rounded-xl"
+      />
+
+      {/* RIGHT CONTENT */}
+      <div>
+        <ul className="space-y-4 text-base leading-relaxed">
+
+  <li>› Swimming pool</li>
+
+  <li>› Overhead storage tanks for water</li>
+
+  <li>› Playground for children</li>
+
+  <li>› Basketball court, tennis court & cricket practice net</li>
+
+  <li>› Space for commercial complex & schools</li>
+
+  <li>› Clubhouse with library, yoga & aerobics room</li>
+
+  <li>› Spa & multi-gym</li>
+
+  <li>› Plot sizes range from 30×40, 30×50, 40×50, 40×60 & 60×80</li>
+
+  <li>› Well-designed arch</li>
+
+  <li>› Eco-friendly environment</li>
+
+</ul>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* ================= LOCATION ADVANTAGES ================= */}
       <section className="bg-white py-20">
@@ -629,7 +678,7 @@ This is an opportunity that speaks for itself its location, as you will soon see
 
     {/* SECTION HEADING */}
     <AnimatedHeading className="section-heading mb-14">
-      Location and Business Advantages
+    Developments Nearby
     </AnimatedHeading>
 
     {/* CONTENT GRID */}
@@ -637,13 +686,13 @@ This is an opportunity that speaks for itself its location, as you will soon see
 
       {/* LEFT IMAGE */}
       <RevealImageAnimation
-        image="/business.webp"
+        image="/development.webp"
         className="h-[520px] w-full object-cover rounded-xl"
       />
 
       {/* RIGHT CONTENT */}
       <div>
-        <ul className="space-y-5 text-sm leading-relaxed text-gray-800">
+        <ul className="space-y-4 text-base leading-relaxed">
 
           <li className="flex gap-3">
             <span className="text-lg leading-none">›</span>
