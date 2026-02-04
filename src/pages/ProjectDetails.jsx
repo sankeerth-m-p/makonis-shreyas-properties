@@ -1016,8 +1016,8 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
         </AnimatedHeading>
 
         <img
-          src="/layoutplan.webp"
-          className="w-full object-contain border"
+          src="/layoutplan.jpg"
+          className="w-full object-contain "
         />
       </section>
 
@@ -1029,7 +1029,7 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
 
         <img
           src="/locationmap.webp"
-          className="w-full object-contain border"
+          className="w-full object-contain border border-black"
         />
       </section>
 
