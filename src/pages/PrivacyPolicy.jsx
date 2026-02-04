@@ -21,9 +21,7 @@ const PrivacyPolicy = () => {
 
 
 {/* Content */}
-<div className="text-gray-700 space-y-6 md:text-[20px] text-sm leading-relaxed px-2 md:px-0">
-
-
+<div className="text-black space-y-6 text-base leading-relaxed px-2 md:px-0">
 
           <p>
             Your privacy is important to us. It is Shreyas Infra Developers’ policy to respect your privacy regarding any information we may collect from you across our website,
@@ -65,10 +63,10 @@ const PrivacyPolicy = () => {
             </p>
 
             <p className="mt-2">
-              <span className="font-semiboldx">Email:</span> info@shreyasinfradevelopers.com
+              <span className="font-semiboldx">Email:</span> info@shreyasinfra.com
             </p>
             <p>
-              <span className="font-semiboldx">Phone:</span> +91 73377 80808
+              <span className="font-semiboldx">Phone:</span> +91 81518 84545
             </p>
           </div>
 

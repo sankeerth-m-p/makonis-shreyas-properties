@@ -787,7 +787,7 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
       <ProjectDetailsContent project={project} onBack={onBack} />
 
       {/* ================= ABOUT SHREYAS SUNRISE ================= */}
-     <section className="bg-white py-20">
+<section className="bg-white py-20">
   <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
     <div>
@@ -806,18 +806,15 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
           This is an opportunity that speaks for itself its location, as you will soon see, is the key.
         </p>
 
-      
-        {/* ✅ RERA DETAILS */}
-<div className="pt-4">
-  <p className="leading-relaxed">
-    <span className="font-semibold">RERA Number – </span>
-    PRM/KA/RERA/1254/465/PR/181103/002112,&nbsp;
-    PRM/KA/RERA/1254/465/PR/181103/002113,&nbsp;
-    PRM/KA/RERA/1254/465/PR/181103/002114,&nbsp;
-    PRM/KA/RERA/1254/465/PR/181103/002115,&nbsp;
-    PRM/KA/RERA/1254/465/PR/181103/002116
-  </p>
-</div>
+        {/* ✅ RERA DETAILS (same size + animated) */}
+        <p className="text-base leading-relaxed pt-4">
+          <span className="font-semibold">RERA Number – </span>
+          PRM/KA/RERA/1254/465/PR/181103/002112,&nbsp;
+          PRM/KA/RERA/1254/465/PR/181103/002113,&nbsp;
+          PRM/KA/RERA/1254/465/PR/181103/002114,&nbsp;
+          PRM/KA/RERA/1254/465/PR/181103/002115,&nbsp;
+          PRM/KA/RERA/1254/465/PR/181103/002116
+        </p>
 
       </FloatUpText>
     </div>
@@ -828,6 +825,7 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
     />
   </div>
 </section>
+
 
 {/* ================= STRATEGIC LOCATION HIGHLIGHTS ================= */}
 <section className="bg-[#F5F2EF] py-20">
@@ -849,31 +847,22 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
 
       {/* RIGHT CONTENT */}
       <div>
-        <ul className="space-y-4 text-base leading-relaxed">
+  <FloatUpText className="text-base leading-relaxed">
+    <ul className="space-y-4">
+      <li>› Swimming pool</li>
+      <li>› Overhead storage tanks for water</li>
+      <li>› Playground for children</li>
+      <li>› Basketball court, tennis court & cricket practice net</li>
+      <li>› Space for commercial complex & schools</li>
+      <li>› Clubhouse with library, yoga & aerobics room</li>
+      <li>› Spa & multi-gym</li>
+      <li>› Plot sizes range from 30×40, 30×50, 40×50, 40×60 & 60×80</li>
+      <li>› Well-designed arch</li>
+      <li>› Eco-friendly environment</li>
+    </ul>
+  </FloatUpText>
+</div>
 
-  <li>› Swimming pool</li>
-
-  <li>› Overhead storage tanks for water</li>
-
-  <li>› Playground for children</li>
-
-  <li>› Basketball court, tennis court & cricket practice net</li>
-
-  <li>› Space for commercial complex & schools</li>
-
-  <li>› Clubhouse with library, yoga & aerobics room</li>
-
-  <li>› Spa & multi-gym</li>
-
-  <li>› Plot sizes range from 30×40, 30×50, 40×50, 40×60 & 60×80</li>
-
-  <li>› Well-designed arch</li>
-
-  <li>› Eco-friendly environment</li>
-
-</ul>
-
-      </div>
 
     </div>
   </div>
@@ -888,19 +877,22 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
               Location Advantages
             </AnimatedHeading>
 
-            <ul className="space-y-4 text-base leading-relaxed">
-              <li>› Attached to State Highway 35</li>
-              <li>› Approx 20 mins away from the International Airport</li>
-              <li>› Approx 15 mins from AERO SEZ Devanahalli IT Park (SAP Labs, Boeing, Wipro, Mahindra, Shell, etc.)</li>
-              <li>› Approx 20 mins drive to Narasapura Industrial Area (Apple, Honda, Scania, Volvo, Triumph, etc.)</li>
-              <li>› Approx 15 mins from Vemgal Industrial Area (GSK, Mitsubishi, TATA Motors, etc.)</li>
-              <li>› Approx 15 mins from Devanahalli Old Jain Temple</li>
-              <li>› Approx 10 mins from Nandagudi SEZ</li>
-              <li>› 20 mins from Hoskote</li>
-              <li>› 40 mins from ITPL</li>
-              <li>› Approx 10 mins from Cargo Road</li>
-              <li>› Approx 5 mins from Central University of North Bengaluru</li>
-            </ul>
+         <FloatUpText className="text-base leading-relaxed">
+  <ul className="space-y-4">
+    <li>› Attached to State Highway 35</li>
+    <li>› Approx 20 mins away from the International Airport</li>
+    <li>› Approx 15 mins from AERO SEZ Devanahalli IT Park (SAP Labs, Boeing, Wipro, Mahindra, Shell, etc.)</li>
+    <li>› Approx 20 mins drive to Narasapura Industrial Area (Apple, Honda, Scania, Volvo, Triumph, etc.)</li>
+    <li>› Approx 15 mins from Vemgal Industrial Area (GSK, Mitsubishi, TATA Motors, etc.)</li>
+    <li>› Approx 15 mins from Devanahalli Old Jain Temple</li>
+    <li>› Approx 10 mins from Nandagudi SEZ</li>
+    <li>› 20 mins from Hoskote</li>
+    <li>› 40 mins from ITPL</li>
+    <li>› Approx 10 mins from Cargo Road</li>
+    <li>› Approx 5 mins from Central University of North Bengaluru</li>
+  </ul>
+</FloatUpText>
+
           </div>
 
           <RevealImageAnimation
@@ -930,67 +922,70 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
 
       {/* RIGHT CONTENT */}
       <div>
-        <ul className="space-y-4 text-base leading-relaxed">
+     <FloatUpText className="text-base leading-relaxed">
+  <ul className="space-y-4">
 
-          <li className="flex gap-3">
-            <span className="text-lg leading-none">›</span>
-            <p>
-              <strong>Bengaluru Aerospace SEZ:</strong> 950-acre Bengaluru Aerospace Park including
-              a 250-acre Special Economic Zone (SEZ) has attracted investments from 56 large
-              and mid-sized companies.
-            </p>
-          </li>
+    <li className="flex gap-3">
+      <span className="text-lg leading-none">›</span>
+      <p>
+        <strong>Bengaluru Aerospace SEZ:</strong> 950-acre Bengaluru Aerospace Park including
+        a 250-acre Special Economic Zone (SEZ) has attracted investments from 56 large
+        and mid-sized companies.
+      </p>
+    </li>
 
-          <li className="flex gap-3">
-            <span className="text-lg leading-none">›</span>
-            <p>
-              <strong>Bengaluru University:</strong> Bengaluru North University would be established
-              as an affiliating university with its headquarters at Jangamakote
-              (Sidlaghatta taluk).
-            </p>
-          </li>
+    <li className="flex gap-3">
+      <span className="text-lg leading-none">›</span>
+      <p>
+        <strong>Bengaluru University:</strong> Bengaluru North University would be established
+        as an affiliating university with its headquarters at Jangamakote
+        (Sidlaghatta taluk).
+      </p>
+    </li>
 
-          <li className="flex gap-3">
-            <span className="text-lg leading-none">›</span>
-            <p>
-              <strong>Devanahalli Business Park:</strong> 413-acre Devanahalli Business Park expects
-              to attract an investment of $2.2 billion over the next three to five years.
-            </p>
-          </li>
+    <li className="flex gap-3">
+      <span className="text-lg leading-none">›</span>
+      <p>
+        <strong>Devanahalli Business Park:</strong> 413-acre Devanahalli Business Park expects
+        to attract an investment of $2.2 billion over the next three to five years.
+      </p>
+    </li>
 
-          <li className="flex gap-3">
-            <span className="text-lg leading-none">›</span>
-            <p>
-              <strong>Narsapura Industrial Area:</strong> Developed over 700.75 acres, abutting NH-4,
-              about 15 km from Kolar and 55 km from Bengaluru.
-            </p>
-          </li>
+    <li className="flex gap-3">
+      <span className="text-lg leading-none">›</span>
+      <p>
+        <strong>Narsapura Industrial Area:</strong> Developed over 700.75 acres, abutting NH-4,
+        about 15 km from Kolar and 55 km from Bengaluru.
+      </p>
+    </li>
 
-          <li className="flex gap-3">
-            <span className="text-lg leading-none">›</span>
-            <p>
-              <strong>Vemgal Industrial Area:</strong> Located on SH-96, about 10 km from
-              Narsapura & Jakkasandra Industrial Area, covering 666 acres.
-            </p>
-          </li>
+    <li className="flex gap-3">
+      <span className="text-lg leading-none">›</span>
+      <p>
+        <strong>Vemgal Industrial Area:</strong> Located on SH-96, about 10 km from
+        Narsapura & Jakkasandra Industrial Area, covering 666 acres.
+      </p>
+    </li>
 
-          <li className="flex gap-3">
-            <span className="text-lg leading-none">›</span>
-            <p>
-              <strong>International Convention Centre:</strong> Proposed on 35 acres next to
-              Bengaluru International Airport under a PPP model.
-            </p>
-          </li>
+    <li className="flex gap-3">
+      <span className="text-lg leading-none">›</span>
+      <p>
+        <strong>International Convention Centre:</strong> Proposed on 35 acres next to
+        Bengaluru International Airport under a PPP model.
+      </p>
+    </li>
 
-          <li className="flex gap-3">
-            <span className="text-lg leading-none">›</span>
-            <p>
-              <strong>Devanahalli–Kolar Road (SH-96):</strong> Being widened from 2 to 6 lanes to
-              support airport expansion and real estate growth.
-            </p>
-          </li>
+    <li className="flex gap-3">
+      <span className="text-lg leading-none">›</span>
+      <p>
+        <strong>Devanahalli–Kolar Road (SH-96):</strong> Being widened from 2 to 6 lanes to
+        support airport expansion and real estate growth.
+      </p>
+    </li>
 
-        </ul>
+  </ul>
+</FloatUpText>
+
       </div>
 
     </div>

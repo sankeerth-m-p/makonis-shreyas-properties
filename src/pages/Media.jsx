@@ -108,7 +108,7 @@ const MediaList = () => {
         <img src={item.logo} className="h-10 object-contain" />
         <div className="h-8 w-px bg-gray-300"></div>
         <div className="text-sm">
-          <p className="text-gray-500">Published on:</p>
+          <p className="text-black">Published on:</p>
           <p className="font-medium">{item.date}</p>
         </div>
       </div>

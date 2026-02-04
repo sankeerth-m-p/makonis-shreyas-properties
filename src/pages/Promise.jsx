@@ -122,11 +122,11 @@ ScrollTrigger.refresh();
       ><AnimatedHeading className="section-heading   mb-5">
             {title}
           </AnimatedHeading>
-        <p className="text-line text-base text-gray-700 leading-relaxed mb-4 max-w-md">
+        <p className="text-line text-base text-black leading-relaxed mb-4 max-w-md">
           {para1}
         </p>
 
-        <p className="text-line text-base text-gray-600 leading-relaxed max-w-md">
+        <p className="text-line text-base text-black leading-relaxed max-w-md">
           {para2}
         </p>
       </div>

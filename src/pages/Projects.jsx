@@ -60,7 +60,7 @@ const ProjectCard = ({
           </div>
 
           <h3 className="text-2xl">{title}</h3>
-          <p className="text-gray-500 mb-4">{location}</p>
+          <p className="text-black mb-4">{location}</p>
 
           <div className="w-full h-[1px] bg-gray-300 mb-2 md:mb-4" />
 

@@ -1,24 +1,20 @@
 import AnimatedHeading from "../components/animatedHeading";
+
 const TermsOfUse = () => {
   return (
     <div className="bg-white pt-5 pb-24">
-    <div className="max-w-6xl mx-auto px-6 text-gray-700 space-y-6 md:text-[20px] text-sm leading-relaxed">
+      <div className="max-w-6xl mx-auto px-6 text-black space-y-6 text-base leading-relaxed">
 
-
-
-{/* Content */}
-<div className="relative z-10 mx-auto max-w-5xl text-center pt-6 md:pt-0">
-
-  <AnimatedHeading
-    as="h1"
-    delay={0}
-    className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8"
-  >
-Terms Of Use
-  </AnimatedHeading>
-
-
-</div>
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-5xl text-center pt-6 md:pt-0">
+          <AnimatedHeading
+            as="h1"
+            delay={0}
+            className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8"
+          >
+            Terms Of Use
+          </AnimatedHeading>
+        </div>
 
         <p><strong>Effective Date:</strong> April 5, 2025</p>
         <p><strong>Last Updated:</strong> April 5, 2025</p>
@@ -108,8 +104,8 @@ Terms Of Use
         </p>
 
         <p>
-          <strong>Email:</strong> info@shreyasinfradevelopers.com<br />
-          <strong>Phone:</strong> +91 73377 80808
+          <strong>Email:</strong> info@shreyasinfra.com<br />
+          <strong>Phone:</strong> +91 81518 84545
         </p>
 
       </div>
