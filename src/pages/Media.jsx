@@ -4,6 +4,7 @@ import mediaImg1 from "/media/media (1).webp";
 import mediaImg2 from "/media/media (2).webp";
 import mediaImg3 from "/media/media (3).webp";
 import mediaImg4 from "/media/media (4).webp";
+import mediaImg5 from "/mediaimg.webp";
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
 
@@ -13,7 +14,7 @@ const mediaData = [
     id: 1,
     image: mediaImg1,
     logo: "/CNBC.webp",
-    date: "March 06, 2026",
+    date: "March 06, 2024",
     shortTitle: "We are a forward-thinking real estate company driven by the belief that well-designed spaces shape better lives.",
     shortDesc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with...",
     desc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with modern design, sustainability, and customer satisfaction..."
@@ -22,7 +23,7 @@ const mediaData = [
     id: 2,
     image: mediaImg2,
     logo: "/zee.webp",
-    date: "March 06, 2026",
+    date: "Sep 09, 2024",
     shortTitle: "Smart urban communities designed to elevate everyday living experiences.",
     shortDesc: "Our projects integrate sustainable materials, future-ready infrastructure, and intelligent space planning to support modern lifestyles...",
     desc: "Our projects are crafted to enhance urban living by integrating smart planning..."
@@ -31,7 +32,7 @@ const mediaData = [
     id: 3,
     image: mediaImg3,
     logo: "/CNBC.webp",
-    date: "March 06, 2026",
+    date: "May 12, 2025",
     shortTitle: "Future-ready neighborhoods built for growth, comfort, and innovation.",
     shortDesc: "We develop thoughtfully planned communities that promote sustainability, technology integration, and superior living standards...",
     desc: "We develop spaces that prioritize lifestyle, innovation..."
@@ -40,7 +41,7 @@ const mediaData = [
     id: 4,
     image: mediaImg4,
     logo: "/zee.webp",
-    date: "March 06, 2026",
+    date: "Dec 31, 2025",
     shortTitle: "Construction excellence driven by trust, quality, and ethical practices.",
     shortDesc: "Every project follows strict quality control, advanced engineering, and customer-first execution for lasting value...",
     desc: "Our commitment is to deliver excellence through ethical practices..."
@@ -66,7 +67,7 @@ const MediaList = () => {
         <FloatUpText>
           <div className="grid grid-cols-1  md:grid-cols-5 md:gap-5 gap-y-5 mb-16 items-center">
             <div className="rounded-lg col-span-3 overflow-hidden h-full">
-              <img src={mediaImg1} className="w-full h-full object-cover" />
+              <img src={mediaImg5} className="w-full h-full object-cover" />
             </div>
 
             <div className="bg-ORANGE w-full  col-span-2 rounded-lg p-6 lg:p-16 h-full flex flex-col justify-between">
@@ -107,7 +108,7 @@ const MediaList = () => {
         <img src={item.logo} className="h-10 object-contain" />
         <div className="h-8 w-px bg-gray-300"></div>
         <div className="text-sm">
-          <p className="text-gray-500">Published on:</p>
+          <p className="text-black">Published on:</p>
           <p className="font-medium">{item.date}</p>
         </div>
       </div>

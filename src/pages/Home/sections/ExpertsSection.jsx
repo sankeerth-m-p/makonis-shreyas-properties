@@ -186,7 +186,7 @@ setImageRevealedByDefault(true);
                 <div className="w-10 h-10 flex justify-center">
                   <img src="/Home/speak.svg" alt="Diamond icon" />
                 </div>
-                <p className="text-[14px] ">Have any questions?</p>
+                <p className="text-[14px] text-black">Have any questions?</p>
                 <h3 className="text-lg md:text-4xl font-semiboldx mb-4 md:mb-8">
                   Speak with <br /> our experts
                 </h3>
@@ -218,7 +218,7 @@ setImageRevealedByDefault(true);
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 className="flex flex-col gap-4 items-start text-left"
               >
-                <p className="text-[14px] text-gray-600 leading-relaxed max-w-xs">
+                <p className="text-[14px] text-black leading-relaxed max-w-xs">
                   Request a callback for personalized assistance and project
                   details.
                 </p>

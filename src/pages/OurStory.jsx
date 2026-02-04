@@ -87,21 +87,21 @@ const OurStory = () => {
                 delay={0}
                 staggerDelay={0.15} className="text-xl md:text-2xl lg:text-2xl font-semiboldx mb-4 md:mb-8">
 
-                {/* <h2 className="text-xl font-semiboldx text-gray-900 mb-4 leading-snug"> */}
+                
                 We are a forward thinking real estate company driven by the belief
                 that well designed spaces shape better lives.
                 {/* </h2> */}
               </AnimatedHeading>
               <FloatUpText>
 
-                <p className="text-base text-gray-600">
+                <p className="text-base text-black">
                   With a strong focus on quality, transparency, and long-term value,
                   we create developments that blend thoughtful planning with
                   enduring craftsmanship.
                 </p>
               </FloatUpText>
               <FloatUpText>
-                <p className="text-base text-gray-600">
+                <p className="text-base text-black">
                   We believe real estate is not just about constructing buildings, but about creating
                   environments that enhance the way people live, grow, and connect. Every project we
                   undertake is guided by thoughtful planning, responsible development, and a deep
@@ -182,7 +182,7 @@ const OurStory = () => {
         as="h1"
         delay={0}
         staggerDelay={0.15}
-        className="text-sm text-gray-500 mb-2"
+        className="text-sm text-black mb-2"
       >
         Our vision
       </AnimatedHeading>
@@ -193,13 +193,13 @@ const OurStory = () => {
         as="h1"
         delay={0}
         staggerDelay={0.15}
-        className="text-[20px] md:text-2xl font-medium text-gray-900 leading-snug mb-3 max-w-md"
+        className="text-[20px] md:text-2xl font-medium text-black leading-snug mb-3 max-w-md"
       >
         To create thoughtfully planned spaces that elevate everyday living.
       </AnimatedHeading>
 
       <FloatUpText>
-        <p className="text-[15px] md:text-[18px] text-gray-600 leading-relaxed max-w-md">
+        <p className="text-[15px] md:text-[18px] text-black leading-relaxed max-w-md">
           To create thoughtfully planned spaces that elevate everyday living,
           blending design, functionality, and sustainability to shape enduring
           communities for the future.
@@ -213,7 +213,7 @@ const OurStory = () => {
         as="h1"
         delay={0}
         staggerDelay={0.15}
-        className="text-sm text-gray-500 mb-2"
+        className="text-sm text-black mb-2"
       >
         Our mission
       </AnimatedHeading>
@@ -224,13 +224,13 @@ const OurStory = () => {
         as="h1"
         delay={0}
         staggerDelay={0.15}
-        className="text-[20px] md:text-2xl font-medium text-gray-900 leading-snug mb-3 max-w-md"
+        className="text-[20px] md:text-2xl font-medium text-black leading-snug mb-3 max-w-md"
       >
         To develop responsibly by integrating sustainable practices.
       </AnimatedHeading>
 
       <FloatUpText>
-        <p className="text-[15px] md:text-[18px] text-gray-600 leading-relaxed max-w-md">
+        <p className="text-[15px] md:text-[18px] text-black leading-relaxed max-w-md">
           To develop responsibly by integrating sustainable practices,
           respecting the environment, and creating communities that support
           healthier, balanced lifestyles.

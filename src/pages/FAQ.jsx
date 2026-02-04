@@ -59,31 +59,32 @@ const FAQ = () => {
 
   return (
     <div className="bg-white pt-16 pb-20 px-4">
-      <div className="max-w-5xl mx-auto">
-{/* Premium Animated Heading */}
-<div className="relative z-10 mx-auto max-w-5xl text-center px-4 md:px-6 [20px]:px-8 pt-6 md:pt-0 mb-6">
-  <AnimatedHeading
-    as="h2"
-    delay={0}
-    className="text-[20px] md:text-[38px] font-medium leading-tight text-gray-800"
-  >
-    FREQUENTLY ASKED QUESTIONS (FAQ)
-  </AnimatedHeading>
-</div>
+      <div className="max-w-6xl mx-auto px-6">
 
+        {/* Animated Heading */}
+        <div className="relative z-10 mx-auto max-w-5xl text-center px-4 md:px-6 pt-6 mb-6">
+          <AnimatedHeading
+            as="h2"
+            delay={0}
+            className="text-[20px] md:text-[38px] font-medium leading-tight text-black"
+          >
+            Frequently Asked Questions(FAQ)
+          </AnimatedHeading>
+        </div>
 
-        <p className="text-center text-gray-500 max-w-3xl mx-auto mb-12">
-          Frequently Asked Questions (FAQs) provide quick and clear answers to common queries, helping customers make informed
-          decisions. They enhance transparency, save time, and improve the overall experience by addressing key concerns efficiently.
+        <p className="text-center text-black text-base max-w-3xl mx-auto mb-12">
+          Frequently Asked Questions (FAQs) provide quick and clear answers to common queries,
+          helping customers make informed decisions. They enhance transparency, save time,
+          and improve the overall experience by addressing key concerns efficiently.
         </p>
 
         {/* FAQ List */}
-        <div className="bg-white shadow-[20px] rounded-[20px] overflow-hidden">
+        <div className="bg-white rounded-[20px] overflow-hidden border">
           {faqs.map((item, index) => (
             <div key={index} className="border-b last:border-none">
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full text-left px-6 py-5 font-medium flex justify-between items-center hover:bg-gray-50 transition"
+                className="w-full text-left px-6 py-5 font-medium flex justify-between items-center hover:bg-gray-50 transition text-black"
               >
                 {item.question}
                 <span className="text-orange-500 text-2xl transition-transform duration-300">
@@ -91,13 +92,13 @@ const FAQ = () => {
                 </span>
               </button>
 
-              {/* Smooth Answer Animation */}
+              {/* Answer */}
               <div
                 className={`px-6 overflow-hidden transition-all duration-500 ease-in-out ${
                   openIndex === index ? "max-h-40 opacity-100 pb-5" : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-black text-base leading-relaxed">
                   {item.answer}
                 </p>
               </div>

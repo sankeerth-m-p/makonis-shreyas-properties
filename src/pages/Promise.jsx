@@ -61,7 +61,7 @@ end: "top 20%",
       /* ---------------- TEXT LINE-BY-LINE REVEAL ---------------- */
       const lines = textRef.current.querySelectorAll(".text-line");
 
-      gsap.fromTo(
+ gsap.fromTo(
   lines,
   {
     y: 50,
@@ -70,16 +70,18 @@ end: "top 20%",
   {
     y: 0,
     opacity: 1,
-    stagger: 0.5,
-    ease: "power1.out",
+    stagger: 0.3,
+    duration: 0.8,
+    ease: "power2.out",
     scrollTrigger: {
-      trigger: wrapperRef.current,
-      start: "top 55%",
-      end: "top 15%",
-      scrub: true,
+      trigger: textRef.current,
+      start: "top 70%",
+      toggleActions: "play none none reverse",
     },
   }
 );
+
+ScrollTrigger.refresh();
 
     });
 
@@ -120,11 +122,11 @@ end: "top 20%",
       ><AnimatedHeading className="section-heading   mb-5">
             {title}
           </AnimatedHeading>
-        <p className="text-line text-base text-gray-700 leading-relaxed mb-4 max-w-md">
+        <p className="text-line text-base text-black leading-relaxed mb-4 max-w-md">
           {para1}
         </p>
 
-        <p className="text-line text-base text-gray-600 leading-relaxed max-w-md">
+        <p className="text-line text-base text-black leading-relaxed max-w-md">
           {para2}
         </p>
       </div>
