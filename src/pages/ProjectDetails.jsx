@@ -77,7 +77,7 @@ const GalleryGrid = () => {
     "/Gallery3.jpg",
     "/Gallery4.jpg",
     "/sun.jpg",
-    "/Gallery1.jpg",
+    "/Gallery6.webp",
   ];
 
   return (
@@ -808,7 +808,7 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
 
         {/* ✅ RERA DETAILS (same size + animated) */}
         <p className="text-base leading-relaxed pt-4">
-          <span className="font-semibold">RERA Number – </span>
+          <span className="font-semibold">RERA Number  </span><br></br>
           PRM/KA/RERA/1254/465/PR/181103/002112,&nbsp;
           PRM/KA/RERA/1254/465/PR/181103/002113,&nbsp;
           PRM/KA/RERA/1254/465/PR/181103/002114,&nbsp;
