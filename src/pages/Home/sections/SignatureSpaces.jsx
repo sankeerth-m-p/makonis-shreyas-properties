@@ -6,71 +6,65 @@ const SignatureSpaces = ({ sections }) => {
   const navigate = useNavigate();
 
   // Default sections if none provided
-const defaultSections = [
-  // {
-  //   number: '01',
-  //   location: 'Kondapur, Hyderabad',
-  //   title: 'Modern Profound Tech Park',
-  //   slug: 'modern-profound-tech-park',
-  //   description: 'A state-of-the-art tech park designed for innovation...',
-  //   image: '/Home/profoundInfra.webp',
-  //   bgColor: 'bg-ORANGE'
-  // },
-  {
-    number: '01',
-    location: 'Marathahalli, Bangalore',
-    title: 'Royal Enclave',
-    slug: 'royal-enclave',
-    description: 'Experience luxury living at its finest...',
-    image: "/Home/royalEnclave.webp",
-    bgColor: 'bg-ORANGE2'
-  },
-  {
-    number: '02',
-    location: 'Vignana Nagar, Bangalore',
-    title: 'Paradise',
-    slug: 'paradise',
-    description: 'Your urban paradise awaits...',
-    image: "/Home/SandsParadiseVignanNagar_enhanced.webp",
-    bgColor: 'bg-ORANGE'
-  },
-  {
-    number: '03',
-    location: 'Marathahalli, Bangalore',
-    title: 'Chourasia Shreyas',
-    slug: 'chourasia-shreyas',
-    description: 'Contemporary living spaces...',
-    image: "/Home/ChourasiaShreyasMarathahalli.webp",
-    bgColor: 'bg-ORANGE2'
-  },
-  {
-    number: '04',
-    location: 'Devanahalli, Bangalore',
-    title: "Nature's Sign",
-    slug: 'natures-sign',
-    description: 'Embrace nature with eco-friendly homes...',
-    image: "/Home/naturesign.webp",
-    bgColor: 'bg-ORANGE'
-  },
-  {
-    number: '05',
-    location: 'Marathahalli, Bangalore',
-    title: 'Modern View Apartment',
-    slug: 'modern-view-apartment',
-    description: 'Contemporary apartments with panoramic views...',
-    image: "/Home/ModernView.webp",
-    bgColor: 'bg-ORANGE2'
-  },
-  {
-    number: '06',
-    location: 'Nandagudi, Bengaluru',
-    title: 'Shreyas Sunrise',
-    slug: 'shreyas-sunrise',
-    description: 'Well-planned residences in Nandagudi...',
-    image: "/sunrise.webp",
-    bgColor: 'bg-ORANGE'
-  }
-];
+ const defaultSections = [
+    // {
+    //   number: '01',
+    //   location: 'Kondapur, Hyderabad',
+    //   title: 'Modern Profound Tech Park',
+    //   description: 'A state-of-the-art tech park designed for innovation and collaboration. Features premium office spaces, modern amenities, and excellent connectivity in the heart of Hyderabad\'s IT corridor.',
+    //   image: '/Home/profoundInfra.webp',
+    //   bgColor: 'bg-ORANGE'
+    // },
+    {
+      number: '01',
+      location: 'Marathahalli, Bangalore',
+      title: 'Royal Enclave',
+      description: 'Experience luxury living at its finest with spacious apartments, world-class amenities, and stunning architecture. Located in Bangalore\'s prime locality with easy access to major IT hubs.',
+      image: "/Home/royalEnclave.webp",
+       bgColor: 'bg-ORANGE2'
+    },
+    {
+      number: '02',
+      location: 'Vignana Nagar, Bangalore',
+      title: 'Paradise',
+      description: 'Your urban paradise awaits with thoughtfully designed homes, lush green spaces, and premium facilities. Perfect blend of comfort and convenience in one of Bangalore\'s most sought-after neighborhoods.',
+      image: "/Home/SandsParadiseVignanNagar_enhanced.webp",
+       bgColor: 'bg-ORANGE'
+    },
+    {
+      number: '03',
+      location: 'Marathahalli, Bangalore',
+      title: 'Chourasia Shreyas',
+      description: 'Contemporary living spaces crafted with precision and elegance. Offering modern amenities, excellent ventilation, and strategic location near major tech parks and shopping centers.',
+      image: "/Home/ChourasiaShreyasMarathahalli.webp",
+       bgColor: 'bg-ORANGE2'
+    },
+    {
+      number: '04',
+      location: 'Devanahalli, Bangalore',
+      title: 'Nature\'s Sign',
+      description: 'Embrace nature with eco-friendly homes surrounded by greenery and fresh air. Features sustainable design, rainwater harvesting, and proximity to the airport making it ideal for modern families.',
+      image: "/Home/naturesign.webp",
+       bgColor: 'bg-ORANGE'
+    },
+    {
+      number: '05',
+      location: 'Marathahalli, Bangalore',
+      title: 'Modern View Apartment',
+      description: 'Contemporary apartments with panoramic views and cutting-edge design. Enjoy spacious layouts, premium finishes, and a lifestyle that complements your aspirations in the city\'s tech hub.',
+      image: "/Home/ModernView.webp",
+       bgColor: 'bg-ORANGE2'
+    }
+    ,
+    {
+      number: '06',
+      location: 'Nandagudi, Bengaluru',
+      title: 'Shreyas Sunrise ',
+      description: 'Well-planned premium gated development in the fast-growing satellite township of Nandagudi. With strong future connectivity and close proximity to Devanahalli and the airport, it offers a perfect balance of serene living and long-term value.',
+      image: "/sunrise.webp",
+       bgColor: 'bg-ORANGE'
+    }
+  ];
 
 
   const items = sections || defaultSections;

@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useState  } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowRight } from 'lucide-react';
 import FloatUpText from "../components/floatUpText";
@@ -8,6 +8,229 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ScrollToTop from "../components/scrollToTop";
 gsap.registerPlugin(ScrollTrigger);
+
+const MobileGalleryImage = ({ src }) => {
+  const wrapperRef = useRef(null);
+  const clipRef = useRef(null);
+  const imgRef = useRef(null);
+  const playedRef = useRef(false);
+
+  useLayoutEffect(() => {
+    if (window.innerWidth >= 768) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !playedRef.current) {
+          playedRef.current = true;
+
+          gsap.timeline({ defaults: { ease: "power2.out" } })
+            .fromTo(
+              clipRef.current,
+              { clipPath: "polygon(0 0,100% 0,100% 0,0 0)" },
+              {
+                clipPath: "polygon(0 0,100% 0,100% 100%,0 100%)",
+                duration: 1.1,
+              }
+            )
+            .fromTo(
+              imgRef.current,
+              { scale: 1.5 },
+              { scale: 1, duration: 1.1 },
+              0
+            );
+
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(wrapperRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={wrapperRef}
+      className="w-full aspect-[16/9] overflow-hidden rounded-[14px]"
+    >
+      <div ref={clipRef} className="w-full h-full overflow-hidden">
+        <img
+          ref={imgRef}
+          src={src}
+          alt=""
+          className="w-full h-full object-cover"
+          draggable={false}
+        />
+      </div>
+    </div>
+  );
+};
+
+const GalleryGrid = () => {
+  const [active, setActive] = useState(null);
+
+  const images = [
+    "/Gallery1.jpg",
+    "/Gallery2.jpg",
+    "/Gallery3.jpg",
+    "/Gallery4.jpg",
+    "/sun.jpg",
+    "/Gallery1.jpg",
+  ];
+
+  return (
+    <>
+      {/* ================= DESKTOP GALLERY ================= */}
+      <div
+        className="relative hidden md:block w-full h-[600px] rounded-2xl bg-white overflow-hidden"
+        onMouseLeave={() => setActive(null)}
+      >
+        {/* GRID */}
+        <div className="grid grid-cols-3 grid-rows-2 w-full h-full gap-[6px] p-[6px]">
+          {images.map((img, index) => (
+          <div
+  key={index}
+  onMouseEnter={() => setActive(index)}
+  className="gallery-tile"
+>
+  <img src={img} alt="" />
+
+  {/* ZOOM ICON */}
+  <span className="gallery-icon">
+    <img src="/zoom.svg" alt="Zoom" />
+  </span>
+</div>
+
+          ))}
+        </div>
+
+        {/* OVERLAY IMAGE (NO JUMP) */}
+    <div className="absolute inset-0 z-30 pointer-events-none">
+  <img
+    src={active !== null ? images[active] : images[0]}
+    alt=""
+    className={`gallery-hover-image ${
+      active !== null ? "is-visible" : ""
+    }`}
+  />
+</div>
+
+      </div>
+
+      {/* ================= MOBILE GALLERY ================= */}
+     <div className="md:hidden flex flex-col gap-[10px] px-3">
+  {images.map((img, index) => (
+    <MobileGalleryImage key={index} src={img} />
+  ))}
+</div>
+
+
+      {/* ================= CSS (INLINE) ================= */}
+      <style>
+        {`
+          .gallery-tile {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+          }
+
+          .gallery-tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+          }
+
+          .gallery-tile:hover img {
+            transform: scale(1.04);
+          }
+
+     .gallery-hover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+
+  opacity: 0;
+  transform: scale(1.03);
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+
+  will-change: opacity, transform;
+}
+
+.gallery-hover-image.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+       .gallery-tile-mobile {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* 👈 KEY FIX */
+  overflow: hidden;
+  border-radius: 14px;
+  background: white;
+}
+
+.gallery-tile-mobile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  width: 34px;
+  height: 34px;
+
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none; /* IMPORTANT */
+}
+
+.gallery-icon img {
+  width: 16px;
+  height: 16px;
+
+  filter: brightness(0) invert(1);
+}
+
+
+/* Slightly smaller on mobile */
+.gallery-icon.mobile {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+
+
+        `}
+      </style>
+    </>
+  );
+};
+
+
+
+
+
+
 
 const projectsData = [
 
@@ -564,33 +787,48 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
       <ProjectDetailsContent project={project} onBack={onBack} />
 
       {/* ================= ABOUT SHREYAS SUNRISE ================= */}
-      <section className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+     <section className="bg-white py-20">
+  <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-          <div>
-            <AnimatedHeading className="section-heading mb-8">
-              This project is strategically located very close to Bengaluru’s fast developing satellite township
-            </AnimatedHeading>
+    <div>
+      <AnimatedHeading className="section-heading mb-8">
+        This project is strategically located very close to Bengaluru’s fast developing satellite township
+      </AnimatedHeading>
 
-            <FloatUpText className="text-base leading-relaxed space-y-4">
-              <p>
-               Shreyas Sunrise is developed by Shreyas properties, a company with a passionate approach towards creating infracture and living space that adds beauty to life.
-This project is strategically located very close to Bengaluru’s fast developing satellite township the Nandagudi and is just a few minutes away from Devanahalli.
-              </p>
+      <FloatUpText className="text-base leading-relaxed space-y-4">
+        <p>
+          Shreyas Sunrise is developed by Shreyas properties, a company with a passionate approach towards creating infracture and living space that adds beauty to life.
+          This project is strategically located very close to Bengaluru’s fast developing satellite township the Nandagudi and is just a few minutes away from Devanahalli.
+        </p>
 
-              <p>
-The Widening of roads and future connectivity through the planned peripheral ring road, along with the elevated expressway to the airport and the high-speed rail link, has also made this area the most sought-after one.
-This is an opportunity that speaks for itself its location, as you will soon see, is the key.
-              </p>
-            </FloatUpText>
-          </div>
+        <p>
+          The Widening of roads and future connectivity through the planned peripheral ring road, along with the elevated expressway to the airport and the high-speed rail link, has also made this area the most sought-after one.
+          This is an opportunity that speaks for itself its location, as you will soon see, is the key.
+        </p>
 
-          <RevealImageAnimation
-            image="/family.webp"
-            className="h-[350px] md:h-[600px] object-cover"
-          />
-        </div>
-      </section>
+      
+        {/* ✅ RERA DETAILS */}
+<div className="pt-4">
+  <p className="leading-relaxed">
+    <span className="font-semibold">RERA Number – </span>
+    PRM/KA/RERA/1254/465/PR/181103/002112,&nbsp;
+    PRM/KA/RERA/1254/465/PR/181103/002113,&nbsp;
+    PRM/KA/RERA/1254/465/PR/181103/002114,&nbsp;
+    PRM/KA/RERA/1254/465/PR/181103/002115,&nbsp;
+    PRM/KA/RERA/1254/465/PR/181103/002116
+  </p>
+</div>
+
+      </FloatUpText>
+    </div>
+
+    <RevealImageAnimation
+      image="/family.webp"
+      className="h-[350px] md:h-[600px] object-cover"
+    />
+  </div>
+</section>
+
 {/* ================= STRATEGIC LOCATION HIGHLIGHTS ================= */}
 <section className="bg-[#F5F2EF] py-20">
   <div className="max-w-6xl mx-auto px-6">
@@ -666,13 +904,12 @@ This is an opportunity that speaks for itself its location, as you will soon see
           </div>
 
           <RevealImageAnimation
-            image="/sunrise.webp"
+            image="/sun.jpg"
             className="h-[500px] object-cover rounded-xl"
           />
         </div>
       </section>
 
-      {/* ================= LOCATION & BUSINESS ADVANTAGES ================= */}
   {/* ================= LOCATION & BUSINESS ADVANTAGES ================= */}
 <section className="bg-[#F5F2EF] py-20">
   <div className="max-w-6xl mx-auto px-6">
@@ -760,6 +997,22 @@ This is an opportunity that speaks for itself its location, as you will soon see
   </div>
 </section>
 
+{/* ================= GALLERY SECTION ================= */}
+<section className="bg-white py-12 md:py-16">
+  <div className="max-w-6xl mx-auto px-6">
+
+    {/* SECTION HEADING */}
+<AnimatedHeading className="section-heading mb-6 md:mb-8">
+      Gallery
+    </AnimatedHeading>
+
+    {/* GALLERY WRAPPER */}
+   <div className="relative w-full md:h-[600px] rounded-2xl md:overflow-hidden">
+      <GalleryGrid />
+    </div>
+
+  </div>
+</section>
 
       {/* ================= LAYOUT PLAN ================= */}
       <section className="bg-white py-20 px-6 max-w-6xl mx-auto">
