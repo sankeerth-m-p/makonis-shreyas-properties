@@ -17,6 +17,7 @@ const SignatureSpaces = ({ sections }) => {
     // },
     {
       number: '01',
+      slug: "royal-enclave",
       location: 'Marathahalli, Bangalore',
       title: 'Royal Enclave',
       description: 'Experience luxury living at its finest with spacious apartments, world-class amenities, and stunning architecture. Located in Bangalore\'s prime locality with easy access to major IT hubs.',
@@ -25,6 +26,7 @@ const SignatureSpaces = ({ sections }) => {
     },
     {
       number: '02',
+      slug: "paradise",
       location: 'Vignana Nagar, Bangalore',
       title: 'Paradise',
       description: 'Your urban paradise awaits with thoughtfully designed homes, lush green spaces, and premium facilities. Perfect blend of comfort and convenience in one of Bangalore\'s most sought-after neighborhoods.',
@@ -33,6 +35,7 @@ const SignatureSpaces = ({ sections }) => {
     },
     {
       number: '03',
+      slug: "chourasia-shreyas",
       location: 'Marathahalli, Bangalore',
       title: 'Chourasia Shreyas',
       description: 'Contemporary living spaces crafted with precision and elegance. Offering modern amenities, excellent ventilation, and strategic location near major tech parks and shopping centers.',
@@ -41,6 +44,7 @@ const SignatureSpaces = ({ sections }) => {
     },
     {
       number: '04',
+      slug: "natures-sign",
       location: 'Devanahalli, Bangalore',
       title: 'Nature\'s Sign',
       description: 'Embrace nature with eco-friendly homes surrounded by greenery and fresh air. Features sustainable design, rainwater harvesting, and proximity to the airport making it ideal for modern families.',
@@ -49,6 +53,7 @@ const SignatureSpaces = ({ sections }) => {
     },
     {
       number: '05',
+      slug: "modern-view-apartment",
       location: 'Marathahalli, Bangalore',
       title: 'Modern View Apartment',
       description: 'Contemporary apartments with panoramic views and cutting-edge design. Enjoy spacious layouts, premium finishes, and a lifestyle that complements your aspirations in the city\'s tech hub.',
@@ -58,6 +63,7 @@ const SignatureSpaces = ({ sections }) => {
     ,
     {
       number: '06',
+      slug: "shreyas-sunrise",
       location: 'Nandagudi, Bengaluru',
       title: 'Shreyas Sunrise ',
       description: 'Well-planned premium gated development in the fast-growing satellite township of Nandagudi. With strong future connectivity and close proximity to Devanahalli and the airport, it offers a perfect balance of serene living and long-term value.',
