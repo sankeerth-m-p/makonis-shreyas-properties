@@ -11,10 +11,11 @@ import ExpertsSection from "./sections/ExpertsSection.jsx";
 import PromiseSection from "./sections/PromiseSection.jsx";
 import Footer from "../../components/footer.jsx";
 import Navbar from "../../components/Navbar.jsx";
-
+import Enquire from "../Enquire.jsx";
 const HomeLayout = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [showEnquire, setShowEnquire] = useState(false);
 
   // ✅ detect mobile (same logic as coworker)
   useEffect(() => {
@@ -66,7 +67,7 @@ const HomeLayout = () => {
         "
       >
         <div className="snap-start lg:h-screen snap-always pt-[5rm]">
-          {!isMobile && <Navbar onEnquireClick={() => {}} />}
+          {!isMobile && <Navbar onEnquireClick={() => setShowEnquire(true)}/>}
           <HeroSection />
         </div>
 
@@ -111,7 +112,7 @@ const HomeLayout = () => {
 
         <div className="snap-end snap-always">
           <Footer />
-        </div>
+        </div> {showEnquire && <Enquire onClose={() => setShowEnquire(false)} />}
       </div>
     </>
   );
