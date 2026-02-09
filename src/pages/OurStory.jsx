@@ -132,12 +132,16 @@ const OurStory = () => {
 
              <p>
              By seamlessly blending contemporary design with sustainability, our developments respect nature while embracing progress.
+              With people at the heart of our philosophy, we create enduring communities that inspire comfort, trust, and a refined sense of belonging.
             </p>
 
-            <p>
-             With people at the heart of our philosophy, we create enduring communities that inspire comfort, trust, and a refined sense of belonging.
+        
+             <p>
+              People remain at the heart of everything we do. Through carefully planned communities,
+               we foster comfort, trust, and a lasting sense of belonging—places 
+               where individuals and families can grow, thrive, and feel truly at home. Each project is not just a development,
+               but a legacy built with vision, responsibility, and timeless appeal.
             </p>
-
            
 
             
@@ -317,12 +321,7 @@ const OurStory = () => {
                respecting the natural environment while embracing modern progress.
                 By prioritizing balance, efficiency, and longevity, we create spaces that are both refined and resilient.
             </p>
-            <p>
-              People remain at the heart of everything we do. Through carefully planned communities,
-               we foster comfort, trust, and a lasting sense of belonging—places 
-               where individuals and families can grow, thrive, and feel truly at home. Each project is not just a development,
-               but a legacy built with vision, responsibility, and timeless appeal.
-            </p>
+           
 
 
           </FloatUpText>
