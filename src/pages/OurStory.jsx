@@ -104,7 +104,7 @@ const OurStory = () => {
               </FloatUpText>
               <FloatUpText>
                 <p className="text-base text-black">
-                  To us,  real estate transcends construction—it is the art of creating environments
+                  To us,  real estate transcends construction it is the art of creating environments
                    that elevate the way people live, grow, and connect.
                 </p>
               </FloatUpText>
@@ -138,7 +138,7 @@ const OurStory = () => {
         
              <p>
               People remain at the heart of everything we do. Through carefully planned communities,
-               we foster comfort, trust, and a lasting sense of belonging—places 
+               we foster comfort, trust, and a lasting sense of belonging places 
                where individuals and families can grow, thrive, and feel truly at home. Each project is not just a development,
                but a legacy built with vision, responsibility, and timeless appeal.
             </p>
