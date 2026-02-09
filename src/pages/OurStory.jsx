@@ -95,17 +95,17 @@ const OurStory = () => {
               <FloatUpText>
 
                 <p className="text-base text-black">
-                  With a strong focus on quality, transparency, and long-term value,
-                  we create developments that blend thoughtful planning with
-                  enduring craftsmanship.
-                </p>
+  Rooted in quality, transparency, and long-term value,
+  we craft developments defined by thoughtful planning and enduring
+  <br />
+  craftsmanship.
+</p>
+
               </FloatUpText>
               <FloatUpText>
                 <p className="text-base text-black">
-                  We believe real estate is not just about constructing buildings, but about creating
-                  environments that enhance the way people live, grow, and connect. Every project we
-                  undertake is guided by thoughtful planning, responsible development, and a deep
-                  understanding of our customers’ aspirations.
+                  To us,  real estate transcends construction it is the art of creating environments
+                   that elevate the way people live, grow, and connect.
                 </p>
               </FloatUpText>
 
@@ -125,23 +125,24 @@ const OurStory = () => {
           <FloatUpText className="md:my-14   md:px-6 my-5 text-base   lg:px-0  space-y-6   ">
 
             <p>
-              Our philosophy is rooted in integrity, quality, and long-term value. From selecting the
-              right location to executing every detail with care, we focus on delivering spaces that
-              are functional today and relevant for generations to come.
+             Guided by integrity and responsible development, every project reflects a deep understanding of our customers’ aspirations. 
+             From selecting exceptional locations to executing every detail with precision,
+              we deliver spaces that are relevant today and valued for generations.
             </p>
 
-            <p>
-              We strive to balance modern design with sustainability, ensuring our developments
-              respect nature while embracing progress. By placing people at the center of our process,
-              we create communities that foster comfort, trust, and a sense of belonging.
+             <p>
+             By seamlessly blending contemporary design with sustainability, our developments respect nature while embracing progress.
+              With people at the heart of our philosophy, we create enduring communities that inspire comfort, trust, and a refined sense of belonging.
             </p>
 
-            <p>
-              We believe real estate is not just about constructing buildings, but about creating
-              environments that enhance the way people live, grow, and connect. Every project we
-              undertake is guided by thoughtful planning, responsible development, and a deep
-              understanding of our customers’ aspirations.
+        
+             <p>
+              People remain at the heart of everything we do. Through carefully planned communities,
+               we foster comfort, trust, and a lasting sense of belonging places 
+               where individuals and families can grow, thrive, and feel truly at home. Each project is not just a development,
+               but a legacy built with vision, responsibility, and timeless appeal.
             </p>
+           
 
             
 
@@ -299,25 +300,29 @@ const OurStory = () => {
           {/* RIGHT TEXT */}
           <FloatUpText className="lg:col-span-8 md:col-span-7 w-full    md:mr-4 lg:mr-0  text-base  leading-relaxed md:space-y-6">
             <p>
-              We believe real estate is not just about constructing buildings, but about
-              creating environments that enhance the way people live, grow, and connect.
-              Every project we undertake is guided by thoughtful planning, responsible
-              development, and a deep understanding of our customers’ aspirations.
+             At the core of our philosophy lies an uncompromising commitment to quality, transparency, and long-term value.
+              Every development we create is shaped by thoughtful planning and enduring craftsmanship,
+               ensuring each space stands as a reflection of precision, purpose, and care. We view real estate not merely as construction, 
+             but as the creation of environments that elevate lifestyles and nurture meaningful connections.
             </p>
 
             <p>
-              Our philosophy is rooted in integrity, quality, and long-term value. From
-              selecting the right location to executing every detail with care, we focus
-              on delivering spaces that are functional today and relevant for generations
-              to come.
+              Guided by integrity and responsible development, 
+              our approach is deeply informed by a clear understanding of our customers’ aspirations.
+               From identifying exceptional locations to refining every architectural and functional detail,
+                we are meticulous in our pursuit of excellence.
+                 Our developments are designed to be practical for today’s needs while remaining relevant and 
+                 valuable for generations to come.
+            
             </p>
 
             <p>
-              We strive to balance modern design with sustainability, ensuring our
-              developments respect nature while embracing progress. By placing people
-              at the center of our process, we create communities that foster comfort,
-              trust, and a sense of belonging.
+              We seamlessly integrate contemporary design with sustainable practices,
+               respecting the natural environment while embracing modern progress.
+                By prioritizing balance, efficiency, and longevity, we create spaces that are both refined and resilient.
             </p>
+           
+
 
           </FloatUpText>
 
