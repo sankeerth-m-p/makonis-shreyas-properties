@@ -16,7 +16,7 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
               <li><Link to="/our-story" className="hover:text-white block">Our Story</Link></li>
               <li><Link to="/projects" className="hover:text-white block">Projects</Link></li>
               {/* <li><button onClick={goToTestimonials} className="hover:text-white buttons block text-left">Testimonial</button></li> */}
-              <li><Link to="/media-center" className="hover:text-white block">Media Center</Link></li>
+              {/* <li><Link to="/media-center" className="hover:text-white block">Media Center</Link></li> */}
               <li><Link to="/blogs" className="hover:text-white block">Blog</Link></li>
             </ul>
 
