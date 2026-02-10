@@ -146,8 +146,14 @@ const SignatureSpaces = ({ sections }) => {
   {section.description}
 </p>
 
-      <button
-  onClick={() => navigate(`/projects/${section.slug}`)}
+<button
+  onClick={() => {
+    if (section.slug === "natures-sign") {
+      window.open("https://nature-sign.netlify.app/", "_blank");
+    } else {
+      navigate(`/projects/${section.slug}`);
+    }
+  }}
   className="inline-flex buttons items-center gap-3 px-6 lg:px-8 py-3 lg:py-4
   bg-white text-black text-xs font-bold uppercase tracking-wider
   rounded-full hover:bg-gray-100 transition-all hover:translate-x-1"
@@ -155,6 +161,7 @@ const SignatureSpaces = ({ sections }) => {
   <span>view details</span>
   <ArrowRight className="w-4 h-4" />
 </button>
+
 
       </div>
 

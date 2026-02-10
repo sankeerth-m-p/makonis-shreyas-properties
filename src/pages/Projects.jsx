@@ -215,15 +215,15 @@ onClick={() => navigate("/projects/modern-view-apartment")}
   />
 
   {/* 6 */}
-  <ProjectCard
-    image= "/Home/naturesign.webp"
-      logo="/naturessign.webp"
-    status="Ongoing"
-    title="Nature’s Sign"
-    location="Devanahalli, Bengaluru"
-    description="Plotted development community in North Bengaluru’s fastest growing locations"
-onClick={() => navigate("/projects/natures-sign")}
-  />
+<ProjectCard
+  image="/Home/naturesign.webp"
+  logo="/naturessign.webp"
+  status="Ongoing"
+  title="Nature’s Sign"
+  location="Devanahalli, Bengaluru"
+  description="Plotted development community in North Bengaluru’s fastest growing locations"
+  onClick={() => window.open("https://nature-sign.netlify.app/", "_blank")}
+/>
 
 </div>
 
