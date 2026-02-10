@@ -119,12 +119,12 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
                   </button> */}
                 </li>
                 <li>
-                  <Link
+                  {/* <Link
                     to="/media-center"
                     className="hover:text-white cursor-pointer transition block"
                   >
                     Media Center
-                  </Link>
+                  </Link> */}
                 </li>
                 <li>
                   <Link
