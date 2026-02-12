@@ -4,6 +4,11 @@ import FloatUpText from "../../../components/floatUpText";
 import { useNavigate } from 'react-router-dom';
 const SignatureSpaces = ({ sections }) => {
   const navigate = useNavigate();
+const statusStyles = {
+  Ongoing: "bg-[#04c2ae]",
+  Completed: "bg-[#04c23e]",
+  Upcoming: "bg-yellow-500",
+};
 
   // Default sections if none provided
  const defaultSections = [
@@ -18,7 +23,7 @@ const SignatureSpaces = ({ sections }) => {
     {
       number: '01',
       slug: "natures-sign",
-      location: 'Devanahalli, Bangalore',
+      location: 'Devanahalli, Bangalore',status: "Ongoing",
       title: 'Nature\'s Sign',
       description: 'Embrace nature with eco-friendly homes surrounded by greenery and fresh air. Features sustainable design, rainwater harvesting, and proximity to the airport making it ideal for modern families.',
       image: "/Home/naturesign.webp",
@@ -27,7 +32,7 @@ const SignatureSpaces = ({ sections }) => {
     ,
     {
       number: '02',
-      slug: "shreyas-sunrise",
+      slug: "shreyas-sunrise",status: "Ongoing",
       location: 'Nandagudi, Bengaluru',
       title: 'Shreyas Sunrise ',
       description: 'Well-planned premium gated development in the fast-growing satellite township of Nandagudi. With strong future connectivity and close proximity to Devanahalli and the airport, it offers a perfect balance of serene living and long-term value.',
@@ -36,7 +41,7 @@ const SignatureSpaces = ({ sections }) => {
     },
     {
       number: '03',
-      slug: "royal-enclave",
+      slug: "royal-enclave",status: "Completed",
       location: 'Marathahalli, Bangalore',
       title: 'Royal Enclave',
       description: 'Experience luxury living at its finest with spacious apartments, world-class amenities, and stunning architecture. Located in Bangalore\'s prime locality with easy access to major IT hubs.',
@@ -45,7 +50,7 @@ const SignatureSpaces = ({ sections }) => {
     },
     {
       number: '04',
-      slug: "paradise",
+      slug: "paradise",status: "Completed",
       location: 'Vignana Nagar, Bangalore',
       title: 'Paradise',
       description: 'Your urban paradise awaits with thoughtfully designed homes, lush green spaces, and premium facilities. Perfect blend of comfort and convenience in one of Bangalore\'s most sought-after neighborhoods.',
@@ -54,7 +59,7 @@ const SignatureSpaces = ({ sections }) => {
     },
     {
       number: '05',
-      slug: "chourasia-shreyas",
+      slug: "chourasia-shreyas",status: "Completed",
       location: 'Marathahalli, Bangalore',
       title: 'Chourasia Shreyas',
       description: 'Contemporary living spaces crafted with precision and elegance. Offering modern amenities, excellent ventilation, and strategic location near major tech parks and shopping centers.',
@@ -64,7 +69,7 @@ const SignatureSpaces = ({ sections }) => {
     
     {
       number: '06',
-      slug: "modern-view-apartment",
+      slug: "modern-view-apartment",status: "Completed",
       location: 'Marathahalli, Bangalore',
       title: 'Modern View Apartment',
       description: 'Contemporary apartments with panoramic views and cutting-edge design. Enjoy spacious layouts, premium finishes, and a lifestyle that complements your aspirations in the city\'s tech hub.',
@@ -121,7 +126,14 @@ const SignatureSpaces = ({ sections }) => {
         src={section.image}
         alt={section.title}
         className="w-full h-full   object-cover "
-      />
+      /> {/* STATUS BADGE */}
+  <span
+    className={`absolute top-4 right-4 ${
+      statusStyles[section.status] || "bg-black"
+    } text-white text-xs px-4 py-1.5 rounded-md`}
+  >
+    {section.status}
+  </span>
     </div>
 
     {/* CONTENT */}
