@@ -17,6 +17,25 @@ const SignatureSpaces = ({ sections }) => {
     // },
     {
       number: '01',
+      slug: "natures-sign",
+      location: 'Devanahalli, Bangalore',
+      title: 'Nature\'s Sign',
+      description: 'Embrace nature with eco-friendly homes surrounded by greenery and fresh air. Features sustainable design, rainwater harvesting, and proximity to the airport making it ideal for modern families.',
+      image: "/Home/naturesign.webp",
+       bgColor: 'bg-ORANGE'
+    }
+    ,
+    {
+      number: '02',
+      slug: "shreyas-sunrise",
+      location: 'Nandagudi, Bengaluru',
+      title: 'Shreyas Sunrise ',
+      description: 'Well-planned premium gated development in the fast-growing satellite township of Nandagudi. With strong future connectivity and close proximity to Devanahalli and the airport, it offers a perfect balance of serene living and long-term value.',
+      image: "/sunrise.webp",
+       bgColor: 'bg-ORANGE'
+    },
+    {
+      number: '03',
       slug: "royal-enclave",
       location: 'Marathahalli, Bangalore',
       title: 'Royal Enclave',
@@ -25,7 +44,7 @@ const SignatureSpaces = ({ sections }) => {
        bgColor: 'bg-ORANGE2'
     },
     {
-      number: '02',
+      number: '04',
       slug: "paradise",
       location: 'Vignana Nagar, Bangalore',
       title: 'Paradise',
@@ -34,7 +53,7 @@ const SignatureSpaces = ({ sections }) => {
        bgColor: 'bg-ORANGE'
     },
     {
-      number: '03',
+      number: '05',
       slug: "chourasia-shreyas",
       location: 'Marathahalli, Bangalore',
       title: 'Chourasia Shreyas',
@@ -42,17 +61,9 @@ const SignatureSpaces = ({ sections }) => {
       image: "/Home/ChourasiaShreyasMarathahalli.webp",
        bgColor: 'bg-ORANGE2'
     },
+    
     {
-      number: '04',
-      slug: "natures-sign",
-      location: 'Devanahalli, Bangalore',
-      title: 'Nature\'s Sign',
-      description: 'Embrace nature with eco-friendly homes surrounded by greenery and fresh air. Features sustainable design, rainwater harvesting, and proximity to the airport making it ideal for modern families.',
-      image: "/Home/naturesign.webp",
-       bgColor: 'bg-ORANGE'
-    },
-    {
-      number: '05',
+      number: '06',
       slug: "modern-view-apartment",
       location: 'Marathahalli, Bangalore',
       title: 'Modern View Apartment',
@@ -60,16 +71,7 @@ const SignatureSpaces = ({ sections }) => {
       image: "/Home/ModernView.webp",
        bgColor: 'bg-ORANGE2'
     }
-    ,
-    {
-      number: '06',
-      slug: "shreyas-sunrise",
-      location: 'Nandagudi, Bengaluru',
-      title: 'Shreyas Sunrise ',
-      description: 'Well-planned premium gated development in the fast-growing satellite township of Nandagudi. With strong future connectivity and close proximity to Devanahalli and the airport, it offers a perfect balance of serene living and long-term value.',
-      image: "/sunrise.webp",
-       bgColor: 'bg-ORANGE'
-    }
+    
   ];
 
 
