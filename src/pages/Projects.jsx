@@ -125,9 +125,20 @@ return (
   onClick={() => navigate("/projects/modern-profound-tech-park")}
 /> */}
 
-{/* 7 */}
-   <ProjectCard
-  noFade
+<ProjectCard noFade
+  image="/Home/naturesign.webp"
+  logo="/naturessign.webp"
+  status="Ongoing"
+  title="Nature’s Sign"
+  location="Devanahalli, Bengaluru"
+  description="Plotted development community in North Bengaluru’s fastest growing locations"
+  onClick={() => window.open("https://nature-sign.netlify.app/", "_blank")}
+/>
+  
+
+
+  {/* 2 */} <ProjectCard
+  
   image="/sunrise.webp"
   logo="/shreyas_sunrise.webp"
   status="Ongoing"
@@ -136,18 +147,7 @@ return (
   description="Premium gated development in north Bengaluru's fastest growing destination."
   onClick={() => navigate("/projects/shreyas-sunrise")}
 />
-
-
-  {/* 2 */}
-  <ProjectCard
-    image="/Home/royalEnclave.webp"
-      logo="/royalenclave.png"
-     status="Completed"
-    title="Royal Enclave"
-    location="Marathahalli, Bengaluru"
-    description="2BHK & 3BHK residential apartments"
-    onClick={() => navigate("/projects/royal-enclave")}
-  />
+  
 
   {/* 3 */}
   <ProjectCard
@@ -214,16 +214,16 @@ className="btn btn-white">
 onClick={() => navigate("/projects/modern-view-apartment")}
   />
 
-  {/* 6 */}
-<ProjectCard
-  image="/Home/naturesign.webp"
-  logo="/naturessign.webp"
-  status="Ongoing"
-  title="Nature’s Sign"
-  location="Devanahalli, Bengaluru"
-  description="Plotted development community in North Bengaluru’s fastest growing locations"
-  onClick={() => window.open("https://nature-sign.netlify.app/", "_blank")}
-/>
+  {/* 6 */}<ProjectCard
+    image="/Home/royalEnclave.webp"
+      logo="/royalenclave.png"
+     status="Completed"
+    title="Royal Enclave"
+    location="Marathahalli, Bengaluru"
+    description="2BHK & 3BHK residential apartments"
+    onClick={() => navigate("/projects/royal-enclave")}
+  />
+
 
 </div>
 
