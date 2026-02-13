@@ -279,7 +279,7 @@ const projectsData = [
   {
     slug: "shreyas-sunrise",
     title: "Shreyas Sunrise",
-    location: "Nandagudi, Bengaluru",
+    location: "Jangamakote, Kolar road",
     status: "Ongoing",
     image: "/sunrise.webp",
     logo: "/shreyas_sunrise.webp",
@@ -809,10 +809,10 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
         {/* ✅ RERA DETAILS (same size + animated) */}
         <p className="text-base leading-relaxed pt-4">
           <span className="font-semibold">RERA Number  </span><br></br>
-          PRM/KA/RERA/1254/465/PR/181103/002112,&nbsp;
-          PRM/KA/RERA/1254/465/PR/181103/002113,&nbsp;
-          PRM/KA/RERA/1254/465/PR/181103/002114,&nbsp;
-          PRM/KA/RERA/1254/465/PR/181103/002115,&nbsp;
+          PRM/KA/RERA/1254/465/PR/181103/002112&nbsp;
+          PRM/KA/RERA/1254/465/PR/181103/002113&nbsp;
+          PRM/KA/RERA/1254/465/PR/181103/002114&nbsp;
+          PRM/KA/RERA/1254/465/PR/181103/002115&nbsp;
           PRM/KA/RERA/1254/465/PR/181103/002116
         </p>
 

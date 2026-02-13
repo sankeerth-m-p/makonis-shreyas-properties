@@ -148,7 +148,7 @@ setImageRevealedByDefault(true);
             </p>
 <button
   onClick={() => setShowEnquire(true)}
-  className="buttons btn btn-orange"
+  className="buttons btn  btn-orange"
 >
   <span>REQUEST CALLBACK</span>
   <ArrowRight className="w-4 h-4" />

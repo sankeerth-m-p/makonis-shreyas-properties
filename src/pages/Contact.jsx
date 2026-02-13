@@ -165,17 +165,11 @@ function ContactForm() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="group relative px-8 py-4 btn btn-orange w-fit font-semibold rounded-full transition-all duration-300 flex items-center gap-2"
-              >
-                Get A Call Back
-                <svg
-                  className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                className="buttons btn btn-orange">
+  <span>Get A Call Back</span>
+  <ArrowRight className="w-4 h-4" />
+
+             
               </button>
             </div>
           </form>
