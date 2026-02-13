@@ -143,7 +143,7 @@ return (
   logo="/shreyas_sunrise.webp"
   status="Ongoing"
   title="Shreyas Sunrise"
-  location="Nandagudi, Bengaluru"
+  location="Jangamakote, Kolar road"
   description="Premium gated development in north Bengaluru's fastest growing destination."
   onClick={() => navigate("/projects/shreyas-sunrise")}
 />

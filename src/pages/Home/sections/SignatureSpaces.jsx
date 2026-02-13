@@ -23,7 +23,7 @@ const statusStyles = {
     {
       number: '01',
       slug: "natures-sign",
-      location: 'Devanahalli, Bangalore',status: "Ongoing",
+      location: 'Devanahalli, Bengaluru',status: "Ongoing",
       title: 'Nature\'s Sign',
       description: 'Embrace nature with eco-friendly homes surrounded by greenery and fresh air. Features sustainable design, rainwater harvesting, and proximity to the airport making it ideal for modern families.',
       image: "/Home/naturesign.webp",
@@ -33,44 +33,44 @@ const statusStyles = {
     {
       number: '02',
       slug: "shreyas-sunrise",status: "Ongoing",
-      location: 'Nandagudi, Bengaluru',
+      location: 'Jangamakote, Kolar road',
       title: 'Shreyas Sunrise ',
       description: 'Well-planned premium gated development in the fast-growing satellite township of Nandagudi. With strong future connectivity and close proximity to Devanahalli and the airport, it offers a perfect balance of serene living and long-term value.',
       image: "/sunrise.webp",
-       bgColor: 'bg-ORANGE'
+       bgColor: 'bg-ORANGE2'
     },
     {
       number: '03',
       slug: "royal-enclave",status: "Completed",
-      location: 'Marathahalli, Bangalore',
+      location: 'Marathahalli, Bengaluru',
       title: 'Royal Enclave',
-      description: 'Experience luxury living at its finest with spacious apartments, world-class amenities, and stunning architecture. Located in Bangalore\'s prime locality with easy access to major IT hubs.',
+      description: 'Experience luxury living at its finest with spacious apartments, world-class amenities, and stunning architecture. Located in Bengaluru\'s prime locality with easy access to major IT hubs.',
       image: "/Home/royalEnclave.webp",
-       bgColor: 'bg-ORANGE2'
+       bgColor: 'bg-ORANGE'
     },
     {
       number: '04',
       slug: "paradise",status: "Completed",
-      location: 'Vignana Nagar, Bangalore',
+      location: 'Vignana Nagar, Bengaluru',
       title: 'Paradise',
-      description: 'Your urban paradise awaits with thoughtfully designed homes, lush green spaces, and premium facilities. Perfect blend of comfort and convenience in one of Bangalore\'s most sought-after neighborhoods.',
+      description: 'Your urban paradise awaits with thoughtfully designed homes, lush green spaces, and premium facilities. Perfect blend of comfort and convenience in one of Bengaluru\'s most sought-after neighborhoods.',
       image: "/Home/SandsParadiseVignanNagar_enhanced.webp",
-       bgColor: 'bg-ORANGE'
+       bgColor: 'bg-ORANGE2'
     },
     {
       number: '05',
       slug: "chourasia-shreyas",status: "Completed",
-      location: 'Marathahalli, Bangalore',
+      location: 'Marathahalli, Bengaluru',
       title: 'Chourasia Shreyas',
       description: 'Contemporary living spaces crafted with precision and elegance. Offering modern amenities, excellent ventilation, and strategic location near major tech parks and shopping centers.',
       image: "/Home/ChourasiaShreyasMarathahalli.webp",
-       bgColor: 'bg-ORANGE2'
+       bgColor: 'bg-ORANGE'
     },
     
     {
       number: '06',
       slug: "modern-view-apartment",status: "Completed",
-      location: 'Marathahalli, Bangalore',
+      location: 'Marathahalli, Bengaluru',
       title: 'Modern View Apartment',
       description: 'Contemporary apartments with panoramic views and cutting-edge design. Enjoy spacious layouts, premium finishes, and a lifestyle that complements your aspirations in the city\'s tech hub.',
       image: "/Home/ModernView.webp",
@@ -85,14 +85,14 @@ const statusStyles = {
 
   return (
     <div className=" min-h-[calc(100vh-5rem)] flex flex-col items-center justify-between   lg:p-10">
-      <div className='mx-6 md:mx-0   pt-14 pb-10 max-w-xl md:p-20 flex flex-col justify-center items-center'>
+      <div className='mx-6 md:mx-0   pt-14 pb-10  md:p-20 flex flex-col justify-center items-center'>
        <AnimatedHeading
   delay={0}
-  className="text-3xl md:text-4xl  font-semiboldx mb-4 md:mb-8 text-center"
+  className="text-3xl md:text-4xl  max-w-xl font-semiboldx mb-4 md:mb-8 text-center"
 >
   Signature spaces crafted for modern living
 </AnimatedHeading>
-        <FloatUpText delay={0} className=' lg:px-5  flex flex-col gap-5 items-center' >
+        <FloatUpText delay={0} className=' lg:px-5 max-w-2xl flex flex-col gap-5 items-center' >
        <p className="text-lg w-full text-center">
   A thoughtfully planned development bringing essential amenities together in one cohesive environment.
 </p>
