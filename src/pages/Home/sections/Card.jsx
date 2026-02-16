@@ -182,7 +182,7 @@ const services = [
     {/* Header */}
     <div className="pb-5 flex    flex-col md:flex-row justify-between max-w-6xl px-6 w-full shrink-0">
       <div className="mb-4 md:mb-0">
-        <FloatUpText className="text-text uppercase text-xs tracking-[0.25em] mb-5">
+        <FloatUpText className="text-text uppercase text-xs tracking-[0.2em] mb-5">
       Ongoing Project
       </FloatUpText>
       <FloatUpText className="text-3xl md:text-4xl text-text font-semibold leading-tight">
@@ -276,10 +276,10 @@ const services = [
               />
 
               <div className="relative px-8 pt-8">
-                <h3 className="text-xl font-semibold text-text mb-3">
+                <h3 className="text-xl font-semibold text-white mb-3">
                   {service.title}
                 </h3>
-                <p className="text-text text-sm leading-relaxed">
+                <p className="text-white text-sm leading-relaxed">
                   {service.description}
                 </p>
               </div>
