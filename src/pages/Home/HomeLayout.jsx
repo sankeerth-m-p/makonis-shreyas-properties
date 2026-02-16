@@ -12,6 +12,8 @@ import PromiseSection from "./sections/PromiseSection.jsx";
 import Footer from "../../components/footer.jsx";
 import Navbar from "../../components/Navbar.jsx";
 import Enquire from "../Enquire.jsx";
+import Ongoing from "./sections/Card.jsx";
+import CursorReveal from "./sections/Experince.jsx";
 const HomeLayout = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -95,7 +97,13 @@ const HomeLayout = () => {
           <Testimonials />
         </div>
 
-        <div className="snap-start lg:pt-20 bg-[#F4EFE5] snap-always">
+        <div className="snap-start lg:pt-20 bg-[#F8CC8B] snap-always">
+          <Ongoing/>
+        </div>
+        <div className="snap-start  bg-ORANGE snap-always">
+          <CursorReveal/>
+        </div>
+        <div className="snap-start lg:pt-20 bg-ORANGE snap-always">
           <NatureSign />
         </div>
 

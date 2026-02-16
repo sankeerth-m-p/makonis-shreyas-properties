@@ -152,3 +152,60 @@ h1, h2, h3, h4, h5, h6 {
     transition-delay: 700ms; /* sync with flex expand */
   }
 }
+.mask-layer {
+  -webkit-mask-image: url("https://framerusercontent.com/images/De0CMakQwO0HOVWPyQnVeTw.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: var(--mask-size);
+  -webkit-mask-position: center;
+
+  /* 🔥 THIS is what makes it smooth */
+  transition: -webkit-mask-size 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}.liquid-gradient {
+  position: absolute;
+  inset: -75%; /* More overflow for bigger movement */
+
+  background:
+    radial-gradient(
+      40% 40% at 20% 30%,
+      rgb(232, 97, 13), /* Full opacity */
+      transparent 50%
+    ),
+    radial-gradient(
+      50% 50% at 70% 35%,
+      #ff6417, /* Full opacity */
+      transparent 55%
+    ),
+    radial-gradient(
+      50% 50% at 40% 75%,
+      #fff715, /* Full opacity */
+      transparent 60%
+    );
+
+  filter: blur(100px) saturate(100%) contrast(100%); /* More saturation & contrast */
+  mix-blend-mode: screen;
+  animation: liquidFlow 4s ease-in-out infinite; /* Faster, with easing */
+  will-change: transform;
+}
+
+/* 🌊 MORE DRAMATIC MOVEMENT */
+@keyframes liquidFlow {
+  0% {
+    transform: translate3d(-30%, -20%, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(35%, 25%, 0) rotate(25deg) scale(1.25);
+  }
+  100% {
+    transform: translate3d(-30%, -20%, 0) rotate(0deg) scale(1);
+  }
+}
+
+
+.grain-layer {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.06;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
