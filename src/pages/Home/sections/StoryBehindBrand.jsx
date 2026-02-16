@@ -18,14 +18,14 @@ const StoryBehindBrand = () => {
         bg-cover
       "
       style={{
-        backgroundImage: "url(/hero_image_2.webp)",
+        backgroundImage: "url( /Home/naturesign.webp)",
       }}
     >
       {/* FROSTED GLASS OVERLAY - FULL WIDTH */}
       <div
         className="absolute inset-0 glassmorphism pointer-events-none"
         style={{
-          background: "rgba(225, 225, 225, 0.30)",
+          background: " #f3e0bf",
           backdropFilter: "blur(40px) saturate(90%)",
           WebkitBackdropFilter: "blur(18px) saturate(160%)",
           border: "1px solid rgba(255, 255, 255, 0.35)",
@@ -47,7 +47,7 @@ const StoryBehindBrand = () => {
                 maskRepeat: "no-repeat",
                 maskPosition: "center",
                 maskSize: "min(320px, 80%)",
-                backgroundImage: "url(/hero_image_2.webp)",
+                backgroundImage: "url( /Home/naturesign.webp)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundAttachment: "fixed",
@@ -62,7 +62,7 @@ const StoryBehindBrand = () => {
                 <h2
                   className="text-6xl   md:text-8xl font-bold leading-tight"
                   style={{
-                    background: "url(/hero_image_2.webp)",
+                    background: "url( /Home/naturesign.webp)",
                     backgroundSize: "cover",
                    
                     backgroundPosition: "center",
@@ -80,7 +80,7 @@ const StoryBehindBrand = () => {
               </div>
 
               <FloatUpText delay={0}>
-                <p className="text-sm mb-5  text-white/70">
+                <p className="text-sm mb-5  ">
 Our logo embodies strength, movement, and modern simplicity through a clean, minimal design. The two bold orange forms represent growth and structure, symbolizing buildings, plotted developments, and rising foundations within the real estate landscape.
 The subtle curve created through the central negative space signifies connection uniting land and vision, design and execution, developer and customer. Balanced and upright, the geometric forms convey stability, trust, and solid foundations. Their upward movement reflects ambition, progress, and a commitment to continuous growth in the real estate journey.                </p>
                 {/* <button
