@@ -266,8 +266,8 @@ const HeroSection = () => {
         onClick={() => handleDotClick(index)}
         className={`transition-all duration-300 rounded-full ${
           index === currentIndex
-            ? "w-5 h-3 bg-white"
-            : "w-3 h-3 bg-white/50 hover:bg-white"
+            ? "w-3 h-2 bg-white"
+            : "w-2 h-2 bg-white/50 hover:bg-white"
         }`}
         aria-label={`Go to slide ${index + 1}`}
       />
