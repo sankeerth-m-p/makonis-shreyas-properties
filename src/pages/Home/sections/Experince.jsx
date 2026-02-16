@@ -104,7 +104,7 @@ export default function CursorReveal() {
       ref={sectionRef}
       onMouseMove={handleSectionMove}
       onMouseLeave={handleSectionLeave}
-      className="relative lg:h-screen pt-[5rem] w-full text-white overflow-hidden"
+      className="relative  lg:h-screen pt-[5rem] w-full text-white overflow-hidden"
     >
       {/* BACKGROUND */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -169,9 +169,9 @@ Where experience meets enduring value, every project is shaped by insight, preci
           <div
             ref={backRef}
             className="
-              absolute
+              absolute hidden
               -inset-[300px]
-              flex items-center justify-center
+              md:flex items-center justify-center
               z-20
               pointer-events-none
               bg-white
