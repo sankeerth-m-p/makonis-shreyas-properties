@@ -104,17 +104,17 @@ export default function CursorReveal() {
       ref={sectionRef}
       onMouseMove={handleSectionMove}
       onMouseLeave={handleSectionLeave}
-      className="relative  lg:h-screen pt-[5rem] w-full text-white overflow-hidden"
+      className="relative  lg:h-screen lg:pt-[5rem] w-full text-white overflow-hidden"
     >
       {/* BACKGROUND */}
-      <div className="absolute inset-0 pointer-events-none z-0">
+      <div className="absolute  inset-0 pointer-events-none z-0">
         <div className="hero-gradient-base" />
         <div className="liquid-gradient" />
         <div className="grain-layer" />
       </div>
 
       {/* CONTENT */}
-      <div className="relative  z-10 h-full flex flex-col justify-between text-center px-6 py-20">
+      <div className="relative   z-10 h-full flex flex-col justify-between text-center px-6 py-20">
 
         {/* HEADER */}
         <div>
