@@ -162,43 +162,50 @@ h1, h2, h3, h4, h5, h6 {
   transition: -webkit-mask-size 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }.liquid-gradient {
   position: absolute;
-  inset: -75%; /* More overflow for bigger movement */
+  inset: -40%; /* reduced from -75% */
 
   background:
     radial-gradient(
-      40% 40% at 20% 30%,
-      rgb(232, 97, 13), /* Full opacity */
-      transparent 50%
-    ),
-    radial-gradient(
-      50% 50% at 70% 35%,
-      #ff6417, /* Full opacity */
+      45% 45% at 25% 30%,
+      rgba(232, 97, 13, 0.9),
       transparent 55%
     ),
     radial-gradient(
-      50% 50% at 40% 75%,
-      #fff715, /* Full opacity */
+      45% 45% at 70% 35%,
+      rgba(255, 100, 23, 0.9),
+      transparent 55%
+    ),
+    radial-gradient(
+      45% 45% at 45% 75%,
+      rgba(255, 247, 21, 0.85),
       transparent 60%
     );
 
-  filter: blur(100px) saturate(100%) contrast(100%); /* More saturation & contrast */
-  mix-blend-mode: screen;
-  animation: liquidFlow 4s ease-in-out infinite; /* Faster, with easing */
+  filter: blur(70px); /* reduced blur */
+  opacity: 0.9;
+
+  animation: liquidFlow 7s linear infinite; /* slower */
   will-change: transform;
 }
 
-/* 🌊 MORE DRAMATIC MOVEMENT */
-@keyframes liquidFlow {
-  0% {
-    transform: translate3d(-30%, -20%, 0) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: translate3d(35%, 25%, 0) rotate(25deg) scale(1.25);
-  }
-  100% {
-    transform: translate3d(-30%, -20%, 0) rotate(0deg) scale(1);
+@media (max-width: 768px) {
+  .liquid-gradient {
+    animation: none;
   }
 }
+
+@keyframes liquidFlow {
+  0% {
+    transform: translate3d(-15%, -10%, 0);
+  }
+  50% {
+    transform: translate3d(15%, 10%, 0);
+  }
+  100% {
+    transform: translate3d(-15%, -10%, 0);
+  }
+}
+
 
 
 .grain-layer {

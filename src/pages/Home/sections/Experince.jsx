@@ -95,8 +95,8 @@ export default function CursorReveal() {
     }, [end, duration, ref]);
   };
 
-  useCountUp(stat1, 200);
-  useCountUp(stat2, 1.5);
+  useCountUp(stat1, 250);
+  useCountUp(stat2, 10);
   useCountUp(stat3, 79);
 
   return (
@@ -123,8 +123,7 @@ export default function CursorReveal() {
           </div>
 
           <p className="max-w-xl mx-auto text-base">
-            We're a hands-on digital agency building thoughtful solutions for ambitious brands.
-          </p>
+Where experience meets enduring value, every project is shaped by insight, precision, and proven expertise.          </p>
         </div>
 
         {/* INTERACTION AREA */}
@@ -153,7 +152,7 @@ export default function CursorReveal() {
                 text-white
               "
             >
-              25 years
+              8 + years
             </span>
           </div>
 
@@ -188,11 +187,11 @@ export default function CursorReveal() {
 
         {/* COUNTERS */}
         <div className="max-w-6xl mx-auto px-6 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
 
             <div>
               <p className="text-sm uppercase tracking-wider mb-3 text-white">
-                Industries impacted <br /> through innovative design
+                Satisfied customers
               </p>
               <div className="text-4xl md:text-5xl font-bold text-white">
                 <span ref={stat1}>0</span>+
@@ -201,21 +200,14 @@ export default function CursorReveal() {
 
             <div>
               <p className="text-sm uppercase tracking-wider mb-3 text-white">
-                Projects redefining visual <br /> experiences
+                Successful Projects
               </p>
               <div className="text-4xl md:text-5xl font-bold text-white">
                 <span ref={stat2}>0</span>K+
               </div>
             </div>
 
-            <div>
-              <p className="text-sm uppercase tracking-wider mb-3 text-white">
-                Digital magicians shattering <br /> your expectations
-              </p>
-              <div className="text-4xl md:text-5xl font-bold text-white">
-                <span ref={stat3}>0</span>+
-              </div>
-            </div>
+            
 
           </div>
         </div>
