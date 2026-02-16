@@ -19,7 +19,7 @@ const services = [
       "Set amidst the timeless charm of flourishing mango trees, this thoughtfully planned development offers a rare blend of natural beauty and modern comfort.",
     gradient: "from-[#bb7863] to-[#e8a950]",
     image: "/cards/mango.svg",
-    imageClass: "h-44 translate-y-1 md:-translate-y-1 translate-x-[60%]",
+    imageClass: "h-44 translate-y-1 md:translate-y-1 translate-x-[60%]",
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const services = [
       "Positioned just five minutes from the Satellite Town Ring Road (STRR), this development offers exceptional connectivity and future-ready infrastructure advantage.",
     gradient: "from-[#bb7863] to-[#e8a950]",
     image: "/cards/strr.svg",
-    imageClass: "h-44 translate-y-1 md:-translate-y-1 translate-x-[60%]",
+    imageClass: "h-44 translate-y-1 md:translate-y-1 translate-x-[60%]",
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const services = [
       "Located in close proximity to well-established educational institutions and IT hubs, ensuring quality learning and work-life balance.",
     gradient: "from-[#867866] to-[#c28e26]",
     image: "/cards/school.svg",
-    imageClass: "h-44 translate-y-1 md:-translate-y-1 translate-x-[60%]",
+    imageClass: "h-44 translate-y-1  md:translate-y-1 translate-x-[60%]",
   },
   {
     id: 5,
@@ -181,11 +181,11 @@ const services = [
 
     {/* Header */}
     <div className="pb-5 flex    flex-col md:flex-row justify-between max-w-6xl px-6 w-full shrink-0">
-      <div>
+      <div className="mb-4 md:mb-0">
         <FloatUpText className="text-text uppercase text-xs tracking-[0.25em] mb-5">
-        ✱ Ongoing Project
+      Ongoing Project
       </FloatUpText>
-      <FloatUpText className="text-4xl text-text font-semibold leading-tight">
+      <FloatUpText className="text-3xl md:text-4xl text-text font-semibold leading-tight">
         Introducing <br className="md:hidden" /> Nature’s Sign
       </FloatUpText>
         </div>

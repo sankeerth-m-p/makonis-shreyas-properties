@@ -132,7 +132,7 @@ const NatureSign = () => {
 
       {/* CONTENT */}
       <div className="relative z-20 h-full flex flex-col justify-end">{/* INFO STRIP – DESKTOP ONLY */}
-<div className="lg:absolute hidden px-6 lg:px-0 md:block lg:bottom-[150px] w-full z-30">
+{/* <div className="lg:absolute hidden px-6 lg:px-0 md:block lg:bottom-[150px] w-full z-30">
   <div className="max-w-6xl mx-auto">
     <div className="flex items-center justify-between text-[#D7E2E8] text-sm">
       
@@ -172,7 +172,7 @@ const NatureSign = () => {
 
     </div>
   </div>
-</div>
+</div> */}
 
         {/* BOTTOM BAND */}
         <div className="py-4 px-6 lg:px-0 lg:py-6">

@@ -154,14 +154,14 @@ Where experience meets enduring value, every project is shaped by insight, preci
             </span>
             <span
               className="
-                text-4xl
+                text-5xl
                 md:hidden
                 font-bold
                 whitespace-nowrap
                 text-white
               "
             >
-              experience
+              of experience
             </span>
           </div>
 
