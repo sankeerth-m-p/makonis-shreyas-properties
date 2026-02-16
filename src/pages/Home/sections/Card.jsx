@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import FloatUpText from "../../../components/floatUpText";
+import { ArrowRight } from "lucide-react";
 
 const Ongoing = () => {
   const desktopRef = useRef(null);
@@ -179,13 +180,22 @@ const services = [
   <div className="w-full h-full       flex flex-col items-center">
 
     {/* Header */}
-    <div className="pb-5      max-w-6xl px-6 w-full shrink-0">
-      <FloatUpText className="text-[#05c2ae] uppercase text-xs tracking-[0.25em] mb-5">
+    <div className="pb-5 flex    flex-col md:flex-row justify-between max-w-6xl px-6 w-full shrink-0">
+      <div>
+        <FloatUpText className="text-[#05c2ae] uppercase text-xs tracking-[0.25em] mb-5">
         ✱ Ongoing Project
       </FloatUpText>
-      <FloatUpText className="text-4xl text-white font-semibold leading-tight">
+      <FloatUpText className="text-4xl text-text font-semibold leading-tight">
         Introducing <br className="md:hidden" /> Nature’s Sign
       </FloatUpText>
+        </div>
+        <FloatUpText><button
+            onClick={() => window.open("https://nature-sign.netlify.app/", "_blank")}
+            className="btn btn-orange w-fit  mt-2 md:mt-4"
+          >
+            <span>view project</span>
+            <ArrowRight className="w-4 h-4" />
+          </button> </FloatUpText>
     </div>
 
     {/* DESKTOP */}
@@ -218,10 +228,10 @@ const services = [
               <div className="relative flex  flex-col h-full  pt-8 ">
                 {/* Text */}
                 <div className="shrink-0 px-8">
-                  <h3 className="text-xl font-semibold text-white mb-3">
+                  <h3 className="text-xl font-semibold text-text mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-white text-sm leading-relaxed">
+                  <p className="text-text text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -231,7 +241,7 @@ const services = [
                   <img
                     src={service.image}
                     alt={service.title}
-                    className={`object-contain max-h-full ${service.imageClass}`}
+                    className={`object-contain max-h-full  opacity-60 ${service.imageClass}`}
                   />
                 </div>
               </div>
@@ -255,7 +265,6 @@ const services = [
               className="
                 relative
                 h-[420px]
-                bg-white
                 rounded-lg
                 shadow-lg
                 overflow-hidden
@@ -267,10 +276,10 @@ const services = [
               />
 
               <div className="relative px-8 pt-8">
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-text mb-3">
                   {service.title}
                 </h3>
-                <p className="text-white text-sm leading-relaxed">
+                <p className="text-text text-sm leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -279,7 +288,7 @@ const services = [
                 <img
                   src={service.image}
                   alt={service.title}
-                  className={`object-contain ${service.imageClass}`}
+                  className={`object-contain opacity-50 ${service.imageClass}`}
                 />
               </div>
             </motion.div>
