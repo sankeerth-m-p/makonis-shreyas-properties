@@ -257,7 +257,24 @@ const HeroSection = () => {
             />
           ))}
         </div>
-      )}
+      )}{/* Dots Navigation - Desktop Only */}
+{!isMobile && (
+  <div className="absolute bottom-8 right-10 flex items-center gap-3 z-20">
+    {heroSlides.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => handleDotClick(index)}
+        className={`transition-all duration-300 rounded-full ${
+          index === currentIndex
+            ? "w-3 h-2 bg-white"
+            : "w-2 h-2 bg-white/50 hover:bg-white"
+        }`}
+        aria-label={`Go to slide ${index + 1}`}
+      />
+    ))}
+  </div>
+)}
+
 
       <style>{`
         /* ===== FORWARD ANIMATIONS - AUTO (Right to Left reveal) ===== */

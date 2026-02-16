@@ -1,119 +1,110 @@
 import AnimatedHeading from "../../../components/animatedHeading";
-import { useNavigate } from "react-router-dom";
 import FloatUpText from "../../../components/floatUpText";
+import { useNavigate } from "react-router-dom";
+
 const StoryBehindBrand = () => {
   const navigate = useNavigate();
   return (
-   <section
-  className=" 
-    relative w-full 
-    h-[70vh]   lg:h-[calc(100vh-5rem)]
-    bg-center bg-cover bg-no-repeat
-    overflow-hidden z-10
-  "
-  style={{
-    backgroundImage:
-      "url(/Home/naturesign.webp)",
-  }}
->
-  {/* overlay */}
-  <div className="absolute   inset-0 bg-[#F4EFE5]" />
-
-  {/* CONTENT */}
-  <div className="relative h-full pb-10 max-w-7xl mx-auto md:px-6">
-    <div
+    <section
       className="
-        h-full
-        grid
-        place-items-center
+        relative
+        w-full
+        overflow-hidden
+        lg:h-[calc(100vh-5rem)]
+        py-10
+        lg:py-0
+       bg-fixed
+        bg-center
+        bg-cover
       "
+      style={{
+        backgroundImage: "url( /Home/naturesign.webp)",
+      }}
     >
-      {/* wrapper */}
+      {/* FROSTED GLASS OVERLAY - FULL WIDTH */}
       <div
-        className=" 
-          relative  lg:h-[50vh] md:h-3/5  h-2/5
-          w-[min(78vw,520px)]
-          aspect-[520/420] 
-        "
-      >
-        {/* TOP LEFT TITLE */}
-        <div
-          className=" 
-            absolute
-            top-0 left-0 
-            -translate-y-[130%]
-            text-left  lg:mt-10
-             lg:-translate-x-[80%]  lg:-translate-y-[70%]
-          "
-        >
-          <AnimatedHeading
-            as="h1"
-            delay={0}
-            staggerDelay={0.15}
-            className="
-             text-3xl md:text-4xl font-semiboldx mb-3 lg:mb-8"
-          >
-            The Story{"\n"}Behind the Brand
-          </AnimatedHeading>
-        </div>
+        className="absolute inset-0 glassmorphism pointer-events-none"
+        style={{
+          background: " #f3e0bf",
+          backdropFilter: "blur(40px) saturate(90%)",
+          WebkitBackdropFilter: "blur(18px) saturate(160%)",
+          border: "1px solid rgba(255, 255, 255, 0.35)",
+        }}
+      />
+      {/* CONTENT CONTAINER - MAX WIDTH 6XL */}
+      <div className="relative max-w-6xl px-6 mx-auto px-6 h-full flex items-center">
+        <div className="w-full flex flex-col h-full lg:flex-row gap-8 lg:gap-0 min-h-[70vh] lg:min-h-0">
+          {/* LEFT 50% — LOGO CUTOUT (SHOWS SECTION BG) */}
+          <div className="relative w-full lg:w-1/2 flex items-center justify-center min-h-[40vh] lg:min-h-0">
+            <div
+              className="absolute inset-0"
+              style={{
+                WebkitMaskImage: `url(/logo.svg)`,
+                WebkitMaskRepeat: "no-repeat",
+                WebkitMaskPosition: "center",
+                WebkitMaskSize: "min(320px, 80%)",
+                maskImage: `url(/logo.svg)`,
+                maskRepeat: "no-repeat",
+                maskPosition: "center",
+                maskSize: "min(320px, 80%)",
+                backgroundImage: "url( /Home/naturesign.webp)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundAttachment: "fixed",
+              }}
+            />
+          </div>
+          {/* RIGHT 50% — CONTENT */}
+          <div className="relative w-full lg:w-1/2 flex   items-center justify-center lg:justify-start">
+            <div className="w-full  p-8   lg:py-12">
+              {/* TITLE WITH CUTOUT MASK */}
+              <div className="relative    mb-6">
+                <h2
+                  className="text-6xl   md:text-8xl font-bold leading-tight"
+                  style={{
+                    background: "url( /Home/naturesign.webp)",
+                    backgroundSize: "cover",
+                   
+                    backgroundPosition: "center",
+                    backgroundAttachment: "fixed",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  }}
+                >
+                  The Story
+                  <br />
+                  Behind the Brand
+                </h2>
+              </div>
 
-        {/* MASK IMAGE */}
-        <div
-          className=" 
-            w-full h-full 
-            bg-center bg-cover
-             bg-fixed
-          "
-          style={{
-            backgroundImage:
-              "url(/Home/naturesign.webp)",
-
-            WebkitMaskImage: "url(/logo.svg)",
-            WebkitMaskRepeat: "no-repeat",
-            WebkitMaskSize: "contain",
-            WebkitMaskPosition: "center",
-
-            maskImage: "url(/logo.svg)",
-            maskRepeat: "no-repeat",
-            maskSize: "contain",
-            maskPosition: "center",
-          }}
-        />
-
-        {/* BOTTOM TEXT */}
-        <div
-          className="
-            absolute
-            left-1/2
-            -translate-x-1/2
-            top-full
-            mt-6
-            text-center
-            max-w-[32ch]
-
-             lg:mt-0
-             lg:left-auto  lg:right-0
-             lg:bottom-0  lg:top-auto
-             lg:translate-x-[60%]  lg:translate-y-[60%]
-             lg:text-right
-             lg:max-w-[26ch]
-          "
-            ><FloatUpText delay={0}>
-                
-          <p className="text-[clamp(16px,1.2vw,16px)]   mb-5">
-            Our brand tells a story of commitment, trust, and progress.
-          </p>
-
-          <button onClick={()=>navigate('/our-story')}  className="text-[11px] tracking-widest uppercase  border-b hover:text-ORANGE hover:font-bold hover:border-ORANGE  border-black pb-1">
-            KNOW MORE
-          </button>
-        </FloatUpText>
+              <FloatUpText delay={0}>
+                <p className="text-sm mb-5  ">
+Our logo embodies strength, movement, and modern simplicity through a clean, minimal design. The two bold orange forms represent growth and structure, symbolizing buildings, plotted developments, and rising foundations within the real estate landscape.
+The subtle curve created through the central negative space signifies connection uniting land and vision, design and execution, developer and customer. Balanced and upright, the geometric forms convey stability, trust, and solid foundations. Their upward movement reflects ambition, progress, and a commitment to continuous growth in the real estate journey.                </p>
+                {/* <button
+                  onClick={() => navigate("/our-story")}
+                  className="
+                    text-[11px]
+                    tracking-widest
+                    uppercase
+                    border-b
+                    border-white
+                    pb-1
+                    hover:text-ORANGE
+                    hover:border-ORANGE
+                    transition
+                  "
+                >
+                  KNOW MORE
+                </button> */}
+              </FloatUpText>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
   );
 };
-
 export default StoryBehindBrand;

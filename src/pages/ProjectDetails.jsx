@@ -243,7 +243,7 @@ const projectsData = [
     logo: "/ChourasiaShreyas.webp",
     about: {
       heading: "Modern commercial spaces built for visibility and growth.",
-      image: "/family.webp",
+      image: "/family1.webp",
       text: [
         "Chourasia Shreyas is a well-planned commercial project located in the prime locality of Marathahalli, Bangalore. Designed with modern architecture and functionality, it caters to businesses looking for a strategic location with high visibility and easy connectivity. Its smart design ensures that both businesses and visitors enjoy a convenient and professional environment..",
         "The project benefits from its strategic placement in one of Bangalore’s most vibrant and well-connected localities. Marathahalli is known for its proximity to IT hubs, tech parks, residential neighborhoods, and major road networks like Outer Ring Road and Old Airport Road, making it an ideal choice for retail, office, and service-based businesses.",
@@ -293,7 +293,7 @@ const projectsData = [
     image: "/Home/naturesign.webp",
     logo: "/naturessign.webp", about: {
       heading: "Modern commercial spaces built for visibility and growth.",
-      image: "/family.webp",
+      image: "/family2.webp",
       text: [
         "Modern View is developed to meet the needs of small and mid-sized businesses.",
         "The project focuses on accessibility, efficient layouts, and long-term value.",
@@ -379,7 +379,7 @@ const projectsData = [
 
     about: {
       heading: "Thoughtfully planned homes in a thriving urban neighborhood.",
-      image: "/family.webp",
+      image: "/family3.webp",
       text: [
         "Royal Enclave is an ultimate reflection of the urban chic lifestyle located in the vibrant neighborhood of Marathahalli, Bangalore. This residential project offers exclusively designed apartments that embody elegance, simplicity, and comfort. With thoughtfully planned interiors and quality construction, it is tailored for modern families seeking a stylish yet peaceful living experience.",
         " The project is inspiring in design and surrounded by lush greenery, providing a calm escape from the city’s hustle while keeping you close to urban conveniences. Strategically positioned in Marathahalli, Royal Enclave allows residents to enjoy quick connectivity to Outer Ring Road, Whitefield, and IT hubs, making it an excellent choice for working professionals.",
@@ -424,7 +424,7 @@ const projectsData = [
 
     about: {
       heading: "Comfortable residences built for peaceful city living.",
-      image: "/family.webp",
+      image: "/family4.webp",
       text: [
         "Paradise, located in Vignana Nagar, Bangalore, is precisely planned for the modern city dweller.Designed to provide a pollution-free living environment, this residential community is surrounded by wide open spaces that offer not just the luxury of space, but also peace of mind.. Every corner of this development reflects careful planning to balance urban convenience with serene living. ",
         "The project is strategically located, placing residents in close proximity to schools, shopping centers, hospitals, and entertainment hubs. Whether it’s daily essentials, healthcare, or leisure activities, everything is just a short drive away, making Paradise a perfect choice for families and professionals seeking comfort and convenience.",
@@ -820,7 +820,7 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
     </div>
 
     <RevealImageAnimation
-      image="/family.webp"
+      image="/family2.webp"
       className="h-[350px] md:h-[600px] object-cover"
     />
   </div>

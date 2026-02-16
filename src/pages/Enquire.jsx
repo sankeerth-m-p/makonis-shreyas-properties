@@ -91,7 +91,7 @@ const Enquire = ({ onClose }) => {
   <X className="w-5 h-5 md:w-9 md:h-9" />
 </button>
 
-        <div className="relative  max-w-2xl  mx-auto">
+        <div className="  relative  max-w-2xl  mx-auto">
 
 
           {/* Heading */}

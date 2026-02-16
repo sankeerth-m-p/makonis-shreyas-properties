@@ -62,3 +62,11 @@
 .animate-fadeIn {
   animation: fadeIn 0.6s ease-out;
 }
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}

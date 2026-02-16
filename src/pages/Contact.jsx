@@ -74,16 +74,16 @@ function ContactForm() {
       <div className="max-w-6xl w-full z-10 bg-white rounded-3xl shadow-2xl p-6 py-10 md:p-32">
 
 
-        <div className="relative  max-w-2xl  mx-auto">
+         <div className="  relative  max-w-2xl  mx-auto">
 
 
           {/* Heading */}
-          <h1 className="text-base md:text-3xl text-center text-black mb-4 md:mb-12">
+     <h1 className=" text-base md:text-3xl text-center text-black mb-4 md:mb-12">
             Share query by filling out the form, we will assist you at the earliest.
           </h1>
 
           {/* Form */}
-         <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name Input */}
               <input
@@ -92,11 +92,14 @@ function ContactForm() {
                 placeholder="Your Name*"
                 value={formData.name}
                 onChange={handleChange}
+                required
                 className="w-full px-5 py-3 md:px-6 md:py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
-              />
+              />  
 
               {errors.name && (
-                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.name}
+                </p>
               )}
 
               {/* Email Input */}
@@ -120,43 +123,31 @@ function ContactForm() {
                   placeholder="Phone Number *"
                   value={formData.phone}
                   onChange={handleChange}
+                  required
                   className="w-full px-5 py-3 md:px-6 md:py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
                 />
 
                 {errors.phone && (
-                  <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.phone}
+                  </p>
                 )}
               </div>
 
 
               {/* Dropdown */}
-             <textarea
-  name="message"
-  placeholder="Your inquiry about..."
-  value={formData.message}
-  onChange={handleChange}
-  rows={1}
-  className="
-    w-full
-    px-5 py-3
-    md:px-6 md:py-4
-    bg-[#f2f2f2]
-    rounded-3xl
-    text-black
-    placeholder-black/60
-    focus:outline-none
-    focus:ring-1
-    focus:ring-black
-    resize-none
-    min-h-[48px] md:min-h-[64px]
-  "
-></textarea>
-
+              <textarea
+                name="message"
+                placeholder="Your inquiry about..."
+                value={formData.message}
+                onChange={handleChange}
+                rows="1"
+                className="w-full px-5 py-3 md:px-6 md:py-4 bg-[#f2f2f2] rounded-3xl text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black resize-none"
+              ></textarea>
             </div>
 
             {/* Footer Text and Button */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between
-     gap-4 md:gap-6 mt-6 md:mt-8">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mt-8">
               <p className="text-black text-sm md:text-base">
 
                 Required fields are marked *
@@ -165,11 +156,17 @@ function ContactForm() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="buttons btn btn-orange">
-  <span>Get A Call Back</span>
-  <ArrowRight className="w-4 h-4" />
-
-             
+                className="group relative px-8 py-4 btn btn-orange w-fit font-semibold rounded-full transition-all duration-300 flex items-center gap-2"
+              >
+                Get A Call Back
+                <svg
+                  className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </button>
             </div>
           </form>
