@@ -118,9 +118,7 @@ export default function CursorReveal() {
 
         {/* HEADER */}
         <div>
-          <div className="text-xs tracking-widest mb-4">
-            ✱ OUR EXPERTISE SPANS
-          </div>
+          
 
           <p className="max-w-xl mx-auto text-base">
 Where experience meets enduring value, every project is shaped by insight, precision, and proven expertise.          </p>
@@ -142,7 +140,7 @@ Where experience meets enduring value, every project is shaped by insight, preci
           "
         >
           {/* FRONT */}
-          <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+          <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
             <span
               className="
                 text-5xl
@@ -152,7 +150,18 @@ Where experience meets enduring value, every project is shaped by insight, preci
                 text-white
               "
             >
-              8 + years
+              8 + years 
+            </span>
+            <span
+              className="
+                text-4xl
+                md:hidden
+                font-bold
+                whitespace-nowrap
+                text-white
+              "
+            >
+              experience
             </span>
           </div>
 
@@ -203,7 +212,7 @@ Where experience meets enduring value, every project is shaped by insight, preci
                 Successful Projects
               </p>
               <div className="text-4xl md:text-5xl font-bold text-white">
-                <span ref={stat2}>0</span>K+
+                <span ref={stat2}>0</span>+
               </div>
             </div>
 

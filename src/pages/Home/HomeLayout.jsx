@@ -76,8 +76,10 @@ const HomeLayout = () => {
         <div className="snap-start lg:pt-20 lg:h-screen snap-always">
           <ThoughtfulSection />
         </div>
-
-        <div className="snap-start lg:pt-20 snap-always">
+<div className="snap-start  bg-ORANGE snap-always">
+          <CursorReveal/>
+        </div>
+        <div className="snap-start bg-[#EEF2F3]  lg:pt-20 snap-always">
           <BespokeSection />
         </div>
 
@@ -97,13 +99,11 @@ const HomeLayout = () => {
           <Testimonials />
         </div>
 
-        <div className="snap-start lg:pt-20 bg-[#F8CC8B] snap-always">
+        <div className="snap-start lg:pt-20 bg-[#F4EFE5] snap-always">
           <Ongoing/>
         </div>
-        <div className="snap-start  bg-ORANGE snap-always">
-          <CursorReveal/>
-        </div>
-        <div className="snap-start lg:pt-20 bg-ORANGE snap-always">
+        
+        <div className="snap-start lg:pt-20 bg-[#E3DA64] snap-always">
           <NatureSign />
         </div>
 

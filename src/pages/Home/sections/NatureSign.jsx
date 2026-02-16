@@ -131,7 +131,49 @@ const NatureSign = () => {
       <div className="absolute h-1/2 bottom-0 w-full bg-gradient-to-t from-[#0A1E2A]/100 via-[#0A1E2A]/40 to-transparent z-10" />
 
       {/* CONTENT */}
-      <div className="relative z-20 h-full flex flex-col justify-end">
+      <div className="relative z-20 h-full flex flex-col justify-end">{/* INFO STRIP – DESKTOP ONLY */}
+<div className="lg:absolute hidden px-6 lg:px-0 md:block lg:bottom-[150px] w-full z-30">
+  <div className="max-w-6xl mx-auto">
+    <div className="flex items-center justify-between text-[#D7E2E8] text-sm">
+      
+      <div className="flex items-center gap-3">
+        <FloatUpText>
+          <img src={nhIcon} className="w-12 h-8 opacity-80" />
+        </FloatUpText>
+        <div>
+          <FloatUpText>Located on</FloatUpText>
+          <FloatUpText>NH-44 North Bengaluru</FloatUpText>
+        </div>
+      </div>
+
+      <span className="w-[1px] h-[46px] bg-[#6F8C9B]/45" />
+
+      <div className="flex items-center gap-3">
+        <FloatUpText>
+          <img src={airportIcon} className="w-12 h-12 opacity-80" />
+        </FloatUpText>
+        <div>
+          <FloatUpText>Just</FloatUpText>
+          <FloatUpText>20 minutes from Airport</FloatUpText>
+        </div>
+      </div>
+
+      <span className="w-[1px] h-[46px] bg-[#6F8C9B]/45" />
+
+      <div className="flex items-center gap-3">
+        <FloatUpText>
+          <img src={hillIcon} className="w-12 h-12 opacity-80" />
+        </FloatUpText>
+        <div>
+          <FloatUpText>Very close</FloatUpText>
+          <FloatUpText>proximity from Nandi Hills</FloatUpText>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
         {/* BOTTOM BAND */}
         <div className="py-4 px-6 lg:px-0 lg:py-6">
           <div className="max-w-6xl mx-auto flex items-center justify-between gap-6 text-[#D7E2E8]">
@@ -157,7 +199,55 @@ const NatureSign = () => {
               <AnimatedHeading className="text-sm lg:text-2xl max-w-xs lg:max-w-md text-white">
                 Nature’s sign, where luxury and nature flow in perfect harmony.
               </AnimatedHeading>
-            </div>
+            </div> {/* DESKTOP THUMB SLIDER */}
+<div className="relative w-[360px] hidden lg:flex items-center">
+  
+  <button
+    onClick={() => {
+      pauseAutoSlide();
+      setIndex((prev) => (prev - 1 + images.length) % images.length);
+    }}
+    className="absolute -left-8 bg-[#0A1E2A]/90 w-9 h-9 rounded-full"
+  >
+    ‹
+  </button>
+
+  <div className="w-[320px] overflow-hidden mx-auto">
+    <div
+      className="flex gap-3 transition-transform duration-500"
+      style={{
+        transform: `translateX(-${index * thumbWidth}px)`,
+      }}
+    >
+      {[...images, ...images].map((img, i) => {
+        const realIndex = i % images.length;
+        return (
+          <img
+            key={i}
+            src={img}
+            className="w-[100px] h-[70px] object-cover shrink-0 cursor-pointer hover:scale-105 transition"
+            onClick={() => {
+              pauseAutoSlide();
+              setIndex(realIndex);
+            }}
+          />
+        );
+      })}
+    </div>
+  </div>
+
+  <button
+    onClick={() => {
+      pauseAutoSlide();
+      setIndex((prev) => (prev + 1) % images.length);
+    }}
+    className="absolute -right-8 bg-[#0A1E2A]/90 w-9 h-9 rounded-full"
+  >
+    ›
+  </button>
+
+</div>
+
           </div>
         </div>
       </div>
