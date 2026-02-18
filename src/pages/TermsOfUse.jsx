@@ -16,12 +16,12 @@ const TermsOfUse = () => {
           </AnimatedHeading>
         </div>
 
-        <p><strong>Effective Date:</strong> April 5, 2025</p>
-        <p><strong>Last Updated:</strong> April 5, 2025</p>
+        <p><strong>Effective Date:</strong> January 5, 2026</p>
+        <p><strong>Last Updated:</strong> January 5, 2026</p>
 
         <p>
-          Welcome to the official website of <strong>Shreyas Infra Developers</strong>. This website
-          (<strong>www.shreyasinfradevelopers.com</strong>) is owned and operated by <strong>Shreyas Infra Developers</strong>.
+          Welcome to the official website of <strong>Shreyas Infra </strong>. This website
+          (<strong> www.shreyasinfra.com</strong>) is owned and operated by <strong>Shreyas Infra </strong>.
           By visiting our website and accessing the information, resources, services, products, and tools we provide,
           you understand and agree to accept and adhere to the following terms and conditions (hereafter referred to as
           ‘User Agreement’), along with the terms and conditions as stated in our Privacy Policy (please refer to the
@@ -30,7 +30,7 @@ const TermsOfUse = () => {
 
         <h3 className="font-semiboldx text-[20px]">1. Changes to the User Agreement</h3>
         <p>
-          This agreement is in effect as of <strong>April 5, 2025</strong>. We reserve the right to change this User
+          This agreement is in effect as of <strong>January 5, 2026</strong>. We reserve the right to change this User
           Agreement from time to time without notice. You acknowledge and agree that it is your responsibility to
           review this User Agreement periodically to familiarize yourself with any modifications. Your continued use
           of this site after such modifications will constitute acknowledgment and agreement to the modified terms
@@ -67,14 +67,14 @@ const TermsOfUse = () => {
 
         <h3 className="font-semiboldx text-[20px]">7. Limitation of Liability</h3>
         <p>
-          You expressly understand and agree that <strong>Shreyas Infra Developers</strong> shall not be liable for any direct,
+          You expressly understand and agree that <strong>Shreyas Infra </strong> shall not be liable for any direct,
           indirect, incidental, consequential, or exemplary damages incurred by you as a result of using our Resources.
         </p>
 
         <h3 className="font-semiboldx text-[20px]">8. Copyrights/Trademarks</h3>
         <p>
-          All content and materials available on www.shreyasinfradevelopers.com, including but not limited to text, graphics,
-          website name, code, images, and logos, are the intellectual property of <strong>Shreyas Infra Developers</strong> and
+          All content and materials available on  www.shreyasinfra.com, including but not limited to text, graphics,
+          website name, code, images, and logos, are the intellectual property of <strong>Shreyas Infra </strong> and
           are protected by applicable copyright and trademark laws. Unauthorized use, reproduction, or distribution of
           any content is strictly prohibited unless explicitly authorized in writing.
         </p>
@@ -88,7 +88,7 @@ const TermsOfUse = () => {
 
         <h3 className="font-semiboldx text-[20px]">10. Governing Law</h3>
         <p>
-          This website is controlled by <strong>Shreyas Infra Developers</strong> from our offices located in
+          This website is controlled by <strong>Shreyas Infra </strong> from our offices located in
           <strong> Bengaluru, Karnataka, India</strong>. By accessing our website, you agree that the statutes and laws
           of <strong>Karnataka, India</strong> will apply to all matters relating to the use of this website.
         </p>
@@ -99,8 +99,8 @@ const TermsOfUse = () => {
         </p>
 
         <p>
-          Shreyas Infra Developers, #305, 3rd Floor, Brigade Business Suites, Ashoka Pillar Road,
-          Jayanagar 2nd Block, Bengaluru, Karnataka 560011
+          Shreyas Infra , 3rd Floor, Chourasia Shreyas Arcade,
+3rd Main Cross Rd, Aswath Nagar, Marathahalli, Bengaluru - 560037
         </p>
 
         <p>

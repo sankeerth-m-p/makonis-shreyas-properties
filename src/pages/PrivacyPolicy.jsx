@@ -24,8 +24,8 @@ const PrivacyPolicy = () => {
 <div className="text-black space-y-6 text-base leading-relaxed px-2 md:px-0">
 
           <p>
-            Your privacy is important to us. It is Shreyas Infra Developers’ policy to respect your privacy regarding any information we may collect from you across our website,
-            <span className="font-semiboldx"> www.shreyasinfradevelopers.com</span>, and other sites we own and operate.
+            Your privacy is important to us. It is Shreyas Infra ’ policy to respect your privacy regarding any information we may collect from you across our website,
+            <span className="font-semiboldx">  www.shreyasinfra.com</span>, and other sites we own and operate.
           </p>
 
           <p>
@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
           <div className="pt-4">
             <p className="font-semiboldx">Office Address</p>
             <p>
-              Shreyas Infra Developers, #305, 3rd Floor, Brigade Business Suites, Ashoka Pillar Road, Jayanagar 2nd Block, Bengaluru, Karnataka 560011
+              Shreyas Infra , 3rd Floor, Chourasia Shreyas Arcade, 3rd Main Cross Rd, Aswath Nagar, Marathahalli, Bengaluru - 560037
             </p>
 
             <p className="mt-2">
@@ -71,7 +71,7 @@ const PrivacyPolicy = () => {
           </div>
 
           <p className="pt-4 font-medium">
-            This policy is effective as of April 5, 2025.
+            This policy is effective as of January 5, 2026
           </p>
 
         </div>

@@ -16,7 +16,7 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
               <li><Link to="/our-story" className="hover:text-white block">Our Story</Link></li>
               <li><Link to="/projects" className="hover:text-white block">Projects</Link></li>
               {/* <li><button onClick={goToTestimonials} className="hover:text-white buttons block text-left">Testimonial</button></li> */}
-              {/* <li><Link to="/media-center" className="hover:text-white block">Media Center</Link></li> */}
+              <li><Link to="/media-center" className="hover:text-white block">Media Center</Link></li>
               <li><Link to="/blogs" className="hover:text-white block">Blog</Link></li>
             </ul>
 
@@ -119,12 +119,12 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
                   </button> */}
                 </li>
                 <li>
-                  {/* <Link
+                  <Link
                     to="/media-center"
                     className="hover:text-white cursor-pointer transition block"
                   >
                     Media Center
-                  </Link> */}
+                  </Link>
                 </li>
                 <li>
                   <Link
@@ -234,7 +234,7 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
                 Disclaimer
               </Link>
               <span className="hover:text-white cursor-pointer text-center">
-                © 2025. All Rights Reserved.
+                © 2026. All Rights Reserved.
               </span>
             </div>
           </div>
