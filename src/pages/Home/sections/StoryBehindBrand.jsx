@@ -35,24 +35,31 @@ const StoryBehindBrand = () => {
       <div className="relative max-w-6xl px-6 mx-auto px-6 h-full flex items-center">
         <div className="w-full flex flex-col h-full lg:flex-row gap-8 lg:gap-0 min-h-[70vh] lg:min-h-0">
           {/* LEFT 50% — LOGO CUTOUT (SHOWS SECTION BG) */}
-          <div className="relative w-full lg:w-1/2 flex items-center justify-center min-h-[40vh] lg:min-h-0">
-            <div
-              className="absolute inset-0"
-              style={{
-                WebkitMaskImage: `url(/logo.svg)`,
-                WebkitMaskRepeat: "no-repeat",
-                WebkitMaskPosition: "center",
-                WebkitMaskSize: "min(320px, 80%)",
-                maskImage: `url(/logo.svg)`,
-                maskRepeat: "no-repeat",
-                maskPosition: "center",
-                maskSize: "min(320px, 80%)",
-                backgroundImage: "url( /Home/naturesign.webp)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundAttachment: "fixed",
-              }}
-            />
+          <div className="relative w-full lg:w-1/2  flex items-center justify-center min-h-[40vh] lg:min-h-0">
+           <div
+  className="
+    absolute inset-0
+    [--mask-size:200px]
+    lg:[--mask-size:320px]
+  "
+  style={{
+    WebkitMaskImage: `url(/logo.svg)`,
+    WebkitMaskRepeat: "no-repeat",
+    WebkitMaskPosition: "center",
+    WebkitMaskSize: "min(var(--mask-size), 80%)",
+
+    maskImage: `url(/logo.svg)`,
+    maskRepeat: "no-repeat",
+    maskPosition: "center",
+    maskSize: "min(var(--mask-size), 80%)",
+
+    backgroundImage: "url(/Home/naturesign.webp)",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed",
+  }}
+/>
+
           </div>
           {/* RIGHT 50% — CONTENT */}
           <div className="relative w-full lg:w-1/2 flex   items-center justify-center lg:justify-start">
