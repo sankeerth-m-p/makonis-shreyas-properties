@@ -96,7 +96,7 @@ export default function CursorReveal() {
   };
 
   useCountUp(stat1, 20);
-  useCountUp(stat2, 250);
+  useCountUp(stat2, 124);
   useCountUp(stat3, 30);
 
   return (
@@ -104,7 +104,7 @@ export default function CursorReveal() {
       ref={sectionRef}
       onMouseMove={handleSectionMove}
       onMouseLeave={handleSectionLeave}
-      className="relative  lg:h-screen lg:pt-[5rem] w-full text-white overflow-hidden"
+      className="relative  lg:h-screen lg:pt-[5rem]  w-full text-white overflow-hidden"
     >
       {/* BACKGROUND */}
       <div className="absolute  inset-0 pointer-events-none z-0">
@@ -114,7 +114,7 @@ export default function CursorReveal() {
       </div>
 
       {/* CONTENT */}
-      <div className="relative    z-10 h-full flex flex-col justify-between  gap-5 text-center px-6 py-5 md:py-20">
+      <div className="relative    z-10 h-full flex flex-col justify-around    gap-5 md:gap-10  text-center px-6 py-5 md:py-0">
 
         {/* HEADER */}
         <div>
@@ -130,11 +130,11 @@ Where experience meets enduring value, every project is shaped by insight, preci
           onMouseEnter={handleBoxEnter}
           onMouseLeave={handleBoxLeave}
           className="
-            relative  
+            relative   
             mx-auto
             px-6 py-20
             w-full
-            md:px-32 md:py-32
+            md:px-32 md:py-26 
             md:w-[60vw]
             overflow-visible
           "
@@ -169,7 +169,7 @@ Where experience meets enduring value, every project is shaped by insight, preci
           <div
             ref={backRef}
             className="
-              absolute hidden
+              absolute hidden 
               -inset-[300px]
               md:flex items-center justify-center
               z-20
@@ -197,7 +197,7 @@ Where experience meets enduring value, every project is shaped by insight, preci
 
 
         {/* COUNTERS */}
-        <div className="max-w-6xl      mx-auto px-6 w-full">
+        <div className="max-w-6xl       mx-auto px-6 w-full">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-12">
 
             <div>
@@ -220,8 +220,11 @@ Where experience meets enduring value, every project is shaped by insight, preci
             <div><div className="text-4xl md:text-5xl font-bold text-white">
                 <span ref={stat2}>0</span>
               </div>
-              <p className="text-sm uppercase tracking-wider mb-3 text-white">
+              <p className="text-sm uppercase tracking-wider mb-1 text-white">
                 Premium villa plots
+              </p>
+              <p className="text-sm uppercase tracking-wider  text-white">
+                (Phase 1)
               </p>
               
             </div>
@@ -234,7 +237,7 @@ Where experience meets enduring value, every project is shaped by insight, preci
     <div className=" ">
 
        
-<div className="relative    z-40">
+<div className="relative     z-40">
   <button
     onClick={() => {
       document

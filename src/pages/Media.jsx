@@ -4,7 +4,7 @@ import mediaImg1 from "/media/media (1).webp";
 import mediaImg2 from "/media/media (2).webp";
 import mediaImg3 from "/media/media (3).webp";
 import mediaImg4 from "/media/media (4).webp";
-import mediaImg5 from "/mediaimg.webp";
+import mediaImg5 from "/north.webp";
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
 
@@ -116,20 +116,19 @@ const MediaList = () => {
     <div className="bg-white pt-5 md:pt-28   pb-24">
     <div className="max-w-6xl  px-6 mx-auto ">
 
-        <AnimatedHeading className="section-heading  mb-10 max-w-3xl">
-          Our journey, values, and projects as recognized and featured by leading media platforms.
-        </AnimatedHeading>
+        <AnimatedHeading className="section-heading  mb-10 max-w-4xl ">
+North Bengaluru is rapidly emerging as a business and residential hub, attracting multinational companies, R&D centers, and major industries.        </AnimatedHeading>
 
         {/* ================= BANNER ================= */}
         <FloatUpText>
           <div className="grid grid-cols-1  md:grid-cols-5 md:gap-5 gap-y-5 mb-16 items-center">
-            <div className="rounded-lg col-span-3 overflow-hidden h-full">
-              <img src={mediaImg5} className="w-full h-full object-cover" />
+            <div className="rounded-lg  col-span-3 overflow-hidden h-full">
+              <img src={mediaImg5} className="w-full h-50vh md:h-[70vh] object-cover" />
             </div>
 
             <div className="bg-ORANGE w-full  col-span-2 rounded-lg p-6 lg:p-16 h-full flex flex-col justify-between">
               <div className="flex justify-end ">
-                <img src="/shreyas_logo_footer_1.webp" className="h-12  top-10 lg:absolute right-10 object-contain" />
+                <img src="/shreyas_logo_footer_1.webp" className="h-12 brightness-125 top-10 lg:absolute right-10 object-contain" />
               </div>
 
               <div>
@@ -141,7 +140,7 @@ const MediaList = () => {
                 </h2>
                 <div className="w-60 h-[2px] bg-white mb-4"></div>
                 <p className="text-white/90 text-lg max-w-xs">
-                  Our story highlighted in over <br /> 10 media publications.
+                  Journey, Innovations, and success stories featured across notable media channels.
                 </p>
               </div>
             </div>

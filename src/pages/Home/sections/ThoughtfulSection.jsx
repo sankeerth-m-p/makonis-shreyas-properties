@@ -102,8 +102,8 @@ const ThoughtfulSection = () => {
       </div>
 
       {/* DESKTOP (UNCHANGED) */}
-      <div className="hidden lg:block relative max-w-6xl mx-auto flex items-center h-full z-10 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-5 h-full gap-10 md:gap-0 items-start">
+      <div className="hidden lg:block  relative max-w-6xl mx-auto flex items-center h-full z-10 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-5     h-full gap-10 md:gap-0 items-start">
 
           <div className="flex justify-start h-full md:col-span-2 md:justify-end md:mt-10">
             <RevealImageAnimation
@@ -112,32 +112,32 @@ const ThoughtfulSection = () => {
             />
           </div>
 
-          <div className="flex flex-col md:col-span-3 md:pl-20 md:mt-10 text-left">
-            <AnimatedHeading delay={0} className="text-lg md:text-4xl  mb-4 md:mb-8">
+          <div className="flex   flex-col md:col-span-3 md:pl-20 md:mt-8 text-left">
+            <AnimatedHeading delay={0} className="text-lg md:text-4xl  mb-4 md:mb-7">
               Thoughtfully developing spaces that reflect city's progress and promise
             </AnimatedHeading>
 
             <FloatUpText delay={0}>
-              <p className="md:text-xl text-base mb-6 md:max-w-md">
+              <p className="md:text-xl text-base mb-5 md:max-w-md">
                 Crafting meaningful experiences where every detail is carefully envisioned.
               </p>
 
-              <div className="flex gap-3 items-start mb-8">
+              <div className="flex gap-3 items-start mb-7">
                 <img src={vision} className="w-7 h-7" alt="Vision icon" />
                 <div>
                   <h4 className="md:text-xl text-base font-semiboldx">Our Vision</h4>
-                  <p className="md:text-lg text-sm leading-relaxed">
+                  <p className="md:text-base text-sm leading-relaxed">
                     To create thoughtfully planned spaces that elevate everyday living,
                     blending design, functionality and sustainability.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-3 items-start mb-8">
+              <div className="flex gap-3 items-start mb-7">
                 <img src={mission} className="w-7 h-7" alt="Mission icon" />
                 <div>
                   <h4 className="md:text-xl text-base font-semiboldx">Our Mission</h4>
-                  <p className="md:text-lg text-sm leading-relaxed">
+                  <p className="md:text-base text-sm leading-relaxed">
                     To develop responsibly by integrating sustainable practices
                     and creating balanced communities.
                   </p>
