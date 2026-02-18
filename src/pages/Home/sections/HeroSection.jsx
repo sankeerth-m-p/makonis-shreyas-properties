@@ -56,7 +56,7 @@ const HeroSection = () => {
 
   const SLIDE_DURATION = isMobile ? 600 : 1300; // Faster auto-scroll duration on mobile
   const MANUAL_SLIDE_DURATION = isMobile ? 150 : 200; // Faster manual duration on mobile
-  const SLIDE_DELAY = isMobile ? 3000 : 6000; // Shorter delay between slides on mobile
+  const SLIDE_DELAY = isMobile ? 3000 : 3000; // Shorter delay between slides on mobile
   const RESUME_DELAY = 5000;
   const MIN_SWIPE_DISTANCE = 50;
 
@@ -176,7 +176,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden h-auto  lg:h-[calc(100vh-80px)]">
+    <section className="relative w-full   overflow-hidden h-auto  lg:h-[calc(100vh-80px)]">
       {/* Slider Container */}
       <div
         className="relative w-full h-full"
@@ -189,7 +189,9 @@ const HeroSection = () => {
           <img
             src={heroSlides[currentIndex].imageMobile}
     alt={heroSlides[currentIndex].title}
-            className={`w-full h-full md:hidden object-cover ${
+            className={`w-full h-full md:hidden object-cover
+  object-[50%_35%]
+  lg:object-[50%_40%] ${
               isTransitioning 
                 ? slideDirection === "forward" 
                   ? isManualTransition ? "animate-old-zoom-in-fast" : "animate-old-zoom-in" 
@@ -200,7 +202,9 @@ const HeroSection = () => {
           <img
             src={heroSlides[currentIndex].imageDesktop}
     alt={heroSlides[currentIndex].title}
-            className={`w-full h-full hidden md:block object-cover ${
+            className={`w-full h-full hidden md:block object-cover
+  object-[50%_35%]
+  lg:object-[50%_40%] ${
               isTransitioning 
                 ? slideDirection === "forward" 
                   ? isManualTransition ? "animate-old-zoom-in-fast" : "animate-old-zoom-in" 
@@ -230,7 +234,9 @@ const HeroSection = () => {
           <img
             src={getSlideImage(heroSlides[targetIndex])}
             alt={heroSlides[targetIndex].title}
-            className={`w-full h-auto  lg:h-full object-contain  lg:object-cover ${
+            className={`w-full h-auto  lg:h-full object-contain  lg:object-cover
+  object-[50%_35%]
+  lg:object-[50%_40%] ${
               isTransitioning 
                 ? slideDirection === "forward" 
                   ? isManualTransition ? "animate-new-zoom-out-fast" : "animate-new-zoom-out" 
