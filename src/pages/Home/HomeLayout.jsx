@@ -103,7 +103,7 @@ const HomeLayout = () => {
           <Ongoing/>
         </div>
         
-        <div className="snap-start lg:pt-20 bg-[#E3DA64] snap-always">
+        <div className="snap-start lg:pt-20 bg-[#FEF8BA] snap-always">
           <NatureSign />
         </div>
 
