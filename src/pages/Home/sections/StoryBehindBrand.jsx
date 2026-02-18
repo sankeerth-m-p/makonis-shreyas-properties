@@ -18,7 +18,7 @@ const StoryBehindBrand = () => {
         bg-cover
       "
       style={{
-        backgroundImage: "url( /Home/naturesign.webp)",
+        backgroundImage: "url( /hero_background123.webp  )",
       }}
     >
       {/* FROSTED GLASS OVERLAY - FULL WIDTH */}
@@ -53,7 +53,7 @@ const StoryBehindBrand = () => {
     maskPosition: "center",
     maskSize: "min(var(--mask-size), 80%)",
 
-    backgroundImage: "url(/Home/naturesign.webp)",
+    backgroundImage: "url(/hero_background123.webp  )",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundAttachment: "fixed",
@@ -69,7 +69,7 @@ const StoryBehindBrand = () => {
                 <h2
                   className="text-6xl   md:text-8xl font-bold leading-tight"
                   style={{
-                    background: "url( /Home/naturesign.webp)",
+                    background: "url( /hero_background123.webp  )",
                     backgroundSize: "cover",
                    
                     backgroundPosition: "center",
