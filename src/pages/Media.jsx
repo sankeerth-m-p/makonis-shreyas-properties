@@ -12,38 +12,97 @@ import AnimatedHeading from "../components/animatedHeading";
 const mediaData = [
   {
     id: 1,
-    image: mediaImg1,
-    logo: "/CNBC.webp",
-    date: "March 06, 2024",
-    shortTitle: "We are a forward-thinking real estate company driven by the belief that well-designed spaces shape better lives.",
-    shortDesc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with...",
+    image: "/media/cover/cover (8).png",
+    logo: "/media/et-logo.webp",
+    date: "Aug 20, 2024",
+    link: "https://economictimes.indiatimes.com/industry/cons-products/electronics/taiwans-bestec-proposes-rs-200-cr-investment-in-manufacturing-unit-near-bengaluru/articleshow/112657997.cms?from=mdr",
+    shortTitle: "Taiwan's Bestec proposes Rs 200 Cr investment in manufacturing unit near Bengaluru",
+    shortDesc: "Taiwan's Bestec Group plans to invest Rs 200 crore in a new manufacturing unit near Bengaluru. Industries Minister MB Patil confirmed the project's aim to generate 5,000 jobs over three years. The facility will produce adapters, chargers, and cables, targeting an annual turnover of Rs 2,500 crore, with full government support assured.",
     desc: "With a strong focus on quality, transparency, and long-term value, we create developments that blend thoughtful planning with modern design, sustainability, and customer satisfaction..."
   },
   {
     id: 2,
-    image: mediaImg2,
-    logo: "/zee.webp",
-    date: "Sep 09, 2024",
-    shortTitle: "Smart urban communities designed to elevate everyday living experiences.",
-    shortDesc: "Our projects integrate sustainable materials, future-ready infrastructure, and intelligent space planning to support modern lifestyles...",
+    image: "/media/cover/cover (7).png",
+    logo: "/media/et-logo.webp",
+    date: "Jan 19, 2024",
+    link: "https://economictimes.indiatimes.com/industry/transportation/airlines-/-aviation/pm-inaugurates-boeings-global-engineering-tech-centre-campus-near-bengaluru/articleshow/106985572.cms?from=mdr",
+    shortTitle: "PM Modi inaugurates Boeing's global engineering & tech centre campus near Bengaluru",
+    shortDesc: "Boeing's new global engineering and technology centre campus was inaugurated by PM Modi in Bengaluru. The facility is built at cost of Rs 1,600 crore. The 43-acre state-of-the-art Boeing India Engineering and Technology Centre (BIETC) campus launched on Friday is the company's largest such investment outside the US.",
     desc: "Our projects are crafted to enhance urban living by integrating smart planning..."
   },
   {
     id: 3,
-    image: mediaImg3,
-    logo: "/CNBC.webp",
-    date: "May 12, 2025",
-    shortTitle: "Future-ready neighborhoods built for growth, comfort, and innovation.",
-    shortDesc: "We develop thoughtfully planned communities that promote sustainability, technology integration, and superior living standards...",
+    image: "/media/cover/cover (6).png",
+    logo: "/media/et-logo.webp",
+    date: "Mar 14, 2018",
+    link: "https://economictimes.indiatimes.com/tech/hardware/apple-supplier-wistron-secures-land-to-build-new-site-in-karnataka-sources/articleshow/63283351.cms",
+    shortTitle: "Apple supplier Wistron to invest Rs 682 crore to set up new manufacturing facility",
+    shortDesc: "The Taiwanese contract manufacturer will invest a sum of $105 million to develop land and manufacture smartphones as well as IoT and bio-tech devices.",
     desc: "We develop spaces that prioritize lifestyle, innovation..."
   },
   {
     id: 4,
-    image: mediaImg4,
-    logo: "/zee.webp",
-    date: "Dec 31, 2025",
-    shortTitle: "Construction excellence driven by trust, quality, and ethical practices.",
-    shortDesc: "Every project follows strict quality control, advanced engineering, and customer-first execution for lasting value...",
+    image: "/media/cover/mm.png",
+    logo: "/media/et-logo.webp",
+    date: "Jul 06, 2010",
+    link: "https://economictimes.indiatimes.com/articleshow/6132775.cms?%20utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst",
+    shortTitle: "M&M plans aerospace SEZ in Bangalore",
+    shortDesc: "Mahindra & Mahindra (M&M), the diversified business group, plans to set up a 250-acre special economic zone (SEZ) catering to the aerospace sector near the Bangalore International Airport.",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
+  ,
+  {
+    id: 5,
+    image: "/media/cover/cover (5).png",
+    logo: "/media/bl-circle.webp",
+    date: "Aug 09, 2018",
+    link: "https://www.thehindubusinessline.com/news/karnataka-govt-allows-boeing-to-set-up-mro-facility/article24646489.ece",
+    shortTitle: "Karnataka govt allows Boeing to set up MRO facility",
+    shortDesc: "Boeing plans to make aerospace components and set up a maintenance and repair facility at its aerospace SEZ near the Devanahalli airport.",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
+  ,
+  {
+    id: 6,
+    image: "/media/cover/cover.png",
+   logo: "/media/money.webp",
+    date: "Aug 09, 2018",
+    link: "https://www.moneycontrol.com/news/india/german-lens-maker-carl-zeiss-plant-near-bengaluru-airport-to-be-ready-in-9-months-12958205.html?utm_source=chatgpt.com",
+    shortTitle: "Carl Zeiss' plant near Bengaluru airport to be ready in 9 months",
+    shortDesc: "Zeiss India has said the facility in Devanahalli is the company's fifth and largest plant in India",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
+  ,
+  {
+    id: 7,
+    image: "/media/cover/cover (3).png",
+    logo: "/media/thehindu-logo.svg",
+    date: "Aug 17, 2024",
+    link: "https://www.thehindu.com/news/national/karnataka/foxconn-unit-in-karnataka-will-be-the-second-largest-after-china-plant-ceo/article68534091.ece",
+    shortTitle: "Foxconn unit in Karnataka will be the second-largest after China plant: CEO",
+    shortDesc: "Chief Minister Siddaramaiah on Friday said that Foxconn, part of the Taiwanese Hon Hai Technology Group, which is investing ₹25,000 crore to establish a manufacturing plant near Doddaballapur, would be provided with all necessary infrastructure and support by the State government.",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
+  ,
+  {
+    id: 8,
+    image: "/media/cover/cover (2).png",
+    logo: "/media/bl-circle.webp",
+    date: "May 22, 2025",
+    link: "https://www.thehindubusinessline.com/info-tech/sap-to-inaugurate-its-41-acre-campus-in-devanahalli-bengaluru-in-july-august/article69603507.ece",
+    shortTitle: "SAP to inaugurate its 41-acre campus in Devanahalli, Bengaluru, in July-August",
+    shortDesc: "SAP Labs India’s 41-acre campus at Devanahalli in Bengaluru will be ready by the second half of the year, generating a seating capacity of 15,000 more. SAP Labs India, which has been in operation since 1988, is home to 14,000 employees across five cities: Bengaluru, Gurugram, Mumbai, Hyderabad, and Pune.",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
+  ,
+  {
+    id: 9,
+    image: "/media/cover/cover (1).png",
+    logo: "/media/dh.png",
+    date: "Nov 12,2024",
+    link: "https://www.deccanherald.com/amp/story/business/zeiss-to-set-up-plant-in-b-luru-with-rs-3-000-crore-to-double-workforce-to-5-000-in-3-yrs-3272881",
+    shortTitle: "Zeiss to set up plant in Bengaluru with Rs 3,000 crore; to double workforce to 5,000 in 3 years ",
+    shortDesc: "ZEISS’s journey in India is a testament to our nation’s strength as a premier global investment hub, attracting and retaining top-tier companies. Karnataka has the potential to drive growth across diverse sectors and I am excited to see the positive outcomes of public-private partnership. I encourage more such alliances to drive impactful solutions,” said IT/BT minister Priyank Kharge at the event. ",
     desc: "Our commitment is to deliver excellence through ethical practices..."
   }
 ];
@@ -53,8 +112,6 @@ const mediaData = [
 
 /* ---------------- MEDIA LIST PAGE ---------------- */
 const MediaList = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="bg-white pt-5 md:pt-28   pb-24">
     <div className="max-w-6xl  px-6 mx-auto ">
@@ -105,7 +162,7 @@ const MediaList = () => {
   <div className="p-6 flex flex-col flex-1">
     <div>
       <div className="flex items-center gap-4 mb-4">
-        <img src={item.logo} className="h-10 object-contain" />
+        <img src={item.logo} className="h-10 max-w-28 object-contain" />
         <div className="h-8 w-px bg-gray-300"></div>
         <div className="text-sm">
           <p className="text-black">Published on:</p>
@@ -122,12 +179,14 @@ const MediaList = () => {
       </p>
     </div>
 
-    <button
-      
+    <a
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
       className="btn btn-white py-3 w-fit px-6 text-[10px] mt-auto"
     >
       READ MORE
-    </button>
+    </a>
   </div>
 </div>
 

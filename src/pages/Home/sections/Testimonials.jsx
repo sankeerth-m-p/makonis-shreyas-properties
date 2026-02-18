@@ -7,21 +7,27 @@ const TESTIMONIALS = [
   {
     quote:
       'From the very first meeting to project handover, the experience was smooth and transparent."',
-    name: "Neetu Sargam",
-    role: "Founder, KPCC International",
-    img: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Dr Kiran D C",
+    role: "Associate Professor - Vidyashilp University",
+    img: "/testimonial/pic (4).jpg",
   },
   {
     quote: 'Their attention to detail and commitment to quality exceeded our expectations."',
-    name: "Rahul Mehta",
-    role: "Director, UrbanNest",
-    img: "https://randomuser.me/api/portraits/men/32.jpg",
+    name: "Rakesh Ranjan",
+    role: "Engineering Leader for AI - Scale",
+    img: "/testimonial/pic (2).jpg",
   },
   {
     quote: "A rare blend of aesthetics, engineering, and reliability. Highly recommended.",
-    name: "Ananya Rao",
-    role: "Architect, Studio AR",
-    img: "https://randomuser.me/api/portraits/women/68.jpg",
+    name: "CA Madan Reddy Singam",
+    role: "Founder,Managing Director - Uniqfin B school",
+    img: "/testimonial/pic (1).jpg",
+  },
+  {
+    quote: "What stood out for us was the company’s commitment to quality and follow-through on every promise they made.",
+    name: "Sridhar Gogineni",
+    role: "Dermatologist - Avance Derma Skin, Hair, and Laser Clinic",
+    img: "/testimonial/pic (3).jpg",
   },
 ];
 
