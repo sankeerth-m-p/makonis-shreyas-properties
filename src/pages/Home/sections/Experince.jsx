@@ -6,7 +6,7 @@ export default function CursorReveal() {
   const backRef = useRef(null);
 
   const DEFAULT_SIZE = 20;
-  const HOVER_SIZE = 300;
+  const HOVER_SIZE = 400;
   const MASK_INSET = 300;
 
   const [maskSize, setMaskSize] = useState(DEFAULT_SIZE);
@@ -95,9 +95,9 @@ export default function CursorReveal() {
     }, [end, duration, ref]);
   };
 
-  useCountUp(stat1, 250);
-  useCountUp(stat2, 10);
-  useCountUp(stat3, 79);
+  useCountUp(stat1, 20);
+  useCountUp(stat2, 250);
+  useCountUp(stat3, 30);
 
   return (
     <div
@@ -114,14 +114,14 @@ export default function CursorReveal() {
       </div>
 
       {/* CONTENT */}
-      <div className="relative   z-10 h-full flex flex-col justify-between text-center px-6 py-20">
+      <div className="relative    z-10 h-full flex flex-col justify-between  gap-5 text-center px-6 py-5 md:py-20">
 
         {/* HEADER */}
         <div>
           
-
+{/* 
           <p className="max-w-xl mx-auto text-base">
-Where experience meets enduring value, every project is shaped by insight, precision, and proven expertise.          </p>
+Where experience meets enduring value, every project is shaped by insight, precision, and proven expertise.          </p> */}
         </div>
 
         {/* INTERACTION AREA */}
@@ -130,7 +130,7 @@ Where experience meets enduring value, every project is shaped by insight, preci
           onMouseEnter={handleBoxEnter}
           onMouseLeave={handleBoxLeave}
           className="
-            relative
+            relative  
             mx-auto
             px-6 py-20
             w-full
@@ -140,28 +140,28 @@ Where experience meets enduring value, every project is shaped by insight, preci
           "
         >
           {/* FRONT */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
+          <div className="    absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
             <span
               className="
-                text-5xl
-                md:text-9xl
+                text-4xl
+                md:text-8xl
                 font-bold
                 whitespace-nowrap
                 text-white
               "
             >
-              8 + years 
+              Your next <br/> big address
             </span>
             <span
               className="
-                text-5xl
+                text-4xl
                 md:hidden
                 font-bold
                 whitespace-nowrap
                 text-white
               "
             >
-              of experience
+              officially <br/>unveiling soon..
             </span>
           </div>
 
@@ -183,44 +183,89 @@ Where experience meets enduring value, every project is shaped by insight, preci
             <span
               className="
                 text-5xl
-                md:text-9xl
+                md:text-8xl
                 text-ORANGE2
                 font-bold
                 whitespace-nowrap
               "
             >
-              experience
+              officially <br/>unveiling soon..
             </span>
           </div>
-        </div>
+        </div>{/* SCROLL DOWN ARROW */}
+    
+
 
         {/* COUNTERS */}
-        <div className="max-w-6xl mx-auto px-6 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+        <div className="max-w-6xl      mx-auto px-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-12">
 
             <div>
-              <p className="text-sm uppercase tracking-wider mb-3 text-white">
-                Satisfied customers
-              </p>
               <div className="text-4xl md:text-5xl font-bold text-white">
+                <span ref={stat3}>0</span>
+              </div>
+              <p className="text-sm uppercase tracking-wider mb-3 text-white">
+                Acres of land
+              </p>
+              
+            </div>
+            <div> <div className="text-4xl md:text-5xl font-bold text-white">
                 <span ref={stat1}>0</span>+
               </div>
+              <p className="text-sm uppercase tracking-wider mb-3 text-white">
+                Luxurious amenities
+              </p>
+             
+            </div>
+            <div><div className="text-4xl md:text-5xl font-bold text-white">
+                <span ref={stat2}>0</span>
+              </div>
+              <p className="text-sm uppercase tracking-wider mb-3 text-white">
+                Premium villa plots
+              </p>
+              
             </div>
 
-            <div>
-              <p className="text-sm uppercase tracking-wider mb-3 text-white">
-                Successful Projects
-              </p>
-              <div className="text-4xl md:text-5xl font-bold text-white">
-                <span ref={stat2}>0</span>+
-              </div>
-            </div>
 
             
 
           </div>
         </div>
+    <div className=" ">
 
+       
+<div className="relative    z-40">
+  <button
+    onClick={() => {
+      document
+        .getElementById("naturesign")
+        ?.scrollIntoView({ behavior: "smooth" });
+    }}
+    className="
+      mx-auto
+     
+      flex
+      items-center
+      justify-center
+      w-12
+      h-12
+      rounded-full
+      border
+      border-white/40
+      bg-transparent
+      p-0
+      appearance-none
+      leading-none
+      hover:border-white
+      transition
+    "
+  >
+    <span className="arrow-animate text-white text-2xl leading-none">↓</span>
+  </button>
+</div>
+
+
+ </div>
       </div>
     </div>
   );
