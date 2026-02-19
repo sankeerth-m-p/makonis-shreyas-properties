@@ -163,7 +163,7 @@ const statusStyles = {
 <button
   onClick={() => {
     if (section.slug === "natures-sign") {
-      window.open("https://nature-sign.netlify.app/", "_blank");
+      window.open("https://naturessignbyshreyas.com/", "_blank");
     } else {
       navigate(`/projects/${section.slug}`);
     }

@@ -132,7 +132,7 @@ return (
   title="Nature’s Sign"
   location="Devanahalli, Bengaluru"
   description="Plotted development community in North Bengaluru’s fastest growing locations"
-  onClick={() => window.open("https://nature-sign.netlify.app/", "_blank")}
+  onClick={() => window.open("https://naturessignbyshreyas.com/", "_blank")}
 />
   
 

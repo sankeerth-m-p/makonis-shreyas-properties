@@ -190,7 +190,7 @@ const services = [
       </FloatUpText>
         </div>
         <FloatUpText><button
-            onClick={() => window.open("https://nature-sign.netlify.app/", "_blank")}
+            onClick={() => window.open("https://naturessignbyshreyas.com/", "_blank")}
             className="btn btn-orange w-fit  mt-2 md:mt-4"
           >
             <span>view project</span>
