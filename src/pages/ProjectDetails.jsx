@@ -357,7 +357,7 @@ const projectsData = [
 
 
   //   advantages: {
-  //     image: "/transport.webp",
+  //     image: "/development.webp",
   //     title: "Location & Business Advantages",
   //     items: [
   //       "Situated in Kondapur, beside Satyam, a major IT corridor",
