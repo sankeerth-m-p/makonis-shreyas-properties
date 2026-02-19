@@ -151,7 +151,7 @@ North Bengaluru is rapidly emerging as a business and residential hub, attractin
                 <div className="overflow-hidden ">
                 <img
     src={item.image}
-    className="mb-6 w-full lg:h-64 h-48 object-cover hover:scale-105 transition-transform duration-300"
+    className="mb-6 w-full lg:h-64 h-48 object-cover object-[top] hover:scale-105 transition-transform duration-300"
   />
 </div>
   <div className="p-6 flex flex-col flex-1">
@@ -218,7 +218,7 @@ const MediaDetail = () => {
           {/* IMAGE */}
           <img
             src={media.image}
-            className="w-full h-[420px] object-cover"
+            className="w-full h-[420px]  object-cover"
           />
 
           {/* CONTENT */}
