@@ -841,7 +841,7 @@ export const ShreyasSunriseDetails = ({ project, onBack }) => {
 
       {/* LEFT IMAGE */}
       <RevealImageAnimation
-        image="/Gym.jpg"
+        image="/Gym.webp"
         className="h-[520px] w-full object-cover rounded-xl"
       />
 
