@@ -101,6 +101,83 @@ const mediaData = [
     shortDesc: "ZEISS’s journey in India is a testament to our nation’s strength as a premier global investment hub, attracting and retaining top-tier companies. Karnataka has the potential to drive growth across diverse sectors and I am excited to see the positive outcomes of public-private partnership. I encourage more such alliances to drive impactful solutions,” said IT/BT minister Priyank Kharge at the event. ",
     desc: "Our commitment is to deliver excellence through ethical practices..."
   }
+  ,
+  {
+    id: 10,
+    image: "/media/cover/rajnath.png",
+    logo: "/media/dh.png",
+    date: "Feb 15,2026",
+    link: "https://www.deccanherald.com/india/karnataka/rajnath-singh-to-inaugurate-h125-helicopter-unit-in-kolars-vemgal-on-feb-17-3899109",
+    shortTitle: "Rajnath Singh to inaugurate H125 helicopter unit in Kolar's Vemgal on Feb 17",
+    shortDesc: "As per his itinerary, the defence minister will arrive in Bengaluru on February 16, where he will take part in several programmes. On the evening of February 17, Rajnath will visit the TASL site at Vemgal and inaugurate the FAL for H125 helicopters",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
+  ,
+  {
+    id: 11,
+    image: "/media/cover/nh44.webp",
+    logo: "/media/vijaykarnataka.webp",
+    date: "Jan 28,2026",
+    link: "https://vijaykarnataka.com/news/karnataka/nh-44-to-get-a-high-tech-touch-to-be-converted-into-a-10-lane-road-bengaluru-vijayawada-journey-to-reduce-6-hours/articleshow/127687675.cms?utm_source=FBComments&utm_medium=Social&utm_campaign=facebook&fbclid=IwZnRzaAPoNtlleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAo2NjI4NTY4Mzc5AAEeoqnHd2PbOx97E3OMCN0QY62WN2QNtkPHoElmq5wmZS1UtJePNmv4ENBCTIM_aem_gt14yXqzszWEWG7J5Rs8Zg",
+    shortTitle: "NH-44ಕ್ಕೆ ಹೈಟೆಕ್ ಸ್ಪರ್ಶ, 10 ಪಥದ ರಸ್ತೆಯಾಗಿ ಪರಿವರ್ತನೆ, 6 ಗಂಟೆಗೆ ಇಳಿಯಲಿದೆ ಬೆಂಗಳೂರು-ವಿಜಯವಾಡ ಪ್ರಯಾಣ",
+    shortDesc: "ಬೆಂಗಳೂರು ಮತ್ತು ವಿಜಯವಾಡ ನಡುವಿನ ಪ್ರಯಾಣದ ಸಮಯವನ್ನು 6-7 ಗಂಟೆಗೆ ಇಳಿಸುವ ಮಹತ್ವಾಕಾಂಕ್ಷೆಯ ಎಕ್ಸ್‌ಪ್ರೆಸ್‌ವೇ ಯೋಜನೆಯ ಭಾಗವಾಗಿ, ಎನ್‌ಎಚ್‌ಎಐ ಮಹತ್ವದ ಹೆಜ್ಜೆ ಇಟ್ಟಿದೆ. ದೇವನಹಳ್ಳಿಯಿಂದ ಆಂಧ್ರದ ಕೋಡಿಕೊಂಡದವರೆಗಿನ 90 ಕಿ.ಮೀ ಉದ್ದದ ಎನ್‌ಎಚ್-44 ರಸ್ತೆಯನ್ನು 10 ಪಥಗಳಿಗೆ ವಿಸ್ತರಿಸಲು ಡಿಪಿಆರ್ ಸಿದ್ಧಪಡಿಸಲಾಗುತ್ತಿದೆ. ಕೋಡಿಕೊಂಡದಿಂದ ಈ ರಸ್ತೆ ಹೊಸ ಗ್ರೀನ್‌ಫೀಲ್ಡ್ ಎಕ್ಸ್‌ಪ್ರೆಸ್‌ವೇಗೆ ಸಂಪರ್ಕ ಕಲ್ಪಿಸಲಿದೆ.",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
+  ,
+  {
+    id: 12,
+    image: "/media/cover/yt.webp",
+    logo: "/media/yt.jpg",
+    date: "July 3,2025",
+    link: "https://youtu.be/9hzpHbd4SxA?si=iLPePhkol9ESYbMP",
+    shortTitle: "🚨 ITIR PHASE 2: Devanahalli–Doddaballapura 🔥 10 New Villages 5 Rumoured to Join! | $22B Tech Zone",
+    shortDesc: "Explore the next big chapter in Bangalore’s tech growth — Devanahalli–Doddaballapura ITIR Phase 2! In this video, we dive into the massive ITIR project that is set to reshape North Bengaluru with over 10,000+ acres of planned development, expected to generate 3 million+ jobs and attract $22 billion+ in investment.",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
+  ,
+  {
+    id: 13,
+    image: "/media/cover/Industrial Corridor.jpg",
+    logo: "/media/tradebrain.png",
+    date: "Sept 12,2025",
+    link: "https://tradebrains.in/3-industrial-corridor-projects-that-could-transform-bengalurus-real-estate-forever-see-the-list/",
+    shortTitle: "3 Industrial Corridor Projects That Could Transform Bengaluru’s Real Estate Forever – See the List",
+    shortDesc: "Bengaluru’s real estate market is being reshaped with mega projects in the large industrial corridors – CBIC, BMIC and HBIC – these corridors are targeted for connectivity, jobs and industrial investment, primarily through corridors these types of connected mega nodes will create new residential, commercial and industrial markets that will make Bengaluru the focus of urban and economic growth in 2035.",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
+  ,
+  {
+    id: 14,
+    image: "/media/cover/bengaluru airport.jpg",
+    logo: "/media/dh.png",
+    date: "Oct 14,2024",
+    link: "https://www.deccanherald.com/india/karnataka/bengaluru/bengaluru-airport-city-breaks-ground-for-2-million-sq-ft-business-park-3231246",
+    shortTitle: "Bengaluru Airport City breaks ground for 2 million-sq ft business park",
+    shortDesc: "Bengaluru: Bengaluru Airport City Limited (BACL) has initiated work for its ambitious 2 million-sq ft business park located within the larger campus of the Kempegowda International Airport.",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
+  ,
+  {
+    id: 15,
+    image: "/media/cover/bengaluru airport.jpg",
+    logo: "/media/hindustantimes.webp",
+    date: "Oct 14,2024",
+    link: "https://www.hindustantimes.com/cities/bengaluru-news/bengaluru-airport-city-begins-construction-on-2-million-sq-ft-business-park-101728890054002-amp.html",
+    shortTitle: "Bengaluru Airport City begins construction on 2 million sq ft business park",
+    shortDesc: "Bengaluru Airport City Limited (BACL), a subsidiary of Bangalore International Airport Limited (BIAL), has commenced construction on a massive 2 million sq ft Business Park.",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
+  ,
+  {
+    id: 16,
+    image: "/media/cover/banglore.jpg",
+    logo: "/media/koto.png",
+    date: "Aug 14,2025",
+    link: "https://www.kots.world/blog/bangalore-is-the-fastest-developing-city-in-the-world-and-why",
+    shortTitle: "Bangalore is the Fastest Developing City in the World and Why?",
+    shortDesc:"As per the Bangalore Innovation Report, amongst the 780 major cities in the world, 17 out of the 20 fastest-growing cities in this world will be Indian with Bengaluru between 2019 to 2035. With projected GDP of 8.5%, Bangalore will be the world's fastest-growing city for the next 15 years.",
+    desc: "Our commitment is to deliver excellence through ethical practices..."
+  }
 ];
 
 
