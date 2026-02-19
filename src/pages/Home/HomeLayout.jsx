@@ -99,7 +99,7 @@ const HomeLayout = () => {
           <Testimonials />
         </div>
 
-        <div className="snap-start lg:pt-20 bg-[#F4EFE5] snap-always">
+        <div className="snap-start lg:pt-20 bg-[#F4EFE5]  snap-always">
           <Ongoing/>
         </div>
         

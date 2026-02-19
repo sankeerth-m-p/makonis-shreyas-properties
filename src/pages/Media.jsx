@@ -1,9 +1,5 @@
-import React, { useState } from "react";
+
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
-import mediaImg1 from "/media/media (1).webp";
-import mediaImg2 from "/media/media (2).webp";
-import mediaImg3 from "/media/media (3).webp";
-import mediaImg4 from "/media/media (4).webp";
 import mediaImg5 from "/north.webp";
 import FloatUpText from "../components/floatUpText";
 import AnimatedHeading from "../components/animatedHeading";
@@ -169,7 +165,7 @@ North Bengaluru is rapidly emerging as a business and residential hub, attractin
         </div>
       </div>
 
-      <h3 className="text-2xl mt-3 mb-3 line-clamp-2">
+      <h3 className="text-xl md:text-2xl mt-3 mb-3 md:line-cla">
         {item.shortTitle}
       </h3>
 

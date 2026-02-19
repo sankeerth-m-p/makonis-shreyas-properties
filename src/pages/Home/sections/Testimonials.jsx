@@ -33,9 +33,12 @@ const TESTIMONIALS = [
 
 const Testimonials = () => {
   const ref = useRef(null);
+  const resumeAutoplayTimeoutRef = useRef(null);
+  const touchStartXRef = useRef(null);
 
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
 
   // ✅ EASY COLOR CONTROL HERE
 const COLORS = {       // warm white (not pure)
@@ -55,12 +58,40 @@ const COLORS1 = {
 
 
 
+  const setNextIndex = () => {
+    setActiveIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+  };
+
+  const setPrevIndex = () => {
+    setActiveIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+  };
+
+  const registerUserInteraction = () => {
+    setIsAutoplayPaused(true);
+    if (resumeAutoplayTimeoutRef.current) {
+      clearTimeout(resumeAutoplayTimeoutRef.current);
+    }
+    resumeAutoplayTimeoutRef.current = setTimeout(() => {
+      setIsAutoplayPaused(false);
+    }, 5000);
+  };
+
   useEffect(() => {
+    if (isAutoplayPaused) return;
+
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+      setNextIndex();
     }, 4500);
 
     return () => clearInterval(interval);
+  }, [isAutoplayPaused]);
+
+  useEffect(() => {
+    return () => {
+      if (resumeAutoplayTimeoutRef.current) {
+        clearTimeout(resumeAutoplayTimeoutRef.current);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -97,6 +128,26 @@ const COLORS1 = {
 
 
   const t = TESTIMONIALS[activeIndex];
+
+  const handleTouchStart = (event) => {
+    if (!event.touches?.length) return;
+    registerUserInteraction();
+    touchStartXRef.current = event.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (event) => {
+    if (touchStartXRef.current === null || !event.changedTouches?.length) return;
+
+    const deltaX = event.changedTouches[0].clientX - touchStartXRef.current;
+    touchStartXRef.current = null;
+
+    if (Math.abs(deltaX) < 50) return;
+    if (deltaX < 0) {
+      setNextIndex();
+      return;
+    }
+    setPrevIndex();
+  };
 
   return (
   <section ref={ref} id="testimonials" className="relative    lg:h-[calc(100vh-5rem)] flex-col  lg:justify-end   lg:flex w-full overflow-hidden">
@@ -149,7 +200,7 @@ const COLORS1 = {
 
     {/* ✅ MAIN CONTENT SECTION (FILLED) */}
    <div
-  className="relative pt-2   z-40 pb-32     flex h-full mt-5  lg:mt-10"
+  className="relative pt-2    z-40 md:pb-32 pb-20    flex h-full mt-5  lg:mt-10"
   style={{ backgroundColor: COLORS.mainFill }}
 >
 
@@ -164,7 +215,12 @@ const COLORS1 = {
         }}
       >
         <FloatUpText>
-          <div className="relative max-w-4xl  mx-auto text-center transition-all duration-700 ease-in-out">
+          <div
+            className="relative max-w-4xl  mx-auto text-center transition-all duration-700 ease-in-out"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            onPointerDown={registerUserInteraction}
+          >
             {/* Quote SVG */}
             <img
   src={quote}
@@ -191,15 +247,37 @@ const COLORS1 = {
             </AnimatedHeading>
 
             {/* AUTHOR */}
-            <div className="mt-16 flex items-center justify-center gap-3 animate-fadeIn">
-              <img
-                src={t.img}
-                className="w-10 h-10 rounded-full object-cover"
-                alt={t.name}
-              />
-              <div className="text-left">
-                <p className="text-lg font-semiboldx">{t.name}</p>
-                <p className="text-sm">{t.role}</p>
+            <div className="mt-16  flex flex-col items-center gap-5 animate-fadeIn">
+              <div className="flex items-center justify-center gap-3">
+                <img
+                  src={t.img}
+                  className="w-10 h-10 rounded-full object-cover"
+                  alt={t.name}
+                />
+                <div className="text-left">
+                  <p className="text-lg font-semiboldx">{t.name}</p>
+                  <p className="text-sm">{t.role}</p>
+                </div>
+              </div>
+              <div className="flex  items-center  justify-center gap-2">
+                {TESTIMONIALS.map((item, index) => {
+                  const isActive = index === activeIndex;
+                  return (
+                    <button
+                      key={item.name}
+                      type="button"
+                      aria-label={`Go to testimonial ${index + 1}`}
+                      aria-current={isActive ? "true" : "false"}
+                      onClick={() => {
+                        registerUserInteraction();
+                        setActiveIndex(index);
+                      }}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        isActive ? "w-3 bg-black/50" : "w-2 bg-black/20"
+                      }`}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>

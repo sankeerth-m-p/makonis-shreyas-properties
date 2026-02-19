@@ -1,7 +1,4 @@
 import nature2 from "/Home/naturesign2.png";
-import nhIcon from "/Home/NH-4.svg";
-import airportIcon from "/Home/Airport.svg";
-import hillIcon from "/Home/Hill.svg";
 import nature7 from "/Home/naturesign_2.webp";
 import nature6 from "/Home/naturesign_3.webp";
 import nature3 from "/Home/naturesign_4.webp";

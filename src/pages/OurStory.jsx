@@ -331,11 +331,11 @@ const OurStory = () => {
       {/* ================= TESTIMONIAL SECTION ================= */}
       <section className="relative pb-20 pt-28 md:py-32 lg:py-40   z-40    bg-[#F4EFE5]  flex h-full mt-5  lg:mt-10">
         <div
-  className="relative z-10 max-w-5xl mx-auto px-6 md:px-6"
+  className="relative z-10 max-w-5xl mx-auto  px-6 md:px-6"
         
       >
         <FloatUpText>
-          <div className="relative max-w-4xl  mx-auto text-center transition-all duration-700 ease-in-out">
+          <div className="relative max-w-5xl  mx-auto text-center transition-all duration-700 ease-in-out">
             {/* Quote SVG */}
             <img
   src={quote}
@@ -348,14 +348,14 @@ const OurStory = () => {
     rotate-180
     w-10 h-10 
      lg:w-20  lg:h-16
-    opacity-70
+    opacity-70 
     pointer-events-none
   "
 />
 
 
             <AnimatedHeading
-              className="text-2xl  max-w-xl lg:max-w-full lg:text-[38px] font-normal leading-normal animate-fadeIn"
+              className="text-2xl  max-w-xl lg:max-w-full lg:text-[38px]  font-normal leading-normal animate-fadeIn"
             >
               More than infrastructure, we create foundations for better living.
 Quality, trust, and vision guide everything we do.
@@ -365,7 +365,7 @@ Quality, trust, and vision guide everything we do.
             <div className="mt-16 flex items-center justify-center gap-3 animate-fadeIn">
               
               <div className="text-left flex flex-col items-center">
-                <p className="text-lg font-semibold">Mr. Sandeep Lella</p>
+                {/* <p className="text-lg font-semibold">Mr. Sandeep Lella</p> */}
                 <p className="text-sm">Founder, Shreyas Infra</p>
               </div>
             </div>

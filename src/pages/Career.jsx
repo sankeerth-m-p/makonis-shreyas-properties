@@ -6,11 +6,11 @@ const Career = () => {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* ================= TOP HIRING SECTION ================= */}
-        <div className="bg-[#f6f3f2] rounded-[28px] p-10 flex flex-col lg:flex-row items-center gap-10 mb-20">
+        <div className="bg-[#f6f3f2] rounded-lg p-5 flex flex-col lg:flex-row items-center gap-10 mb-20">
           <img
             src="/career.webp"
             alt="We are hiring"
-            className="w-full lg:w-[400px] h-[260px] rounded-2xl object-cover"
+            className="w-full lg:w-[400px] h-[260px] rounded-lg object-cover"
           />
 
           <div className="max-w-xl">
@@ -25,7 +25,7 @@ const Career = () => {
 
             <p className="text-black text-sm">
               Apply now at: <br />
-              <span className="font-semibold">info@shreyasinfra.com</span>
+              <a href="mailto:contact@shreyasinfra.com" className="font-semibold hover:text-gray-500">contact@shreyasinfra.com</a>
             </p>
           </div>
         </div>
@@ -87,7 +87,7 @@ const Career = () => {
         <div>
 
           {/* HEADER STRIP */}
-          <div className="bg-[#eef1f1] px-8 py-4 rounded-md">
+          <div className="bg-[#eef1f1] px-8 py-4 rounded-lg">
             <h4 className="text-[26px] font-semibold text-black mb-2">
               Marketing manager
             </h4>
