@@ -143,25 +143,25 @@ Where experience meets enduring value, every project is shaped by insight, preci
           <div className="    absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
             <span
               className="
-                text-4xl
+                text-[1.8rem]
                 md:text-8xl
                 font-bold
                 whitespace-nowrap
                 text-white
               "
             >
-              Your next <br/> big address
+              Your next <br className="hidden md:block"/> big address
             </span>
             <span
               className="
-                text-4xl
-                md:hidden
+                text-[1.8rem]
+                md:hidden 
                 font-bold
                 whitespace-nowrap
                 text-white
               "
             >
-              officially <br/>unveiling soon..
+              officially unveiling soon..
             </span>
           </div>
 
@@ -182,7 +182,7 @@ Where experience meets enduring value, every project is shaped by insight, preci
           >
             <span
               className="
-                text-5xl
+                text-5xl 
                 md:text-8xl
                 text-ORANGE2
                 font-bold

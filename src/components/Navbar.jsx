@@ -204,7 +204,7 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
               <Link
                 to="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full py-4 text-base buttonsMobile font-medium text-gray-800  border-b border-gray-300 hover:text-ORANGE"
+                className="w-full py-3 text-sm buttonsMobile font-medium text-gray-800  border-b border-gray-300 hover:text-ORANGE"
               >
                 HOME
               </Link>
@@ -216,7 +216,7 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
                     key={label}
                     to={path}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`w-full py-4 text-base buttonsMobile font-medium border-b  border-gray-300 transition-colors duration-300
+                    className={`w-full py-3  text-sm buttonsMobile font-medium border-b  border-gray-300 transition-colors duration-300
                       ${isActive ? "text-ORANGE" : "text-gray-800 hover:text-ORANGE"}`}
                   >
                     {label}
@@ -227,7 +227,7 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
               <Link
                 to="/faq"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full py-4 text-base buttonsMobile font-medium border-b  border-gray-300 text-gray-800 hover:text-ORANGE"
+                className="w-full py-3 text-sm buttonsMobile font-medium border-b  border-gray-300 text-gray-800 hover:text-ORANGE"
               >
                 FAQ
               </Link>
@@ -235,7 +235,7 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
               <Link
                 to="/career"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full py-4 text-base buttonsMobile font-medium border-b  border-gray-300 text-gray-800 hover:text-ORANGE"
+                className="w-full py-3 text-sm buttonsMobile font-medium border-b  border-gray-300 text-gray-800 hover:text-ORANGE"
               >
                 CAREER
               </Link>
@@ -245,7 +245,7 @@ const isMobile = window.matchMedia("(max-width: 1023px)").matches;
                   setIsMobileMenuOpen(false);
                   onEnquireClick();
                 }}
-                className="w-full py-4 text-base buttonsMobile font-medium text-left text-gray-800 border-b  border-gray-300 hover:text-ORANGE"
+                className="w-full py-3 text-sm buttonsMobile font-medium text-left text-gray-800 border-b  border-gray-300 hover:text-ORANGE"
               >
                 ENQUIRE
               </button>
