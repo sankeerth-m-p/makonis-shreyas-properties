@@ -84,7 +84,7 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
                 Disclaimer
               </span>
             </div>
-            <div className="mt-4">©2025. All Rights Reserved.</div>
+            <div className="mt-4">©2026. All Rights Reserved.</div>
           </div>
         </div>
 
