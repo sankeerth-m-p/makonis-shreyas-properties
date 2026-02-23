@@ -308,7 +308,7 @@ const Contact = () => {
 
             <div>
               <p className="font-medium">Email us</p>
-              <p className=" y-500">info@shreyasinfra.com</p>
+              <p className=" y-500">contact@shreyasinfra.com</p>
             </div>
           </div>
 
