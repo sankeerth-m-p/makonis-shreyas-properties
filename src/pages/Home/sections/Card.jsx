@@ -180,23 +180,23 @@ const services = [
   <div className="w-full h-full       flex flex-col items-center">
 
     {/* Header */}
-    <div className="pb-5 flex    flex-col md:flex-row justify-between max-w-6xl px-6 w-full shrink-0">
+    <FloatUpText className="pb-5 flex    flex-col md:flex-row justify-between max-w-6xl px-6 w-full shrink-0">
       <div className="mb-4 md:mb-0">
-        <FloatUpText className="text-text uppercase text-xs tracking-[0.2em] mb-5">
+        <div className="text-text uppercase text-xs tracking-[0.2em] mb-5">
       Ongoing Project
-      </FloatUpText>
-      <FloatUpText className="text-3xl md:text-4xl text-text font-semibold leading-tight">
+      </div>
+      <div className="text-3xl md:text-4xl text-text font-semibold leading-tight">
         Introducing <br className="md:hidden" /> Nature’s Sign
-      </FloatUpText>
+      </div>
         </div>
-        <FloatUpText><button
+        <div><button
             onClick={() => window.open("https://naturessignbyshreyas.com/", "_blank")}
             className="btn btn-orange w-fit  mt-2 md:mt-4"
           >
             <span>view project</span>
             <ArrowRight className="w-4 h-4" />
-          </button> </FloatUpText>
-    </div>
+          </button> </div>
+    </FloatUpText>
 
     {/* DESKTOP */}
     <div

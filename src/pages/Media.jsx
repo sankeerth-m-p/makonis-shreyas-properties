@@ -122,19 +122,7 @@ const mediaData = [
     shortTitle: "NH-44ಕ್ಕೆ ಹೈಟೆಕ್ ಸ್ಪರ್ಶ, 10 ಪಥದ ರಸ್ತೆಯಾಗಿ ಪರಿವರ್ತನೆ, 6 ಗಂಟೆಗೆ ಇಳಿಯಲಿದೆ ಬೆಂಗಳೂರು-ವಿಜಯವಾಡ ಪ್ರಯಾಣ",
     shortDesc: "ಬೆಂಗಳೂರು ಮತ್ತು ವಿಜಯವಾಡ ನಡುವಿನ ಪ್ರಯಾಣದ ಸಮಯವನ್ನು 6-7 ಗಂಟೆಗೆ ಇಳಿಸುವ ಮಹತ್ವಾಕಾಂಕ್ಷೆಯ ಎಕ್ಸ್‌ಪ್ರೆಸ್‌ವೇ ಯೋಜನೆಯ ಭಾಗವಾಗಿ, ಎನ್‌ಎಚ್‌ಎಐ ಮಹತ್ವದ ಹೆಜ್ಜೆ ಇಟ್ಟಿದೆ. ದೇವನಹಳ್ಳಿಯಿಂದ ಆಂಧ್ರದ ಕೋಡಿಕೊಂಡದವರೆಗಿನ 90 ಕಿ.ಮೀ ಉದ್ದದ ಎನ್‌ಎಚ್-44 ರಸ್ತೆಯನ್ನು 10 ಪಥಗಳಿಗೆ ವಿಸ್ತರಿಸಲು ಡಿಪಿಆರ್ ಸಿದ್ಧಪಡಿಸಲಾಗುತ್ತಿದೆ. ಕೋಡಿಕೊಂಡದಿಂದ ಈ ರಸ್ತೆ ಹೊಸ ಗ್ರೀನ್‌ಫೀಲ್ಡ್ ಎಕ್ಸ್‌ಪ್ರೆಸ್‌ವೇಗೆ ಸಂಪರ್ಕ ಕಲ್ಪಿಸಲಿದೆ.",
     desc: "Our commitment is to deliver excellence through ethical practices..."
-  }
-  ,
-  {
-    id: 12,
-    image: "/media/cover/yt.webp",
-    logo: "/media/yt.jpg",
-    date: "July 3,2025",
-    link: "https://youtu.be/9hzpHbd4SxA?si=iLPePhkol9ESYbMP",
-    shortTitle: "🚨 ITIR PHASE 2: Devanahalli–Doddaballapura 🔥 10 New Villages 5 Rumoured to Join! | $22B Tech Zone",
-    shortDesc: "Explore the next big chapter in Bangalore’s tech growth — Devanahalli–Doddaballapura ITIR Phase 2! In this video, we dive into the massive ITIR project that is set to reshape North Bengaluru with over 10,000+ acres of planned development, expected to generate 3 million+ jobs and attract $22 billion+ in investment.",
-    desc: "Our commitment is to deliver excellence through ethical practices..."
-  }
-  ,
+  },
   {
     id: 13,
     image: "/media/cover/Industrial Corridor.jpg",

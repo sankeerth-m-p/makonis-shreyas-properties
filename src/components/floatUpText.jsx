@@ -16,7 +16,7 @@ const FloatUpText = ({
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -20% 0px" }
     );
 
     const el = ref.current;

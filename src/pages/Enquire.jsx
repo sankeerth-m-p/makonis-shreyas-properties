@@ -159,7 +159,7 @@ const Enquire = ({ onClose }) => {
                 value={formData.message}
                 onChange={handleChange}
                 rows="1"
-                className="w-full px-5 py-3 md:px-6 md:py-4 bg-[#f2f2f2] rounded-3xl text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black resize-none"
+                className="w-full px-5 py-3   md:px-6 md:py-4 bg-[#f2f2f2] rounded-3xl text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black resize-none"
               ></textarea>
             </div>
 
