@@ -252,7 +252,7 @@ const services = [
     </div>
 
     {/* MOBILE (UNCHANGED) */}
-    <div className="w-full pb-5 lg:hidden">
+    <FloatUpText className="w-full pb-5 lg:hidden">
       <div
         ref={mobileRef}
         onScroll={handleScroll}
@@ -310,7 +310,7 @@ const services = [
           />
         ))}
       </div>
-    </div>
+    </FloatUpText>
 
   </div>
 </section>
