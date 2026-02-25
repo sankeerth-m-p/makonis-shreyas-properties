@@ -13,9 +13,11 @@ function ContactForm() {
     name: '',
     email: '',
     phone: '',
-    inquiry: ''
+    message: ''
   });
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState(null);
   const validateForm = () => {
     let newErrors = {};
 
@@ -36,9 +38,35 @@ function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!validateForm()) return; // ❌ stop submit
+    if (!validateForm()) return;
 
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmissionStatus(null);
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyyT_ERLeYkpKWioNzNZS2AmuGLs4lfSBAvaP2kmFN3ZAT4g1XGi6roc5oGGFyhewepKQ/exec';
+
+    const payload = {
+      ...formData,
+      website: "Shreyas Properties"
+    };
+
+    fetch(scriptURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    })
+      .then(response => response.json())
+      .then(() => {
+        setSubmissionStatus('success');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      })
+      .catch((error) => {
+        console.error('Error!', error);
+        setSubmissionStatus('error');
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
 
@@ -149,16 +177,16 @@ function ContactForm() {
             {/* Footer Text and Button */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mt-8">
               <p className="text-black text-sm md:text-base">
-
                 Required fields are marked *
               </p>
 
               {/* Submit Button */}
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className="group relative px-8 py-4 btn btn-orange w-fit font-semibold rounded-full transition-all duration-300 flex items-center gap-2"
               >
-                Get A Call Back
+                {isSubmitting ? "Sending..." : "Get A Call Back"}
                 <svg
                   className="w-5 h-5 transition-transform group-hover:translate-x-1"
                   fill="none"
@@ -169,6 +197,16 @@ function ContactForm() {
                 </svg>
               </button>
             </div>
+            {submissionStatus === 'success' && (
+              <p className="text-green-600 font-medium text-sm md:text-base">
+                Request sent successfully! We will contact you soon.
+              </p>
+            )}
+            {submissionStatus === 'error' && (
+              <p className="text-red-600 font-medium text-sm md:text-base">
+                Something went wrong. Please try again later.
+              </p>
+            )}
           </form>
         </div>
       </div>
@@ -480,3 +518,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
