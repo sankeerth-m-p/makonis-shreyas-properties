@@ -114,7 +114,7 @@ export default function CursorReveal() {
       </div>
 
       {/* CONTENT */}
-      <div className="relative    z-10 h-full flex flex-col justify-around    gap-5 md:gap-10  text-center px-6 py-5 md:py-0">
+      <div className="relative    z-10 h-full flex flex-col justify-around    gap-5 lg:gap-10  text-center px-6 py-5 lg:py-0">
 
         {/* HEADER */}
         <div>
@@ -133,9 +133,9 @@ Where experience meets enduring value, every project is shaped by insight, preci
             relative   
             mx-auto
             px-6 py-20
-            w-full
-            md:px-32 md:py-26 
-            md:w-[60vw]
+            w-full 
+            lg:px-32 lg:py-26 
+            lg:w-[60vw]
             overflow-visible
           "
         >
@@ -144,18 +144,18 @@ Where experience meets enduring value, every project is shaped by insight, preci
             <span
               className="
                 text-[1.8rem]
-                md:text-8xl
+                lg:text-8xl
                 font-bold
                 whitespace-nowrap
                 text-white
               "
             >
-              Your next <br className="hidden md:block"/> big address
+              Your next <br className="hidden lg:block"/> big address
             </span>
             <span
               className="
                 text-[1.8rem]
-                md:hidden 
+                lg:hidden 
                 font-bold
                 whitespace-nowrap
                 text-white
@@ -171,7 +171,7 @@ Where experience meets enduring value, every project is shaped by insight, preci
             className="
               absolute hidden 
               -inset-[300px]
-              md:flex items-center justify-center
+              lg:flex items-center justify-center
               z-20
               pointer-events-none
               bg-white
@@ -183,7 +183,7 @@ Where experience meets enduring value, every project is shaped by insight, preci
             <span
               className="
                 text-5xl 
-                md:text-8xl
+                lg:text-8xl
                 text-ORANGE2
                 font-bold
                 whitespace-nowrap
@@ -198,10 +198,10 @@ Where experience meets enduring value, every project is shaped by insight, preci
 
         {/* COUNTERS */}
         <div className="max-w-6xl       mx-auto px-6 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-12">
 
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-white">
+              <div className="text-4xl lg:text-5xl font-bold text-white">
                 <span ref={stat3}>0</span>
               </div>
               <p className="text-sm uppercase tracking-wider mb-3 text-white">
@@ -209,7 +209,7 @@ Where experience meets enduring value, every project is shaped by insight, preci
               </p>
               
             </div>
-            <div> <div className="text-4xl md:text-5xl font-bold text-white">
+            <div> <div className="text-4xl lg:text-5xl font-bold text-white">
                 <span ref={stat1}>0</span>+
               </div>
               <p className="text-sm uppercase tracking-wider mb-3 text-white">
@@ -217,7 +217,7 @@ Where experience meets enduring value, every project is shaped by insight, preci
               </p>
              
             </div>
-            <div><div className="text-4xl md:text-5xl font-bold text-white">
+            <div><div className="text-4xl lg:text-5xl font-bold text-white">
                 <span ref={stat2}>0</span>
               </div>
               <p className="text-sm uppercase tracking-wider mb-1 text-white">

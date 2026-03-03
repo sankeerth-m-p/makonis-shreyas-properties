@@ -117,7 +117,7 @@ setImageRevealedByDefault(true);
           >
            <RevealImageAnimation
   image="/Home/expert.webp"
-    className="w-[220px] h-[300px] object-cover rounded-lg"
+    className="w-[220px] md:w-[23rem] md:h-[400px]  h-[300px] object-cover rounded-lg"
 />
           </div>
 

@@ -35,7 +35,7 @@ function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateForm()) return;
@@ -44,29 +44,57 @@ function ContactForm() {
     setSubmissionStatus(null);
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyyT_ERLeYkpKWioNzNZS2AmuGLs4lfSBAvaP2kmFN3ZAT4g1XGi6roc5oGGFyhewepKQ/exec';
+    const crmHost = 'http://143.110.251.119:9100/';
+    const crmURL = `${crmHost}webhooks/website/leads/`;
 
     const payload = {
       ...formData,
       website: "Shreyas Properties"
     };
 
-    fetch(scriptURL, {
+    const crmPayload = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      website_url: "https://www.shreyasinfra.com/"
+    };
+
+    const emailRequest = fetch(scriptURL, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(payload)
-    })
-      .then(response => response.json())
-      .then(() => {
-        setSubmissionStatus('success');
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      })
-      .catch((error) => {
-        console.error('Error!', error);
-        setSubmissionStatus('error');
-      })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
+    }).then(response => {
+      if (!response.ok) {
+        throw new Error(`Email API failed with status ${response.status}`);
+      }
+      return response.json();
+    });
+
+    const crmRequest = fetch(crmURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-WEBSITE-TOKEN': 'JGBYtyfvht675GVYFYTFV565fvyfuytHGUjhgbuyg67vtvTftffTF7jyb35BGUJGUHGBtb6oxdioseodxwLOEO9w'
+      },
+      body: JSON.stringify(crmPayload)
+    }).then(response => {
+      if (!response.ok) {
+        throw new Error(`CRM API failed with status ${response.status}`);
+      }
+      return response;
+    });
+
+    try {
+      await Promise.all([ emailRequest, crmRequest ]);
+      setSubmissionStatus('success');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmissionStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
 
@@ -93,10 +121,10 @@ function ContactForm() {
 
 
   return (
- <section className="relative py-10 md:py-20 w-full flex px-4 md:px-6 items-center justify-center bg-cover bg-center"
+ <section className="relative  py-10 md:py-20 w-full flex px-4 md:px-6 items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: 'url("/Home/profoundInfra.webp")' }}>
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute  inset-0 bg-black/40"></div>
 
       {/* Content */}
       <div className="max-w-6xl w-full z-10 bg-white rounded-3xl shadow-2xl p-6 py-10 md:p-32">
@@ -260,7 +288,7 @@ const Contact = () => {
       {/* ===== Top Section ===== */}
       {/* ===== Top Section ===== */}
       <section className="w-full bg-white overflow-hidden">
-        <div className="flex flex-col md:flex-row min-h-[520px]">
+        <div className="flex flex-col md:flex-row md:min-h-[380px] lg:min-h-[520px]">
 
           {/* LEFT TEXT */}
           <div className="w-full md:w-1/2  flex items-center py-12 md:py-0">

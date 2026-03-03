@@ -108,14 +108,14 @@ useEffect(() => {
 >
 
           <div
-            className={`flex  ${noAnim ? "" : " transition-transform duration-700 ease-in-out"}`}
+            className={`flex   ${noAnim ? "" : "  transition-transform duration-700 ease-in-out"}`}
             style={{
               transform: `translateX(-${active * 100}%)`,
             }}
           >
            {mobileSlides.map((img, index) => (
 
-              <div key={index} className="w-full  shrink-0 relative h-[50vh]">
+              <div key={index} className="w-full   shrink-0 relative h-[50vh]">
                 <img
                   src={img.src}
                   alt={img.label}

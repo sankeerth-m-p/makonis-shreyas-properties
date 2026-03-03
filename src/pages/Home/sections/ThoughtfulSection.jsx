@@ -50,14 +50,14 @@ const ThoughtfulSection = () => {
             Thoughtfully developing spaces that reflect city's progress and promise
           </AnimatedHeading>
           <FloatUpText delay={0}>
-            <p className="text-lg mb-6 max-w-md mx-auto">
+            <p className="text-lg mb-6 max-w-md mx-auto ">
               Crafting meaningful experiences where every detail is carefully envisioned.
             </p>
           </FloatUpText>
         </div>
 
         <div className="flex justify-center mb-8">
-          <RevealImageAnimation image={aboutUsImg} className="w-full h-[420px] object-cover" />
+          <RevealImageAnimation image={aboutUsImg} className="w-full  max-w-[24rem] h-[420px] object-cover" />
         </div>
 
         {/* LEFT ALIGNED + SLIGHTLY BIGGER TEXT */}
@@ -118,7 +118,7 @@ const ThoughtfulSection = () => {
             </AnimatedHeading>
 
             <FloatUpText delay={0}>
-              <p className="md:text-xl text-base mb-5 md:max-w-md">
+              <p className="md:text-xl text-base mb-5 md:max-w-md ">
                 Crafting meaningful experiences where every detail is carefully envisioned.
               </p>
 

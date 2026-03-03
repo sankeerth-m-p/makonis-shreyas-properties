@@ -184,7 +184,7 @@ North Bengaluru is rapidly emerging as a business and residential hub, attractin
         <FloatUpText>
           <div className="grid grid-cols-1  md:grid-cols-5 md:gap-5 gap-y-5 mb-16 items-center">
             <div className="rounded-lg  col-span-3 overflow-hidden h-full">
-              <img src={mediaImg5} className="w-full h-50vh md:h-[70vh] object-cover" />
+              <img src={mediaImg5} className="w-full h-50vh lg:h-[70vh] object-cover" />
             </div>
 
             <div className="bg-ORANGE w-full  col-span-2 rounded-lg p-6 lg:p-16 h-full flex flex-col justify-between">

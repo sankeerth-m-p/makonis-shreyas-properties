@@ -260,11 +260,11 @@ const services = [
         className="flex gap-4 px-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
       >
         {services.map((service) => (
-          <div key={service.id} className="min-w-[85vw] snap-center">
+          <div key={service.id} className="min-w-[85vw]  md:min-w-[50vw]  snap-center">
             <motion.div
               className="
                 relative
-                h-[420px]
+                h-[420px] 
                 rounded-lg
                 shadow-lg
                 overflow-hidden
@@ -272,7 +272,7 @@ const services = [
               "
             >
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${service.gradient}`}
+                className={`absolute  inset-0 bg-gradient-to-br ${service.gradient}`}
               />
 
               <div className="relative px-8 pt-8">
