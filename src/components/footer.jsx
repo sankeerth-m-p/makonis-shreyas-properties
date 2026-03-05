@@ -74,15 +74,15 @@ const Footer = () => {const navigate = useNavigate();const goToTestimonials = ()
           {/* Bottom policy section */}
           <div className="pt-10  pb-6 text-xs tracking-wide  text-neutral-400 -500">
             <div className="flex items-center gap-3">
-              <span className="hover:text-white transition cursor-pointer">
+              <Link to="/privacy-policy" className="hover:text-white transition cursor-pointer">
                 Privacy Policy
-              </span>
-              <span className="hover:text-white transition cursor-pointer">
+              </Link>
+              <Link to="/terms" className="hover:text-white transition cursor-pointer">
                 Terms of Use
-              </span>
-              <span className="hover:text-white transition cursor-pointer">
+              </Link>
+              <Link to="/disclaimer" className="hover:text-white transition cursor-pointer">
                 Disclaimer
-              </span>
+              </Link>
             </div>
             <div className="mt-4">©2026. All Rights Reserved.</div>
           </div>
