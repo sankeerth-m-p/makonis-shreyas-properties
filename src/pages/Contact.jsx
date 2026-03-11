@@ -18,6 +18,21 @@ function ContactForm() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(null);
+
+  const normalizePhoneNumber = (value) => {
+    let digitsOnly = value.replace(/\D/g, '');
+
+    if (digitsOnly.startsWith("91") && digitsOnly.length > 10) {
+      digitsOnly = digitsOnly.slice(2);
+    }
+
+    if (digitsOnly.length > 10) {
+      digitsOnly = digitsOnly.slice(-10);
+    }
+
+    return digitsOnly;
+  };
+
   const validateForm = () => {
     let newErrors = {};
 
@@ -102,10 +117,18 @@ function ContactForm() {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Phone: allow ONLY numbers & max 10 digits
     if (name === "phone") {
-      if (!/^\d*$/.test(value)) return; // block alphabets
-      if (value.length > 10) return;    // max 10 digits
+      setFormData({
+        ...formData,
+        phone: normalizePhoneNumber(value),
+      });
+
+      setErrors({
+        ...errors,
+        phone: "",
+      });
+
+      return;
     }
 
     setFormData({
@@ -180,6 +203,8 @@ function ContactForm() {
                   placeholder="Phone Number *"
                   value={formData.phone}
                   onChange={handleChange}
+                  inputMode="numeric"
+                  maxLength={10}
                   required
                   className="w-full px-5 py-3 md:px-6 md:py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
                 />

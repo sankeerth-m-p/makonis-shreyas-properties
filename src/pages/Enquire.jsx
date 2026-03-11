@@ -12,6 +12,21 @@ const Enquire = ({ onClose }) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(null);
+
+  const normalizePhoneNumber = (value) => {
+    let digitsOnly = value.replace(/\D/g, '');
+
+    if (digitsOnly.startsWith("91") && digitsOnly.length > 10) {
+      digitsOnly = digitsOnly.slice(2);
+    }
+
+    if (digitsOnly.length > 10) {
+      digitsOnly = digitsOnly.slice(-10);
+    }
+
+    return digitsOnly;
+  };
+
   const validateForm = () => {
     let newErrors = {};
 
@@ -29,7 +44,7 @@ const Enquire = ({ onClose }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateForm()) return;
@@ -38,39 +53,78 @@ const Enquire = ({ onClose }) => {
     setSubmissionStatus(null);
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyyT_ERLeYkpKWioNzNZS2AmuGLs4lfSBAvaP2kmFN3ZAT4g1XGi6roc5oGGFyhewepKQ/exec';
+    const crmHost = 'https://143.110.251.119:9100/';
+    const crmURL = `${crmHost}webhooks/website/leads/`;
 
     const payload = {
       ...formData,
       website: "Shreyas Infra"
     };
 
-    fetch(scriptURL, {
+    const crmPayload = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      website_url: "https://www.shreyasinfra.com/",
+      business_id: "shreyas"
+    };
+
+    const emailRequest = fetch(scriptURL, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(payload)
-    })
-      .then(response => response.json())
-      .then(() => {
-        setSubmissionStatus('success');
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      })
-      .catch((error) => {
-        console.error('Error!', error);
-        setSubmissionStatus('error');
-      })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
+    }).then(response => {
+      if (!response.ok) {
+        throw new Error(`Email API failed with status ${response.status}`);
+      }
+
+      return response.json();
+    });
+
+    const crmRequest = fetch(crmURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-WEBSITE-TOKEN': 'JGBYtyfvht675GVYFYTFV565fvyfuytHGUjhgbuyg67vtvTftffTF7jyb35BGUJGUHGBtb6oxdioseodxwLOEO9w'
+      },
+      body: JSON.stringify(crmPayload)
+    }).then(response => {
+      if (!response.ok) {
+        throw new Error(`CRM API failed with status ${response.status}`);
+      }
+
+      return response;
+    });
+
+    try {
+      await Promise.all([emailRequest, crmRequest]);
+      setSubmissionStatus('success');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting enquiry form:', error);
+      setSubmissionStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Phone: allow ONLY numbers & max 10 digits
     if (name === "phone") {
-      if (!/^\d*$/.test(value)) return;   // blocks alphabets
-      if (value.length > 10) return;      // blocks more than 10 digits
+      setFormData({
+        ...formData,
+        phone: normalizePhoneNumber(value),
+      });
+
+      setErrors({
+        ...errors,
+        phone: "",
+      });
+
+      return;
     }
 
     setFormData({
@@ -167,6 +221,8 @@ const Enquire = ({ onClose }) => {
                   placeholder="Phone Number *"
                   value={formData.phone}
                   onChange={handleChange}
+                  inputMode="numeric"
+                  maxLength={10}
                   required
                   className="w-full px-5 py-3 md:px-6 md:py-4 bg-[#f2f2f2] rounded-full text-black placeholder-black/60 focus:outline-none focus:ring-1 focus:ring-black"
                 />
